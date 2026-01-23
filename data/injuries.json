@@ -1,0 +1,17 @@
+{
+  "_metadata": {
+    "source": "NHL Injury Report, TSN",
+    "lastUpdated": "2026-01-21",
+    "description": "Active injuries and expected returns for V6.0 injury system",
+    "version": "6.0",
+    "impactLevels": {
+      "5": "Franchise (MVP-caliber) - 5pt adjustment",
+      "4": "Elite (All-Star level) - 3pt adjustment",
+      "3": "Top-Line (Key contributor) - 2pt adjustment",
+      "2": "Middle-6 (Depth scoring) - 1pt adjustment",
+      "1": "Depth (Replaceable) - 0pt adjustment"
+    }
+  },
+  "injuries": [
+  ]
+}

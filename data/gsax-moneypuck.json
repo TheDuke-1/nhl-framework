@@ -1,0 +1,46 @@
+{
+  "_metadata": {
+    "source": "MoneyPuck API - moneypuck.com/moneypuck/playerData/seasonSummary/2025/regular/goalies.csv",
+    "lastUpdated": "2026-01-20",
+    "description": "Team-level GSAx aggregated from goalie data. GSAx = Goals Saved Above Expected. Positive = better goaltending.",
+    "notes": [
+      "GSAx calculated as xGoals Against - Goals Against",
+      "Positive values indicate goalie saved more than expected",
+      "Values scaled to full season sample sizes"
+    ]
+  },
+  "teams": {
+    "ANA": { "gsax": -2.4, "startingGoalieSvPct": 0.903, "startingGoalie": "Lukas Dostal", "gamesStarted": 32 },
+    "BOS": { "gsax": 15.6, "startingGoalieSvPct": 0.920, "startingGoalie": "Jeremy Swayman", "gamesStarted": 33 },
+    "BUF": { "gsax": 1.3, "startingGoalieSvPct": 0.908, "startingGoalie": "Ukko-Pekka Luukkonen", "gamesStarted": 19 },
+    "CAR": { "gsax": 7.4, "startingGoalieSvPct": 0.915, "startingGoalie": "Pyotr Kochetkov", "gamesStarted": 28 },
+    "CGY": { "gsax": -1.2, "startingGoalieSvPct": 0.905, "startingGoalie": "Dustin Wolf", "gamesStarted": 37 },
+    "CHI": { "gsax": 13.5, "startingGoalieSvPct": 0.918, "startingGoalie": "Petr Mrazek", "gamesStarted": 33 },
+    "COL": { "gsax": 9.4, "startingGoalieSvPct": 0.918, "startingGoalie": "Scott Wedgewood", "gamesStarted": 29 },
+    "CBJ": { "gsax": 12.5, "startingGoalieSvPct": 0.916, "startingGoalie": "Jet Greaves", "gamesStarted": 32 },
+    "DAL": { "gsax": 4.5, "startingGoalieSvPct": 0.912, "startingGoalie": "Jake Oettinger", "gamesStarted": 31 },
+    "DET": { "gsax": 6.1, "startingGoalieSvPct": 0.912, "startingGoalie": "Cam Talbot", "gamesStarted": 30 },
+    "EDM": { "gsax": 6.0, "startingGoalieSvPct": 0.912, "startingGoalie": "Stuart Skinner", "gamesStarted": 32 },
+    "FLA": { "gsax": -10.0, "startingGoalieSvPct": 0.901, "startingGoalie": "Sergei Bobrovsky", "gamesStarted": 34 },
+    "LA": { "gsax": 5.8, "startingGoalieSvPct": 0.913, "startingGoalie": "Darcy Kuemper", "gamesStarted": 31 },
+    "MIN": { "gsax": 7.1, "startingGoalieSvPct": 0.914, "startingGoalie": "Filip Gustavsson", "gamesStarted": 31 },
+    "MTL": { "gsax": -1.6, "startingGoalieSvPct": 0.904, "startingGoalie": "Jakub Dobes", "gamesStarted": 22 },
+    "NSH": { "gsax": -3.7, "startingGoalieSvPct": 0.902, "startingGoalie": "Juuse Saros", "gamesStarted": 37 },
+    "NJ": { "gsax": -9.2, "startingGoalieSvPct": 0.898, "startingGoalie": "Jacob Markstrom", "gamesStarted": 26 },
+    "NYI": { "gsax": 22.9, "startingGoalieSvPct": 0.924, "startingGoalie": "Ilya Sorokin", "gamesStarted": 29 },
+    "NYR": { "gsax": 15.6, "startingGoalieSvPct": 0.919, "startingGoalie": "Igor Shesterkin", "gamesStarted": 34 },
+    "OTT": { "gsax": -18.3, "startingGoalieSvPct": 0.895, "startingGoalie": "Linus Ullmark", "gamesStarted": 28 },
+    "PHI": { "gsax": 8.6, "startingGoalieSvPct": 0.914, "startingGoalie": "Ivan Fedotov", "gamesStarted": 28 },
+    "PIT": { "gsax": 6.0, "startingGoalieSvPct": 0.912, "startingGoalie": "Tristan Jarry", "gamesStarted": 32 },
+    "SEA": { "gsax": -1.2, "startingGoalieSvPct": 0.906, "startingGoalie": "Joey Daccord", "gamesStarted": 29 },
+    "SJ": { "gsax": -2.5, "startingGoalieSvPct": 0.903, "startingGoalie": "Yaroslav Askarov", "gamesStarted": 22 },
+    "STL": { "gsax": -19.9, "startingGoalieSvPct": 0.891, "startingGoalie": "Jordan Binnington", "gamesStarted": 28 },
+    "TB": { "gsax": 16.1, "startingGoalieSvPct": 0.923, "startingGoalie": "Andrei Vasilevskiy", "gamesStarted": 30 },
+    "TOR": { "gsax": -0.1, "startingGoalieSvPct": 0.906, "startingGoalie": "Joseph Woll", "gamesStarted": 20 },
+    "UTA": { "gsax": 6.8, "startingGoalieSvPct": 0.915, "startingGoalie": "Karel Vejmelka", "gamesStarted": 37 },
+    "VAN": { "gsax": 2.0, "startingGoalieSvPct": 0.908, "startingGoalie": "Thatcher Demko", "gamesStarted": 20 },
+    "VGK": { "gsax": -4.1, "startingGoalieSvPct": 0.905, "startingGoalie": "Adin Hill", "gamesStarted": 7 },
+    "WSH": { "gsax": 18.1, "startingGoalieSvPct": 0.922, "startingGoalie": "Logan Thompson", "gamesStarted": 35 },
+    "WPG": { "gsax": 9.3, "startingGoalieSvPct": 0.915, "startingGoalie": "Connor Hellebuyck", "gamesStarted": 30 }
+  }
+}

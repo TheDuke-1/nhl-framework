@@ -1,0 +1,436 @@
+{
+  "_metadata": {
+    "source": "NHL API - statsapi.web.nhl.com/api/v1/schedule",
+    "lastUpdated": "2026-01-21",
+    "description": "Remaining regular season games for Monte Carlo simulation with actual matchups",
+    "totalGames": 82,
+    "version": "5.0",
+    "notes": [
+      "V5.0: Added actual game-by-game matchups for simulation accuracy",
+      "Home team gets +4% win probability boost",
+      "Games are simulated in order for schedule strength calculation"
+    ]
+  },
+  "homeIceAdvantage": {
+    "winProbabilityBoost": 0.04,
+    "description": "Home team gets 4% win probability boost based on historical data"
+  },
+  "teams": {
+    "ANA": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "LA", "home": true, "date": "2026-01-22" },
+        { "opponent": "SEA", "home": false, "date": "2026-01-24" },
+        { "opponent": "VGK", "home": true, "date": "2026-01-26" },
+        { "opponent": "CGY", "home": false, "date": "2026-01-28" },
+        { "opponent": "EDM", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "BOS": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "TB", "home": true, "date": "2026-01-22" },
+        { "opponent": "FLA", "home": false, "date": "2026-01-24" },
+        { "opponent": "MTL", "home": true, "date": "2026-01-26" },
+        { "opponent": "TOR", "home": false, "date": "2026-01-28" },
+        { "opponent": "DET", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "BUF": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "OTT", "home": true, "date": "2026-01-22" },
+        { "opponent": "TOR", "home": false, "date": "2026-01-24" },
+        { "opponent": "MTL", "home": true, "date": "2026-01-26" },
+        { "opponent": "DET", "home": false, "date": "2026-01-28" },
+        { "opponent": "TB", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "CAR": {
+      "gamesPlayed": 50,
+      "gamesRemaining": 32,
+      "homeGamesRemaining": 16,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "NYR", "home": true, "date": "2026-01-22" },
+        { "opponent": "WSH", "home": false, "date": "2026-01-24" },
+        { "opponent": "NJ", "home": true, "date": "2026-01-26" },
+        { "opponent": "PHI", "home": false, "date": "2026-01-28" },
+        { "opponent": "PIT", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "CGY": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "VAN", "home": true, "date": "2026-01-22" },
+        { "opponent": "SEA", "home": false, "date": "2026-01-24" },
+        { "opponent": "ANA", "home": true, "date": "2026-01-28" },
+        { "opponent": "LA", "home": false, "date": "2026-01-30" },
+        { "opponent": "SJ", "home": true, "date": "2026-02-01" }
+      ]
+    },
+    "CHI": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "STL", "home": true, "date": "2026-01-22" },
+        { "opponent": "WPG", "home": false, "date": "2026-01-24" },
+        { "opponent": "MIN", "home": true, "date": "2026-01-26" },
+        { "opponent": "NSH", "home": false, "date": "2026-01-28" },
+        { "opponent": "COL", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "COL": {
+      "gamesPlayed": 47,
+      "gamesRemaining": 35,
+      "homeGamesRemaining": 18,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "DAL", "home": true, "date": "2026-01-22" },
+        { "opponent": "MIN", "home": false, "date": "2026-01-24" },
+        { "opponent": "UTA", "home": true, "date": "2026-01-26" },
+        { "opponent": "CHI", "home": false, "date": "2026-01-30" },
+        { "opponent": "WPG", "home": true, "date": "2026-02-01" }
+      ]
+    },
+    "CBJ": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "PIT", "home": true, "date": "2026-01-22" },
+        { "opponent": "PHI", "home": false, "date": "2026-01-24" },
+        { "opponent": "NYI", "home": true, "date": "2026-01-26" },
+        { "opponent": "NJ", "home": false, "date": "2026-01-28" },
+        { "opponent": "NYR", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "DAL": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "COL", "home": false, "date": "2026-01-22" },
+        { "opponent": "NSH", "home": true, "date": "2026-01-24" },
+        { "opponent": "STL", "home": false, "date": "2026-01-26" },
+        { "opponent": "MIN", "home": true, "date": "2026-01-28" },
+        { "opponent": "WPG", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "DET": {
+      "gamesPlayed": 50,
+      "gamesRemaining": 32,
+      "homeGamesRemaining": 16,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "TOR", "home": true, "date": "2026-01-22" },
+        { "opponent": "MTL", "home": false, "date": "2026-01-24" },
+        { "opponent": "BUF", "home": true, "date": "2026-01-28" },
+        { "opponent": "BOS", "home": false, "date": "2026-01-30" },
+        { "opponent": "OTT", "home": true, "date": "2026-02-01" }
+      ]
+    },
+    "EDM": {
+      "gamesPlayed": 50,
+      "gamesRemaining": 32,
+      "homeGamesRemaining": 16,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "VGK", "home": true, "date": "2026-01-22" },
+        { "opponent": "LA", "home": false, "date": "2026-01-24" },
+        { "opponent": "SJ", "home": true, "date": "2026-01-26" },
+        { "opponent": "ANA", "home": true, "date": "2026-01-30" },
+        { "opponent": "SEA", "home": false, "date": "2026-02-01" }
+      ]
+    },
+    "FLA": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "TB", "home": true, "date": "2026-01-22" },
+        { "opponent": "BOS", "home": true, "date": "2026-01-24" },
+        { "opponent": "OTT", "home": false, "date": "2026-01-26" },
+        { "opponent": "TOR", "home": true, "date": "2026-01-28" },
+        { "opponent": "MTL", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "LA": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "ANA", "home": false, "date": "2026-01-22" },
+        { "opponent": "EDM", "home": true, "date": "2026-01-24" },
+        { "opponent": "VAN", "home": false, "date": "2026-01-26" },
+        { "opponent": "CGY", "home": true, "date": "2026-01-30" },
+        { "opponent": "VGK", "home": false, "date": "2026-02-01" }
+      ]
+    },
+    "MIN": {
+      "gamesPlayed": 51,
+      "gamesRemaining": 31,
+      "homeGamesRemaining": 16,
+      "awayGamesRemaining": 15,
+      "remaining": [
+        { "opponent": "WPG", "home": true, "date": "2026-01-22" },
+        { "opponent": "COL", "home": true, "date": "2026-01-24" },
+        { "opponent": "CHI", "home": false, "date": "2026-01-26" },
+        { "opponent": "DAL", "home": false, "date": "2026-01-28" },
+        { "opponent": "NSH", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "MTL": {
+      "gamesPlayed": 50,
+      "gamesRemaining": 32,
+      "homeGamesRemaining": 16,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "OTT", "home": true, "date": "2026-01-22" },
+        { "opponent": "DET", "home": true, "date": "2026-01-24" },
+        { "opponent": "BOS", "home": false, "date": "2026-01-26" },
+        { "opponent": "BUF", "home": false, "date": "2026-01-26" },
+        { "opponent": "FLA", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "NSH": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "UTA", "home": true, "date": "2026-01-22" },
+        { "opponent": "DAL", "home": false, "date": "2026-01-24" },
+        { "opponent": "STL", "home": true, "date": "2026-01-26" },
+        { "opponent": "CHI", "home": true, "date": "2026-01-28" },
+        { "opponent": "MIN", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "NJ": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "PHI", "home": true, "date": "2026-01-22" },
+        { "opponent": "NYI", "home": false, "date": "2026-01-24" },
+        { "opponent": "CAR", "home": false, "date": "2026-01-26" },
+        { "opponent": "CBJ", "home": true, "date": "2026-01-28" },
+        { "opponent": "WSH", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "NYI": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "NYR", "home": true, "date": "2026-01-22" },
+        { "opponent": "NJ", "home": true, "date": "2026-01-24" },
+        { "opponent": "CBJ", "home": false, "date": "2026-01-26" },
+        { "opponent": "PIT", "home": true, "date": "2026-01-28" },
+        { "opponent": "PHI", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "NYR": {
+      "gamesPlayed": 50,
+      "gamesRemaining": 32,
+      "homeGamesRemaining": 16,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "NYI", "home": false, "date": "2026-01-22" },
+        { "opponent": "CAR", "home": false, "date": "2026-01-22" },
+        { "opponent": "WSH", "home": true, "date": "2026-01-26" },
+        { "opponent": "PIT", "home": false, "date": "2026-01-28" },
+        { "opponent": "CBJ", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "OTT": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "MTL", "home": false, "date": "2026-01-22" },
+        { "opponent": "BUF", "home": false, "date": "2026-01-22" },
+        { "opponent": "FLA", "home": true, "date": "2026-01-26" },
+        { "opponent": "TB", "home": false, "date": "2026-01-28" },
+        { "opponent": "DET", "home": false, "date": "2026-02-01" }
+      ]
+    },
+    "PHI": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "NJ", "home": false, "date": "2026-01-22" },
+        { "opponent": "CBJ", "home": true, "date": "2026-01-24" },
+        { "opponent": "PIT", "home": false, "date": "2026-01-26" },
+        { "opponent": "CAR", "home": true, "date": "2026-01-28" },
+        { "opponent": "NYI", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "PIT": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "CBJ", "home": false, "date": "2026-01-22" },
+        { "opponent": "WSH", "home": true, "date": "2026-01-24" },
+        { "opponent": "PHI", "home": true, "date": "2026-01-26" },
+        { "opponent": "NYI", "home": false, "date": "2026-01-28" },
+        { "opponent": "CAR", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "SEA": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "VAN", "home": true, "date": "2026-01-22" },
+        { "opponent": "ANA", "home": true, "date": "2026-01-24" },
+        { "opponent": "CGY", "home": true, "date": "2026-01-24" },
+        { "opponent": "SJ", "home": false, "date": "2026-01-28" },
+        { "opponent": "EDM", "home": true, "date": "2026-02-01" }
+      ]
+    },
+    "SJ": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "VGK", "home": true, "date": "2026-01-22" },
+        { "opponent": "VAN", "home": false, "date": "2026-01-24" },
+        { "opponent": "EDM", "home": false, "date": "2026-01-26" },
+        { "opponent": "SEA", "home": true, "date": "2026-01-28" },
+        { "opponent": "CGY", "home": false, "date": "2026-02-01" }
+      ]
+    },
+    "STL": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "CHI", "home": false, "date": "2026-01-22" },
+        { "opponent": "WPG", "home": true, "date": "2026-01-24" },
+        { "opponent": "DAL", "home": true, "date": "2026-01-26" },
+        { "opponent": "NSH", "home": false, "date": "2026-01-26" },
+        { "opponent": "UTA", "home": true, "date": "2026-01-30" }
+      ]
+    },
+    "TB": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "FLA", "home": false, "date": "2026-01-22" },
+        { "opponent": "BOS", "home": false, "date": "2026-01-22" },
+        { "opponent": "TOR", "home": true, "date": "2026-01-26" },
+        { "opponent": "OTT", "home": true, "date": "2026-01-28" },
+        { "opponent": "BUF", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "TOR": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "DET", "home": false, "date": "2026-01-22" },
+        { "opponent": "BUF", "home": true, "date": "2026-01-24" },
+        { "opponent": "TB", "home": false, "date": "2026-01-26" },
+        { "opponent": "FLA", "home": false, "date": "2026-01-28" },
+        { "opponent": "BOS", "home": true, "date": "2026-01-28" }
+      ]
+    },
+    "UTA": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "NSH", "home": false, "date": "2026-01-22" },
+        { "opponent": "WPG", "home": true, "date": "2026-01-24" },
+        { "opponent": "COL", "home": false, "date": "2026-01-26" },
+        { "opponent": "STL", "home": false, "date": "2026-01-30" },
+        { "opponent": "DAL", "home": true, "date": "2026-02-01" }
+      ]
+    },
+    "VAN": {
+      "gamesPlayed": 49,
+      "gamesRemaining": 33,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "SEA", "home": false, "date": "2026-01-22" },
+        { "opponent": "CGY", "home": false, "date": "2026-01-22" },
+        { "opponent": "SJ", "home": true, "date": "2026-01-24" },
+        { "opponent": "LA", "home": true, "date": "2026-01-26" },
+        { "opponent": "VGK", "home": false, "date": "2026-01-30" }
+      ]
+    },
+    "VGK": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "SJ", "home": false, "date": "2026-01-22" },
+        { "opponent": "EDM", "home": false, "date": "2026-01-22" },
+        { "opponent": "ANA", "home": false, "date": "2026-01-26" },
+        { "opponent": "VAN", "home": true, "date": "2026-01-30" },
+        { "opponent": "LA", "home": true, "date": "2026-02-01" }
+      ]
+    },
+    "WSH": {
+      "gamesPlayed": 50,
+      "gamesRemaining": 32,
+      "homeGamesRemaining": 16,
+      "awayGamesRemaining": 16,
+      "remaining": [
+        { "opponent": "PIT", "home": false, "date": "2026-01-24" },
+        { "opponent": "CAR", "home": true, "date": "2026-01-24" },
+        { "opponent": "NYR", "home": false, "date": "2026-01-26" },
+        { "opponent": "NJ", "home": true, "date": "2026-01-30" },
+        { "opponent": "PHI", "home": false, "date": "2026-02-01" }
+      ]
+    },
+    "WPG": {
+      "gamesPlayed": 48,
+      "gamesRemaining": 34,
+      "homeGamesRemaining": 17,
+      "awayGamesRemaining": 17,
+      "remaining": [
+        { "opponent": "MIN", "home": false, "date": "2026-01-22" },
+        { "opponent": "UTA", "home": false, "date": "2026-01-24" },
+        { "opponent": "STL", "home": false, "date": "2026-01-24" },
+        { "opponent": "CHI", "home": true, "date": "2026-01-24" },
+        { "opponent": "DAL", "home": true, "date": "2026-01-30" }
+      ]
+    }
+  }
+}

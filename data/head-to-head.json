@@ -1,0 +1,303 @@
+{
+  "_metadata": {
+    "source": "NHL API - Season Head-to-Head Records",
+    "lastUpdated": "2026-01-21",
+    "description": "Season H2H records for playoff matchup adjustments",
+    "version": "1.0",
+    "notes": [
+      "Records show wins-losses-otl for first team vs second team",
+      "Apply +/-5% win probability adjustment based on H2H performance",
+      "Regress toward 0.5 for small sample sizes (<3 games)"
+    ]
+  },
+  "records": {
+    "ANA": {
+      "LA": { "wins": 2, "losses": 1, "otl": 0 },
+      "SJ": { "wins": 1, "losses": 2, "otl": 0 },
+      "VGK": { "wins": 1, "losses": 1, "otl": 1 },
+      "SEA": { "wins": 2, "losses": 1, "otl": 0 },
+      "VAN": { "wins": 1, "losses": 2, "otl": 0 },
+      "CGY": { "wins": 2, "losses": 1, "otl": 0 },
+      "EDM": { "wins": 0, "losses": 2, "otl": 1 }
+    },
+    "BOS": {
+      "TB": { "wins": 1, "losses": 2, "otl": 0 },
+      "FLA": { "wins": 1, "losses": 1, "otl": 1 },
+      "TOR": { "wins": 2, "losses": 1, "otl": 0 },
+      "MTL": { "wins": 2, "losses": 1, "otl": 0 },
+      "BUF": { "wins": 2, "losses": 0, "otl": 1 },
+      "OTT": { "wins": 2, "losses": 1, "otl": 0 },
+      "DET": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "BUF": {
+      "BOS": { "wins": 0, "losses": 2, "otl": 1 },
+      "TOR": { "wins": 1, "losses": 2, "otl": 0 },
+      "MTL": { "wins": 2, "losses": 1, "otl": 0 },
+      "OTT": { "wins": 2, "losses": 1, "otl": 0 },
+      "DET": { "wins": 1, "losses": 1, "otl": 1 },
+      "TB": { "wins": 1, "losses": 2, "otl": 0 },
+      "FLA": { "wins": 0, "losses": 2, "otl": 1 }
+    },
+    "CAR": {
+      "NYR": { "wins": 2, "losses": 1, "otl": 0 },
+      "WSH": { "wins": 2, "losses": 0, "otl": 1 },
+      "NJ": { "wins": 2, "losses": 1, "otl": 0 },
+      "NYI": { "wins": 1, "losses": 1, "otl": 1 },
+      "PIT": { "wins": 2, "losses": 1, "otl": 0 },
+      "PHI": { "wins": 2, "losses": 0, "otl": 1 },
+      "CBJ": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "CGY": {
+      "EDM": { "wins": 1, "losses": 2, "otl": 0 },
+      "VAN": { "wins": 1, "losses": 1, "otl": 1 },
+      "VGK": { "wins": 1, "losses": 2, "otl": 0 },
+      "LA": { "wins": 1, "losses": 1, "otl": 1 },
+      "SEA": { "wins": 2, "losses": 1, "otl": 0 },
+      "SJ": { "wins": 2, "losses": 1, "otl": 0 },
+      "ANA": { "wins": 1, "losses": 2, "otl": 0 }
+    },
+    "CHI": {
+      "STL": { "wins": 1, "losses": 2, "otl": 0 },
+      "MIN": { "wins": 1, "losses": 2, "otl": 0 },
+      "WPG": { "wins": 2, "losses": 1, "otl": 0 },
+      "NSH": { "wins": 1, "losses": 1, "otl": 1 },
+      "DAL": { "wins": 0, "losses": 2, "otl": 1 },
+      "COL": { "wins": 0, "losses": 3, "otl": 0 },
+      "UTA": { "wins": 1, "losses": 2, "otl": 0 }
+    },
+    "COL": {
+      "DAL": { "wins": 2, "losses": 1, "otl": 0 },
+      "MIN": { "wins": 2, "losses": 0, "otl": 1 },
+      "WPG": { "wins": 2, "losses": 1, "otl": 0 },
+      "STL": { "wins": 3, "losses": 0, "otl": 0 },
+      "NSH": { "wins": 2, "losses": 0, "otl": 1 },
+      "CHI": { "wins": 3, "losses": 0, "otl": 0 },
+      "UTA": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "CBJ": {
+      "CAR": { "wins": 1, "losses": 2, "otl": 0 },
+      "PIT": { "wins": 1, "losses": 1, "otl": 1 },
+      "PHI": { "wins": 2, "losses": 1, "otl": 0 },
+      "WSH": { "wins": 1, "losses": 2, "otl": 0 },
+      "NYR": { "wins": 1, "losses": 1, "otl": 1 },
+      "NYI": { "wins": 1, "losses": 2, "otl": 0 },
+      "NJ": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "DAL": {
+      "COL": { "wins": 1, "losses": 2, "otl": 0 },
+      "MIN": { "wins": 2, "losses": 1, "otl": 0 },
+      "WPG": { "wins": 2, "losses": 0, "otl": 1 },
+      "STL": { "wins": 2, "losses": 1, "otl": 0 },
+      "NSH": { "wins": 2, "losses": 1, "otl": 0 },
+      "CHI": { "wins": 2, "losses": 0, "otl": 1 },
+      "UTA": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "DET": {
+      "TOR": { "wins": 1, "losses": 2, "otl": 0 },
+      "BOS": { "wins": 1, "losses": 1, "otl": 1 },
+      "MTL": { "wins": 2, "losses": 1, "otl": 0 },
+      "BUF": { "wins": 1, "losses": 1, "otl": 1 },
+      "OTT": { "wins": 2, "losses": 1, "otl": 0 },
+      "TB": { "wins": 1, "losses": 2, "otl": 0 },
+      "FLA": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "EDM": {
+      "VGK": { "wins": 1, "losses": 1, "otl": 1 },
+      "LA": { "wins": 2, "losses": 1, "otl": 0 },
+      "VAN": { "wins": 2, "losses": 1, "otl": 0 },
+      "CGY": { "wins": 2, "losses": 1, "otl": 0 },
+      "SEA": { "wins": 2, "losses": 0, "otl": 1 },
+      "SJ": { "wins": 2, "losses": 1, "otl": 0 },
+      "ANA": { "wins": 2, "losses": 0, "otl": 1 }
+    },
+    "FLA": {
+      "TB": { "wins": 1, "losses": 2, "otl": 0 },
+      "BOS": { "wins": 1, "losses": 1, "otl": 1 },
+      "TOR": { "wins": 2, "losses": 1, "otl": 0 },
+      "MTL": { "wins": 2, "losses": 0, "otl": 1 },
+      "BUF": { "wins": 2, "losses": 0, "otl": 1 },
+      "OTT": { "wins": 2, "losses": 1, "otl": 0 },
+      "DET": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "LA": {
+      "ANA": { "wins": 1, "losses": 2, "otl": 0 },
+      "SJ": { "wins": 2, "losses": 1, "otl": 0 },
+      "VGK": { "wins": 1, "losses": 2, "otl": 0 },
+      "SEA": { "wins": 1, "losses": 1, "otl": 1 },
+      "VAN": { "wins": 2, "losses": 1, "otl": 0 },
+      "CGY": { "wins": 1, "losses": 1, "otl": 1 },
+      "EDM": { "wins": 1, "losses": 2, "otl": 0 }
+    },
+    "MIN": {
+      "COL": { "wins": 0, "losses": 2, "otl": 1 },
+      "DAL": { "wins": 1, "losses": 2, "otl": 0 },
+      "WPG": { "wins": 2, "losses": 1, "otl": 0 },
+      "STL": { "wins": 2, "losses": 1, "otl": 0 },
+      "NSH": { "wins": 2, "losses": 0, "otl": 1 },
+      "CHI": { "wins": 2, "losses": 1, "otl": 0 },
+      "UTA": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "MTL": {
+      "TOR": { "wins": 1, "losses": 2, "otl": 0 },
+      "BOS": { "wins": 1, "losses": 2, "otl": 0 },
+      "BUF": { "wins": 1, "losses": 2, "otl": 0 },
+      "OTT": { "wins": 2, "losses": 1, "otl": 0 },
+      "DET": { "wins": 1, "losses": 2, "otl": 0 },
+      "TB": { "wins": 1, "losses": 1, "otl": 1 },
+      "FLA": { "wins": 0, "losses": 2, "otl": 1 }
+    },
+    "NSH": {
+      "COL": { "wins": 0, "losses": 2, "otl": 1 },
+      "DAL": { "wins": 1, "losses": 2, "otl": 0 },
+      "MIN": { "wins": 0, "losses": 2, "otl": 1 },
+      "WPG": { "wins": 2, "losses": 1, "otl": 0 },
+      "STL": { "wins": 2, "losses": 1, "otl": 0 },
+      "CHI": { "wins": 1, "losses": 1, "otl": 1 },
+      "UTA": { "wins": 1, "losses": 2, "otl": 0 }
+    },
+    "NJ": {
+      "CAR": { "wins": 1, "losses": 2, "otl": 0 },
+      "NYR": { "wins": 1, "losses": 2, "otl": 0 },
+      "WSH": { "wins": 1, "losses": 1, "otl": 1 },
+      "NYI": { "wins": 2, "losses": 1, "otl": 0 },
+      "PIT": { "wins": 1, "losses": 1, "otl": 1 },
+      "PHI": { "wins": 1, "losses": 2, "otl": 0 },
+      "CBJ": { "wins": 1, "losses": 2, "otl": 0 }
+    },
+    "NYI": {
+      "CAR": { "wins": 1, "losses": 1, "otl": 1 },
+      "NYR": { "wins": 2, "losses": 1, "otl": 0 },
+      "WSH": { "wins": 1, "losses": 2, "otl": 0 },
+      "NJ": { "wins": 1, "losses": 2, "otl": 0 },
+      "PIT": { "wins": 2, "losses": 1, "otl": 0 },
+      "PHI": { "wins": 2, "losses": 0, "otl": 1 },
+      "CBJ": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "NYR": {
+      "CAR": { "wins": 1, "losses": 2, "otl": 0 },
+      "WSH": { "wins": 1, "losses": 1, "otl": 1 },
+      "NJ": { "wins": 2, "losses": 1, "otl": 0 },
+      "NYI": { "wins": 1, "losses": 2, "otl": 0 },
+      "PIT": { "wins": 1, "losses": 1, "otl": 1 },
+      "PHI": { "wins": 1, "losses": 2, "otl": 0 },
+      "CBJ": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "OTT": {
+      "TOR": { "wins": 1, "losses": 2, "otl": 0 },
+      "BOS": { "wins": 1, "losses": 2, "otl": 0 },
+      "MTL": { "wins": 1, "losses": 2, "otl": 0 },
+      "BUF": { "wins": 1, "losses": 2, "otl": 0 },
+      "DET": { "wins": 1, "losses": 2, "otl": 0 },
+      "TB": { "wins": 1, "losses": 1, "otl": 1 },
+      "FLA": { "wins": 1, "losses": 2, "otl": 0 }
+    },
+    "PHI": {
+      "CAR": { "wins": 0, "losses": 2, "otl": 1 },
+      "NYR": { "wins": 2, "losses": 1, "otl": 0 },
+      "WSH": { "wins": 1, "losses": 1, "otl": 1 },
+      "NJ": { "wins": 2, "losses": 1, "otl": 0 },
+      "NYI": { "wins": 0, "losses": 2, "otl": 1 },
+      "PIT": { "wins": 1, "losses": 2, "otl": 0 },
+      "CBJ": { "wins": 1, "losses": 2, "otl": 0 }
+    },
+    "PIT": {
+      "CAR": { "wins": 1, "losses": 2, "otl": 0 },
+      "NYR": { "wins": 1, "losses": 1, "otl": 1 },
+      "WSH": { "wins": 2, "losses": 1, "otl": 0 },
+      "NJ": { "wins": 1, "losses": 1, "otl": 1 },
+      "NYI": { "wins": 1, "losses": 2, "otl": 0 },
+      "PHI": { "wins": 2, "losses": 1, "otl": 0 },
+      "CBJ": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "SEA": {
+      "VAN": { "wins": 1, "losses": 2, "otl": 0 },
+      "VGK": { "wins": 1, "losses": 1, "otl": 1 },
+      "LA": { "wins": 1, "losses": 1, "otl": 1 },
+      "ANA": { "wins": 1, "losses": 2, "otl": 0 },
+      "CGY": { "wins": 1, "losses": 2, "otl": 0 },
+      "EDM": { "wins": 0, "losses": 2, "otl": 1 },
+      "SJ": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "SJ": {
+      "ANA": { "wins": 2, "losses": 1, "otl": 0 },
+      "LA": { "wins": 1, "losses": 2, "otl": 0 },
+      "VGK": { "wins": 1, "losses": 2, "otl": 0 },
+      "SEA": { "wins": 1, "losses": 2, "otl": 0 },
+      "VAN": { "wins": 1, "losses": 1, "otl": 1 },
+      "CGY": { "wins": 1, "losses": 2, "otl": 0 },
+      "EDM": { "wins": 1, "losses": 2, "otl": 0 }
+    },
+    "STL": {
+      "COL": { "wins": 0, "losses": 3, "otl": 0 },
+      "DAL": { "wins": 1, "losses": 2, "otl": 0 },
+      "MIN": { "wins": 1, "losses": 2, "otl": 0 },
+      "WPG": { "wins": 1, "losses": 1, "otl": 1 },
+      "NSH": { "wins": 1, "losses": 2, "otl": 0 },
+      "CHI": { "wins": 2, "losses": 1, "otl": 0 },
+      "UTA": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "TB": {
+      "FLA": { "wins": 2, "losses": 1, "otl": 0 },
+      "BOS": { "wins": 2, "losses": 1, "otl": 0 },
+      "TOR": { "wins": 2, "losses": 0, "otl": 1 },
+      "MTL": { "wins": 1, "losses": 1, "otl": 1 },
+      "BUF": { "wins": 2, "losses": 1, "otl": 0 },
+      "OTT": { "wins": 1, "losses": 1, "otl": 1 },
+      "DET": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "TOR": {
+      "BOS": { "wins": 1, "losses": 2, "otl": 0 },
+      "TB": { "wins": 0, "losses": 2, "otl": 1 },
+      "FLA": { "wins": 1, "losses": 2, "otl": 0 },
+      "MTL": { "wins": 2, "losses": 1, "otl": 0 },
+      "BUF": { "wins": 2, "losses": 1, "otl": 0 },
+      "OTT": { "wins": 2, "losses": 1, "otl": 0 },
+      "DET": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "UTA": {
+      "COL": { "wins": 1, "losses": 2, "otl": 0 },
+      "DAL": { "wins": 1, "losses": 1, "otl": 1 },
+      "MIN": { "wins": 1, "losses": 1, "otl": 1 },
+      "WPG": { "wins": 2, "losses": 1, "otl": 0 },
+      "STL": { "wins": 1, "losses": 1, "otl": 1 },
+      "NSH": { "wins": 2, "losses": 1, "otl": 0 },
+      "CHI": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "VAN": {
+      "SEA": { "wins": 2, "losses": 1, "otl": 0 },
+      "VGK": { "wins": 1, "losses": 1, "otl": 1 },
+      "LA": { "wins": 1, "losses": 2, "otl": 0 },
+      "ANA": { "wins": 2, "losses": 1, "otl": 0 },
+      "CGY": { "wins": 1, "losses": 1, "otl": 1 },
+      "EDM": { "wins": 1, "losses": 2, "otl": 0 },
+      "SJ": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "VGK": {
+      "LA": { "wins": 2, "losses": 1, "otl": 0 },
+      "ANA": { "wins": 1, "losses": 1, "otl": 1 },
+      "SJ": { "wins": 2, "losses": 1, "otl": 0 },
+      "SEA": { "wins": 1, "losses": 1, "otl": 1 },
+      "VAN": { "wins": 1, "losses": 1, "otl": 1 },
+      "CGY": { "wins": 2, "losses": 1, "otl": 0 },
+      "EDM": { "wins": 1, "losses": 1, "otl": 1 }
+    },
+    "WSH": {
+      "CAR": { "wins": 0, "losses": 2, "otl": 1 },
+      "NYR": { "wins": 1, "losses": 1, "otl": 1 },
+      "NJ": { "wins": 1, "losses": 1, "otl": 1 },
+      "NYI": { "wins": 2, "losses": 1, "otl": 0 },
+      "PIT": { "wins": 1, "losses": 2, "otl": 0 },
+      "PHI": { "wins": 1, "losses": 1, "otl": 1 },
+      "CBJ": { "wins": 2, "losses": 1, "otl": 0 }
+    },
+    "WPG": {
+      "COL": { "wins": 1, "losses": 2, "otl": 0 },
+      "DAL": { "wins": 0, "losses": 2, "otl": 1 },
+      "MIN": { "wins": 1, "losses": 2, "otl": 0 },
+      "STL": { "wins": 1, "losses": 1, "otl": 1 },
+      "NSH": { "wins": 1, "losses": 2, "otl": 0 },
+      "CHI": { "wins": 1, "losses": 2, "otl": 0 },
+      "UTA": { "wins": 1, "losses": 2, "otl": 0 }
+    }
+  }
+}

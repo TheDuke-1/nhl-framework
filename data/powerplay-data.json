@@ -1,0 +1,41 @@
+{
+  "_metadata": {
+    "source": "Natural Stat Trick - naturalstattrick.com",
+    "lastUpdated": "2026-01-20",
+    "description": "Power Play percentage by team for V4.0 special teams balance"
+  },
+  "teams": {
+    "ANA": { "ppPct": 15.6, "ppRank": 18 },
+    "BOS": { "ppPct": 17.7, "ppRank": 10 },
+    "BUF": { "ppPct": 17.2, "ppRank": 11 },
+    "CAR": { "ppPct": 14.5, "ppRank": 23 },
+    "CGY": { "ppPct": 11.3, "ppRank": 32 },
+    "CHI": { "ppPct": 16.4, "ppRank": 14 },
+    "COL": { "ppPct": 16.2, "ppRank": 15 },
+    "CBJ": { "ppPct": 15.1, "ppRank": 21 },
+    "DAL": { "ppPct": 16.7, "ppRank": 13 },
+    "DET": { "ppPct": 13.6, "ppRank": 27 },
+    "EDM": { "ppPct": 14.8, "ppRank": 22 },
+    "FLA": { "ppPct": 15.3, "ppRank": 19 },
+    "LA": { "ppPct": 13.1, "ppRank": 29 },
+    "MIN": { "ppPct": 13.4, "ppRank": 28 },
+    "MTL": { "ppPct": 16.2, "ppRank": 16 },
+    "NSH": { "ppPct": 13.1, "ppRank": 30 },
+    "NJ": { "ppPct": 11.6, "ppRank": 31 },
+    "NYI": { "ppPct": 15.8, "ppRank": 17 },
+    "NYR": { "ppPct": 13.8, "ppRank": 26 },
+    "OTT": { "ppPct": 15.1, "ppRank": 20 },
+    "PHI": { "ppPct": 16.2, "ppRank": 17 },
+    "PIT": { "ppPct": 14.0, "ppRank": 25 },
+    "SEA": { "ppPct": 13.6, "ppRank": 28 },
+    "SJ": { "ppPct": 16.6, "ppRank": 12 },
+    "STL": { "ppPct": 13.8, "ppRank": 27 },
+    "TB": { "ppPct": 17.9, "ppRank": 9 },
+    "TOR": { "ppPct": 17.5, "ppRank": 10 },
+    "UTA": { "ppPct": 14.8, "ppRank": 24 },
+    "VAN": { "ppPct": 14.2, "ppRank": 25 },
+    "VGK": { "ppPct": 15.4, "ppRank": 19 },
+    "WSH": { "ppPct": 16.6, "ppRank": 13 },
+    "WPG": { "ppPct": 16.7, "ppRank": 12 }
+  }
+}

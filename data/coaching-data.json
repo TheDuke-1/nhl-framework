@@ -1,0 +1,298 @@
+{
+  "_metadata": {
+    "source": "NHL.com, Hockey Reference",
+    "lastUpdated": "2026-01-21",
+    "description": "Head coach playoff performance data for V6.0 coaching factor",
+    "version": "6.0"
+  },
+  "coaches": {
+    "ANA": {
+      "name": "Greg Cronin",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 2
+    },
+    "BOS": {
+      "name": "Jim Montgomery",
+      "playoffWinPct": 0.53,
+      "playoffGames": 30,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 1,
+      "yearsAsHeadCoach": 6
+    },
+    "BUF": {
+      "name": "Lindy Ruff",
+      "playoffWinPct": 0.51,
+      "playoffGames": 112,
+      "cupWins": 0,
+      "cupFinals": 1,
+      "confFinals": 2,
+      "yearsAsHeadCoach": 20
+    },
+    "CAR": {
+      "name": "Rod Brind'Amour",
+      "playoffWinPct": 0.58,
+      "playoffGames": 72,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 3,
+      "yearsAsHeadCoach": 7
+    },
+    "CBJ": {
+      "name": "Dean Evason",
+      "playoffWinPct": 0.47,
+      "playoffGames": 32,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 5
+    },
+    "CGY": {
+      "name": "Ryan Huska",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 2
+    },
+    "CHI": {
+      "name": "Anders Sorensen",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 1
+    },
+    "COL": {
+      "name": "Jared Bednar",
+      "playoffWinPct": 0.61,
+      "playoffGames": 82,
+      "cupWins": 1,
+      "cupFinals": 1,
+      "confFinals": 3,
+      "yearsAsHeadCoach": 9
+    },
+    "DAL": {
+      "name": "Peter DeBoer",
+      "playoffWinPct": 0.53,
+      "playoffGames": 130,
+      "cupWins": 0,
+      "cupFinals": 2,
+      "confFinals": 4,
+      "yearsAsHeadCoach": 16
+    },
+    "DET": {
+      "name": "Derek Lalonde",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 3
+    },
+    "EDM": {
+      "name": "Kris Knoblauch",
+      "playoffWinPct": 0.65,
+      "playoffGames": 26,
+      "cupWins": 0,
+      "cupFinals": 1,
+      "confFinals": 1,
+      "yearsAsHeadCoach": 2
+    },
+    "FLA": {
+      "name": "Paul Maurice",
+      "playoffWinPct": 0.52,
+      "playoffGames": 98,
+      "cupWins": 1,
+      "cupFinals": 2,
+      "confFinals": 3,
+      "yearsAsHeadCoach": 26
+    },
+    "LA": {
+      "name": "Jim Hiller",
+      "playoffWinPct": 0.45,
+      "playoffGames": 11,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 2
+    },
+    "MIN": {
+      "name": "John Hynes",
+      "playoffWinPct": 0.42,
+      "playoffGames": 24,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 9
+    },
+    "MTL": {
+      "name": "Martin St. Louis",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 4
+    },
+    "NJ": {
+      "name": "Sheldon Keefe",
+      "playoffWinPct": 0.45,
+      "playoffGames": 33,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 6
+    },
+    "NSH": {
+      "name": "Andrew Brunette",
+      "playoffWinPct": 0.50,
+      "playoffGames": 10,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 3
+    },
+    "NYI": {
+      "name": "Patrick Roy",
+      "playoffWinPct": 0.46,
+      "playoffGames": 13,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 3
+    },
+    "NYR": {
+      "name": "Peter Laviolette",
+      "playoffWinPct": 0.54,
+      "playoffGames": 142,
+      "cupWins": 0,
+      "cupFinals": 2,
+      "confFinals": 4,
+      "yearsAsHeadCoach": 20
+    },
+    "OTT": {
+      "name": "Travis Green",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 6
+    },
+    "PHI": {
+      "name": "John Tortorella",
+      "playoffWinPct": 0.52,
+      "playoffGames": 98,
+      "cupWins": 1,
+      "cupFinals": 1,
+      "confFinals": 2,
+      "yearsAsHeadCoach": 22
+    },
+    "PIT": {
+      "name": "Mike Sullivan",
+      "playoffWinPct": 0.62,
+      "playoffGames": 96,
+      "cupWins": 2,
+      "cupFinals": 2,
+      "confFinals": 3,
+      "yearsAsHeadCoach": 10
+    },
+    "SEA": {
+      "name": "Dan Bylsma",
+      "playoffWinPct": 0.56,
+      "playoffGames": 68,
+      "cupWins": 1,
+      "cupFinals": 1,
+      "confFinals": 2,
+      "yearsAsHeadCoach": 8
+    },
+    "SJ": {
+      "name": "Ryan Warsofsky",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 2
+    },
+    "STL": {
+      "name": "Drew Bannister",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 1
+    },
+    "TB": {
+      "name": "Jon Cooper",
+      "playoffWinPct": 0.60,
+      "playoffGames": 148,
+      "cupWins": 2,
+      "cupFinals": 3,
+      "confFinals": 5,
+      "yearsAsHeadCoach": 13
+    },
+    "TOR": {
+      "name": "Craig Berube",
+      "playoffWinPct": 0.55,
+      "playoffGames": 49,
+      "cupWins": 1,
+      "cupFinals": 1,
+      "confFinals": 1,
+      "yearsAsHeadCoach": 6
+    },
+    "UTA": {
+      "name": "Andre Tourigny",
+      "playoffWinPct": 0.38,
+      "playoffGames": 8,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 4
+    },
+    "VAN": {
+      "name": "Rick Tocchet",
+      "playoffWinPct": 0.54,
+      "playoffGames": 24,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 1,
+      "yearsAsHeadCoach": 5
+    },
+    "VGK": {
+      "name": "Bruce Cassidy",
+      "playoffWinPct": 0.58,
+      "playoffGames": 72,
+      "cupWins": 1,
+      "cupFinals": 2,
+      "confFinals": 2,
+      "yearsAsHeadCoach": 10
+    },
+    "WPG": {
+      "name": "Scott Arniel",
+      "playoffWinPct": 0.35,
+      "playoffGames": 20,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 4
+    },
+    "WSH": {
+      "name": "Spencer Carbery",
+      "playoffWinPct": 0.00,
+      "playoffGames": 0,
+      "cupWins": 0,
+      "cupFinals": 0,
+      "confFinals": 0,
+      "yearsAsHeadCoach": 2
+    }
+  }
+}
