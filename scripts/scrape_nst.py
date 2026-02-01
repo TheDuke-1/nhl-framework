@@ -9,162 +9,23 @@ Rate limiting is implemented to be respectful of their servers.
 
 import json
 import time
-import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
 from datetime import datetime
 
-# Natural Stat Trick URLs
-NST_BASE_URL = "https://naturalstattrick.com/teamtable.php"
+from config import NST_TEAM_MAP as TEAM_NAME_MAP, NST_API, SEASON_ID
+from utils import fetch_html, safe_float
 
-# Rate limiting - be respectful of the site
-REQUEST_DELAY = 2  # seconds between requests
-
-# Team name to abbreviation mapping
-TEAM_NAME_MAP = {
-    "Anaheim Ducks": "ANA",
-    "Boston Bruins": "BOS",
-    "Buffalo Sabres": "BUF",
-    "Carolina Hurricanes": "CAR",
-    "Columbus Blue Jackets": "CBJ",
-    "Calgary Flames": "CGY",
-    "Chicago Blackhawks": "CHI",
-    "Colorado Avalanche": "COL",
-    "Dallas Stars": "DAL",
-    "Detroit Red Wings": "DET",
-    "Edmonton Oilers": "EDM",
-    "Florida Panthers": "FLA",
-    "Los Angeles Kings": "LA",
-    "Minnesota Wild": "MIN",
-    "Montréal Canadiens": "MTL",
-    "Montreal Canadiens": "MTL",
-    "New Jersey Devils": "NJ",
-    "Nashville Predators": "NSH",
-    "New York Islanders": "NYI",
-    "New York Rangers": "NYR",
-    "Ottawa Senators": "OTT",
-    "Philadelphia Flyers": "PHI",
-    "Pittsburgh Penguins": "PIT",
-    "Seattle Kraken": "SEA",
-    "San Jose Sharks": "SJ",
-    "St. Louis Blues": "STL",
-    "St Louis Blues": "STL",
-    "Tampa Bay Lightning": "TB",
-    "Toronto Maple Leafs": "TOR",
-    "Utah Hockey Club": "UTA",
-    "Vancouver Canucks": "VAN",
-    "Vegas Golden Knights": "VGK",
-    "Winnipeg Jets": "WPG",
-    "Washington Capitals": "WSH",
-}
-
-def fetch_nst_page(situation="5v5", report_type="team"):
-    """Fetch a page from Natural Stat Trick."""
-    params = {
-        "fromseason": "20252026",
-        "thruseason": "20252026",
-        "stype": "2",  # Regular season
-        "sit": situation,
-        "score": "all",
-        "rate": "n",
-        "team": "all",
-        "loc": "B",
-        "gpf": "410",
-        "fd": "",
-        "td": ""
-    }
-
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
-    }
-
-    print(f"Fetching NST data for {situation}...")
-    response = requests.get(NST_BASE_URL, params=params, headers=headers, timeout=30)
-    response.raise_for_status()
-
-    return response.text
-
-def parse_nst_table(html_content):
-    """Parse the NST team table HTML."""
-    soup = BeautifulSoup(html_content, 'lxml')
-
-    # Find the main data table
-    table = soup.find('table', {'id': 'teams'})
-    if not table:
-        # Try alternate table ID
-        table = soup.find('table', class_='sortable')
-
-    if not table:
-        print("Warning: Could not find team table")
-        return {}
-
-    teams = {}
-
-    # Parse table rows
-    tbody = table.find('tbody')
-    if not tbody:
-        rows = table.find_all('tr')[1:]  # Skip header
-    else:
-        rows = tbody.find_all('tr')
-
-    for row in rows:
-        cells = row.find_all('td')
-        if len(cells) < 5:
-            continue
-
-        # First cell usually contains team name
-        team_cell = cells[0]
-        team_name = team_cell.get_text(strip=True)
-
-        # Map to abbreviation
-        abbrev = TEAM_NAME_MAP.get(team_name)
-        if not abbrev:
-            # Try partial matching
-            for name, ab in TEAM_NAME_MAP.items():
-                if name.lower() in team_name.lower() or team_name.lower() in name.lower():
-                    abbrev = ab
-                    break
-
-        if not abbrev:
-            continue
-
-        # Parse cell values - column positions may vary
-        try:
-            teams[abbrev] = {
-                "team": abbrev,
-                "gp": safe_int(cells[1].get_text(strip=True)) if len(cells) > 1 else 0,
-                "toi": cells[2].get_text(strip=True) if len(cells) > 2 else "0",
-            }
-
-            # Look for specific stats in remaining cells
-            # NST table structure varies, so we parse by finding column headers
-            for i, cell in enumerate(cells):
-                text = cell.get_text(strip=True)
-
-                # CF% is usually percentage around 45-55
-                if i >= 3 and is_percentage(text, 40, 60):
-                    if "cfPct" not in teams[abbrev]:
-                        teams[abbrev]["cfPct"] = safe_float(text)
-
-        except (ValueError, IndexError) as e:
-            print(f"Warning: Error parsing row for {team_name}: {e}")
-            continue
-
-    return teams
+# Natural Stat Trick URLs (NOTE: www. prefix is required!)
+NST_BASE_URL = NST_API["base_url"]
 
 def fetch_and_parse_nst():
     """Fetch all NST data with proper column parsing."""
     print("Fetching Natural Stat Trick data...")
 
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
-    }
-
-    # Fetch main team table
-    url = "https://naturalstattrick.com/teamtable.php"
     params = {
-        "fromseason": "20252026",
-        "thruseason": "20252026",
+        "fromseason": SEASON_ID,
+        "thruseason": SEASON_ID,
         "stype": "2",
         "sit": "5v5",
         "score": "all",
@@ -174,12 +35,8 @@ def fetch_and_parse_nst():
         "gpf": "410"
     }
 
-    response = requests.get(url, params=params, headers=headers, timeout=30)
-    if response.status_code != 200:
-        print(f"Warning: NST returned status {response.status_code}")
-        return {}
-
-    soup = BeautifulSoup(response.text, 'lxml')
+    html = fetch_html(NST_BASE_URL, params=params)
+    soup = BeautifulSoup(html, 'lxml')
 
     # Find the teams table
     table = soup.find('table', {'id': 'teams'})
@@ -221,8 +78,10 @@ def fetch_and_parse_nst():
         if len(cells) < 5:
             continue
 
-        # Get team name
-        team_name = cells[0].get_text(strip=True)
+        # Get team name — NST has a blank first column (row number),
+        # so the team name is at the column mapped to "TEAM" header
+        team_idx = col_map.get("TEAM", col_map.get("Team", 1))
+        team_name = cells[team_idx].get_text(strip=True) if team_idx < len(cells) else ""
         abbrev = TEAM_NAME_MAP.get(team_name)
 
         if not abbrev:
@@ -241,6 +100,17 @@ def fetch_and_parse_nst():
                 return safe_float(cells[idx].get_text(strip=True))
             return default
 
+        # Get xGF/xGA — NST provides these at 5v5
+        xgf_val = get_val("XGF", 0) or get_val("xGF", 0)
+        xga_val = get_val("XGA", 0) or get_val("xGA", 0)
+
+        # Get goals for/against at 5v5 (for GSAx calculation)
+        gf_5v5 = get_val("GF", 0)
+        ga_5v5 = get_val("GA", 0)
+
+        # Calculate GSAx = xGA - actual GA (positive = saved more than expected)
+        gsax = round(xga_val - ga_5v5, 2) if xga_val > 0 and ga_5v5 > 0 else 0.0
+
         teams[abbrev] = {
             "team": abbrev,
             "gp": int(get_val("GP", 0)),
@@ -253,33 +123,28 @@ def fetch_and_parse_nst():
             "hdcf": get_val("HDCF", 0),
             "hdca": get_val("HDCA", 0),
             "hdcfPct": get_val("HDCF%", 50),
-            "xgf": get_val("XGF", 0) or get_val("xGF", 0),
-            "xga": get_val("XGA", 0) or get_val("xGA", 0),
+            "xgf": xgf_val,
+            "xga": xga_val,
             "xgfPct": get_val("XGF%", 50) or get_val("xGF%", 50),
+            "gsax": gsax,
             "scf": get_val("SCF", 0),
             "sca": get_val("SCA", 0),
             "scfPct": get_val("SCF%", 50),
             "shPct": get_val("SH%", 8),
-            "svPct": get_val("SV%", 0.910) * 100 if get_val("SV%", 0) < 1 else get_val("SV%", 91),
+            "svPct": _scale_sv_pct(get_val("SV%", 0)),
             "pdo": get_val("PDO", 100),
         }
 
     print(f"Parsed {len(teams)} teams from NST")
     return teams
 
-def safe_float(val):
-    """Safely convert to float."""
-    try:
-        return float(str(val).replace('%', '').replace(',', ''))
-    except (ValueError, TypeError):
-        return 0.0
-
-def safe_int(val):
-    """Safely convert to int."""
-    try:
-        return int(float(str(val).replace(',', '')))
-    except (ValueError, TypeError):
+def _scale_sv_pct(raw):
+    """Convert SV% to percentage scale (e.g., 91.5), handling both ratio and pct formats."""
+    if raw == 0:
         return 0
+    if raw < 1:  # Ratio format like 0.915
+        return round(raw * 100, 2)
+    return round(raw, 2)  # Already percentage like 91.5
 
 def is_percentage(text, min_val, max_val):
     """Check if text looks like a percentage in range."""
