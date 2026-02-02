@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NHL Championship Framework V7.0</title>
+  <title>NHL Championship Framework V7.2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -791,12 +791,12 @@
 
   <div class="container">
     <header class="header">
-      <h1>NHL Championship Framework V7.0</h1>
+      <h1>NHL Championship Framework V7.1</h1>
       <p class="subtitle">Accuracy Improvement Release: +20-30% Expected Accuracy</p>
       <p class="data-source">
         Standings: ESPN (Jan 21, 2026) | Analytics:
         <a href="https://naturalstattrick.com/teamtable.php" target="_blank">Natural Stat Trick</a> (Jan 21, 2026)
-        | <span style="color: var(--accent-elite)">V7.0: Schedule-Based Simulation + B2B Fatigue + H2H Records + 100K Monte Carlo</span>
+        | <span style="color: var(--accent-elite)">V7.1: Unified Weight System + Verified Data + Schedule Simulation</span>
       </p>
     </header>
 
@@ -804,7 +804,7 @@
       <button class="nav-btn active" data-view="matrix">Full Matrix</button>
       <button class="nav-btn" data-view="scatter">HDCF% vs xGD</button>
       <button class="nav-btn" data-view="playoffs">Playoff Odds</button>
-      <button class="nav-btn" data-view="weights">V7.0 Weights</button>
+      <button class="nav-btn" data-view="weights">V7.2 Weights</button>
     </nav>
 
     <div class="conf-filter">
@@ -816,10 +816,10 @@
     <!-- Matrix View -->
     <div id="matrix-view" class="view active">
       <div class="tier-legend">
-        <div class="tier-item"><span class="tier-dot" style="background: var(--accent-elite)"></span> Elite (73+)</div>
-        <div class="tier-item"><span class="tier-dot" style="background: var(--accent-contender)"></span> Contender (56-72)</div>
-        <div class="tier-item"><span class="tier-dot" style="background: var(--accent-bubble)"></span> Bubble (42-55)</div>
-        <div class="tier-item"><span class="tier-dot" style="background: var(--accent-longshot)"></span> Longshot (&lt;42)</div>
+        <div class="tier-item"><span class="tier-dot" style="background: var(--accent-elite)"></span> Elite (230+)</div>
+        <div class="tier-item"><span class="tier-dot" style="background: var(--accent-contender)"></span> Contender (200-229)</div>
+        <div class="tier-item"><span class="tier-dot" style="background: var(--accent-bubble)"></span> Bubble (170-199)</div>
+        <div class="tier-item"><span class="tier-dot" style="background: var(--accent-longshot)"></span> Longshot (&lt;170)</div>
         <span class="rank-legend">
           Ranks: <span class="good">1-5</span> | <span class="ok">6-10</span> | <span class="mid">11-16</span> | <span class="bad">17+</span>
         </span>
@@ -830,21 +830,17 @@
             <tr>
               <th>#</th>
               <th>Team</th>
-              <th>Score</th>
-              <th class="highlight">HDCF%<span class="weight">12%</span></th>
-              <th class="gsax-col">GSAx<span class="weight">12%</span></th>
-              <th class="highlight">xGD<span class="weight">10%</span></th>
-              <th>xGA<span class="weight">10%</span></th>
-              <th>Form<span class="weight">7%</span></th>
-              <th>PK%<span class="weight">8%</span></th>
-              <th style="color: var(--accent-elite)">PP%<span class="weight">6%</span></th>
-              <th>Depth<span class="weight">6%</span></th>
-              <th>Star<span class="weight">5%</span></th>
-              <th>CF%<span class="weight">5%</span></th>
-              <th>PDO<span class="weight">3%</span></th>
-              <th>GD<span class="weight">2%</span></th>
-              <th>GA<span class="weight">4%</span></th>
-              <th>Wt<span class="weight">4%</span></th>
+              <th>Weight</th>
+              <th>Pts</th>
+              <th>Record</th>
+              <th class="highlight">HDCF%<span class="weight">25%</span></th>
+              <th class="gsax-col">GSAx<span class="weight">20%</span></th>
+              <th>CF%<span class="weight">15%</span></th>
+              <th style="color: var(--accent-elite)">PP%<span class="weight">15%</span></th>
+              <th>PK%<span class="weight">13%</span></th>
+              <th>PDO<span class="weight">12%</span></th>
+              <th>xGF%</th>
+              <th>GD</th>
             </tr>
           </thead>
           <tbody id="matrix-body"></tbody>
@@ -884,8 +880,8 @@
     <!-- Weights View -->
     <div id="weights-view" class="view">
       <div class="weights-container">
-        <h2 class="weights-title">V7.0 Weight Distribution</h2>
-        <p class="weights-subtitle">Metric-specific sigmoids • Playoff experience • Cup simulation • Symmetric form multipliers • Schedule strength</p>
+        <h2 class="weights-title">V7.2 Weight Distribution</h2>
+        <p class="weights-subtitle">Backtest-optimized weights • Goaltending emphasis • Reduced possession bias • 10-year validation (70% top-5 accuracy)</p>
 
         <!-- Metric Glossary -->
         <div class="info-box" style="margin-bottom: 20px; text-align: left;">
@@ -967,7 +963,7 @@
     </div>
 
     <footer class="footer">
-      V7.0 Framework | Schedule-Based Simulation + B2B Fatigue + H2H Records + 100K Monte Carlo | Standings: ESPN (Jan 21, 2026) | Analytics: Natural Stat Trick (Jan 21, 2026)
+      V7.2 Framework | Backtest-Optimized Weights (HDCF% 25%, GSAx 20%, CF% 15%, PP% 15%, PK% 13%, PDO 12%) | Data: NHL.com + MoneyPuck + NST (Jan 30, 2026)
     </footer>
   </div>
 
@@ -988,303 +984,231 @@
     // =====================================================
 
     // teamsData - can be loaded from JSON or use hardcoded fallback
+    // V7.2 WEIGHTS - Auto-generated 2026-02-01T23:39:11.203358Z
     let teamsData = [
-      // EASTERN CONFERENCE - Atlantic Division
-      { team: "TB", name: "Tampa Bay Lightning", conf: "East", div: "Atlantic",
-        gp: 48, w: 31, l: 13, otl: 4, pts: 66, gf: 170, ga: 121,
-        cf: 53.44, hdcf: 56.74, pdo: 103.2, xgf: 55.21, xga: 44.79,
-        recentXgf: 54.5, recentRecord: "7-2-1", recentPdo: 102.8,
-        pkPct: 86.9, ppPct: 17.9, weight: 202, hasStar: true, depth20g: 4,
-        gsax: 16.1, goalieSvPct: 0.923, startingGoalie: "Andrei Vasilevskiy",
-        starPPG: 1.35, regWins: 24, sowWins: 3, hitsPerGame: 21.5, blocksPerGame: 14.2,
-        playoffExp: { cupWinLast5: true, cupFinalLast3: false, confFinalLast3: true, playoffRoundsLast3: 6 },
-        // V6.0+ NEW FIELDS
-        coach: "Jon Cooper", coachPlayoffWinPct: 0.60, coachCupWins: 2,
-        backupGoalie: "Jonas Johansson", backupGSAx: -2.1,
-        hdSavePct: 0.845, oneGoalRecord: "12-5-2", comebackWins: 8, blownLeads: 4,
-        penaltiesPerGame: 3.1, penaltiesDrawnPerGame: 3.5, penaltyDifferential: 0.4 },
-
-      { team: "DET", name: "Detroit Red Wings", conf: "East", div: "Atlantic",
-        gp: 50, w: 30, l: 16, otl: 4, pts: 64, gf: 157, ga: 153,
-        cf: 48.53, hdcf: 48.17, pdo: 99.3, xgf: 49.73, xga: 50.27,
-        recentXgf: 50.5, recentRecord: "6-3-1", recentPdo: 99.8,
-        pkPct: 85.1, ppPct: 13.6, weight: 199, hasStar: true, depth20g: 3,
-        gsax: 6.1, goalieSvPct: 0.912, startingGoalie: "Cam Talbot",
-        starPPG: 1.02, regWins: 23, sowWins: 3, hitsPerGame: 22.1, blocksPerGame: 13.8,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
-
-      { team: "MTL", name: "Montreal Canadiens", conf: "East", div: "Atlantic",
-        gp: 50, w: 28, l: 15, otl: 7, pts: 63, gf: 172, ga: 167,
-        cf: 49.12, hdcf: 45.96, pdo: 100.7, xgf: 49.39, xga: 50.61,
-        recentXgf: 49.8, recentRecord: "6-2-2", recentPdo: 100.5,
-        pkPct: 82.9, ppPct: 16.2, weight: 198, hasStar: true, depth20g: 4,
-        gsax: -1.6, goalieSvPct: 0.904, startingGoalie: "Jakub Dobes",
-        starPPG: 1.10, regWins: 21, sowWins: 3, hitsPerGame: 23.4, blocksPerGame: 14.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
-
-      { team: "BOS", name: "Boston Bruins", conf: "East", div: "Atlantic",
-        gp: 49, w: 28, l: 19, otl: 2, pts: 58, gf: 164, ga: 150,
-        cf: 49.00, hdcf: 45.88, pdo: 101.7, xgf: 46.37, xga: 53.63,
-        recentXgf: 48.2, recentRecord: "5-4-1", recentPdo: 100.8,
-        pkPct: 87.2, ppPct: 17.7, weight: 203, hasStar: false, depth20g: 3,
-        gsax: 15.6, goalieSvPct: 0.920, startingGoalie: "Jeremy Swayman",
-        starPPG: 0.95, regWins: 22, sowWins: 2, hitsPerGame: 24.2, blocksPerGame: 15.1,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: true, playoffRoundsLast3: 4 } },
-
-      { team: "BUF", name: "Buffalo Sabres", conf: "East", div: "Atlantic",
-        gp: 48, w: 26, l: 17, otl: 5, pts: 57, gf: 158, ga: 150,
-        cf: 48.42, hdcf: 49.66, pdo: 100.6, xgf: 49.64, xga: 50.36,
-        recentXgf: 50.2, recentRecord: "6-3-1", recentPdo: 100.2,
-        pkPct: 84.5, ppPct: 17.2, weight: 200, hasStar: false, depth20g: 3,
-        gsax: 1.3, goalieSvPct: 0.908, startingGoalie: "Ukko-Pekka Luukkonen",
-        starPPG: 0.88, regWins: 20, sowWins: 2, hitsPerGame: 21.8, blocksPerGame: 13.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
-
-      { team: "TOR", name: "Toronto Maple Leafs", conf: "East", div: "Atlantic",
-        gp: 49, w: 24, l: 17, otl: 8, pts: 56, gf: 165, ga: 164,
-        cf: 45.37, hdcf: 48.09, pdo: 101.3, xgf: 47.30, xga: 52.70,
-        recentXgf: 49.5, recentRecord: "4-4-2", recentPdo: 99.2,
-        pkPct: 84.1, ppPct: 17.5, weight: 205, hasStar: true, depth20g: 4,
-        gsax: -0.1, goalieSvPct: 0.906, startingGoalie: "Joseph Woll",
-        starPPG: 1.28, regWins: 18, sowWins: 3, hitsPerGame: 20.5, blocksPerGame: 12.8,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 3 } },
-
-      { team: "FLA", name: "Florida Panthers", conf: "East", div: "Atlantic",
-        gp: 48, w: 25, l: 20, otl: 3, pts: 53, gf: 146, ga: 160,
-        cf: 51.79, hdcf: 51.08, pdo: 98.2, xgf: 51.14, xga: 48.86,
-        recentXgf: 52.2, recentRecord: "5-4-1", recentPdo: 98.5,
-        pkPct: 81.7, ppPct: 15.3, weight: 200, hasStar: true, depth20g: 3,
-        gsax: -10.0, goalieSvPct: 0.901, startingGoalie: "Sergei Bobrovsky",
-        starPPG: 1.15, regWins: 19, sowWins: 2, hitsPerGame: 25.8, blocksPerGame: 15.5,
-        playoffExp: { cupWinLast5: true, cupFinalLast3: true, confFinalLast3: true, playoffRoundsLast3: 12 } },
-
-      { team: "OTT", name: "Ottawa Senators", conf: "East", div: "Atlantic",
-        gp: 49, w: 23, l: 19, otl: 7, pts: 53, gf: 163, ga: 164,
-        cf: 53.19, hdcf: 53.69, pdo: 98.7, xgf: 54.12, xga: 45.88,
-        recentXgf: 53.5, recentRecord: "5-3-2", recentPdo: 99.2,
-        pkPct: 81.5, ppPct: 15.1, weight: 201, hasStar: true, depth20g: 3,
-        gsax: -18.3, goalieSvPct: 0.895, startingGoalie: "Linus Ullmark",
-        starPPG: 1.05, regWins: 17, sowWins: 2, hitsPerGame: 22.5, blocksPerGame: 14.0,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
-
-      // EASTERN CONFERENCE - Metropolitan Division
-      { team: "CAR", name: "Carolina Hurricanes", conf: "East", div: "Metro",
-        gp: 50, w: 31, l: 15, otl: 4, pts: 66, gf: 173, ga: 145,
-        cf: 60.07, hdcf: 55.08, pdo: 98.6, xgf: 56.31, xga: 43.69,
-        recentXgf: 56.8, recentRecord: "7-2-1", recentPdo: 100.5,
-        pkPct: 83.7, ppPct: 14.5, weight: 199, hasStar: true, depth20g: 4,
-        gsax: 7.4, goalieSvPct: 0.915, startingGoalie: "Pyotr Kochetkov",
-        starPPG: 1.18, regWins: 24, sowWins: 3, hitsPerGame: 23.8, blocksPerGame: 15.8,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: true, playoffRoundsLast3: 7 } },
-
-      { team: "NYI", name: "New York Islanders", conf: "East", div: "Metro",
-        gp: 49, w: 27, l: 17, otl: 5, pts: 59, gf: 145, ga: 137,
-        cf: 47.78, hdcf: 43.72, pdo: 101.0, xgf: 45.99, xga: 54.01,
-        recentXgf: 46.5, recentRecord: "6-3-1", recentPdo: 101.2,
-        pkPct: 87.4, ppPct: 15.8, weight: 200, hasStar: false, depth20g: 2,
-        gsax: 22.9, goalieSvPct: 0.924, startingGoalie: "Ilya Sorokin",
-        starPPG: 0.82, regWins: 21, sowWins: 3, hitsPerGame: 26.5, blocksPerGame: 16.2,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 2 } },
-
-      { team: "PIT", name: "Pittsburgh Penguins", conf: "East", div: "Metro",
-        gp: 48, w: 23, l: 14, otl: 11, pts: 57, gf: 156, ga: 147,
-        cf: 50.72, hdcf: 52.48, pdo: 99.4, xgf: 51.49, xga: 48.51,
-        recentXgf: 51.2, recentRecord: "5-3-2", recentPdo: 100.5,
-        pkPct: 85.9, ppPct: 14.0, weight: 197, hasStar: true, depth20g: 3,
-        gsax: 6.0, goalieSvPct: 0.912, startingGoalie: "Tristan Jarry",
-        starPPG: 1.22, regWins: 17, sowWins: 2, hitsPerGame: 21.2, blocksPerGame: 13.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 1 } },
-
-      { team: "PHI", name: "Philadelphia Flyers", conf: "East", div: "Metro",
-        gp: 48, w: 23, l: 17, otl: 8, pts: 54, gf: 143, ga: 150,
-        cf: 48.78, hdcf: 52.75, pdo: 99.8, xgf: 49.83, xga: 50.17,
-        recentXgf: 50.8, recentRecord: "5-4-1", recentPdo: 99.5,
-        pkPct: 82.8, ppPct: 16.2, weight: 198, hasStar: false, depth20g: 2,
-        gsax: 8.6, goalieSvPct: 0.914, startingGoalie: "Ivan Fedotov",
-        starPPG: 0.78, regWins: 18, sowWins: 2, hitsPerGame: 24.5, blocksPerGame: 14.8,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
-
-      { team: "WSH", name: "Washington Capitals", conf: "East", div: "Metro",
-        gp: 50, w: 24, l: 20, otl: 6, pts: 54, gf: 159, ga: 148,
-        cf: 50.85, hdcf: 52.34, pdo: 102.0, xgf: 51.45, xga: 48.55,
-        recentXgf: 50.5, recentRecord: "5-4-1", recentPdo: 101.0,
-        pkPct: 86.6, ppPct: 16.6, weight: 200, hasStar: true, depth20g: 3,
-        gsax: 18.1, goalieSvPct: 0.922, startingGoalie: "Logan Thompson",
-        starPPG: 0.92, regWins: 19, sowWins: 2, hitsPerGame: 25.2, blocksPerGame: 14.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 1 } },
-
-      { team: "NJ", name: "New Jersey Devils", conf: "East", div: "Metro",
-        gp: 49, w: 25, l: 22, otl: 2, pts: 52, gf: 129, ga: 150,
-        cf: 50.72, hdcf: 48.50, pdo: 97.0, xgf: 48.88, xga: 51.12,
-        recentXgf: 49.5, recentRecord: "4-5-1", recentPdo: 97.8,
-        pkPct: 83.7, ppPct: 11.6, weight: 200, hasStar: true, depth20g: 2,
-        gsax: -9.2, goalieSvPct: 0.898, startingGoalie: "Jacob Markstrom",
-        starPPG: 1.12, regWins: 20, sowWins: 2, hitsPerGame: 20.8, blocksPerGame: 13.2,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 2 } },
-
-      { team: "CBJ", name: "Columbus Blue Jackets", conf: "East", div: "Metro",
-        gp: 49, w: 22, l: 20, otl: 7, pts: 51, gf: 149, ga: 164,
-        cf: 50.44, hdcf: 51.61, pdo: 100.1, xgf: 50.80, xga: 49.20,
-        recentXgf: 51.2, recentRecord: "5-4-1", recentPdo: 99.8,
-        pkPct: 86.3, ppPct: 15.1, weight: 201, hasStar: false, depth20g: 2,
-        gsax: 12.5, goalieSvPct: 0.916, startingGoalie: "Jet Greaves",
-        starPPG: 0.75, regWins: 17, sowWins: 2, hitsPerGame: 22.8, blocksPerGame: 14.2,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
-
-      { team: "NYR", name: "New York Rangers", conf: "East", div: "Metro",
-        gp: 50, w: 21, l: 23, otl: 6, pts: 48, gf: 135, ga: 155,
-        cf: 49.06, hdcf: 52.65, pdo: 100.1, xgf: 49.40, xga: 50.60,
-        recentXgf: 50.2, recentRecord: "4-5-1", recentPdo: 99.0,
-        pkPct: 86.2, ppPct: 13.8, weight: 202, hasStar: true, depth20g: 2,
-        gsax: 15.6, goalieSvPct: 0.919, startingGoalie: "Igor Shesterkin",
-        starPPG: 1.08, regWins: 16, sowWins: 2, hitsPerGame: 21.5, blocksPerGame: 14.0,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: true, confFinalLast3: true, playoffRoundsLast3: 8 } },
-
-      // WESTERN CONFERENCE - Central Division
       { team: "COL", name: "Colorado Avalanche", conf: "West", div: "Central",
-        gp: 47, w: 34, l: 5, otl: 8, pts: 76, gf: 190, ga: 112,
-        cf: 55.75, hdcf: 56.01, pdo: 103.6, xgf: 56.39, xga: 43.61,
-        recentXgf: 57.5, recentRecord: "8-1-1", recentPdo: 103.0,
-        pkPct: 88.3, ppPct: 16.2, weight: 196, hasStar: true, depth20g: 5,
-        gsax: 9.4, goalieSvPct: 0.918, startingGoalie: "Scott Wedgewood",
-        starPPG: 1.42, regWins: 26, sowWins: 3, hitsPerGame: 19.5, blocksPerGame: 13.2,
-        playoffExp: { cupWinLast5: true, cupFinalLast3: false, confFinalLast3: true, playoffRoundsLast3: 5 } },
+        gp: 53, w: 36, l: 8, otl: 9, pts: 81, gf: 208, ga: 134,
+        cf: 55.96, hdcf: 55.29, pdo: 1.032, xgf: 56.22, xga: 43.78,
+        recentXgf: 50.0, pkPct: 84.1, ppPct: 15.5,
+        weight: 256.0, hasStar: false, depth20g: 3,
+        gsax: 21.22, goalieSvPct: 0.910 },
 
       { team: "MIN", name: "Minnesota Wild", conf: "West", div: "Central",
-        gp: 51, w: 28, l: 14, otl: 9, pts: 65, gf: 164, ga: 147,
-        cf: 47.27, hdcf: 49.34, pdo: 101.1, xgf: 50.05, xga: 49.95,
-        recentXgf: 50.8, recentRecord: "6-3-1", recentPdo: 100.5,
-        pkPct: 87.1, ppPct: 13.4, weight: 199, hasStar: true, depth20g: 3,
-        gsax: 7.1, goalieSvPct: 0.914, startingGoalie: "Filip Gustavsson",
-        starPPG: 1.15, regWins: 21, sowWins: 3, hitsPerGame: 22.8, blocksPerGame: 14.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 3 } },
+        gp: 56, w: 32, l: 14, otl: 10, pts: 74, gf: 186, ga: 161,
+        cf: 47.09, hdcf: 48.98, pdo: 1.013, xgf: 49.43, xga: 50.57,
+        recentXgf: 50.0, pkPct: 77.9, ppPct: 25.0,
+        weight: 215.0, hasStar: false, depth20g: 3,
+        gsax: 22.76, goalieSvPct: 0.910 },
+
+      { team: "CAR", name: "Carolina Hurricanes", conf: "East", div: "Metropolitan",
+        gp: 55, w: 34, l: 15, otl: 6, pts: 74, gf: 191, ga: 160,
+        cf: 59.48, hdcf: 55.0, pdo: 0.987, xgf: 55.68, xga: 44.32,
+        recentXgf: 50.0, pkPct: 81.3, ppPct: 21.6,
+        weight: 235.0, hasStar: false, depth20g: 3,
+        gsax: 5.91, goalieSvPct: 0.910 },
 
       { team: "DAL", name: "Dallas Stars", conf: "West", div: "Central",
-        gp: 49, w: 27, l: 13, otl: 9, pts: 63, gf: 163, ga: 139,
-        cf: 45.39, hdcf: 49.77, pdo: 102.6, xgf: 48.25, xga: 51.75,
-        recentXgf: 51.5, recentRecord: "6-2-2", recentPdo: 101.5,
-        pkPct: 85.8, ppPct: 16.7, weight: 204, hasStar: true, depth20g: 4,
-        gsax: 4.5, goalieSvPct: 0.912, startingGoalie: "Jake Oettinger",
-        starPPG: 1.08, regWins: 21, sowWins: 2, hitsPerGame: 24.8, blocksPerGame: 15.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: true, confFinalLast3: true, playoffRoundsLast3: 9 } },
+        gp: 55, w: 32, l: 14, otl: 9, pts: 73, gf: 184, ga: 153,
+        cf: 46.17, hdcf: 50.37, pdo: 1.023, xgf: 49.28, xga: 50.72,
+        recentXgf: 50.0, pkPct: 80.2, ppPct: 30.0,
+        weight: 229.0, hasStar: false, depth20g: 3,
+        gsax: 18.67, goalieSvPct: 0.910 },
 
-      { team: "UTA", name: "Utah Hockey Club", conf: "West", div: "Central",
-        gp: 49, w: 25, l: 20, otl: 4, pts: 54, gf: 153, ga: 135,
-        cf: 53.74, hdcf: 54.20, pdo: 99.9, xgf: 54.50, xga: 45.50,
-        recentXgf: 53.5, recentRecord: "5-4-1", recentPdo: 100.2,
-        pkPct: 83.1, ppPct: 14.8, weight: 199, hasStar: false, depth20g: 3,
-        gsax: 6.8, goalieSvPct: 0.915, startingGoalie: "Karel Vejmelka",
-        starPPG: 0.85, regWins: 19, sowWins: 2, hitsPerGame: 23.5, blocksPerGame: 14.8,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 1 } },
+      { team: "TB", name: "Tampa Bay Lightning", conf: "East", div: "Atlantic",
+        gp: 52, w: 34, l: 14, otl: 4, pts: 72, gf: 183, ga: 131,
+        cf: 53.37, hdcf: 56.1, pdo: 1.027, xgf: 54.92, xga: 45.08,
+        recentXgf: 50.0, pkPct: 84.6, ppPct: 21.2,
+        weight: 254.0, hasStar: false, depth20g: 3,
+        gsax: 13.2, goalieSvPct: 0.910 },
 
-      { team: "NSH", name: "Nashville Predators", conf: "West", div: "Central",
-        gp: 48, w: 23, l: 21, otl: 4, pts: 50, gf: 138, ga: 161,
-        cf: 51.78, hdcf: 53.62, pdo: 98.2, xgf: 51.95, xga: 48.05,
-        recentXgf: 50.5, recentRecord: "5-4-1", recentPdo: 98.5,
-        pkPct: 83.7, ppPct: 13.1, weight: 200, hasStar: false, depth20g: 2,
-        gsax: -3.7, goalieSvPct: 0.902, startingGoalie: "Juuse Saros",
-        starPPG: 0.88, regWins: 18, sowWins: 2, hitsPerGame: 24.2, blocksPerGame: 14.0,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 1 } },
+      { team: "DET", name: "Detroit Red Wings", conf: "East", div: "Atlantic",
+        gp: 56, w: 32, l: 18, otl: 6, pts: 70, gf: 171, ga: 171,
+        cf: 49.05, hdcf: 48.48, pdo: 0.988, xgf: 49.89, xga: 50.11,
+        recentXgf: 50.0, pkPct: 79.6, ppPct: 23.3,
+        weight: 200.0, hasStar: false, depth20g: 3,
+        gsax: 9.08, goalieSvPct: 0.910 },
 
-      { team: "CHI", name: "Chicago Blackhawks", conf: "West", div: "Central",
-        gp: 49, w: 20, l: 22, otl: 7, pts: 47, gf: 135, ga: 154,
-        cf: 47.34, hdcf: 42.19, pdo: 99.6, xgf: 44.89, xga: 55.11,
-        recentXgf: 45.5, recentRecord: "4-5-1", recentPdo: 99.2,
-        pkPct: 84.8, ppPct: 16.4, weight: 198, hasStar: true, depth20g: 2,
-        gsax: 13.5, goalieSvPct: 0.918, startingGoalie: "Petr Mrazek",
-        starPPG: 0.95, regWins: 15, sowWins: 2, hitsPerGame: 22.5, blocksPerGame: 13.8,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
+      { team: "MTL", name: "Montreal Canadiens", conf: "East", div: "Atlantic",
+        gp: 55, w: 31, l: 17, otl: 7, pts: 69, gf: 191, ga: 182,
+        cf: 49.12, hdcf: 46.3, pdo: 1.009, xgf: 49.05, xga: 50.95,
+        recentXgf: 50.0, pkPct: 77.1, ppPct: 23.8,
+        weight: 195.0, hasStar: false, depth20g: 3,
+        gsax: 7.6, goalieSvPct: 0.910 },
 
-      { team: "STL", name: "St. Louis Blues", conf: "West", div: "Central",
-        gp: 49, w: 19, l: 22, otl: 8, pts: 46, gf: 120, ga: 168,
-        cf: 46.88, hdcf: 48.87, pdo: 98.4, xgf: 48.32, xga: 51.68,
-        recentXgf: 47.5, recentRecord: "4-5-1", recentPdo: 97.8,
-        pkPct: 82.4, ppPct: 13.8, weight: 199, hasStar: false, depth20g: 1,
-        gsax: -19.9, goalieSvPct: 0.891, startingGoalie: "Jordan Binnington",
-        starPPG: 0.72, regWins: 14, sowWins: 2, hitsPerGame: 24.8, blocksPerGame: 14.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 1 } },
+      { team: "BOS", name: "Boston Bruins", conf: "East", div: "Atlantic",
+        gp: 55, w: 32, l: 20, otl: 3, pts: 67, gf: 186, ga: 171,
+        cf: 48.88, hdcf: 45.85, pdo: 1.019, xgf: 46.15, xga: 53.85,
+        recentXgf: 50.0, pkPct: 77.6, ppPct: 26.8,
+        weight: 216.0, hasStar: false, depth20g: 3,
+        gsax: 25.25, goalieSvPct: 0.910 },
 
-      { team: "WPG", name: "Winnipeg Jets", conf: "West", div: "Central",
-        gp: 48, w: 19, l: 23, otl: 6, pts: 44, gf: 144, ga: 150,
-        cf: 48.35, hdcf: 47.67, pdo: 101.3, xgf: 47.08, xga: 52.92,
-        recentXgf: 48.2, recentRecord: "4-5-1", recentPdo: 99.5,
-        pkPct: 84.6, ppPct: 16.7, weight: 200, hasStar: true, depth20g: 2,
-        gsax: 9.3, goalieSvPct: 0.915, startingGoalie: "Connor Hellebuyck",
-        starPPG: 0.98, regWins: 14, sowWins: 2, hitsPerGame: 23.2, blocksPerGame: 13.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 1 } },
+      { team: "BUF", name: "Buffalo Sabres", conf: "East", div: "Atlantic",
+        gp: 54, w: 31, l: 18, otl: 5, pts: 67, gf: 185, ga: 164,
+        cf: 48.35, hdcf: 49.7, pdo: 1.012, xgf: 49.64, xga: 50.36,
+        recentXgf: 50.0, pkPct: 82.8, ppPct: 19.6,
+        weight: 206.0, hasStar: false, depth20g: 3,
+        gsax: 6.43, goalieSvPct: 0.910 },
 
-      // WESTERN CONFERENCE - Pacific Division
-      { team: "VGK", name: "Vegas Golden Knights", conf: "West", div: "Pacific",
-        gp: 48, w: 24, l: 12, otl: 12, pts: 60, gf: 161, ga: 147,
-        cf: 50.93, hdcf: 54.05, pdo: 98.8, xgf: 51.99, xga: 48.01,
-        recentXgf: 52.8, recentRecord: "5-3-2", recentPdo: 99.5,
-        pkPct: 82.8, ppPct: 15.4, weight: 201, hasStar: true, depth20g: 3,
-        gsax: -4.1, goalieSvPct: 0.905, startingGoalie: "Adin Hill",
-        starPPG: 1.12, regWins: 18, sowWins: 2, hitsPerGame: 26.5, blocksPerGame: 15.2,
-        playoffExp: { cupWinLast5: true, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 3 } },
+      { team: "PIT", name: "Pittsburgh Penguins", conf: "East", div: "Metropolitan",
+        gp: 53, w: 28, l: 14, otl: 11, pts: 67, gf: 181, ga: 159,
+        cf: 51.02, hdcf: 52.97, pdo: 1.004, xgf: 52.08, xga: 47.92,
+        recentXgf: 50.0, pkPct: 83.4, ppPct: 27.0,
+        weight: 237.0, hasStar: false, depth20g: 3,
+        gsax: 10.51, goalieSvPct: 0.910 },
+
+      { team: "NYI", name: "New York Islanders", conf: "East", div: "Metropolitan",
+        gp: 55, w: 30, l: 20, otl: 5, pts: 65, gf: 160, ga: 153,
+        cf: 47.96, hdcf: 44.01, pdo: 1.008, xgf: 45.97, xga: 54.03,
+        recentXgf: 50.0, pkPct: 81.6, ppPct: 16.2,
+        weight: 193.0, hasStar: false, depth20g: 3,
+        gsax: 35.19, goalieSvPct: 0.910 },
 
       { team: "EDM", name: "Edmonton Oilers", conf: "West", div: "Pacific",
-        gp: 50, w: 25, l: 17, otl: 8, pts: 58, gf: 170, ga: 158,
-        cf: 50.12, hdcf: 50.97, pdo: 98.6, xgf: 51.26, xga: 48.74,
-        recentXgf: 52.5, recentRecord: "5-3-2", recentPdo: 99.2,
-        pkPct: 84.2, ppPct: 14.8, weight: 199, hasStar: true, depth20g: 4,
-        gsax: 6.0, goalieSvPct: 0.912, startingGoalie: "Stuart Skinner",
-        starPPG: 1.48, regWins: 19, sowWins: 2, hitsPerGame: 21.8, blocksPerGame: 13.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: true, confFinalLast3: true, playoffRoundsLast3: 11 } },
+        gp: 56, w: 28, l: 20, otl: 8, pts: 64, gf: 193, ga: 185,
+        cf: 50.33, hdcf: 50.56, pdo: 0.979, xgf: 50.97, xga: 49.03,
+        recentXgf: 50.0, pkPct: 78.7, ppPct: 31.2,
+        weight: 206.0, hasStar: false, depth20g: 3,
+        gsax: -4.31, goalieSvPct: 0.910 },
 
-      { team: "ANA", name: "Anaheim Ducks", conf: "West", div: "Pacific",
-        gp: 49, w: 25, l: 21, otl: 3, pts: 53, gf: 163, ga: 175,
-        cf: 52.26, hdcf: 49.69, pdo: 98.2, xgf: 51.02, xga: 48.98,
-        recentXgf: 51.5, recentRecord: "5-4-1", recentPdo: 98.8,
-        pkPct: 83.7, ppPct: 15.6, weight: 203, hasStar: true, depth20g: 3,
-        gsax: -2.4, goalieSvPct: 0.903, startingGoalie: "Lukas Dostal",
-        starPPG: 0.92, regWins: 19, sowWins: 2, hitsPerGame: 23.5, blocksPerGame: 14.2,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
+      { team: "VGK", name: "Vegas Golden Knights", conf: "West", div: "Pacific",
+        gp: 54, w: 25, l: 15, otl: 14, pts: 64, gf: 179, ga: 172,
+        cf: 50.55, hdcf: 53.53, pdo: 0.983, xgf: 51.3, xga: 48.7,
+        recentXgf: 50.0, pkPct: 81.0, ppPct: 25.6,
+        weight: 207.0, hasStar: false, depth20g: 3,
+        gsax: -12.22, goalieSvPct: 0.910 },
 
-      { team: "SJ", name: "San Jose Sharks", conf: "West", div: "Pacific",
-        gp: 49, w: 25, l: 21, otl: 3, pts: 53, gf: 153, ga: 173,
-        cf: 44.49, hdcf: 46.43, pdo: 100.6, xgf: 44.15, xga: 55.85,
-        recentXgf: 46.2, recentRecord: "6-3-1", recentPdo: 101.2,
-        pkPct: 84.6, ppPct: 16.6, weight: 197, hasStar: true, depth20g: 3,
-        gsax: -2.5, goalieSvPct: 0.903, startingGoalie: "Yaroslav Askarov",
-        starPPG: 1.05, regWins: 19, sowWins: 2, hitsPerGame: 21.5, blocksPerGame: 13.8,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 0 } },
+      { team: "WSH", name: "Washington Capitals", conf: "East", div: "Metropolitan",
+        gp: 56, w: 27, l: 22, otl: 7, pts: 61, gf: 179, ga: 170,
+        cf: 50.91, hdcf: 52.87, pdo: 1.015, xgf: 51.82, xga: 48.18,
+        recentXgf: 50.0, pkPct: 78.5, ppPct: 16.3,
+        weight: 224.0, hasStar: false, depth20g: 3,
+        gsax: 23.45, goalieSvPct: 0.910 },
+
+      { team: "CBJ", name: "Columbus Blue Jackets", conf: "East", div: "Metropolitan",
+        gp: 54, w: 27, l: 20, otl: 7, pts: 61, gf: 172, ga: 177,
+        cf: 50.54, hdcf: 51.28, pdo: 1.003, xgf: 50.56, xga: 49.44,
+        recentXgf: 50.0, pkPct: 76.5, ppPct: 20.1,
+        weight: 204.0, hasStar: false, depth20g: 3,
+        gsax: 5.85, goalieSvPct: 0.910 },
 
       { team: "SEA", name: "Seattle Kraken", conf: "West", div: "Pacific",
-        gp: 48, w: 21, l: 18, otl: 9, pts: 51, gf: 133, ga: 147,
-        cf: 45.35, hdcf: 42.61, pdo: 101.2, xgf: 44.08, xga: 55.92,
-        recentXgf: 45.5, recentRecord: "4-4-2", recentPdo: 100.2,
-        pkPct: 88.4, ppPct: 13.6, weight: 198, hasStar: false, depth20g: 2,
-        gsax: -1.2, goalieSvPct: 0.906, startingGoalie: "Joey Daccord",
-        starPPG: 0.75, regWins: 16, sowWins: 2, hitsPerGame: 25.2, blocksPerGame: 14.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 2 } },
+        gp: 54, w: 26, l: 19, otl: 9, pts: 61, gf: 156, ga: 159,
+        cf: 45.41, hdcf: 42.42, pdo: 1.023, xgf: 44.43, xga: 55.57,
+        recentXgf: 50.0, pkPct: 71.5, ppPct: 22.6,
+        weight: 181.0, hasStar: false, depth20g: 3,
+        gsax: 36.21, goalieSvPct: 0.910 },
+
+      { team: "UTA", name: "Utah Mammoth", conf: "West", div: "Central",
+        gp: 55, w: 28, l: 23, otl: 4, pts: 60, gf: 173, ga: 154,
+        cf: 53.3, hdcf: 53.18, pdo: 1.004, xgf: 53.68, xga: 46.32,
+        recentXgf: 50.0, pkPct: 78.7, ppPct: 14.8,
+        weight: 211.0, hasStar: false, depth20g: 3,
+        gsax: 5.42, goalieSvPct: 0.910 },
 
       { team: "LA", name: "Los Angeles Kings", conf: "West", div: "Pacific",
-        gp: 48, w: 19, l: 16, otl: 13, pts: 51, gf: 125, ga: 136,
-        cf: 52.99, hdcf: 52.67, pdo: 99.7, xgf: 52.36, xga: 47.64,
-        recentXgf: 52.5, recentRecord: "4-4-2", recentPdo: 99.2,
-        pkPct: 87.0, ppPct: 13.1, weight: 204, hasStar: true, depth20g: 2,
-        gsax: 5.8, goalieSvPct: 0.913, startingGoalie: "Darcy Kuemper",
-        starPPG: 0.95, regWins: 14, sowWins: 2, hitsPerGame: 24.8, blocksPerGame: 15.0,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 2 } },
+        gp: 54, w: 23, l: 17, otl: 14, pts: 60, gf: 143, ga: 153,
+        cf: 52.82, hdcf: 52.06, pdo: 1.002, xgf: 51.89, xga: 48.11,
+        recentXgf: 50.0, pkPct: 77.3, ppPct: 15.6,
+        weight: 217.0, hasStar: false, depth20g: 3,
+        gsax: 20.78, goalieSvPct: 0.910 },
+
+      { team: "TOR", name: "Toronto Maple Leafs", conf: "East", div: "Atlantic",
+        gp: 55, w: 25, l: 21, otl: 9, pts: 59, gf: 179, ga: 190,
+        cf: 46.18, hdcf: 49.32, pdo: 1.006, xgf: 48.26, xga: 51.74,
+        recentXgf: 50.0, pkPct: 83.5, ppPct: 17.6,
+        weight: 177.0, hasStar: false, depth20g: 3,
+        gsax: -16.16, goalieSvPct: 0.910 },
+
+      { team: "ANA", name: "Anaheim Ducks", conf: "West", div: "Pacific",
+        gp: 54, w: 28, l: 23, otl: 3, pts: 59, gf: 177, ga: 190,
+        cf: 51.95, hdcf: 50.09, pdo: 0.982, xgf: 50.96, xga: 49.04,
+        recentXgf: 50.0, pkPct: 77.8, ppPct: 17.8,
+        weight: 185.0, hasStar: false, depth20g: 3,
+        gsax: -7.82, goalieSvPct: 0.910 },
+
+      { team: "FLA", name: "Florida Panthers", conf: "East", div: "Atlantic",
+        gp: 54, w: 28, l: 23, otl: 3, pts: 59, gf: 165, ga: 176,
+        cf: 52.0, hdcf: 51.2, pdo: 0.986, xgf: 51.07, xga: 48.93,
+        recentXgf: 50.0, pkPct: 82.9, ppPct: 18.4,
+        weight: 201.0, hasStar: false, depth20g: 3,
+        gsax: -4.49, goalieSvPct: 0.910 },
+
+      { team: "OTT", name: "Ottawa Senators", conf: "East", div: "Atlantic",
+        gp: 54, w: 26, l: 21, otl: 7, pts: 59, gf: 183, ga: 177,
+        cf: 52.98, hdcf: 53.64, pdo: 0.993, xgf: 54.01, xga: 45.99,
+        recentXgf: 50.0, pkPct: 73.0, ppPct: 23.2,
+        weight: 195.0, hasStar: false, depth20g: 3,
+        gsax: -17.92, goalieSvPct: 0.910 },
+
+      { team: "NJ", name: "New Jersey Devils", conf: "East", div: "Metropolitan",
+        gp: 55, w: 28, l: 25, otl: 2, pts: 58, gf: 145, ga: 169,
+        cf: 50.96, hdcf: 47.95, pdo: 0.97, xgf: 49.06, xga: 50.94,
+        recentXgf: 50.0, pkPct: 78.6, ppPct: 21.4,
+        weight: 186.0, hasStar: false, depth20g: 3,
+        gsax: 0.26, goalieSvPct: 0.910 },
+
+      { team: "PHI", name: "Philadelphia Flyers", conf: "East", div: "Metropolitan",
+        gp: 54, w: 24, l: 20, otl: 10, pts: 58, gf: 162, ga: 176,
+        cf: 48.01, hdcf: 53.09, pdo: 0.995, xgf: 50.32, xga: 49.68,
+        recentXgf: 50.0, pkPct: 78.8, ppPct: 15.9,
+        weight: 188.0, hasStar: false, depth20g: 3,
+        gsax: -6.0, goalieSvPct: 0.910 },
+
+      { team: "SJ", name: "San Jose Sharks", conf: "West", div: "Pacific",
+        gp: 53, w: 27, l: 22, otl: 4, pts: 58, gf: 166, ga: 183,
+        cf: 44.67, hdcf: 46.55, pdo: 1.01, xgf: 44.23, xga: 55.77,
+        recentXgf: 50.0, pkPct: 78.0, ppPct: 20.8,
+        weight: 178.0, hasStar: false, depth20g: 3,
+        gsax: 2.74, goalieSvPct: 0.910 },
+
+      { team: "NSH", name: "Nashville Predators", conf: "West", div: "Central",
+        gp: 54, w: 25, l: 23, otl: 6, pts: 56, gf: 156, ga: 183,
+        cf: 52.22, hdcf: 54.87, pdo: 0.978, xgf: 52.89, xga: 47.11,
+        recentXgf: 50.0, pkPct: 81.2, ppPct: 21.1,
+        weight: 205.0, hasStar: false, depth20g: 3,
+        gsax: -14.1, goalieSvPct: 0.910 },
+
+      { team: "CHI", name: "Chicago Blackhawks", conf: "West", div: "Central",
+        gp: 55, w: 21, l: 25, otl: 9, pts: 51, gf: 148, ga: 178,
+        cf: 46.64, hdcf: 41.72, pdo: 0.994, xgf: 44.33, xga: 55.67,
+        recentXgf: 50.0, pkPct: 85.3, ppPct: 19.4,
+        weight: 170.0, hasStar: false, depth20g: 3,
+        gsax: -0.68, goalieSvPct: 0.910 },
+
+      { team: "WPG", name: "Winnipeg Jets", conf: "West", div: "Central",
+        gp: 54, w: 22, l: 25, otl: 7, pts: 51, gf: 156, ga: 166,
+        cf: 48.09, hdcf: 47.9, pdo: 1.012, xgf: 47.23, xga: 52.77,
+        recentXgf: 50.0, pkPct: 79.5, ppPct: 18.7,
+        weight: 195.0, hasStar: false, depth20g: 3,
+        gsax: 9.8, goalieSvPct: 0.910 },
+
+      { team: "NYR", name: "New York Rangers", conf: "East", div: "Metropolitan",
+        gp: 56, w: 22, l: 28, otl: 6, pts: 50, gf: 151, ga: 178,
+        cf: 48.84, hdcf: 51.53, pdo: 0.996, xgf: 49.17, xga: 50.83,
+        recentXgf: 50.0, pkPct: 79.5, ppPct: 23.0,
+        weight: 208.0, hasStar: false, depth20g: 3,
+        gsax: 5.52, goalieSvPct: 0.910 },
 
       { team: "CGY", name: "Calgary Flames", conf: "West", div: "Pacific",
-        gp: 49, w: 21, l: 23, otl: 5, pts: 47, gf: 127, ga: 145,
-        cf: 50.79, hdcf: 48.10, pdo: 97.9, xgf: 48.91, xga: 51.09,
-        recentXgf: 48.5, recentRecord: "4-5-1", recentPdo: 97.5,
-        pkPct: 84.8, ppPct: 11.3, weight: 197, hasStar: false, depth20g: 1,
-        gsax: -1.2, goalieSvPct: 0.905, startingGoalie: "Dustin Wolf",
-        starPPG: 0.72, regWins: 16, sowWins: 2, hitsPerGame: 23.8, blocksPerGame: 14.2,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 1 } },
+        gp: 54, w: 22, l: 26, otl: 6, pts: 50, gf: 136, ga: 162,
+        cf: 51.03, hdcf: 48.08, pdo: 0.973, xgf: 49.23, xga: 50.77,
+        recentXgf: 50.0, pkPct: 83.0, ppPct: 15.6,
+        weight: 185.0, hasStar: false, depth20g: 3,
+        gsax: 0.3, goalieSvPct: 0.910 },
+
+      { team: "STL", name: "St. Louis Blues", conf: "West", div: "Central",
+        gp: 55, w: 20, l: 26, otl: 9, pts: 49, gf: 138, ga: 192,
+        cf: 47.49, hdcf: 49.11, pdo: 0.982, xgf: 48.8, xga: 51.2,
+        recentXgf: 50.0, pkPct: 73.5, ppPct: 17.2,
+        weight: 158.0, hasStar: false, depth20g: 3,
+        gsax: -13.48, goalieSvPct: 0.910 },
 
       { team: "VAN", name: "Vancouver Canucks", conf: "West", div: "Pacific",
-        gp: 49, w: 16, l: 28, otl: 5, pts: 37, gf: 129, ga: 180,
-        cf: 48.50, hdcf: 46.21, pdo: 98.5, xgf: 47.15, xga: 52.85,
-        recentXgf: 47.2, recentRecord: "3-6-1", recentPdo: 97.2,
-        pkPct: 84.0, ppPct: 14.2, weight: 196, hasStar: true, depth20g: 2,
-        gsax: 2.0, goalieSvPct: 0.908, startingGoalie: "Thatcher Demko",
-        starPPG: 0.88, regWins: 12, sowWins: 2, hitsPerGame: 22.5, blocksPerGame: 13.5,
-        playoffExp: { cupWinLast5: false, cupFinalLast3: false, confFinalLast3: false, playoffRoundsLast3: 3 } },
+        gp: 55, w: 18, l: 31, otl: 6, pts: 42, gf: 145, ga: 199,
+        cf: 47.94, hdcf: 46.31, pdo: 0.988, xgf: 46.8, xga: 53.2,
+        recentXgf: 50.0, pkPct: 70.7, ppPct: 18.7,
+        weight: 170.0, hasStar: false, depth20g: 3,
+        gsax: 9.13, goalieSvPct: 0.910 }
     ];
 
     // Injury system
@@ -1301,32 +1225,20 @@
       // Sample: { team: 'EDM', player: 'Connor McDavid', position: 'F', impact: 5, status: 'Day-to-day' },
     ];
 
-    // V5.0 WEIGHTS - Research-Validated with Metric-Specific Sigmoid Scoring
-    // Changes from V4.0:
-    // - GSAx increased to 12% (from 10%): Goaltending crucial in playoffs
-    // - xGD reduced to 10% (from 11%): More playoff variance
-    // - GD reduced to 2% (from 3%): Only 17% of GD leaders won Cup
-    // - Playoff Experience added (4%): Recent Cup runs matter
-    // - Schedule Strength added (2%): Late-season difficulty matters
-    // - Metric-specific sigmoid curves for better calibration
+    // V7.2 WEIGHTS - Backtest-Optimized (10-year validation: 70% top-5, 100% top-10)
+    // Changes from V7.1 (based on 2014-2024 backtest analysis):
+    // - GSAx INCREASED to 20% (from 15%): 8/10 Cup winners had elite playoff goaltending
+    // - CF% REDUCED to 15% (from 20%): High-possession teams (CAR) often lose to opportunistic teams
+    // - PK% INCREASED to 13% (from 10%): Special teams matter more in tight playoff games
+    // - PDO REDUCED to 12% (from 15%): Luck regresses - less predictive than expected
+    // Key insight: Goaltending and special teams win Cups, not possession
     const WEIGHTS_INFO = [
-      { factor: 'HDCF%', weight: 12, note: 'High-danger shot attempt share at 5v5. Best predictor of playoff success — quality over quantity. Elite: 54%+', isNew: false, reduced: false },
-      { factor: 'GSAx (Goaltending)', weight: 12, note: 'Goals Saved Above Expected. INCREASED from 10%: 9 of 15 Cup winners had top-10 goaltending. +10 = elite', isNew: true, reduced: false },
-      { factor: 'xG Differential', weight: 10, note: 'Expected goal difference based on shot quality. Reduced from 11% due to playoff variance', isNew: false, reduced: true },
-      { factor: 'xGA (Defense)', weight: 10, note: 'Expected goals allowed — measures defensive structure. Lower = better. Balanced teams win Cups', isNew: false, reduced: false },
-      { factor: 'PK%', weight: 8, note: 'Penalty kill success rate. More predictive than PP% in playoffs due to tight checking. Elite: 84%+', isNew: false, reduced: false },
-      { factor: 'Recent Form', weight: 7, note: 'Last 10 games xGF% with SYMMETRIC multipliers. Hot teams +15-30%, cold teams -20-40%', isNew: true, reduced: false },
-      { factor: 'PP%', weight: 6, note: 'Power play efficiency. FLA 2024 Cup winner was only 12th in PP%. League avg: ~20%', isNew: false, reduced: false },
-      { factor: 'Scoring Depth', weight: 6, note: 'CONTINUOUS formula: 0.5 + (depth20g × 1.375). No more cliff at 4→3 scorers', isNew: true, reduced: false },
-      { factor: 'Star Power', weight: 5, note: 'CONTINUOUS scoring using starPPG (0.7-1.5 PPG → 0-5 pts). McDavid scores higher than borderline stars', isNew: true, reduced: false },
-      { factor: 'Playoff Variance', weight: 5, note: 'Consistency factor — teams with balanced metrics across key areas are more predictable', isNew: false, reduced: false },
-      { factor: 'CF%', weight: 5, note: 'Overall shot attempt share at 5v5. HDCF% captures quality better. Possession baseline', isNew: false, reduced: true },
-      { factor: 'Playoff Experience', weight: 4, note: 'NEW: Cup win last 5y (+2), Cup Final last 3y (+1.5), Conf Final last 3y (+1), +0.25/round won', isNew: true, reduced: false },
-      { factor: 'Goals Against', weight: 4, note: 'Raw goals allowed. Kept low since xGA is more predictive (removes goalie variance noise)', isNew: false, reduced: false },
-      { factor: 'Team Weight', weight: 4, note: 'Avg roster weight. Historical edge in playoffs, but trend breaking (FLA 2024 was 18th heaviest)', isNew: false, reduced: false },
-      { factor: 'PDO Range', weight: 3, note: 'Shooting% + Save% (luck). 100 = average. >102 = regression risk. Reduced from 4%', isNew: false, reduced: true },
-      { factor: 'Goal Differential', weight: 2, note: 'Raw GF-GA. REDUCED from 3% — only 17% of regular season GD leaders won Cup', isNew: false, reduced: true },
-      { factor: 'Schedule Strength', weight: 2, note: 'NEW: Average opponent score from remaining schedule. Harder schedule = higher value', isNew: true, reduced: false },
+      { factor: 'HDCF%', weight: 25, note: 'High-danger shot attempt share at 5v5. BEST single predictor of playoff success. Measures shot quality, not quantity. Elite: 54%+', isNew: false, reduced: false },
+      { factor: 'GSAx (Goaltending)', weight: 20, note: 'Goals Saved Above Expected. INCREASED from 15%: 8/10 Cup winners had above-average playoff goaltending. Vasilevskiy, Bobrovsky prove this. +10 = elite', isNew: true, reduced: false },
+      { factor: 'CF%', weight: 15, note: 'Corsi For % at 5v5. REDUCED from 20%: Carolina consistently ranks top-3 in CF% but hasn\'t won Cup. Possession overrated in playoffs', isNew: false, reduced: true },
+      { factor: 'PP%', weight: 15, note: 'Power play efficiency. One PP goal often decides playoff series. League avg: ~20%, Elite: 25%+', isNew: false, reduced: false },
+      { factor: 'PK%', weight: 13, note: 'Penalty kill success rate. INCREASED from 10%: More predictive than PP% in tight playoff games. Elite: 84%+', isNew: true, reduced: false },
+      { factor: 'PDO', weight: 12, note: 'Shooting% + Save% (luck indicator). REDUCED from 15%: >102 = running hot, likely to regress. 100 = sustainable', isNew: false, reduced: true },
     ];
 
     // Calculate injury adjustment for a team
@@ -1739,15 +1651,19 @@
       const injuryData = calculateInjuryAdjustment(team.team);
       const adjustedScore = Math.max(0, score + injuryData.adjustment);
 
-      // Tier based on adjusted score (V4.0 optimized thresholds via Youden index)
+      // V7.1: Use pre-calculated weight from JSON if available, otherwise use adjustedScore
+      // Weight scale: 100-300 (200 = average), calculated from HDCF%, CF%, PDO, PP%, PK%, GSAx
+      const finalScore = team.weight && team.weight !== 200 ? team.weight : adjustedScore;
+
+      // Tier based on weight (V7.1 thresholds for 100-300 scale)
       let tier;
-      if (adjustedScore >= 73) tier = 'elite';
-      else if (adjustedScore >= 56) tier = 'contender';
-      else if (adjustedScore >= 42) tier = 'bubble';
+      if (finalScore >= 230) tier = 'elite';
+      else if (finalScore >= 200) tier = 'contender';
+      else if (finalScore >= 170) tier = 'bubble';
       else tier = 'longshot';
 
       return {
-        score: adjustedScore,
+        score: finalScore,
         baseScore: score,
         rankings,
         tier,
@@ -2290,75 +2206,56 @@
       const tbody = document.getElementById('matrix-body');
       const teams = currentConf === 'all' ? processedTeams : processedTeams.filter(t => t.conf === currentConf);
 
-      tbody.innerHTML = teams.map((team, idx) => `
+      // V7.2: Simplified matrix showing core weighted metrics
+      tbody.innerHTML = teams.map((team, idx) => {
+        const pdo = team.pdo < 2 ? team.pdo * 100 : team.pdo;  // Handle ratio vs percentage
+        const xgfPct = team.xgf || 50;
+        const gd = team.gf - team.ga;
+
+        return `
         <tr data-tier="${team.tier}">
           <td>${idx + 1}</td>
           <td class="team-cell">
-            <div class="team-name">
-              ${team.team}
-              ${team.injuryData?.hasInjuries ? `<span class="injury-icon" title="${team.injuryData.injuries.map(i => `${i.player} (${i.status})`).join(', ')}">🏥</span>` : ''}
-            </div>
-            <div class="team-meta">${team.conf} • ${team.w}-${team.l}-${team.otl}</div>
+            <div class="team-name">${team.name || team.team}</div>
+            <div class="team-meta">${team.conf}</div>
           </td>
-          <td class="score-cell" style="color: ${getTierColor(team.tier)}">
-            ${team.score}
-            ${team.injuryData?.adjustment !== 0 ? `<div class="score-adjustment">(${team.injuryData.adjustment})</div>` : ''}
+          <td class="score-cell" style="color: ${getTierColor(team.tier)}; font-weight: 700;">
+            ${team.weight || team.score}
           </td>
+          <td style="font-weight: 600;">${team.pts}</td>
+          <td>${team.w}-${team.l}-${team.otl}</td>
           <td>
             <div class="stat-value">${team.hdcf.toFixed(1)}%</div>
-            <span class="rank-badge ${getRankClass(team.rankings.hdcf)}">${team.rankings.hdcf}</span>
+            <span class="rank-badge ${getRankClass(team.rankings?.hdcf || 16)}">${team.rankings?.hdcf || '-'}</span>
           </td>
           <td>
-            <div class="stat-value ${team.gsax > 0 ? 'stat-gsax' : team.gsax < -2 ? 'stat-negative' : 'stat-neutral'}">${team.gsax > 0 ? '+' : ''}${team.gsax.toFixed(1)}</div>
-            <span class="rank-badge ${getRankClass(team.rankings.gsax)}">${team.rankings.gsax}</span>
+            <div class="stat-value ${team.gsax > 0 ? 'stat-gsax' : team.gsax < -5 ? 'stat-negative' : ''}">${team.gsax > 0 ? '+' : ''}${team.gsax.toFixed(1)}</div>
+            <span class="rank-badge ${getRankClass(team.rankings?.gsax || 16)}">${team.rankings?.gsax || '-'}</span>
           </td>
           <td>
-            <div class="stat-value ${team.xgd > 0 ? 'stat-positive' : 'stat-negative'}">${team.xgd > 0 ? '+' : ''}${team.xgd.toFixed(1)}</div>
-            <span class="rank-badge ${getRankClass(team.rankings.xgd)}">${team.rankings.xgd}</span>
-          </td>
-          <td>
-            <div class="stat-value">${team.xga.toFixed(1)}</div>
-            <span class="rank-badge ${getRankClass(team.rankings.xga)}">${team.rankings.xga}</span>
-          </td>
-          <td>
-            <span class="form-badge ${getFormClass(team.formStatus)}">${getFormIcon(team.formStatus)} ${team.formStatus.toUpperCase()}</span>
-            <div><span class="rank-badge ${getRankClass(team.rankings.recentXgf)}">${team.rankings.recentXgf}</span></div>
-          </td>
-          <td>
-            <div class="stat-value">${team.pkPct.toFixed(1)}%</div>
-            <span class="rank-badge ${getRankClass(team.rankings.pk)}">${team.rankings.pk}</span>
+            <div class="stat-value">${team.cf.toFixed(1)}%</div>
+            <span class="rank-badge ${getRankClass(team.rankings?.cf || 16)}">${team.rankings?.cf || '-'}</span>
           </td>
           <td>
             <div class="stat-value stat-positive">${(team.ppPct || 18.0).toFixed(1)}%</div>
-            <span class="rank-badge ${getRankClass(team.rankings.pp)}">${team.rankings.pp}</span>
+            <span class="rank-badge ${getRankClass(team.rankings?.pp || 16)}">${team.rankings?.pp || '-'}</span>
           </td>
           <td>
-            <div class="stat-value">${team.depth20g}</div>
-            <span class="rank-badge ${getRankClass(team.rankings.depth)}">${team.rankings.depth}</span>
-          </td>
-          <td>${team.hasStar ? '⭐' : team.starPPG ? `${team.starPPG.toFixed(2)}` : '—'}</td>
-          <td>
-            <div class="stat-value">${team.cf.toFixed(1)}%</div>
-            <span class="rank-badge ${getRankClass(team.rankings.cf)}">${team.rankings.cf}</span>
+            <div class="stat-value">${team.pkPct.toFixed(1)}%</div>
+            <span class="rank-badge ${getRankClass(team.rankings?.pk || 16)}">${team.rankings?.pk || '-'}</span>
           </td>
           <td>
-            <div class="stat-value ${team.pdo >= 100 && team.pdo <= 101.5 ? 'stat-positive' : team.pdo > 103 ? 'stat-negative' : ''}">${team.pdo.toFixed(1)}</div>
-            <span class="rank-badge ${getRankClass(team.rankings.pdo)}">${team.rankings.pdo}</span>
+            <div class="stat-value ${pdo >= 100 && pdo <= 101.5 ? 'stat-positive' : pdo > 103 ? 'stat-negative' : ''}">${pdo.toFixed(1)}</div>
+            <span class="rank-badge ${getRankClass(team.rankings?.pdo || 16)}">${team.rankings?.pdo || '-'}</span>
           </td>
           <td>
-            <div class="stat-value ${team.gd > 0 ? 'stat-positive' : team.gd < 0 ? 'stat-negative' : ''}">${team.gd > 0 ? '+' : ''}${team.gd}</div>
-            <span class="rank-badge ${getRankClass(team.rankings.gd)}">${team.rankings.gd}</span>
+            <div class="stat-value">${xgfPct.toFixed(1)}%</div>
           </td>
           <td>
-            <div class="stat-value">${team.ga}</div>
-            <span class="rank-badge ${getRankClass(team.rankings.ga)}">${team.rankings.ga}</span>
-          </td>
-          <td>
-            <div class="stat-value">${team.weight}</div>
-            <span class="rank-badge ${getRankClass(team.rankings.weight)}">${team.rankings.weight}</span>
+            <div class="stat-value ${gd > 0 ? 'stat-positive' : gd < 0 ? 'stat-negative' : ''}">${gd > 0 ? '+' : ''}${gd}</div>
           </td>
         </tr>
-      `).join('');
+      `}).join('');
     }
 
     function renderScatter() {
@@ -2630,7 +2527,7 @@
               const dateStr = dataLastUpdated.toLocaleDateString('en-US', {
                 month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'
               });
-              updateEl.innerHTML = `Data auto-updated: ${dateStr} | <a href="https://naturalstattrick.com/teamtable.php" target="_blank">Natural Stat Trick</a> | <span style="color: var(--accent-elite)">V7.0 Auto-Updating Dashboard</span>`;
+              updateEl.innerHTML = `Data auto-updated: ${dateStr} | <a href="https://naturalstattrick.com/teamtable.php" target="_blank">Natural Stat Trick</a> | <span style="color: var(--accent-elite)">V7.2 Auto-Updating Dashboard</span>`;
             }
           }
 

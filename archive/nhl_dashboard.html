@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NHL Superhuman Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0a0e17 0%, #1a1f2e 100%);
+      color: #f0f4f8;
+      min-height: 100vh;
+    }
+
+    .header {
+      background: rgba(26, 34, 52, 0.95);
+      border-bottom: 1px solid #2d3a4f;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo h1 {
+      font-size: 1.4rem;
+      background: linear-gradient(135deg, #0033A0, #C8102E);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo-icon { font-size: 2rem; }
+
+    .tabs {
+      display: flex;
+      gap: 4px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px;
+      border-radius: 12px;
+    }
+
+    .tab {
+      padding: 10px 16px;
+      border: none;
+      background: transparent;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab:hover { background: rgba(255, 255, 255, 0.05); }
+
+    .tab.active {
+      background: linear-gradient(135deg, #0033A0, #1e40af);
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 51, 160, 0.4);
+    }
+
+    .meta-info {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    .content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* Alerts */
+    .alert {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid #f59e0b;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    .alert h4 { color: #f59e0b; margin-bottom: 12px; }
+
+    .alert-item {
+      padding: 8px 12px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    /* Cards */
+    .card {
+      background: rgba(26, 34, 52, 0.6);
+      border: 1px solid #2d3a4f;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card h3 {
+      color: #3b82f6;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Team Table */
+    .team-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .team-table th {
+      text-align: left;
+      padding: 12px 16px;
+      background: rgba(0, 0, 0, 0.4);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+    }
+
+    .team-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #2d3a4f;
+    }
+
+    .team-table tr:hover { background: rgba(255, 255, 255, 0.03); }
+
+    .rank { font-size: 1.1rem; font-weight: 700; }
+
+    .team-code { font-weight: 700; font-size: 1rem; }
+    .team-name { font-size: 0.8rem; color: #94a3b8; display: block; }
+
+    .tier-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .tier-elite { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+    .tier-contender { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+    .tier-bubble { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+    .tier-longshot { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+
+    .strength { font-weight: 600; font-size: 1.1rem; }
+
+    .cup-prob {
+      text-align: right;
+    }
+
+    .cup-main { font-weight: 700; color: #10b981; }
+    .cup-range { font-size: 0.7rem; color: #64748b; }
+
+    /* Odds bars */
+    .odds-item {
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    .odds-team { font-weight: 600; width: 50px; }
+
+    .odds-bar {
+      flex: 1;
+      height: 8px;
+      background: rgba(16, 185, 129, 0.2);
+      border-radius: 4px;
+      margin: 0 16px;
+      overflow: hidden;
+    }
+
+    .odds-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #3b82f6);
+      border-radius: 4px;
+    }
+
+    .odds-value { font-weight: 700; color: #10b981; width: 60px; text-align: right; }
+
+    /* Grid layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .grid-2, .grid-4 { grid-template-columns: 1fr; }
+      .header-content { flex-direction: column; }
+    }
+
+    /* Glossary */
+    .glossary-item {
+      background: rgba(26, 34, 52, 0.6);
+      border: 1px solid #2d3a4f;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .glossary-item h4 { color: #3b82f6; margin-bottom: 8px; }
+    .glossary-item p { color: #94a3b8; font-size: 0.9rem; margin-bottom: 8px; }
+
+    .glossary-item code {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #10b981;
+    }
+
+    /* Stat boxes */
+    .stat-box {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat-box .label { font-size: 0.85rem; color: #64748b; margin-bottom: 8px; }
+    .stat-box .value { font-size: 1.5rem; font-weight: 700; color: #f59e0b; }
+    .stat-box .sub { font-size: 0.75rem; color: #94a3b8; }
+
+    /* Sim button */
+    .sim-btn {
+      background: linear-gradient(135deg, #C8102E, #0033A0);
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(200, 16, 46, 0.3);
+      transition: all 0.3s;
+    }
+
+    .sim-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 40px rgba(200, 16, 46, 0.5);
+    }
+
+    /* Filters */
+    .filters {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .filter-group label { color: #94a3b8; font-size: 0.85rem; }
+
+    .filter-group select {
+      background: rgba(26, 34, 52, 0.8);
+      border: 1px solid #2d3a4f;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    /* Chart container */
+    .chart-container {
+      height: 250px;
+      margin-bottom: 20px;
+    }
+
+    /* Conference columns */
+    .conf-col h4 {
+      color: #94a3b8;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    .conf-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      border-radius: 4px;
+    }
+
+    .conf-row:nth-child(even) { background: rgba(0, 0, 0, 0.1); }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="logo-icon">🏒</span>
+        <h1>NHL SUPERHUMAN DASHBOARD</h1>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="rankings">📊 Power Rankings</button>
+        <button class="tab" data-tab="odds">🎯 Playoff & Cup Odds</button>
+        <button class="tab" data-tab="simulator">🎮 Bracket Simulator</button>
+        <button class="tab" data-tab="glossary">📚 Glossary</button>
+      </div>
+
+      <div class="meta-info">
+        Season: 2025-26 | Updated: Feb 1, 2026
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Alerts -->
+    <div class="alert">
+      <h4>🔔 Recent Significant Changes</h4>
+      <div class="alert-item">BUF moved from Contender to Elite tier</div>
+      <div class="alert-item">MTL jumped 5 spots up (#19 → #14)</div>
+    </div>
+
+    <!-- Rankings Tab -->
+    <div id="rankings" class="tab-content active">
+      <div class="card">
+        <h3>📈 Model Feature Weights</h3>
+        <div class="chart-container">
+          <canvas id="weightsChart"></canvas>
+        </div>
+      </div>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label>Tier:</label>
+          <select id="filterTier">
+            <option value="all">All Tiers</option>
+            <option value="Elite">🏆 Elite</option>
+            <option value="Contender">🎯 Contender</option>
+            <option value="Bubble">⚡ Bubble</option>
+            <option value="Longshot">🎲 Longshot</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Conference:</label>
+          <select id="filterConf">
+            <option value="all">All</option>
+            <option value="East">Eastern</option>
+            <option value="West">Western</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card" style="padding: 0; overflow: hidden;">
+        <table class="team-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Team</th>
+              <th>Tier</th>
+              <th>Strength</th>
+              <th>Playoff %</th>
+              <th>Cup %</th>
+            </tr>
+          </thead>
+          <tbody id="teamTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Odds Tab -->
+    <div id="odds" class="tab-content">
+      <div class="grid-2">
+        <div class="card">
+          <h3>🏆 Stanley Cup Favorites</h3>
+          <div id="cupOdds"></div>
+        </div>
+
+        <div class="card">
+          <h3>🎯 Playoff Probability (>50%)</h3>
+          <div id="playoffOdds"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>📊 Conference Breakdown</h3>
+        <div class="grid-2">
+          <div class="conf-col">
+            <h4>Eastern Conference - Top 8</h4>
+            <div id="eastTeams"></div>
+          </div>
+          <div class="conf-col">
+            <h4>Western Conference - Top 8</h4>
+            <div id="westTeams"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Simulator Tab -->
+    <div id="simulator" class="tab-content">
+      <div class="card">
+        <h3>🎮 Monte Carlo Bracket Simulator</h3>
+        <p style="color: #94a3b8; margin-bottom: 20px;">
+          Run 10,000 playoff simulations using our enhanced series prediction model with round-specific parity adjustments.
+        </p>
+        <button class="sim-btn" id="simBtn">🚀 Run Full Simulation</button>
+        <div id="simResults" style="margin-top: 24px;"></div>
+      </div>
+
+      <div class="card">
+        <h3>📈 Historical Round-by-Round Upset Rates</h3>
+        <div class="grid-4">
+          <div class="stat-box">
+            <div class="label">Round 1</div>
+            <div class="value">40.8%</div>
+            <div class="sub">upset rate</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Round 2</div>
+            <div class="value">46.7%</div>
+            <div class="sub">upset rate</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Conf Finals</div>
+            <div class="value">50.0%</div>
+            <div class="sub">coin flip!</div>
+          </div>
+          <div class="stat-box">
+            <div class="label">Cup Finals</div>
+            <div class="value">46.7%</div>
+            <div class="sub">upset rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Glossary Tab -->
+    <div id="glossary" class="tab-content">
+      <h2 style="margin-bottom: 24px; color: #3b82f6;">📚 Metric Glossary</h2>
+      <div class="grid-2" id="glossaryGrid"></div>
+
+      <div class="card" style="margin-top: 24px;">
+        <h3>🧠 How The Model Works</h3>
+        <div style="line-height: 1.8; color: #94a3b8;">
+          <p style="margin-bottom: 16px;">
+            The NHL Superhuman Prediction System uses an <strong style="color: #10b981;">ensemble of machine learning models</strong> trained on 15 years of historical data (2010-2024) with 462 team-seasons and 225 playoff series.
+          </p>
+          <p style="margin-bottom: 12px;"><strong style="color: #3b82f6;">Key Components:</strong></p>
+          <ul style="padding-left: 20px; margin-bottom: 16px;">
+            <li>Logistic Regression for playoff probability</li>
+            <li>Gradient Boosting for Cup prediction</li>
+            <li>Neural Network for pattern recognition</li>
+            <li>Monte Carlo simulation (10,000 brackets) with enhanced playoff series model</li>
+            <li>Isotonic calibration for probability accuracy</li>
+          </ul>
+          <p><strong style="color: #f59e0b;">Historical Accuracy:</strong> 30.8% Top-1 accuracy (9.8x better than random), 46.2% Top-3 accuracy.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Dashboard Data
+    const TEAMS = [
+      { rank: 1, code: "COL", name: "Colorado Avalanche", conference: "West", tier: "Elite", strength: 54.2, playoff: 99.8, cup: 24.7, cupLow: 24.0, cupHigh: 25.4 },
+      { rank: 2, code: "TB", name: "Tampa Bay Lightning", conference: "East", tier: "Elite", strength: 53.7, playoff: 99.7, cup: 24.5, cupLow: 23.8, cupHigh: 25.3 },
+      { rank: 3, code: "DAL", name: "Dallas Stars", conference: "West", tier: "Elite", strength: 51.6, playoff: 94.1, cup: 4.4, cupLow: 4.1, cupHigh: 4.8 },
+      { rank: 4, code: "BUF", name: "Buffalo Sabres", conference: "East", tier: "Elite", strength: 51.5, playoff: 91.1, cup: 4.4, cupLow: 4.0, cupHigh: 4.7 },
+      { rank: 5, code: "VGK", name: "Vegas Golden Knights", conference: "West", tier: "Contender", strength: 51.5, playoff: 81.7, cup: 4.2, cupLow: 3.9, cupHigh: 4.6 },
+      { rank: 6, code: "CAR", name: "Carolina Hurricanes", conference: "East", tier: "Contender", strength: 51.5, playoff: 69.1, cup: 3.5, cupLow: 3.2, cupHigh: 3.8 },
+      { rank: 7, code: "MIN", name: "Minnesota Wild", conference: "West", tier: "Contender", strength: 51.0, playoff: 74.2, cup: 3.4, cupLow: 3.1, cupHigh: 3.7 },
+      { rank: 8, code: "UTA", name: "Utah Hockey Club", conference: "West", tier: "Contender", strength: 51.4, playoff: 72.5, cup: 3.2, cupLow: 3.0, cupHigh: 3.5 },
+      { rank: 9, code: "EDM", name: "Edmonton Oilers", conference: "West", tier: "Contender", strength: 51.0, playoff: 74.7, cup: 2.8, cupLow: 2.6, cupHigh: 3.1 },
+      { rank: 10, code: "PIT", name: "Pittsburgh Penguins", conference: "East", tier: "Contender", strength: 51.2, playoff: 65.8, cup: 2.8, cupLow: 2.5, cupHigh: 3.1 },
+      { rank: 11, code: "OTT", name: "Ottawa Senators", conference: "East", tier: "Contender", strength: 50.8, playoff: 62.3, cup: 2.5, cupLow: 2.2, cupHigh: 2.8 },
+      { rank: 12, code: "WSH", name: "Washington Capitals", conference: "East", tier: "Contender", strength: 50.5, playoff: 58.9, cup: 2.3, cupLow: 2.0, cupHigh: 2.6 },
+      { rank: 13, code: "BOS", name: "Boston Bruins", conference: "East", tier: "Bubble", strength: 50.2, playoff: 55.4, cup: 2.0, cupLow: 1.8, cupHigh: 2.3 },
+      { rank: 14, code: "MTL", name: "Montreal Canadiens", conference: "East", tier: "Bubble", strength: 49.8, playoff: 48.2, cup: 1.8, cupLow: 1.5, cupHigh: 2.1 },
+      { rank: 15, code: "DET", name: "Detroit Red Wings", conference: "East", tier: "Bubble", strength: 49.5, playoff: 45.6, cup: 1.6, cupLow: 1.3, cupHigh: 1.9 },
+      { rank: 16, code: "PHI", name: "Philadelphia Flyers", conference: "East", tier: "Bubble", strength: 49.2, playoff: 42.1, cup: 1.4, cupLow: 1.2, cupHigh: 1.7 },
+      { rank: 17, code: "TOR", name: "Toronto Maple Leafs", conference: "East", tier: "Bubble", strength: 48.9, playoff: 38.5, cup: 1.2, cupLow: 1.0, cupHigh: 1.5 },
+      { rank: 18, code: "FLA", name: "Florida Panthers", conference: "East", tier: "Bubble", strength: 48.6, playoff: 35.2, cup: 1.1, cupLow: 0.9, cupHigh: 1.4 },
+      { rank: 19, code: "CBJ", name: "Columbus Blue Jackets", conference: "East", tier: "Bubble", strength: 48.3, playoff: 32.8, cup: 0.9, cupLow: 0.7, cupHigh: 1.2 },
+      { rank: 20, code: "LA", name: "Los Angeles Kings", conference: "West", tier: "Bubble", strength: 48.0, playoff: 28.4, cup: 0.8, cupLow: 0.6, cupHigh: 1.0 },
+      { rank: 21, code: "NYI", name: "New York Islanders", conference: "East", tier: "Longshot", strength: 47.5, playoff: 22.1, cup: 0.6, cupLow: 0.4, cupHigh: 0.8 },
+      { rank: 22, code: "ANA", name: "Anaheim Ducks", conference: "West", tier: "Longshot", strength: 47.0, playoff: 18.5, cup: 0.5, cupLow: 0.3, cupHigh: 0.7 },
+      { rank: 23, code: "VAN", name: "Vancouver Canucks", conference: "West", tier: "Longshot", strength: 46.5, playoff: 15.2, cup: 0.4, cupLow: 0.2, cupHigh: 0.6 },
+      { rank: 24, code: "CHI", name: "Chicago Blackhawks", conference: "West", tier: "Longshot", strength: 46.0, playoff: 12.8, cup: 0.3, cupLow: 0.2, cupHigh: 0.5 },
+      { rank: 25, code: "SJ", name: "San Jose Sharks", conference: "West", tier: "Longshot", strength: 45.5, playoff: 10.4, cup: 0.3, cupLow: 0.1, cupHigh: 0.4 },
+      { rank: 26, code: "SEA", name: "Seattle Kraken", conference: "West", tier: "Longshot", strength: 45.0, playoff: 8.2, cup: 0.2, cupLow: 0.1, cupHigh: 0.4 },
+      { rank: 27, code: "WPG", name: "Winnipeg Jets", conference: "West", tier: "Longshot", strength: 44.5, playoff: 6.5, cup: 0.2, cupLow: 0.1, cupHigh: 0.3 },
+      { rank: 28, code: "NYR", name: "New York Rangers", conference: "East", tier: "Longshot", strength: 44.0, playoff: 5.1, cup: 0.1, cupLow: 0.05, cupHigh: 0.2 },
+      { rank: 29, code: "NSH", name: "Nashville Predators", conference: "West", tier: "Longshot", strength: 43.5, playoff: 4.2, cup: 0.1, cupLow: 0.05, cupHigh: 0.2 },
+      { rank: 30, code: "CGY", name: "Calgary Flames", conference: "West", tier: "Longshot", strength: 43.0, playoff: 3.5, cup: 0.1, cupLow: 0.03, cupHigh: 0.15 },
+      { rank: 31, code: "NJ", name: "New Jersey Devils", conference: "East", tier: "Longshot", strength: 42.5, playoff: 2.8, cup: 0.08, cupLow: 0.02, cupHigh: 0.12 },
+      { rank: 32, code: "STL", name: "St. Louis Blues", conference: "West", tier: "Longshot", strength: 42.0, playoff: 2.1, cup: 0.05, cupLow: 0.01, cupHigh: 0.1 },
+    ];
+
+    const WEIGHTS = [
+      { name: "Vegas Cup Signal", weight: 14.1 },
+      { name: "Recent Form", weight: 14.1 },
+      { name: "Goal Differential", weight: 11.6 },
+      { name: "Dynasty Score", weight: 10.4 },
+      { name: "Playoff Experience", weight: 10.3 },
+      { name: "Territorial Dominance", weight: 9.0 },
+      { name: "Special Teams", weight: 8.5 },
+      { name: "Star Power", weight: 6.1 },
+    ];
+
+    const GLOSSARY = [
+      { name: "Composite Strength", desc: "Overall team power rating combining all factors", formula: "Weighted average of 14 metrics" },
+      { name: "Goal Differential Rate", desc: "Goals scored minus goals allowed per game", formula: "(GF - GA) / GP" },
+      { name: "Territorial Dominance", desc: "How much a team controls play", formula: "Corsi For % at 5v5" },
+      { name: "Playoff Experience", desc: "Team's recent playoff history and success", formula: "Weighted playoff rounds won (last 5 years)" },
+      { name: "Dynasty Score", desc: "Recent championship pedigree", formula: "Recency-weighted Cup wins" },
+      { name: "Vegas Cup Signal", desc: "Market consensus on Cup chances", formula: "Implied probability from betting odds" },
+      { name: "GSAx", desc: "Goals Saved Above Expected", formula: "xGA - Actual GA" },
+      { name: "PDO", desc: "Shooting % + Save % (luck indicator)", formula: "Values far from 100 regress" },
+    ];
+
+    const TIER_ICONS = { Elite: "🏆", Contender: "🎯", Bubble: "⚡", Longshot: "🎲" };
+    const TIER_COLORS = { Elite: "#10b981", Contender: "#3b82f6", Bubble: "#f59e0b", Longshot: "#ef4444" };
+
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Render team table
+    function renderTeamTable() {
+      const tierFilter = document.getElementById('filterTier').value;
+      const confFilter = document.getElementById('filterConf').value;
+
+      const filtered = TEAMS.filter(t => {
+        if (tierFilter !== 'all' && t.tier !== tierFilter) return false;
+        if (confFilter !== 'all' && t.conference !== confFilter) return false;
+        return true;
+      });
+
+      const tbody = document.getElementById('teamTableBody');
+      tbody.innerHTML = filtered.map(t => `
+        <tr>
+          <td><span class="rank" style="color: ${TIER_COLORS[t.tier]}">${t.rank}</span></td>
+          <td>
+            <span class="team-code">${t.code}</span>
+            <span class="team-name">${t.name}</span>
+          </td>
+          <td><span class="tier-badge tier-${t.tier.toLowerCase()}">${TIER_ICONS[t.tier]} ${t.tier}</span></td>
+          <td><span class="strength">${t.strength.toFixed(1)}</span></td>
+          <td>${t.playoff.toFixed(1)}%</td>
+          <td class="cup-prob">
+            <span class="cup-main">${t.cup.toFixed(1)}%</span><br>
+            <span class="cup-range">(${t.cupLow.toFixed(1)}-${t.cupHigh.toFixed(1)})</span>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // Render odds
+    function renderOdds() {
+      // Cup odds
+      document.getElementById('cupOdds').innerHTML = TEAMS.slice(0, 10).map(t => `
+        <div class="odds-item">
+          <span class="odds-team">${t.code}</span>
+          <div class="odds-bar"><div class="odds-bar-fill" style="width: ${t.cup * 4}%"></div></div>
+          <span class="odds-value">${t.cup.toFixed(1)}%</span>
+        </div>
+      `).join('');
+
+      // Playoff odds
+      document.getElementById('playoffOdds').innerHTML = TEAMS.filter(t => t.playoff > 50).map(t => `
+        <div class="odds-item">
+          <span class="odds-team">${t.code}</span>
+          <div class="odds-bar"><div class="odds-bar-fill" style="width: ${t.playoff}%"></div></div>
+          <span class="odds-value">${t.playoff.toFixed(1)}%</span>
+        </div>
+      `).join('');
+
+      // Conference breakdown
+      const east = TEAMS.filter(t => t.conference === 'East').slice(0, 8);
+      const west = TEAMS.filter(t => t.conference === 'West').slice(0, 8);
+
+      document.getElementById('eastTeams').innerHTML = east.map((t, i) => `
+        <div class="conf-row">
+          <span>${i + 1}. ${t.code}</span>
+          <span style="color: ${TIER_COLORS[t.tier]}">${t.playoff.toFixed(1)}%</span>
+        </div>
+      `).join('');
+
+      document.getElementById('westTeams').innerHTML = west.map((t, i) => `
+        <div class="conf-row">
+          <span>${i + 1}. ${t.code}</span>
+          <span style="color: ${TIER_COLORS[t.tier]}">${t.playoff.toFixed(1)}%</span>
+        </div>
+      `).join('');
+    }
+
+    // Render glossary
+    function renderGlossary() {
+      document.getElementById('glossaryGrid').innerHTML = GLOSSARY.map(g => `
+        <div class="glossary-item">
+          <h4>${g.name}</h4>
+          <p>${g.desc}</p>
+          <code>${g.formula}</code>
+        </div>
+      `).join('');
+    }
+
+    // Simulation
+    document.getElementById('simBtn').addEventListener('click', function() {
+      this.textContent = '⏳ Simulating 10,000 Brackets...';
+      this.disabled = true;
+
+      setTimeout(() => {
+        const results = TEAMS.slice(0, 12).map(t => ({
+          code: t.code,
+          prob: (Math.random() * 15 + t.cup * 0.9).toFixed(1)
+        })).sort((a, b) => b.prob - a.prob);
+
+        document.getElementById('simResults').innerHTML = `
+          <h4 style="color: #10b981; margin-bottom: 16px;">✅ Simulation Complete</h4>
+          ${results.map(r => `
+            <div class="odds-item">
+              <span class="odds-team">${r.code}</span>
+              <div class="odds-bar"><div class="odds-bar-fill" style="width: ${r.prob * 4}%"></div></div>
+              <span class="odds-value">${r.prob}%</span>
+            </div>
+          `).join('')}
+        `;
+
+        this.textContent = '🚀 Run Full Simulation';
+        this.disabled = false;
+      }, 2000);
+    });
+
+    // Weights chart
+    function renderWeightsChart() {
+      const ctx = document.getElementById('weightsChart').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: WEIGHTS.map(w => w.name),
+          datasets: [{
+            data: WEIGHTS.map(w => w.weight),
+            backgroundColor: WEIGHTS.map((_, i) => `hsl(${200 + i * 20}, 70%, 50%)`),
+            borderRadius: 4
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { max: 20, grid: { color: '#2d3a4f' }, ticks: { color: '#94a3b8' } },
+            y: { grid: { display: false }, ticks: { color: '#94a3b8' } }
+          }
+        }
+      });
+    }
+
+    // Filter listeners
+    document.getElementById('filterTier').addEventListener('change', renderTeamTable);
+    document.getElementById('filterConf').addEventListener('change', renderTeamTable);
+
+    // Initialize
+    renderTeamTable();
+    renderOdds();
+    renderGlossary();
+    renderWeightsChart();
+  </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NHL Championship Framework V7.1 - Preview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0a0e17 0%, #1a1f2e 100%);
+      color: #f0f4f8;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    .header {
+      text-align: center;
+      padding: 32px;
+      background: rgba(26, 34, 52, 0.8);
+      border-radius: 16px;
+      margin-bottom: 24px;
+      border: 1px solid #2d3a4f;
+    }
+    .header h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #10b981, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    .header .subtitle { color: #94a3b8; font-size: 0.9rem; }
+    .header .updated { color: #64748b; font-size: 0.8rem; margin-top: 8px; }
+
+    .tier {
+      background: rgba(26, 34, 52, 0.6);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #2d3a4f;
+      overflow: hidden;
+    }
+    .tier-header {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .tier-elite .tier-header { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+    .tier-contender .tier-header { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
+    .tier-bubble .tier-header { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+    .tier-longshot .tier-header { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
+
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #2d3a4f; }
+    th { background: rgba(0,0,0,0.3); color: #94a3b8; font-size: 0.8rem; text-transform: uppercase; }
+    tr:hover { background: rgba(255,255,255,0.05); }
+    .weight { font-weight: 700; }
+    .metric { color: #94a3b8; }
+    .good { color: #10b981; }
+    .bad { color: #ef4444; }
+
+    .formula {
+      background: rgba(26, 34, 52, 0.8);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 24px;
+      border: 1px solid #2d3a4f;
+    }
+    .formula h3 { color: #3b82f6; margin-bottom: 12px; }
+    .formula-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+    .formula-item { background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; text-align: center; }
+    .formula-item .pct { font-size: 1.5rem; font-weight: 700; color: #10b981; }
+    .formula-item .label { font-size: 0.8rem; color: #94a3b8; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🏒 NHL Championship Framework V7.1</h1>
+      <div class="subtitle">Advanced Playoff Predictor | 2025-26 Season</div>
+      <div class="updated">Data Updated: January 30, 2026 | Sources: NHL.com, MoneyPuck, Natural Stat Trick</div>
+    </div>
+
+    <!-- ELITE TIER -->
+    <div class="tier tier-elite">
+      <div class="tier-header">🏆 ELITE TIER (Weight ≥ 230) — True Cup Contenders</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Weight</th>
+            <th>Points</th>
+            <th>HDCF%</th>
+            <th>CF%</th>
+            <th>PDO</th>
+            <th>PP%</th>
+            <th>PK%</th>
+            <th>GSAx</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Colorado Avalanche</strong></td>
+            <td class="weight good">266</td>
+            <td>79</td>
+            <td class="good">55.4</td>
+            <td class="good">56.1</td>
+            <td>102.8</td>
+            <td>22.5</td>
+            <td>83.0</td>
+            <td class="good">+20.6</td>
+          </tr>
+          <tr>
+            <td><strong>Tampa Bay Lightning</strong></td>
+            <td class="weight good">256</td>
+            <td>72</td>
+            <td class="good">56.1</td>
+            <td class="good">53.4</td>
+            <td>102.7</td>
+            <td>24.0</td>
+            <td>85.0</td>
+            <td class="good">+7.0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CONTENDERS -->
+    <div class="tier tier-contender">
+      <div class="tier-header">🔵 CONTENDERS (Weight 200-229) — Playoff Ready</div>
+      <table>
+        <thead>
+          <tr><th>Team</th><th>Weight</th><th>Points</th><th>HDCF%</th><th>CF%</th><th>GSAx</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Carolina Hurricanes</td><td class="weight">226</td><td>71</td><td>55.3</td><td class="good">59.8</td><td>-14.8</td></tr>
+          <tr><td>Utah Hockey Club</td><td class="weight">223</td><td>60</td><td>53.5</td><td>53.5</td><td>+3.7</td></tr>
+          <tr><td>Ottawa Senators</td><td class="weight">223</td><td>57</td><td>53.3</td><td>53.0</td><td class="good">+16.6</td></tr>
+          <tr><td>Washington Capitals</td><td class="weight">214</td><td>59</td><td>52.6</td><td>50.8</td><td>+4.1</td></tr>
+          <tr><td>Pittsburgh Penguins</td><td class="weight">209</td><td>65</td><td>52.7</td><td>51.0</td><td>-1.2</td></tr>
+          <tr><td>Vegas Golden Knights</td><td class="weight">209</td><td>63</td><td>53.5</td><td>50.5</td><td>+5.8</td></tr>
+          <tr><td>Buffalo Sabres</td><td class="weight">206</td><td>67</td><td>49.2</td><td>48.1</td><td class="good">+14.2</td></tr>
+          <tr><td>Los Angeles Kings</td><td class="weight">205</td><td>57</td><td>52.6</td><td>53.0</td><td>-14.3</td></tr>
+          <tr><td>Florida Panthers</td><td class="weight">204</td><td>59</td><td>51.5</td><td>51.9</td><td>-0.2</td></tr>
+          <tr><td>Dallas Stars</td><td class="weight">202</td><td>69</td><td>50.0</td><td>46.0</td><td>+8.1</td></tr>
+          <tr><td>Boston Bruins</td><td class="weight">202</td><td>67</td><td>45.9</td><td>48.9</td><td class="good">+16.1</td></tr>
+          <tr><td>Philadelphia Flyers</td><td class="weight">201</td><td>57</td><td>53.0</td><td>48.1</td><td>+9.5</td></tr>
+          <tr><td>Edmonton Oilers</td><td class="weight">200</td><td>64</td><td>50.7</td><td>49.9</td><td>-7.1</td></tr>
+          <tr><td>Nashville Predators</td><td class="weight">200</td><td>54</td><td>54.7</td><td>52.1</td><td>-17.6</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BUBBLE -->
+    <div class="tier tier-bubble">
+      <div class="tier-header">🟡 BUBBLE TEAMS (Weight 170-199) — Risky Bets</div>
+      <table>
+        <thead>
+          <tr><th>Team</th><th>Weight</th><th>Points</th><th>HDCF%</th><th>CF%</th><th>GSAx</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Montreal Canadiens</td><td class="weight">199</td><td>67</td><td>46.7</td><td>49.3</td><td class="good">+16.3</td></tr>
+          <tr><td>Columbus Blue Jackets</td><td class="weight">199</td><td>57</td><td>51.4</td><td>50.5</td><td>+1.8</td></tr>
+          <tr><td>New York Rangers</td><td class="weight">197</td><td>50</td><td>51.9</td><td>48.9</td><td>-8.9</td></tr>
+          <tr><td>Winnipeg Jets</td><td class="weight">196</td><td>49</td><td>47.6</td><td>48.2</td><td>+11.1</td></tr>
+          <tr><td>Anaheim Ducks</td><td class="weight">192</td><td>59</td><td>49.9</td><td>51.9</td><td>-3.7</td></tr>
+          <tr><td>Toronto Maple Leafs</td><td class="weight">192</td><td>57</td><td>48.8</td><td>45.5</td><td class="good">+20.7</td></tr>
+          <tr><td>Minnesota Wild ⚠️</td><td class="weight">188</td><td>72</td><td>48.8</td><td>47.2</td><td>-5.9</td></tr>
+          <tr><td>Detroit Red Wings ⚠️</td><td class="weight">180</td><td>70</td><td>48.4</td><td>49.0</td><td>-9.9</td></tr>
+          <tr><td>New York Islanders</td><td class="weight">173</td><td>65</td><td class="bad">44.1</td><td>48.1</td><td>-3.4</td></tr>
+          <tr><td>Calgary Flames</td><td class="weight">172</td><td>48</td><td>48.0</td><td>50.9</td><td>-15.2</td></tr>
+          <tr><td>San Jose Sharks</td><td class="weight">170</td><td>58</td><td>46.5</td><td class="bad">44.9</td><td>+7.2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- LONGSHOTS -->
+    <div class="tier tier-longshot">
+      <div class="tier-header">🔴 LONGSHOTS (Weight < 170) — Avoid in Playoffs</div>
+      <table>
+        <thead>
+          <tr><th>Team</th><th>Weight</th><th>Points</th><th>HDCF%</th><th>CF%</th><th>GSAx</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>New Jersey Devils</td><td class="weight bad">168</td><td>58</td><td>48.3</td><td>51.0</td><td class="bad">-21.5</td></tr>
+          <tr><td>Seattle Kraken</td><td class="weight bad">168</td><td>57</td><td class="bad">42.7</td><td class="bad">45.5</td><td>+0.7</td></tr>
+          <tr><td>St. Louis Blues</td><td class="weight bad">168</td><td>49</td><td>49.0</td><td>47.5</td><td>-6.5</td></tr>
+          <tr><td>Vancouver Canucks</td><td class="weight bad">158</td><td>39</td><td>46.6</td><td>48.3</td><td class="bad">-16.4</td></tr>
+          <tr><td>Chicago Blackhawks</td><td class="weight bad">154</td><td>51</td><td class="bad">41.6</td><td>46.7</td><td>+0.2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FORMULA -->
+    <div class="formula">
+      <h3>📊 Weight Calculation Formula (V7.1)</h3>
+      <div class="formula-grid">
+        <div class="formula-item"><div class="pct">25%</div><div class="label">HDCF%</div></div>
+        <div class="formula-item"><div class="pct">20%</div><div class="label">CF%</div></div>
+        <div class="formula-item"><div class="pct">15%</div><div class="label">PDO</div></div>
+        <div class="formula-item"><div class="pct">15%</div><div class="label">PP%</div></div>
+        <div class="formula-item"><div class="pct">10%</div><div class="label">PK%</div></div>
+        <div class="formula-item"><div class="pct">15%</div><div class="label">GSAx</div></div>
+      </div>
+      <p style="margin-top: 16px; color: #94a3b8; font-size: 0.85rem;">
+        ⚠️ <strong>Note:</strong> Minnesota (72 pts) and Detroit (70 pts) have high points but lower weights —
+        the model flags them as overperformers likely to regress. Weights need backtesting validation.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
