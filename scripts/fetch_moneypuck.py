@@ -12,7 +12,7 @@ from pathlib import Path
 from datetime import datetime
 
 # MoneyPuck CSV URLs (update season year as needed)
-SEASON = "2025"  # 2024-25 season
+SEASON = "2026"  # 2025-26 season
 TEAMS_CSV_URL = f"https://moneypuck.com/moneypuck/playerData/seasonSummary/{SEASON}/regular/teams.csv"
 
 # Team name to abbreviation mapping (supports both full names and abbreviations)

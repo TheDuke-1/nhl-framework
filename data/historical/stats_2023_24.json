@@ -1,0 +1,130 @@
+{
+  "FLA": {
+    "cf_pct": 52.1,
+    "hdcf_pct": 51.8,
+    "pdo": 101.2,
+    "pp_pct": 22.4,
+    "pk_pct": 80.1,
+    "gsax": 8.5
+  },
+  "NYR": {
+    "cf_pct": 54.3,
+    "hdcf_pct": 53.2,
+    "pdo": 102.1,
+    "pp_pct": 26.2,
+    "pk_pct": 82.3,
+    "gsax": 15.2
+  },
+  "BOS": {
+    "cf_pct": 50.8,
+    "hdcf_pct": 49.5,
+    "pdo": 100.5,
+    "pp_pct": 21.8,
+    "pk_pct": 81.5,
+    "gsax": 10.3
+  },
+  "CAR": {
+    "cf_pct": 56.2,
+    "hdcf_pct": 54.1,
+    "pdo": 99.8,
+    "pp_pct": 24.5,
+    "pk_pct": 85.2,
+    "gsax": 5.2
+  },
+  "VAN": {
+    "cf_pct": 51.5,
+    "hdcf_pct": 50.2,
+    "pdo": 101.8,
+    "pp_pct": 25.1,
+    "pk_pct": 78.5,
+    "gsax": 12.1
+  },
+  "EDM": {
+    "cf_pct": 50.2,
+    "hdcf_pct": 51.5,
+    "pdo": 100.2,
+    "pp_pct": 29.8,
+    "pk_pct": 76.8,
+    "gsax": -2.5
+  },
+  "DAL": {
+    "cf_pct": 51.8,
+    "hdcf_pct": 50.8,
+    "pdo": 100.8,
+    "pp_pct": 22.2,
+    "pk_pct": 79.5,
+    "gsax": 6.8
+  },
+  "WPG": {
+    "cf_pct": 53.5,
+    "hdcf_pct": 52.1,
+    "pdo": 101.5,
+    "pp_pct": 19.8,
+    "pk_pct": 80.8,
+    "gsax": 18.5
+  },
+  "COL": {
+    "cf_pct": 52.8,
+    "hdcf_pct": 53.5,
+    "pdo": 99.2,
+    "pp_pct": 21.5,
+    "pk_pct": 77.2,
+    "gsax": -5.2
+  },
+  "TB": {
+    "cf_pct": 49.5,
+    "hdcf_pct": 48.2,
+    "pdo": 100.1,
+    "pp_pct": 23.5,
+    "pk_pct": 82.1,
+    "gsax": 4.5
+  },
+  "TOR": {
+    "cf_pct": 51.2,
+    "hdcf_pct": 49.8,
+    "pdo": 100.5,
+    "pp_pct": 24.8,
+    "pk_pct": 79.8,
+    "gsax": 2.1
+  },
+  "NSH": {
+    "cf_pct": 50.5,
+    "hdcf_pct": 49.2,
+    "pdo": 99.8,
+    "pp_pct": 18.5,
+    "pk_pct": 83.5,
+    "gsax": 8.2
+  },
+  "VGK": {
+    "cf_pct": 48.8,
+    "hdcf_pct": 47.5,
+    "pdo": 101.2,
+    "pp_pct": 20.2,
+    "pk_pct": 80.5,
+    "gsax": 7.5
+  },
+  "LA": {
+    "cf_pct": 52.2,
+    "hdcf_pct": 51.2,
+    "pdo": 99.5,
+    "pp_pct": 19.8,
+    "pk_pct": 81.2,
+    "gsax": 3.5
+  },
+  "WSH": {
+    "cf_pct": 48.5,
+    "hdcf_pct": 47.8,
+    "pdo": 100.8,
+    "pp_pct": 20.5,
+    "pk_pct": 78.2,
+    "gsax": -1.5
+  },
+  "PHI": {
+    "cf_pct": 47.8,
+    "hdcf_pct": 46.5,
+    "pdo": 101.5,
+    "pp_pct": 18.2,
+    "pk_pct": 77.5,
+    "gsax": 5.8
+  }
+}

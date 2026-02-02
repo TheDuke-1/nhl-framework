@@ -1,0 +1,84 @@
+{
+  "_metadata": {
+    "description": "Index of verified historical NHL data",
+    "generatedAt": "2026-02-01T22:57:30.415779Z",
+    "sources": [
+      "NHL API",
+      "Natural Stat Trick"
+    ]
+  },
+  "seasons": {
+    "2014": {
+      "file": "season_2014.json",
+      "seasonLabel": "2013-14",
+      "cupWinner": "LA",
+      "cupFinalist": "NYR"
+    },
+    "2015": {
+      "file": "season_2015.json",
+      "seasonLabel": "2014-15",
+      "cupWinner": "CHI",
+      "cupFinalist": "TB"
+    },
+    "2016": {
+      "file": "season_2016.json",
+      "seasonLabel": "2015-16",
+      "cupWinner": "PIT",
+      "cupFinalist": "SJ"
+    },
+    "2017": {
+      "file": "season_2017.json",
+      "seasonLabel": "2016-17",
+      "cupWinner": "PIT",
+      "cupFinalist": "NSH"
+    },
+    "2018": {
+      "file": "season_2018.json",
+      "seasonLabel": "2017-18",
+      "cupWinner": "WSH",
+      "cupFinalist": "VGK"
+    },
+    "2019": {
+      "file": "season_2019.json",
+      "seasonLabel": "2018-19",
+      "cupWinner": "STL",
+      "cupFinalist": "BOS"
+    },
+    "2020": {
+      "file": "season_2020.json",
+      "seasonLabel": "2019-20",
+      "cupWinner": "TB",
+      "cupFinalist": "DAL"
+    },
+    "2021": {
+      "file": "season_2021.json",
+      "seasonLabel": "2020-21",
+      "cupWinner": "TB",
+      "cupFinalist": "MTL"
+    },
+    "2022": {
+      "file": "season_2022.json",
+      "seasonLabel": "2021-22",
+      "cupWinner": "COL",
+      "cupFinalist": "TB"
+    },
+    "2023": {
+      "file": "season_2023.json",
+      "seasonLabel": "2022-23",
+      "cupWinner": "VGK",
+      "cupFinalist": "FLA"
+    },
+    "2024": {
+      "file": "season_2024.json",
+      "seasonLabel": "2023-24",
+      "cupWinner": "FLA",
+      "cupFinalist": "EDM"
+    },
+    "2025": {
+      "file": "season_2025.json",
+      "seasonLabel": "2024-25",
+      "cupWinner": "FLA",
+      "cupFinalist": "EDM"
+    }
+  }
+}
