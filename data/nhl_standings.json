@@ -6,7 +6,7 @@
       "https://api.nhle.com/stats/rest/en/team/powerplay?cayenneExp=seasonId=20252026",
       "https://api.nhle.com/stats/rest/en/team/penaltykill?cayenneExp=seasonId=20252026"
     ],
-    "fetchedAt": "2026-02-02T05:59:54.541315Z",
+    "fetchedAt": "2026-02-02T11:31:26.935475Z",
     "teamCount": 32
   },
   "teams": {
@@ -283,8 +283,8 @@
       "confRank": 4,
       "leagueRank": 12,
       "recentPts": 40.0,
-      "ppPct": 25.6,
-      "pkPct": 81.0
+      "ppPct": 25.3,
+      "pkPct": 80.5
     },
     "EDM": {
       "team": "EDM",
@@ -375,8 +375,8 @@
       "confRank": 7,
       "leagueRank": 16,
       "recentPts": 80.0,
-      "ppPct": 17.8,
-      "pkPct": 77.8
+      "ppPct": 18.2,
+      "pkPct": 78.1
     },
     "WSH": {
       "team": "WSH",

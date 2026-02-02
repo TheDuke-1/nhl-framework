@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated": "2026-02-02T06:00:00.351725",
+    "generated": "2026-02-02T11:31:31.269657",
     "season": 2026,
     "seasonDisplay": "2025-26",
     "modelVersion": "2.0 - Enhanced Playoff Model",
-    "lastUpdate": "February 02, 2026 at 06:00 AM"
+    "lastUpdate": "February 02, 2026 at 11:31 AM"
   },
   "teams": [
     {
@@ -20,31 +20,13 @@
       "tierIcon": "\ud83c\udfc6",
       "compositeStrength": 57.9,
       "strengthRank": 3,
-      "playoffProbability": 95.9,
-      "cupProbability": 15.9,
-      "cupProbLower": 15.31,
-      "cupProbUpper": 16.51
+      "playoffProbability": 96.0,
+      "cupProbability": 15.98,
+      "cupProbLower": 15.39,
+      "cupProbUpper": 16.59
     },
     {
       "rank": 2,
-      "code": "COL",
-      "name": "Colorado Avalanche",
-      "city": "Denver",
-      "conference": "West",
-      "division": "Central",
-      "tier": "Elite",
-      "tierColor": "#10b981",
-      "tierBg": "rgba(16, 185, 129, 0.15)",
-      "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 63.1,
-      "strengthRank": 1,
-      "playoffProbability": 100.0,
-      "cupProbability": 8.97,
-      "cupProbLower": 8.52,
-      "cupProbUpper": 9.46
-    },
-    {
-      "rank": 3,
       "code": "DAL",
       "name": "Dallas Stars",
       "city": "Dallas",
@@ -57,9 +39,27 @@
       "compositeStrength": 54.3,
       "strengthRank": 5,
       "playoffProbability": 99.2,
-      "cupProbability": 8.93,
-      "cupProbLower": 8.48,
-      "cupProbUpper": 9.42
+      "cupProbability": 9.39,
+      "cupProbLower": 8.93,
+      "cupProbUpper": 9.89
+    },
+    {
+      "rank": 3,
+      "code": "COL",
+      "name": "Colorado Avalanche",
+      "city": "Denver",
+      "conference": "West",
+      "division": "Central",
+      "tier": "Elite",
+      "tierColor": "#10b981",
+      "tierBg": "rgba(16, 185, 129, 0.15)",
+      "tierIcon": "\ud83c\udfc6",
+      "compositeStrength": 63.1,
+      "strengthRank": 1,
+      "playoffProbability": 100.0,
+      "cupProbability": 8.89,
+      "cupProbLower": 8.44,
+      "cupProbUpper": 9.37
     },
     {
       "rank": 4,
@@ -75,9 +75,9 @@
       "compositeStrength": 59.7,
       "strengthRank": 2,
       "playoffProbability": 99.9,
-      "cupProbability": 7.93,
-      "cupProbLower": 7.5,
-      "cupProbUpper": 8.38
+      "cupProbability": 8.0,
+      "cupProbLower": 7.57,
+      "cupProbUpper": 8.46
     },
     {
       "rank": 5,
@@ -93,9 +93,9 @@
       "compositeStrength": 53.6,
       "strengthRank": 7,
       "playoffProbability": 95.3,
-      "cupProbability": 6.27,
-      "cupProbLower": 5.88,
-      "cupProbUpper": 6.68
+      "cupProbability": 6.03,
+      "cupProbLower": 5.66,
+      "cupProbUpper": 6.44
     },
     {
       "rank": 6,
@@ -111,9 +111,9 @@
       "compositeStrength": 55.1,
       "strengthRank": 4,
       "playoffProbability": 96.7,
-      "cupProbability": 5.89,
-      "cupProbLower": 5.52,
-      "cupProbUpper": 6.29
+      "cupProbability": 5.94,
+      "cupProbLower": 5.57,
+      "cupProbUpper": 6.35
     },
     {
       "rank": 7,
@@ -129,9 +129,9 @@
       "compositeStrength": 52.2,
       "strengthRank": 13,
       "playoffProbability": 78.6,
-      "cupProbability": 5.38,
-      "cupProbLower": 5.02,
-      "cupProbUpper": 5.76
+      "cupProbability": 5.55,
+      "cupProbLower": 5.19,
+      "cupProbUpper": 5.94
     },
     {
       "rank": 8,
@@ -147,9 +147,9 @@
       "compositeStrength": 53.3,
       "strengthRank": 8,
       "playoffProbability": 97.0,
-      "cupProbability": 5.34,
-      "cupProbLower": 4.98,
-      "cupProbUpper": 5.72
+      "cupProbability": 5.29,
+      "cupProbLower": 4.94,
+      "cupProbUpper": 5.68
     },
     {
       "rank": 9,
@@ -165,30 +165,12 @@
       "compositeStrength": 54.0,
       "strengthRank": 6,
       "playoffProbability": 91.4,
-      "cupProbability": 5.31,
-      "cupProbLower": 4.95,
-      "cupProbUpper": 5.69
+      "cupProbability": 5.22,
+      "cupProbLower": 4.87,
+      "cupProbUpper": 5.6
     },
     {
       "rank": 10,
-      "code": "VGK",
-      "name": "Vegas Golden Knights",
-      "city": "Las Vegas",
-      "conference": "West",
-      "division": "Pacific",
-      "tier": "Contender",
-      "tierColor": "#3b82f6",
-      "tierBg": "rgba(59, 130, 246, 0.15)",
-      "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 52.9,
-      "strengthRank": 10,
-      "playoffProbability": 81.1,
-      "cupProbability": 5.12,
-      "cupProbLower": 4.77,
-      "cupProbUpper": 5.49
-    },
-    {
-      "rank": 11,
       "code": "EDM",
       "name": "Edmonton Oilers",
       "city": "Edmonton",
@@ -199,11 +181,29 @@
       "tierBg": "rgba(59, 130, 246, 0.15)",
       "tierIcon": "\ud83c\udfaf",
       "compositeStrength": 52.9,
-      "strengthRank": 11,
+      "strengthRank": 10,
       "playoffProbability": 76.4,
-      "cupProbability": 4.16,
-      "cupProbLower": 3.85,
-      "cupProbUpper": 4.5
+      "cupProbability": 5.15,
+      "cupProbLower": 4.8,
+      "cupProbUpper": 5.53
+    },
+    {
+      "rank": 11,
+      "code": "VGK",
+      "name": "Vegas Golden Knights",
+      "city": "Las Vegas",
+      "conference": "West",
+      "division": "Pacific",
+      "tier": "Contender",
+      "tierColor": "#3b82f6",
+      "tierBg": "rgba(59, 130, 246, 0.15)",
+      "tierIcon": "\ud83c\udfaf",
+      "compositeStrength": 52.9,
+      "strengthRank": 11,
+      "playoffProbability": 81.0,
+      "cupProbability": 4.18,
+      "cupProbLower": 3.86,
+      "cupProbUpper": 4.52
     },
     {
       "rank": 12,
@@ -219,9 +219,9 @@
       "compositeStrength": 51.9,
       "strengthRank": 14,
       "playoffProbability": 65.9,
-      "cupProbability": 3.62,
-      "cupProbLower": 3.33,
-      "cupProbUpper": 3.94
+      "cupProbability": 3.39,
+      "cupProbLower": 3.1,
+      "cupProbUpper": 3.7
     },
     {
       "rank": 13,
@@ -237,9 +237,9 @@
       "compositeStrength": 49.6,
       "strengthRank": 19,
       "playoffProbability": 55.9,
-      "cupProbability": 2.69,
-      "cupProbLower": 2.44,
-      "cupProbUpper": 2.97
+      "cupProbability": 2.54,
+      "cupProbLower": 2.3,
+      "cupProbUpper": 2.82
     },
     {
       "rank": 14,
@@ -255,9 +255,9 @@
       "compositeStrength": 50.3,
       "strengthRank": 16,
       "playoffProbability": 50.3,
-      "cupProbability": 2.27,
-      "cupProbLower": 2.04,
-      "cupProbUpper": 2.53
+      "cupProbability": 2.14,
+      "cupProbLower": 1.91,
+      "cupProbUpper": 2.39
     },
     {
       "rank": 15,
@@ -274,7 +274,7 @@
       "strengthRank": 12,
       "playoffProbability": 81.4,
       "cupProbability": 1.68,
-      "cupProbLower": 1.48,
+      "cupProbLower": 1.49,
       "cupProbUpper": 1.91
     },
     {
@@ -309,9 +309,9 @@
       "compositeStrength": 47.3,
       "strengthRank": 25,
       "playoffProbability": 28.3,
-      "cupProbability": 1.6,
-      "cupProbLower": 1.41,
-      "cupProbUpper": 1.82
+      "cupProbability": 1.59,
+      "cupProbLower": 1.4,
+      "cupProbUpper": 1.81
     },
     {
       "rank": 18,
@@ -345,9 +345,9 @@
       "compositeStrength": 50.2,
       "strengthRank": 18,
       "playoffProbability": 13.9,
-      "cupProbability": 0.9,
-      "cupProbLower": 0.76,
-      "cupProbUpper": 1.08
+      "cupProbability": 0.99,
+      "cupProbLower": 0.84,
+      "cupProbUpper": 1.17
     },
     {
       "rank": 20,
@@ -418,7 +418,7 @@
       "strengthRank": 26,
       "playoffProbability": 14.1,
       "cupProbability": 0.47,
-      "cupProbLower": 0.37,
+      "cupProbLower": 0.38,
       "cupProbUpper": 0.6
     },
     {
@@ -437,7 +437,7 @@
       "playoffProbability": 22.7,
       "cupProbability": 0.46,
       "cupProbLower": 0.36,
-      "cupProbUpper": 0.58
+      "cupProbUpper": 0.59
     },
     {
       "rank": 25,
@@ -453,7 +453,7 @@
       "compositeStrength": 47.1,
       "strengthRank": 27,
       "playoffProbability": 6.5,
-      "cupProbability": 0.44,
+      "cupProbability": 0.45,
       "cupProbLower": 0.35,
       "cupProbUpper": 0.57
     },
@@ -470,7 +470,7 @@
       "tierIcon": "\u26a1",
       "compositeStrength": 49.3,
       "strengthRank": 20,
-      "playoffProbability": 20.4,
+      "playoffProbability": 20.3,
       "cupProbability": 0.4,
       "cupProbLower": 0.31,
       "cupProbUpper": 0.52
@@ -646,8 +646,8 @@
       "BUF",
       "MIN",
       "UTA",
-      "VGK",
       "EDM",
+      "VGK",
       "WSH",
       "OTT"
     ],
@@ -714,9 +714,9 @@
         "compositeStrength": 59.7,
         "strengthRank": 2,
         "playoffProbability": 99.9,
-        "cupProbability": 7.93,
-        "cupProbLower": 7.5,
-        "cupProbUpper": 8.38
+        "cupProbability": 8.0,
+        "cupProbLower": 7.57,
+        "cupProbUpper": 8.46
       },
       {
         "rank": 6,
@@ -732,9 +732,9 @@
         "compositeStrength": 55.1,
         "strengthRank": 4,
         "playoffProbability": 96.7,
-        "cupProbability": 5.89,
-        "cupProbLower": 5.52,
-        "cupProbUpper": 6.29
+        "cupProbability": 5.94,
+        "cupProbLower": 5.57,
+        "cupProbUpper": 6.35
       },
       {
         "rank": 1,
@@ -749,10 +749,10 @@
         "tierIcon": "\ud83c\udfc6",
         "compositeStrength": 57.9,
         "strengthRank": 3,
-        "playoffProbability": 95.9,
-        "cupProbability": 15.9,
-        "cupProbLower": 15.31,
-        "cupProbUpper": 16.51
+        "playoffProbability": 96.0,
+        "cupProbability": 15.98,
+        "cupProbLower": 15.39,
+        "cupProbUpper": 16.59
       },
       {
         "rank": 5,
@@ -768,9 +768,9 @@
         "compositeStrength": 53.6,
         "strengthRank": 7,
         "playoffProbability": 95.3,
-        "cupProbability": 6.27,
-        "cupProbLower": 5.88,
-        "cupProbUpper": 6.68
+        "cupProbability": 6.03,
+        "cupProbLower": 5.66,
+        "cupProbUpper": 6.44
       },
       {
         "rank": 15,
@@ -787,7 +787,7 @@
         "strengthRank": 12,
         "playoffProbability": 81.4,
         "cupProbability": 1.68,
-        "cupProbLower": 1.48,
+        "cupProbLower": 1.49,
         "cupProbUpper": 1.91
       },
       {
@@ -804,9 +804,9 @@
         "compositeStrength": 52.2,
         "strengthRank": 13,
         "playoffProbability": 78.6,
-        "cupProbability": 5.38,
-        "cupProbLower": 5.02,
-        "cupProbUpper": 5.76
+        "cupProbability": 5.55,
+        "cupProbLower": 5.19,
+        "cupProbUpper": 5.94
       },
       {
         "rank": 16,
@@ -840,14 +840,14 @@
         "compositeStrength": 51.9,
         "strengthRank": 14,
         "playoffProbability": 65.9,
-        "cupProbability": 3.62,
-        "cupProbLower": 3.33,
-        "cupProbUpper": 3.94
+        "cupProbability": 3.39,
+        "cupProbLower": 3.1,
+        "cupProbUpper": 3.7
       }
     ],
     "West": [
       {
-        "rank": 2,
+        "rank": 3,
         "code": "COL",
         "name": "Colorado Avalanche",
         "city": "Denver",
@@ -860,12 +860,12 @@
         "compositeStrength": 63.1,
         "strengthRank": 1,
         "playoffProbability": 100.0,
-        "cupProbability": 8.97,
-        "cupProbLower": 8.52,
-        "cupProbUpper": 9.46
+        "cupProbability": 8.89,
+        "cupProbLower": 8.44,
+        "cupProbUpper": 9.37
       },
       {
-        "rank": 3,
+        "rank": 2,
         "code": "DAL",
         "name": "Dallas Stars",
         "city": "Dallas",
@@ -878,9 +878,9 @@
         "compositeStrength": 54.3,
         "strengthRank": 5,
         "playoffProbability": 99.2,
-        "cupProbability": 8.93,
-        "cupProbLower": 8.48,
-        "cupProbUpper": 9.42
+        "cupProbability": 9.39,
+        "cupProbLower": 8.93,
+        "cupProbUpper": 9.89
       },
       {
         "rank": 8,
@@ -896,9 +896,9 @@
         "compositeStrength": 53.3,
         "strengthRank": 8,
         "playoffProbability": 97.0,
-        "cupProbability": 5.34,
-        "cupProbLower": 4.98,
-        "cupProbUpper": 5.72
+        "cupProbability": 5.29,
+        "cupProbLower": 4.94,
+        "cupProbUpper": 5.68
       },
       {
         "rank": 9,
@@ -914,12 +914,12 @@
         "compositeStrength": 54.0,
         "strengthRank": 6,
         "playoffProbability": 91.4,
-        "cupProbability": 5.31,
-        "cupProbLower": 4.95,
-        "cupProbUpper": 5.69
+        "cupProbability": 5.22,
+        "cupProbLower": 4.87,
+        "cupProbUpper": 5.6
       },
       {
-        "rank": 10,
+        "rank": 11,
         "code": "VGK",
         "name": "Vegas Golden Knights",
         "city": "Las Vegas",
@@ -930,14 +930,14 @@
         "tierBg": "rgba(59, 130, 246, 0.15)",
         "tierIcon": "\ud83c\udfaf",
         "compositeStrength": 52.9,
-        "strengthRank": 10,
-        "playoffProbability": 81.1,
-        "cupProbability": 5.12,
-        "cupProbLower": 4.77,
-        "cupProbUpper": 5.49
+        "strengthRank": 11,
+        "playoffProbability": 81.0,
+        "cupProbability": 4.18,
+        "cupProbLower": 3.86,
+        "cupProbUpper": 4.52
       },
       {
-        "rank": 11,
+        "rank": 10,
         "code": "EDM",
         "name": "Edmonton Oilers",
         "city": "Edmonton",
@@ -948,11 +948,11 @@
         "tierBg": "rgba(59, 130, 246, 0.15)",
         "tierIcon": "\ud83c\udfaf",
         "compositeStrength": 52.9,
-        "strengthRank": 11,
+        "strengthRank": 10,
         "playoffProbability": 76.4,
-        "cupProbability": 4.16,
-        "cupProbLower": 3.85,
-        "cupProbUpper": 4.5
+        "cupProbability": 5.15,
+        "cupProbLower": 4.8,
+        "cupProbUpper": 5.53
       },
       {
         "rank": 17,
@@ -968,9 +968,9 @@
         "compositeStrength": 47.3,
         "strengthRank": 25,
         "playoffProbability": 28.3,
-        "cupProbability": 1.6,
-        "cupProbLower": 1.41,
-        "cupProbUpper": 1.82
+        "cupProbability": 1.59,
+        "cupProbLower": 1.4,
+        "cupProbUpper": 1.81
       },
       {
         "rank": 24,
@@ -988,7 +988,7 @@
         "playoffProbability": 22.7,
         "cupProbability": 0.46,
         "cupProbLower": 0.36,
-        "cupProbUpper": 0.58
+        "cupProbUpper": 0.59
       }
     ]
   },
@@ -1006,31 +1006,13 @@
       "tierIcon": "\ud83c\udfc6",
       "compositeStrength": 57.9,
       "strengthRank": 3,
-      "playoffProbability": 95.9,
-      "cupProbability": 15.9,
-      "cupProbLower": 15.31,
-      "cupProbUpper": 16.51
+      "playoffProbability": 96.0,
+      "cupProbability": 15.98,
+      "cupProbLower": 15.39,
+      "cupProbUpper": 16.59
     },
     {
       "rank": 2,
-      "code": "COL",
-      "name": "Colorado Avalanche",
-      "city": "Denver",
-      "conference": "West",
-      "division": "Central",
-      "tier": "Elite",
-      "tierColor": "#10b981",
-      "tierBg": "rgba(16, 185, 129, 0.15)",
-      "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 63.1,
-      "strengthRank": 1,
-      "playoffProbability": 100.0,
-      "cupProbability": 8.97,
-      "cupProbLower": 8.52,
-      "cupProbUpper": 9.46
-    },
-    {
-      "rank": 3,
       "code": "DAL",
       "name": "Dallas Stars",
       "city": "Dallas",
@@ -1043,9 +1025,27 @@
       "compositeStrength": 54.3,
       "strengthRank": 5,
       "playoffProbability": 99.2,
-      "cupProbability": 8.93,
-      "cupProbLower": 8.48,
-      "cupProbUpper": 9.42
+      "cupProbability": 9.39,
+      "cupProbLower": 8.93,
+      "cupProbUpper": 9.89
+    },
+    {
+      "rank": 3,
+      "code": "COL",
+      "name": "Colorado Avalanche",
+      "city": "Denver",
+      "conference": "West",
+      "division": "Central",
+      "tier": "Elite",
+      "tierColor": "#10b981",
+      "tierBg": "rgba(16, 185, 129, 0.15)",
+      "tierIcon": "\ud83c\udfc6",
+      "compositeStrength": 63.1,
+      "strengthRank": 1,
+      "playoffProbability": 100.0,
+      "cupProbability": 8.89,
+      "cupProbLower": 8.44,
+      "cupProbUpper": 9.37
     },
     {
       "rank": 4,
@@ -1061,9 +1061,9 @@
       "compositeStrength": 59.7,
       "strengthRank": 2,
       "playoffProbability": 99.9,
-      "cupProbability": 7.93,
-      "cupProbLower": 7.5,
-      "cupProbUpper": 8.38
+      "cupProbability": 8.0,
+      "cupProbLower": 7.57,
+      "cupProbUpper": 8.46
     },
     {
       "rank": 5,
@@ -1079,9 +1079,9 @@
       "compositeStrength": 53.6,
       "strengthRank": 7,
       "playoffProbability": 95.3,
-      "cupProbability": 6.27,
-      "cupProbLower": 5.88,
-      "cupProbUpper": 6.68
+      "cupProbability": 6.03,
+      "cupProbLower": 5.66,
+      "cupProbUpper": 6.44
     },
     {
       "rank": 6,
@@ -1097,9 +1097,9 @@
       "compositeStrength": 55.1,
       "strengthRank": 4,
       "playoffProbability": 96.7,
-      "cupProbability": 5.89,
-      "cupProbLower": 5.52,
-      "cupProbUpper": 6.29
+      "cupProbability": 5.94,
+      "cupProbLower": 5.57,
+      "cupProbUpper": 6.35
     },
     {
       "rank": 7,
@@ -1115,9 +1115,9 @@
       "compositeStrength": 52.2,
       "strengthRank": 13,
       "playoffProbability": 78.6,
-      "cupProbability": 5.38,
-      "cupProbLower": 5.02,
-      "cupProbUpper": 5.76
+      "cupProbability": 5.55,
+      "cupProbLower": 5.19,
+      "cupProbUpper": 5.94
     },
     {
       "rank": 8,
@@ -1133,9 +1133,9 @@
       "compositeStrength": 53.3,
       "strengthRank": 8,
       "playoffProbability": 97.0,
-      "cupProbability": 5.34,
-      "cupProbLower": 4.98,
-      "cupProbUpper": 5.72
+      "cupProbability": 5.29,
+      "cupProbLower": 4.94,
+      "cupProbUpper": 5.68
     },
     {
       "rank": 9,
@@ -1151,15 +1151,15 @@
       "compositeStrength": 54.0,
       "strengthRank": 6,
       "playoffProbability": 91.4,
-      "cupProbability": 5.31,
-      "cupProbLower": 4.95,
-      "cupProbUpper": 5.69
+      "cupProbability": 5.22,
+      "cupProbLower": 4.87,
+      "cupProbUpper": 5.6
     },
     {
       "rank": 10,
-      "code": "VGK",
-      "name": "Vegas Golden Knights",
-      "city": "Las Vegas",
+      "code": "EDM",
+      "name": "Edmonton Oilers",
+      "city": "Edmonton",
       "conference": "West",
       "division": "Pacific",
       "tier": "Contender",
@@ -1168,10 +1168,10 @@
       "tierIcon": "\ud83c\udfaf",
       "compositeStrength": 52.9,
       "strengthRank": 10,
-      "playoffProbability": 81.1,
-      "cupProbability": 5.12,
-      "cupProbLower": 4.77,
-      "cupProbUpper": 5.49
+      "playoffProbability": 76.4,
+      "cupProbability": 5.15,
+      "cupProbLower": 4.8,
+      "cupProbUpper": 5.53
     }
   ],
   "glossary": {
@@ -1523,23 +1523,23 @@
           "tier": "Elite",
           "strength": 57.9,
           "playoffProb": 95.9,
-          "cupProb": 15.89
-        },
-        {
-          "code": "DAL",
-          "rank": 2,
-          "tier": "Contender",
-          "strength": 54.3,
-          "playoffProb": 99.2,
-          "cupProb": 9.23
+          "cupProb": 15.9
         },
         {
           "code": "COL",
-          "rank": 3,
+          "rank": 2,
           "tier": "Elite",
           "strength": 63.1,
           "playoffProb": 100.0,
-          "cupProb": 9.09
+          "cupProb": 8.97
+        },
+        {
+          "code": "DAL",
+          "rank": 3,
+          "tier": "Contender",
+          "strength": 54.3,
+          "playoffProb": 99.2,
+          "cupProb": 8.93
         },
         {
           "code": "TB",
@@ -1547,7 +1547,7 @@
           "tier": "Elite",
           "strength": 59.7,
           "playoffProb": 99.9,
-          "cupProb": 7.92
+          "cupProb": 7.93
         },
         {
           "code": "BUF",
@@ -1555,7 +1555,7 @@
           "tier": "Contender",
           "strength": 53.6,
           "playoffProb": 95.3,
-          "cupProb": 5.97
+          "cupProb": 6.27
         },
         {
           "code": "PIT",
@@ -1563,7 +1563,7 @@
           "tier": "Elite",
           "strength": 55.1,
           "playoffProb": 96.7,
-          "cupProb": 5.8
+          "cupProb": 5.89
         },
         {
           "code": "BOS",
@@ -1571,7 +1571,7 @@
           "tier": "Bubble",
           "strength": 52.2,
           "playoffProb": 78.6,
-          "cupProb": 5.42
+          "cupProb": 5.38
         },
         {
           "code": "MIN",
@@ -1582,20 +1582,20 @@
           "cupProb": 5.34
         },
         {
-          "code": "VGK",
-          "rank": 9,
-          "tier": "Contender",
-          "strength": 52.9,
-          "playoffProb": 81.1,
-          "cupProb": 5.34
-        },
-        {
           "code": "UTA",
-          "rank": 10,
+          "rank": 9,
           "tier": "Contender",
           "strength": 54.0,
           "playoffProb": 91.4,
           "cupProb": 5.31
+        },
+        {
+          "code": "VGK",
+          "rank": 10,
+          "tier": "Contender",
+          "strength": 52.9,
+          "playoffProb": 81.1,
+          "cupProb": 5.12
         },
         {
           "code": "EDM",
@@ -1603,7 +1603,7 @@
           "tier": "Contender",
           "strength": 52.9,
           "playoffProb": 76.4,
-          "cupProb": 4.05
+          "cupProb": 4.16
         },
         {
           "code": "MTL",
@@ -1611,7 +1611,7 @@
           "tier": "Bubble",
           "strength": 51.9,
           "playoffProb": 65.9,
-          "cupProb": 3.38
+          "cupProb": 3.62
         },
         {
           "code": "NYI",
@@ -1619,7 +1619,7 @@
           "tier": "Bubble",
           "strength": 49.6,
           "playoffProb": 55.9,
-          "cupProb": 2.67
+          "cupProb": 2.69
         },
         {
           "code": "DET",
@@ -1627,7 +1627,7 @@
           "tier": "Bubble",
           "strength": 50.3,
           "playoffProb": 50.3,
-          "cupProb": 2.25
+          "cupProb": 2.27
         },
         {
           "code": "WSH",
@@ -1643,7 +1643,7 @@
           "tier": "Contender",
           "strength": 53.2,
           "playoffProb": 70.7,
-          "cupProb": 1.68
+          "cupProb": 1.67
         },
         {
           "code": "SEA",
@@ -1651,7 +1651,7 @@
           "tier": "Longshot",
           "strength": 47.3,
           "playoffProb": 28.3,
-          "cupProb": 1.62
+          "cupProb": 1.6
         },
         {
           "code": "TOR",
@@ -1667,7 +1667,7 @@
           "tier": "Bubble",
           "strength": 50.2,
           "playoffProb": 13.9,
-          "cupProb": 0.98
+          "cupProb": 0.9
         },
         {
           "code": "CBJ",
@@ -1715,7 +1715,7 @@
           "tier": "Longshot",
           "strength": 47.1,
           "playoffProb": 6.5,
-          "cupProb": 0.45
+          "cupProb": 0.44
         },
         {
           "code": "LA",
