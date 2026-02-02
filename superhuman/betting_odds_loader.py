@@ -7,19 +7,13 @@ against the betting market.
 
 import csv
 import logging
-import numpy as np
-from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 from sklearn.metrics import brier_score_loss, log_loss
 
-from .config import normalize_team_abbrev as _normalize_team
+from .config import normalize_team_abbrev as _normalize_team, HISTORICAL_DIR, parse_bool
 
 logger = logging.getLogger(__name__)
-
-# Data paths
-DATA_DIR = Path(__file__).parent.parent / "data"
-HISTORICAL_DIR = DATA_DIR / "historical"
 
 
 @dataclass
@@ -43,7 +37,9 @@ def american_to_probability(odds: int) -> float:
     - Positive (+150): underdog, probability = 100 / (odds + 100)
     - Negative (-150): favorite, probability = |odds| / (|odds| + 100)
     """
-    if odds > 0:
+    if odds == 0:
+        return 0.0
+    elif odds > 0:
         return 100 / (odds + 100)
     else:
         return abs(odds) / (abs(odds) + 100)
@@ -84,8 +80,8 @@ def load_vegas_odds(season: int) -> Dict[str, TeamOdds]:
                     cup_implied_prob=float(row['cup_implied_prob']),
                     playoff_odds_american=playoff_odds,
                     playoff_implied_prob=float(row['playoff_implied_prob']),
-                    actual_made_playoffs=row['actual_made_playoffs'] in ('1', 'True', 'true', True, 1),
-                    actual_won_cup=row['actual_won_cup'] in ('1', 'True', 'true', True, 1)
+                    actual_made_playoffs=parse_bool(row['actual_made_playoffs']),
+                    actual_won_cup=parse_bool(row['actual_won_cup'])
                 )
                 teams[odds.team] = odds
             except (KeyError, ValueError) as e:
@@ -264,7 +260,7 @@ def benchmark_model_vs_vegas(
         # Playoff comparison
         'model_brier_playoff': model_brier_playoff,
         'vegas_brier_playoff': vegas_brier_playoff,
-        'brier_improvement_playoff': (vegas_brier_playoff - model_brier_playoff) / vegas_brier_playoff * 100,
+        'brier_improvement_playoff': (vegas_brier_playoff - model_brier_playoff) / vegas_brier_playoff * 100 if vegas_brier_playoff > 0 else 0.0,
 
         'model_accuracy_playoff': model_correct / n_samples,
         'vegas_accuracy_playoff': vegas_correct / n_samples,
@@ -272,7 +268,7 @@ def benchmark_model_vs_vegas(
         # Cup comparison
         'model_brier_cup': model_brier_cup,
         'vegas_brier_cup': vegas_brier_cup,
-        'brier_improvement_cup': (vegas_brier_cup - model_brier_cup) / vegas_brier_cup * 100,
+        'brier_improvement_cup': (vegas_brier_cup - model_brier_cup) / vegas_brier_cup * 100 if vegas_brier_cup > 0 else 0.0,
 
         # Edge calculation
         'beats_vegas_playoff': model_brier_playoff < vegas_brier_playoff,

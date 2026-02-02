@@ -23,7 +23,6 @@ from .feature_engineering import FeatureEngineer, create_feature_matrix
 from .config import N_SIMULATIONS, RANDOM_SEED, CONFERENCES
 
 logger = logging.getLogger(__name__)
-np.random.seed(RANDOM_SEED)
 
 
 def calculate_recency_weights(

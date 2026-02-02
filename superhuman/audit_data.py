@@ -21,11 +21,13 @@ from collections import defaultdict
 
 import numpy as np
 
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
 
 def main():
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+    from .config import RANDOM_SEED
+    np.random.seed(RANDOM_SEED)
     from .data_loader import load_training_data, CUP_WINNERS
     from .feature_engineering import FeatureEngineer, create_feature_matrix
     from .data_models import FeatureVector

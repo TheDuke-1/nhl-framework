@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import List, Dict, Optional, Tuple
 
 from .data_models import TeamSeason
-from .config import DATA_DIR, HISTORICAL_DIR, normalize_team_abbrev as _normalize_team
+from .config import DATA_DIR, HISTORICAL_DIR, normalize_team_abbrev as _normalize_team, parse_bool
 
 logger = logging.getLogger(__name__)
 
@@ -195,11 +195,8 @@ def _merge_to_team_season(
         pk_pct = float(advanced.get('pk_pct', 80.0))
 
         # Parse outcomes from standings
-        made_playoffs = standings.get('made_playoffs', '0')
-        made_playoffs = made_playoffs in ('1', 'True', 'true', True, 1)
-
-        won_cup = standings.get('won_cup', '0')
-        won_cup = won_cup in ('1', 'True', 'true', True, 1)
+        made_playoffs = parse_bool(standings.get('made_playoffs', '0'))
+        won_cup = parse_bool(standings.get('won_cup', '0'))
 
         # Get playoff_rounds_won from playoff history CSV
         # This is the training target — how far the team went
@@ -233,8 +230,8 @@ def _merge_to_team_season(
             expected_goals_diff=xgf - xga,
 
             # High danger
-            hdcf=int(advanced.get('hdcf', 0)) or int(xgf * 0.4),
-            hdca=int(advanced.get('hdca', 0)) or int(xga * 0.4),
+            hdcf=int(advanced['hdcf']) if 'hdcf' in advanced else int(xgf * 0.4),
+            hdca=int(advanced['hdca']) if 'hdca' in advanced else int(xga * 0.4),
             hdcf_pct=hdcf_pct,
 
             # Goaltending

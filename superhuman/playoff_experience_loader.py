@@ -13,16 +13,12 @@ Features:
 
 import csv
 import logging
-from pathlib import Path
 from typing import Dict, Optional, List
 from dataclasses import dataclass
 
-from .config import normalize_team_abbrev as _normalize_team
+from .config import normalize_team_abbrev as _normalize_team, HISTORICAL_DIR
 
 logger = logging.getLogger(__name__)
-
-# Data path
-DATA_DIR = Path(__file__).parent.parent / "data" / "historical"
 
 # Cache for loaded data
 _playoff_cache: Dict[int, Dict[str, 'TeamPlayoffHistory']] = {}
@@ -98,17 +94,17 @@ def load_playoff_history(season: int) -> Dict[str, TeamPlayoffHistory]:
     if season in _playoff_cache:
         return _playoff_cache[season]
 
-    filepath = DATA_DIR / f"playoff_history_{season}.csv"
+    filepath = HISTORICAL_DIR / f"playoff_history_{season}.csv"
 
     if not filepath.exists():
         logger.warning(f"Playoff history file not found: {filepath}")
         return {}
 
     teams = {}
-    try:
-        with open(filepath, 'r') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
+    with open(filepath, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
                 history = TeamPlayoffHistory(
                     team=_normalize_team(row['team']),
                     season=int(row['season']),
@@ -124,13 +120,12 @@ def load_playoff_history(season: int) -> Dict[str, TeamPlayoffHistory]:
                     current_games_lost=int(row['current_games_lost'])
                 )
                 teams[history.team] = history
+            except (KeyError, ValueError) as e:
+                logger.warning(f"Failed to parse playoff history for {row.get('team', 'unknown')}: {e}")
+                continue
 
-        _playoff_cache[season] = teams
-        logger.debug(f"Loaded playoff history for {len(teams)} teams in {season}")
-
-    except Exception as e:
-        logger.error(f"Error loading playoff history for {season}: {e}")
-        return {}
+    _playoff_cache[season] = teams
+    logger.debug(f"Loaded playoff history for {len(teams)} teams in {season}")
 
     return teams
 
