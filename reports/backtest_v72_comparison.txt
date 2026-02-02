@@ -1,0 +1,75 @@
+
+================================================================================
+NHL CHAMPIONSHIP FRAMEWORK - BACKTEST ANALYSIS REPORT
+================================================================================
+Generated: 2026-01-30 14:17
+
+EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+Both V7.1 and V7.2 weight formulas demonstrate strong predictive power,
+correctly identifying Cup winners in the top-5 70% of the time over 10 seasons.
+
+Key Metrics:
+  - V7.1 Average Winner Rank: 4.3
+  - V7.2 Average Winner Rank: 4.4
+  - Top-5 Hit Rate (both): 70%
+  - Top-10 Hit Rate (both): 100%
+
+WEIGHT FORMULAS COMPARED
+--------------------------------------------------------------------------------
+                V7.1        V7.2        Change
+HDCF%           25%         25%         --
+CF%             20%         15%         -5%
+PDO             15%         12%         -3%
+PP%             15%         15%         --
+PK%             10%         13%         +3%
+GSAx            15%         20%         +5%
+
+SEASON-BY-SEASON RESULTS
+--------------------------------------------------------------------------------
+Season    Winner  V7.1 Rank   V7.2 Rank   Notes
+2023-24   FLA     #4          #4          Bobrovsky carried playoffs
+2022-23   VGK     #6          #6          Surprise run; Thompson hot
+2021-22   COL     #2          #2          Dominant analytically + Kuemper
+2020-21   TB      #3          #3          Vasilevskiy elite
+2019-20   TB      #3          #2          V7.2 +1 (bubble playoffs)
+2018-19   STL     #6          #6          Binnington came from nowhere
+2017-18   WSH     #7          #7          Ovechkin's run; poor analytically
+2016-17   PIT     #3          #4          V7.1 +1 (back-to-back)
+2015-16   PIT     #5          #5          Murray rookie heroics
+2014-15   CHI     #4          #5          V7.1 +1 (Crawford clutch)
+
+MODEL ASSESSMENT
+--------------------------------------------------------------------------------
+Strengths:
+  - 70% top-5 accuracy is strong for playoff prediction
+  - 100% top-10 accuracy means model never completely misses
+  - Average winner rank ~4.4 indicates contender identification works
+
+Weaknesses:
+  - Missed VGK 2023 (ranked #6) - hot goalie runs unpredictable
+  - Missed WSH 2018 (ranked #7) - captain-driven playoff runs
+  - Missed STL 2019 (ranked #6) - midseason turnarounds
+
+DATA LIMITATIONS
+--------------------------------------------------------------------------------
+  - Historical data covers only 6-16 teams per season (not full 32)
+  - GSAx data quality varies by season (best post-2018)
+  - Some seasons missing key teams that didn't make data compilation
+
+RECOMMENDATIONS
+--------------------------------------------------------------------------------
+1. Both formulas perform similarly; V7.1 has slight edge in top-3 accuracy
+2. Consider hybrid approach for specific playoff scenarios
+3. Model is useful for identifying contenders, not guaranteeing winners
+4. Hot goalie runs (Binnington, Thompson) remain unpredictable
+5. Playoff experience/intangibles not captured by current metrics
+
+CONCLUSION
+--------------------------------------------------------------------------------
+The V7.2 formula maintains strong predictive power (70% top-5) while
+emphasizing goaltending - a theoretically sound adjustment. However,
+historical backtest shows minimal improvement over V7.1.
+
+Current model should be used as a CONTENDER IDENTIFIER, not a winner predictor.
+Teams ranked 1-5 by weight have historically produced 70% of Cup winners.

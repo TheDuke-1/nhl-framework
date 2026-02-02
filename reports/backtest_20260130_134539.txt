@@ -1,0 +1,40 @@
+======================================================================
+NHL CHAMPIONSHIP FRAMEWORK V7.1 - BACKTEST REPORT
+======================================================================
+Generated: 2026-01-30 13:45
+
+SUMMARY STATISTICS
+----------------------------------------------------------------------
+Seasons Evaluated: 1
+Missing Data Seasons: 16
+
+Average Playoff Prediction Accuracy: 100.0%
+  (Correctly picking playoff teams from top-16 by weight)
+
+Cup Winner Performance:
+  Average Rank by Weight: 4.0
+  Winners in Top 5: 1/1
+  Winners in Top 10: 1/1
+  Winners in Top 16: 1/1
+
+MISSING DATA - Need to fetch historical stats for:
+  - 2022-23
+  - 2021-22
+  - 2020-21
+  - 2019-20
+  - 2018-19
+  - 2017-18
+  - 2016-17
+  - 2015-16
+  - 2014-15
+  - 2013-14
+  - 2012-13
+  - 2011-12
+  - 2010-11
+  - 2009-10
+  - 2008-09
+  - 2007-08
+
+PER-SEASON RESULTS
+----------------------------------------------------------------------
+2023-24: Playoff accuracy 100%, Winner rank: #4
