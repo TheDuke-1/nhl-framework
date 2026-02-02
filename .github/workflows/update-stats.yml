@@ -58,7 +58,7 @@ jobs:
           if [ "${{ steps.superhuman.outcome }}" == "success" ]; then
             echo "Superhuman model ran successfully"
             echo "Dashboard data updated:"
-            python -c "import json; d=json.load(open('dashboard_data.json')); print(f\"  Generated at: {d.get('metadata', {}).get('generated', 'unknown')}\")"
+            python -c "import json; d=json.load(open('dashboard_data.json')); print(f\"  Generated at: {d.get('meta', {}).get('generated', 'unknown')}\")"
           else
             echo "WARNING: Superhuman model failed — dashboard_data.json was NOT updated"
             echo "The dashboard will use the last good prediction data"
