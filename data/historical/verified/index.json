@@ -102,8 +102,9 @@
     "2025": {
       "file": "season_2025.json",
       "seasonLabel": "2024-25",
-      "cupWinner": "FLA",
-      "cupFinalist": "EDM"
+      "cupWinner": "",
+      "cupFinalist": "",
+      "note": "Season in progress — playoffs not yet concluded"
     }
   }
 }
