@@ -12,6 +12,8 @@ from pathlib import Path
 from typing import List, Dict, Optional
 from dataclasses import dataclass
 
+from .config import normalize_team_abbrev as _normalize_team
+
 logger = logging.getLogger(__name__)
 
 # Data paths
@@ -82,28 +84,52 @@ def load_player_data(season: int) -> List[PlayerStats]:
     players = []
     with open(csv_path, newline='') as f:
         reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames or []
+
+        # Detect CSV format: old (2010-2014) uses 'player'/'games',
+        # new (2015+) uses 'player_name'/'games_played'/'ppg' etc.
+        is_old_format = 'player' in fieldnames and 'player_name' not in fieldnames
+
         for row in reader:
             try:
-                # Skip placeholder entries (e.g., SEA 2021 "N/A")
-                if row.get('player_name', '') in ('N/A', '', 'Unknown'):
+                # Get player name from whichever column exists
+                name = row.get('player_name') or row.get('player', '')
+                if name in ('N/A', '', 'Unknown'):
                     continue
 
+                games = int(row.get('games_played') or row.get('games', 0))
+                goals = int(row.get('goals', 0))
+                assists = int(row.get('assists', 0))
+                points = int(row.get('points', 0))
+
+                # Old format lacks ppg/toi/position/is_star — derive what we can
+                if is_old_format:
+                    ppg = points / games if games > 0 else 0.0
+                    toi = 0.0
+                    position = 'F'
+                    is_star = ppg >= 0.9 and games >= 50
+                else:
+                    ppg = float(row.get('ppg', 0.0))
+                    toi = float(row.get('toi_per_game', 0.0))
+                    position = row.get('position', 'F')
+                    is_star = row.get('is_star', '0') in ('1', 'True', 'true', True, 1)
+
                 player = PlayerStats(
-                    team=row['team'],
+                    team=_normalize_team(row['team']),
                     season=int(row.get('season', season)),
-                    player_name=row['player_name'],
-                    position=row.get('position', 'F'),
-                    games_played=int(row.get('games_played', 0)),
-                    goals=int(row.get('goals', 0)),
-                    assists=int(row.get('assists', 0)),
-                    points=int(row.get('points', 0)),
-                    ppg=float(row.get('ppg', 0.0)),
-                    toi_per_game=float(row.get('toi_per_game', 0.0)),
-                    is_star=row.get('is_star', '0') in ('1', 'True', 'true', True, 1)
+                    player_name=name,
+                    position=position,
+                    games_played=games,
+                    goals=goals,
+                    assists=assists,
+                    points=points,
+                    ppg=ppg,
+                    toi_per_game=toi,
+                    is_star=is_star
                 )
                 players.append(player)
             except (KeyError, ValueError) as e:
-                logger.warning(f"Failed to parse player: {row.get('player_name', 'unknown')} - {e}")
+                logger.warning(f"Failed to parse player: {row.get('player_name', row.get('player', 'unknown'))} - {e}")
                 continue
 
     logger.debug(f"Loaded {len(players)} players for season {season}")
@@ -180,7 +206,7 @@ def aggregate_team_player_stats(players: List[PlayerStats], team: str, season: i
 
 
 def load_all_team_player_stats(
-    start_season: int = 2020,
+    start_season: int = 2010,
     end_season: int = 2024
 ) -> Dict[str, TeamPlayerStats]:
     """

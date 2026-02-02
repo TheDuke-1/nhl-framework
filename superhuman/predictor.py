@@ -17,7 +17,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Optional
 
-from .data_loader import load_current_season_data, synthesize_training_data
+from .data_loader import load_current_season_data, load_training_data
 from .models import EnsemblePredictor
 from .data_models import PredictionResult
 from .config import CURRENT_SEASON
@@ -50,7 +50,7 @@ class SuperhumanPredictor:
     def train(self) -> 'SuperhumanPredictor':
         """Train model on historical data."""
         logger.info("Loading training data...")
-        training_data = synthesize_training_data()
+        training_data = load_training_data()
 
         logger.info(f"Training ensemble on {len(training_data)} samples...")
         self.ensemble.fit(training_data)

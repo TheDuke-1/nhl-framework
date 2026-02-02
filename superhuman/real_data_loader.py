@@ -6,25 +6,21 @@ Replaces synthetic data with real historical NHL data.
 This loader:
 1. Reads from CSV files in data/historical/
 2. Merges standings with advanced stats
-3. Creates TeamSeason objects with complete data
-4. Falls back to API if files not available
+3. Loads playoff history for playoff_rounds_won
+4. Normalizes team abbreviations across all sources
+5. Creates TeamSeason objects with complete data
+6. Falls back to API if files not available
 """
 
 import csv
 import logging
 from pathlib import Path
 from typing import List, Dict, Optional, Tuple
-from dataclasses import asdict
 
 from .data_models import TeamSeason
-from .nhl_api import NHLDataClient, TeamStanding, TeamAdvancedStats
-from .config import ALL_TEAMS, CONFERENCES
+from .config import DATA_DIR, HISTORICAL_DIR, normalize_team_abbrev as _normalize_team
 
 logger = logging.getLogger(__name__)
-
-# Data paths
-DATA_DIR = Path(__file__).parent.parent / "data"
-HISTORICAL_DIR = DATA_DIR / "historical"
 
 
 def load_real_historical_data(
@@ -56,21 +52,26 @@ def load_real_historical_data(
 
 
 def _load_season_data(season: int) -> List[TeamSeason]:
-    """Load data for a single season."""
-    # Load standings
+    """Load data for a single season from all available sources."""
+    # Load standings (required)
     standings = _load_standings_csv(season)
     if not standings:
         return []
 
     # Load advanced stats
     advanced = _load_advanced_csv(season)
-    advanced_by_team = {a['team']: a for a in advanced} if advanced else {}
+    advanced_by_team = {_normalize_team(a['team']): a for a in advanced} if advanced else {}
+
+    # Load playoff history for playoff_rounds_won
+    playoff_history = _load_playoff_history_csv(season)
 
     # Merge into TeamSeason objects
     teams = []
     for s in standings:
-        adv = advanced_by_team.get(s['team'], {})
-        team = _merge_to_team_season(s, adv, season)
+        team_abbr = _normalize_team(s['team'])
+        adv = advanced_by_team.get(team_abbr, {})
+        playoff = playoff_history.get(team_abbr, {})
+        team = _merge_to_team_season(s, adv, playoff, season)
         if team:
             teams.append(team)
 
@@ -113,14 +114,45 @@ def _load_advanced_csv(season: int) -> List[Dict]:
     return rows
 
 
+def _load_playoff_history_csv(season: int) -> Dict[str, Dict]:
+    """
+    Load playoff history for a season.
+
+    Returns dict mapping team abbreviation to playoff history fields.
+    Key field: current_rounds_won (used for playoff_rounds_won in training).
+    """
+    csv_path = HISTORICAL_DIR / f"playoff_history_{season}.csv"
+
+    if not csv_path.exists():
+        logger.debug(f"Playoff history file not found: {csv_path}")
+        return {}
+
+    teams = {}
+    with open(csv_path, newline='') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            try:
+                team = _normalize_team(row['team'])
+                teams[team] = {
+                    'current_rounds_won': int(row.get('current_rounds_won', 0)),
+                    'current_games_won': int(row.get('current_games_won', 0)),
+                    'current_games_lost': int(row.get('current_games_lost', 0)),
+                }
+            except (KeyError, ValueError) as e:
+                logger.debug(f"Failed to parse playoff history for {row.get('team', '?')}: {e}")
+
+    return teams
+
+
 def _merge_to_team_season(
     standings: Dict,
     advanced: Dict,
+    playoff: Dict,
     season: int
 ) -> Optional[TeamSeason]:
-    """Merge standings and advanced stats into TeamSeason."""
+    """Merge standings, advanced stats, and playoff history into TeamSeason."""
     try:
-        team_abbr = standings['team']
+        team_abbr = _normalize_team(standings['team'])
 
         # Parse standings data
         games_played = int(standings.get('games_played', 82))
@@ -131,11 +163,22 @@ def _merge_to_team_season(
         goals_for = int(standings['goals_for'])
         goals_against = int(standings['goals_against'])
 
-        # Parse home/away splits (for road_performance)
+        # Parse home/away splits — new format (2015+) has these, old (2010-2014) doesn't
         home_wins = int(standings.get('home_wins', 0))
         home_losses = int(standings.get('home_losses', 0))
+        home_ot_losses = int(standings.get('home_ot_losses', 0))
         away_wins = int(standings.get('away_wins', 0))
         away_losses = int(standings.get('away_losses', 0))
+        away_ot_losses = int(standings.get('away_ot_losses', 0))
+
+        # For old format without home/away splits, estimate from totals
+        if home_wins == 0 and away_wins == 0 and wins > 0:
+            home_wins = int(wins * 0.55)  # ~55% of wins at home is NHL average
+            away_wins = wins - home_wins
+            home_losses = int(losses * 0.45)
+            away_losses = losses - home_losses
+            home_ot_losses = int(ot_losses * 0.5)
+            away_ot_losses = ot_losses - home_ot_losses
 
         # Parse advanced stats with defaults
         cf_pct = float(advanced.get('cf_pct', 50.0))
@@ -151,15 +194,20 @@ def _merge_to_team_season(
         pp_pct = float(advanced.get('pp_pct', 20.0))
         pk_pct = float(advanced.get('pk_pct', 80.0))
 
-        # Parse outcomes
+        # Parse outcomes from standings
         made_playoffs = standings.get('made_playoffs', '0')
         made_playoffs = made_playoffs in ('1', 'True', 'true', True, 1)
 
         won_cup = standings.get('won_cup', '0')
         won_cup = won_cup in ('1', 'True', 'true', True, 1)
 
-        # Calculate derived metrics
-        goal_differential = goals_for - goals_against
+        # Get playoff_rounds_won from playoff history CSV
+        # This is the training target — how far the team went
+        playoff_rounds_won = playoff.get('current_rounds_won', 0)
+
+        # Sanity: if won_cup is True, rounds_won must be 4
+        if won_cup:
+            playoff_rounds_won = 4
 
         # Create TeamSeason
         return TeamSeason(
@@ -172,12 +220,11 @@ def _merge_to_team_season(
             points=points,
             goals_for=goals_for,
             goals_against=goals_against,
-            # goal_differential is a @property, calculated from goals_for - goals_against
 
             # Possession metrics
             cf_pct=cf_pct,
             ff_pct=ff_pct,
-            sf_pct=(cf_pct + ff_pct) / 2,  # Approximate
+            sf_pct=(cf_pct + ff_pct) / 2,
 
             # Expected goals
             xgf=xgf,
@@ -205,18 +252,19 @@ def _merge_to_team_season(
             # Home/away for road_performance calculation
             home_wins=home_wins,
             home_losses=home_losses,
-            home_ot_losses=int(standings.get('home_ot_losses', 0)),
+            home_ot_losses=home_ot_losses,
             away_wins=away_wins,
             away_losses=away_losses,
-            away_ot_losses=int(standings.get('away_ot_losses', 0)),
+            away_ot_losses=away_ot_losses,
 
             # Outcomes
             made_playoffs=made_playoffs,
             won_cup=won_cup,
+            playoff_rounds_won=playoff_rounds_won,
 
-            # These will be calculated later or from other sources
-            recent_form=0.0,  # Needs game-by-game data
-            star_ppg=0.0,     # Needs player data
+            # These get populated from auxiliary loaders via feature_engineering
+            recent_form=0.0,
+            star_ppg=0.0,
         )
 
     except (KeyError, ValueError, TypeError) as e:
@@ -228,11 +276,10 @@ def load_real_training_data() -> List[TeamSeason]:
     """
     Load real training data from available historical seasons.
 
-    Returns training data from CSV files, falling back to API or
-    synthetic data if needed.
+    Returns training data from CSV files, falling back to synthetic
+    data if needed.
     """
-    # Try to load real data
-    real_data = load_real_historical_data(start_season=2015, end_season=2024)
+    real_data = load_real_historical_data(start_season=2010, end_season=2024)
 
     if len(real_data) >= 100:
         logger.info(f"Using {len(real_data)} real historical team-seasons for training")
@@ -256,69 +303,3 @@ def get_available_seasons() -> List[int]:
     return available
 
 
-def validate_data_quality(teams: List[TeamSeason]) -> Dict:
-    """
-    Validate data quality and return report.
-
-    Checks for:
-    - Missing values
-    - Zero-variance features
-    - Outliers
-    - Data completeness
-    """
-    import numpy as np
-
-    report = {
-        'total_samples': len(teams),
-        'seasons': sorted(set(t.season for t in teams)),
-        'teams_per_season': {},
-        'missing_values': {},
-        'zero_variance': [],
-        'outliers': [],
-    }
-
-    # Count teams per season
-    for team in teams:
-        if team.season not in report['teams_per_season']:
-            report['teams_per_season'][team.season] = 0
-        report['teams_per_season'][team.season] += 1
-
-    # Check numeric fields
-    numeric_fields = [
-        'points', 'goal_differential', 'cf_pct', 'ff_pct', 'xgf', 'xga',
-        'xgf_pct', 'hdcf_pct', 'save_pct', 'shooting_pct', 'pdo',
-        'pp_pct', 'pk_pct', 'gsax'
-    ]
-
-    for field in numeric_fields:
-        values = [getattr(t, field, None) for t in teams]
-        values = [v for v in values if v is not None]
-
-        if not values:
-            report['missing_values'][field] = len(teams)
-            continue
-
-        values = np.array(values)
-        std = np.std(values)
-
-        if std == 0:
-            report['zero_variance'].append(field)
-
-        # Check for outliers (|z| > 4)
-        z_scores = (values - np.mean(values)) / std if std > 0 else np.zeros_like(values)
-        n_outliers = np.sum(np.abs(z_scores) > 4)
-        if n_outliers > 0:
-            report['outliers'].append({
-                'field': field,
-                'count': int(n_outliers),
-                'min': float(values.min()),
-                'max': float(values.max())
-            })
-
-    return report
-
-
-# Convenience function to match old API
-def load_historical_data() -> List[TeamSeason]:
-    """Load historical data - tries real data first, falls back to synthetic."""
-    return load_real_training_data()
