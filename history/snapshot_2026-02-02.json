@@ -7,23 +7,23 @@
       "tier": "Elite",
       "strength": 57.9,
       "playoffProb": 95.9,
-      "cupProb": 15.89
-    },
-    {
-      "code": "DAL",
-      "rank": 2,
-      "tier": "Contender",
-      "strength": 54.3,
-      "playoffProb": 99.2,
-      "cupProb": 9.23
+      "cupProb": 15.9
     },
     {
       "code": "COL",
-      "rank": 3,
+      "rank": 2,
       "tier": "Elite",
       "strength": 63.1,
       "playoffProb": 100.0,
-      "cupProb": 9.09
+      "cupProb": 8.97
+    },
+    {
+      "code": "DAL",
+      "rank": 3,
+      "tier": "Contender",
+      "strength": 54.3,
+      "playoffProb": 99.2,
+      "cupProb": 8.93
     },
     {
       "code": "TB",
@@ -31,7 +31,7 @@
       "tier": "Elite",
       "strength": 59.7,
       "playoffProb": 99.9,
-      "cupProb": 7.92
+      "cupProb": 7.93
     },
     {
       "code": "BUF",
@@ -39,7 +39,7 @@
       "tier": "Contender",
       "strength": 53.6,
       "playoffProb": 95.3,
-      "cupProb": 5.97
+      "cupProb": 6.27
     },
     {
       "code": "PIT",
@@ -47,7 +47,7 @@
       "tier": "Elite",
       "strength": 55.1,
       "playoffProb": 96.7,
-      "cupProb": 5.8
+      "cupProb": 5.89
     },
     {
       "code": "BOS",
@@ -55,7 +55,7 @@
       "tier": "Bubble",
       "strength": 52.2,
       "playoffProb": 78.6,
-      "cupProb": 5.42
+      "cupProb": 5.38
     },
     {
       "code": "MIN",
@@ -66,20 +66,20 @@
       "cupProb": 5.34
     },
     {
-      "code": "VGK",
-      "rank": 9,
-      "tier": "Contender",
-      "strength": 52.9,
-      "playoffProb": 81.1,
-      "cupProb": 5.34
-    },
-    {
       "code": "UTA",
-      "rank": 10,
+      "rank": 9,
       "tier": "Contender",
       "strength": 54.0,
       "playoffProb": 91.4,
       "cupProb": 5.31
+    },
+    {
+      "code": "VGK",
+      "rank": 10,
+      "tier": "Contender",
+      "strength": 52.9,
+      "playoffProb": 81.1,
+      "cupProb": 5.12
     },
     {
       "code": "EDM",
@@ -87,7 +87,7 @@
       "tier": "Contender",
       "strength": 52.9,
       "playoffProb": 76.4,
-      "cupProb": 4.05
+      "cupProb": 4.16
     },
     {
       "code": "MTL",
@@ -95,7 +95,7 @@
       "tier": "Bubble",
       "strength": 51.9,
       "playoffProb": 65.9,
-      "cupProb": 3.38
+      "cupProb": 3.62
     },
     {
       "code": "NYI",
@@ -103,7 +103,7 @@
       "tier": "Bubble",
       "strength": 49.6,
       "playoffProb": 55.9,
-      "cupProb": 2.67
+      "cupProb": 2.69
     },
     {
       "code": "DET",
@@ -111,7 +111,7 @@
       "tier": "Bubble",
       "strength": 50.3,
       "playoffProb": 50.3,
-      "cupProb": 2.25
+      "cupProb": 2.27
     },
     {
       "code": "WSH",
@@ -127,7 +127,7 @@
       "tier": "Contender",
       "strength": 53.2,
       "playoffProb": 70.7,
-      "cupProb": 1.68
+      "cupProb": 1.67
     },
     {
       "code": "SEA",
@@ -135,7 +135,7 @@
       "tier": "Longshot",
       "strength": 47.3,
       "playoffProb": 28.3,
-      "cupProb": 1.62
+      "cupProb": 1.6
     },
     {
       "code": "TOR",
@@ -151,7 +151,7 @@
       "tier": "Bubble",
       "strength": 50.2,
       "playoffProb": 13.9,
-      "cupProb": 0.98
+      "cupProb": 0.9
     },
     {
       "code": "CBJ",
@@ -199,7 +199,7 @@
       "tier": "Longshot",
       "strength": 47.1,
       "playoffProb": 6.5,
-      "cupProb": 0.45
+      "cupProb": 0.44
     },
     {
       "code": "LA",
