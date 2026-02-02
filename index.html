@@ -2168,7 +2168,9 @@
       return results;
     }
 
-    const playoffOdds = runPlayoffSimulation(processedTeams);
+    // Monte Carlo simulation removed — using superhuman model predictions from dashboard_data.json
+    // const playoffOdds = runPlayoffSimulation(processedTeams);
+    let modelPredictions = {}; // Populated by loadTeamData() from dashboard_data.json
 
     // Helper functions
     function getRankClass(rank) {
@@ -2379,11 +2381,23 @@
 
     function renderPlayoffs() {
       const grid = document.getElementById('playoffs-grid');
+      const hasPredictions = Object.keys(modelPredictions).length > 0;
 
       grid.innerHTML = ['East', 'West'].map(conf => {
         const confTeams = processedTeams
           .filter(t => t.conf === conf)
-          .sort((a, b) => (playoffOdds[b.team]?.playoffPct || 0) - (playoffOdds[a.team]?.playoffPct || 0));
+          .sort((a, b) => {
+            const aP = modelPredictions[a.team];
+            const bP = modelPredictions[b.team];
+            return (bP?.cupProbability || 0) - (aP?.cupProbability || 0);
+          });
+
+        const tierColors = {
+          'Elite': '#10b981',
+          'Contender': '#3b82f6',
+          'Bubble': '#f59e0b',
+          'Longshot': '#ef4444'
+        };
 
         return `
           <div class="conf-section">
@@ -2392,41 +2406,48 @@
               <thead>
                 <tr>
                   <th>Team</th>
-                  <th>Pts</th>
+                  <th>Tier</th>
+                  <th>Strength</th>
                   <th style="color: var(--accent-elite)">
                     Playoff %
-                    <span class="ci-tooltip ci-info-icon" data-tooltip="90% confidence interval shown below">?</span>
                   </th>
-                  <th style="color: var(--accent-contender)">Div %</th>
-                  <th style="color: #fbbf24; font-weight: 700">Cup %</th>
-                  <th>Proj Pts</th>
+                  <th style="color: #fbbf24; font-weight: 700">
+                    Cup %
+                    <span class="ci-tooltip ci-info-icon" data-tooltip="95% confidence interval shown below">?</span>
+                  </th>
+                  <th>Pts</th>
                 </tr>
               </thead>
               <tbody>
                 ${confTeams.map((team, idx) => {
-                  const odds = playoffOdds[team.team] || {};
-                  const pct = odds.playoffPct || 0;
-                  const cupPct = odds.cupPct || 0;
-                  const ci = odds.confidenceInterval || { low: pct, high: pct };
-                  const pctClass = pct >= 90 ? 'pct-high' : pct >= 50 ? 'pct-mid' : 'pct-low';
-                  const cupClass = cupPct >= 10 ? 'pct-high' : cupPct >= 3 ? 'pct-mid' : 'pct-low';
-                  const marginOfError = ((ci.high - ci.low) / 2).toFixed(1);
+                  const pred = modelPredictions[team.team] || {};
+                  const playoffPct = pred.playoffProbability || 0;
+                  const cupPct = pred.cupProbability || 0;
+                  const cupLo = pred.cupProbLower || cupPct;
+                  const cupHi = pred.cupProbUpper || cupPct;
+                  const tier = pred.tier || 'Longshot';
+                  const strength = pred.compositeStrength || 0;
+                  const tierColor = tierColors[tier] || '#ef4444';
+                  const pctClass = playoffPct >= 90 ? 'pct-high' : playoffPct >= 50 ? 'pct-mid' : 'pct-low';
+                  const cupMargin = ((cupHi - cupLo) / 2).toFixed(2);
                   return `
-                    <tr class="${idx < 8 ? 'playoff-in' : 'playoff-out'}">
+                    <tr class="${playoffPct >= 50 ? 'playoff-in' : 'playoff-out'}">
                       <td>
                         ${team.team}
                         <span style="color: var(--text-muted); font-size: 0.65rem; margin-left: 4px">(${team.div})</span>
                       </td>
-                      <td>${team.pts}</td>
+                      <td style="color: ${tierColor}; font-weight: 600; font-size: 0.75rem">${tier}</td>
+                      <td style="font-weight: 600">${strength.toFixed ? strength.toFixed(1) : strength}</td>
+                      <td>
+                        <span class="playoff-pct ${pctClass}" style="--pct: ${playoffPct}%">${playoffPct}%</span>
+                      </td>
                       <td>
                         <div class="ci-display">
-                          <span class="playoff-pct ${pctClass}" style="--pct: ${pct}%">${pct}%</span>
-                          <span class="ci-range ci-tooltip" data-tooltip="90% CI: ${ci.low}% - ${ci.high}%">±${marginOfError}%</span>
+                          <span style="color: ${cupPct >= 10 ? '#fbbf24' : cupPct >= 3 ? '#f59e0b' : 'var(--text-muted)'}; font-weight: 700">${cupPct}%</span>
+                          <span class="ci-range ci-tooltip" data-tooltip="95% CI: ${cupLo}% - ${cupHi}%">${hasPredictions ? '±' + cupMargin + '%' : ''}</span>
                         </div>
                       </td>
-                      <td style="color: var(--accent-contender); font-weight: 600">${odds.divisionPct || 0}%</td>
-                      <td style="color: ${cupPct >= 10 ? '#fbbf24' : cupPct >= 3 ? '#f59e0b' : 'var(--text-muted)'}; font-weight: 700">${cupPct}%</td>
-                      <td style="color: var(--text-muted)">${odds.avgFinalPoints || 0}</td>
+                      <td style="color: var(--text-muted)">${team.pts}</td>
                     </tr>
                   `;
                 }).join('')}
@@ -2527,7 +2548,7 @@
               const dateStr = dataLastUpdated.toLocaleDateString('en-US', {
                 month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'
               });
-              updateEl.innerHTML = `Data auto-updated: ${dateStr} | <a href="https://naturalstattrick.com/teamtable.php" target="_blank">Natural Stat Trick</a> | <span style="color: var(--accent-elite)">V7.2 Auto-Updating Dashboard</span>`;
+              updateEl.innerHTML = `Data auto-updated: ${dateStr} | <a href="https://naturalstattrick.com/teamtable.php" target="_blank">Natural Stat Trick</a> | <span style="color: var(--accent-elite)">V7.3 Superhuman Model</span>`;
             }
           }
 
@@ -2535,7 +2556,22 @@
         }
       } catch (error) {
         console.log('Using hardcoded team data (JSON fetch failed or not available):', error.message);
-        // Fallback to hardcoded data - no action needed, teamsData already has fallback values
+      }
+
+      // Load superhuman model predictions
+      try {
+        const modelResponse = await fetch('dashboard_data.json');
+        if (modelResponse.ok) {
+          const modelData = await modelResponse.json();
+          if (modelData.teams && modelData.teams.length > 0) {
+            modelData.teams.forEach(t => {
+              modelPredictions[t.code] = t;
+            });
+            console.log(`Loaded superhuman predictions for ${Object.keys(modelPredictions).length} teams`);
+          }
+        }
+      } catch (error) {
+        console.log('Superhuman model predictions not available:', error.message);
       }
 
       // Render after data is ready (either loaded or fallback)
