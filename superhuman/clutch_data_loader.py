@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import Dict, Optional
 from dataclasses import dataclass
 
+from .config import normalize_team_abbrev as _normalize_team
+
 logger = logging.getLogger(__name__)
 
 # Data paths
@@ -120,7 +122,7 @@ def load_clutch_data(season: int) -> Dict[str, TeamClutchStats]:
         for row in reader:
             try:
                 stats = TeamClutchStats(
-                    team=row['team'],
+                    team=_normalize_team(row['team']),
                     season=int(row.get('season', season)),
                     one_goal_wins=int(row.get('one_goal_wins', 0)),
                     one_goal_losses=int(row.get('one_goal_losses', 0)),

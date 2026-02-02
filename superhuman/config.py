@@ -48,6 +48,10 @@ HISTORICAL_TEAM_MAP = {
     "ATL": "WPG",  # Atlanta -> Winnipeg (2011)
     "HFD": "CAR",  # Hartford -> Carolina
     "QUE": "COL",  # Quebec -> Colorado
+    "LAK": "LA",   # Alternate Kings abbreviation
+    "NJD": "NJ",   # Alternate Devils abbreviation
+    "SJS": "SJ",   # Alternate Sharks abbreviation
+    "TBL": "TB",   # Alternate Lightning abbreviation
 }
 
 # Conference/Division structure (current)

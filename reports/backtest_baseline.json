@@ -1,0 +1,207 @@
+{
+  "generated": "2026-02-01T23:02:30.455745",
+  "data_source": "real_historical_csv",
+  "seasons": "2010-2024",
+  "team_seasons": 462,
+  "cv_results": {
+    "brier_score_playoff": 0.076,
+    "brier_score_cup": 0.0269,
+    "log_loss_playoff": 0.2651,
+    "calibration_error": 0.1332,
+    "accuracy_playoff": 0.8905,
+    "n_samples": 402,
+    "n_correct_cup_picks": 7,
+    "n_cup_events": 13
+  },
+  "cup_picks": {
+    "2012": {
+      "top_pick": "LA",
+      "top_pick_prob": 0.0846,
+      "top_5": [
+        "LA",
+        "NJ",
+        "CHI",
+        "BOS",
+        "VAN"
+      ],
+      "actual_winner": "LA",
+      "correct": true,
+      "in_top_5": true
+    },
+    "2013": {
+      "top_pick": "CHI",
+      "top_pick_prob": 0.2391,
+      "top_5": [
+        "CHI",
+        "BOS",
+        "LA",
+        "VAN",
+        "MTL"
+      ],
+      "actual_winner": "CHI",
+      "correct": true,
+      "in_top_5": true
+    },
+    "2014": {
+      "top_pick": "LA",
+      "top_pick_prob": 0.2377,
+      "top_5": [
+        "LA",
+        "CHI",
+        "BOS",
+        "NYR",
+        "TB"
+      ],
+      "actual_winner": "LA",
+      "correct": true,
+      "in_top_5": true
+    },
+    "2015": {
+      "top_pick": "CHI",
+      "top_pick_prob": 0.2178,
+      "top_5": [
+        "CHI",
+        "NYR",
+        "ANA",
+        "TB",
+        "STL"
+      ],
+      "actual_winner": "CHI",
+      "correct": true,
+      "in_top_5": true
+    },
+    "2016": {
+      "top_pick": "LA",
+      "top_pick_prob": 0.2335,
+      "top_5": [
+        "LA",
+        "CHI",
+        "WSH",
+        "PIT",
+        "NYR"
+      ],
+      "actual_winner": "PIT",
+      "correct": false,
+      "in_top_5": true
+    },
+    "2017": {
+      "top_pick": "WSH",
+      "top_pick_prob": 0.3454,
+      "top_5": [
+        "WSH",
+        "PIT",
+        "CHI",
+        "TB",
+        "SJ"
+      ],
+      "actual_winner": "PIT",
+      "correct": false,
+      "in_top_5": true
+    },
+    "2018": {
+      "top_pick": "TB",
+      "top_pick_prob": 0.307,
+      "top_5": [
+        "TB",
+        "NSH",
+        "PIT",
+        "BOS",
+        "LA"
+      ],
+      "actual_winner": "WSH",
+      "correct": false,
+      "in_top_5": false
+    },
+    "2019": {
+      "top_pick": "TB",
+      "top_pick_prob": 0.3184,
+      "top_5": [
+        "TB",
+        "DAL",
+        "CGY",
+        "BOS",
+        "NSH"
+      ],
+      "actual_winner": "STL",
+      "correct": false,
+      "in_top_5": false
+    },
+    "2020": {
+      "top_pick": "TB",
+      "top_pick_prob": 0.1758,
+      "top_5": [
+        "TB",
+        "BOS",
+        "COL",
+        "STL",
+        "PIT"
+      ],
+      "actual_winner": "TB",
+      "correct": true,
+      "in_top_5": true
+    },
+    "2021": {
+      "top_pick": "VGK",
+      "top_pick_prob": 0.2402,
+      "top_5": [
+        "VGK",
+        "COL",
+        "CAR",
+        "TB",
+        "TOR"
+      ],
+      "actual_winner": "TB",
+      "correct": false,
+      "in_top_5": true
+    },
+    "2022": {
+      "top_pick": "COL",
+      "top_pick_prob": 0.1649,
+      "top_5": [
+        "COL",
+        "CAR",
+        "TB",
+        "CGY",
+        "FLA"
+      ],
+      "actual_winner": "COL",
+      "correct": true,
+      "in_top_5": true
+    },
+    "2023": {
+      "top_pick": "BOS",
+      "top_pick_prob": 0.249,
+      "top_5": [
+        "BOS",
+        "COL",
+        "VGK",
+        "CAR",
+        "EDM"
+      ],
+      "actual_winner": "VGK",
+      "correct": false,
+      "in_top_5": true
+    },
+    "2024": {
+      "top_pick": "FLA",
+      "top_pick_prob": 0.2236,
+      "top_5": [
+        "FLA",
+        "VAN",
+        "COL",
+        "EDM",
+        "NYR"
+      ],
+      "actual_winner": "FLA",
+      "correct": true,
+      "in_top_5": true
+    }
+  },
+  "top_5_rate": 0.8462,
+  "top_5_correct": 11,
+  "top_5_total": 13,
+  "vegas_benchmark": {
+    "brier_playoff": 0.1392,
+    "brier_cup": 0.0282
+  }
+}

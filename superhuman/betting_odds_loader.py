@@ -13,6 +13,8 @@ from typing import Dict, List, Optional, Tuple
 from dataclasses import dataclass
 from sklearn.metrics import brier_score_loss, log_loss
 
+from .config import normalize_team_abbrev as _normalize_team
+
 logger = logging.getLogger(__name__)
 
 # Data paths
@@ -76,7 +78,7 @@ def load_vegas_odds(season: int) -> Dict[str, TeamOdds]:
                 playoff_odds = int(playoff_odds_str) if playoff_odds_str.startswith('-') else int(f"+{playoff_odds_str}")
 
                 odds = TeamOdds(
-                    team=row['team'],
+                    team=_normalize_team(row['team']),
                     season=int(row.get('season', season)),
                     cup_odds_american=cup_odds,
                     cup_implied_prob=float(row['cup_implied_prob']),
@@ -95,7 +97,7 @@ def load_vegas_odds(season: int) -> Dict[str, TeamOdds]:
 
 
 def load_all_vegas_odds(
-    start_season: int = 2015,
+    start_season: int = 2010,
     end_season: int = 2024
 ) -> Dict[str, TeamOdds]:
     """

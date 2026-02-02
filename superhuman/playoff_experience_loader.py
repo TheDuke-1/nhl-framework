@@ -17,6 +17,8 @@ from pathlib import Path
 from typing import Dict, Optional, List
 from dataclasses import dataclass
 
+from .config import normalize_team_abbrev as _normalize_team
+
 logger = logging.getLogger(__name__)
 
 # Data path
@@ -108,7 +110,7 @@ def load_playoff_history(season: int) -> Dict[str, TeamPlayoffHistory]:
             reader = csv.DictReader(f)
             for row in reader:
                 history = TeamPlayoffHistory(
-                    team=row['team'],
+                    team=_normalize_team(row['team']),
                     season=int(row['season']),
                     playoff_games_3yr=int(row['playoff_games_3yr']),
                     playoff_series_3yr=int(row['playoff_series_3yr']),
@@ -138,7 +140,7 @@ def get_team_playoff_history(team: str, season: int) -> Optional[TeamPlayoffHist
     Get playoff history for a specific team and season.
 
     Args:
-        team: Team abbreviation (e.g., 'TBL')
+        team: Team abbreviation (e.g., 'TB')
         season: Season year
 
     Returns:

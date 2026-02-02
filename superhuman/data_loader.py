@@ -116,7 +116,7 @@ def load_training_data() -> List[TeamSeason]:
     """
     try:
         from .real_data_loader import load_real_historical_data
-        real_data = load_real_historical_data(start_season=2015, end_season=2024)
+        real_data = load_real_historical_data(start_season=2010, end_season=2024)
         if len(real_data) >= 32:  # At least one season
             logger.info(f"Using {len(real_data)} real historical team-seasons")
             return real_data

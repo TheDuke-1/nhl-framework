@@ -10,6 +10,8 @@ from pathlib import Path
 from typing import Dict, Optional
 from dataclasses import dataclass
 
+from .config import normalize_team_abbrev as _normalize_team
+
 logger = logging.getLogger(__name__)
 
 # Data paths
@@ -98,18 +100,45 @@ def load_recent_form_data(season: int) -> Dict[str, TeamRecentForm]:
     teams = {}
     with open(csv_path, newline='') as f:
         reader = csv.DictReader(f)
+        fieldnames = reader.fieldnames or []
+
+        # Detect format: old (2010-2014) has 'last_20_wins'/'current_streak',
+        # new (2015+) has 'last_10_losses'/'streak_type'/'streak_length'
+        is_old_format = 'last_20_wins' in fieldnames and 'last_10_losses' not in fieldnames
+
         for row in reader:
             try:
+                last_10_wins = int(row.get('last_10_wins', 0))
+
+                if is_old_format:
+                    # Old format: derive missing fields from available data
+                    last_10_losses = 10 - last_10_wins  # Approximate (ignores OTL)
+                    last_10_ot_losses = 0
+                    last_10_gf = 0  # Not available in old format
+                    last_10_ga = 0
+
+                    # Parse current_streak: positive = win streak, negative = loss streak
+                    streak_val = int(row.get('current_streak', 0))
+                    streak_type = 'W' if streak_val >= 0 else 'L'
+                    streak_length = abs(streak_val)
+                else:
+                    last_10_losses = int(row.get('last_10_losses', 0))
+                    last_10_ot_losses = int(row.get('last_10_ot_losses', 0))
+                    last_10_gf = int(row.get('last_10_gf', 0))
+                    last_10_ga = int(row.get('last_10_ga', 0))
+                    streak_type = row.get('streak_type', 'W')
+                    streak_length = int(row.get('streak_length', 0))
+
                 form = TeamRecentForm(
-                    team=row['team'],
+                    team=_normalize_team(row['team']),
                     season=int(row.get('season', season)),
-                    last_10_wins=int(row.get('last_10_wins', 0)),
-                    last_10_losses=int(row.get('last_10_losses', 0)),
-                    last_10_ot_losses=int(row.get('last_10_ot_losses', 0)),
-                    last_10_gf=int(row.get('last_10_gf', 0)),
-                    last_10_ga=int(row.get('last_10_ga', 0)),
-                    streak_type=row.get('streak_type', 'W'),
-                    streak_length=int(row.get('streak_length', 0))
+                    last_10_wins=last_10_wins,
+                    last_10_losses=last_10_losses,
+                    last_10_ot_losses=last_10_ot_losses,
+                    last_10_gf=last_10_gf,
+                    last_10_ga=last_10_ga,
+                    streak_type=streak_type,
+                    streak_length=streak_length
                 )
                 teams[form.team] = form
             except (KeyError, ValueError) as e:
