@@ -4,11 +4,13 @@
     "year": 2021,
     "sources": {
       "standings": "NHL API (api-web.nhle.com)",
-      "advanced": "Natural Stat Trick (naturalstattrick.com)"
+      "advanced": "Natural Stat Trick (naturalstattrick.com)",
+      "specialTeams": "NHL Stats REST API (api.nhle.com/stats/rest)"
     },
-    "fetchedAt": "2026-02-01T22:56:52.205639Z",
+    "fetchedAt": "2026-02-02T05:25:32.958779Z",
     "cupWinner": "TB",
-    "cupFinalist": "MTL"
+    "cupFinalist": "MTL",
+    "playoffTeams": 16
   },
   "teams": {
     "COL": {
@@ -23,8 +25,8 @@
       "gf": 197,
       "ga": 133,
       "gd": 64,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 22.7,
+      "pkPct": 83.1,
       "conf": "West",
       "div": "Honda West",
       "homeW": 22,
@@ -45,7 +47,9 @@
       "hdca": 363,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 1
     },
     "VGK": {
       "team": "VGK",
@@ -59,8 +63,8 @@
       "gf": 191,
       "ga": 124,
       "gd": 67,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 17.8,
+      "pkPct": 86.8,
       "conf": "West",
       "div": "Honda West",
       "homeW": 21,
@@ -81,7 +85,9 @@
       "hdca": 469,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 2
     },
     "CAR": {
       "team": "CAR",
@@ -95,8 +101,8 @@
       "gf": 179,
       "ga": 136,
       "gd": 43,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 25.6,
+      "pkPct": 85.2,
       "conf": "West",
       "div": "Discover Central",
       "homeW": 20,
@@ -117,7 +123,9 @@
       "hdca": 459,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 1
     },
     "FLA": {
       "team": "FLA",
@@ -131,8 +139,8 @@
       "gf": 189,
       "ga": 153,
       "gd": 36,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 20.5,
+      "pkPct": 79.8,
       "conf": "West",
       "div": "Discover Central",
       "homeW": 20,
@@ -153,7 +161,9 @@
       "hdca": 387,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "PIT": {
       "team": "PIT",
@@ -167,8 +177,8 @@
       "gf": 196,
       "ga": 156,
       "gd": 40,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 23.7,
+      "pkPct": 77.4,
       "conf": "West",
       "div": "MassMutual East",
       "homeW": 22,
@@ -189,7 +199,9 @@
       "hdca": 470,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "TOR": {
       "team": "TOR",
@@ -203,8 +215,8 @@
       "gf": 187,
       "ga": 148,
       "gd": 39,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 20.0,
+      "pkPct": 78.5,
       "conf": "West",
       "div": "Scotia North",
       "homeW": 18,
@@ -225,7 +237,9 @@
       "hdca": 421,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "WSH": {
       "team": "WSH",
@@ -239,8 +253,8 @@
       "gf": 191,
       "ga": 163,
       "gd": 28,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 24.8,
+      "pkPct": 84.0,
       "conf": "West",
       "div": "MassMutual East",
       "homeW": 17,
@@ -261,7 +275,9 @@
       "hdca": 399,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "TB": {
       "team": "TB",
@@ -275,8 +291,8 @@
       "gf": 181,
       "ga": 147,
       "gd": 34,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 22.2,
+      "pkPct": 84.2,
       "conf": "West",
       "div": "Discover Central",
       "homeW": 21,
@@ -297,7 +313,9 @@
       "hdca": 415,
       "hasAdvanced": true,
       "wonCup": true,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 4
     },
     "MIN": {
       "team": "MIN",
@@ -311,8 +329,8 @@
       "gf": 181,
       "ga": 160,
       "gd": 21,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 17.6,
+      "pkPct": 80.7,
       "conf": "West",
       "div": "Honda West",
       "homeW": 21,
@@ -333,7 +351,9 @@
       "hdca": 363,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "BOS": {
       "team": "BOS",
@@ -347,8 +367,8 @@
       "gf": 168,
       "ga": 136,
       "gd": 32,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 21.9,
+      "pkPct": 86.0,
       "conf": "West",
       "div": "MassMutual East",
       "homeW": 18,
@@ -369,7 +389,9 @@
       "hdca": 390,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 1
     },
     "EDM": {
       "team": "EDM",
@@ -383,8 +405,8 @@
       "gf": 183,
       "ga": 154,
       "gd": 29,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 27.6,
+      "pkPct": 82.5,
       "conf": "West",
       "div": "Scotia North",
       "homeW": 16,
@@ -405,7 +427,9 @@
       "hdca": 459,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "NYI": {
       "team": "NYI",
@@ -419,8 +443,8 @@
       "gf": 156,
       "ga": 128,
       "gd": 28,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 18.8,
+      "pkPct": 83.7,
       "conf": "West",
       "div": "MassMutual East",
       "homeW": 21,
@@ -441,7 +465,9 @@
       "hdca": 402,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 2
     },
     "NSH": {
       "team": "NSH",
@@ -455,8 +481,8 @@
       "gf": 156,
       "ga": 154,
       "gd": 2,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 17.6,
+      "pkPct": 75.6,
       "conf": "West",
       "div": "Discover Central",
       "homeW": 18,
@@ -477,7 +503,9 @@
       "hdca": 441,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "WPG": {
       "team": "WPG",
@@ -491,8 +519,8 @@
       "gf": 170,
       "ga": 154,
       "gd": 16,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 23.0,
+      "pkPct": 80.5,
       "conf": "West",
       "div": "Scotia North",
       "homeW": 13,
@@ -513,7 +541,9 @@
       "hdca": 521,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 1
     },
     "STL": {
       "team": "STL",
@@ -527,8 +557,8 @@
       "gf": 169,
       "ga": 170,
       "gd": -1,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 23.2,
+      "pkPct": 77.8,
       "conf": "West",
       "div": "Honda West",
       "homeW": 12,
@@ -549,7 +579,9 @@
       "hdca": 473,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "NYR": {
       "team": "NYR",
@@ -563,8 +595,8 @@
       "gf": 177,
       "ga": 157,
       "gd": 20,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 20.7,
+      "pkPct": 82.2,
       "conf": "West",
       "div": "MassMutual East",
       "homeW": 14,
@@ -585,7 +617,9 @@
       "hdca": 476,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "DAL": {
       "team": "DAL",
@@ -599,8 +633,8 @@
       "gf": 158,
       "ga": 154,
       "gd": 4,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 23.6,
+      "pkPct": 79.1,
       "conf": "West",
       "div": "Discover Central",
       "homeW": 13,
@@ -621,7 +655,9 @@
       "hdca": 382,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "MTL": {
       "team": "MTL",
@@ -635,8 +671,8 @@
       "gf": 159,
       "ga": 168,
       "gd": -9,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 19.2,
+      "pkPct": 78.5,
       "conf": "West",
       "div": "Scotia North",
       "homeW": 13,
@@ -657,7 +693,9 @@
       "hdca": 434,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": true
+      "cupFinalist": true,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 3
     },
     "PHI": {
       "team": "PHI",
@@ -671,8 +709,8 @@
       "gf": 163,
       "ga": 201,
       "gd": -38,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 19.2,
+      "pkPct": 73.1,
       "conf": "West",
       "div": "MassMutual East",
       "homeW": 12,
@@ -693,7 +731,9 @@
       "hdca": 440,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "CGY": {
       "team": "CGY",
@@ -707,8 +747,8 @@
       "gf": 156,
       "ga": 161,
       "gd": -5,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 18.3,
+      "pkPct": 80.2,
       "conf": "West",
       "div": "Scotia North",
       "homeW": 15,
@@ -729,7 +769,9 @@
       "hdca": 389,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "CHI": {
       "team": "CHI",
@@ -743,8 +785,8 @@
       "gf": 161,
       "ga": 186,
       "gd": -25,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 21.7,
+      "pkPct": 76.8,
       "conf": "West",
       "div": "Discover Central",
       "homeW": 13,
@@ -765,7 +807,9 @@
       "hdca": 551,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "ARI": {
       "team": "ARI",
@@ -779,8 +823,8 @@
       "gf": 153,
       "ga": 176,
       "gd": -23,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 20.8,
+      "pkPct": 80.8,
       "conf": "West",
       "div": "Honda West",
       "homeW": 12,
@@ -801,7 +845,9 @@
       "hdca": 497,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "OTT": {
       "team": "OTT",
@@ -815,8 +861,8 @@
       "gf": 157,
       "ga": 190,
       "gd": -33,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 15.5,
+      "pkPct": 78.9,
       "conf": "West",
       "div": "Scotia North",
       "homeW": 14,
@@ -837,7 +883,9 @@
       "hdca": 479,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "VAN": {
       "team": "VAN",
@@ -851,8 +899,8 @@
       "gf": 151,
       "ga": 188,
       "gd": -37,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 17.4,
+      "pkPct": 79.8,
       "conf": "West",
       "div": "Scotia North",
       "homeW": 13,
@@ -873,7 +921,9 @@
       "hdca": 526,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "LA": {
       "team": "LA",
@@ -887,8 +937,8 @@
       "gf": 143,
       "ga": 170,
       "gd": -27,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 18.9,
+      "pkPct": 83.6,
       "conf": "West",
       "div": "Honda West",
       "homeW": 9,
@@ -909,7 +959,9 @@
       "hdca": 525,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "SJ": {
       "team": "SJ",
@@ -923,8 +975,8 @@
       "gf": 151,
       "ga": 199,
       "gd": -48,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 14.1,
+      "pkPct": 80.4,
       "conf": "West",
       "div": "Honda West",
       "homeW": 11,
@@ -945,7 +997,9 @@
       "hdca": 517,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "DET": {
       "team": "DET",
@@ -959,8 +1013,8 @@
       "gf": 127,
       "ga": 171,
       "gd": -44,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 11.4,
+      "pkPct": 78.7,
       "conf": "West",
       "div": "Discover Central",
       "homeW": 12,
@@ -981,7 +1035,9 @@
       "hdca": 453,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "CBJ": {
       "team": "CBJ",
@@ -995,8 +1051,8 @@
       "gf": 137,
       "ga": 187,
       "gd": -50,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 15.4,
+      "pkPct": 78.9,
       "conf": "West",
       "div": "Discover Central",
       "homeW": 11,
@@ -1017,7 +1073,9 @@
       "hdca": 477,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "NJ": {
       "team": "NJ",
@@ -1031,8 +1089,8 @@
       "gf": 145,
       "ga": 194,
       "gd": -49,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 14.2,
+      "pkPct": 70.9,
       "conf": "West",
       "div": "MassMutual East",
       "homeW": 7,
@@ -1053,7 +1111,9 @@
       "hdca": 450,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "ANA": {
       "team": "ANA",
@@ -1067,8 +1127,8 @@
       "gf": 126,
       "ga": 179,
       "gd": -53,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 8.9,
+      "pkPct": 79.9,
       "conf": "West",
       "div": "Honda West",
       "homeW": 6,
@@ -1089,7 +1149,9 @@
       "hdca": 522,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "BUF": {
       "team": "BUF",
@@ -1103,8 +1165,8 @@
       "gf": 138,
       "ga": 199,
       "gd": -61,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 21.0,
+      "pkPct": 77.7,
       "conf": "West",
       "div": "MassMutual East",
       "homeW": 8,
@@ -1125,7 +1187,9 @@
       "hdca": 502,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     }
   }
 }

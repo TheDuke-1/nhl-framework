@@ -4,11 +4,13 @@
     "year": 2023,
     "sources": {
       "standings": "NHL API (api-web.nhle.com)",
-      "advanced": "Natural Stat Trick (naturalstattrick.com)"
+      "advanced": "Natural Stat Trick (naturalstattrick.com)",
+      "specialTeams": "NHL Stats REST API (api.nhle.com/stats/rest)"
     },
-    "fetchedAt": "2026-02-01T22:57:10.774771Z",
+    "fetchedAt": "2026-02-02T05:25:56.517117Z",
     "cupWinner": "VGK",
-    "cupFinalist": "FLA"
+    "cupFinalist": "FLA",
+    "playoffTeams": 16
   },
   "teams": {
     "BOS": {
@@ -23,8 +25,8 @@
       "gf": 305,
       "ga": 177,
       "gd": 128,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 22.2,
+      "pkPct": 87.3,
       "conf": "East",
       "div": "Atlantic",
       "homeW": 34,
@@ -45,7 +47,9 @@
       "hdca": 702,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "CAR": {
       "team": "CAR",
@@ -59,8 +63,8 @@
       "gf": 266,
       "ga": 213,
       "gd": 53,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 19.8,
+      "pkPct": 84.4,
       "conf": "East",
       "div": "Metropolitan",
       "homeW": 28,
@@ -81,7 +85,9 @@
       "hdca": 670,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 2
     },
     "NJ": {
       "team": "NJ",
@@ -95,8 +101,8 @@
       "gf": 291,
       "ga": 226,
       "gd": 65,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 21.9,
+      "pkPct": 82.6,
       "conf": "East",
       "div": "Metropolitan",
       "homeW": 24,
@@ -117,7 +123,9 @@
       "hdca": 678,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 1
     },
     "TOR": {
       "team": "TOR",
@@ -131,8 +139,8 @@
       "gf": 279,
       "ga": 222,
       "gd": 57,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 26.0,
+      "pkPct": 81.9,
       "conf": "East",
       "div": "Atlantic",
       "homeW": 27,
@@ -153,7 +161,9 @@
       "hdca": 767,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 1
     },
     "VGK": {
       "team": "VGK",
@@ -167,8 +177,8 @@
       "gf": 272,
       "ga": 229,
       "gd": 43,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 20.3,
+      "pkPct": 77.4,
       "conf": "West",
       "div": "Pacific",
       "homeW": 25,
@@ -189,7 +199,9 @@
       "hdca": 738,
       "hasAdvanced": true,
       "wonCup": true,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 4
     },
     "EDM": {
       "team": "EDM",
@@ -203,8 +215,8 @@
       "gf": 325,
       "ga": 260,
       "gd": 65,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 32.4,
+      "pkPct": 77.0,
       "conf": "West",
       "div": "Pacific",
       "homeW": 23,
@@ -225,7 +237,9 @@
       "hdca": 698,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 1
     },
     "COL": {
       "team": "COL",
@@ -239,8 +253,8 @@
       "gf": 280,
       "ga": 226,
       "gd": 54,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 24.5,
+      "pkPct": 79.0,
       "conf": "West",
       "div": "Central",
       "homeW": 22,
@@ -261,7 +275,9 @@
       "hdca": 756,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "DAL": {
       "team": "DAL",
@@ -275,8 +291,8 @@
       "gf": 285,
       "ga": 218,
       "gd": 67,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 25.0,
+      "pkPct": 83.5,
       "conf": "West",
       "div": "Central",
       "homeW": 22,
@@ -297,7 +313,9 @@
       "hdca": 709,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 2
     },
     "NYR": {
       "team": "NYR",
@@ -311,8 +329,8 @@
       "gf": 277,
       "ga": 219,
       "gd": 58,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 24.1,
+      "pkPct": 81.2,
       "conf": "East",
       "div": "Metropolitan",
       "homeW": 23,
@@ -333,7 +351,9 @@
       "hdca": 823,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "LA": {
       "team": "LA",
@@ -347,8 +367,8 @@
       "gf": 280,
       "ga": 257,
       "gd": 23,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 25.3,
+      "pkPct": 75.8,
       "conf": "West",
       "div": "Pacific",
       "homeW": 26,
@@ -369,7 +389,9 @@
       "hdca": 695,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "MIN": {
       "team": "MIN",
@@ -383,8 +405,8 @@
       "gf": 246,
       "ga": 225,
       "gd": 21,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 21.4,
+      "pkPct": 82.0,
       "conf": "West",
       "div": "Central",
       "homeW": 25,
@@ -405,7 +427,9 @@
       "hdca": 677,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "SEA": {
       "team": "SEA",
@@ -419,8 +443,8 @@
       "gf": 289,
       "ga": 256,
       "gd": 33,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 19.8,
+      "pkPct": 76.7,
       "conf": "West",
       "div": "Pacific",
       "homeW": 20,
@@ -441,7 +465,9 @@
       "hdca": 719,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 1
     },
     "TB": {
       "team": "TB",
@@ -455,8 +481,8 @@
       "gf": 283,
       "ga": 254,
       "gd": 29,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 25.4,
+      "pkPct": 79.7,
       "conf": "East",
       "div": "Atlantic",
       "homeW": 28,
@@ -477,7 +503,9 @@
       "hdca": 756,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "WPG": {
       "team": "WPG",
@@ -491,8 +519,8 @@
       "gf": 247,
       "ga": 225,
       "gd": 22,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 19.3,
+      "pkPct": 82.4,
       "conf": "West",
       "div": "Central",
       "homeW": 26,
@@ -513,7 +541,9 @@
       "hdca": 745,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "NYI": {
       "team": "NYI",
@@ -527,8 +557,8 @@
       "gf": 243,
       "ga": 222,
       "gd": 21,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 15.8,
+      "pkPct": 82.2,
       "conf": "East",
       "div": "Metropolitan",
       "homeW": 25,
@@ -549,7 +579,9 @@
       "hdca": 848,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 0
     },
     "CGY": {
       "team": "CGY",
@@ -563,8 +595,8 @@
       "gf": 260,
       "ga": 252,
       "gd": 8,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 19.8,
+      "pkPct": 82.6,
       "conf": "West",
       "div": "Pacific",
       "homeW": 20,
@@ -585,7 +617,9 @@
       "hdca": 700,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "FLA": {
       "team": "FLA",
@@ -599,8 +633,8 @@
       "gf": 290,
       "ga": 273,
       "gd": 17,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 22.8,
+      "pkPct": 75.9,
       "conf": "East",
       "div": "Atlantic",
       "homeW": 23,
@@ -621,7 +655,9 @@
       "hdca": 809,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": true
+      "cupFinalist": true,
+      "madePlayoffs": true,
+      "playoffRoundsWon": 3
     },
     "NSH": {
       "team": "NSH",
@@ -635,8 +671,8 @@
       "gf": 229,
       "ga": 238,
       "gd": -9,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 17.6,
+      "pkPct": 82.5,
       "conf": "West",
       "div": "Central",
       "homeW": 22,
@@ -657,7 +693,9 @@
       "hdca": 819,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "PIT": {
       "team": "PIT",
@@ -671,8 +709,8 @@
       "gf": 262,
       "ga": 264,
       "gd": -2,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 21.7,
+      "pkPct": 79.1,
       "conf": "East",
       "div": "Metropolitan",
       "homeW": 23,
@@ -693,7 +731,9 @@
       "hdca": 800,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "BUF": {
       "team": "BUF",
@@ -707,8 +747,8 @@
       "gf": 296,
       "ga": 300,
       "gd": -4,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 23.4,
+      "pkPct": 73.0,
       "conf": "East",
       "div": "Atlantic",
       "homeW": 17,
@@ -729,7 +769,9 @@
       "hdca": 881,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "OTT": {
       "team": "OTT",
@@ -743,8 +785,8 @@
       "gf": 261,
       "ga": 271,
       "gd": -10,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 23.5,
+      "pkPct": 80.1,
       "conf": "East",
       "div": "Atlantic",
       "homeW": 24,
@@ -765,7 +807,9 @@
       "hdca": 739,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "VAN": {
       "team": "VAN",
@@ -779,8 +823,8 @@
       "gf": 276,
       "ga": 298,
       "gd": -22,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 22.7,
+      "pkPct": 71.6,
       "conf": "West",
       "div": "Pacific",
       "homeW": 19,
@@ -801,7 +845,9 @@
       "hdca": 811,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "STL": {
       "team": "STL",
@@ -815,8 +861,8 @@
       "gf": 263,
       "ga": 301,
       "gd": -38,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 19.3,
+      "pkPct": 72.4,
       "conf": "West",
       "div": "Central",
       "homeW": 18,
@@ -837,7 +883,9 @@
       "hdca": 839,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "DET": {
       "team": "DET",
@@ -851,8 +899,8 @@
       "gf": 240,
       "ga": 279,
       "gd": -39,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 21.1,
+      "pkPct": 78.3,
       "conf": "East",
       "div": "Atlantic",
       "homeW": 19,
@@ -873,7 +921,9 @@
       "hdca": 799,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "WSH": {
       "team": "WSH",
@@ -887,8 +937,8 @@
       "gf": 255,
       "ga": 265,
       "gd": -10,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 21.2,
+      "pkPct": 81.9,
       "conf": "East",
       "div": "Metropolitan",
       "homeW": 18,
@@ -909,7 +959,9 @@
       "hdca": 798,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "PHI": {
       "team": "PHI",
@@ -923,8 +975,8 @@
       "gf": 222,
       "ga": 277,
       "gd": -55,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 15.6,
+      "pkPct": 74.7,
       "conf": "East",
       "div": "Metropolitan",
       "homeW": 18,
@@ -945,7 +997,9 @@
       "hdca": 804,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "ARI": {
       "team": "ARI",
@@ -959,8 +1013,8 @@
       "gf": 228,
       "ga": 299,
       "gd": -71,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 18.9,
+      "pkPct": 74.6,
       "conf": "West",
       "div": "Central",
       "homeW": 21,
@@ -981,7 +1035,9 @@
       "hdca": 819,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "MTL": {
       "team": "MTL",
@@ -995,8 +1051,8 @@
       "gf": 232,
       "ga": 307,
       "gd": -75,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 16.1,
+      "pkPct": 72.7,
       "conf": "East",
       "div": "Atlantic",
       "homeW": 17,
@@ -1017,7 +1073,9 @@
       "hdca": 899,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "SJ": {
       "team": "SJ",
@@ -1031,8 +1089,8 @@
       "gf": 234,
       "ga": 321,
       "gd": -87,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 18.4,
+      "pkPct": 82.4,
       "conf": "West",
       "div": "Pacific",
       "homeW": 8,
@@ -1053,7 +1111,9 @@
       "hdca": 809,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "CHI": {
       "team": "CHI",
@@ -1067,8 +1127,8 @@
       "gf": 204,
       "ga": 301,
       "gd": -97,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 16.4,
+      "pkPct": 76.2,
       "conf": "West",
       "div": "Central",
       "homeW": 14,
@@ -1089,7 +1149,9 @@
       "hdca": 868,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "CBJ": {
       "team": "CBJ",
@@ -1103,8 +1165,8 @@
       "gf": 214,
       "ga": 330,
       "gd": -116,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 18.3,
+      "pkPct": 75.1,
       "conf": "East",
       "div": "Metropolitan",
       "homeW": 16,
@@ -1125,7 +1187,9 @@
       "hdca": 887,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     },
     "ANA": {
       "team": "ANA",
@@ -1139,8 +1203,8 @@
       "gf": 209,
       "ga": 338,
       "gd": -129,
-      "ppPct": 0,
-      "pkPct": 0,
+      "ppPct": 15.7,
+      "pkPct": 72.1,
       "conf": "West",
       "div": "Pacific",
       "homeW": 12,
@@ -1161,7 +1225,9 @@
       "hdca": 1055,
       "hasAdvanced": true,
       "wonCup": false,
-      "cupFinalist": false
+      "cupFinalist": false,
+      "madePlayoffs": false,
+      "playoffRoundsWon": 0
     }
   }
 }

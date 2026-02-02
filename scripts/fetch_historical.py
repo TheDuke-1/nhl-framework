@@ -10,7 +10,7 @@ Sources:
 Outputs: data/historical/verified/ directory with one JSON per season.
 
 Usage:
-    python fetch_historical.py                    # Fetch all seasons (2013-2025)
+    python fetch_historical.py                    # Fetch all seasons (2010-2025)
     python fetch_historical.py --season 2024      # Fetch single season
     python fetch_historical.py --standings-only    # Only fetch NHL API standings
     python fetch_historical.py --dry-run           # Show what would be fetched
@@ -32,12 +32,16 @@ from bs4 import BeautifulSoup
 # ---------------------------------------------------------------------------
 
 # Seasons to fetch. Key = Hockey-Reference year (e.g., 2024 = 2023-24 season).
-# NST advanced stats are reliable from ~2013 onwards.
-SEASONS = list(range(2014, 2026))  # 2013-14 through 2024-25
+# NHL standings API works back to 2010. NST advanced stats reliable from ~2013.
+SEASONS = list(range(2010, 2026))  # 2009-10 through 2024-25
 
 # NHL API season end dates (approximate — last day of regular season)
 # Used to fetch final standings for each season.
 SEASON_END_DATES = {
+    2010: "2010-04-11",
+    2011: "2011-04-10",
+    2012: "2012-04-07",
+    2013: "2013-04-28",  # Lockout-shortened season
     2014: "2014-04-13",
     2015: "2015-04-11",
     2016: "2016-04-09",
@@ -54,6 +58,10 @@ SEASON_END_DATES = {
 
 # Known Cup winners and finalists (verified facts)
 CUP_RESULTS = {
+    2010: {"winner": "CHI", "finalist": "PHI", "season_label": "2009-10"},
+    2011: {"winner": "BOS", "finalist": "VAN", "season_label": "2010-11"},
+    2012: {"winner": "LA", "finalist": "NJ", "season_label": "2011-12"},
+    2013: {"winner": "CHI", "finalist": "BOS", "season_label": "2012-13"},
     2014: {"winner": "LA", "finalist": "NYR", "season_label": "2013-14"},
     2015: {"winner": "CHI", "finalist": "TB", "season_label": "2014-15"},
     2016: {"winner": "PIT", "finalist": "SJ", "season_label": "2015-16"},
@@ -66,6 +74,110 @@ CUP_RESULTS = {
     2023: {"winner": "VGK", "finalist": "FLA", "season_label": "2022-23"},
     2024: {"winner": "FLA", "finalist": "EDM", "season_label": "2023-24"},
     2025: {"winner": "FLA", "finalist": "EDM", "season_label": "2024-25"},
+}
+
+# Playoff results: team abbreviation → rounds won
+# 0=lost R1, 1=won R1 lost R2, 2=lost conf finals, 3=lost Cup Finals, 4=won Cup
+# 2020 had 24-team bubble format — qualifying round losers get 0
+PLAYOFF_RESULTS = {
+    2010: {
+        "CHI": 4, "PHI": 3,
+        "SJ": 2, "MTL": 2,
+        "BOS": 1, "PIT": 1, "LA": 1, "DET": 1,
+        "WSH": 0, "NJ": 0, "BUF": 0, "OTT": 0, "COL": 0, "NSH": 0, "VAN": 0, "ARI": 0,
+    },
+    2011: {
+        "BOS": 4, "VAN": 3,
+        "TB": 2, "SJ": 2,
+        "WSH": 1, "PHI": 1, "DET": 1, "NSH": 1,
+        "NYR": 0, "BUF": 0, "PIT": 0, "MTL": 0, "CHI": 0, "LA": 0, "ARI": 0, "ANA": 0,
+    },
+    2012: {
+        "LA": 4, "NJ": 3,
+        "ARI": 2, "NYR": 2,
+        "STL": 1, "NSH": 1, "PHI": 1, "WSH": 1,
+        "VAN": 0, "SJ": 0, "CHI": 0, "DET": 0, "PIT": 0, "FLA": 0, "BOS": 0, "OTT": 0,
+    },
+    2013: {
+        "CHI": 4, "BOS": 3,
+        "LA": 2, "PIT": 2,
+        "DET": 1, "SJ": 1, "NYR": 1, "OTT": 1,
+        "MIN": 0, "ANA": 0, "VAN": 0, "STL": 0, "TOR": 0, "WSH": 0, "MTL": 0, "NYI": 0,
+    },
+    2014: {
+        "LA": 4, "NYR": 3,
+        "MTL": 2, "CHI": 2,
+        "BOS": 1, "PIT": 1, "ANA": 1, "MIN": 1,
+        "PHI": 0, "CBJ": 0, "TB": 0, "DET": 0, "SJ": 0, "DAL": 0, "STL": 0, "COL": 0,
+    },
+    2015: {
+        "CHI": 4, "TB": 3,
+        "ANA": 2, "NYR": 2,
+        "CGY": 1, "MIN": 1, "MTL": 1, "WSH": 1,
+        "WPG": 0, "VAN": 0, "NSH": 0, "STL": 0, "PIT": 0, "DET": 0, "OTT": 0, "NYI": 0,
+    },
+    2016: {
+        "PIT": 4, "SJ": 3,
+        "TB": 2, "STL": 2,
+        "NYI": 1, "WSH": 1, "DAL": 1, "NSH": 1,
+        "NYR": 0, "DET": 0, "PHI": 0, "FLA": 0, "CHI": 0, "MIN": 0, "LA": 0, "ANA": 0,
+    },
+    2017: {
+        "PIT": 4, "NSH": 3,
+        "OTT": 2, "ANA": 2,
+        "NYR": 1, "WSH": 1, "STL": 1, "EDM": 1,
+        "CBJ": 0, "MTL": 0, "BOS": 0, "TOR": 0, "CHI": 0, "MIN": 0, "CGY": 0, "SJ": 0,
+    },
+    2018: {
+        "WSH": 4, "VGK": 3,
+        "TB": 2, "WPG": 2,
+        "BOS": 1, "PIT": 1, "NSH": 1, "SJ": 1,
+        "NJ": 0, "TOR": 0, "CBJ": 0, "PHI": 0, "COL": 0, "MIN": 0, "LA": 0, "ANA": 0,
+    },
+    2019: {
+        "STL": 4, "BOS": 3,
+        "CAR": 2, "SJ": 2,
+        "CBJ": 1, "NYI": 1, "COL": 1, "DAL": 1,
+        "TB": 0, "PIT": 0, "WSH": 0, "TOR": 0, "NSH": 0, "WPG": 0, "CGY": 0, "VGK": 0,
+    },
+    # 2020: 24-team bubble. Qualifying round losers get 0.
+    2020: {
+        "TB": 4, "DAL": 3,
+        "NYI": 2, "VGK": 2,
+        "BOS": 1, "PHI": 1, "COL": 1, "VAN": 1,
+        "CBJ": 0, "MTL": 0, "CAR": 0, "WSH": 0, "CHI": 0, "ARI": 0, "CGY": 0, "STL": 0,
+        "PIT": 0, "NYR": 0, "FLA": 0, "TOR": 0, "EDM": 0, "NSH": 0, "MIN": 0, "WPG": 0,
+    },
+    2021: {
+        "TB": 4, "MTL": 3,
+        "NYI": 2, "VGK": 2,
+        "BOS": 1, "CAR": 1, "COL": 1, "WPG": 1,
+        "WSH": 0, "PIT": 0, "EDM": 0, "TOR": 0, "FLA": 0, "NSH": 0, "MIN": 0, "STL": 0,
+    },
+    2022: {
+        "COL": 4, "TB": 3,
+        "NYR": 2, "EDM": 2,
+        "CAR": 1, "FLA": 1, "STL": 1, "CGY": 1,
+        "PIT": 0, "WSH": 0, "BOS": 0, "TOR": 0, "NSH": 0, "MIN": 0, "DAL": 0, "LA": 0,
+    },
+    2023: {
+        "VGK": 4, "FLA": 3,
+        "CAR": 2, "DAL": 2,
+        "TOR": 1, "NJ": 1, "EDM": 1, "SEA": 1,
+        "BOS": 0, "TB": 0, "NYI": 0, "NYR": 0, "WPG": 0, "LA": 0, "MIN": 0, "COL": 0,
+    },
+    2024: {
+        "FLA": 4, "EDM": 3,
+        "NYR": 2, "DAL": 2,
+        "BOS": 1, "CAR": 1, "COL": 1, "VAN": 1,
+        "TOR": 0, "TB": 0, "WSH": 0, "NYI": 0, "VGK": 0, "WPG": 0, "NSH": 0, "LA": 0,
+    },
+    2025: {
+        "FLA": 4, "EDM": 3,
+        "CAR": 2, "DAL": 2,
+        "TOR": 1, "WSH": 1, "WPG": 1, "VGK": 1,
+        "OTT": 0, "TB": 0, "MTL": 0, "NJ": 0, "STL": 0, "COL": 0, "MIN": 0, "LA": 0,
+    },
 }
 
 # NHL API abbreviation → project standard abbreviation
@@ -124,6 +236,7 @@ NST_TEAM_MAP = {
 
 # Number of teams per season (for validation)
 EXPECTED_TEAMS = {
+    2010: 30, 2011: 30, 2012: 30, 2013: 30,
     2014: 30, 2015: 30, 2016: 30, 2017: 30,
     2018: 31, 2019: 31, 2020: 31, 2021: 31,
     2022: 32, 2023: 32, 2024: 32, 2025: 32,
@@ -131,6 +244,26 @@ EXPECTED_TEAMS = {
 
 REQUEST_DELAY = 3  # seconds between requests (be respectful)
 USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _match_team_abbrev(team_name, team_map):
+    """
+    Look up a team name in a name→abbreviation map.
+    Tries exact match first, then case-insensitive substring fallback.
+    Returns abbreviation or None.
+    """
+    abbrev = team_map.get(team_name)
+    if abbrev:
+        return abbrev
+    lower = team_name.lower()
+    for name, ab in team_map.items():
+        if name.lower() in lower or lower in name.lower():
+            return ab
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -190,6 +323,52 @@ def fetch_nhl_standings(year):
         }
 
     print(f"  -> Got {len(teams)} teams from NHL API")
+    return teams
+
+
+# ---------------------------------------------------------------------------
+# NHL Stats REST API — Special Teams (PP%/PK%)
+# ---------------------------------------------------------------------------
+
+def fetch_nhl_special_teams(year):
+    """
+    Fetch PP% and PK% from the NHL Stats REST API.
+    The standings endpoint returns None for these fields, but the
+    stats/rest/en/team/summary endpoint has them.
+
+    Returns dict of {team_abbrev: {"ppPct": float, "pkPct": float}}.
+    """
+    season_id = f"{year - 1}{year}"
+    url = "https://api.nhle.com/stats/rest/en/team/summary"
+    params = {"cayenneExp": f"seasonId={season_id} and gameTypeId=2"}
+
+    print(f"  Fetching NHL Stats API special teams for {year} (season {season_id})...")
+
+    try:
+        response = requests.get(url, params=params, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+    except requests.RequestException as e:
+        print(f"  ERROR: NHL Stats API request failed for {year}: {e}")
+        return {}
+
+    teams = {}
+    for t in data.get("data", []):
+        team_name = t.get("teamFullName", "")
+        abbrev = _match_team_abbrev(team_name, NST_TEAM_MAP)
+        if not abbrev:
+            print(f"  WARNING: Unknown team in stats API: {team_name}")
+            continue
+
+        pp_pct = t.get("powerPlayPct", 0) or 0
+        pk_pct = t.get("penaltyKillPct", 0) or 0
+
+        teams[abbrev] = {
+            "ppPct": round(pp_pct * 100, 1),
+            "pkPct": round(pk_pct * 100, 1),
+        }
+
+    print(f"  -> Got {len(teams)} teams with PP%/PK% from NHL Stats API")
     return teams
 
 
@@ -284,12 +463,7 @@ def parse_nst_html(html):
         team_idx = col_map.get("TEAM", 1)
         team_name = cells[team_idx].get_text(strip=True) if team_idx < len(cells) else ""
 
-        abbrev = NST_TEAM_MAP.get(team_name)
-        if not abbrev:
-            for name, ab in NST_TEAM_MAP.items():
-                if name.lower() in team_name.lower():
-                    abbrev = ab
-                    break
+        abbrev = _match_team_abbrev(team_name, NST_TEAM_MAP)
         if not abbrev:
             continue
 
@@ -315,10 +489,15 @@ def parse_nst_html(html):
 # Merge & Save
 # ---------------------------------------------------------------------------
 
-def merge_season_data(year, standings, advanced):
-    """Merge standings + advanced stats into one record per team."""
+def merge_season_data(year, standings, advanced, special_teams=None):
+    """Merge standings + advanced stats + special teams + playoff results."""
     cup_info = CUP_RESULTS.get(year, {})
+    playoff_results = PLAYOFF_RESULTS.get(year, {})
     season_label = cup_info.get("season_label", f"{year - 1}-{str(year)[2:]}")
+    if special_teams is None:
+        special_teams = {}
+
+    playoff_team_count = len(playoff_results)
 
     merged = {
         "_metadata": {
@@ -327,10 +506,12 @@ def merge_season_data(year, standings, advanced):
             "sources": {
                 "standings": "NHL API (api-web.nhle.com)",
                 "advanced": "Natural Stat Trick (naturalstattrick.com)",
+                "specialTeams": "NHL Stats REST API (api.nhle.com/stats/rest)",
             },
             "fetchedAt": datetime.utcnow().isoformat() + "Z",
             "cupWinner": cup_info.get("winner", ""),
             "cupFinalist": cup_info.get("finalist", ""),
+            "playoffTeams": playoff_team_count,
         },
         "teams": {},
     }
@@ -338,6 +519,12 @@ def merge_season_data(year, standings, advanced):
     # Start with standings (the authoritative source for W/L/PTS/GF/GA)
     for abbrev, st in standings.items():
         team_data = dict(st)  # copy
+
+        # Merge special teams from Stats REST API (overrides 0s from standings)
+        st_data = special_teams.get(abbrev, {})
+        if st_data:
+            team_data["ppPct"] = st_data["ppPct"]
+            team_data["pkPct"] = st_data["pkPct"]
 
         # Merge advanced stats if available
         adv = advanced.get(abbrev, {})
@@ -356,13 +543,15 @@ def merge_season_data(year, standings, advanced):
         else:
             team_data["hasAdvanced"] = False
 
-        # Flag playoff teams and results
+        # Playoff results
         team_data["wonCup"] = (abbrev == cup_info.get("winner"))
         team_data["cupFinalist"] = (abbrev == cup_info.get("finalist"))
+        team_data["madePlayoffs"] = abbrev in playoff_results
+        team_data["playoffRoundsWon"] = playoff_results.get(abbrev, 0)
 
         merged["teams"][abbrev] = team_data
 
-    # Check for teams in advanced but not in standings (shouldn't happen, but just in case)
+    # Check for teams in advanced but not in standings
     for abbrev in advanced:
         if abbrev not in merged["teams"]:
             print(f"  WARNING: {abbrev} found in NST but not in NHL API standings")
@@ -394,11 +583,15 @@ def validate_season(year, data):
     teams = data.get("teams", {})
     expected = EXPECTED_TEAMS.get(year, 30)
 
-    if len(teams) < expected - 2:
-        issues.append(f"Only {len(teams)} teams (expected ~{expected})")
+    if len(teams) != expected:
+        issues.append(f"Team count: {len(teams)} (expected {expected})")
+
+    playoff_count = sum(1 for t in teams.values() if t.get("madePlayoffs"))
+    expected_playoff = 24 if year == 2020 else 16
+    if playoff_count != expected_playoff:
+        issues.append(f"Playoff teams: {playoff_count} (expected {expected_playoff})")
 
     for abbrev, t in teams.items():
-        # Check standings fields exist and are reasonable
         pts = t.get("pts", 0)
         w = t.get("w", 0)
         gp = t.get("gp", 0)
@@ -410,7 +603,15 @@ def validate_season(year, data):
         if w > gp:
             issues.append(f"{abbrev}: More wins ({w}) than games ({gp})")
 
-        # Check advanced stats ranges
+        # Special teams ranges (8-35 PP%, 65-95 PK% — ANA 2021 had 8.9% PP)
+        ppPct = t.get("ppPct", 0)
+        pkPct = t.get("pkPct", 0)
+        if ppPct > 0 and (ppPct < 8 or ppPct > 35):
+            issues.append(f"{abbrev}: PP% = {ppPct} out of expected range (8-35)")
+        if pkPct > 0 and (pkPct < 65 or pkPct > 95):
+            issues.append(f"{abbrev}: PK% = {pkPct} out of expected range (65-95)")
+
+        # Advanced stats ranges
         cfPct = t.get("cfPct")
         if cfPct is not None and (cfPct < 35 or cfPct > 65):
             issues.append(f"{abbrev}: CF% = {cfPct} out of expected range")
@@ -449,19 +650,23 @@ def fetch_season(year, output_dir, standings_only=False):
 
     time.sleep(REQUEST_DELAY)
 
-    # 2. Fetch advanced stats from NST (unless standings-only)
+    # 2. Fetch special teams (PP%/PK%) from NHL Stats REST API
+    special_teams = fetch_nhl_special_teams(year)
+    time.sleep(REQUEST_DELAY)
+
+    # 3. Fetch advanced stats from NST (unless standings-only)
     advanced = {}
     if not standings_only:
         advanced = fetch_nst_advanced(year)
         time.sleep(REQUEST_DELAY)
 
-    # 3. Merge
-    merged = merge_season_data(year, standings, advanced)
+    # 4. Merge
+    merged = merge_season_data(year, standings, advanced, special_teams)
 
-    # 4. Validate
+    # 5. Validate
     validate_season(year, merged)
 
-    # 5. Save
+    # 6. Save
     filepath = save_season(year, merged, output_dir)
     return filepath
 
@@ -517,7 +722,7 @@ def main():
         "_metadata": {
             "description": "Index of verified historical NHL data",
             "generatedAt": datetime.utcnow().isoformat() + "Z",
-            "sources": ["NHL API", "Natural Stat Trick"],
+            "sources": ["NHL API", "NHL Stats REST API", "Natural Stat Trick"],
         },
         "seasons": {},
     }
