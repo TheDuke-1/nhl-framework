@@ -17,16 +17,13 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Optional
 
+import numpy as np
+
 from .data_loader import load_current_season_data, load_training_data
 from .models import EnsemblePredictor
 from .data_models import PredictionResult
-from .config import CURRENT_SEASON
+from .config import CURRENT_SEASON, RANDOM_SEED
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(levelname)s: %(message)s'
-)
 logger = logging.getLogger(__name__)
 
 
@@ -131,7 +128,10 @@ class SuperhumanPredictor:
         print("TIER BREAKDOWN:")
         tiers = {'Elite': [], 'Contender': [], 'Bubble': [], 'Longshot': []}
         for r in self.results:
-            tiers[r.tier].append(r.team)
+            if r.tier in tiers:
+                tiers[r.tier].append(r.team)
+            else:
+                tiers.setdefault(r.tier, []).append(r.team)
 
         for tier, teams in tiers.items():
             print(f"  {tier}: {', '.join(teams)}")
@@ -199,6 +199,9 @@ class SuperhumanPredictor:
 
 
 def main():
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+    np.random.seed(RANDOM_SEED)
+
     parser = argparse.ArgumentParser(
         description="Superhuman NHL Prediction System"
     )

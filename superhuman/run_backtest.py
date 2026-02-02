@@ -15,11 +15,15 @@ from datetime import datetime
 from pathlib import Path
 from collections import defaultdict
 
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+import numpy as np
+
 logger = logging.getLogger(__name__)
 
 
 def main():
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+    from .config import RANDOM_SEED
+    np.random.seed(RANDOM_SEED)
     from .data_loader import load_training_data, CUP_WINNERS
     from .validation import ValidationFramework
     from .betting_odds_loader import load_all_vegas_odds, calculate_vegas_brier_score

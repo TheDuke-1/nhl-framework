@@ -14,22 +14,13 @@ REVIEW FIXES APPLIED (Phase 1 Review):
 
 import json
 import logging
-from pathlib import Path
 from typing import List, Dict
 import numpy as np
 
-from .config import (
-    DATA_DIR, HISTORICAL_DIR, ALL_TEAMS, TRAINING_SEASONS,
-    TEST_SEASONS, RANDOM_SEED
-)
+from .config import DATA_DIR, ALL_TEAMS, TRAINING_SEASONS, TEST_SEASONS
 from .data_models import TeamSeason
 
-# Set up logging
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
-
-# Set random seed for reproducibility
-np.random.seed(RANDOM_SEED)
 
 # Historical Stanley Cup winners (ground truth)
 CUP_WINNERS = {
@@ -126,19 +117,6 @@ def load_training_data() -> List[TeamSeason]:
     logger.info("Falling back to synthetic training data")
     return synthesize_training_data()
 
-
-def load_historical_data() -> List[TeamSeason]:
-    """Load historical data from files or synthesize from known results."""
-    # Try real data first
-    return load_training_data()
-
-
-def _load_from_file(filepath: Path) -> List[TeamSeason]:
-    """Load historical data from JSON file."""
-    with open(filepath) as f:
-        data = json.load(f)
-
-    return [TeamSeason(**record) for record in data]
 
 
 def synthesize_training_data() -> List[TeamSeason]:
@@ -374,21 +352,3 @@ def validate_data(team_seasons: List[TeamSeason]) -> Dict:
     }
 
 
-def get_training_data() -> List[TeamSeason]:
-    """Get team seasons for training (historical)."""
-    all_data = load_historical_data()
-    return [ts for ts in all_data if ts.season in TRAINING_SEASONS]
-
-
-def get_test_data() -> List[TeamSeason]:
-    """Get team seasons for testing (recent + current)."""
-    historical = load_historical_data()
-    current = load_current_season_data()
-    test = [ts for ts in historical if ts.season in TEST_SEASONS]
-    test.extend(current)
-    return test
-
-
-def get_all_data() -> List[TeamSeason]:
-    """Get all available team seasons."""
-    return load_historical_data() + load_current_season_data()

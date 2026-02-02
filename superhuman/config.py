@@ -5,8 +5,6 @@ Central configuration for the prediction system.
 """
 
 from pathlib import Path
-from dataclasses import dataclass
-from typing import Dict, List
 
 # Paths
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -67,19 +65,9 @@ CONFERENCES = {
 }
 
 
-@dataclass
-class FeatureWeights:
-    """Placeholder for optimized weights - will be set by regression."""
-    goal_differential: float = 0.0
-    territorial_dominance: float = 0.0
-    shot_quality_premium: float = 0.0
-    goaltending: float = 0.0
-    special_teams: float = 0.0
-    road_performance: float = 0.0
-    recent_form: float = 0.0
-    depth: float = 0.0
-    star_power: float = 0.0
-    clutch: float = 0.0
+def parse_bool(value) -> bool:
+    """Parse a boolean from CSV data (handles '1', 'True', 'true', True, 1)."""
+    return value in ('1', 'True', 'true', True, 1)
 
 
 def get_team_conference(team: str) -> str:

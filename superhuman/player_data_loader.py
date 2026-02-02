@@ -8,17 +8,12 @@ Loads player-level data for calculating:
 
 import csv
 import logging
-from pathlib import Path
 from typing import List, Dict, Optional
 from dataclasses import dataclass
 
-from .config import normalize_team_abbrev as _normalize_team
+from .config import normalize_team_abbrev as _normalize_team, HISTORICAL_DIR, parse_bool
 
 logger = logging.getLogger(__name__)
-
-# Data paths
-DATA_DIR = Path(__file__).parent.parent / "data"
-HISTORICAL_DIR = DATA_DIR / "historical"
 
 
 @dataclass
@@ -112,7 +107,7 @@ def load_player_data(season: int) -> List[PlayerStats]:
                     ppg = float(row.get('ppg', 0.0))
                     toi = float(row.get('toi_per_game', 0.0))
                     position = row.get('position', 'F')
-                    is_star = row.get('is_star', '0') in ('1', 'True', 'true', True, 1)
+                    is_star = parse_bool(row.get('is_star', '0'))
 
                 player = PlayerStats(
                     team=_normalize_team(row['team']),

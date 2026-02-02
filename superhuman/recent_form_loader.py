@@ -6,17 +6,12 @@ Loads recent game results for calculating momentum/form features.
 
 import csv
 import logging
-from pathlib import Path
 from typing import Dict, Optional
 from dataclasses import dataclass
 
-from .config import normalize_team_abbrev as _normalize_team
+from .config import normalize_team_abbrev as _normalize_team, HISTORICAL_DIR
 
 logger = logging.getLogger(__name__)
-
-# Data paths
-DATA_DIR = Path(__file__).parent.parent / "data"
-HISTORICAL_DIR = DATA_DIR / "historical"
 
 
 @dataclass

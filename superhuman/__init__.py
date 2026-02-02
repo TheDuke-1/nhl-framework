@@ -28,10 +28,7 @@ from .data_models import (
 
 from .data_loader import (
     load_current_season_data,
-    load_historical_data,
     load_training_data,
-    get_training_data,
-    get_test_data,
     validate_data
 )
 
@@ -64,9 +61,7 @@ __all__ = [
     "PredictionResult",
     "FeatureEngineer",
     "load_current_season_data",
-    "load_historical_data",
-    "get_training_data",
-    "get_test_data",
+    "load_training_data",
     "validate_data",
     "create_feature_matrix",
     "get_feature_correlations",
