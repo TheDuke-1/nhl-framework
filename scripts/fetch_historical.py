@@ -73,7 +73,8 @@ CUP_RESULTS = {
     2022: {"winner": "COL", "finalist": "TB", "season_label": "2021-22"},
     2023: {"winner": "VGK", "finalist": "FLA", "season_label": "2022-23"},
     2024: {"winner": "FLA", "finalist": "EDM", "season_label": "2023-24"},
-    2025: {"winner": "FLA", "finalist": "EDM", "season_label": "2024-25"},
+    # 2025 (2024-25) season: playoffs not yet concluded — no Cup result
+    2025: {"winner": "", "finalist": "", "season_label": "2024-25"},
 }
 
 # Playoff results: team abbreviation → rounds won
@@ -172,12 +173,7 @@ PLAYOFF_RESULTS = {
         "BOS": 1, "CAR": 1, "COL": 1, "VAN": 1,
         "TOR": 0, "TB": 0, "WSH": 0, "NYI": 0, "VGK": 0, "WPG": 0, "NSH": 0, "LA": 0,
     },
-    2025: {
-        "FLA": 4, "EDM": 3,
-        "CAR": 2, "DAL": 2,
-        "TOR": 1, "WSH": 1, "WPG": 1, "VGK": 1,
-        "OTT": 0, "TB": 0, "MTL": 0, "NJ": 0, "STL": 0, "COL": 0, "MIN": 0, "LA": 0,
-    },
+    # 2025 (2024-25) season: playoffs not yet concluded — no bracket data
 }
 
 # NHL API abbreviation → project standard abbreviation
@@ -253,15 +249,17 @@ USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36
 def _match_team_abbrev(team_name, team_map):
     """
     Look up a team name in a name→abbreviation map.
-    Tries exact match first, then case-insensitive substring fallback.
+    Tries exact match first, then case-insensitive exact match fallback.
     Returns abbreviation or None.
     """
     abbrev = team_map.get(team_name)
     if abbrev:
         return abbrev
-    lower = team_name.lower()
+    # Case-insensitive exact match only (no substring — avoids
+    # "New York Rangers" matching "New York Islanders")
+    lower = team_name.strip().lower()
     for name, ab in team_map.items():
-        if name.lower() in lower or lower in name.lower():
+        if name.lower() == lower:
             return ab
     return None
 
@@ -293,14 +291,14 @@ def fetch_nhl_standings(year):
 
     teams = {}
     for t in data.get("standings", []):
-        api_abbrev = t.get("teamAbbrev", {}).get("default", "")
+        api_abbrev = (t.get("teamAbbrev") or {}).get("default", "")
         abbrev = NHL_ABBREV_MAP.get(api_abbrev, api_abbrev)
         if not abbrev:
             continue
 
         teams[abbrev] = {
             "team": abbrev,
-            "name": t.get("teamName", {}).get("default", ""),
+            "name": (t.get("teamName") or {}).get("default", ""),
             "gp": t.get("gamesPlayed", 0),
             "w": t.get("wins", 0),
             "l": t.get("losses", 0),

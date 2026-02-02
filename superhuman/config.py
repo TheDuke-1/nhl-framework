@@ -41,10 +41,13 @@ ALL_TEAMS = [
 
 # Historical team name mappings (teams that moved/renamed).
 # Maps old abbreviations to current franchise abbreviation for continuity.
-# This means pre-2024 ARI data gets tagged as UTA — that's intentional,
-# since the model treats them as the same franchise across relocations.
+# NOTE: ARI→UTA mapping merges pre-2024 Arizona data with Utah. This preserves
+# franchise continuity for the model but may add noise since rosters, coaching,
+# and venue changed completely. Set MERGE_RELOCATED_FRANCHISES=False to disable.
+MERGE_RELOCATED_FRANCHISES = True
+
 HISTORICAL_TEAM_MAP = {
-    "ARI": "UTA",  # Arizona -> Utah (2024)
+    "ARI": "UTA",  # Arizona -> Utah (2024) — controlled by MERGE_RELOCATED_FRANCHISES
     "PHX": "UTA",  # Phoenix -> Arizona -> Utah
     "ATL": "WPG",  # Atlanta -> Winnipeg (2011)
     "HFD": "CAR",  # Hartford -> Carolina
@@ -92,5 +95,12 @@ def get_team_division(team: str) -> str:
 
 
 def normalize_team_abbrev(abbrev: str) -> str:
-    """Normalize historical team abbreviations."""
+    """Normalize historical team abbreviations.
+
+    When MERGE_RELOCATED_FRANCHISES is False, only normalizes alternate
+    abbreviation formats (LAK→LA, etc.) without merging relocated teams.
+    """
+    if not MERGE_RELOCATED_FRANCHISES and abbrev in ("ARI", "PHX", "ATL"):
+        # Don't merge relocated franchises — only normalize abbrev formats
+        return abbrev
     return HISTORICAL_TEAM_MAP.get(abbrev, abbrev)
