@@ -10,7 +10,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 SUPERHUMAN_DIR = Path(__file__).parent
 DATA_DIR = PROJECT_ROOT / "data"
-HISTORICAL_DIR = DATA_DIR / "historical"
+HISTORICAL_DIR = DATA_DIR / "historical" / "verified"
 
 # Seasons to use for training/testing
 TRAINING_SEASONS = list(range(2010, 2023))  # 2010-2022
@@ -39,7 +39,10 @@ ALL_TEAMS = [
     "STL", "TB", "TOR", "UTA", "VAN", "VGK", "WPG", "WSH"
 ]
 
-# Historical team name mappings (teams that moved/renamed)
+# Historical team name mappings (teams that moved/renamed).
+# Maps old abbreviations to current franchise abbreviation for continuity.
+# This means pre-2024 ARI data gets tagged as UTA — that's intentional,
+# since the model treats them as the same franchise across relocations.
 HISTORICAL_TEAM_MAP = {
     "ARI": "UTA",  # Arizona -> Utah (2024)
     "PHX": "UTA",  # Phoenix -> Arizona -> Utah

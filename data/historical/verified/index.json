@@ -1,13 +1,38 @@
 {
   "_metadata": {
     "description": "Index of verified historical NHL data",
-    "generatedAt": "2026-02-01T22:57:30.415779Z",
+    "generatedAt": "2026-02-02T05:26:21.076071Z",
     "sources": [
       "NHL API",
+      "NHL Stats REST API",
       "Natural Stat Trick"
     ]
   },
   "seasons": {
+    "2010": {
+      "file": "season_2010.json",
+      "seasonLabel": "2009-10",
+      "cupWinner": "CHI",
+      "cupFinalist": "PHI"
+    },
+    "2011": {
+      "file": "season_2011.json",
+      "seasonLabel": "2010-11",
+      "cupWinner": "BOS",
+      "cupFinalist": "VAN"
+    },
+    "2012": {
+      "file": "season_2012.json",
+      "seasonLabel": "2011-12",
+      "cupWinner": "LA",
+      "cupFinalist": "NJ"
+    },
+    "2013": {
+      "file": "season_2013.json",
+      "seasonLabel": "2012-13",
+      "cupWinner": "CHI",
+      "cupFinalist": "BOS"
+    },
     "2014": {
       "file": "season_2014.json",
       "seasonLabel": "2013-14",

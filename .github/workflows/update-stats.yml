@@ -47,7 +47,12 @@ jobs:
 
       - name: Validate data quality
         run: python scripts/validate_data.py
-        continue-on-error: true
+
+      - name: Install test dependencies
+        run: pip install -r scripts/requirements-test.txt
+
+      - name: Run tests
+        run: python -m pytest tests/ -v
 
       - name: Check for changes
         id: check_changes

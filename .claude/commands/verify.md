@@ -6,7 +6,7 @@ Run the full verification pipeline on the current changes.
 Run the project's build command. Report pass/fail.
 
 ### Step 2: Test Suite
-Run all tests. Report results with counts (passed/failed/skipped).
+Run `python3 -m pytest tests/ -v` and report results with counts (passed/failed/skipped).
 
 ### Step 3: Code Review
 Use the code-reviewer agent to review all modified files. Report any issues found.
