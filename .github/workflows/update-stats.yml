@@ -48,6 +48,22 @@ jobs:
       - name: Validate data quality
         run: python scripts/validate_data.py
 
+      - name: Generate superhuman predictions
+        id: superhuman
+        run: python -m superhuman.dashboard_generator
+        continue-on-error: true
+
+      - name: Report model status
+        run: |
+          if [ "${{ steps.superhuman.outcome }}" == "success" ]; then
+            echo "Superhuman model ran successfully"
+            echo "Dashboard data updated:"
+            python -c "import json; d=json.load(open('dashboard_data.json')); print(f\"  Generated at: {d.get('metadata', {}).get('generated', 'unknown')}\")"
+          else
+            echo "WARNING: Superhuman model failed — dashboard_data.json was NOT updated"
+            echo "The dashboard will use the last good prediction data"
+          fi
+
       - name: Install test dependencies
         run: pip install -r scripts/requirements-test.txt
 
@@ -57,14 +73,16 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet data/*.json || echo "changes=true" >> $GITHUB_OUTPUT
+          git add data/ dashboard_data.json history/
+          git diff --cached --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+          git reset HEAD
 
       - name: Commit and push updates
         if: steps.check_changes.outputs.changes == 'true'
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add data/
+          git add data/ dashboard_data.json history/
           git commit -m "Update NHL stats - $(date +'%Y-%m-%d %H:%M') UTC"
           git push
 
