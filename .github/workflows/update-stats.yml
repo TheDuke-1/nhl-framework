@@ -38,13 +38,21 @@ jobs:
         run: python scripts/scrape_nst.py
         continue-on-error: true
 
+      - name: Fetch betting odds
+        run: python scripts/fetch_odds.py
+        continue-on-error: true
+
       - name: Merge all data sources
         run: python scripts/merge_data.py
+
+      - name: Validate data quality
+        run: python scripts/validate_data.py
+        continue-on-error: true
 
       - name: Check for changes
         id: check_changes
         run: |
-          git diff --quiet data/teams.json || echo "changes=true" >> $GITHUB_OUTPUT
+          git diff --quiet data/*.json || echo "changes=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push updates
         if: steps.check_changes.outputs.changes == 'true'
