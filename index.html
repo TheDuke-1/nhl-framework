@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NHL Championship Framework V7.2</title>
+  <title>NHL Championship Framework V7.3</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -963,7 +963,7 @@
     </div>
 
     <footer class="footer">
-      V7.2 Framework | Backtest-Optimized Weights (HDCF% 25%, GSAx 20%, CF% 15%, PP% 15%, PK% 13%, PDO 12%) | Data: NHL.com + MoneyPuck + NST (Jan 30, 2026)
+      V7.3 Superhuman Model | Backtest-Optimized Weights (HDCF% 25%, GSAx 20%, CF% 15%, PP% 15%, PK% 13%, PDO 12%) | Data: NHL.com + MoneyPuck + NST
     </footer>
   </div>
 
@@ -2383,6 +2383,11 @@
       const grid = document.getElementById('playoffs-grid');
       const hasPredictions = Object.keys(modelPredictions).length > 0;
 
+      if (!hasPredictions) {
+        grid.innerHTML = '<div style="text-align: center; padding: 2rem; color: var(--text-muted);">Model predictions unavailable. Ensure dashboard_data.json is present.</div>';
+        return;
+      }
+
       grid.innerHTML = ['East', 'West'].map(conf => {
         const confTeams = processedTeams
           .filter(t => t.conf === conf)
@@ -2391,13 +2396,6 @@
             const bP = modelPredictions[b.team];
             return (bP?.cupProbability || 0) - (aP?.cupProbability || 0);
           });
-
-        const tierColors = {
-          'Elite': '#10b981',
-          'Contender': '#3b82f6',
-          'Bubble': '#f59e0b',
-          'Longshot': '#ef4444'
-        };
 
         return `
           <div class="conf-section">
@@ -2427,7 +2425,7 @@
                   const cupHi = pred.cupProbUpper || cupPct;
                   const tier = pred.tier || 'Longshot';
                   const strength = pred.compositeStrength || 0;
-                  const tierColor = tierColors[tier] || '#ef4444';
+                  const tierColor = pred.tierColor || '#ef4444';
                   const pctClass = playoffPct >= 90 ? 'pct-high' : playoffPct >= 50 ? 'pct-mid' : 'pct-low';
                   const cupMargin = ((cupHi - cupLo) / 2).toFixed(2);
                   return `
