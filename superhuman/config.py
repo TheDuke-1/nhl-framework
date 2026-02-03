@@ -94,6 +94,35 @@ def get_team_division(team: str) -> str:
     return "Unknown"
 
 
+def select_conference_playoff_teams(conf_name, team_pts):
+    """
+    Select 8 playoff teams from a conference using real NHL rules.
+
+    NHL qualification: top 3 per division + best 2 remaining as wildcards.
+
+    Args:
+        conf_name: "East" or "West"
+        team_pts: dict mapping team code -> points (actual or projected)
+
+    Returns:
+        List of (team_code, points) sorted by points descending
+    """
+    divisions = CONFERENCES.get(conf_name, {})
+    qualified = []
+    wildcard_pool = []
+    for div_team_codes in divisions.values():
+        div_teams = sorted(
+            [(code, team_pts.get(code, 0.0)) for code in div_team_codes],
+            key=lambda x: -x[1]
+        )
+        qualified.extend(div_teams[:3])
+        wildcard_pool.extend(div_teams[3:])
+    wildcard_pool.sort(key=lambda x: -x[1])
+    qualified.extend(wildcard_pool[:2])
+    qualified.sort(key=lambda x: -x[1])
+    return qualified
+
+
 def normalize_team_abbrev(abbrev: str) -> str:
     """Normalize historical team abbreviations.
 

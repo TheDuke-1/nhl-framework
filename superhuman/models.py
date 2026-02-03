@@ -20,7 +20,7 @@ from scipy.stats import beta as beta_dist
 
 from .data_models import TeamSeason, FeatureVector, PredictionResult, MonteCarloResult, ConferenceTrace
 from .feature_engineering import FeatureEngineer, create_feature_matrix
-from .config import N_SIMULATIONS, RANDOM_SEED, CONFERENCES, get_team_division
+from .config import N_SIMULATIONS, RANDOM_SEED, CONFERENCES, get_team_division, GAMES_IN_SEASON
 
 logger = logging.getLogger(__name__)
 
@@ -436,6 +436,10 @@ class MonteCarloSimulator:
         """
         Run Monte Carlo simulation with full round-by-round tracking.
 
+        Uses pace-projected end-of-season points (with per-sim noise) to
+        select and seed playoff teams, so the projected bracket reflects
+        who the model thinks will be in the playoffs by end of season.
+
         Args:
             teams: List of teams with current stats
             strength_scores: Pre-computed strength score per team
@@ -465,17 +469,38 @@ class MonteCarloSimulator:
         east_teams = [t for t in teams if self._get_conference(t.team) == "East"]
         west_teams = [t for t in teams if self._get_conference(t.team) == "West"]
 
+        # Calculate pace-projected end-of-season points for each team
+        # Empirically, NHL teams earn ~1 pt/game with per-game σ ≈ 0.5
+        projected_pts = {}
+        remaining_games = {}
+        for t in teams:
+            if t.games_played > 0:
+                pace = t.points / t.games_played
+                remaining = max(0, GAMES_IN_SEASON - t.games_played)
+                projected_pts[t.team] = t.points + pace * remaining
+            else:
+                projected_pts[t.team] = 0.0
+                remaining = GAMES_IN_SEASON
+            remaining_games[t.team] = remaining
+
         for _ in range(self.n_sims):
-            # Get playoff teams (top 8 by points per conference)
-            east_playoff = sorted(east_teams, key=lambda t: -t.points)[:8]
-            west_playoff = sorted(west_teams, key=lambda t: -t.points)[:8]
+            # Add Gaussian noise to projected points for this sim
+            sim_pts = {}
+            for t in teams:
+                noise = np.random.normal(0, 0.5 * np.sqrt(remaining_games[t.team]))
+                sim_pts[t.team] = projected_pts[t.team] + noise
+
+            # Select playoff teams using real NHL rules:
+            # Top 3 per division + 2 best remaining as wildcards
+            east_playoff = self._select_playoff_teams(east_teams, sim_pts)
+            west_playoff = self._select_playoff_teams(west_teams, sim_pts)
 
             # Simulate conference playoffs with trace
             east_trace = self._simulate_conference(
-                east_playoff, strength_scores, experience_scores
+                east_playoff, strength_scores, experience_scores, sim_pts
             )
             west_trace = self._simulate_conference(
-                west_playoff, strength_scores, experience_scores
+                west_playoff, strength_scores, experience_scores, sim_pts
             )
 
             # Record round advancement from traces
@@ -557,16 +582,33 @@ class MonteCarloSimulator:
                 "cup": cup_probs.get(team, 0.0),
             }
 
-        # Build projected R1 matchups per conference
+        # Build projected R1 matchups: top 4 most common per conference.
+        # Consolidate flipped pairs (noise can swap higher/lower between sims)
+        # and ensure each team appears in at most one matchup.
         projected_matchups = {"East": [], "West": []}
-        seen = set()
-        for (higher, lower, conf), count in sorted(matchup_counts.items(), key=lambda x: -x[1]):
-            pair_key = (higher, lower, conf)
-            if pair_key not in seen and count > self.n_sims * 0.5:
-                wins = matchup_wins.get(pair_key, 0)
-                higher_win_prob = wins / count
-                projected_matchups[conf].append((higher, lower, round(higher_win_prob, 3)))
-                seen.add(pair_key)
+        pair_counts = defaultdict(int)   # (a, b, conf) -> count (a < b alphabetically)
+        pair_a_wins = defaultdict(int)   # -> wins for alphabetically-first team
+        for (higher, lower, conf), count in matchup_counts.items():
+            a, b = (higher, lower) if higher < lower else (lower, higher)
+            pair_counts[(a, b, conf)] += count
+            wins = matchup_wins.get((higher, lower, conf), 0)
+            # If higher==a, its wins are a's wins; otherwise a won (count - wins)
+            pair_a_wins[(a, b, conf)] += wins if higher == a else (count - wins)
+
+        seen_teams = {"East": set(), "West": set()}
+        for (a, b, conf), count in sorted(pair_counts.items(), key=lambda x: -x[1]):
+            if len(projected_matchups[conf]) >= 4:
+                continue
+            if a in seen_teams[conf] or b in seen_teams[conf]:
+                continue
+            a_win_prob = pair_a_wins[(a, b, conf)] / count
+            # Present with the more-likely winner listed first
+            if a_win_prob >= 0.5:
+                projected_matchups[conf].append((a, b, round(a_win_prob, 3)))
+            else:
+                projected_matchups[conf].append((b, a, round(1 - a_win_prob, 3)))
+            seen_teams[conf].add(a)
+            seen_teams[conf].add(b)
 
         # Conference final appearance = won R2 (reached conf final round)
         conf_final_appearance_probs = {
@@ -609,106 +651,155 @@ class MonteCarloSimulator:
             r2_matchups=r2_matchups_result,
             conf_final_matchups=cf_matchups_result,
             cup_final_matchups=cup_final_matchups_result,
+            projected_standings=projected_pts,
         )
 
-    def _seed_conference(self, playoff_teams: List[TeamSeason]) -> List[tuple]:
+    @staticmethod
+    def _select_playoff_teams(
+        conf_teams: List[TeamSeason],
+        sim_pts: Dict[str, float]
+    ) -> List[TeamSeason]:
         """
-        Seed 8 conference playoff teams using real NHL rules.
+        Select 8 playoff teams from a conference using real NHL rules.
 
-        Returns list of 4 R1 matchup tuples: [(higher, lower), ...].
-        The first two matchups are Division A bracket, last two are Division B bracket.
+        NHL playoff qualification:
+        - Top 3 from each division qualify automatically (6 teams)
+        - Best 2 remaining teams are wildcards (2 teams)
 
-        NHL Rules:
-        - Top 3 per division qualify, plus 2 conference wildcards
-        - Division winners are seeds 1 & 2 (by points), play in separate brackets
-        - Div winner 1 gets WC2, Div winner 2 gets WC1
-        - Within each division bracket: 2nd vs 3rd place from that division
+        Args:
+            conf_teams: All teams in this conference
+            sim_pts: Noisy projected points for this simulation iteration
+
+        Returns:
+            List of 8 TeamSeason objects that made the playoffs
         """
         # Group by division
+        divisions = defaultdict(list)
+        for t in conf_teams:
+            div = t.division or get_team_division(t.team)
+            divisions[div].append(t)
+
+        # Sort each division by sim points
+        for div in divisions:
+            divisions[div].sort(key=lambda t: -sim_pts.get(t.team, t.points))
+
+        # Top 3 per division qualify
+        qualified = []
+        remaining = []
+        for div_teams in divisions.values():
+            qualified.extend(div_teams[:3])
+            remaining.extend(div_teams[3:])
+
+        # Best 2 remaining are wildcards
+        remaining.sort(key=lambda t: -sim_pts.get(t.team, t.points))
+        qualified.extend(remaining[:2])
+
+        return qualified
+
+    def _seed_conference(
+        self,
+        playoff_teams: List[TeamSeason],
+        sim_pts: Optional[Dict[str, float]] = None
+    ) -> List[tuple]:
+        """
+        Seed 8 conference playoff teams into R1 matchups using real NHL rules.
+
+        Assumes playoff_teams already contains the correct 8 teams
+        (selected via _select_playoff_teams with NHL division rules).
+
+        Returns list of 4 R1 matchup tuples: [(higher, lower), ...].
+        Index 0,1 = Bracket A; Index 2,3 = Bracket B.
+
+        NHL seeding rules:
+        - Division winners are seeds 1 & 2 (by points)
+        - Seed 1 (better div winner) plays WC2, Seed 2 plays WC1
+        - Within each division bracket: 2nd vs 3rd from that division
+        """
+        def pts(t):
+            return sim_pts.get(t.team, t.points) if sim_pts else t.points
+
+        # Group the 8 playoff teams by division
         divisions = defaultdict(list)
         for t in playoff_teams:
             div = t.division or get_team_division(t.team)
             divisions[div].append(t)
 
-        # Sort each division by points descending
+        # Sort each division by points
         for div in divisions:
-            divisions[div].sort(key=lambda t: -t.points)
+            divisions[div].sort(key=lambda t: -pts(t))
 
         div_names = sorted(divisions.keys())
         if len(div_names) != 2:
             logger.warning("Division data invalid (%d divisions), falling back to simple seeding", len(div_names))
-            return self._seed_conference_simple(playoff_teams)
+            return self._seed_conference_simple(playoff_teams, sim_pts)
 
         div_a_name, div_b_name = div_names[0], div_names[1]
         div_a = divisions[div_a_name]
         div_b = divisions[div_b_name]
 
-        # Division winners
+        # Division winners (best team in each division among the 8 qualifiers)
         div_a_winner = div_a[0] if div_a else None
         div_b_winner = div_b[0] if div_b else None
 
         if not div_a_winner or not div_b_winner:
-            logger.warning("Missing division winner, falling back to simple seeding")
-            return self._seed_conference_simple(playoff_teams)
+            return self._seed_conference_simple(playoff_teams, sim_pts)
 
-        # Top 3 per division qualify directly
-        div_a_top3 = div_a[:3]
-        div_b_top3 = div_b[:3]
+        # Identify which teams are divisional qualifiers (top 3 per div)
+        # vs wildcards. A division may have 3, 4, or 5 of the 8 teams
+        # if wildcards came from that division.
+        # Divisional: first 3 per division. Wildcards: everyone else.
+        div_a_divisional = div_a[:3]
+        div_b_divisional = div_b[:3]
+        wildcard_set = set(t.team for t in playoff_teams) - \
+            set(t.team for t in div_a_divisional) - \
+            set(t.team for t in div_b_divisional)
+        wildcards = sorted(
+            [t for t in playoff_teams if t.team in wildcard_set],
+            key=lambda t: -pts(t)
+        )
 
-        # Remaining teams compete for 2 wildcard spots
-        remaining = div_a[3:] + div_b[3:]
-        remaining.sort(key=lambda t: -t.points)
-        wildcards = remaining[:2]
+        # Need exactly 2 wildcards and 3 per division
+        if len(div_a_divisional) < 3 or len(div_b_divisional) < 3 or len(wildcards) < 2:
+            return self._seed_conference_simple(playoff_teams, sim_pts)
 
-        # All 8 qualified teams
-        qualified = set(t.team for t in div_a_top3 + div_b_top3 + wildcards)
-        if len(qualified) < 8:
-            logger.warning("Only %d qualified teams (need 8), falling back to simple seeding", len(qualified))
-            return self._seed_conference_simple(playoff_teams)
-
-        # Determine seed 1 and seed 2 (division winners by points)
-        if div_a_winner.points >= div_b_winner.points:
+        # Seed 1 = div winner with more points, Seed 2 = other
+        if pts(div_a_winner) >= pts(div_b_winner):
             seed1, seed1_div = div_a_winner, div_a_name
             seed2, seed2_div = div_b_winner, div_b_name
         else:
             seed1, seed1_div = div_b_winner, div_b_name
             seed2, seed2_div = div_a_winner, div_a_name
 
-        # Wildcards sorted by points (WC1 = better, WC2 = worse)
-        wc1 = wildcards[0] if len(wildcards) > 0 else None
-        wc2 = wildcards[1] if len(wildcards) > 1 else None
+        # WC1 = better wildcard, WC2 = worse wildcard
+        wc1, wc2 = wildcards[0], wildcards[1]
 
-        if not wc1 or not wc2:
-            logger.warning("Missing wildcard teams, falling back to simple seeding")
-            return self._seed_conference_simple(playoff_teams)
+        # 2nd and 3rd in each division (among divisional qualifiers only)
+        s1_div = [t for t in divisions[seed1_div]
+                  if t.team != seed1.team and t.team not in wildcard_set]
+        s2_div = [t for t in divisions[seed2_div]
+                  if t.team != seed2.team and t.team not in wildcard_set]
 
-        # Division bracket teams (2nd and 3rd from each division)
-        seed1_div_teams = divisions[seed1_div]
-        seed2_div_teams = divisions[seed2_div]
-        div1_2nd = seed1_div_teams[1] if len(seed1_div_teams) > 1 else None
-        div1_3rd = seed1_div_teams[2] if len(seed1_div_teams) > 2 else None
-        div2_2nd = seed2_div_teams[1] if len(seed2_div_teams) > 1 else None
-        div2_3rd = seed2_div_teams[2] if len(seed2_div_teams) > 2 else None
+        if len(s1_div) < 2 or len(s2_div) < 2:
+            return self._seed_conference_simple(playoff_teams, sim_pts)
 
-        if not all([div1_2nd, div1_3rd, div2_2nd, div2_3rd]):
-            logger.warning("Missing divisional seeds, falling back to simple seeding")
-            return self._seed_conference_simple(playoff_teams)
-
-        # Build matchups:
-        # Bracket A (seed1's division): seed1 vs WC2, div_2nd vs div_3rd
-        # Bracket B (seed2's division): seed2 vs WC1, div_2nd vs div_3rd
-        matchups = [
-            (seed1.team, wc2.team),       # Bracket A: Div winner 1 vs WC2
-            (div1_2nd.team, div1_3rd.team),  # Bracket A: 2nd vs 3rd in seed1's division
-            (seed2.team, wc1.team),       # Bracket B: Div winner 2 vs WC1
-            (div2_2nd.team, div2_3rd.team),  # Bracket B: 2nd vs 3rd in seed2's division
+        # Bracket A (seed1's division): seed1 vs WC2, div 2nd vs div 3rd
+        # Bracket B (seed2's division): seed2 vs WC1, div 2nd vs div 3rd
+        return [
+            (seed1.team, wc2.team),
+            (s1_div[0].team, s1_div[1].team),
+            (seed2.team, wc1.team),
+            (s2_div[0].team, s2_div[1].team),
         ]
 
-        return matchups
-
-    def _seed_conference_simple(self, playoff_teams: List[TeamSeason]) -> List[tuple]:
+    def _seed_conference_simple(
+        self,
+        playoff_teams: List[TeamSeason],
+        sim_pts: Optional[Dict[str, float]] = None
+    ) -> List[tuple]:
         """Fallback simple 1v8, 2v7, 3v6, 4v5 seeding."""
-        teams = sorted(playoff_teams, key=lambda t: -t.points)
+        def pts(t):
+            return sim_pts.get(t.team, t.points) if sim_pts else t.points
+        teams = sorted(playoff_teams, key=lambda t: -pts(t))
         codes = [t.team for t in teams]
         while len(codes) < 8:
             codes.append("BYE")
@@ -723,14 +814,15 @@ class MonteCarloSimulator:
         self,
         playoff_teams: List[TeamSeason],
         strength_scores: Dict[str, float],
-        experience_scores: Dict[str, float]
+        experience_scores: Dict[str, float],
+        sim_pts: Optional[Dict[str, float]] = None
     ) -> ConferenceTrace:
         """Simulate conference playoffs using real NHL bracket seeding."""
         trace = ConferenceTrace()
 
         # Get NHL-seeded matchups: [(higher, lower), ...]
         # Index 0,1 = Bracket A; Index 2,3 = Bracket B
-        matchups = self._seed_conference(playoff_teams)
+        matchups = self._seed_conference(playoff_teams, sim_pts)
 
         # Round 1
         for higher, lower in matchups:

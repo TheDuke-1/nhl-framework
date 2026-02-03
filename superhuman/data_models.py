@@ -265,6 +265,9 @@ class MonteCarloResult:
     conf_final_matchups: Dict[str, List[tuple]] = field(default_factory=dict)
     cup_final_matchups: List[tuple] = field(default_factory=list)
 
+    # Pace-projected standings: team -> projected end-of-season points
+    projected_standings: Dict[str, float] = field(default_factory=dict)
+
 
 @dataclass
 class PredictionResult:
