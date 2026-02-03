@@ -17,7 +17,7 @@ import logging
 from typing import List, Dict
 import numpy as np
 
-from .config import DATA_DIR, ALL_TEAMS, TRAINING_SEASONS, TEST_SEASONS
+from .config import DATA_DIR, ALL_TEAMS, TRAINING_SEASONS, TEST_SEASONS, get_team_division
 from .data_models import TeamSeason
 
 logger = logging.getLogger(__name__)
@@ -71,9 +71,11 @@ def load_current_season_data() -> List[TeamSeason]:
         pdo_raw = t.get("pdo", 100.0)
         pdo = pdo_raw * 100 if pdo_raw < 2 else pdo_raw
 
+        team_code = t.get("team", "")
         ts = TeamSeason(
-            team=t.get("team", ""),
+            team=team_code,
             season=2026,
+            division=t.get("div", get_team_division(team_code)),
             games_played=t.get("gp", 0),
             wins=t.get("w", 0),
             losses=t.get("l", 0),
