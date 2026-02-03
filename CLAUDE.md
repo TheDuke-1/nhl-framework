@@ -92,6 +92,7 @@ Nat Stat  → nst_stats.json      ─┘
 - **Superhuman model:** Uses 14 weighted features (Vegas signal, recent form, goal diff rate, dynasty score, etc.) → playoff/Cup probabilities with confidence intervals
 - **GSAx:** Goals Saved Above Expected — goaltending quality metric
 - **HDCF%:** High-Danger Corsi For % — best single predictor of playoff success
+- **NHL playoff qualification:** Top 3 per division qualify automatically + 2 best remaining as wildcards. Division winners seed 1-2 by points. Seed 1 vs WC2, Seed 2 vs WC1, Div 2nd vs Div 3rd. Shared utility: `superhuman/config.py::select_conference_playoff_teams()`.
 
 ## Known Issues & Limitations
 - **MoneyPuck scraping is fragile.** Their site blocks automated requests intermittently. Pipeline uses `continue-on-error` in GitHub Actions as a workaround.
@@ -103,10 +104,13 @@ Nat Stat  → nst_stats.json      ─┘
 - **Limited test coverage.** 20 tests cover data integrity and HTML structure, but no ML logic or pipeline unit tests.
 - **No betting odds integration** — framework is ready for it but no odds data is fetched.
 - **MC filtering thresholds must decrease in later rounds** (R1-R2: 5%, CF: 5%, Cup Final: 1%) due to combinatorial explosion of possible matchups.
+- **Projected R1 matchups use top-4-by-frequency (no hard threshold)** because per-sim noise makes individual matchup frequencies variable. R2/CF/Cup Final still use frequency thresholds (5%, 5%, 1%).
 
 ## Workflow Rules
 - After editing inside dict/list literals, run `python -c "from module import func"` to verify syntax before moving on.
 - Before committing, run both `/code-review` and code-simplifier review to catch dead code, logic errors, and simplification opportunities.
+- Before committing, run `git diff --stat` and verify every file is related to the current task. Stage files explicitly by name, never use `git add -A`.
+- When code review flags a critical bug in NHL seeding/selection logic, trace through at least 2 concrete scenarios (e.g., 3+5 and 5+3 division splits) before accepting or fixing.
 
 ## Code Style
 - Python: snake_case, docstrings on main functions, try/except with logging
