@@ -16,8 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from .predictor import SuperhumanPredictor
-from .data_models import PredictionResult
-from .config import CURRENT_SEASON
+from .config import CURRENT_SEASON, DATA_DIR, CONFERENCES
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -152,6 +151,194 @@ TEAM_INFO = {
 }
 
 
+def build_actual_bracket() -> Optional[Dict]:
+    """Build actual bracket from current NHL standings using real seeding rules."""
+    standings_file = PROJECT_DIR / "data" / "nhl_standings.json"
+    if not standings_file.exists():
+        logger.warning("No standings file found for actual bracket")
+        return None
+
+    try:
+        with open(standings_file) as f:
+            standings = json.load(f)
+    except Exception as e:
+        logger.warning(f"Failed to load standings: {e}")
+        return None
+
+    teams_data = standings.get("teams", {})
+    if not teams_data:
+        return None
+
+    result = {"East": {}, "West": {}, "cupFinal": None, "status": "pre-playoff"}
+
+    for conf_name, divisions in CONFERENCES.items():
+        conf_teams = []
+        for div_name, div_teams in divisions.items():
+            for team_code in div_teams:
+                if team_code in teams_data:
+                    t = teams_data[team_code]
+                    conf_teams.append({
+                        "team": team_code,
+                        "pts": t.get("pts", 0),
+                        "div": div_name,
+                        "gp": t.get("gp", 0),
+                        "w": t.get("w", 0),
+                    })
+
+        # Group by division within conference
+        div_groups = {}
+        for t in conf_teams:
+            div_groups.setdefault(t["div"], []).append(t)
+        for div in div_groups:
+            div_groups[div].sort(key=lambda t: -t["pts"])
+
+        div_names = sorted(div_groups.keys())
+        if len(div_names) != 2:
+            continue
+
+        div_a_name, div_b_name = div_names[0], div_names[1]
+        div_a = div_groups[div_a_name]
+        div_b = div_groups[div_b_name]
+
+        # Top 3 per division
+        # Wildcards from remaining
+        remaining = div_a[3:] + div_b[3:]
+        remaining.sort(key=lambda t: -t["pts"])
+        wildcards = remaining[:2]
+
+        # Division winners
+        dw_a = div_a[0] if div_a else None
+        dw_b = div_b[0] if div_b else None
+
+        if not dw_a or not dw_b:
+            continue
+
+        # Seed 1 = div winner with more pts, seed 2 = other
+        if dw_a["pts"] >= dw_b["pts"]:
+            seed1, seed1_div = dw_a, div_a_name
+            seed2, seed2_div = dw_b, div_b_name
+        else:
+            seed1, seed1_div = dw_b, div_b_name
+            seed2, seed2_div = dw_a, div_a_name
+
+        wc1 = wildcards[0] if len(wildcards) > 0 else None
+        wc2 = wildcards[1] if len(wildcards) > 1 else None
+
+        # Get 2nd and 3rd from each division
+        s1_div_teams = div_groups[seed1_div]
+        s2_div_teams = div_groups[seed2_div]
+
+        # Build seed list
+        seeds = [
+            {"team": seed1["team"], "seed": f"{seed1_div[0]}1", "pts": seed1["pts"], "div": seed1_div},
+            {"team": s1_div_teams[1]["team"] if len(s1_div_teams) > 1 else "?",
+             "seed": f"{seed1_div[0]}2", "pts": s1_div_teams[1]["pts"] if len(s1_div_teams) > 1 else 0,
+             "div": seed1_div},
+            {"team": s1_div_teams[2]["team"] if len(s1_div_teams) > 2 else "?",
+             "seed": f"{seed1_div[0]}3", "pts": s1_div_teams[2]["pts"] if len(s1_div_teams) > 2 else 0,
+             "div": seed1_div},
+            {"team": seed2["team"], "seed": f"{seed2_div[0]}1", "pts": seed2["pts"], "div": seed2_div},
+            {"team": s2_div_teams[1]["team"] if len(s2_div_teams) > 1 else "?",
+             "seed": f"{seed2_div[0]}2", "pts": s2_div_teams[1]["pts"] if len(s2_div_teams) > 1 else 0,
+             "div": seed2_div},
+            {"team": s2_div_teams[2]["team"] if len(s2_div_teams) > 2 else "?",
+             "seed": f"{seed2_div[0]}3", "pts": s2_div_teams[2]["pts"] if len(s2_div_teams) > 2 else 0,
+             "div": seed2_div},
+            {"team": wc1["team"] if wc1 else "?", "seed": "WC1", "pts": wc1["pts"] if wc1 else 0, "div": wc1["div"] if wc1 else ""},
+            {"team": wc2["team"] if wc2 else "?", "seed": "WC2", "pts": wc2["pts"] if wc2 else 0, "div": wc2["div"] if wc2 else ""},
+        ]
+
+        # R1 matchups (real NHL bracket)
+        round1 = [
+            {"higher": seed1["team"], "lower": wc2["team"] if wc2 else "?",
+             "higherSeed": seeds[0]["seed"], "lowerSeed": "WC2"},
+            {"higher": s1_div_teams[1]["team"] if len(s1_div_teams) > 1 else "?",
+             "lower": s1_div_teams[2]["team"] if len(s1_div_teams) > 2 else "?",
+             "higherSeed": seeds[1]["seed"], "lowerSeed": seeds[2]["seed"]},
+            {"higher": seed2["team"], "lower": wc1["team"] if wc1 else "?",
+             "higherSeed": seeds[3]["seed"], "lowerSeed": "WC1"},
+            {"higher": s2_div_teams[1]["team"] if len(s2_div_teams) > 1 else "?",
+             "lower": s2_div_teams[2]["team"] if len(s2_div_teams) > 2 else "?",
+             "higherSeed": seeds[4]["seed"], "lowerSeed": seeds[5]["seed"]},
+        ]
+
+        result[conf_name] = {
+            "seeds": seeds,
+            "round1": round1,
+            "round2": [],
+            "confFinal": None,
+        }
+
+    return result
+
+
+def build_projected_bracket(mc_result) -> Dict:
+    """Transform Monte Carlo results into full projected bracket with R2+ matchups."""
+    bracket = {"East": {}, "West": {}, "cupFinal": [], "champion": None}
+
+    if not mc_result:
+        return bracket
+
+    for conf in ["East", "West"]:
+        # R1 matchups (deterministic from seeding)
+        r1 = []
+        for higher, lower, higher_win_prob in mc_result.projected_matchups.get(conf, []):
+            r1.append({
+                "higher": higher,
+                "lower": lower,
+                "higherWinProb": round(higher_win_prob * 100, 1),
+            })
+
+        # R2 matchups (from tracking, show top 3 most likely per bracket slot)
+        r2 = []
+        for matchup_data in mc_result.r2_matchups.get(conf, []):
+            a, b, a_win_prob, freq = matchup_data
+            r2.append({
+                "teamA": a,
+                "teamB": b,
+                "teamAWinProb": round(a_win_prob * 100, 1),
+                "matchupProb": round(freq * 100, 1),
+            })
+
+        # Conference Final matchups
+        cf = []
+        for matchup_data in mc_result.conf_final_matchups.get(conf, []):
+            a, b, a_win_prob, freq = matchup_data
+            cf.append({
+                "teamA": a,
+                "teamB": b,
+                "teamAWinProb": round(a_win_prob * 100, 1),
+                "matchupProb": round(freq * 100, 1),
+            })
+
+        bracket[conf] = {
+            "round1": r1,
+            "round2": r2[:3],  # Top 3 most likely R2 matchups per conf
+            "confFinal": cf[:3],
+        }
+
+    # Cup Final matchups
+    for matchup_data in mc_result.cup_final_matchups:
+        a, b, a_win_prob, freq = matchup_data
+        bracket["cupFinal"].append({
+            "teamA": a,
+            "teamB": b,
+            "teamAWinProb": round(a_win_prob * 100, 1),
+            "matchupProb": round(freq * 100, 1),
+        })
+    bracket["cupFinal"] = bracket["cupFinal"][:5]  # Top 5
+
+    # Champion (highest cup probability team)
+    if mc_result.cup_probabilities:
+        best_team = max(mc_result.cup_probabilities, key=mc_result.cup_probabilities.get)
+        bracket["champion"] = {
+            "team": best_team,
+            "probability": round(mc_result.cup_probabilities[best_team] * 100, 1),
+        }
+
+    return bracket
+
+
 def generate_dashboard_data() -> Dict:
     """Generate complete dashboard data from model predictions."""
     logger.info("Generating dashboard data...")
@@ -160,12 +347,25 @@ def generate_dashboard_data() -> Dict:
     predictor = SuperhumanPredictor()
     predictor.predict()
 
+    # Load injury data (if available)
+    injury_data = {}
+    injuries_file = PROJECT_DIR / "data" / "injuries.json"
+    if injuries_file.exists():
+        try:
+            with open(injuries_file) as f:
+                raw_injuries = json.load(f)
+            injury_data = raw_injuries.get("teams", {})
+            logger.info(f"Loaded injury data for {len(injury_data)} teams")
+        except Exception as e:
+            logger.warning(f"Failed to load injuries: {e}")
+
     # Build team data
     teams = []
     for i, result in enumerate(predictor.results, 1):
         team_code = result.team
         team_meta = TEAM_INFO.get(team_code, {"name": team_code, "city": "", "conference": "East", "division": ""})
         tier_config = TIER_CONFIG.get(result.tier, TIER_CONFIG["Longshot"])
+        team_injury = injury_data.get(team_code, {})
 
         teams.append({
             "rank": i,
@@ -181,9 +381,13 @@ def generate_dashboard_data() -> Dict:
             "compositeStrength": round(result.composite_strength, 1),
             "strengthRank": result.strength_rank,
             "playoffProbability": round(result.playoff_probability * 100, 1),
+            "conferenceProbability": round(result.conference_final_probability * 100, 2),  # P(reach conf final) = P(win R2)
+            "cupFinalProbability": round(result.cup_final_probability * 100, 2),
             "cupProbability": round(result.cup_win_probability * 100, 2),
             "cupProbLower": round(result.cup_prob_lower * 100, 2),
             "cupProbUpper": round(result.cup_prob_upper * 100, 2),
+            "injuries": team_injury.get("injuries", []),
+            "totalWarLost": team_injury.get("totalWarLost", 0),
         })
 
     # Build feature weights
@@ -213,6 +417,38 @@ def generate_dashboard_data() -> Dict:
     # Cup favorites (top 10)
     cup_favorites = sorted(teams, key=lambda x: -x["cupProbability"])[:10]
 
+    # Round advancement data from Monte Carlo
+    mc_result = predictor.ensemble.monte_carlo_result
+    round_advancement = {}
+    if mc_result:
+        for team_code, rounds in mc_result.round_advancement.items():
+            round_advancement[team_code] = {
+                "round1": round(rounds.get(1, 0) * 100, 2),
+                "round2": round(rounds.get(2, 0) * 100, 2),
+                "confFinal": round(rounds.get(3, 0) * 100, 2),
+                "cupFinal": round(rounds.get(4, 0) * 100, 2),
+                "cupWin": round(rounds.get("cup", 0) * 100, 2),
+            }
+
+    # Bracket projections from Monte Carlo + actual standings
+    bracket = {
+        "projected": build_projected_bracket(mc_result),
+        "actual": build_actual_bracket(),
+    }
+
+    # Generate backtest report (uses cache if valid)
+    backtest_data = None
+    try:
+        from .validation import generate_backtest_report
+        from .data_loader import load_training_data
+        historical_data = load_training_data()
+        if historical_data:
+            cache_path = str(DATA_DIR / "backtest_cache.json")
+            backtest_data = generate_backtest_report(historical_data, cache_path=cache_path)
+            logger.info("Backtest report ready")
+    except Exception as e:
+        logger.warning(f"Backtest generation failed (non-fatal): {e}")
+
     # Generate timestamp
     timestamp = datetime.now().isoformat()
 
@@ -221,7 +457,7 @@ def generate_dashboard_data() -> Dict:
             "generated": timestamp,
             "season": CURRENT_SEASON,
             "seasonDisplay": f"{CURRENT_SEASON-1}-{str(CURRENT_SEASON)[2:]}",
-            "modelVersion": "2.0 - Enhanced Playoff Model",
+            "modelVersion": "2.1 - Full Bracket Model",
             "lastUpdate": datetime.now().strftime("%B %d, %Y at %I:%M %p"),
         },
         "teams": teams,
@@ -230,6 +466,9 @@ def generate_dashboard_data() -> Dict:
         "tierConfig": TIER_CONFIG,
         "playoffPicture": playoff_picture,
         "cupFavorites": cup_favorites,
+        "roundAdvancement": round_advancement,
+        "bracket": bracket,
+        "backtest": backtest_data,
         "glossary": METRIC_DEFINITIONS,
     }
 

@@ -40,21 +40,23 @@ dashboard_data.json      # Superhuman model output (probabilities, tiers)
 
 ## Commands
 
+**Always use `python3` (not `python`)** — macOS does not ship with `python` in PATH.
+
 ### Data Pipeline
 ```bash
 # Refresh all data (checks freshness, skips if recent)
-python scripts/refresh_data.py
+python3 scripts/refresh_data.py
 
 # Fetch individual sources
-python scripts/fetch_nhl_api.py
-python scripts/scrape_nst.py
-python scripts/fetch_moneypuck.py
+python3 scripts/fetch_nhl_api.py
+python3 scripts/scrape_nst.py
+python3 scripts/fetch_moneypuck.py
 
 # Merge into teams.json
-python scripts/merge_data.py
+python3 scripts/merge_data.py
 
 # Validate data quality
-python scripts/validate_data.py
+python3 scripts/validate_data.py
 ```
 
 ### Dependencies
@@ -67,8 +69,13 @@ pip install -r scripts/requirements.txt
 ### Dashboard
 Open `index.html` in a browser. No build step needed — it's a standalone HTML file with embedded data.
 
-### No Test Suite
-There are no unit tests. Validation is done via `validate_data.py` (data quality checks) and the superhuman cross-validation system.
+### Tests
+```bash
+python3 -m pytest tests/ -v   # 20 tests across 3 files
+```
+- `test_dashboard.py` — HTML structure (tabs, tags, freshness indicator)
+- `test_data_pipeline.py` — teams.json integrity (32 teams, fields, ranges)
+- `test_superhuman.py` — dashboard_data.json integrity (probabilities, tiers, meta)
 
 ## Data Flow
 ```
@@ -93,11 +100,17 @@ Nat Stat  → nst_stats.json      ─┘
 - **Multiple dashboard versions exist.** `index.html` is production. The others (`nhl_dashboard.html`, `nhl_dashboard_v3_clean.html`, `nhl_superhuman_dashboard.html`, `nhl_superhuman_dashboard_v2.html`) are older iterations that should probably be archived.
 - **Superhuman model trained on synthetic historical data** — real 2010-2024 CSVs exist in `data/historical/` but integration may be incomplete.
 - **No mobile responsiveness** on the dashboard.
-- **No unit tests.** Only data validation scripts and ML cross-validation.
+- **Limited test coverage.** 20 tests cover data integrity and HTML structure, but no ML logic or pipeline unit tests.
 - **No betting odds integration** — framework is ready for it but no odds data is fetched.
+- **MC filtering thresholds must decrease in later rounds** (R1-R2: 5%, CF: 5%, Cup Final: 1%) due to combinatorial explosion of possible matchups.
+
+## Workflow Rules
+- After editing inside dict/list literals, run `python -c "from module import func"` to verify syntax before moving on.
+- Before committing, run both `/code-review` and code-simplifier review to catch dead code, logic errors, and simplification opportunities.
 
 ## Code Style
 - Python: snake_case, docstrings on main functions, try/except with logging
+- Round advancement naming: use what the team HAS DONE (appearance/reached), not what they WON. E.g., `conf_final_appearance` = won R2 (reached conf final).
 - HTML/CSS: Vanilla (no frameworks), CSS custom properties for theming, Space Grotesk + JetBrains Mono fonts
 - Data: JSON files with metadata headers (source, timestamp, season)
 - Config: Centralized in `scripts/config.py` and `superhuman/config.py`

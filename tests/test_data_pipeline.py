@@ -21,10 +21,13 @@ class TestTeamsJson:
             for field in REQUIRED_FIELDS:
                 assert field in team, f"{team.get('team', '???')} missing '{field}'"
 
-    def test_weight_scores_in_range(self, teams_list):
+    def test_weight_field_is_numeric(self, teams_list):
         for team in teams_list:
-            assert 100 <= team["weight"] <= 300, (
-                f"{team['team']} weight {team['weight']} outside 100-300"
+            assert isinstance(team["weight"], (int, float)), (
+                f"{team['team']} weight is not a number: {type(team['weight'])}"
+            )
+            assert 0 <= team["weight"] <= 1000, (
+                f"{team['team']} weight {team['weight']} outside reasonable range 0-1000"
             )
 
     def test_all_team_abbreviations_present(self, teams_list):

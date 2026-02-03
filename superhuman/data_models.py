@@ -16,6 +16,7 @@ class TeamSeason:
     # Identifiers
     team: str
     season: int  # End year (e.g., 2024 for 2023-24 season)
+    division: str = ""  # e.g., "Atlantic", "Metropolitan", "Central", "Pacific"
 
     # Basic stats
     games_played: int = 0
@@ -230,6 +231,42 @@ class FeatureVector:
 
 
 @dataclass
+class ConferenceTrace:
+    """Trace of a single conference playoff simulation."""
+    r1_winners: List[str] = field(default_factory=list)
+    r2_winners: List[str] = field(default_factory=list)
+    conf_champion: str = ""
+    r1_matchups: List[tuple] = field(default_factory=list)  # [(higher, lower), ...]
+    r2_matchups: List[tuple] = field(default_factory=list)
+    conf_final_matchup: tuple = ()  # (teamA, teamB)
+
+
+@dataclass
+class MonteCarloResult:
+    """Full results from Monte Carlo simulation."""
+
+    # Existing: Cup win probabilities per team
+    cup_probabilities: Dict[str, float] = field(default_factory=dict)
+
+    # Round advancement: team -> {1: prob, 2: prob, 3: prob (conf final), 4: prob (cup final), "cup": prob}
+    round_advancement: Dict[str, Dict] = field(default_factory=dict)
+
+    # Projected R1 matchups per conference: conf -> [(higher, lower, higher_win_prob)]
+    projected_matchups: Dict[str, List[tuple]] = field(default_factory=dict)
+
+    # Conference final appearance probabilities (reached conf final, i.e. won R2)
+    conf_final_appearance_probs: Dict[str, float] = field(default_factory=dict)
+
+    # Cup Final appearance probabilities
+    cup_final_probs: Dict[str, float] = field(default_factory=dict)
+
+    # R2+ matchup tracking: {conf: [(teamA, teamB, teamA_win_prob, matchup_frequency)]}
+    r2_matchups: Dict[str, List[tuple]] = field(default_factory=dict)
+    conf_final_matchups: Dict[str, List[tuple]] = field(default_factory=dict)
+    cup_final_matchups: List[tuple] = field(default_factory=list)
+
+
+@dataclass
 class PredictionResult:
     """Model prediction output."""
 
@@ -261,6 +298,8 @@ class PredictionResult:
             "composite_strength": round(self.composite_strength, 2),
             "strength_rank": self.strength_rank,
             "playoff_probability": round(self.playoff_probability, 3),
+            "conference_final_probability": round(self.conference_final_probability, 3),
+            "cup_final_probability": round(self.cup_final_probability, 3),
             "cup_win_probability": round(self.cup_win_probability, 3),
             "cup_prob_ci": [round(self.cup_prob_lower, 3), round(self.cup_prob_upper, 3)],
             "tier": self.tier
