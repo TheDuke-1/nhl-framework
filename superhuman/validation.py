@@ -4,8 +4,10 @@ Superhuman NHL Prediction System - Validation Framework
 Cross-validation, calibration, and backtesting tools.
 """
 
+import json
 import numpy as np
 import logging
+from pathlib import Path
 from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 from collections import defaultdict
@@ -336,6 +338,152 @@ class ValidationFramework:
             print(f"\nAggregate:")
             print(f"  Mean Brier (Playoff): {avg_brier:.4f}")
             print(f"  Mean Accuracy: {avg_acc:.1%}")
+
+
+@dataclass
+class BacktestSeasonResult:
+    """Result from backtesting a single held-out season."""
+    season: int
+    model_top_pick: str
+    model_top_5: List[str]
+    actual_winner: str
+    winner_in_top_5: bool
+    model_prob_for_winner: float
+    top_pick_correct: bool
+
+
+def generate_backtest_report(
+    historical_data: List[TeamSeason],
+    cache_path: Optional[str] = None
+) -> Dict:
+    """
+    Leave-one-season-out backtest across all training seasons.
+
+    For each held-out season: train on all other seasons, predict,
+    then record how well the model identified the actual Cup winner.
+
+    Args:
+        historical_data: All historical team-season data
+        cache_path: If provided, load from / save to this cache file
+
+    Returns:
+        Dict with season-by-season results and summary stats
+    """
+    from .config import CURRENT_SEASON
+
+    MODEL_VERSION = f"backtest-v2.1-{CURRENT_SEASON}"
+
+    # Check cache
+    if cache_path:
+        cache_file = Path(cache_path)
+        if cache_file.exists():
+            try:
+                with open(cache_file) as f:
+                    cached = json.load(f)
+                if cached.get("modelVersion") == MODEL_VERSION:
+                    logger.info(f"Loading valid backtest cache from {cache_file}")
+                    return cached
+                else:
+                    logger.info("Backtest cache stale (version mismatch), regenerating")
+            except Exception as e:
+                logger.warning(f"Failed to read backtest cache: {e}")
+
+    # Group data by season
+    by_season: Dict[int, List[TeamSeason]] = defaultdict(list)
+    for team in historical_data:
+        by_season[team.season].append(team)
+
+    seasons = sorted(by_season.keys())
+    results = []
+
+    for held_out in seasons:
+        # Need at least 2 other seasons to train
+        train_data = [t for t in historical_data if t.season != held_out]
+        test_data = by_season[held_out]
+
+        if len(train_data) < 64 or len(test_data) < 16:
+            continue
+
+        # Find actual winner
+        actual_winner = None
+        for t in test_data:
+            if t.won_cup:
+                actual_winner = t.team
+                break
+
+        if actual_winner is None:
+            continue
+
+        # Train and predict
+        model = EnsemblePredictor(use_neural_network=False)  # Faster without NN
+        try:
+            model.fit(train_data)
+            predictions = model.predict(test_data)
+        except Exception as e:
+            logger.warning(f"Backtest failed for season {held_out}: {e}")
+            continue
+
+        # Sort by Cup probability
+        predictions.sort(key=lambda p: -p.cup_win_probability)
+
+        top_pick = predictions[0].team
+        top_5 = [p.team for p in predictions[:5]]
+        winner_pred = next((p for p in predictions if p.team == actual_winner), None)
+        winner_prob = winner_pred.cup_win_probability if winner_pred else 0.0
+
+        result = BacktestSeasonResult(
+            season=held_out,
+            model_top_pick=top_pick,
+            model_top_5=top_5,
+            actual_winner=actual_winner,
+            winner_in_top_5=actual_winner in top_5,
+            model_prob_for_winner=winner_prob,
+            top_pick_correct=(top_pick == actual_winner),
+        )
+        results.append(result)
+
+        logger.info(
+            f"Season {held_out}: top pick={top_pick}, "
+            f"winner={actual_winner}, in top 5={actual_winner in top_5}"
+        )
+
+    # Summary
+    n_seasons = len(results)
+    n_top_pick_correct = sum(1 for r in results if r.top_pick_correct)
+    n_winner_in_top_5 = sum(1 for r in results if r.winner_in_top_5)
+
+    report = {
+        "modelVersion": MODEL_VERSION,
+        "seasons": [
+            {
+                "season": r.season,
+                "modelTopPick": r.model_top_pick,
+                "modelTop5": r.model_top_5,
+                "actualWinner": r.actual_winner,
+                "winnerInTop5": r.winner_in_top_5,
+                "modelProbForWinner": round(r.model_prob_for_winner * 100, 2),
+                "topPickCorrect": r.top_pick_correct,
+            }
+            for r in results
+        ],
+        "summary": {
+            "totalSeasons": n_seasons,
+            "topPickCorrect": n_top_pick_correct,
+            "topPickAccuracy": round(n_top_pick_correct / n_seasons * 100, 1) if n_seasons > 0 else 0,
+            "winnerInTop5": n_winner_in_top_5,
+            "top5Accuracy": round(n_winner_in_top_5 / n_seasons * 100, 1) if n_seasons > 0 else 0,
+        }
+    }
+
+    # Save cache
+    if cache_path:
+        cache_file = Path(cache_path)
+        cache_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(cache_file, 'w') as f:
+            json.dump(report, f, indent=2)
+        logger.info(f"Saved backtest cache to {cache_file}")
+
+    return report
 
 
 def benchmark_against_baseline(

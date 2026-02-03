@@ -11,66 +11,130 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      issues: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Check if off-season (skip July-September)
+        id: season_check
+        run: |
+          MONTH=$(date +%-m)
+          if [ "$MONTH" -ge 7 ] && [ "$MONTH" -le 9 ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "Off-season detected (month $MONTH). Skipping data fetch."
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Set up Python
+        if: steps.season_check.outputs.skip != 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
+        if: steps.season_check.outputs.skip != 'true'
         run: |
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
       - name: Fetch NHL API data
+        if: steps.season_check.outputs.skip != 'true'
         run: python scripts/fetch_nhl_api.py
-        continue-on-error: true  # Continue even if one source fails
+        continue-on-error: true
 
       - name: Fetch MoneyPuck data
+        if: steps.season_check.outputs.skip != 'true'
         run: python scripts/fetch_moneypuck.py
         continue-on-error: true
 
       - name: Scrape Natural Stat Trick
+        if: steps.season_check.outputs.skip != 'true'
         run: python scripts/scrape_nst.py
         continue-on-error: true
 
       - name: Fetch betting odds
+        if: steps.season_check.outputs.skip != 'true'
         run: python scripts/fetch_odds.py
         continue-on-error: true
 
+      - name: Fetch injury data
+        if: steps.season_check.outputs.skip != 'true'
+        run: python scripts/fetch_injuries.py
+        continue-on-error: true
+
       - name: Merge all data sources
+        if: steps.season_check.outputs.skip != 'true'
         run: python scripts/merge_data.py
 
       - name: Validate data quality
+        if: steps.season_check.outputs.skip != 'true'
         run: python scripts/validate_data.py
 
       - name: Generate superhuman predictions
+        if: steps.season_check.outputs.skip != 'true'
         id: superhuman
         run: python -m superhuman.dashboard_generator
         continue-on-error: true
 
-      - name: Report model status
-        run: |
-          if [ "${{ steps.superhuman.outcome }}" == "success" ]; then
-            echo "Superhuman model ran successfully"
-            echo "Dashboard data updated:"
-            python -c "import json; d=json.load(open('dashboard_data.json')); print(f\"  Generated at: {d.get('meta', {}).get('generated', 'unknown')}\")"
-          else
-            echo "WARNING: Superhuman model failed — dashboard_data.json was NOT updated"
-            echo "The dashboard will use the last good prediction data"
-          fi
+      - name: Create issue on model failure
+        if: always() && steps.season_check.outputs.skip != 'true' && steps.superhuman.outcome == 'failure'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Check for existing open model-failure issue to avoid duplicates
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'bug',
+              state: 'open',
+              per_page: 20
+            });
+            const hasOpen = existing.data.some(i => i.title.startsWith('Model failure:'));
+            if (hasOpen) {
+              console.log('Open model-failure issue already exists, skipping creation');
+              return;
+            }
+            const title = `Model failure: ${new Date().toISOString().slice(0, 10)}`;
+            const body = `The superhuman prediction model failed during the daily update.\n\nWorkflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\nPlease investigate.`;
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body,
+              labels: ['bug']
+            });
 
       - name: Install test dependencies
+        if: steps.season_check.outputs.skip != 'true'
         run: pip install -r scripts/requirements-test.txt
 
       - name: Run tests
+        if: steps.season_check.outputs.skip != 'true'
         run: python -m pytest tests/ -v
 
+      - name: Weekly snapshot (Mondays only)
+        if: steps.season_check.outputs.skip != 'true'
+        run: |
+          DAY_OF_WEEK=$(date +%u)
+          if [ "$DAY_OF_WEEK" = "1" ]; then
+            echo "Monday — creating weekly snapshot"
+            mkdir -p data/snapshots
+            DATE=$(date +%Y-%m-%d)
+            cp data/teams.json "data/snapshots/teams_${DATE}.json"
+            cp dashboard_data.json "data/snapshots/dashboard_${DATE}.json" 2>/dev/null || true
+            # Keep only last 4 weekly snapshots
+            ls -t data/snapshots/teams_*.json | tail -n +5 | xargs rm -f 2>/dev/null || true
+            ls -t data/snapshots/dashboard_*.json | tail -n +5 | xargs rm -f 2>/dev/null || true
+            echo "Snapshot saved for $DATE"
+          else
+            echo "Not Monday (day $DAY_OF_WEEK) — skipping snapshot"
+          fi
+
       - name: Check for changes
+        if: steps.season_check.outputs.skip != 'true'
         id: check_changes
         run: |
           git add data/ dashboard_data.json history/
@@ -78,7 +142,7 @@ jobs:
           git reset HEAD
 
       - name: Commit and push updates
-        if: steps.check_changes.outputs.changes == 'true'
+        if: steps.season_check.outputs.skip != 'true' && steps.check_changes.outputs.changes == 'true'
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
@@ -87,6 +151,7 @@ jobs:
           git push
 
       - name: Report status
+        if: steps.season_check.outputs.skip != 'true'
         run: |
           echo "Stats update completed at $(date)"
           echo "Teams in data/teams.json:"
