@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 from .predictor import SuperhumanPredictor
-from .config import CURRENT_SEASON, DATA_DIR, CONFERENCES
+from .config import CURRENT_SEASON, DATA_DIR, CONFERENCES, select_conference_playoff_teams
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -274,10 +274,20 @@ def build_actual_bracket() -> Optional[Dict]:
 
 def build_projected_bracket(mc_result) -> Dict:
     """Transform Monte Carlo results into full projected bracket with R2+ matchups."""
-    bracket = {"East": {}, "West": {}, "cupFinal": [], "champion": None}
+    bracket = {"East": {}, "West": {}, "cupFinal": [], "champion": None, "projectedSeeds": {}}
 
     if not mc_result:
         return bracket
+
+    # Build projected seeds per conference using NHL rules:
+    # Top 3 per division + 2 best remaining as wildcards
+    if mc_result.projected_standings:
+        for conf_name in ["East", "West"]:
+            seeds = select_conference_playoff_teams(conf_name, mc_result.projected_standings)
+            bracket["projectedSeeds"][conf_name] = [
+                {"team": code, "projectedPts": round(pts, 1)}
+                for code, pts in seeds
+            ]
 
     for conf in ["East", "West"]:
         # R1 matchups (deterministic from seeding)
