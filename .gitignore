@@ -20,6 +20,9 @@ Thumbs.db
 # Node
 node_modules/
 
+# Auto-generated
+js/data.js
+
 # Temp files
 *.tmp
 *.log

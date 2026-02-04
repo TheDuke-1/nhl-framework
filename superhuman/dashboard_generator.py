@@ -299,16 +299,21 @@ def build_projected_bracket(mc_result) -> Dict:
                 "higherWinProb": round(higher_win_prob * 100, 1),
             })
 
-        # R2 matchups (from tracking, show top 3 most likely per bracket slot)
+        # R2 matchups per bracket slot (slot 0 = top half, slot 1 = bottom half)
         r2 = []
-        for matchup_data in mc_result.r2_matchups.get(conf, []):
-            a, b, a_win_prob, freq = matchup_data
-            r2.append({
-                "teamA": a,
-                "teamB": b,
-                "teamAWinProb": round(a_win_prob * 100, 1),
-                "matchupProb": round(freq * 100, 1),
-            })
+        conf_r2_slots = mc_result.r2_matchups.get(conf, [[], []])
+        conf_r2_slots = (conf_r2_slots + [[], []])[:2]  # Guarantee exactly 2 slots
+        for slot_idx, slot_matchups in enumerate(conf_r2_slots):
+            slot_list = []
+            for matchup_data in slot_matchups:
+                a, b, a_win_prob, freq = matchup_data
+                slot_list.append({
+                    "teamA": a,
+                    "teamB": b,
+                    "teamAWinProb": round(a_win_prob * 100, 1),
+                    "matchupProb": round(freq * 100, 1),
+                })
+            r2.append({"slot": slot_idx, "matchups": slot_list})
 
         # Conference Final matchups
         cf = []
@@ -323,7 +328,7 @@ def build_projected_bracket(mc_result) -> Dict:
 
         bracket[conf] = {
             "round1": r1,
-            "round2": r2[:3],  # Top 3 most likely R2 matchups per conf
+            "round2": r2,  # 2 slots, each with ranked matchups
             "confFinal": cf[:3],
         }
 

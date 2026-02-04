@@ -210,7 +210,7 @@ td[data-sort],
   display: none;
 }
 
-.tab-btn {
+.tab {
   position: relative;
   padding: var(--space-md) var(--space-lg);
   font-family: 'Space Grotesk', sans-serif;
@@ -224,15 +224,15 @@ td[data-sort],
   transition: color var(--transition-fast);
 }
 
-.tab-btn:hover {
+.tab:hover {
   color: var(--text-secondary);
 }
 
-.tab-btn.active {
+.tab.active {
   color: var(--text-primary);
 }
 
-.tab-btn.active::after {
+.tab.active::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -979,7 +979,7 @@ td[data-sort],
     position: relative;
   }
 
-  .tab-btn {
+  .tab {
     padding: var(--space-sm) var(--space-md);
     font-size: 0.8rem;
   }

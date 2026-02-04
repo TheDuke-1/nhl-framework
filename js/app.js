@@ -22,9 +22,19 @@ const App = (() => {
   }
 
   async function loadData() {
-    const resp = await fetch('dashboard_data.json');
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}: Could not load dashboard_data.json`);
-    return resp.json();
+    // Try fetch first (works on GitHub Pages / any HTTP server)
+    try {
+      const resp = await fetch('dashboard_data.json');
+      if (resp.ok) return resp.json();
+      // Server is reachable but returned an error — don't silently fall back
+      throw new Error(`HTTP ${resp.status}: Could not load dashboard_data.json`);
+    } catch (e) {
+      // Network error (e.g. file:// CORS) — fall through to inline fallback
+      if (e.message.startsWith('HTTP ')) throw e;
+    }
+    // Fallback: data embedded via js/data.js (for file:// protocol)
+    if (window.DASHBOARD_DATA) return window.DASHBOARD_DATA;
+    throw new Error('Could not load dashboard data. Ensure dashboard_data.json or js/data.js exists.');
   }
 
   function setupTabs() {

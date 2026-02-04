@@ -521,10 +521,11 @@ class MonteCarloSimulator:
                     if higher in trace.r1_winners:
                         matchup_wins[key] += 1
 
-                # Track R2 matchups
-                for a, b in trace.r2_matchups:
+                # Track R2 matchups per bracket slot
+                # trace.r2_matchups[0] = Bracket A (top half), [1] = Bracket B (bottom half)
+                for slot_idx, (a, b) in enumerate(trace.r2_matchups):
                     pair = tuple(sorted([a, b]))
-                    key = (pair[0], pair[1], conf_label)
+                    key = (pair[0], pair[1], conf_label, slot_idx)
                     r2_tracker[key]["count"] += 1
                     # Which team won R2? Check r2_winners
                     for winner in trace.r2_winners:
@@ -620,12 +621,14 @@ class MonteCarloSimulator:
         # Convert R2+ trackers to sorted lists, filter to >5% of sims
         min_count = self.n_sims * 0.05
 
-        r2_matchups_result = {"East": [], "West": []}
-        for (a, b, conf), data in sorted(r2_tracker.items(), key=lambda x: -x[1]["count"]):
+        r2_matchups_result = {"East": [[], []], "West": [[], []]}
+        for (a, b, conf, slot), data in sorted(r2_tracker.items(), key=lambda x: -x[1]["count"]):
+            if slot not in (0, 1):
+                continue
             if data["count"] >= min_count:
                 freq = data["count"] / self.n_sims
                 a_win_prob = data["a_wins"] / data["count"]
-                r2_matchups_result[conf].append((a, b, round(a_win_prob, 3), round(freq, 3)))
+                r2_matchups_result[conf][slot].append((a, b, round(a_win_prob, 3), round(freq, 3)))
 
         cf_matchups_result = {"East": [], "West": []}
         for (a, b, conf), data in sorted(cf_tracker.items(), key=lambda x: -x[1]["count"]):
