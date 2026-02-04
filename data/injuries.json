@@ -1,17 +1,1089 @@
 {
   "_metadata": {
-    "source": "NHL Injury Report, TSN",
-    "lastUpdated": "2026-01-21",
-    "description": "Active injuries and expected returns for V6.0 injury system",
-    "version": "6.0",
-    "impactLevels": {
-      "5": "Franchise (MVP-caliber) - 5pt adjustment",
-      "4": "Elite (All-Star level) - 3pt adjustment",
-      "3": "Top-Line (Key contributor) - 2pt adjustment",
-      "2": "Middle-6 (Depth scoring) - 1pt adjustment",
-      "1": "Depth (Replaceable) - 0pt adjustment"
-    }
+    "fetchedAt": "2026-02-02T16:15:01.264771Z",
+    "source": "Hockey-Reference",
+    "teamCount": 32,
+    "totalInjuries": 111
   },
-  "injuries": [
-  ]
+  "teams": {
+    "ANA": {
+      "injuries": [
+        {
+          "player": "Leo Carlsson",
+          "position": "",
+          "status": "IR",
+          "injury": "Thigh",
+          "note": "The Anaheim Ducks placed F Leo Carlsson on injured reserve on Sunday (Feb. 1).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Petr Mrazek",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower-Body",
+          "note": "The Anaheim Ducks placed G Petr Mrazek on injured reserve on Wednesday (Jan. 7).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Frank Vatrano",
+          "position": "",
+          "status": "IR",
+          "injury": "Shoulder",
+          "note": "The Anaheim Ducks placed F Frank Vatrano on injured reserve on Wednesday (Dec. 31) and is expected to miss the next six weeks.",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 3.6,
+      "injuredCount": 3
+    },
+    "BOS": {
+      "injuries": [
+        {
+          "player": "Jordan Harris",
+          "position": "",
+          "status": "Out",
+          "injury": "Ankle",
+          "note": "The Boston Bruins sent D Jordan Harris to the minors on Thursday (Jan. 22) for a conditioning loan.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Elias Lindholm",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "The Bruins said on Friday (Jan. 30) that Lindholm won't travel with the Bruins for their two-game swing through Florida, per Conor Ryan of The Boston Globe.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Pavel Zacha",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "The Bruins said on Friday (Jan. 30) that Zacha won't travel with the Bruins for their two-game swing through Florida, per Conor Ryan of The Boston Globe.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 2.7,
+      "injuredCount": 3
+    },
+    "BUF": {
+      "injuries": [
+        {
+          "player": "Jacob Bryson",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper-body",
+          "note": "The Sabres placed D Jacob Bryson on injured reserve on Friday (Jan. 23).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Justin Danforth",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "The Buffalo Sabres said on Monday (Jan. 26) that Danforth is trending toward a post-Olympic return to action, per Bill Hoppe of the Olean Times Herald.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Josh Dunne",
+          "position": "",
+          "status": "IR",
+          "injury": "Middle-body",
+          "note": "The Buffalo Sabres placed F Josh Dunne on injured reserve on Thursday (Jan. 15)",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Jordan Greenway",
+          "position": "",
+          "status": "Out",
+          "injury": "Abdomen",
+          "note": "Greenway did not play in Saturday's (Jan. 31) game against the Canadiens.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Jiri Kulich",
+          "position": "",
+          "status": "Out",
+          "injury": "Ear",
+          "note": "The Sabres said on Monday (Nov. 10) that Kulich is slated to miss significant time due to a blood clot issue.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Ukko-Pekka Luukkonen",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "The Sabres said on Thursday (Jan. 29) that Luukkonen is expected to miss about a week, according to head coach Lindy Ruff, per Paul Hamilton of WGR Sports Radio 550.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Josh Norris",
+          "position": "",
+          "status": "DTD",
+          "injury": "Ribs",
+          "note": "The Sabres said on Wednesday (Jan. 28) that Norris is day-to-day by head coach Lindy Ruff, Bill Hoppe of the Olean Times Herald reports Monday, but won't play this week, per Paul Hamilton of WGR Sports Radio 550.",
+          "estimatedWar": 0.4
+        },
+        {
+          "player": "Conor Timmins",
+          "position": "",
+          "status": "IR",
+          "injury": "Leg",
+          "note": "The Buffalo Sabres placed D Conor Timmins on Injured Reserve on Saturday (Dec. 20).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 7.7,
+      "injuredCount": 8
+    },
+    "CAR": {
+      "injuries": [
+        {
+          "player": "Pyotr Kochetkov",
+          "position": "",
+          "status": "IR",
+          "injury": "Undisclosed",
+          "note": "The Carolina Hurricanes placed G Pyotr Kochetkov on injured reserve on Monday (Dec. 29) and is expected to miss the rest of the campaign, Walt Ruff of the Hurricanes' official site.",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Charles Alexis Legault",
+          "position": "",
+          "status": "IR",
+          "injury": "Hand",
+          "note": "The Carolina Hurricanes placed D Charles Alexis Legault on injured reserve on Tuesday (Nov. 11).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Eric Robinson",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "The Hurricanes said on Wednesday (Jan. 21) that Robinson will be out for an extended period of time.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 3.3,
+      "injuredCount": 3
+    },
+    "CBJ": {
+      "injuries": [
+        {
+          "player": "Dante Fabbro",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "Fabbro did not play in Saturday's (Jan. 31) game against the Blues.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Sean Monahan",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Monahan did not return in Saturday's (Jan. 31) game against the Blues.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Brendan Smith",
+          "position": "",
+          "status": "Out",
+          "injury": "Leg",
+          "note": "The Columbus Blue Jackets said on Thursday (Jan. 8) that Smith underwent successful surgery to repair a torn meniscus in his knee and is expected to make a full recovery in 3-4 months.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 2.7,
+      "injuredCount": 3
+    },
+    "CGY": {
+      "injuries": [
+        {
+          "player": "Jake Bean",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "The Flames said on Thursday (Dec. 18) that Bean will need to undergo surgery and is expected to be sidelined indefinitely, per Pat Steinberg of Sportsnet 960 The Fan.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "John Beecher",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper Body",
+          "note": "Beecher remains on Injured Reserve but is on the ice for Friday's (Jan. 23) practice.",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Blake Coleman",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "The Calgary Flames said on Wednesday (Jan. 28) that Coleman will not be available until after the Olympic break, per Pat Steinberg of Sportsnet 960 The Fan.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Samuel Honzek",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "The Flames said on Friday (Nov. 21) that Honzek underwent surgery this week and is OUT for six months.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 3.9,
+      "injuredCount": 4
+    },
+    "CHI": {
+      "injuries": [
+        {
+          "player": "Nick Foligno",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Foligno did not play in Friday's (Jan. 30) game against the Blue Jackets.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Shea Weber",
+          "position": "",
+          "status": "IR",
+          "injury": "Ankle",
+          "note": "The Chicago Blackhawks placed D Shea Weber on injured reserve on Monday (Oct. 6).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 2.1,
+      "injuredCount": 2
+    },
+    "COL": {
+      "injuries": [
+        {
+          "player": "Gabriel Landeskog",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "The Avalanche said on Wednesday (Jan. 21) that Landeskog still has a long way before he can return to game-action.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Martin Necas",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "Necas did not play in Saturday's (Jan. 31) game against the Red Wings.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Logan O'Connor",
+          "position": "",
+          "status": "Out",
+          "injury": "Hip",
+          "note": "The Avalanche said on Friday (Dec. 12) that O'Connor is still at least a week or two from returning to the lineup, though it could be longer, according to Corey Masisak of The Denver Post.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Devon Toews",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "Toews did not play in Saturday's (Jan. 31) game against the Red Wings.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 3.6,
+      "injuredCount": 4
+    },
+    "DAL": {
+      "injuries": [
+        {
+          "player": "Lian Bichsel",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "The Stars reported on Sunday (Dec. 21) that Bichsel is targeting a return date just before or after the Olympic break, as per Sam Nestler of DLLS Stars.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Ilya Lyubushkin",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "Lyubushkin did not play in Saturday's (Jan. 31) game against the Mammoth.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Tyler Seguin",
+          "position": "",
+          "status": "Out",
+          "injury": "ACL",
+          "note": "The Stars said on Friday (Dec. 19) that Seguin will have his return timetable evaluated after the Olympic break after undergoing successful ACL surgery.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 2.7,
+      "injuredCount": 3
+    },
+    "DET": {
+      "injuries": [
+        {
+          "player": "Simon Edvinsson",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower-body",
+          "note": "The Detroit Red Wings placed D Simon Edvinsson on injured reserve on Thursday (Jan. 29).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 1.2,
+      "injuredCount": 1
+    },
+    "EDM": {
+      "injuries": [
+        {
+          "player": "Adam Henrique",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Undisclosed",
+          "note": "The Edmonton Oilers placed F Adam Henrique on long-term injured reserve on Tuesday (Jan. 13).",
+          "estimatedWar": 1.5
+        }
+      ],
+      "totalWarLost": 1.5,
+      "injuredCount": 1
+    },
+    "FLA": {
+      "injuries": [
+        {
+          "player": "Aleksander Barkov",
+          "position": "",
+          "status": "IR",
+          "injury": "Knee",
+          "note": "The Florida Panthers placed F Aleksander Barkov on injured reserve on Tuesday (Oct. 7).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Jonah Gadjovich",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "The Panthers said on Monday (Jan. 5) that Gadjovich is not expected to return until after the Olympic break, per Jameson Olive of the team's official site.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Seth Jones",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Upper Body",
+          "note": "The Florida Panthers placed D Seth Jones on long-term injured reserve on Monday (Jan. 19).",
+          "estimatedWar": 1.5
+        },
+        {
+          "player": "Dmitry Kulikov",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "The Panthers reported on Wednesday (Oct. 15) that Kulikov underwent surgery for his upper-body injury and is expected to be shelved for at least five months, per Sean Shapiro of DLLS Sports.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Anton Lundell",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "Lundell did not play in Saturday's (Jan. 31) game versus the Jets.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Brad Marchand",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Marchand did not play in Saturday's (Jan. 31) game versus the Jets.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Tomas Nosek",
+          "position": "",
+          "status": "IR",
+          "injury": "Knee",
+          "note": "The Florida Panthers placed F Tomas Nosek on injured reserve non-roster list on Tuesday (Oct. 7).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 7.5,
+      "injuredCount": 7
+    },
+    "LA": {
+      "injuries": [
+        {
+          "player": "Mikey Anderson",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "Anderson won't return to Sunday's (Feb. 1) matchup against Carolina.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Alex Turcotte",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper-body",
+          "note": "The Los Angeles Kings placed F Alex Turcotte on injured reserve on Saturday (Jan. 31).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 2.1,
+      "injuredCount": 2
+    },
+    "MIN": {
+      "injuries": [
+        {
+          "player": "Zach Bogosian",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "The Minnesota Wild said on Saturday (Jan. 24) that Bogosian isn't ready to return to the lineup yet, according to Joe Smith of The Athletic.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Jonas Brodin",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "HC John Hynes said on Monday (Jan. 26) that Brodin is expected to miss approximately 6-8 weeks, as per Joe Smith of The Athletic.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Nico Sturm",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Strum did not play in Saturday's (Jan. 31) game against the Oilers.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 2.7,
+      "injuredCount": 3
+    },
+    "MTL": {
+      "injuries": [
+        {
+          "player": "Patrik Laine",
+          "position": "",
+          "status": "Out",
+          "injury": "Abdomen",
+          "note": "The Montreal Canadiens said on Saturday (Jan 10) that Laine could return to the lineup as early as late January.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Alex Newhook",
+          "position": "",
+          "status": "IR",
+          "injury": "Ankle",
+          "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Alexandre Texier",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-body",
+          "note": "Texier did not play in Saturday's (Jan. 31) game versus the Sabres.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 3.0,
+      "injuredCount": 3
+    },
+    "NJ": {
+      "injuries": [
+        {
+          "player": "Jack Hughes",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "Hughes did not play in Saturday's (Jan. 31) game against the Senators.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Luke Hughes",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Shoulder",
+          "note": "The New Jersey Devils placed D Luke Hughes on Long-Term Injured Reserve on Wednesday (Jan. 21).",
+          "estimatedWar": 1.5
+        },
+        {
+          "player": "Zack MacEwen",
+          "position": "",
+          "status": "Out",
+          "injury": "ACL",
+          "note": "The New Jersey Devils said on Saturday (Jan. 10) that MacEwen is out for the rest of the season after having ACL surgery.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Marc McLaughlin",
+          "position": "",
+          "status": "IR",
+          "injury": "Undisclosed",
+          "note": "The New Jersey Devils placed F Marc McLaughlin on injured reserve on Monday (Oct. 6).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Stefan Noesen",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Knee",
+          "note": "The New Jersey Devils placed F Stefan Noesen on long-term injured reserve on Saturday (Jan. 10) and will undergo knee surgery next week.",
+          "estimatedWar": 1.5
+        }
+      ],
+      "totalWarLost": 6.0,
+      "injuredCount": 5
+    },
+    "NSH": {
+      "injuries": [
+        {
+          "player": "Nick Blankenburg",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Blankenburg did not play in Saturday's (Jan. 31) versus the Islanders.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Nicolas Hague",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower body",
+          "note": "The Predators listed Hague as OUT for Saturday's (Jan. 24) clash versus the Mammoth and is considered week-to-week.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 1.8,
+      "injuredCount": 2
+    },
+    "NYI": {
+      "injuries": [
+        {
+          "player": "Jonathan Drouin",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Drouin did not play in Saturday's (Jan. 31) versus the Predators.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Pierre Engvall",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Ankle",
+          "note": "The New York Islanders placed F Pierre Engvall on long-term injured reserve on Thursday (Oct. 23).",
+          "estimatedWar": 1.5
+        },
+        {
+          "player": "Kyle Palmieri",
+          "position": "",
+          "status": "IR",
+          "injury": "Knee",
+          "note": "The New York Islanders placed F Kyle Palmieri on injured reserve on Sunday (Nov. 30).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Calum Ritchie",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-body",
+          "note": "The Islanders said on Saturday (Jan. 31) that Ritchie is out until after the Olympic break.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Alexander Romanov",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "The Islanders reported on Sunday (Nov. 23) that Romanov will have surgery and be out for 5-6 months.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Semyon Varlamov",
+          "position": "",
+          "status": "IR",
+          "injury": "Knee",
+          "note": "The New York Islanders placed G Semyon Varlamov on injured reserve on Monday (Oct. 6).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 6.6,
+      "injuredCount": 6
+    },
+    "NYR": {
+      "injuries": [
+        {
+          "player": "Adam Edstrom",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower-Body",
+          "note": "The New York Rangers placed F Adam Edstrom on injured reserve on Wednesday (Dec. 10).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Adam Fox",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The New York Rangers placed D Adam Fox on injured reserve on Tuesday (Jan. 6).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Noah Laba",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "Laba did not return to Saturday's (Jan. 31) game against the Penguins.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Artemi Panarin",
+          "position": "",
+          "status": "Out",
+          "injury": "Not Injury Related",
+          "note": "Panarin did not play in Saturday's (Jan. 31) versus the Penguins.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Conor Sheary",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Lower-Body",
+          "note": "The New York Rangers placed F Conor Sheary on long-term injured reserve on Thursday (Jan. 1).",
+          "estimatedWar": 1.5
+        },
+        {
+          "player": "Igor Shesterkin",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The New York Rangers placed G Igor Shesterkin on injured reserve on Tuesday (Jan. 6).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 6.9,
+      "injuredCount": 6
+    },
+    "OTT": {
+      "injuries": [
+        {
+          "player": "Thomas Chabot",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Chabot did not return to Saturday's (Jan. 31) game against New Jersey for precautionary reasons.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "David Perron",
+          "position": "",
+          "status": "IR",
+          "injury": "Hernia",
+          "note": "The Ottawa Senators placed F David Perron on Injured Reserve. He is expected to miss 5-7 weeks due to a sports hernia injury that will require surgery, per Julian McKenzie of The Athletic.",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 2.1,
+      "injuredCount": 2
+    },
+    "PHI": {
+      "injuries": [
+        {
+          "player": "Rodrigo Abols",
+          "position": "",
+          "status": "Out",
+          "injury": "Ankle",
+          "note": "The Flyers said on Wednesday (Jan. 21) that Abols' injury is a fractured right ankle, per Kevin Kurz of The Athletic. He is likely to be out for at least two months.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Samuel Ersson",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "Ersson did not play in Saturday's (Jan. 31) game versus the Kings.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Tyson Foerster",
+          "position": "",
+          "status": "Out",
+          "injury": "Arm",
+          "note": "The Flyers said on Wednesday (Dec. 17) that Foerster underwent successful surgery on his arm and will be out for five months.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 2.7,
+      "injuredCount": 3
+    },
+    "PIT": {
+      "injuries": [
+        {
+          "player": "Ryan Graves",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower-body",
+          "note": "The Pittsburgh Penguins placed D Ryan Graves on Injured Reserve on Thursday (Jan. 22).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Filip Hallander",
+          "position": "",
+          "status": "IR",
+          "injury": "Leg",
+          "note": "The Pittsburgh Penguins placed F Filip Hallander on Injured Reserve on Saturday (Nov. 8).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Kris Letang",
+          "position": "",
+          "status": "IR",
+          "injury": "Foot",
+          "note": "The Pittsburgh Penguins placed D Kris Letang on injured reserve on Saturday (Jan. 31).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Jack St. Ivany",
+          "position": "",
+          "status": "IR",
+          "injury": "Hand",
+          "note": "The Pittsburgh Penguins placed D Jack St. Ivany on Injured Reserve on Thursday (Jan. 29).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 4.8,
+      "injuredCount": 4
+    },
+    "SEA": {
+      "injuries": [
+        {
+          "player": "Berkly Catton",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "The Kraken said on Saturday (Jan. 31) that Catton will miss the team's final three games before the Olympic break.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Ben Meyers",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower-body",
+          "note": "The Seattle Kraken placed F Ben Meyers on injured reserve on Thursday (Jan. 22).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Matt Murray",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The Kraken said on Tuesday (Nov. 18) that Murray is expected to be out of action for about six weeks, the team announced Tuesday (Nov. 18). He has been placed on injured reserve, per the NHL media site.",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 3.3,
+      "injuredCount": 3
+    },
+    "SJ": {
+      "injuries": [
+        {
+          "player": "Ty Dellandrea",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The San Jose Sharks placed F Ty Dellandrea on injured reserve on Thursday (Jan. 15).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Kiefer Sherwood",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "Sherwood did not play in Saturday's (Jan. 31) game against the Flames.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 2.1,
+      "injuredCount": 2
+    },
+    "STL": {
+      "injuries": [
+        {
+          "player": "Dylan Holloway",
+          "position": "",
+          "status": "IR",
+          "injury": "Ankle",
+          "note": "The St. Louis Blues placed F Dylan Holloway on injured reserve on Thursday (Jan. 29).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Jake Neighbours",
+          "position": "",
+          "status": "Out",
+          "injury": "Soreness",
+          "note": "Neighbours did not play in Saturday's (Jan. 31) game versus the Blue Jackets.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Robert Thomas",
+          "position": "",
+          "status": "DTD",
+          "injury": "Lower-Body",
+          "note": "The St. Louis Blues said on Friday (Jan. 30) that Thomas is still regarded as day-to-day, so it's possible he'll return before the Olympic break, per Lou Korac of NHL.com.",
+          "estimatedWar": 0.4
+        }
+      ],
+      "totalWarLost": 2.5,
+      "injuredCount": 3
+    },
+    "TB": {
+      "injuries": [
+        {
+          "player": "Anthony Cirelli",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Cirelli (undisclosed) has been ruled out for the remainder of Sunday's Stadium Series game versus Boston.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Charle-Edouard D'Astous",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower-body",
+          "note": "The Tampa Bay Lightning placed D Charle-Edouard D'Astous on injured reserve on Sunday (Jan. 25).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Emil Lilleberg",
+          "position": "",
+          "status": "IR",
+          "injury": "Undisclosed",
+          "note": "The Tampa Bay Lightning placed D Emil Lilleberg on injured reserve on Monday (Dec. 15) and is week-to-week.",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Brayden Point",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The Tampa Bay Lightning placed F Brayden Point on injured reserve on Friday (Jan. 16).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 4.5,
+      "injuredCount": 4
+    },
+    "TOR": {
+      "injuries": [
+        {
+          "player": "Dakota Joshua",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Kidney",
+          "note": "The Toronto Maple Leafs said on Wednesday (Jan. 28) that Joshua was placed on long-term injured reserve.",
+          "estimatedWar": 1.5
+        },
+        {
+          "player": "Morgan Rielly",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "Rielly did not return to Saturday's (Jan. 31) game against Vancouver.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Chris Tanev",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Groin",
+          "note": "The Toronto Maple Leafs placed D Chris Tanev on Long-term Injured Reserve on Wednesday (Jan. 28) and is out indefinitely.",
+          "estimatedWar": 1.5
+        }
+      ],
+      "totalWarLost": 3.9,
+      "injuredCount": 3
+    },
+    "UTA": {
+      "injuries": [
+        {
+          "player": "Logan Cooley",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The Utah Mammoth placed F Logan Cooley on injured reserve on Saturday (Dec. 13).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Alexander Kerfoot",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper Body",
+          "note": "The Utah Mammoth placed F Alexander Kerfoot on Injured Reserve on Sunday (Jan. 11).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 2.4,
+      "injuredCount": 2
+    },
+    "VAN": {
+      "injuries": [
+        {
+          "player": "Brock Boeser",
+          "position": "",
+          "status": "Out",
+          "injury": "Concussion",
+          "note": "The Vancouver Canucks said on Friday (Jan. 30) that Boeser is a long shot to play again before the Olympic break.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Guillaume Brisebois",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower-body",
+          "note": "The Vancouver Canucks placed D Guillaume Brisebois on injured reserve non-roster list on Monday (Oct. 6).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Zeev Buium",
+          "position": "",
+          "status": "Out",
+          "injury": "Cheekbone",
+          "note": "The Vancouver Canucks said on Tuesday (Jan. 27) that Buium is OUT until after the 2026 Winter Olympics, according to Iain MacIntyre of Sportsnet.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Thatcher Demko",
+          "position": "",
+          "status": "Out",
+          "injury": "Hip",
+          "note": "The Vancouver Canucks said on Tuesday (Jan. 27) that Demko will undergo hip surgery and miss the remainder of the 2025-26 campaign.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Derek Forbort",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Undisclosed",
+          "note": "The Canucks listed Forbort on long-term injured reserve as of Tuesday (Oct. 28).",
+          "estimatedWar": 1.5
+        },
+        {
+          "player": "Nils Hoglander",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-body",
+          "note": "Hoglander did not play in Saturday's (Jan. 31) matchup against Toronto.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Marco Rossi",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "The Vancouver Canucks said on Tuesday (Jan. 27) that Rossi suffered a setback and won't be back until after the Olympic break, per Farhan Lalji of TSN.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 7.2,
+      "injuredCount": 7
+    },
+    "VGK": {
+      "injuries": [],
+      "totalWarLost": 0.0,
+      "injuredCount": 0
+    },
+    "WPG": {
+      "injuries": [
+        {
+          "player": "Haydn Fleury",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "The Jets said on Wednesday (Jan. 14) that Fleury is week-to-week.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Colin Miller",
+          "position": "",
+          "status": "Out",
+          "injury": "Knee",
+          "note": "The Jets said on Saturday (Jan. 17) that Miller had knee surgery and is week-to-week.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Neal Pionk",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "The Winnipeg Jets said on Friday (Jan. 30) that Pionk will practice in a non-contact jersey and could get into a game prior to the Olympic break.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 2.7,
+      "injuredCount": 3
+    },
+    "WSH": {
+      "injuries": [
+        {
+          "player": "Pierre-Luc Dubois",
+          "position": "",
+          "status": "Out",
+          "injury": "Abdomen",
+          "note": "The Capitals reported on Saturday (Jan. 3) that Dubois has started skating, according to HC Spencer Carbery, as per Bailey Johnson of The Washington Post. He is expected to return after the Olympic break in February.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Martin Fehervary",
+          "position": "",
+          "status": "Out",
+          "injury": "Personal",
+          "note": "Fehervary did not play in Saturday's (Jan. 31) game versus the Hurricanes.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Charlie Lindgren",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The Washington Capitals placed G Charlie Lindgren on injured reserve on Saturday (Jan. 31).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Connor McMichael",
+          "position": "",
+          "status": "IR",
+          "injury": "Undisclosed",
+          "note": "The Washington Capitals placed F Connor McMichael on injured reserve on Saturday (Jan. 31) and is week-to-week.",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Matt Roy",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower-body",
+          "note": "The Washington Capitals placed D Matt Roy on injured reserve on Saturday (Jan. 31).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Logan Thompson",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "Thompson did not play in for Saturday's (Jan. 31) home game against Carolina.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 6.3,
+      "injuredCount": 6
+    }
+  }
 }

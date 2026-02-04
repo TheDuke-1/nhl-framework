@@ -1,0 +1,237 @@
+{
+  "modelVersion": "backtest-v2.1-2026",
+  "seasons": [
+    {
+      "season": 2010,
+      "modelTopPick": "SJ",
+      "modelTop5": [
+        "SJ",
+        "WSH",
+        "VAN",
+        "CHI",
+        "PIT"
+      ],
+      "actualWinner": "CHI",
+      "winnerInTop5": true,
+      "modelProbForWinner": 8.2,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2011,
+      "modelTopPick": "DET",
+      "modelTop5": [
+        "DET",
+        "PIT",
+        "VAN",
+        "SJ",
+        "BOS"
+      ],
+      "actualWinner": "BOS",
+      "winnerInTop5": true,
+      "modelProbForWinner": 8.37,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2012,
+      "modelTopPick": "VAN",
+      "modelTop5": [
+        "VAN",
+        "DET",
+        "STL",
+        "PIT",
+        "NYR"
+      ],
+      "actualWinner": "LA",
+      "winnerInTop5": false,
+      "modelProbForWinner": 3.04,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2013,
+      "modelTopPick": "CHI",
+      "modelTop5": [
+        "CHI",
+        "OTT",
+        "BOS",
+        "LA",
+        "MTL"
+      ],
+      "actualWinner": "CHI",
+      "winnerInTop5": true,
+      "modelProbForWinner": 32.2,
+      "topPickCorrect": true
+    },
+    {
+      "season": 2014,
+      "modelTopPick": "SJ",
+      "modelTop5": [
+        "SJ",
+        "BOS",
+        "CHI",
+        "PIT",
+        "ANA"
+      ],
+      "actualWinner": "LA",
+      "winnerInTop5": false,
+      "modelProbForWinner": 5.95,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2015,
+      "modelTopPick": "STL",
+      "modelTop5": [
+        "STL",
+        "TB",
+        "NSH",
+        "NYR",
+        "MIN"
+      ],
+      "actualWinner": "CHI",
+      "winnerInTop5": false,
+      "modelProbForWinner": 6.76,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2016,
+      "modelTopPick": "LA",
+      "modelTop5": [
+        "LA",
+        "DAL",
+        "PIT",
+        "SJ",
+        "WSH"
+      ],
+      "actualWinner": "PIT",
+      "winnerInTop5": true,
+      "modelProbForWinner": 8.68,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2017,
+      "modelTopPick": "MIN",
+      "modelTop5": [
+        "MIN",
+        "WSH",
+        "CBJ",
+        "BOS",
+        "PIT"
+      ],
+      "actualWinner": "PIT",
+      "winnerInTop5": true,
+      "modelProbForWinner": 6.67,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2018,
+      "modelTopPick": "VGK",
+      "modelTop5": [
+        "VGK",
+        "WPG",
+        "TB",
+        "NSH",
+        "BOS"
+      ],
+      "actualWinner": "WSH",
+      "winnerInTop5": false,
+      "modelProbForWinner": 2.62,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2019,
+      "modelTopPick": "BOS",
+      "modelTop5": [
+        "BOS",
+        "CGY",
+        "PIT",
+        "SJ",
+        "TB"
+      ],
+      "actualWinner": "STL",
+      "winnerInTop5": false,
+      "modelProbForWinner": 6.44,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2020,
+      "modelTopPick": "STL",
+      "modelTop5": [
+        "STL",
+        "PHI",
+        "CAR",
+        "BOS",
+        "COL"
+      ],
+      "actualWinner": "TB",
+      "winnerInTop5": false,
+      "modelProbForWinner": 7.14,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2021,
+      "modelTopPick": "TOR",
+      "modelTop5": [
+        "TOR",
+        "BOS",
+        "PIT",
+        "WPG",
+        "NYI"
+      ],
+      "actualWinner": "TB",
+      "winnerInTop5": false,
+      "modelProbForWinner": 2.66,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2022,
+      "modelTopPick": "PIT",
+      "modelTop5": [
+        "PIT",
+        "FLA",
+        "CGY",
+        "CAR",
+        "MIN"
+      ],
+      "actualWinner": "COL",
+      "winnerInTop5": false,
+      "modelProbForWinner": 6.79,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2023,
+      "modelTopPick": "CAR",
+      "modelTop5": [
+        "CAR",
+        "COL",
+        "DAL",
+        "NJ",
+        "EDM"
+      ],
+      "actualWinner": "VGK",
+      "winnerInTop5": false,
+      "modelProbForWinner": 3.71,
+      "topPickCorrect": false
+    },
+    {
+      "season": 2024,
+      "modelTopPick": "COL",
+      "modelTop5": [
+        "COL",
+        "CAR",
+        "EDM",
+        "WPG",
+        "FLA"
+      ],
+      "actualWinner": "FLA",
+      "winnerInTop5": true,
+      "modelProbForWinner": 8.82,
+      "topPickCorrect": false
+    }
+  ],
+  "summary": {
+    "totalSeasons": 15,
+    "topPickCorrect": 1,
+    "topPickAccuracy": 6.7,
+    "winnerInTop5": 6,
+    "top5Accuracy": 40.0
+  }
+}

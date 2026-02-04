@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary — Superhuman NHL Predictions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .glossary-page { max-width: 900px; margin: 0 auto; padding: var(--space-lg) var(--space-md); }
+    .glossary-page h2 { margin-bottom: var(--space-lg); }
+    .glossary-category { margin-bottom: var(--space-xl); }
+    .glossary-category h3 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+    }
+    .glossary-term {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      padding: var(--space-md);
+      margin-bottom: var(--space-sm);
+    }
+    .glossary-term-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: var(--space-xs);
+    }
+    .glossary-term-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: var(--space-xs);
+    }
+    .glossary-term-formula {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: var(--space-lg);
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back-link:hover { color: var(--accent-hover); }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <h1 class="site-title">Glossary</h1>
+      <p class="site-subtitle">Metric definitions used in the Superhuman model</p>
+    </div>
+  </header>
+
+  <main class="glossary-page">
+    <a href="index.html" class="back-link">&larr; Back to Dashboard</a>
+
+    <!-- Offense -->
+    <div class="glossary-category">
+      <h3>Offense</h3>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Goal Differential Rate</div>
+        <div class="glossary-term-desc">Goals scored minus goals allowed per game. The simplest measure of team quality — positive means the team outscores opponents on average.</div>
+        <div class="glossary-term-formula">Formula: (GF - GA) / GP</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Shot Quality Premium</div>
+        <div class="glossary-term-desc">How much better a team's expected goals percentage is compared to league average. Measures whether a team generates higher-quality chances than it allows.</div>
+        <div class="glossary-term-formula">Formula: xGF% - 50</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Territorial Dominance (CF%)</div>
+        <div class="glossary-term-desc">Corsi For percentage at 5-on-5 — the share of total shot attempts a team generates. Above 50% means the team controls play more often than not.</div>
+        <div class="glossary-term-formula">Formula: Corsi For % at 5v5</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">HDCF%</div>
+        <div class="glossary-term-desc">High-Danger Corsi For percentage. The share of high-danger scoring chances a team generates. Widely regarded as the single best predictor of playoff success.</div>
+        <div class="glossary-term-formula">Formula: HD Shot Attempts For / (HD For + HD Against)</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Star Power</div>
+        <div class="glossary-term-desc">Measures the impact of a team's best player relative to the league's top scorers. Elite stars drive playoff success disproportionately.</div>
+        <div class="glossary-term-formula">Formula: Top scorer PPG vs league leaders</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Roster Depth</div>
+        <div class="glossary-term-desc">How balanced the scoring is across the lineup. Teams that rely on one line are easier to shut down in a 7-game series.</div>
+        <div class="glossary-term-formula">Formula: Players with 20+ goals and 40+ points</div>
+      </div>
+    </div>
+
+    <!-- Defense & Goaltending -->
+    <div class="glossary-category">
+      <h3>Defense &amp; Goaltending</h3>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Goaltending Quality (GSAx)</div>
+        <div class="glossary-term-desc">Goals Saved Above Expected. Measures how many goals a goalie prevented compared to what an average goalie would allow given the same shots. Positive = better than average.</div>
+        <div class="glossary-term-formula">Formula: GSAx (Goals Saved Above Expected)</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Sustainability (PDO)</div>
+        <div class="glossary-term-desc">The sum of a team's shooting % and save %. Tends to regress toward 100 over time. Teams with high PDO may be riding luck; teams with low PDO may be due for improvement.</div>
+        <div class="glossary-term-formula">Formula: PDO regression to mean (100 = sustainable)</div>
+      </div>
+    </div>
+
+    <!-- Special Teams -->
+    <div class="glossary-category">
+      <h3>Special Teams</h3>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Special Teams Composite</div>
+        <div class="glossary-term-desc">Combined power play and penalty kill effectiveness. A positive number means the team gains more from its PP than it gives up on the PK.</div>
+        <div class="glossary-term-formula">Formula: PP% + PK% - 100</div>
+      </div>
+    </div>
+
+    <!-- Situational -->
+    <div class="glossary-category">
+      <h3>Situational &amp; Intangibles</h3>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Clutch Performance</div>
+        <div class="glossary-term-desc">How a team performs in pressure situations — close games, overtime, and when protecting leads. Teams that win tight games tend to have a mental edge in the playoffs.</div>
+        <div class="glossary-term-formula">Formula: One-goal wins + OT wins - Blown leads</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Road Performance</div>
+        <div class="glossary-term-desc">Ability to win away from home. Critical for the playoffs, where half the games are on the road regardless of seeding.</div>
+        <div class="glossary-term-formula">Formula: Road win % vs league average</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Recent Form</div>
+        <div class="glossary-term-desc">How a team has played in the last 10-20 games compared to its season average. Captures late-season surges and slumps.</div>
+        <div class="glossary-term-formula">Formula: Points % in recent games vs season average</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Playoff Experience</div>
+        <div class="glossary-term-desc">The team's recent playoff history and success. Teams with deep runs in recent years tend to handle playoff pressure better.</div>
+        <div class="glossary-term-formula">Formula: Weighted playoff rounds won (last 5 years)</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Dynasty Score</div>
+        <div class="glossary-term-desc">Recent championship pedigree. Captures the "championship DNA" factor — teams that have won recently have institutional knowledge of what it takes.</div>
+        <div class="glossary-term-formula">Formula: Recency-weighted Cup wins and Finals appearances</div>
+      </div>
+    </div>
+
+    <!-- Model Metrics -->
+    <div class="glossary-category">
+      <h3>Model Metrics</h3>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Composite Strength</div>
+        <div class="glossary-term-desc">The model's overall team power rating. A weighted average of all 14 performance metrics, calibrated against 15 years of historical data. Higher = stronger team.</div>
+        <div class="glossary-term-formula">Formula: Weighted average of 14 performance metrics</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Vegas Cup Signal</div>
+        <div class="glossary-term-desc">The market's consensus on each team's Cup chances, derived from betting odds. The model uses this as one input — markets aggregate information efficiently but aren't perfect.</div>
+        <div class="glossary-term-formula">Formula: Implied probability from betting odds</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Playoff Probability</div>
+        <div class="glossary-term-desc">The model's estimated chance that a team makes the playoffs. Based on current standings, remaining schedule strength, and statistical projections.</div>
+        <div class="glossary-term-formula">Monte Carlo simulation over remaining schedule</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Cup Probability</div>
+        <div class="glossary-term-desc">The model's estimated chance that a team wins the Stanley Cup. Derived from 10,000 Monte Carlo simulations of the full playoff bracket.</div>
+        <div class="glossary-term-formula">Cup wins / total simulations</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Tier</div>
+        <div class="glossary-term-desc">Teams are grouped into four tiers based on composite strength: Elite (clear Cup contenders), Contender (strong playoff teams), Bubble (could go either way), and Longshot (unlikely but not impossible).</div>
+        <div class="glossary-term-formula">Assigned by model based on composite strength clustering</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">WAR (Wins Above Replacement)</div>
+        <div class="glossary-term-desc">An estimate of how many additional wins a player contributes compared to a replacement-level player. Used in the injury column to quantify the impact of missing players.</div>
+        <div class="glossary-term-formula">Estimated from position, ice time, and production</div>
+      </div>
+
+      <div class="glossary-term">
+        <div class="glossary-term-name">Edge (Betting)</div>
+        <div class="glossary-term-desc">The difference between the model's Cup probability and the implied probability from betting odds. A positive edge suggests the market is undervaluing the team.</div>
+        <div class="glossary-term-formula">Formula: Model probability - Implied probability from odds</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="index.html" class="footer-link">Dashboard</a>
+      <span class="separator">|</span>
+      <span class="model-credit">Powered by Superhuman v2.1</span>
+    </div>
+  </footer>
+
+</body>
+</html>

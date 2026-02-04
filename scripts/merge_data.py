@@ -128,60 +128,9 @@ def merge_team_data(nhl_data, mp_data, nst_data, abbrev):
     else:
         team["ptsPct"] = 0
 
-    # =================================================================
-    # CALCULATE CHAMPIONSHIP WEIGHT (Framework V7.2)
-    # =================================================================
-    # V7.2 CHANGES (based on 10-year backtest analysis):
-    # - CF% reduced 20%→15%: High-possession teams often lose (CAR effect)
-    # - GSAx increased 15%→20%: Goaltending wins Cups (8/10 winners)
-    # - PK% increased 10%→13%: Special teams matter more in playoffs
-    # - PDO reduced 15%→12%: Less predictive than expected
-    #
-    # V7.2 Weights: HDCF% 25%, CF% 15%, PDO 12%, PP% 15%, PK% 13%, GSAx 20%
-    #
-    # Each metric is normalized to a 0-100 scale then weighted.
-    # Final weight ranges roughly 100-300 (200 = average)
-    # =================================================================
-
-    def normalize(value, min_val, max_val, invert=False):
-        """Normalize a value to 0-100 scale."""
-        if max_val == min_val:
-            return 50
-        normalized = (value - min_val) / (max_val - min_val) * 100
-        if invert:
-            normalized = 100 - normalized
-        return max(0, min(100, normalized))
-
-    # Get metrics with safe defaults
-    hdcf_pct = team.get("hdcfPct", 50.0)
-    cf_pct = team.get("cfPct", 50.0)
-    pdo = team.get("pdo", 1.0)
-    if pdo < 2:  # Convert ratio to percentage if needed
-        pdo = pdo * 100
-    pp_pct = team.get("ppPct", 20.0)
-    pk_pct = team.get("pkPct", 80.0)
-    gsax = team.get("gsax", 0.0)
-
-    # Normalize each metric (realistic NHL ranges)
-    hdcf_norm = normalize(hdcf_pct, 42, 58)      # HDCF% typically 42-58%
-    cf_norm = normalize(cf_pct, 44, 56)          # CF% typically 44-56%
-    pdo_norm = normalize(pdo, 96, 104)           # PDO typically 96-104
-    pp_norm = normalize(pp_pct, 12, 30)          # PP% typically 12-30%
-    pk_norm = normalize(pk_pct, 72, 88)          # PK% typically 72-88%
-    gsax_norm = normalize(gsax, -25, 25)         # GSAx typically -25 to +25
-
-    # Apply V7.2 weights (totaling 100%)
-    weight_score = (
-        hdcf_norm * 0.25 +   # 25% HDCF% - Best predictor of playoff success
-        cf_norm * 0.15 +     # 15% CF% - Reduced: possession overrated
-        pdo_norm * 0.12 +    # 12% PDO - Reduced: luck regresses
-        pp_norm * 0.15 +     # 15% PP% - Keep: one PP goal decides series
-        pk_norm * 0.13 +     # 13% PK% - Increased: critical in playoffs
-        gsax_norm * 0.20     # 20% GSAx - Increased: goaltending wins Cups
-    )
-
-    # Scale to 100-300 range (200 = average)
-    team["weight"] = round(100 + weight_score * 2, 0)
+    # Weight placeholder — all real scoring now handled by superhuman ML model.
+    # Old V7.2 hand-tuned weights archived to archive/v72_weights.py
+    team["weight"] = 200
 
     return team
 

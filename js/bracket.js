@@ -123,21 +123,15 @@ const Bracket = (() => {
   }
 
   function renderR2Projected(matchups, teamMap) {
-    if (matchups.length === 0) {
-      return `
-        <div class="bracket-matchup-card bm-tbd"><div class="bm-team"><span class="bm-code muted">TBD</span></div><div class="bm-team"><span class="bm-code muted">TBD</span></div></div>
-        <div class="bracket-matchup-card bm-tbd"><div class="bm-team"><span class="bm-code muted">TBD</span></div><div class="bm-team"><span class="bm-code muted">TBD</span></div></div>
-      `;
+    // Expects exactly 2 slot objects: [{slot: 0, matchups: [...]}, {slot: 1, matchups: [...]}]
+    const tbdCard = '<div class="bracket-matchup-card bm-tbd"><div class="bm-team"><span class="bm-code muted">TBD</span></div><div class="bm-team"><span class="bm-code muted">TBD</span></div></div>';
+    if (!matchups || matchups.length === 0) {
+      return tbdCard + tbdCard;
     }
-    // Group R2 matchups into bracket slots (up to 2 slots per conference)
-    // Show the most likely matchup per slot, with matchupProb as subtitle
-    // We have up to 3 matchups, try to identify which go into which slot
-    const slot1 = matchups[0] || null;
-    const slot2 = matchups[1] || null;
-
-    return [slot1, slot2].map(m => {
-      if (!m) return '<div class="bracket-matchup-card bm-tbd"><div class="bm-team"><span class="bm-code muted">TBD</span></div><div class="bm-team"><span class="bm-code muted">TBD</span></div></div>';
-      return renderProbMatchup(m, teamMap);
+    return matchups.map(slotData => {
+      const best = (slotData.matchups || [])[0] || null;
+      if (!best) return tbdCard;
+      return renderProbMatchup(best, teamMap);
     }).join('');
   }
 

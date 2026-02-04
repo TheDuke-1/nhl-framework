@@ -260,7 +260,7 @@ class MonteCarloResult:
     # Cup Final appearance probabilities
     cup_final_probs: Dict[str, float] = field(default_factory=dict)
 
-    # R2+ matchup tracking: {conf: [(teamA, teamB, teamA_win_prob, matchup_frequency)]}
+    # R2 matchup tracking per bracket slot: {conf: [[slot0_matchups], [slot1_matchups]]}
     r2_matchups: Dict[str, List[tuple]] = field(default_factory=dict)
     conf_final_matchups: Dict[str, List[tuple]] = field(default_factory=dict)
     cup_final_matchups: List[tuple] = field(default_factory=list)
