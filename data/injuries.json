@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-02-04T11:28:51.785185Z",
+    "fetchedAt": "2026-02-05T11:31:46.975798Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 105
+    "totalInjuries": 102
   },
   "teams": {
     "ANA": {
@@ -157,7 +157,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Marchenko did not play in Tuesday's (Feb. 3) matchup against the Devils.",
+          "note": "Marchenko did not play in Wednesday (Feb. 4) versus the Blackhawks.",
           "estimatedWar": 0.9
         },
         {
@@ -187,7 +187,7 @@
           "position": "",
           "status": "IR",
           "injury": "Upper Body",
-          "note": "Beecher remains on Injured Reserve but is on the ice for Friday's (Jan. 23) practice.",
+          "note": "The Flames said on Friday's (Jan. 23) practice that Beecher remains on Injured Reserve and is week-to-week.",
           "estimatedWar": 1.2
         },
         {
@@ -213,6 +213,22 @@
     "CHI": {
       "injuries": [
         {
+          "player": "Colton Dach",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Dach did not return to Wednesday's (Feb. 4) game versus the Blue Jackets.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Wyatt Kaiser",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "Kaiser sustained a lower-body injury and did not return to Wednesday's (Feb. 4) game versus the Blue Jackets.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Shea Weber",
           "position": "",
           "status": "IR",
@@ -221,8 +237,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 1.2,
-      "injuredCount": 1
+      "totalWarLost": 3.0,
+      "injuredCount": 3
     },
     "COL": {
       "injuries": [
@@ -231,7 +247,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-Body",
-          "note": "Landeskog is doubtful for Wednesday's (Feb. 4) matchup with the Sharks but is still expected to play in the Olympics, per Jesse Montano of Guerilla Sports.",
+          "note": "Landeskog did not play in Wednesday's (Feb. 4) matchup with the Sharks but is still expected to play in the Olympics.",
           "estimatedWar": 0.9
         },
         {
@@ -239,7 +255,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Necas did not play in Monday's (Feb. 2) game versus the Red Wings.",
+          "note": "Necas did not play in Wednesday's (Feb. 4) game versus the Sharks.",
           "estimatedWar": 0.9
         },
         {
@@ -261,15 +277,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "The Stars reported on Sunday (Dec. 21) that Bichsel is targeting a return date just before or after the Olympic break, as per Sam Nestler of DLLS Stars.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Ilya Lyubushkin",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "Lyubushkin did not play in Monday's (Feb. 2) game versus the Jets.",
+          "note": "The Stars reported on Wednesday (Feb. 4) that Bichsel is close to returning but will be held out until after the Olympic break, per Brien Rea of Victory+.",
           "estimatedWar": 0.9
         },
         {
@@ -281,8 +289,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "DET": {
       "injuries": [
@@ -323,14 +331,6 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Sam Bennett",
-          "position": "",
-          "status": "DTD",
-          "injury": "Upper Body",
-          "note": "Bennett is Questionable for Wednesday's (Feb. 4) game against the Bruins.",
-          "estimatedWar": 0.4
-        },
-        {
           "player": "Jonah Gadjovich",
           "position": "",
           "status": "Out",
@@ -355,20 +355,12 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Anton Lundell",
-          "position": "",
-          "status": "DTD",
-          "injury": "Upper-body",
-          "note": "Lundell is Questionable for Wednesday's (Feb. 4) game against the Bruins.",
-          "estimatedWar": 0.4
-        },
-        {
           "player": "Brad Marchand",
           "position": "",
-          "status": "DTD",
+          "status": "Out",
           "injury": "Undisclosed",
-          "note": "Marchand is Questionable for Wednesday's (Feb. 4) game against the Bruins.",
-          "estimatedWar": 0.4
+          "note": "Marchand did not play in Wednesday's (Feb. 4) game against the Bruins, per Jordan McPherson of the Miami Herald.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Tomas Nosek",
@@ -377,32 +369,48 @@
           "injury": "Knee",
           "note": "The Florida Panthers placed F Tomas Nosek on injured reserve non-roster list on Tuesday (Oct. 7).",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Sandis Vilmanis",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "Vilmanis did not return to Wednesday's (Feb. 4) game versus the Bruins.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 7.0,
-      "injuredCount": 8
+      "totalWarLost": 7.5,
+      "injuredCount": 7
     },
     "LA": {
       "injuries": [
         {
           "player": "Mikey Anderson",
           "position": "",
-          "status": "DTD",
+          "status": "Out",
           "injury": "Upper-Body",
-          "note": "The Kings said on Tuesday (Feb. 3) that Anderson is day-to-day.",
-          "estimatedWar": 0.4
+          "note": "Anderson did not play Wednesday's (Feb. 4) game versus the Kraken.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Artemi Panarin",
+          "position": "",
+          "status": "Out",
+          "injury": "Not Injury Related",
+          "note": "Panarin will link up with the Kings on Wednesday (Feb. 18) to prepare for the post-Olympics part of the schedule, per John Hoven of SiriusXM NHL Network Radio.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Alex Turcotte",
           "position": "",
-          "status": "DTD",
+          "status": "Out",
           "injury": "Upper-body",
-          "note": "The Los Angeles Kings said on Tuesday (Feb. 3) that Turcotte is day-to-day.",
-          "estimatedWar": 0.4
+          "note": "Turcotte did not play in Wednesday's (Feb. 4) game against the Kraken.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.9,
-      "injuredCount": 2
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "MIN": {
       "injuries": [
@@ -419,15 +427,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Foligno did not play in Monday's (Feb. 2) game versus the Canadiens.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Daemon Hunt",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Hunt did not finish Monday's (Feb. 2) game versus the Canadiens.",
+          "note": "Foligno did not play in Wednesday's (Feb. 4) game versus the Predators.",
           "estimatedWar": 0.9
         },
         {
@@ -435,12 +435,12 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Wallstedt did not play in Monday's (Feb. 2) game versus the Canadiens.",
+          "note": "The Wild said on Wednesday (Feb. 4) that Wallstedt is not with the team ahead of Wednesday's (Feb. 4) road matchup versus the Predators, per Joe Smith of The Athletic. He needs extra time to get back to full recovery.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.6,
-      "injuredCount": 4
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "MTL": {
       "injuries": [
@@ -465,7 +465,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-body",
-          "note": "Texier won't be in the lineup against Minnesota on Monday (Feb. 2), as per Renaud Lavoie of TVA Sports.",
+          "note": "Texier did not play in Wednesday's (Feb. 4) game versus the Jets.",
           "estimatedWar": 0.9
         }
       ],
@@ -479,7 +479,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Hughes did not play in Tuesday's (Feb. 3) game against the Blue Jackets.",
+          "note": "Hughes is OUT for Thursday's (Feb. 5) game against the Islanders.",
           "estimatedWar": 0.9
         },
         {
@@ -583,10 +583,10 @@
         {
           "player": "Adam Edstrom",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Lower-Body",
-          "note": "The New York Rangers placed F Adam Edstrom on injured reserve on Wednesday (Dec. 10).",
-          "estimatedWar": 1.2
+          "note": "The New York Rangers said on Wednesday (Feb. 4) that Edstrom has been skating on his own and might be ready by the end of the Olympic break, per Peter Baugh of The Athletic.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Adam Fox",
@@ -595,22 +595,6 @@
           "injury": "Lower Body",
           "note": "The New York Rangers placed D Adam Fox on injured reserve on Tuesday (Jan. 6).",
           "estimatedWar": 1.2
-        },
-        {
-          "player": "Noah Laba",
-          "position": "",
-          "status": "DTD",
-          "injury": "Upper-body",
-          "note": "HC Mike Sullivan said Monday (Feb. 2) that Laba is considered day-to-day, as per Vince Z. Mercogliano of The Athletic.",
-          "estimatedWar": 0.4
-        },
-        {
-          "player": "Artemi Panarin",
-          "position": "",
-          "status": "Out",
-          "injury": "Not Injury Related",
-          "note": "Panarin did not play in Saturday's (Jan. 31) versus the Penguins.",
-          "estimatedWar": 0.9
         },
         {
           "player": "Conor Sheary",
@@ -629,8 +613,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 6.5,
-      "injuredCount": 6
+      "totalWarLost": 4.8,
+      "injuredCount": 4
     },
     "OTT": {
       "injuries": [
@@ -711,10 +695,10 @@
         {
           "player": "Berkly Catton",
           "position": "",
-          "status": "Out",
+          "status": "IR",
           "injury": "Upper Body",
-          "note": "The Kraken said on Saturday (Jan. 31) that Catton will miss the team's final three games before the Olympic break.",
-          "estimatedWar": 0.9
+          "note": "The Seattle Kraken placed F Berkly Catton on injured reserve on Wednesday (Feb. 4).",
+          "estimatedWar": 1.2
         },
         {
           "player": "Ben Meyers",
@@ -731,10 +715,18 @@
           "injury": "Lower Body",
           "note": "The Kraken said on Tuesday (Nov. 18) that Murray is expected to be out of action for about six weeks, the team announced Tuesday (Nov. 18). He has been placed on injured reserve, per the NHL media site.",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Jaden Schwartz",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-body",
+          "note": "Schwartz did not play Wednesday's (Feb. 4) game against the Kings due to a lower-body injury.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.3,
-      "injuredCount": 3
+      "totalWarLost": 4.5,
+      "injuredCount": 4
     },
     "SJ": {
       "injuries": [
@@ -753,18 +745,10 @@
           "injury": "Upper Body",
           "note": "The San Jose Sharks placed F Ryan Reaves on injured reserve on Tuesday (Feb. 3).",
           "estimatedWar": 1.2
-        },
-        {
-          "player": "Kiefer Sherwood",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Sherwood did not play in Monday's (Feb. 2) game against Chicago.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.3,
-      "injuredCount": 3
+      "totalWarLost": 2.4,
+      "injuredCount": 2
     },
     "STL": {
       "injuries": [
@@ -794,8 +778,8 @@
           "player": "Anthony Cirelli",
           "position": "",
           "status": "Out",
-          "injury": "Undisclosed",
-          "note": "The Lightning said on Tuesday (Feb. 3) that Cirelli has been ruled OUT out for the Lightning's last two games before the Olympic break, per Chris Johnston of The Athletic.",
+          "injury": "Upper Body",
+          "note": "The Lightning said on Wednesday (Feb. 4) that Cirelli will be re-evaluated after the Olympic break.",
           "estimatedWar": 0.9
         },
         {
@@ -819,7 +803,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "The Lightning said on Tuesday (Feb. 3) that Paul has been ruled OUT out for the Lightning's last two games before the Olympic break, per Chris Johnston of The Athletic.",
+          "note": "The Lightning said on Wednesday (Feb. 4) that Paul will be re-evaluated after the Olympic break.",
           "estimatedWar": 0.9
         },
         {
@@ -827,7 +811,7 @@
           "position": "",
           "status": "LTIR",
           "injury": "Lower Body",
-          "note": "The Tampa Bay Lightning transferred F Brayden Point to long-term injured reserve Tuesday (Feb. 3).",
+          "note": "The Tampa Bay Lightning transferred F Brayden Point to long-term injured reserve on Tuesday (Feb. 3).",
           "estimatedWar": 1.5
         }
       ],
@@ -871,19 +855,19 @@
           "position": "",
           "status": "IR",
           "injury": "Lower Body",
-          "note": "The Utah Mammoth placed F Logan Cooley on injured reserve on Saturday (Dec. 13).",
+          "note": "The Utah Mammoth said on Monday (Feb. 2) that Cooley remains on injured reserve and likely won't be back in the lineup until after the 2026 Winter Olympics.",
           "estimatedWar": 1.2
         },
         {
           "player": "Alexander Kerfoot",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Upper Body",
-          "note": "The Utah Mammoth placed F Alexander Kerfoot on Injured Reserve on Sunday (Jan. 11).",
-          "estimatedWar": 1.2
+          "note": "The Utah Mammoth said on Monday (Feb. 2) that Kerfoot was seen participating in drills and even joined the team's defensemen during line skates but has no official timeline to return.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.4,
+      "totalWarLost": 2.1,
       "injuredCount": 2
     },
     "VAN": {
@@ -937,19 +921,11 @@
           "estimatedWar": 1.5
         },
         {
-          "player": "Conor Garland",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "The Canucks said that Garland missed Tuesday's (Feb. 3) practice, per Thomas Drance of The Athletic.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Nils Hoglander",
           "position": "",
           "status": "Out",
           "injury": "Lower-body",
-          "note": "Hoglander did not play in Monday's (Feb. 2) game versus the Mammoth.",
+          "note": "Hoglander did not play in Wednesday's (Feb. 5) game against the Golden Knights.",
           "estimatedWar": 0.9
         },
         {
@@ -961,8 +937,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 9.0,
-      "injuredCount": 9
+      "totalWarLost": 8.1,
+      "injuredCount": 8
     },
     "VGK": {
       "injuries": [],
