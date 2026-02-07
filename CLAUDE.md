@@ -123,3 +123,8 @@ Nat Stat  → nst_stats.json      ─┘
 - **Commands:** `/project:status`, `/project:verify`, `/project:build`, `/project:plan`, `/project:spec`, `/project:commit-push-pr`, `/project:code-review`, `/interview`, `/design-interview`, `/design-audit`, `/quick-fix`, `/framework-improve`, `/session-start`, `/session-end`
 - **Agents:** code-reviewer, code-simplifier, framework-improver, spec-builder, verify-app, creative-director, ui-designer, ux-designer, visual-qa, accessibility, motion-designer, test-engineer, design-system
 - **Hooks:** PostToolUse hook on Write/Edit reminds to verify changes
+
+## Framework Bundle Location
+- Full imported framework source: `framework/updated-superhuman-framework-v2/`
+- Process docs mirrored at project root: `MASTER-GUIDE.md`, `QUICK-START.md`, `SETUP-GUIDE.md`
+- Team skill map: `TEAM_SKILLS.md`
