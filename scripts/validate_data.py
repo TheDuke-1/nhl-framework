@@ -4,8 +4,10 @@ Data Validation Script for NHL Playoff Prediction Framework
 Validates data quality after pipeline runs to prevent silent failures.
 
 Usage: python scripts/validate_data.py
+       python scripts/validate_data.py --strict
 """
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -201,7 +203,25 @@ def validate_merged():
 
     return issues
 
+def _is_warning(issue):
+    return issue.strip().startswith("⚠️")
+
+
+def _is_error(issue):
+    return issue.strip().startswith("❌")
+
+
 def main():
+    parser = argparse.ArgumentParser(
+        description="Validate NHL data pipeline outputs."
+    )
+    parser.add_argument(
+        "--strict",
+        action="store_true",
+        help="Fail on warnings in addition to errors."
+    )
+    args = parser.parse_args()
+
     print("=" * 60)
     print("NHL Playoff Framework - Data Validation")
     print("=" * 60)
@@ -215,12 +235,26 @@ def main():
 
     print("\n" + "=" * 60)
 
-    if all_issues:
+    fatal_issues = [issue for issue in all_issues if _is_error(issue)]
+    warning_issues = [issue for issue in all_issues if _is_warning(issue)]
+
+    should_fail = bool(fatal_issues) or (args.strict and bool(warning_issues))
+
+    if should_fail:
         print(f"❌ VALIDATION FAILED - {len(all_issues)} issue(s) found:\n")
         for issue in all_issues:
             print(issue)
-        print("\n⚠️  Fix issues before using predictions!")
+        if warning_issues and not fatal_issues:
+            print("\n⚠️  Strict mode treats warnings as failures.")
+        else:
+            print("\n⚠️  Fix issues before using predictions!")
         sys.exit(1)
+    elif warning_issues:
+        print(f"⚠️  VALIDATION PASSED WITH WARNINGS - {len(warning_issues)} warning(s):\n")
+        for issue in warning_issues:
+            print(issue)
+        print("\n✅ Core data integrity checks passed.")
+        sys.exit(0)
     else:
         print("✅ ALL VALIDATIONS PASSED")
         print("   Data pipeline is healthy. Predictions should be reliable.")

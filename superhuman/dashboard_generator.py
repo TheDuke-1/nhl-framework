@@ -11,12 +11,24 @@ Output: dashboard_data.json with all predictions, odds, and metadata.
 import json
 import logging
 import os
+import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-from .predictor import SuperhumanPredictor
-from .config import CURRENT_SEASON, DATA_DIR, CONFERENCES, select_conference_playoff_teams
+# Support both module and direct-script execution.
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from superhuman.predictor import SuperhumanPredictor
+    from superhuman.config import (
+        CURRENT_SEASON,
+        DATA_DIR,
+        CONFERENCES,
+        select_conference_playoff_teams,
+    )
+else:
+    from .predictor import SuperhumanPredictor
+    from .config import CURRENT_SEASON, DATA_DIR, CONFERENCES, select_conference_playoff_teams
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -454,8 +466,12 @@ def generate_dashboard_data() -> Dict:
     # Generate backtest report (uses cache if valid)
     backtest_data = None
     try:
-        from .validation import generate_backtest_report
-        from .data_loader import load_training_data
+        if __package__ in (None, ""):
+            from superhuman.validation import generate_backtest_report
+            from superhuman.data_loader import load_training_data
+        else:
+            from .validation import generate_backtest_report
+            from .data_loader import load_training_data
         historical_data = load_training_data()
         if historical_data:
             cache_path = str(DATA_DIR / "backtest_cache.json")
