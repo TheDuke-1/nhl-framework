@@ -120,6 +120,6 @@ Nat Stat  → nst_stats.json      ─┘
 - Config: Centralized in `scripts/config.py` and `superhuman/config.py`
 
 ## Claude Code Setup
-- **Commands:** `/status`, `/verify`, `/build`, `/plan`, `/spec`, `/commit-push-pr`, `/code-review`
-- **Agents:** code-reviewer, code-simplifier, framework-improver, spec-builder, verify-app
+- **Commands:** `/project:status`, `/project:verify`, `/project:build`, `/project:plan`, `/project:spec`, `/project:commit-push-pr`, `/project:code-review`, `/interview`, `/design-interview`, `/design-audit`, `/quick-fix`, `/framework-improve`, `/session-start`, `/session-end`
+- **Agents:** code-reviewer, code-simplifier, framework-improver, spec-builder, verify-app, creative-director, ui-designer, ux-designer, visual-qa, accessibility, motion-designer, test-engineer, design-system
 - **Hooks:** PostToolUse hook on Write/Edit reminds to verify changes
