@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-02-05T11:31:46.975798Z",
+    "fetchedAt": "2026-02-07T11:17:06.143912Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 102
+    "totalInjuries": 108
   },
   "teams": {
     "ANA": {
@@ -65,7 +65,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Benson did not play in Tuesday's (Feb. 3) road matchup against the Lightning.",
+          "note": "Benson did not play in Thursday's (Feb. 5) road matchup against the Penguins.",
           "estimatedWar": 0.9
         },
         {
@@ -89,7 +89,7 @@
           "position": "",
           "status": "Out",
           "injury": "Abdomen",
-          "note": "Greenway did not play in Tuesday's (Feb. 3) game versus the Lightning.",
+          "note": "Greenway did not play in Thursday's (Feb. 5) game versus the Penguins.",
           "estimatedWar": 0.9
         },
         {
@@ -111,10 +111,10 @@
         {
           "player": "Josh Norris",
           "position": "",
-          "status": "Out",
+          "status": "DTD",
           "injury": "Ribs",
-          "note": "Norris did not play in Tuesday's (Feb. 3) game against the Lightning.",
-          "estimatedWar": 0.9
+          "note": "The Sabres said on Monday (Feb. 2) that Norris was upgraded to day-to-day last week, but he hasn't yet received the green light to return to game action.",
+          "estimatedWar": 0.4
         },
         {
           "player": "Conor Timmins",
@@ -125,7 +125,7 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 7.8,
+      "totalWarLost": 7.3,
       "injuredCount": 8
     },
     "CAR": {
@@ -205,10 +205,18 @@
           "injury": "Upper Body",
           "note": "The Flames said on Friday (Nov. 21) that Honzek underwent surgery this week and is OUT for six months.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Jonathan Huberdeau",
+          "position": "",
+          "status": "Out",
+          "injury": "Hip",
+          "note": "The Flames said on Thursday (Feb. 5) that Huberdeau will undergo hip surgery, ending his 2025-26 campaign, per Elliotte Friedman of Sportsnet.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.9,
-      "injuredCount": 4
+      "totalWarLost": 4.8,
+      "injuredCount": 5
     },
     "CHI": {
       "injuries": [
@@ -331,6 +339,22 @@
           "estimatedWar": 1.2
         },
         {
+          "player": "Tobias Bjornfot",
+          "position": "",
+          "status": "IR",
+          "injury": "Undisclosed",
+          "note": "The Florida Panthers placed D Tobias Bjornfot on injured reserve on Thursday (Feb. 5).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Aaron Ekblad",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Ekblad did not play in Thursday's (Feb. 5) game against the Lightning for an undisclosed reason.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Jonah Gadjovich",
           "position": "",
           "status": "Out",
@@ -359,7 +383,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Marchand did not play in Wednesday's (Feb. 4) game against the Bruins, per Jordan McPherson of the Miami Herald.",
+          "note": "Marchand did not play in Thursday's (Feb. 5) versus Tampa Bay.",
           "estimatedWar": 0.9
         },
         {
@@ -371,25 +395,33 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Sandis Vilmanis",
+          "player": "Evan Rodrigues",
           "position": "",
           "status": "Out",
-          "injury": "Upper-body",
-          "note": "Vilmanis did not return to Wednesday's (Feb. 4) game versus the Bruins.",
+          "injury": "Illness",
+          "note": "Rodrigues did not play in Thursday's (Feb. 5) game in Tampa Bay due to an illness.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 7.5,
-      "injuredCount": 7
+      "totalWarLost": 9.6,
+      "injuredCount": 9
     },
     "LA": {
       "injuries": [
         {
           "player": "Mikey Anderson",
           "position": "",
-          "status": "Out",
+          "status": "IR",
           "injury": "Upper-Body",
-          "note": "Anderson did not play Wednesday's (Feb. 4) game versus the Kraken.",
+          "note": "The Los Angeles Kings placed D Mikey Anderson on injured reserve on Thursday (Feb. 5).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Andrei Kuzmenko",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "Kuzmenko did not return to Thursday's (Feb. 5) game versus the Golden Knights.",
           "estimatedWar": 0.9
         },
         {
@@ -405,12 +437,12 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-body",
-          "note": "Turcotte did not play in Wednesday's (Feb. 4) game against the Kraken.",
+          "note": "Turcotte did not play in Thursday's (Feb. 5) game against the Golden Knights.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 3.9,
+      "injuredCount": 4
     },
     "MIN": {
       "injuries": [
@@ -479,7 +511,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Hughes is OUT for Thursday's (Feb. 5) game against the Islanders.",
+          "note": "Hughes did not play in Thursday's (Feb. 5) game against the Islanders.",
           "estimatedWar": 0.9
         },
         {
@@ -519,18 +551,9 @@
       "injuredCount": 5
     },
     "NSH": {
-      "injuries": [
-        {
-          "player": "Nicolas Hague",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower body",
-          "note": "The Predators listed Hague as OUT for Saturday's (Jan. 24) clash versus the Mammoth and is considered week-to-week.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "injuries": [],
+      "totalWarLost": 0.0,
+      "injuredCount": 0
     },
     "NYI": {
       "injuries": [
@@ -551,14 +574,6 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Calum Ritchie",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-body",
-          "note": "The Islanders said on Saturday (Jan. 31) that Ritchie is out until after the Olympic break.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Alexander Romanov",
           "position": "",
           "status": "Out",
@@ -575,8 +590,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 5.7,
-      "injuredCount": 5
+      "totalWarLost": 4.8,
+      "injuredCount": 4
     },
     "NYR": {
       "injuries": [
@@ -625,10 +640,18 @@
           "injury": "Groin",
           "note": "The Ottawa Senators placed F David Perron on Injured Reserve. He is expected to miss 5-7 weeks due to a sports hernia injury that will require surgery, per Julian McKenzie of The Athletic.",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Linus Ullmark",
+          "position": "",
+          "status": "Out",
+          "injury": "Flu",
+          "note": "Ullmark did not play in Thursday's (Feb. 5) road game against Philadelphia due to flu-like symptoms.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.2,
-      "injuredCount": 1
+      "totalWarLost": 2.1,
+      "injuredCount": 2
     },
     "PHI": {
       "injuries": [
@@ -645,7 +668,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Ersson did not play in Tuesday's (Feb. 3) game versus the Capitals.",
+          "note": "The Flyers said that Ersson will not be available for Thursday's (Feb. 5) game against the Senators and should return after the Olympic break, according to Charlie O'Connor of PHLY Sports.",
           "estimatedWar": 0.9
         },
         {
@@ -663,6 +686,14 @@
     "PIT": {
       "injuries": [
         {
+          "player": "Noel Acciari",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Acciari did not play in Thursday's (Feb. 5) matchup against the Sabres.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Filip Hallander",
           "position": "",
           "status": "IR",
@@ -679,6 +710,22 @@
           "estimatedWar": 1.2
         },
         {
+          "player": "Blake Lizotte",
+          "position": "",
+          "status": "Out",
+          "injury": "Personal",
+          "note": "Lizotte did not play in Thursday's (Feb. 5) game versus the Sabres.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Rickard Rakell",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "Rakell did not play in Thursday's (Feb. 5) clash versus the Sabres.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Jack St. Ivany",
           "position": "",
           "status": "IR",
@@ -687,8 +734,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.6,
-      "injuredCount": 3
+      "totalWarLost": 6.3,
+      "injuredCount": 6
     },
     "SEA": {
       "injuries": [
@@ -978,11 +1025,11 @@
     "WSH": {
       "injuries": [
         {
-          "player": "Pierre-Luc Dubois",
+          "player": "John Carlson",
           "position": "",
           "status": "Out",
-          "injury": "Abdomen",
-          "note": "The Capitals reported on Saturday (Jan. 3) that Dubois has started skating, according to HC Spencer Carbery, as per Bailey Johnson of The Washington Post. He is expected to return after the Olympic break in February.",
+          "injury": "Lower-body",
+          "note": "Carlson did not play in Thursday's (Jan. 5) game versus the Predators.",
           "estimatedWar": 0.9
         },
         {
@@ -1002,15 +1049,15 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Logan Thompson",
+          "player": "Sonny Milano",
           "position": "",
-          "status": "IR",
-          "injury": "Upper-body",
-          "note": "The Washington Capitals placed G Logan Thompson on injured reserve on Monday (Feb. 2).",
-          "estimatedWar": 1.2
+          "status": "Out",
+          "injury": "Personal",
+          "note": "Milano did not play in Thursday's (Feb. 5) game against Nashville due to personal reasons.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.5,
+      "totalWarLost": 4.2,
       "injuredCount": 4
     }
   }
