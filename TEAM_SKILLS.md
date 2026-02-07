@@ -35,3 +35,9 @@ This project now includes the full Updated Superhuman Framework capability set.
   - `/Users/matthewdukovich/Desktop/NHL Playoff Project/MASTER-GUIDE.md`
   - `/Users/matthewdukovich/Desktop/NHL Playoff Project/QUICK-START.md`
   - `/Users/matthewdukovich/Desktop/NHL Playoff Project/SETUP-GUIDE.md`
+
+## Project Skills
+- `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-project-operator`
+- `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-discovery-planner`
+- `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-builder-verifier`
+- `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-review-improver`

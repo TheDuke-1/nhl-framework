@@ -128,3 +128,4 @@ Nat Stat  → nst_stats.json      ─┘
 - Full imported framework source: `framework/updated-superhuman-framework-v2/`
 - Process docs mirrored at project root: `MASTER-GUIDE.md`, `QUICK-START.md`, `SETUP-GUIDE.md`
 - Team skill map: `TEAM_SKILLS.md`
+- Project skill packs: `.codex/skills/superhuman-project-operator`, `.codex/skills/superhuman-discovery-planner`, `.codex/skills/superhuman-builder-verifier`, `.codex/skills/superhuman-review-improver`

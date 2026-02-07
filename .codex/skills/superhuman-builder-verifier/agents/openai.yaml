@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Builder Verifier"
+  short_description: "Build and run full verification gates"
+  default_prompt: "Use $superhuman-builder-verifier to implement changes and run full verification before signoff."

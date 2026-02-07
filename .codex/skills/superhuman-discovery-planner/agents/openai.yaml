@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Discovery Planner"
+  short_description: "Run discovery, spec, and plan workflow"
+  default_prompt: "Use $superhuman-discovery-planner to capture requirements and produce a build-ready spec and plan."

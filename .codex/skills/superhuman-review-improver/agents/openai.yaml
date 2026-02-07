@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Review Improver"
+  short_description: "Review code and improve framework quality"
+  default_prompt: "Use $superhuman-review-improver to run review, simplification, and framework learning updates."

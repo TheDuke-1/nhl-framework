@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Project Operator"
+  short_description: "Run full superhuman build and QA workflow"
+  default_prompt: "Use $superhuman-project-operator to run the full project workflow with commands, agents, and verification gates."
