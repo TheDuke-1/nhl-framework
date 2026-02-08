@@ -1,11 +1,11 @@
 {
   "_metadata": {
-    "generatedAt": "2026-02-07T11:17:06.286088Z",
+    "generatedAt": "2026-02-08T11:18:43.698768Z",
     "sources": {
-      "nhl_api": "2026-02-07T11:17:02.562340Z",
+      "nhl_api": "2026-02-08T11:18:41.145373Z",
       "moneypuck": "2026-01-30T05:30:00.000Z",
-      "nst": "2026-02-07T11:17:04.131163Z",
-      "odds": "2026-02-07T11:17:05.783744Z"
+      "nst": "2026-02-08T11:18:42.784536Z",
+      "odds": "2026-02-08T11:18:43.180759Z"
     },
     "teamCount": 32,
     "version": "7.3"
@@ -51,10 +51,10 @@
       "gd": 74,
       "ptsPct": 75.5,
       "playoffPct": 100.0,
-      "divisionPct": 92.7,
-      "cupPct": 21.7,
-      "impliedCupOdds": 360,
-      "projPts": 118.3
+      "divisionPct": 93.5,
+      "cupPct": 21.8,
+      "impliedCupOdds": 358,
+      "projPts": 118.4
     },
     {
       "team": "MIN",
@@ -96,10 +96,10 @@
       "gd": 27,
       "ptsPct": 67.2,
       "playoffPct": 100.0,
-      "divisionPct": 3.7,
-      "cupPct": 6.7,
-      "impliedCupOdds": 1392,
-      "projPts": 106.0
+      "divisionPct": 3.3,
+      "cupPct": 7.3,
+      "impliedCupOdds": 1269,
+      "projPts": 106.3
     },
     {
       "team": "CAR",
@@ -141,10 +141,10 @@
       "gd": 34,
       "ptsPct": 68.4,
       "playoffPct": 99.6,
-      "divisionPct": 85.3,
-      "cupPct": 8.7,
-      "impliedCupOdds": 1049,
-      "projPts": 107.8
+      "divisionPct": 82.4,
+      "cupPct": 8.4,
+      "impliedCupOdds": 1090,
+      "projPts": 107.6
     },
     {
       "team": "TB",
@@ -185,10 +185,10 @@
       "xgd": 20.94,
       "gd": 59,
       "ptsPct": 70.9,
-      "playoffPct": 99.9,
+      "playoffPct": 100.0,
       "divisionPct": 90.8,
-      "cupPct": 15.3,
-      "impliedCupOdds": 553,
+      "cupPct": 15.5,
+      "impliedCupOdds": 545,
       "projPts": 111.7
     },
     {
@@ -231,10 +231,10 @@
       "gd": 33,
       "ptsPct": 67.5,
       "playoffPct": 100.0,
-      "divisionPct": 3.6,
-      "cupPct": 10.3,
-      "impliedCupOdds": 870,
-      "projPts": 106.9
+      "divisionPct": 3.2,
+      "cupPct": 8.3,
+      "impliedCupOdds": 1104,
+      "projPts": 106.8
     },
     {
       "team": "DET",
@@ -275,11 +275,11 @@
       "xgd": -0.12,
       "gd": -1,
       "ptsPct": 62.1,
-      "playoffPct": 78.8,
+      "playoffPct": 78.0,
       "divisionPct": 1.4,
-      "cupPct": 1.6,
-      "impliedCupOdds": 6150,
-      "projPts": 98.2
+      "cupPct": 2.1,
+      "impliedCupOdds": 4661,
+      "projPts": 98.4
     },
     {
       "team": "MTL",
@@ -320,11 +320,11 @@
       "xgd": -6.71,
       "gd": 12,
       "ptsPct": 63.2,
-      "playoffPct": 91.0,
-      "divisionPct": 4.1,
-      "cupPct": 3.7,
-      "impliedCupOdds": 2602,
-      "projPts": 100.7
+      "playoffPct": 88.8,
+      "divisionPct": 4.6,
+      "cupPct": 4.0,
+      "impliedCupOdds": 2400,
+      "projPts": 100.6
     },
     {
       "team": "BUF",
@@ -365,11 +365,11 @@
       "xgd": -4.72,
       "gd": 19,
       "ptsPct": 61.4,
-      "playoffPct": 82.3,
-      "divisionPct": 2.1,
-      "cupPct": 4.9,
-      "impliedCupOdds": 1940,
-      "projPts": 99.0
+      "playoffPct": 80.3,
+      "divisionPct": 2.2,
+      "cupPct": 3.3,
+      "impliedCupOdds": 2930,
+      "projPts": 98.9
     },
     {
       "team": "PIT",
@@ -410,11 +410,11 @@
       "xgd": 11.59,
       "gd": 23,
       "ptsPct": 62.5,
-      "playoffPct": 87.1,
-      "divisionPct": 9.6,
-      "cupPct": 4.0,
-      "impliedCupOdds": 2400,
-      "projPts": 99.5
+      "playoffPct": 87.6,
+      "divisionPct": 12.3,
+      "cupPct": 4.1,
+      "impliedCupOdds": 2339,
+      "projPts": 99.6
     },
     {
       "team": "NYI",
@@ -455,11 +455,11 @@
       "xgd": -19.95,
       "gd": 7,
       "ptsPct": 59.5,
-      "playoffPct": 69.6,
-      "divisionPct": 2.9,
+      "playoffPct": 72.2,
+      "divisionPct": 3.6,
       "cupPct": 3.1,
       "impliedCupOdds": 3125,
-      "projPts": 96.5
+      "projPts": 96.9
     },
     {
       "team": "BOS",
@@ -500,11 +500,11 @@
       "xgd": -17.32,
       "gd": 13,
       "ptsPct": 60.5,
-      "playoffPct": 71.0,
-      "divisionPct": 1.6,
-      "cupPct": 2.8,
-      "impliedCupOdds": 3471,
-      "projPts": 97.2
+      "playoffPct": 72.2,
+      "divisionPct": 1.0,
+      "cupPct": 2.9,
+      "impliedCupOdds": 3348,
+      "projPts": 97.3
     },
     {
       "team": "VGK",
@@ -545,11 +545,11 @@
       "xgd": 7.54,
       "gd": 12,
       "ptsPct": 59.6,
-      "playoffPct": 93.0,
-      "divisionPct": 50.4,
-      "cupPct": 4.2,
-      "impliedCupOdds": 2280,
-      "projPts": 96.5
+      "playoffPct": 93.8,
+      "divisionPct": 51.8,
+      "cupPct": 3.0,
+      "impliedCupOdds": 3233,
+      "projPts": 96.4
     },
     {
       "team": "WSH",
@@ -590,11 +590,11 @@
       "xgd": 7.6,
       "gd": 12,
       "ptsPct": 55.1,
-      "playoffPct": 22.8,
-      "divisionPct": 0.3,
-      "cupPct": 0.8,
-      "impliedCupOdds": 12400,
-      "projPts": 91.1
+      "playoffPct": 22.3,
+      "divisionPct": 0.2,
+      "cupPct": 1.5,
+      "impliedCupOdds": 6566,
+      "projPts": 90.8
     },
     {
       "team": "CBJ",
@@ -635,11 +635,11 @@
       "xgd": 4.26,
       "gd": 2,
       "ptsPct": 58.0,
-      "playoffPct": 42.8,
-      "divisionPct": 1.9,
-      "cupPct": 1.1,
-      "impliedCupOdds": 8990,
-      "projPts": 93.9
+      "playoffPct": 45.6,
+      "divisionPct": 1.5,
+      "cupPct": 2.2,
+      "impliedCupOdds": 4445,
+      "projPts": 94.2
     },
     {
       "team": "EDM",
@@ -680,11 +680,11 @@
       "xgd": 4.44,
       "gd": 4,
       "ptsPct": 55.2,
-      "playoffPct": 65.2,
-      "divisionPct": 11.0,
-      "cupPct": 1.5,
-      "impliedCupOdds": 6566,
-      "projPts": 90.6
+      "playoffPct": 64.7,
+      "divisionPct": 10.0,
+      "cupPct": 1.9,
+      "impliedCupOdds": 5163,
+      "projPts": 90.7
     },
     {
       "team": "UTA",
@@ -725,11 +725,11 @@
       "xgd": 18.22,
       "gd": 26,
       "ptsPct": 56.1,
-      "playoffPct": 86.2,
+      "playoffPct": 84.8,
       "divisionPct": 0,
       "cupPct": 4.7,
       "impliedCupOdds": 2027,
-      "projPts": 93.9
+      "projPts": 93.8
     },
     {
       "team": "OTT",
@@ -770,11 +770,11 @@
       "xgd": 20.25,
       "gd": 7,
       "ptsPct": 55.3,
-      "playoffPct": 20.4,
+      "playoffPct": 20.6,
       "divisionPct": 0,
-      "cupPct": 0.8,
-      "impliedCupOdds": 12400,
-      "projPts": 91.4
+      "cupPct": 1.4,
+      "impliedCupOdds": 7042,
+      "projPts": 91.6
     },
     {
       "team": "TOR",
@@ -815,10 +815,10 @@
       "xgd": -9.25,
       "gd": -6,
       "ptsPct": 55.3,
-      "playoffPct": 13.7,
+      "playoffPct": 13.9,
       "divisionPct": 0,
-      "cupPct": 0.3,
-      "impliedCupOdds": 33233,
+      "cupPct": 0.4,
+      "impliedCupOdds": 24900,
       "projPts": 89.9
     },
     {
@@ -905,11 +905,11 @@
       "xgd": -25.9,
       "gd": -3,
       "ptsPct": 56.2,
-      "playoffPct": 71.3,
-      "divisionPct": 15.2,
-      "cupPct": 0.9,
-      "impliedCupOdds": 11011,
-      "projPts": 91.6
+      "playoffPct": 70.5,
+      "divisionPct": 14.4,
+      "cupPct": 1.6,
+      "impliedCupOdds": 6150,
+      "projPts": 91.7
     },
     {
       "team": "FLA",
@@ -950,11 +950,11 @@
       "xgd": 6.39,
       "gd": -17,
       "ptsPct": 53.5,
-      "playoffPct": 5.4,
+      "playoffPct": 5.5,
       "divisionPct": 0,
-      "cupPct": 0,
-      "impliedCupOdds": 0,
-      "projPts": 87.8
+      "cupPct": 0.1,
+      "impliedCupOdds": 99900,
+      "projPts": 87.6
     },
     {
       "team": "PHI",
@@ -995,7 +995,7 @@
       "xgd": 0.6,
       "gd": -13,
       "ptsPct": 54.5,
-      "playoffPct": 13.0,
+      "playoffPct": 11.7,
       "divisionPct": 0,
       "cupPct": 0.2,
       "impliedCupOdds": 49900,
@@ -1040,11 +1040,11 @@
       "xgd": 8.93,
       "gd": -15,
       "ptsPct": 53.6,
-      "playoffPct": 45.5,
-      "divisionPct": 3.8,
+      "playoffPct": 46.9,
+      "divisionPct": 3.7,
       "cupPct": 0.6,
       "impliedCupOdds": 16566,
-      "projPts": 89.1
+      "projPts": 89.0
     },
     {
       "team": "NSH",
@@ -1085,11 +1085,11 @@
       "xgd": 12.55,
       "gd": -29,
       "ptsPct": 51.8,
-      "playoffPct": 17.3,
+      "playoffPct": 18.2,
       "divisionPct": 0,
       "cupPct": 0,
       "impliedCupOdds": 0,
-      "projPts": 85.0
+      "projPts": 85.1
     },
     {
       "team": "NJ",
@@ -1130,10 +1130,10 @@
       "xgd": -4.86,
       "gd": -29,
       "ptsPct": 50.9,
-      "playoffPct": 2.6,
+      "playoffPct": 1.7,
       "divisionPct": 0,
-      "cupPct": 0.1,
-      "impliedCupOdds": 99900,
+      "cupPct": 0,
+      "impliedCupOdds": 0,
       "projPts": 84.7
     },
     {
@@ -1175,11 +1175,11 @@
       "xgd": -25.53,
       "gd": -22,
       "ptsPct": 52.7,
-      "playoffPct": 41.7,
-      "divisionPct": 3.1,
-      "cupPct": 0.3,
-      "impliedCupOdds": 33233,
-      "projPts": 88.1
+      "playoffPct": 41.0,
+      "divisionPct": 3.9,
+      "cupPct": 0.2,
+      "impliedCupOdds": 49900,
+      "projPts": 88.0
     },
     {
       "team": "CHI",
@@ -1220,11 +1220,11 @@
       "xgd": -28.01,
       "gd": -31,
       "ptsPct": 46.5,
-      "playoffPct": 0.7,
+      "playoffPct": 1.0,
       "divisionPct": 0,
       "cupPct": 0,
       "impliedCupOdds": 0,
-      "projPts": 78.3
+      "projPts": 78.0
     },
     {
       "team": "CGY",
@@ -1265,11 +1265,11 @@
       "xgd": -1.88,
       "gd": -27,
       "ptsPct": 46.4,
-      "playoffPct": 1.0,
-      "divisionPct": 0.1,
-      "cupPct": 0.1,
-      "impliedCupOdds": 99900,
-      "projPts": 78.2
+      "playoffPct": 1.5,
+      "divisionPct": 0,
+      "cupPct": 0,
+      "impliedCupOdds": 0,
+      "projPts": 78.5
     },
     {
       "team": "WPG",
@@ -1310,11 +1310,11 @@
       "xgd": -12.47,
       "gd": -15,
       "ptsPct": 46.4,
-      "playoffPct": 2.5,
+      "playoffPct": 2.8,
       "divisionPct": 0,
-      "cupPct": 0,
-      "impliedCupOdds": 0,
-      "projPts": 80.4
+      "cupPct": 0.2,
+      "impliedCupOdds": 49900,
+      "projPts": 80.0
     },
     {
       "team": "NYR",
@@ -1400,11 +1400,11 @@
       "xgd": -7.39,
       "gd": -56,
       "ptsPct": 43.0,
-      "playoffPct": 0.1,
+      "playoffPct": 0,
       "divisionPct": 0,
       "cupPct": 0,
       "impliedCupOdds": 0,
-      "projPts": 72.8
+      "projPts": 72.9
     },
     {
       "team": "VAN",
@@ -1449,7 +1449,7 @@
       "divisionPct": 0,
       "cupPct": 0,
       "impliedCupOdds": 0,
-      "projPts": 65.9
+      "projPts": 66.0
     }
   ]
 }
