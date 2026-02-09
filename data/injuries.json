@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-02-08T11:18:43.559047Z",
+    "fetchedAt": "2026-02-09T11:41:24.010526Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 108
+    "totalInjuries": 105
   },
   "teams": {
     "ANA": {
@@ -251,14 +251,6 @@
     "COL": {
       "injuries": [
         {
-          "player": "Gabriel Landeskog",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper-Body",
-          "note": "Landeskog did not play in Wednesday's (Feb. 4) matchup with the Sharks but is still expected to play in the Olympics.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Martin Necas",
           "position": "",
           "status": "Out",
@@ -275,8 +267,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "DAL": {
       "injuries": [
@@ -379,14 +371,6 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Brad Marchand",
-          "position": "",
-          "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Marchand did not play in Thursday's (Feb. 5) versus Tampa Bay.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Tomas Nosek",
           "position": "",
           "status": "IR",
@@ -403,8 +387,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 9.6,
-      "injuredCount": 9
+      "totalWarLost": 8.7,
+      "injuredCount": 8
     },
     "LA": {
       "injuries": [
@@ -507,14 +491,6 @@
     "NJ": {
       "injuries": [
         {
-          "player": "Jack Hughes",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-Body",
-          "note": "Hughes did not play in Thursday's (Feb. 5) game against the Islanders.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Luke Hughes",
           "position": "",
           "status": "LTIR",
@@ -547,8 +523,8 @@
           "estimatedWar": 1.5
         }
       ],
-      "totalWarLost": 6.0,
-      "injuredCount": 5
+      "totalWarLost": 5.1,
+      "injuredCount": 4
     },
     "NSH": {
       "injuries": [],
