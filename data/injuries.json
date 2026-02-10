@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-02-09T11:41:24.010526Z",
+    "fetchedAt": "2026-02-10T11:45:13.816008Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 105
+    "totalInjuries": 104
   },
   "teams": {
     "ANA": {
@@ -251,14 +251,6 @@
     "COL": {
       "injuries": [
         {
-          "player": "Martin Necas",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "Necas did not play in Wednesday's (Feb. 4) game versus the Sharks.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Logan O'Connor",
           "position": "",
           "status": "Out",
@@ -267,8 +259,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "DAL": {
       "injuries": [
