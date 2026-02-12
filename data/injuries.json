@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-02-11T11:39:58.375525Z",
+    "fetchedAt": "2026-02-12T11:35:20.129527Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 104
+    "totalInjuries": 101
   },
   "teams": {
     "ANA": {
@@ -39,14 +39,6 @@
     "BOS": {
       "injuries": [
         {
-          "player": "Elias Lindholm",
-          "position": "",
-          "status": "IR",
-          "injury": "Upper-body",
-          "note": "The Boston Bruins placed F Elias Lindholm on injured reserve on Monday (Feb. 2).",
-          "estimatedWar": 1.2
-        },
-        {
           "player": "Pavel Zacha",
           "position": "",
           "status": "Out",
@@ -55,8 +47,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.1,
-      "injuredCount": 2
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "BUF": {
       "injuries": [
@@ -443,7 +435,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "The Wild said on Wednesday (Feb. 4) that Wallstedt is not with the team ahead of Wednesday's (Feb. 4) road matchup versus the Predators, per Joe Smith of The Athletic. He needs extra time to get back to full recovery.",
+          "note": "Wallstedt isn't available for Team Sweden's game against Italy on Wednesday (Feb. 11) at the 2026 Winter Olympics, per Elliotte Friedman of Sportsnet.",
           "estimatedWar": 0.9
         }
       ],
@@ -499,14 +491,6 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Marc McLaughlin",
-          "position": "",
-          "status": "IR",
-          "injury": "Undisclosed",
-          "note": "The New Jersey Devils placed F Marc McLaughlin on injured reserve on Monday (Oct. 6).",
-          "estimatedWar": 1.2
-        },
-        {
           "player": "Stefan Noesen",
           "position": "",
           "status": "LTIR",
@@ -515,8 +499,8 @@
           "estimatedWar": 1.5
         }
       ],
-      "totalWarLost": 5.1,
-      "injuredCount": 4
+      "totalWarLost": 3.9,
+      "injuredCount": 3
     },
     "NSH": {
       "injuries": [],
@@ -686,14 +670,6 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Rickard Rakell",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-Body",
-          "note": "Rakell did not play in Thursday's (Feb. 5) clash versus the Sabres.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Jack St. Ivany",
           "position": "",
           "status": "IR",
@@ -702,8 +678,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 6.3,
-      "injuredCount": 6
+      "totalWarLost": 5.4,
+      "injuredCount": 5
     },
     "SEA": {
       "injuries": [
