@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-02-12T11:35:20.129527Z",
+    "fetchedAt": "2026-02-13T11:26:24.726019Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
     "totalInjuries": 101
@@ -459,18 +459,10 @@
           "injury": "Ankle",
           "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
           "estimatedWar": 1.2
-        },
-        {
-          "player": "Alexandre Texier",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-body",
-          "note": "Texier did not play in Wednesday's (Feb. 4) game versus the Jets.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.0,
-      "injuredCount": 3
+      "totalWarLost": 2.1,
+      "injuredCount": 2
     },
     "NJ": {
       "injuries": [
@@ -955,6 +947,14 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Josh Morrissey",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Morrissey did not return to Thursday's (Feb. 12) clash versus Czechia at the 2026 Winter Olympics, per Michael Russo of The Athletic.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Neal Pionk",
           "position": "",
           "status": "Out",
@@ -963,8 +963,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 3.6,
+      "injuredCount": 4
     },
     "WSH": {
       "injuries": [
