@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated": "2026-02-14T11:18:06.016369",
+    "generated": "2026-02-15T11:18:08.230568",
     "season": 2026,
     "seasonDisplay": "2025-26",
     "modelVersion": "2.1 - Full Bracket Model",
-    "lastUpdate": "February 14, 2026 at 11:18 AM"
+    "lastUpdate": "February 15, 2026 at 11:18 AM"
   },
   "teams": [
     {
@@ -21,11 +21,11 @@
       "compositeStrength": 58.0,
       "strengthRank": 3,
       "playoffProbability": 96.4,
-      "conferenceProbability": 32.07,
-      "cupFinalProbability": 15.78,
-      "cupProbability": 16.58,
-      "cupProbLower": 15.98,
-      "cupProbUpper": 17.21,
+      "conferenceProbability": 31.13,
+      "cupFinalProbability": 15.69,
+      "cupProbability": 16.4,
+      "cupProbLower": 15.81,
+      "cupProbUpper": 17.02,
       "injuries": [
         {
           "player": "Pyotr Kochetkov",
@@ -60,11 +60,11 @@
       "compositeStrength": 54.6,
       "strengthRank": 6,
       "playoffProbability": 99.3,
-      "conferenceProbability": 29.34,
-      "cupFinalProbability": 14.37,
-      "cupProbability": 9.59,
-      "cupProbLower": 9.12,
-      "cupProbUpper": 10.09,
+      "conferenceProbability": 28.74,
+      "cupFinalProbability": 14.29,
+      "cupProbability": 9.4,
+      "cupProbLower": 8.93,
+      "cupProbUpper": 9.89,
       "injuries": [
         {
           "player": "Lian Bichsel",
@@ -99,11 +99,11 @@
       "compositeStrength": 62.6,
       "strengthRank": 1,
       "playoffProbability": 100.0,
-      "conferenceProbability": 31.95,
-      "cupFinalProbability": 15.77,
-      "cupProbability": 8.24,
-      "cupProbLower": 7.8,
-      "cupProbUpper": 8.71,
+      "conferenceProbability": 31.72,
+      "cupFinalProbability": 16.49,
+      "cupProbability": 8.36,
+      "cupProbLower": 7.92,
+      "cupProbUpper": 8.83,
       "injuries": [
         {
           "player": "Logan O'Connor",
@@ -130,11 +130,11 @@
       "compositeStrength": 60.3,
       "strengthRank": 2,
       "playoffProbability": 100.0,
-      "conferenceProbability": 30.45,
-      "cupFinalProbability": 14.77,
-      "cupProbability": 7.93,
-      "cupProbLower": 7.49,
-      "cupProbUpper": 8.38,
+      "conferenceProbability": 31.86,
+      "cupFinalProbability": 16.1,
+      "cupProbability": 8.29,
+      "cupProbLower": 7.85,
+      "cupProbUpper": 8.75,
       "injuries": [
         {
           "player": "Anthony Cirelli",
@@ -181,45 +181,6 @@
     },
     {
       "rank": 5,
-      "code": "MTL",
-      "name": "Montreal Canadiens",
-      "city": "Montreal",
-      "conference": "East",
-      "division": "Atlantic",
-      "tier": "Bubble",
-      "tierColor": "#f59e0b",
-      "tierBg": "rgba(245, 158, 11, 0.15)",
-      "tierIcon": "\u26a1",
-      "compositeStrength": 52.1,
-      "strengthRank": 13,
-      "playoffProbability": 73.3,
-      "conferenceProbability": 25.32,
-      "cupFinalProbability": 13.1,
-      "cupProbability": 6.21,
-      "cupProbLower": 5.83,
-      "cupProbUpper": 6.62,
-      "injuries": [
-        {
-          "player": "Patrik Laine",
-          "position": "",
-          "status": "Out",
-          "injury": "Abdomen",
-          "note": "The Montreal Canadiens said on Saturday (Jan 10) that Laine could return to the lineup as early as late January.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Alex Newhook",
-          "position": "",
-          "status": "IR",
-          "injury": "Ankle",
-          "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
-          "estimatedWar": 1.2
-        }
-      ],
-      "totalWarLost": 2.1
-    },
-    {
-      "rank": 6,
       "code": "PIT",
       "name": "Pittsburgh Penguins",
       "city": "Pittsburgh",
@@ -232,11 +193,11 @@
       "compositeStrength": 55.1,
       "strengthRank": 4,
       "playoffProbability": 96.5,
-      "conferenceProbability": 29.0,
-      "cupFinalProbability": 14.34,
-      "cupProbability": 6.2,
-      "cupProbLower": 5.82,
-      "cupProbUpper": 6.61,
+      "conferenceProbability": 29.37,
+      "cupFinalProbability": 15.09,
+      "cupProbability": 6.44,
+      "cupProbLower": 6.05,
+      "cupProbUpper": 6.85,
       "injuries": [
         {
           "player": "Noel Acciari",
@@ -282,6 +243,45 @@
       "totalWarLost": 5.4
     },
     {
+      "rank": 6,
+      "code": "MTL",
+      "name": "Montreal Canadiens",
+      "city": "Montreal",
+      "conference": "East",
+      "division": "Atlantic",
+      "tier": "Bubble",
+      "tierColor": "#f59e0b",
+      "tierBg": "rgba(245, 158, 11, 0.15)",
+      "tierIcon": "\u26a1",
+      "compositeStrength": 52.1,
+      "strengthRank": 13,
+      "playoffProbability": 73.3,
+      "conferenceProbability": 24.5,
+      "cupFinalProbability": 11.81,
+      "cupProbability": 6.11,
+      "cupProbLower": 5.73,
+      "cupProbUpper": 6.52,
+      "injuries": [
+        {
+          "player": "Patrik Laine",
+          "position": "",
+          "status": "Out",
+          "injury": "Abdomen",
+          "note": "The Montreal Canadiens said on Saturday (Jan 10) that Laine could return to the lineup as early as late January.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Alex Newhook",
+          "position": "",
+          "status": "IR",
+          "injury": "Ankle",
+          "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 2.1
+    },
+    {
       "rank": 7,
       "code": "UTA",
       "name": "Utah Hockey Club",
@@ -295,11 +295,11 @@
       "compositeStrength": 54.8,
       "strengthRank": 5,
       "playoffProbability": 96.1,
-      "conferenceProbability": 27.0,
-      "cupFinalProbability": 13.76,
-      "cupProbability": 6.18,
-      "cupProbLower": 5.8,
-      "cupProbUpper": 6.59,
+      "conferenceProbability": 26.15,
+      "cupFinalProbability": 13.22,
+      "cupProbability": 6.05,
+      "cupProbLower": 5.67,
+      "cupProbUpper": 6.46,
       "injuries": [
         {
           "player": "Logan Cooley",
@@ -334,11 +334,11 @@
       "compositeStrength": 53.7,
       "strengthRank": 7,
       "playoffProbability": 90.3,
-      "conferenceProbability": 24.42,
-      "cupFinalProbability": 12.3,
-      "cupProbability": 5.59,
-      "cupProbLower": 5.23,
-      "cupProbUpper": 5.99,
+      "conferenceProbability": 24.26,
+      "cupFinalProbability": 12.14,
+      "cupProbability": 5.5,
+      "cupProbLower": 5.14,
+      "cupProbUpper": 5.89,
       "injuries": [],
       "totalWarLost": 0.0
     },
@@ -356,11 +356,11 @@
       "compositeStrength": 53.1,
       "strengthRank": 10,
       "playoffProbability": 92.9,
-      "conferenceProbability": 23.23,
-      "cupFinalProbability": 11.63,
-      "cupProbability": 4.39,
-      "cupProbLower": 4.07,
-      "cupProbUpper": 4.74,
+      "conferenceProbability": 23.39,
+      "cupFinalProbability": 11.69,
+      "cupProbability": 4.58,
+      "cupProbLower": 4.25,
+      "cupProbUpper": 4.94,
       "injuries": [
         {
           "player": "Zach Benson",
@@ -443,11 +443,11 @@
       "compositeStrength": 53.7,
       "strengthRank": 8,
       "playoffProbability": 97.4,
-      "conferenceProbability": 19.63,
-      "cupFinalProbability": 9.64,
-      "cupProbability": 4.34,
-      "cupProbLower": 4.02,
-      "cupProbUpper": 4.69,
+      "conferenceProbability": 20.25,
+      "cupFinalProbability": 10.25,
+      "cupProbability": 4.35,
+      "cupProbLower": 4.03,
+      "cupProbUpper": 4.7,
       "injuries": [
         {
           "player": "Jonas Brodin",
@@ -490,11 +490,11 @@
       "compositeStrength": 52.0,
       "strengthRank": 14,
       "playoffProbability": 75.5,
-      "conferenceProbability": 18.45,
+      "conferenceProbability": 17.97,
       "cupFinalProbability": 9.24,
-      "cupProbability": 3.86,
-      "cupProbLower": 3.56,
-      "cupProbUpper": 4.2,
+      "cupProbability": 3.88,
+      "cupProbLower": 3.57,
+      "cupProbUpper": 4.21,
       "injuries": [
         {
           "player": "Pavel Zacha",
@@ -521,11 +521,11 @@
       "compositeStrength": 52.3,
       "strengthRank": 12,
       "playoffProbability": 65.4,
-      "conferenceProbability": 17.99,
-      "cupFinalProbability": 8.95,
-      "cupProbability": 3.23,
-      "cupProbLower": 2.96,
-      "cupProbUpper": 3.54,
+      "conferenceProbability": 18.25,
+      "cupFinalProbability": 8.73,
+      "cupProbability": 3.05,
+      "cupProbLower": 2.78,
+      "cupProbUpper": 3.35,
       "injuries": [
         {
           "player": "Adam Henrique",
@@ -552,11 +552,11 @@
       "compositeStrength": 49.7,
       "strengthRank": 20,
       "playoffProbability": 55.5,
-      "conferenceProbability": 14.75,
-      "cupFinalProbability": 7.42,
-      "cupProbability": 2.17,
-      "cupProbLower": 1.94,
-      "cupProbUpper": 2.42,
+      "conferenceProbability": 15.71,
+      "cupFinalProbability": 7.9,
+      "cupProbability": 2.21,
+      "cupProbLower": 1.98,
+      "cupProbUpper": 2.46,
       "injuries": [
         {
           "player": "Pierre Engvall",
@@ -607,10 +607,10 @@
       "compositeStrength": 53.3,
       "strengthRank": 9,
       "playoffProbability": 74.5,
-      "conferenceProbability": 0.15,
-      "cupFinalProbability": 0.03,
-      "cupProbability": 1.97,
-      "cupProbLower": 1.76,
+      "conferenceProbability": 0.12,
+      "cupFinalProbability": 0.05,
+      "cupProbability": 1.98,
+      "cupProbLower": 1.77,
       "cupProbUpper": 2.22,
       "injuries": [
         {
@@ -646,11 +646,11 @@
       "compositeStrength": 50.1,
       "strengthRank": 17,
       "playoffProbability": 47.8,
-      "conferenceProbability": 19.72,
-      "cupFinalProbability": 10.17,
-      "cupProbability": 1.93,
-      "cupProbLower": 1.72,
-      "cupProbUpper": 2.17,
+      "conferenceProbability": 19.64,
+      "cupFinalProbability": 9.45,
+      "cupProbability": 1.81,
+      "cupProbLower": 1.61,
+      "cupProbUpper": 2.05,
       "injuries": [
         {
           "player": "Simon Edvinsson",
@@ -677,10 +677,10 @@
       "compositeStrength": 52.6,
       "strengthRank": 11,
       "playoffProbability": 84.6,
-      "conferenceProbability": 0.19,
-      "cupFinalProbability": 0.11,
+      "conferenceProbability": 0.14,
+      "cupFinalProbability": 0.08,
       "cupProbability": 1.77,
-      "cupProbLower": 1.57,
+      "cupProbLower": 1.56,
       "cupProbUpper": 2.0,
       "injuries": [
         {
@@ -720,45 +720,6 @@
     },
     {
       "rank": 17,
-      "code": "CBJ",
-      "name": "Columbus Blue Jackets",
-      "city": "Columbus",
-      "conference": "East",
-      "division": "Metropolitan",
-      "tier": "Bubble",
-      "tierColor": "#f59e0b",
-      "tierBg": "rgba(245, 158, 11, 0.15)",
-      "tierIcon": "\u26a1",
-      "compositeStrength": 51.5,
-      "strengthRank": 15,
-      "playoffProbability": 61.2,
-      "conferenceProbability": 6.51,
-      "cupFinalProbability": 3.32,
-      "cupProbability": 1.52,
-      "cupProbLower": 1.34,
-      "cupProbUpper": 1.74,
-      "injuries": [
-        {
-          "player": "Kirill Marchenko",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Marchenko did not play in Wednesday (Feb. 4) versus the Blackhawks.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Brendan Smith",
-          "position": "",
-          "status": "Out",
-          "injury": "Leg",
-          "note": "The Columbus Blue Jackets said on Thursday (Jan. 8) that Smith underwent successful surgery to repair a torn meniscus in his knee and is expected to make a full recovery in 3-4 months.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 1.8
-    },
-    {
-      "rank": 18,
       "code": "SEA",
       "name": "Seattle Kraken",
       "city": "Seattle",
@@ -771,11 +732,11 @@
       "compositeStrength": 47.3,
       "strengthRank": 25,
       "playoffProbability": 28.5,
-      "conferenceProbability": 17.48,
-      "cupFinalProbability": 8.54,
-      "cupProbability": 1.45,
-      "cupProbLower": 1.27,
-      "cupProbUpper": 1.67,
+      "conferenceProbability": 18.15,
+      "cupFinalProbability": 9.04,
+      "cupProbability": 1.54,
+      "cupProbLower": 1.35,
+      "cupProbUpper": 1.76,
       "injuries": [
         {
           "player": "Berkly Catton",
@@ -813,6 +774,45 @@
       "totalWarLost": 4.5
     },
     {
+      "rank": 18,
+      "code": "CBJ",
+      "name": "Columbus Blue Jackets",
+      "city": "Columbus",
+      "conference": "East",
+      "division": "Metropolitan",
+      "tier": "Bubble",
+      "tierColor": "#f59e0b",
+      "tierBg": "rgba(245, 158, 11, 0.15)",
+      "tierIcon": "\u26a1",
+      "compositeStrength": 51.5,
+      "strengthRank": 15,
+      "playoffProbability": 61.2,
+      "conferenceProbability": 6.0,
+      "cupFinalProbability": 2.82,
+      "cupProbability": 1.5,
+      "cupProbLower": 1.32,
+      "cupProbUpper": 1.72,
+      "injuries": [
+        {
+          "player": "Kirill Marchenko",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Marchenko did not play in Wednesday (Feb. 4) versus the Blackhawks.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Brendan Smith",
+          "position": "",
+          "status": "Out",
+          "injury": "Leg",
+          "note": "The Columbus Blue Jackets said on Thursday (Jan. 8) that Smith underwent successful surgery to repair a torn meniscus in his knee and is expected to make a full recovery in 3-4 months.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 1.8
+    },
+    {
       "rank": 19,
       "code": "TOR",
       "name": "Toronto Maple Leafs",
@@ -826,11 +826,11 @@
       "compositeStrength": 49.8,
       "strengthRank": 18,
       "playoffProbability": 47.3,
-      "conferenceProbability": 0.09,
-      "cupFinalProbability": 0.05,
-      "cupProbability": 1.28,
-      "cupProbLower": 1.11,
-      "cupProbUpper": 1.48,
+      "conferenceProbability": 0.1,
+      "cupFinalProbability": 0.04,
+      "cupProbability": 1.27,
+      "cupProbLower": 1.1,
+      "cupProbUpper": 1.47,
       "injuries": [
         {
           "player": "Dakota Joshua",
@@ -873,11 +873,11 @@
       "compositeStrength": 50.5,
       "strengthRank": 16,
       "playoffProbability": 17.7,
-      "conferenceProbability": 21.72,
-      "cupFinalProbability": 11.35,
-      "cupProbability": 1.22,
-      "cupProbLower": 1.06,
-      "cupProbUpper": 1.42,
+      "conferenceProbability": 22.61,
+      "cupFinalProbability": 10.89,
+      "cupProbability": 1.18,
+      "cupProbLower": 1.01,
+      "cupProbUpper": 1.37,
       "injuries": [
         {
           "player": "Leo Carlsson",
@@ -922,7 +922,7 @@
       "playoffProbability": 33.7,
       "conferenceProbability": 0.07,
       "cupFinalProbability": 0.04,
-      "cupProbability": 0.71,
+      "cupProbability": 0.72,
       "cupProbLower": 0.59,
       "cupProbUpper": 0.87,
       "injuries": [
@@ -955,6 +955,45 @@
     },
     {
       "rank": 22,
+      "code": "SJ",
+      "name": "San Jose Sharks",
+      "city": "San Jose",
+      "conference": "West",
+      "division": "Pacific",
+      "tier": "Longshot",
+      "tierColor": "#ef4444",
+      "tierBg": "rgba(239, 68, 68, 0.15)",
+      "tierIcon": "\ud83c\udfb2",
+      "compositeStrength": 46.8,
+      "strengthRank": 26,
+      "playoffProbability": 8.8,
+      "conferenceProbability": 2.7,
+      "cupFinalProbability": 1.28,
+      "cupProbability": 0.47,
+      "cupProbLower": 0.38,
+      "cupProbUpper": 0.6,
+      "injuries": [
+        {
+          "player": "Ty Dellandrea",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The San Jose Sharks placed F Ty Dellandrea on injured reserve on Thursday (Jan. 15).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Ryan Reaves",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper Body",
+          "note": "The San Jose Sharks placed F Ryan Reaves on injured reserve on Tuesday (Feb. 3).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 2.4
+    },
+    {
+      "rank": 23,
       "code": "NYR",
       "name": "New York Rangers",
       "city": "New York",
@@ -1009,45 +1048,6 @@
       "totalWarLost": 4.8
     },
     {
-      "rank": 23,
-      "code": "SJ",
-      "name": "San Jose Sharks",
-      "city": "San Jose",
-      "conference": "West",
-      "division": "Pacific",
-      "tier": "Longshot",
-      "tierColor": "#ef4444",
-      "tierBg": "rgba(239, 68, 68, 0.15)",
-      "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 46.8,
-      "strengthRank": 26,
-      "playoffProbability": 8.8,
-      "conferenceProbability": 2.99,
-      "cupFinalProbability": 1.45,
-      "cupProbability": 0.46,
-      "cupProbLower": 0.37,
-      "cupProbUpper": 0.59,
-      "injuries": [
-        {
-          "player": "Ty Dellandrea",
-          "position": "",
-          "status": "IR",
-          "injury": "Lower Body",
-          "note": "The San Jose Sharks placed F Ty Dellandrea on injured reserve on Thursday (Jan. 15).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Ryan Reaves",
-          "position": "",
-          "status": "IR",
-          "injury": "Upper Body",
-          "note": "The San Jose Sharks placed F Ryan Reaves on injured reserve on Tuesday (Feb. 3).",
-          "estimatedWar": 1.2
-        }
-      ],
-      "totalWarLost": 2.4
-    },
-    {
       "rank": 24,
       "code": "LA",
       "name": "Los Angeles Kings",
@@ -1061,9 +1061,9 @@
       "compositeStrength": 48.7,
       "strengthRank": 23,
       "playoffProbability": 12.2,
-      "conferenceProbability": 6.57,
-      "cupFinalProbability": 3.37,
-      "cupProbability": 0.44,
+      "conferenceProbability": 6.4,
+      "cupFinalProbability": 3.36,
+      "cupProbability": 0.45,
       "cupProbLower": 0.35,
       "cupProbUpper": 0.57,
       "injuries": [
@@ -1074,6 +1074,14 @@
           "injury": "Upper-Body",
           "note": "The Los Angeles Kings placed D Mikey Anderson on injured reserve on Thursday (Feb. 5).",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Kevin Fiala",
+          "position": "",
+          "status": "Out",
+          "injury": "Leg",
+          "note": "Fiala suffered a leg injury during the Olympics and was taken to the hospital.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Andrei Kuzmenko",
@@ -1100,7 +1108,7 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.9
+      "totalWarLost": 4.8
     },
     {
       "rank": 25,
@@ -1230,7 +1238,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Morrissey did not return to Thursday's (Feb. 12) clash versus Czechia at the 2026 Winter Olympics, per Michael Russo of The Athletic.",
+          "note": "Morrissey is expected to miss Canada's game against Switzerland on Friday (Feb. 13) at the 2026 Winter Olympics.",
           "estimatedWar": 0.9
         },
         {
@@ -1305,11 +1313,11 @@
       "compositeStrength": 48.7,
       "strengthRank": 22,
       "playoffProbability": 5.1,
-      "conferenceProbability": 0.91,
-      "cupFinalProbability": 0.5,
-      "cupProbability": 0.3,
+      "conferenceProbability": 0.77,
+      "cupFinalProbability": 0.31,
+      "cupProbability": 0.29,
       "cupProbLower": 0.22,
-      "cupProbUpper": 0.41,
+      "cupProbUpper": 0.4,
       "injuries": [],
       "totalWarLost": 0.0
     },
@@ -1630,8 +1638,8 @@
     "Longshot": [
       "SEA",
       "PHI",
-      "NYR",
       "SJ",
+      "NYR",
       "LA",
       "WPG",
       "CHI",
@@ -1680,11 +1688,11 @@
         "compositeStrength": 60.3,
         "strengthRank": 2,
         "playoffProbability": 100.0,
-        "conferenceProbability": 30.45,
-        "cupFinalProbability": 14.77,
-        "cupProbability": 7.93,
-        "cupProbLower": 7.49,
-        "cupProbUpper": 8.38,
+        "conferenceProbability": 31.86,
+        "cupFinalProbability": 16.1,
+        "cupProbability": 8.29,
+        "cupProbLower": 7.85,
+        "cupProbUpper": 8.75,
         "injuries": [
           {
             "player": "Anthony Cirelli",
@@ -1730,7 +1738,7 @@
         "totalWarLost": 5.7
       },
       {
-        "rank": 6,
+        "rank": 5,
         "code": "PIT",
         "name": "Pittsburgh Penguins",
         "city": "Pittsburgh",
@@ -1743,11 +1751,11 @@
         "compositeStrength": 55.1,
         "strengthRank": 4,
         "playoffProbability": 96.5,
-        "conferenceProbability": 29.0,
-        "cupFinalProbability": 14.34,
-        "cupProbability": 6.2,
-        "cupProbLower": 5.82,
-        "cupProbUpper": 6.61,
+        "conferenceProbability": 29.37,
+        "cupFinalProbability": 15.09,
+        "cupProbability": 6.44,
+        "cupProbLower": 6.05,
+        "cupProbUpper": 6.85,
         "injuries": [
           {
             "player": "Noel Acciari",
@@ -1806,11 +1814,11 @@
         "compositeStrength": 58.0,
         "strengthRank": 3,
         "playoffProbability": 96.4,
-        "conferenceProbability": 32.07,
-        "cupFinalProbability": 15.78,
-        "cupProbability": 16.58,
-        "cupProbLower": 15.98,
-        "cupProbUpper": 17.21,
+        "conferenceProbability": 31.13,
+        "cupFinalProbability": 15.69,
+        "cupProbability": 16.4,
+        "cupProbLower": 15.81,
+        "cupProbUpper": 17.02,
         "injuries": [
           {
             "player": "Pyotr Kochetkov",
@@ -1845,11 +1853,11 @@
         "compositeStrength": 53.1,
         "strengthRank": 10,
         "playoffProbability": 92.9,
-        "conferenceProbability": 23.23,
-        "cupFinalProbability": 11.63,
-        "cupProbability": 4.39,
-        "cupProbLower": 4.07,
-        "cupProbUpper": 4.74,
+        "conferenceProbability": 23.39,
+        "cupFinalProbability": 11.69,
+        "cupProbability": 4.58,
+        "cupProbLower": 4.25,
+        "cupProbUpper": 4.94,
         "injuries": [
           {
             "player": "Zach Benson",
@@ -1932,10 +1940,10 @@
         "compositeStrength": 52.6,
         "strengthRank": 11,
         "playoffProbability": 84.6,
-        "conferenceProbability": 0.19,
-        "cupFinalProbability": 0.11,
+        "conferenceProbability": 0.14,
+        "cupFinalProbability": 0.08,
         "cupProbability": 1.77,
-        "cupProbLower": 1.57,
+        "cupProbLower": 1.56,
         "cupProbUpper": 2.0,
         "injuries": [
           {
@@ -1987,11 +1995,11 @@
         "compositeStrength": 52.0,
         "strengthRank": 14,
         "playoffProbability": 75.5,
-        "conferenceProbability": 18.45,
+        "conferenceProbability": 17.97,
         "cupFinalProbability": 9.24,
-        "cupProbability": 3.86,
-        "cupProbLower": 3.56,
-        "cupProbUpper": 4.2,
+        "cupProbability": 3.88,
+        "cupProbLower": 3.57,
+        "cupProbUpper": 4.21,
         "injuries": [
           {
             "player": "Pavel Zacha",
@@ -2018,10 +2026,10 @@
         "compositeStrength": 53.3,
         "strengthRank": 9,
         "playoffProbability": 74.5,
-        "conferenceProbability": 0.15,
-        "cupFinalProbability": 0.03,
-        "cupProbability": 1.97,
-        "cupProbLower": 1.76,
+        "conferenceProbability": 0.12,
+        "cupFinalProbability": 0.05,
+        "cupProbability": 1.98,
+        "cupProbLower": 1.77,
         "cupProbUpper": 2.22,
         "injuries": [
           {
@@ -2044,7 +2052,7 @@
         "totalWarLost": 2.1
       },
       {
-        "rank": 5,
+        "rank": 6,
         "code": "MTL",
         "name": "Montreal Canadiens",
         "city": "Montreal",
@@ -2057,11 +2065,11 @@
         "compositeStrength": 52.1,
         "strengthRank": 13,
         "playoffProbability": 73.3,
-        "conferenceProbability": 25.32,
-        "cupFinalProbability": 13.1,
-        "cupProbability": 6.21,
-        "cupProbLower": 5.83,
-        "cupProbUpper": 6.62,
+        "conferenceProbability": 24.5,
+        "cupFinalProbability": 11.81,
+        "cupProbability": 6.11,
+        "cupProbLower": 5.73,
+        "cupProbUpper": 6.52,
         "injuries": [
           {
             "player": "Patrik Laine",
@@ -2098,11 +2106,11 @@
         "compositeStrength": 62.6,
         "strengthRank": 1,
         "playoffProbability": 100.0,
-        "conferenceProbability": 31.95,
-        "cupFinalProbability": 15.77,
-        "cupProbability": 8.24,
-        "cupProbLower": 7.8,
-        "cupProbUpper": 8.71,
+        "conferenceProbability": 31.72,
+        "cupFinalProbability": 16.49,
+        "cupProbability": 8.36,
+        "cupProbLower": 7.92,
+        "cupProbUpper": 8.83,
         "injuries": [
           {
             "player": "Logan O'Connor",
@@ -2129,11 +2137,11 @@
         "compositeStrength": 54.6,
         "strengthRank": 6,
         "playoffProbability": 99.3,
-        "conferenceProbability": 29.34,
-        "cupFinalProbability": 14.37,
-        "cupProbability": 9.59,
-        "cupProbLower": 9.12,
-        "cupProbUpper": 10.09,
+        "conferenceProbability": 28.74,
+        "cupFinalProbability": 14.29,
+        "cupProbability": 9.4,
+        "cupProbLower": 8.93,
+        "cupProbUpper": 9.89,
         "injuries": [
           {
             "player": "Lian Bichsel",
@@ -2168,11 +2176,11 @@
         "compositeStrength": 53.7,
         "strengthRank": 8,
         "playoffProbability": 97.4,
-        "conferenceProbability": 19.63,
-        "cupFinalProbability": 9.64,
-        "cupProbability": 4.34,
-        "cupProbLower": 4.02,
-        "cupProbUpper": 4.69,
+        "conferenceProbability": 20.25,
+        "cupFinalProbability": 10.25,
+        "cupProbability": 4.35,
+        "cupProbLower": 4.03,
+        "cupProbUpper": 4.7,
         "injuries": [
           {
             "player": "Jonas Brodin",
@@ -2215,11 +2223,11 @@
         "compositeStrength": 54.8,
         "strengthRank": 5,
         "playoffProbability": 96.1,
-        "conferenceProbability": 27.0,
-        "cupFinalProbability": 13.76,
-        "cupProbability": 6.18,
-        "cupProbLower": 5.8,
-        "cupProbUpper": 6.59,
+        "conferenceProbability": 26.15,
+        "cupFinalProbability": 13.22,
+        "cupProbability": 6.05,
+        "cupProbLower": 5.67,
+        "cupProbUpper": 6.46,
         "injuries": [
           {
             "player": "Logan Cooley",
@@ -2254,11 +2262,11 @@
         "compositeStrength": 53.7,
         "strengthRank": 7,
         "playoffProbability": 90.3,
-        "conferenceProbability": 24.42,
-        "cupFinalProbability": 12.3,
-        "cupProbability": 5.59,
-        "cupProbLower": 5.23,
-        "cupProbUpper": 5.99,
+        "conferenceProbability": 24.26,
+        "cupFinalProbability": 12.14,
+        "cupProbability": 5.5,
+        "cupProbLower": 5.14,
+        "cupProbUpper": 5.89,
         "injuries": [],
         "totalWarLost": 0.0
       },
@@ -2276,11 +2284,11 @@
         "compositeStrength": 52.3,
         "strengthRank": 12,
         "playoffProbability": 65.4,
-        "conferenceProbability": 17.99,
-        "cupFinalProbability": 8.95,
-        "cupProbability": 3.23,
-        "cupProbLower": 2.96,
-        "cupProbUpper": 3.54,
+        "conferenceProbability": 18.25,
+        "cupFinalProbability": 8.73,
+        "cupProbability": 3.05,
+        "cupProbLower": 2.78,
+        "cupProbUpper": 3.35,
         "injuries": [
           {
             "player": "Adam Henrique",
@@ -2294,7 +2302,7 @@
         "totalWarLost": 1.5
       },
       {
-        "rank": 18,
+        "rank": 17,
         "code": "SEA",
         "name": "Seattle Kraken",
         "city": "Seattle",
@@ -2307,11 +2315,11 @@
         "compositeStrength": 47.3,
         "strengthRank": 25,
         "playoffProbability": 28.5,
-        "conferenceProbability": 17.48,
-        "cupFinalProbability": 8.54,
-        "cupProbability": 1.45,
-        "cupProbLower": 1.27,
-        "cupProbUpper": 1.67,
+        "conferenceProbability": 18.15,
+        "cupFinalProbability": 9.04,
+        "cupProbability": 1.54,
+        "cupProbLower": 1.35,
+        "cupProbUpper": 1.76,
         "injuries": [
           {
             "player": "Berkly Catton",
@@ -2362,11 +2370,11 @@
         "compositeStrength": 50.5,
         "strengthRank": 16,
         "playoffProbability": 17.7,
-        "conferenceProbability": 21.72,
-        "cupFinalProbability": 11.35,
-        "cupProbability": 1.22,
-        "cupProbLower": 1.06,
-        "cupProbUpper": 1.42,
+        "conferenceProbability": 22.61,
+        "cupFinalProbability": 10.89,
+        "cupProbability": 1.18,
+        "cupProbLower": 1.01,
+        "cupProbUpper": 1.37,
         "injuries": [
           {
             "player": "Leo Carlsson",
@@ -2412,11 +2420,11 @@
       "compositeStrength": 58.0,
       "strengthRank": 3,
       "playoffProbability": 96.4,
-      "conferenceProbability": 32.07,
-      "cupFinalProbability": 15.78,
-      "cupProbability": 16.58,
-      "cupProbLower": 15.98,
-      "cupProbUpper": 17.21,
+      "conferenceProbability": 31.13,
+      "cupFinalProbability": 15.69,
+      "cupProbability": 16.4,
+      "cupProbLower": 15.81,
+      "cupProbUpper": 17.02,
       "injuries": [
         {
           "player": "Pyotr Kochetkov",
@@ -2451,11 +2459,11 @@
       "compositeStrength": 54.6,
       "strengthRank": 6,
       "playoffProbability": 99.3,
-      "conferenceProbability": 29.34,
-      "cupFinalProbability": 14.37,
-      "cupProbability": 9.59,
-      "cupProbLower": 9.12,
-      "cupProbUpper": 10.09,
+      "conferenceProbability": 28.74,
+      "cupFinalProbability": 14.29,
+      "cupProbability": 9.4,
+      "cupProbLower": 8.93,
+      "cupProbUpper": 9.89,
       "injuries": [
         {
           "player": "Lian Bichsel",
@@ -2490,11 +2498,11 @@
       "compositeStrength": 62.6,
       "strengthRank": 1,
       "playoffProbability": 100.0,
-      "conferenceProbability": 31.95,
-      "cupFinalProbability": 15.77,
-      "cupProbability": 8.24,
-      "cupProbLower": 7.8,
-      "cupProbUpper": 8.71,
+      "conferenceProbability": 31.72,
+      "cupFinalProbability": 16.49,
+      "cupProbability": 8.36,
+      "cupProbLower": 7.92,
+      "cupProbUpper": 8.83,
       "injuries": [
         {
           "player": "Logan O'Connor",
@@ -2521,11 +2529,11 @@
       "compositeStrength": 60.3,
       "strengthRank": 2,
       "playoffProbability": 100.0,
-      "conferenceProbability": 30.45,
-      "cupFinalProbability": 14.77,
-      "cupProbability": 7.93,
-      "cupProbLower": 7.49,
-      "cupProbUpper": 8.38,
+      "conferenceProbability": 31.86,
+      "cupFinalProbability": 16.1,
+      "cupProbability": 8.29,
+      "cupProbLower": 7.85,
+      "cupProbUpper": 8.75,
       "injuries": [
         {
           "player": "Anthony Cirelli",
@@ -2572,45 +2580,6 @@
     },
     {
       "rank": 5,
-      "code": "MTL",
-      "name": "Montreal Canadiens",
-      "city": "Montreal",
-      "conference": "East",
-      "division": "Atlantic",
-      "tier": "Bubble",
-      "tierColor": "#f59e0b",
-      "tierBg": "rgba(245, 158, 11, 0.15)",
-      "tierIcon": "\u26a1",
-      "compositeStrength": 52.1,
-      "strengthRank": 13,
-      "playoffProbability": 73.3,
-      "conferenceProbability": 25.32,
-      "cupFinalProbability": 13.1,
-      "cupProbability": 6.21,
-      "cupProbLower": 5.83,
-      "cupProbUpper": 6.62,
-      "injuries": [
-        {
-          "player": "Patrik Laine",
-          "position": "",
-          "status": "Out",
-          "injury": "Abdomen",
-          "note": "The Montreal Canadiens said on Saturday (Jan 10) that Laine could return to the lineup as early as late January.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Alex Newhook",
-          "position": "",
-          "status": "IR",
-          "injury": "Ankle",
-          "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
-          "estimatedWar": 1.2
-        }
-      ],
-      "totalWarLost": 2.1
-    },
-    {
-      "rank": 6,
       "code": "PIT",
       "name": "Pittsburgh Penguins",
       "city": "Pittsburgh",
@@ -2623,11 +2592,11 @@
       "compositeStrength": 55.1,
       "strengthRank": 4,
       "playoffProbability": 96.5,
-      "conferenceProbability": 29.0,
-      "cupFinalProbability": 14.34,
-      "cupProbability": 6.2,
-      "cupProbLower": 5.82,
-      "cupProbUpper": 6.61,
+      "conferenceProbability": 29.37,
+      "cupFinalProbability": 15.09,
+      "cupProbability": 6.44,
+      "cupProbLower": 6.05,
+      "cupProbUpper": 6.85,
       "injuries": [
         {
           "player": "Noel Acciari",
@@ -2673,6 +2642,45 @@
       "totalWarLost": 5.4
     },
     {
+      "rank": 6,
+      "code": "MTL",
+      "name": "Montreal Canadiens",
+      "city": "Montreal",
+      "conference": "East",
+      "division": "Atlantic",
+      "tier": "Bubble",
+      "tierColor": "#f59e0b",
+      "tierBg": "rgba(245, 158, 11, 0.15)",
+      "tierIcon": "\u26a1",
+      "compositeStrength": 52.1,
+      "strengthRank": 13,
+      "playoffProbability": 73.3,
+      "conferenceProbability": 24.5,
+      "cupFinalProbability": 11.81,
+      "cupProbability": 6.11,
+      "cupProbLower": 5.73,
+      "cupProbUpper": 6.52,
+      "injuries": [
+        {
+          "player": "Patrik Laine",
+          "position": "",
+          "status": "Out",
+          "injury": "Abdomen",
+          "note": "The Montreal Canadiens said on Saturday (Jan 10) that Laine could return to the lineup as early as late January.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Alex Newhook",
+          "position": "",
+          "status": "IR",
+          "injury": "Ankle",
+          "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 2.1
+    },
+    {
       "rank": 7,
       "code": "UTA",
       "name": "Utah Hockey Club",
@@ -2686,11 +2694,11 @@
       "compositeStrength": 54.8,
       "strengthRank": 5,
       "playoffProbability": 96.1,
-      "conferenceProbability": 27.0,
-      "cupFinalProbability": 13.76,
-      "cupProbability": 6.18,
-      "cupProbLower": 5.8,
-      "cupProbUpper": 6.59,
+      "conferenceProbability": 26.15,
+      "cupFinalProbability": 13.22,
+      "cupProbability": 6.05,
+      "cupProbLower": 5.67,
+      "cupProbUpper": 6.46,
       "injuries": [
         {
           "player": "Logan Cooley",
@@ -2725,11 +2733,11 @@
       "compositeStrength": 53.7,
       "strengthRank": 7,
       "playoffProbability": 90.3,
-      "conferenceProbability": 24.42,
-      "cupFinalProbability": 12.3,
-      "cupProbability": 5.59,
-      "cupProbLower": 5.23,
-      "cupProbUpper": 5.99,
+      "conferenceProbability": 24.26,
+      "cupFinalProbability": 12.14,
+      "cupProbability": 5.5,
+      "cupProbLower": 5.14,
+      "cupProbUpper": 5.89,
       "injuries": [],
       "totalWarLost": 0.0
     },
@@ -2747,11 +2755,11 @@
       "compositeStrength": 53.1,
       "strengthRank": 10,
       "playoffProbability": 92.9,
-      "conferenceProbability": 23.23,
-      "cupFinalProbability": 11.63,
-      "cupProbability": 4.39,
-      "cupProbLower": 4.07,
-      "cupProbUpper": 4.74,
+      "conferenceProbability": 23.39,
+      "cupFinalProbability": 11.69,
+      "cupProbability": 4.58,
+      "cupProbLower": 4.25,
+      "cupProbUpper": 4.94,
       "injuries": [
         {
           "player": "Zach Benson",
@@ -2834,11 +2842,11 @@
       "compositeStrength": 53.7,
       "strengthRank": 8,
       "playoffProbability": 97.4,
-      "conferenceProbability": 19.63,
-      "cupFinalProbability": 9.64,
-      "cupProbability": 4.34,
-      "cupProbLower": 4.02,
-      "cupProbUpper": 4.69,
+      "conferenceProbability": 20.25,
+      "cupFinalProbability": 10.25,
+      "cupProbability": 4.35,
+      "cupProbLower": 4.03,
+      "cupProbUpper": 4.7,
       "injuries": [
         {
           "player": "Jonas Brodin",
@@ -2870,144 +2878,144 @@
   ],
   "roundAdvancement": {
     "COL": {
-      "round1": 59.8,
-      "round2": 31.95,
-      "confFinal": 15.77,
-      "cupFinal": 15.77,
-      "cupWin": 8.44
+      "round1": 60.03,
+      "round2": 31.72,
+      "confFinal": 16.49,
+      "cupFinal": 16.49,
+      "cupWin": 8.7
     },
     "MIN": {
-      "round1": 40.54,
-      "round2": 19.63,
-      "confFinal": 9.64,
-      "cupFinal": 9.64,
-      "cupWin": 5.05
+      "round1": 41.84,
+      "round2": 20.25,
+      "confFinal": 10.25,
+      "cupFinal": 10.25,
+      "cupWin": 5.08
     },
     "CAR": {
-      "round1": 59.51,
-      "round2": 32.07,
-      "confFinal": 15.78,
-      "cupFinal": 15.78,
-      "cupWin": 8.48
+      "round1": 59.15,
+      "round2": 31.13,
+      "confFinal": 15.69,
+      "cupFinal": 15.69,
+      "cupWin": 8.14
     },
     "TB": {
-      "round1": 58.82,
-      "round2": 30.45,
-      "confFinal": 14.77,
-      "cupFinal": 14.77,
-      "cupWin": 7.83
+      "round1": 59.18,
+      "round2": 31.86,
+      "confFinal": 16.1,
+      "cupFinal": 16.1,
+      "cupWin": 8.6
     },
     "DAL": {
-      "round1": 59.45,
-      "round2": 29.34,
-      "confFinal": 14.37,
-      "cupFinal": 14.37,
-      "cupWin": 7.23
+      "round1": 58.16,
+      "round2": 28.74,
+      "confFinal": 14.29,
+      "cupFinal": 14.29,
+      "cupWin": 6.85
     },
     "DET": {
-      "round1": 40.74,
-      "round2": 19.72,
-      "confFinal": 10.17,
-      "cupFinal": 10.17,
-      "cupWin": 4.6
+      "round1": 40.69,
+      "round2": 19.64,
+      "confFinal": 9.45,
+      "cupFinal": 9.45,
+      "cupWin": 4.19
     },
     "MTL": {
-      "round1": 51.31,
-      "round2": 25.32,
-      "confFinal": 13.1,
-      "cupFinal": 13.1,
-      "cupWin": 6.08
+      "round1": 51.06,
+      "round2": 24.5,
+      "confFinal": 11.81,
+      "cupFinal": 11.81,
+      "cupWin": 5.84
     },
     "BUF": {
-      "round1": 46.25,
-      "round2": 23.23,
-      "confFinal": 11.63,
-      "cupFinal": 11.63,
-      "cupWin": 5.32
+      "round1": 46.89,
+      "round2": 23.39,
+      "confFinal": 11.69,
+      "cupFinal": 11.69,
+      "cupWin": 5.73
     },
     "PIT": {
-      "round1": 58.62,
-      "round2": 29.0,
-      "confFinal": 14.34,
-      "cupFinal": 14.34,
-      "cupWin": 7.27
+      "round1": 58.73,
+      "round2": 29.37,
+      "confFinal": 15.09,
+      "cupFinal": 15.09,
+      "cupWin": 7.77
     },
     "NYI": {
-      "round1": 31.7,
-      "round2": 14.75,
-      "confFinal": 7.42,
-      "cupFinal": 7.42,
-      "cupWin": 3.61
+      "round1": 32.44,
+      "round2": 15.71,
+      "confFinal": 7.9,
+      "cupFinal": 7.9,
+      "cupWin": 3.75
     },
     "BOS": {
-      "round1": 38.75,
-      "round2": 18.45,
+      "round1": 38.21,
+      "round2": 17.97,
       "confFinal": 9.24,
       "cupFinal": 9.24,
-      "cupWin": 4.42
+      "cupWin": 4.46
     },
     "VGK": {
-      "round1": 46.16,
-      "round2": 24.42,
-      "confFinal": 12.3,
-      "cupFinal": 12.3,
-      "cupWin": 6.4
+      "round1": 46.55,
+      "round2": 24.26,
+      "confFinal": 12.14,
+      "cupFinal": 12.14,
+      "cupWin": 6.21
     },
     "WSH": {
-      "round1": 0.31,
-      "round2": 0.19,
-      "confFinal": 0.11,
-      "cupFinal": 0.11,
+      "round1": 0.27,
+      "round2": 0.14,
+      "confFinal": 0.08,
+      "cupFinal": 0.08,
       "cupWin": 0.07
     },
     "CBJ": {
-      "round1": 13.41,
-      "round2": 6.51,
-      "confFinal": 3.32,
-      "cupFinal": 3.32,
-      "cupWin": 1.46
+      "round1": 12.76,
+      "round2": 6.0,
+      "confFinal": 2.82,
+      "cupFinal": 2.82,
+      "cupWin": 1.41
     },
     "EDM": {
-      "round1": 38.31,
-      "round2": 17.99,
-      "confFinal": 8.95,
-      "cupFinal": 8.95,
-      "cupWin": 4.59
+      "round1": 38.06,
+      "round2": 18.25,
+      "confFinal": 8.73,
+      "cupFinal": 8.73,
+      "cupWin": 4.1
     },
     "UTA": {
-      "round1": 50.72,
-      "round2": 27.0,
-      "confFinal": 13.76,
-      "cupFinal": 13.76,
-      "cupWin": 7.08
+      "round1": 50.42,
+      "round2": 26.15,
+      "confFinal": 13.22,
+      "cupFinal": 13.22,
+      "cupWin": 6.81
     },
     "OTT": {
-      "round1": 0.22,
-      "round2": 0.15,
-      "confFinal": 0.03,
-      "cupFinal": 0.03,
-      "cupWin": 0.02
-    },
-    "TOR": {
-      "round1": 0.18,
-      "round2": 0.09,
+      "round1": 0.24,
+      "round2": 0.12,
       "confFinal": 0.05,
       "cupFinal": 0.05,
-      "cupWin": 0.03
+      "cupWin": 0.04
+    },
+    "TOR": {
+      "round1": 0.21,
+      "round2": 0.1,
+      "confFinal": 0.04,
+      "cupFinal": 0.04,
+      "cupWin": 0.02
     },
     "ANA": {
-      "round1": 45.71,
-      "round2": 21.72,
-      "confFinal": 11.35,
-      "cupFinal": 11.35,
-      "cupWin": 5.63
+      "round1": 46.26,
+      "round2": 22.61,
+      "confFinal": 10.89,
+      "cupFinal": 10.89,
+      "cupWin": 5.29
     },
     "SEA": {
-      "round1": 37.61,
-      "round2": 17.48,
-      "confFinal": 8.54,
-      "cupFinal": 8.54,
-      "cupWin": 4.05
+      "round1": 37.43,
+      "round2": 18.15,
+      "confFinal": 9.04,
+      "cupFinal": 9.04,
+      "cupWin": 4.54
     },
     "FLA": {
       "round1": 0.0,
@@ -3017,25 +3025,25 @@
       "cupWin": 0.0
     },
     "PHI": {
-      "round1": 0.18,
+      "round1": 0.17,
       "round2": 0.07,
       "confFinal": 0.04,
       "cupFinal": 0.04,
-      "cupWin": 0.02
+      "cupWin": 0.03
     },
     "LA": {
-      "round1": 13.66,
-      "round2": 6.57,
-      "confFinal": 3.37,
-      "cupFinal": 3.37,
-      "cupWin": 1.51
+      "round1": 13.46,
+      "round2": 6.4,
+      "confFinal": 3.36,
+      "cupFinal": 3.36,
+      "cupWin": 1.56
     },
     "NSH": {
-      "round1": 1.81,
-      "round2": 0.91,
-      "confFinal": 0.5,
-      "cupFinal": 0.5,
-      "cupWin": 0.25
+      "round1": 1.76,
+      "round2": 0.77,
+      "confFinal": 0.31,
+      "cupFinal": 0.31,
+      "cupWin": 0.14
     },
     "NJ": {
       "round1": 0.0,
@@ -3045,11 +3053,11 @@
       "cupWin": 0.0
     },
     "SJ": {
-      "round1": 6.23,
-      "round2": 2.99,
-      "confFinal": 1.45,
-      "cupFinal": 1.45,
-      "cupWin": 0.56
+      "round1": 6.03,
+      "round2": 2.7,
+      "confFinal": 1.28,
+      "cupFinal": 1.28,
+      "cupWin": 0.67
     },
     "CHI": {
       "round1": 0.0,
@@ -3101,22 +3109,22 @@
           {
             "higher": "PIT",
             "lower": "NYI",
-            "higherWinProb": 59.4
+            "higherWinProb": 58.6
           },
           {
             "higher": "MTL",
             "lower": "DET",
-            "higherWinProb": 59.5
+            "higherWinProb": 58.5
           },
           {
             "higher": "TB",
             "lower": "BOS",
-            "higherWinProb": 58.8
+            "higherWinProb": 59.4
           },
           {
             "higher": "CAR",
             "lower": "BUF",
-            "higherWinProb": 60.2
+            "higherWinProb": 59.1
           }
         ],
         "round2": [
@@ -3126,38 +3134,44 @@
               {
                 "teamA": "MTL",
                 "teamB": "TB",
-                "teamAWinProb": 49.0,
-                "matchupProb": 23.4
+                "teamAWinProb": 45.8,
+                "matchupProb": 22.4
               },
               {
                 "teamA": "DET",
                 "teamB": "TB",
-                "teamAWinProb": 48.1,
-                "matchupProb": 12.2
+                "teamAWinProb": 46.8,
+                "matchupProb": 12.8
               },
               {
                 "teamA": "BUF",
                 "teamB": "TB",
-                "teamAWinProb": 47.8,
-                "matchupProb": 11.7
+                "teamAWinProb": 46.5,
+                "matchupProb": 11.6
               },
               {
                 "teamA": "BOS",
                 "teamB": "MTL",
-                "teamAWinProb": 47.4,
-                "matchupProb": 7.9
+                "teamAWinProb": 46.8,
+                "matchupProb": 7.7
               },
               {
                 "teamA": "BOS",
                 "teamB": "BUF",
-                "teamAWinProb": 45.6,
-                "matchupProb": 6.4
+                "teamAWinProb": 48.0,
+                "matchupProb": 5.9
               },
               {
                 "teamA": "BOS",
                 "teamB": "DET",
-                "teamAWinProb": 48.1,
+                "teamAWinProb": 48.7,
                 "matchupProb": 5.7
+              },
+              {
+                "teamA": "BUF",
+                "teamB": "MTL",
+                "teamAWinProb": 51.6,
+                "matchupProb": 5.5
               }
             ]
           },
@@ -3167,37 +3181,37 @@
               {
                 "teamA": "CAR",
                 "teamB": "PIT",
-                "teamAWinProb": 53.9,
-                "matchupProb": 30.4
+                "teamAWinProb": 52.7,
+                "matchupProb": 29.9
               },
               {
                 "teamA": "CAR",
                 "teamB": "NYI",
-                "teamAWinProb": 54.9,
-                "matchupProb": 16.2
+                "teamAWinProb": 51.1,
+                "matchupProb": 15.6
               },
               {
                 "teamA": "BUF",
                 "teamB": "PIT",
-                "teamAWinProb": 47.6,
-                "matchupProb": 7.0
+                "teamAWinProb": 47.1,
+                "matchupProb": 7.1
               },
               {
                 "teamA": "BOS",
                 "teamB": "PIT",
-                "teamAWinProb": 47.2,
+                "teamAWinProb": 47.1,
                 "matchupProb": 5.6
-              },
-              {
-                "teamA": "DET",
-                "teamB": "PIT",
-                "teamAWinProb": 45.7,
-                "matchupProb": 5.5
               },
               {
                 "teamA": "CAR",
                 "teamB": "CBJ",
-                "teamAWinProb": 51.5,
+                "teamAWinProb": 57.2,
+                "matchupProb": 5.3
+              },
+              {
+                "teamA": "DET",
+                "teamB": "PIT",
+                "teamAWinProb": 45.4,
                 "matchupProb": 5.1
               }
             ]
@@ -3207,20 +3221,20 @@
           {
             "teamA": "CAR",
             "teamB": "TB",
-            "teamAWinProb": 50.9,
-            "matchupProb": 10.1
+            "teamAWinProb": 49.2,
+            "matchupProb": 10.0
           },
           {
             "teamA": "PIT",
             "teamB": "TB",
-            "teamAWinProb": 51.8,
-            "matchupProb": 9.0
+            "teamAWinProb": 50.1,
+            "matchupProb": 9.5
           },
           {
             "teamA": "CAR",
             "teamB": "MTL",
-            "teamAWinProb": 47.9,
-            "matchupProb": 7.3
+            "teamAWinProb": 49.3,
+            "matchupProb": 7.0
           }
         ]
       },
@@ -3229,22 +3243,22 @@
           {
             "higher": "DAL",
             "lower": "MIN",
-            "higherWinProb": 59.5
+            "higherWinProb": 58.2
           },
           {
             "higher": "UTA",
             "lower": "VGK",
-            "higherWinProb": 59.6
+            "higherWinProb": 59.0
           },
           {
             "higher": "ANA",
             "lower": "SEA",
-            "higherWinProb": 59.3
+            "higherWinProb": 59.1
           },
           {
             "higher": "COL",
             "lower": "EDM",
-            "higherWinProb": 59.7
+            "higherWinProb": 60.7
           }
         ],
         "round2": [
@@ -3254,19 +3268,19 @@
               {
                 "teamA": "COL",
                 "teamB": "DAL",
-                "teamAWinProb": 53.1,
-                "matchupProb": 35.4
+                "teamAWinProb": 52.2,
+                "matchupProb": 35.0
               },
               {
                 "teamA": "COL",
                 "teamB": "MIN",
-                "teamAWinProb": 53.9,
-                "matchupProb": 24.4
+                "teamAWinProb": 53.8,
+                "matchupProb": 25.0
               },
               {
                 "teamA": "DAL",
                 "teamB": "EDM",
-                "teamAWinProb": 56.1,
+                "teamAWinProb": 55.3,
                 "matchupProb": 6.0
               }
             ]
@@ -3277,38 +3291,38 @@
               {
                 "teamA": "ANA",
                 "teamB": "VGK",
-                "teamAWinProb": 47.0,
-                "matchupProb": 16.3
+                "teamAWinProb": 48.2,
+                "matchupProb": 16.6
               },
               {
                 "teamA": "ANA",
                 "teamB": "UTA",
-                "teamAWinProb": 47.4,
-                "matchupProb": 15.9
+                "teamAWinProb": 47.2,
+                "matchupProb": 16.4
               },
               {
                 "teamA": "SEA",
                 "teamB": "VGK",
-                "teamAWinProb": 46.5,
-                "matchupProb": 13.0
+                "teamAWinProb": 45.9,
+                "matchupProb": 12.9
               },
               {
                 "teamA": "SEA",
                 "teamB": "UTA",
-                "teamAWinProb": 45.0,
-                "matchupProb": 12.6
+                "teamAWinProb": 50.0,
+                "matchupProb": 12.0
               },
               {
                 "teamA": "EDM",
                 "teamB": "VGK",
-                "teamAWinProb": 46.7,
-                "matchupProb": 10.7
+                "teamAWinProb": 48.6,
+                "matchupProb": 10.8
               },
               {
                 "teamA": "EDM",
                 "teamB": "UTA",
-                "teamAWinProb": 45.3,
-                "matchupProb": 10.4
+                "teamAWinProb": 48.4,
+                "matchupProb": 10.2
               }
             ]
           }
@@ -3317,58 +3331,58 @@
           {
             "teamA": "COL",
             "teamB": "VGK",
-            "teamAWinProb": 48.5,
+            "teamAWinProb": 51.8,
             "matchupProb": 7.7
           },
           {
             "teamA": "DAL",
-            "teamB": "UTA",
-            "teamAWinProb": 48.1,
-            "matchupProb": 7.5
+            "teamB": "VGK",
+            "teamAWinProb": 49.1,
+            "matchupProb": 7.0
           },
           {
             "teamA": "COL",
             "teamB": "UTA",
-            "teamAWinProb": 49.1,
-            "matchupProb": 7.3
+            "teamAWinProb": 49.0,
+            "matchupProb": 6.9
           }
         ]
       },
       "cupFinal": [
         {
+          "teamA": "CAR",
+          "teamB": "COL",
+          "teamAWinProb": 46.9,
+          "matchupProb": 2.8
+        },
+        {
+          "teamA": "COL",
+          "teamB": "PIT",
+          "teamAWinProb": 46.8,
+          "matchupProb": 2.5
+        },
+        {
           "teamA": "COL",
           "teamB": "TB",
-          "teamAWinProb": 53.9,
+          "teamAWinProb": 54.2,
           "matchupProb": 2.5
         },
         {
           "teamA": "CAR",
           "teamB": "DAL",
-          "teamAWinProb": 51.5,
-          "matchupProb": 2.3
-        },
-        {
-          "teamA": "CAR",
-          "teamB": "COL",
-          "teamAWinProb": 51.6,
-          "matchupProb": 2.2
+          "teamAWinProb": 52.3,
+          "matchupProb": 2.4
         },
         {
           "teamA": "DAL",
           "teamB": "PIT",
-          "teamAWinProb": 50.5,
-          "matchupProb": 2.2
-        },
-        {
-          "teamA": "COL",
-          "teamB": "PIT",
-          "teamAWinProb": 53.0,
-          "matchupProb": 2.2
+          "teamAWinProb": 48.1,
+          "matchupProb": 2.3
         }
       ],
       "champion": {
-        "team": "CAR",
-        "probability": 8.5
+        "team": "COL",
+        "probability": 8.7
       },
       "projectedSeeds": {
         "East": [
@@ -6979,6 +6993,267 @@
           "strength": 46.7,
           "playoffProb": 5.7,
           "cupProb": 0.47
+        },
+        {
+          "code": "LA",
+          "rank": 24,
+          "tier": "Longshot",
+          "strength": 48.7,
+          "playoffProb": 12.2,
+          "cupProb": 0.44
+        },
+        {
+          "code": "FLA",
+          "rank": 25,
+          "tier": "Bubble",
+          "strength": 49.7,
+          "playoffProb": 10.9,
+          "cupProb": 0.43
+        },
+        {
+          "code": "WPG",
+          "rank": 26,
+          "tier": "Longshot",
+          "strength": 47.8,
+          "playoffProb": 13.6,
+          "cupProb": 0.33
+        },
+        {
+          "code": "CHI",
+          "rank": 27,
+          "tier": "Longshot",
+          "strength": 44.7,
+          "playoffProb": 1.2,
+          "cupProb": 0.31
+        },
+        {
+          "code": "NSH",
+          "rank": 28,
+          "tier": "Longshot",
+          "strength": 48.7,
+          "playoffProb": 5.1,
+          "cupProb": 0.3
+        },
+        {
+          "code": "VAN",
+          "rank": 29,
+          "tier": "Longshot",
+          "strength": 41.7,
+          "playoffProb": 0.0,
+          "cupProb": 0.25
+        },
+        {
+          "code": "STL",
+          "rank": 30,
+          "tier": "Longshot",
+          "strength": 42.6,
+          "playoffProb": 0.1,
+          "cupProb": 0.24
+        },
+        {
+          "code": "CGY",
+          "rank": 31,
+          "tier": "Longshot",
+          "strength": 46.5,
+          "playoffProb": 2.6,
+          "cupProb": 0.19
+        },
+        {
+          "code": "NJ",
+          "rank": 32,
+          "tier": "Longshot",
+          "strength": 46.2,
+          "playoffProb": 2.0,
+          "cupProb": 0.17
+        }
+      ]
+    },
+    {
+      "date": "2026-02-14",
+      "teams": [
+        {
+          "code": "CAR",
+          "rank": 1,
+          "tier": "Elite",
+          "strength": 58.0,
+          "playoffProb": 96.4,
+          "cupProb": 16.58
+        },
+        {
+          "code": "DAL",
+          "rank": 2,
+          "tier": "Contender",
+          "strength": 54.6,
+          "playoffProb": 99.3,
+          "cupProb": 9.59
+        },
+        {
+          "code": "COL",
+          "rank": 3,
+          "tier": "Elite",
+          "strength": 62.6,
+          "playoffProb": 100.0,
+          "cupProb": 8.24
+        },
+        {
+          "code": "TB",
+          "rank": 4,
+          "tier": "Elite",
+          "strength": 60.3,
+          "playoffProb": 100.0,
+          "cupProb": 7.93
+        },
+        {
+          "code": "MTL",
+          "rank": 5,
+          "tier": "Bubble",
+          "strength": 52.1,
+          "playoffProb": 73.3,
+          "cupProb": 6.21
+        },
+        {
+          "code": "PIT",
+          "rank": 6,
+          "tier": "Elite",
+          "strength": 55.1,
+          "playoffProb": 96.5,
+          "cupProb": 6.2
+        },
+        {
+          "code": "UTA",
+          "rank": 7,
+          "tier": "Contender",
+          "strength": 54.8,
+          "playoffProb": 96.1,
+          "cupProb": 6.18
+        },
+        {
+          "code": "VGK",
+          "rank": 8,
+          "tier": "Contender",
+          "strength": 53.7,
+          "playoffProb": 90.3,
+          "cupProb": 5.59
+        },
+        {
+          "code": "BUF",
+          "rank": 9,
+          "tier": "Contender",
+          "strength": 53.1,
+          "playoffProb": 92.9,
+          "cupProb": 4.39
+        },
+        {
+          "code": "MIN",
+          "rank": 10,
+          "tier": "Contender",
+          "strength": 53.7,
+          "playoffProb": 97.4,
+          "cupProb": 4.34
+        },
+        {
+          "code": "BOS",
+          "rank": 11,
+          "tier": "Bubble",
+          "strength": 52.0,
+          "playoffProb": 75.5,
+          "cupProb": 3.86
+        },
+        {
+          "code": "EDM",
+          "rank": 12,
+          "tier": "Contender",
+          "strength": 52.3,
+          "playoffProb": 65.4,
+          "cupProb": 3.23
+        },
+        {
+          "code": "NYI",
+          "rank": 13,
+          "tier": "Bubble",
+          "strength": 49.7,
+          "playoffProb": 55.5,
+          "cupProb": 2.17
+        },
+        {
+          "code": "OTT",
+          "rank": 14,
+          "tier": "Contender",
+          "strength": 53.3,
+          "playoffProb": 74.5,
+          "cupProb": 1.97
+        },
+        {
+          "code": "DET",
+          "rank": 15,
+          "tier": "Bubble",
+          "strength": 50.1,
+          "playoffProb": 47.8,
+          "cupProb": 1.93
+        },
+        {
+          "code": "WSH",
+          "rank": 16,
+          "tier": "Contender",
+          "strength": 52.6,
+          "playoffProb": 84.6,
+          "cupProb": 1.77
+        },
+        {
+          "code": "CBJ",
+          "rank": 17,
+          "tier": "Bubble",
+          "strength": 51.5,
+          "playoffProb": 61.2,
+          "cupProb": 1.52
+        },
+        {
+          "code": "SEA",
+          "rank": 18,
+          "tier": "Longshot",
+          "strength": 47.3,
+          "playoffProb": 28.5,
+          "cupProb": 1.45
+        },
+        {
+          "code": "TOR",
+          "rank": 19,
+          "tier": "Bubble",
+          "strength": 49.8,
+          "playoffProb": 47.3,
+          "cupProb": 1.28
+        },
+        {
+          "code": "ANA",
+          "rank": 20,
+          "tier": "Bubble",
+          "strength": 50.5,
+          "playoffProb": 17.7,
+          "cupProb": 1.22
+        },
+        {
+          "code": "PHI",
+          "rank": 21,
+          "tier": "Longshot",
+          "strength": 49.1,
+          "playoffProb": 33.7,
+          "cupProb": 0.71
+        },
+        {
+          "code": "NYR",
+          "rank": 22,
+          "tier": "Longshot",
+          "strength": 46.7,
+          "playoffProb": 5.7,
+          "cupProb": 0.47
+        },
+        {
+          "code": "SJ",
+          "rank": 23,
+          "tier": "Longshot",
+          "strength": 46.8,
+          "playoffProb": 8.8,
+          "cupProb": 0.46
         },
         {
           "code": "LA",

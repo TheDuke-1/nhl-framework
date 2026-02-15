@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-02-14T11:18:02.502817Z",
+    "fetchedAt": "2026-02-15T11:18:04.437205Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 101
+    "totalInjuries": 102
   },
   "teams": {
     "ANA": {
@@ -385,6 +385,14 @@
           "estimatedWar": 1.2
         },
         {
+          "player": "Kevin Fiala",
+          "position": "",
+          "status": "Out",
+          "injury": "Leg",
+          "note": "Fiala suffered a leg injury during the Olympics and was taken to the hospital.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Andrei Kuzmenko",
           "position": "",
           "status": "Out",
@@ -409,8 +417,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.9,
-      "injuredCount": 4
+      "totalWarLost": 4.8,
+      "injuredCount": 5
     },
     "MIN": {
       "injuries": [
@@ -951,7 +959,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Morrissey did not return to Thursday's (Feb. 12) clash versus Czechia at the 2026 Winter Olympics, per Michael Russo of The Athletic.",
+          "note": "Morrissey is expected to miss Canada's game against Switzerland on Friday (Feb. 13) at the 2026 Winter Olympics.",
           "estimatedWar": 0.9
         },
         {
