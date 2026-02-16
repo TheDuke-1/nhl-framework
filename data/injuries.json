@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-02-15T11:18:04.437205Z",
+    "fetchedAt": "2026-02-16T11:35:56.098068Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 102
+    "totalInjuries": 103
   },
   "teams": {
     "ANA": {
@@ -355,6 +355,14 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Anton Lundell",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Lundell won't play against Italy on Saturday (Feb. 14) at the 2026 Winter Olympics, per Elliotte Friedman of Sportsnet.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Tomas Nosek",
           "position": "",
           "status": "IR",
@@ -371,8 +379,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 8.7,
-      "injuredCount": 8
+      "totalWarLost": 9.6,
+      "injuredCount": 9
     },
     "LA": {
       "injuries": [
@@ -389,7 +397,7 @@
           "position": "",
           "status": "Out",
           "injury": "Leg",
-          "note": "Fiala suffered a leg injury during the Olympics and was taken to the hospital.",
+          "note": "Fiala had surgery on Saturday (Feb. 14) and will be out for the remainder of the season, per Elliotte Friedman of Sportsnet.",
           "estimatedWar": 0.9
         },
         {
