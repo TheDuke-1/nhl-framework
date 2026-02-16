@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Root Cause Postmortem"
+  short_description: "Find root causes and add prevention controls"
+  default_prompt: "Use $superhuman-root-cause-postmortem to run a full RCA and convert failures into preventive controls."

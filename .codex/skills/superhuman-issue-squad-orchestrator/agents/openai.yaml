@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Issue Squad Orchestrator"
+  short_description: "Create multi-agent issue squads and drive closure"
+  default_prompt: "Use $superhuman-issue-squad-orchestrator to assign issue squads, execute by wave, and close issues with proof and learnings."

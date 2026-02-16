@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Quality Gate Architect"
+  short_description: "Turn goals into enforceable release gates"
+  default_prompt: "Use $superhuman-quality-gate-architect to build outcome-based gates and wire them into CI and release checks."

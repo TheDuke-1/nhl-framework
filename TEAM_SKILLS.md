@@ -1,6 +1,6 @@
 # Team Skills Map
 
-This project now includes the full Updated Superhuman Framework capability set.
+This project includes the Updated Superhuman Framework and a reusable skill expansion pack.
 
 ## Build and Delivery Skills
 - Spec authoring and scoping (`spec-builder`)
@@ -28,16 +28,31 @@ This project now includes the full Updated Superhuman Framework capability set.
 - Continuous framework improvement (`framework-improver`, `/framework-improve`)
 - Git execution workflow (`/project:commit-push-pr`)
 
-## Source of Truth
-- Full imported framework bundle:
-  `/Users/matthewdukovich/Desktop/NHL Playoff Project/framework/updated-superhuman-framework-v2`
-- Core process docs in project root:
-  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/MASTER-GUIDE.md`
-  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/QUICK-START.md`
-  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/SETUP-GUIDE.md`
+## New Reusable Skill Pack (Cross-Project)
+- `superhuman-issue-squad-orchestrator`
+- `superhuman-root-cause-postmortem`
+- `superhuman-quality-gate-architect`
+- `superhuman-skill-productizer`
+- `superhuman-prevention-loop`
+- `superhuman-release-readiness-sheriff`
+- `superhuman-dashboard-trust-polisher`
+- `superhuman-edge-goal-loop`
 
-## Project Skills
-- `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-project-operator`
-- `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-discovery-planner`
-- `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-builder-verifier`
-- `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-review-improver`
+## Skill Locations
+- Project-specific skills:
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-project-operator`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-discovery-planner`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-builder-verifier`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-review-improver`
+- Reusable pack created in this project:
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-issue-squad-orchestrator`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-root-cause-postmortem`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-quality-gate-architect`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-skill-productizer`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-prevention-loop`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-release-readiness-sheriff`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-dashboard-trust-polisher`
+  - `/Users/matthewdukovich/Desktop/NHL Playoff Project/.codex/skills/superhuman-edge-goal-loop`
+
+## Reuse Guidance
+The five new skills are intentionally project-agnostic and can be promoted to any future project skill registry.
