@@ -1663,6 +1663,7 @@
       "ANA",
       "EDM",
       "NYI",
+      "DET",
       "CBJ",
       "OTT",
       "TOR",
@@ -3062,6 +3063,13 @@
       "confFinal": 2.93,
       "cupFinal": 2.93,
       "cupWin": 1.54
+    },
+    "LA": {
+      "round1": 12.85,
+      "round2": 6.19,
+      "confFinal": 2.98,
+      "cupFinal": 2.98,
+      "cupWin": 1.55
     },
     "NSH": {
       "round1": 1.87,
