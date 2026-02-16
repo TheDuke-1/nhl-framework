@@ -6,7 +6,7 @@
   <title>Superhuman NHL Predictions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -18,19 +18,19 @@
       <p class="site-subtitle">
         <span id="season-label">2025-26 Season</span>
         <span class="separator">|</span>
-        <span id="last-updated" class="last-updated-trigger" tabindex="0" role="button" aria-expanded="false">
+        <button id="last-updated" class="last-updated-trigger" type="button" aria-expanded="false">
           Last updated: --
-        </span>
+        </button>
       </p>
 
       <!-- Freshness popover -->
       <div id="freshness-popover" class="freshness-popover" role="tooltip" hidden>
         <div class="freshness-popover-title">Source Freshness</div>
         <ul class="freshness-list">
-          <li>NHL API: <span id="fresh-nhl">--</span></li>
-          <li>MoneyPuck: <span id="fresh-moneypuck">--</span></li>
-          <li>Natural Stat Trick: <span id="fresh-nst">--</span></li>
-          <li>Superhuman Model: <span id="fresh-model">--</span></li>
+          <li class="freshness-row"><span>NHL API</span><span id="fresh-nhl">--</span></li>
+          <li class="freshness-row"><span>MoneyPuck</span><span id="fresh-moneypuck">--</span></li>
+          <li class="freshness-row"><span>Natural Stat Trick</span><span id="fresh-nst">--</span></li>
+          <li class="freshness-row"><span>Superhuman Model</span><span id="fresh-model">--</span></li>
         </ul>
       </div>
     </div>
@@ -41,18 +41,22 @@
 
   <!-- Tab Navigation -->
   <nav class="tab-bar" role="tablist" aria-label="Dashboard sections">
-    <button class="tab active" role="tab" aria-selected="true"
-            data-tab="rankings">Rankings</button>
-    <button class="tab" role="tab" aria-selected="false"
-            data-tab="playoff-race">Playoff Race</button>
-    <button class="tab" role="tab" aria-selected="false"
-            data-tab="betting">Betting Value</button>
-    <button class="tab" role="tab" aria-selected="false"
-            data-tab="bracket">Bracket</button>
-    <button class="tab" role="tab" aria-selected="false"
-            data-tab="performance">Model Performance</button>
-    <button class="tab" role="tab" aria-selected="false"
-            data-tab="insights">Insights</button>
+    <div class="tab-bar-inner">
+      <button class="tab active" role="tab" aria-selected="true"
+              data-tab="mission-control">Mission Control</button>
+      <button class="tab" role="tab" aria-selected="false"
+              data-tab="rankings">Rankings</button>
+      <button class="tab" role="tab" aria-selected="false"
+              data-tab="playoff-race">Playoff Race</button>
+      <button class="tab" role="tab" aria-selected="false"
+              data-tab="betting">Betting Value</button>
+      <button class="tab" role="tab" aria-selected="false"
+              data-tab="bracket">Bracket</button>
+      <button class="tab" role="tab" aria-selected="false"
+              data-tab="performance">Model Performance</button>
+      <button class="tab" role="tab" aria-selected="false"
+              data-tab="insights">Insights</button>
+    </div>
   </nav>
 
   <!-- Main Content -->
@@ -63,17 +67,19 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <a href="glossary.html" class="footer-link">Glossary</a>
-      <span class="separator">|</span>
-      <a href="#" id="github-link" class="footer-link" target="_blank" rel="noopener">GitHub</a>
-      <span class="separator">|</span>
-      <span class="model-credit">Powered by Superhuman v2.1</span>
+      <div class="footer-links">
+        <a href="glossary.html" class="footer-link">Glossary</a>
+        <span class="separator">|</span>
+        <a href="#" id="github-link" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <span class="model-credit footer-text">Powered by Superhuman v2.1</span>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/mission-control.js"></script>
   <script src="js/rankings.js"></script>
   <script src="js/playoff-race.js"></script>
   <script src="js/betting.js"></script>
