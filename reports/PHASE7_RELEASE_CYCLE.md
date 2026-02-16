@@ -1,6 +1,6 @@
 # Phase 7 Release Cycle
 
-Generated: `2026-02-15T23:44:08.445995+00:00`
+Generated: `2026-02-16T04:11:57.285596+00:00`
 Mode: `strict`
 Truth Tier: `ship_gate`
 Overall Status: `PASS`
@@ -10,11 +10,9 @@ Data warning policy: `STRICT`
 ## Refresh Automation
 
 - Enabled: `True`
-- Attempted: `True`
-- Stale/Missing before: `3`
-- Stale/Missing after: `3`
-- Refresh command: `python3 scripts/refresh_data.py`
-- Refresh status: `FAIL`
+- Attempted: `False`
+- Stale/Missing before: `0`
+- Stale/Missing after: `0`
 
 ## Gate Results
 

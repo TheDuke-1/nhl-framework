@@ -1,6 +1,6 @@
 # Phase 7 Release Cycle (Advisory)
 
-Generated: `2026-02-15T17:45:03.696392+00:00`
+Generated: `2026-02-16T04:33:27.594884+00:00`
 Mode: `advisory`
 Truth Tier: `local_advisory`
 Overall Status: `PASS`
@@ -11,24 +11,19 @@ Data warning policy: `ALLOW_WARNINGS`
 
 - Enabled: `False`
 - Attempted: `False`
-- Stale/Missing before: `4`
-- Stale/Missing after: `4`
+- Stale/Missing before: `0`
+- Stale/Missing after: `0`
 
 ## Gate Results
 
 | Command | Status |
 |---|---|
-| `python3 scripts/validate_data.py --allow-warnings` | PASS |
+| `phase7.refresh_health_gate` | PASS |
+| `python3 scripts/validate_data.py --allow-warnings --break-aware` | PASS |
 | `python3 -W error::RuntimeWarning scripts/verify_model_performance.py --require-vegas-edge --require-cup-vegas-goal` | PASS |
 | `python3 scripts/verify_benchmark_contract.py` | PASS |
 | `python3 scripts/grade_model_dashboard.py` | PASS |
 | `python3 scripts/generate_betting_edge_report.py` | PASS |
-
-## Data Freshness Advisories
-
-- ⚠️  VALIDATION PASSED WITH WARNINGS - 2 warning(s):
-- ⚠️  NST: Data is 10 days old (fetched: 2026-02-05)
-- ⚠️  NHL API: Data is 10 days old (fetched: 2026-02-05)
 
 ## Current Benchmark Snapshot
 

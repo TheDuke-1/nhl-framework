@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-15T23:39:12.857401+00:00",
+  "generatedAt": "2026-02-16T04:22:39.565123+00:00",
   "model": {
     "numeric": 88.5,
     "grade": "B+",
@@ -16,10 +16,10 @@
       "probability_quality": {
         "score": 65.1,
         "detail": {
-          "brier_playoff": 0.05773304410405995,
-          "brier_cup": 0.02906193872149189,
-          "log_loss_playoff": 0.2420415493929581,
-          "calibration_error": 0.16525768671832727
+          "brier_playoff": 0.05773304410406011,
+          "brier_cup": 0.029076439009871776,
+          "log_loss_playoff": 0.24204154939295847,
+          "calibration_error": 0.1652576867183268
         }
       },
       "coverage": {
@@ -47,12 +47,12 @@
     }
   },
   "dashboard": {
-    "numeric": 98.9,
+    "numeric": 99.7,
     "grade": "A+",
     "detail": {
       "team_count": 32,
       "section_ratio": 1.0,
-      "freshness_score": 0.93,
+      "freshness_score": 0.978,
       "release_status": "PASS",
       "cup_goal_met": true,
       "capped": false,
@@ -60,7 +60,7 @@
     }
   },
   "overall": {
-    "numeric": 91.6,
+    "numeric": 91.9,
     "grade": "A-"
   }
 }
