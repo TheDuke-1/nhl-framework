@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-02-08T18:57:15.156893+00:00",
+  "mode": "phase4_true_source_upgrade",
+  "targetSeason": 2025,
+  "fieldUpdates": {
+    "injury_adjusted_strength": 32,
+    "coach_system_continuity": 32,
+    "discipline_taken_drawn_split": 32,
+    "schedule_travel_rest_load": 32
+  },
+  "teamsUpdated": 32
+}

@@ -1,0 +1,153 @@
+{
+  "startSeason": 2010,
+  "endSeason": 2025,
+  "okCount": 16,
+  "missingCount": 0,
+  "invalidCount": 0,
+  "results": [
+    {
+      "season": 2010,
+      "status": "ok",
+      "errors": [],
+      "rows": 30,
+      "expected_rows": 30,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2010.csv"
+    },
+    {
+      "season": 2011,
+      "status": "ok",
+      "errors": [],
+      "rows": 30,
+      "expected_rows": 30,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2011.csv"
+    },
+    {
+      "season": 2012,
+      "status": "ok",
+      "errors": [],
+      "rows": 30,
+      "expected_rows": 30,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2012.csv"
+    },
+    {
+      "season": 2013,
+      "status": "ok",
+      "errors": [],
+      "rows": 30,
+      "expected_rows": 30,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2013.csv"
+    },
+    {
+      "season": 2014,
+      "status": "ok",
+      "errors": [],
+      "rows": 30,
+      "expected_rows": 30,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2014.csv"
+    },
+    {
+      "season": 2015,
+      "status": "ok",
+      "errors": [],
+      "rows": 30,
+      "expected_rows": 30,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2015.csv"
+    },
+    {
+      "season": 2016,
+      "status": "ok",
+      "errors": [],
+      "rows": 30,
+      "expected_rows": 30,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2016.csv"
+    },
+    {
+      "season": 2017,
+      "status": "ok",
+      "errors": [],
+      "rows": 30,
+      "expected_rows": 30,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2017.csv"
+    },
+    {
+      "season": 2018,
+      "status": "ok",
+      "errors": [],
+      "rows": 31,
+      "expected_rows": 31,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2018.csv"
+    },
+    {
+      "season": 2019,
+      "status": "ok",
+      "errors": [],
+      "rows": 31,
+      "expected_rows": 31,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2019.csv"
+    },
+    {
+      "season": 2020,
+      "status": "ok",
+      "errors": [],
+      "rows": 31,
+      "expected_rows": 31,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2020.csv"
+    },
+    {
+      "season": 2021,
+      "status": "ok",
+      "errors": [],
+      "rows": 31,
+      "expected_rows": 31,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2021.csv"
+    },
+    {
+      "season": 2022,
+      "status": "ok",
+      "errors": [],
+      "rows": 32,
+      "expected_rows": 32,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2022.csv"
+    },
+    {
+      "season": 2023,
+      "status": "ok",
+      "errors": [],
+      "rows": 32,
+      "expected_rows": 32,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2023.csv"
+    },
+    {
+      "season": 2024,
+      "status": "ok",
+      "errors": [],
+      "rows": 32,
+      "expected_rows": 32,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2024.csv"
+    },
+    {
+      "season": 2025,
+      "status": "ok",
+      "errors": [],
+      "rows": 32,
+      "expected_rows": 32,
+      "cup_winner_count": 1,
+      "path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2025.csv"
+    }
+  ]
+}

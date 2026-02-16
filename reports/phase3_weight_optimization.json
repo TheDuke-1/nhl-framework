@@ -1,0 +1,147 @@
+{
+  "generatedAt": "2026-02-08T02:26:17.777259+00:00",
+  "mode": "phase3_weight_optimization_official_pipeline",
+  "baseline": {
+    "decay": 0.15,
+    "cup_winner_boost": 2.0,
+    "core": {
+      "top1_accuracy_pct": 16.7,
+      "top5_accuracy_pct": 58.3,
+      "average_winner_rank": 6.42,
+      "playoff_f1": 0.905
+    },
+    "quality": {
+      "brier_playoff": 0.07303852094561894,
+      "brier_cup": 0.036367745359850545,
+      "log_loss_playoff": 0.23408688239132203,
+      "calibration_error": 0.024577581595219194
+    },
+    "quality_score": 0.2012674331871155
+  },
+  "candidates": [
+    {
+      "decay": 0.1,
+      "cup_winner_boost": 2.0,
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.42,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07251472422178856,
+        "brier_cup": 0.03307620913233707,
+        "log_loss_playoff": 0.2326178541696349,
+        "calibration_error": 0.020936700149755155
+      },
+      "quality_score": 0.19504763059185906,
+      "hard_gates_pass": true,
+      "core_non_regression": true
+    },
+    {
+      "decay": 0.1,
+      "cup_winner_boost": 2.5,
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.42,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07246827444665432,
+        "brier_cup": 0.03650754314798005,
+        "log_loss_playoff": 0.23256994506607917,
+        "calibration_error": 0.019181869533148575
+      },
+      "quality_score": 0.19650109841137006,
+      "hard_gates_pass": true,
+      "core_non_regression": true
+    },
+    {
+      "decay": 0.15,
+      "cup_winner_boost": 2.0,
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.42,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07303852094561894,
+        "brier_cup": 0.036367745359850545,
+        "log_loss_playoff": 0.23408688239132203,
+        "calibration_error": 0.024577581595219194
+      },
+      "quality_score": 0.2012674331871155,
+      "hard_gates_pass": true,
+      "core_non_regression": true
+    },
+    {
+      "decay": 0.15,
+      "cup_winner_boost": 2.5,
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.42,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07298911489723324,
+        "brier_cup": 0.03615256949540888,
+        "log_loss_playoff": 0.23402951720123774,
+        "calibration_error": 0.025575203396523343
+      },
+      "quality_score": 0.2017241438915599,
+      "hard_gates_pass": true,
+      "core_non_regression": true
+    },
+    {
+      "decay": 0.2,
+      "cup_winner_boost": 2.0,
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.0,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07358650269788798,
+        "brier_cup": 0.03362926687402567,
+        "log_loss_playoff": 0.23572607042040858,
+        "calibration_error": 0.03300792711141809
+      },
+      "quality_score": 0.2060995898222442,
+      "hard_gates_pass": true,
+      "core_non_regression": true
+    },
+    {
+      "decay": 0.2,
+      "cup_winner_boost": 2.5,
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.5,
+        "playoff_f1": 0.91
+      },
+      "quality": {
+        "brier_playoff": 0.07353258921112309,
+        "brier_cup": 0.03700232752918767,
+        "log_loss_playoff": 0.23564606679661665,
+        "calibration_error": 0.029684080748521236
+      },
+      "quality_score": 0.20638943113725391,
+      "hard_gates_pass": true,
+      "core_non_regression": false
+    }
+  ],
+  "deploymentDecision": {
+    "deployed": true,
+    "reason": "candidate improved quality score with hard gates + non-regression",
+    "profilePath": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/model_profile.json",
+    "selected": {
+      "decay": 0.1,
+      "cup_winner_boost": 2.0,
+      "quality_score": 0.19504763059185906
+    }
+  }
+}

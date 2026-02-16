@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-02-10T05:03:14.149725+00:00",
+  "phase": "phase8_14_execution",
+  "status": "FAIL",
+  "timeoutSeconds": 5,
+  "failedCommands": [
+    "Phase 8 (Vegas Truth Lock): python3 scripts/run_phase8_vegas_truth_lock.py",
+    "Phase 9 (Cup Edge Optimization): python3 scripts/run_phase9_cup_edge_optimization.py",
+    "Phase 10 (A/B Top-1 Recovery): python3 scripts/run_phase10_ab_top1_recovery.py",
+    "Phase 11 (Constrained Edge Batch): python3 scripts/run_phase11_constrained_edge_batch.py",
+    "Phase 12 (Goal Gap Closure): python3 scripts/run_phase12_goal_gap_closure.py",
+    "Phase 13 (Eligible Feature Push): python3 scripts/run_phase13_eligible_feature_push.py",
+    "Phase 14 (Release Contract Closure): python3 scripts/update_benchmark_metrics.py",
+    "Phase 14 (Release Contract Closure): python3 scripts/verify_benchmark_contract.py",
+    "Phase 14 (Release Contract Closure): python3 scripts/run_phase7_release_cycle.py"
+  ],
+  "commands": [
+    {
+      "cmd": "python3 scripts/run_phase8_vegas_truth_lock.py",
+      "returncode": 124,
+      "stdout": "",
+      "stderr": "Timed out after 5s",
+      "timedOut": true,
+      "phase": "Phase 8 (Vegas Truth Lock)"
+    },
+    {
+      "cmd": "python3 scripts/run_phase9_cup_edge_optimization.py",
+      "returncode": 124,
+      "stdout": "[phase9] stage1 vegas edge: baseline",
+      "stderr": "Timed out after 5s",
+      "timedOut": true,
+      "phase": "Phase 9 (Cup Edge Optimization)"
+    },
+    {
+      "cmd": "python3 scripts/run_phase10_ab_top1_recovery.py",
+      "returncode": 124,
+      "stdout": "[phase10-ab] evaluating: baseline",
+      "stderr": "Timed out after 5s",
+      "timedOut": true,
+      "phase": "Phase 10 (A/B Top-1 Recovery)"
+    },
+    {
+      "cmd": "python3 scripts/run_phase11_constrained_edge_batch.py",
+      "returncode": 124,
+      "stdout": "[phase11] vegas eval: baseline",
+      "stderr": "Timed out after 5s",
+      "timedOut": true,
+      "phase": "Phase 11 (Constrained Edge Batch)"
+    },
+    {
+      "cmd": "python3 scripts/run_phase12_goal_gap_closure.py",
+      "returncode": 124,
+      "stdout": "[phase12] vegas eval: baseline",
+      "stderr": "Timed out after 5s",
+      "timedOut": true,
+      "phase": "Phase 12 (Goal Gap Closure)"
+    },
+    {
+      "cmd": "python3 scripts/run_phase13_eligible_feature_push.py",
+      "returncode": 124,
+      "stdout": "[phase13] vegas eval: baseline",
+      "stderr": "Timed out after 5s",
+      "timedOut": true,
+      "phase": "Phase 13 (Eligible Feature Push)"
+    },
+    {
+      "cmd": "python3 scripts/update_benchmark_metrics.py",
+      "returncode": 124,
+      "stdout": "",
+      "stderr": "Timed out after 5s",
+      "timedOut": true,
+      "phase": "Phase 14 (Release Contract Closure)"
+    },
+    {
+      "cmd": "python3 scripts/verify_benchmark_contract.py",
+      "returncode": 1,
+      "stdout": "FAIL: Cup Vegas goal failed: relative edge 0.014025005096097136 below 0.080",
+      "stderr": "",
+      "timedOut": false,
+      "phase": "Phase 14 (Release Contract Closure)"
+    },
+    {
+      "cmd": "python3 scripts/run_phase7_release_cycle.py",
+      "returncode": 124,
+      "stdout": "",
+      "stderr": "Timed out after 5s",
+      "timedOut": true,
+      "phase": "Phase 14 (Release Contract Closure)"
+    },
+    {
+      "cmd": "python3 scripts/grade_model_dashboard.py",
+      "returncode": 0,
+      "stdout": "Wrote /Users/matthewdukovich/Desktop/NHL Playoff Project/reports/current_model_dashboard_grade.json\nWrote /Users/matthewdukovich/Desktop/NHL Playoff Project/reports/CURRENT_MODEL_DASHBOARD_GRADE.md",
+      "stderr": "",
+      "timedOut": false,
+      "phase": "Phase 14 (Release Contract Closure)"
+    }
+  ]
+}

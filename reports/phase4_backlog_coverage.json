@@ -1,0 +1,258 @@
+{
+  "generatedAt": "2026-02-08T18:57:15.184424+00:00",
+  "mode": "phase4_backlog_coverage",
+  "seasonsAudited": 16,
+  "overallCoverage": {
+    "goalie_usage_starter_load": 1.0,
+    "goalie_backup_dropoff": 1.0,
+    "injury_adjusted_strength": 1.0,
+    "score_state_adjusted_5v5_close_game": 1.0,
+    "schedule_travel_rest_load": 1.0,
+    "discipline_taken_drawn_split": 1.0,
+    "trade_deadline_roster_delta": 1.0,
+    "playoff_style_netfront_rush_forecheck": 1.0,
+    "coach_system_continuity": 1.0
+  },
+  "seasonCoverage": [
+    {
+      "season": 2010,
+      "teams": 30,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2011,
+      "teams": 30,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2012,
+      "teams": 30,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2013,
+      "teams": 30,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2014,
+      "teams": 30,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2015,
+      "teams": 30,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2016,
+      "teams": 30,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2017,
+      "teams": 30,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2018,
+      "teams": 31,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2019,
+      "teams": 31,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2020,
+      "teams": 31,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2021,
+      "teams": 31,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2022,
+      "teams": 32,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2023,
+      "teams": 32,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2024,
+      "teams": 32,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    },
+    {
+      "season": 2025,
+      "teams": 32,
+      "fieldCoverage": {
+        "goalie_usage_starter_load": 1.0,
+        "goalie_backup_dropoff": 1.0,
+        "injury_adjusted_strength": 1.0,
+        "score_state_adjusted_5v5_close_game": 1.0,
+        "schedule_travel_rest_load": 1.0,
+        "discipline_taken_drawn_split": 1.0,
+        "trade_deadline_roster_delta": 1.0,
+        "playoff_style_netfront_rush_forecheck": 1.0,
+        "coach_system_continuity": 1.0
+      }
+    }
+  ]
+}

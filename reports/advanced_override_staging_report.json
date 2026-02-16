@@ -1,0 +1,82 @@
+{
+  "startSeason": 2010,
+  "endSeason": 2024,
+  "seasons": [
+    {
+      "season": 2010,
+      "status": "written",
+      "rows": 30
+    },
+    {
+      "season": 2011,
+      "status": "written",
+      "rows": 30
+    },
+    {
+      "season": 2012,
+      "status": "written",
+      "rows": 30
+    },
+    {
+      "season": 2013,
+      "status": "written",
+      "rows": 30
+    },
+    {
+      "season": 2014,
+      "status": "written",
+      "rows": 30
+    },
+    {
+      "season": 2015,
+      "status": "written",
+      "rows": 30
+    },
+    {
+      "season": 2016,
+      "status": "written",
+      "rows": 30
+    },
+    {
+      "season": 2017,
+      "status": "written",
+      "rows": 30
+    },
+    {
+      "season": 2018,
+      "status": "written",
+      "rows": 31
+    },
+    {
+      "season": 2019,
+      "status": "written",
+      "rows": 31
+    },
+    {
+      "season": 2020,
+      "status": "written",
+      "rows": 31
+    },
+    {
+      "season": 2021,
+      "status": "written",
+      "rows": 31
+    },
+    {
+      "season": 2022,
+      "status": "written",
+      "rows": 32
+    },
+    {
+      "season": 2023,
+      "status": "written",
+      "rows": 32
+    },
+    {
+      "season": 2024,
+      "status": "written",
+      "rows": 32
+    }
+  ],
+  "totalRows": 460
+}

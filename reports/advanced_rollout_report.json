@@ -1,0 +1,215 @@
+{
+  "generatedAt": "2026-02-07T07:13:15.418793+00:00",
+  "rows": [
+    {
+      "season": 2011,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": 1.5988079804518662e-08,
+        "brier_cup": -5.824390691966386e-10,
+        "log_loss_playoff": 5.431848518200333e-08,
+        "calibration_error": -4.330439307836942e-08
+      }
+    },
+    {
+      "season": 2012,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": -0.08000000000000007,
+        "playoff_f1": 0.0,
+        "brier_playoff": -4.417512189380801e-11,
+        "brier_cup": 1.8024755103610013e-05,
+        "log_loss_playoff": 2.6651760909324196e-08,
+        "calibration_error": 6.54981242298458e-08
+      }
+    },
+    {
+      "season": 2013,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": -3.42752285720227e-08,
+        "brier_cup": 8.81887618486843e-12,
+        "log_loss_playoff": -7.738464896656083e-08,
+        "calibration_error": -1.3093494972277187e-08
+      }
+    },
+    {
+      "season": 2014,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": -2.4127765757553377e-09,
+        "brier_cup": 2.478368343883375e-10,
+        "log_loss_playoff": -1.6862867491251876e-09,
+        "calibration_error": -1.7453876579448524e-07
+      }
+    },
+    {
+      "season": 2015,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": -2.8376118441086895e-08,
+        "brier_cup": 2.3544360905347617e-11,
+        "log_loss_playoff": -6.984187966851962e-08,
+        "calibration_error": -5.5411636033092515e-08
+      }
+    },
+    {
+      "season": 2016,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": -3.785092420049985e-08,
+        "brier_cup": -2.180619573799447e-11,
+        "log_loss_playoff": -8.645558269293474e-08,
+        "calibration_error": -9.597275342845824e-08
+      }
+    },
+    {
+      "season": 2017,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": 9.7955555194984e-09,
+        "brier_cup": 7.689609365924e-11,
+        "log_loss_playoff": 2.2840284469305416e-08,
+        "calibration_error": 2.734196166351288e-08
+      }
+    },
+    {
+      "season": 2018,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": 1.1637360242122696e-09,
+        "brier_cup": -2.5641377909835228e-11,
+        "log_loss_playoff": -1.7322254741714005e-13,
+        "calibration_error": -1.0029274530309884e-07
+      }
+    },
+    {
+      "season": 2019,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": 7.085820985519575e-09,
+        "brier_cup": 1.0253187188169477e-11,
+        "log_loss_playoff": 1.4519967256321209e-08,
+        "calibration_error": 3.801826460592128e-08
+      }
+    },
+    {
+      "season": 2020,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": -2.213470176593013e-08,
+        "brier_cup": 5.436130712244136e-11,
+        "log_loss_playoff": -5.201451025449444e-08,
+        "calibration_error": 2.1464584375532891e-07
+      }
+    },
+    {
+      "season": 2021,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": 1.7079301001254876e-08,
+        "brier_cup": -7.4600742250297e-12,
+        "log_loss_playoff": 7.22114909257332e-08,
+        "calibration_error": 4.1872433256817665e-08
+      }
+    },
+    {
+      "season": 2022,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": 2.8003213151106543e-08,
+        "brier_cup": 3.2252880921568305e-11,
+        "log_loss_playoff": 1.1075896838574906e-08,
+        "calibration_error": 1.0865165070081395e-07
+      }
+    },
+    {
+      "season": 2023,
+      "status": "accepted",
+      "deltas": {
+        "top1_accuracy_pct": 0.0,
+        "top5_accuracy_pct": 0.0,
+        "average_winner_rank": 0.0,
+        "playoff_f1": 0.0,
+        "brier_playoff": -1.5865847385887477e-08,
+        "brier_cup": -3.1321611970724916e-12,
+        "log_loss_playoff": 4.515818968764407e-09,
+        "calibration_error": 1.3202031131850922e-07
+      }
+    }
+  ],
+  "finalCore": {
+    "top1_accuracy_pct": 33.3,
+    "top5_accuracy_pct": 50.0,
+    "average_winner_rank": 5.5,
+    "playoff_f1": 0.916
+  },
+  "finalQuality": {
+    "brier_playoff": 0.07059696783178217,
+    "brier_cup": 0.0315945375854303,
+    "log_loss_playoff": 0.22742143706025245,
+    "calibration_error": 0.01612322304789014
+  },
+  "acceptedSeasons": [
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023
+  ],
+  "rejectedSeasons": []
+}

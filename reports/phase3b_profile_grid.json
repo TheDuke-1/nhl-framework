@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-02-08T02:41:33.489457+00:00",
+  "baseline": {
+    "profileVersion": "phase3-optimized-2026-02-08",
+    "core": {
+      "top1_accuracy_pct": 16.7,
+      "top5_accuracy_pct": 58.3,
+      "average_winner_rank": 6.0,
+      "playoff_f1": 0.905
+    },
+    "quality": {
+      "brier_playoff": 0.07251472422178856,
+      "brier_cup": 0.030790591224907633,
+      "log_loss_playoff": 0.2326178541696349,
+      "calibration_error": 0.020936700149755155
+    },
+    "qualityScore": 0.19063277169718237
+  },
+  "candidates": [
+    {
+      "name": "baseline",
+      "profileVersion": "phase3-optimized-2026-02-08",
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.0,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07251472422178856,
+        "brier_cup": 0.030790591224907633,
+        "log_loss_playoff": 0.2326178541696349,
+        "calibration_error": 0.020936700149755155
+      },
+      "qualityScore": 0.19063277169718237,
+      "hardGatesPass": true,
+      "coreNonRegression": true
+    },
+    {
+      "name": "gb-heavy",
+      "profileVersion": "phase3b-gb-heavy",
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.0,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07251472422178856,
+        "brier_cup": 0.030790591224907633,
+        "log_loss_playoff": 0.2326178541696349,
+        "calibration_error": 0.020936700149755155
+      },
+      "qualityScore": 0.19063277169718237,
+      "hardGatesPass": true,
+      "coreNonRegression": true
+    },
+    {
+      "name": "mc-heavy",
+      "profileVersion": "phase3b-mc-heavy",
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.0,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07251472422178856,
+        "brier_cup": 0.030790591224907633,
+        "log_loss_playoff": 0.2326178541696349,
+        "calibration_error": 0.020936700149755155
+      },
+      "qualityScore": 0.19063277169718237,
+      "hardGatesPass": true,
+      "coreNonRegression": true
+    },
+    {
+      "name": "nn-heavy",
+      "profileVersion": "phase3b-nn-heavy",
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.0,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07251472422178856,
+        "brier_cup": 0.030790591224907633,
+        "log_loss_playoff": 0.2326178541696349,
+        "calibration_error": 0.020936700149755155
+      },
+      "qualityScore": 0.19063277169718237,
+      "hardGatesPass": true,
+      "coreNonRegression": true
+    },
+    {
+      "name": "decay-010",
+      "profileVersion": "phase3b-decay-010",
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 58.3,
+        "average_winner_rank": 6.0,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07251472422178856,
+        "brier_cup": 0.030790591224907633,
+        "log_loss_playoff": 0.2326178541696349,
+        "calibration_error": 0.020936700149755155
+      },
+      "qualityScore": 0.19063277169718237,
+      "hardGatesPass": true,
+      "coreNonRegression": true
+    },
+    {
+      "name": "decay-020",
+      "profileVersion": "phase3b-decay-020",
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 50.0,
+        "average_winner_rank": 6.08,
+        "playoff_f1": 0.905
+      },
+      "quality": {
+        "brier_playoff": 0.07358650269788798,
+        "brier_cup": 0.030744949668956734,
+        "log_loss_playoff": 0.23572607042040858,
+        "calibration_error": 0.03300792711141809
+      },
+      "qualityScore": 0.20060449221917032,
+      "hardGatesPass": true,
+      "coreNonRegression": false
+    }
+  ],
+  "decision": {
+    "deployed": false,
+    "name": "baseline",
+    "reason": "no candidate improved quality score under hard-gate + non-regression constraints",
+    "profileVersion": "phase3-optimized-2026-02-08",
+    "qualityScore": 0.19063277169718237
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-02-15T23:39:12.857401+00:00",
+  "model": {
+    "numeric": 88.5,
+    "grade": "B+",
+    "components": {
+      "accuracy": {
+        "score": 97.3,
+        "detail": {
+          "top1": 40.0,
+          "top5": 60.0,
+          "winner_rank": 4.6,
+          "playoff_f1": 0.974
+        }
+      },
+      "probability_quality": {
+        "score": 65.1,
+        "detail": {
+          "brier_playoff": 0.05773304410405995,
+          "brier_cup": 0.02906193872149189,
+          "log_loss_playoff": 0.2420415493929581,
+          "calibration_error": 0.16525768671832727
+        }
+      },
+      "coverage": {
+        "score": 97.5,
+        "detail": {
+          "accepted_season_ratio": 1.0,
+          "accepted_team_ratio": 0.9583333333333334,
+          "raw_team_ratio": 0.9583333333333334
+        }
+      },
+      "operations": {
+        "score": 100.0,
+        "detail": {
+          "release_cycle_status": "PASS",
+          "gate_pass_ratio": 1.0,
+          "leakage_free": true
+        }
+      },
+      "market_readiness": {
+        "score": 85.0,
+        "detail": {
+          "has_historical_vegas_benchmark": true
+        }
+      }
+    }
+  },
+  "dashboard": {
+    "numeric": 98.9,
+    "grade": "A+",
+    "detail": {
+      "team_count": 32,
+      "section_ratio": 1.0,
+      "freshness_score": 0.93,
+      "release_status": "PASS",
+      "cup_goal_met": true,
+      "capped": false,
+      "cap_reasons": []
+    }
+  },
+  "overall": {
+    "numeric": 91.6,
+    "grade": "A-"
+  }
+}

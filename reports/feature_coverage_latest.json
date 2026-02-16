@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-02-09T02:18:33.601813+00:00",
+  "startSeason": 2010,
+  "endSeason": 2024,
+  "minTeamCoverage": 24,
+  "acceptedSeasons": 15,
+  "totalSeasons": 15,
+  "acceptedSeasonRatio": 1.0,
+  "rawTeamCoverageRatio": 0.9583333333333334,
+  "acceptedTeamCoverageRatio": 0.9583333333333334,
+  "seasons": [
+    {
+      "season": 2010,
+      "fileExists": true,
+      "teamCountRaw": 30,
+      "accepted": true,
+      "teamCountAccepted": 30
+    },
+    {
+      "season": 2011,
+      "fileExists": true,
+      "teamCountRaw": 30,
+      "accepted": true,
+      "teamCountAccepted": 30
+    },
+    {
+      "season": 2012,
+      "fileExists": true,
+      "teamCountRaw": 30,
+      "accepted": true,
+      "teamCountAccepted": 30
+    },
+    {
+      "season": 2013,
+      "fileExists": true,
+      "teamCountRaw": 30,
+      "accepted": true,
+      "teamCountAccepted": 30
+    },
+    {
+      "season": 2014,
+      "fileExists": true,
+      "teamCountRaw": 30,
+      "accepted": true,
+      "teamCountAccepted": 30
+    },
+    {
+      "season": 2015,
+      "fileExists": true,
+      "teamCountRaw": 30,
+      "accepted": true,
+      "teamCountAccepted": 30
+    },
+    {
+      "season": 2016,
+      "fileExists": true,
+      "teamCountRaw": 30,
+      "accepted": true,
+      "teamCountAccepted": 30
+    },
+    {
+      "season": 2017,
+      "fileExists": true,
+      "teamCountRaw": 30,
+      "accepted": true,
+      "teamCountAccepted": 30
+    },
+    {
+      "season": 2018,
+      "fileExists": true,
+      "teamCountRaw": 31,
+      "accepted": true,
+      "teamCountAccepted": 31
+    },
+    {
+      "season": 2019,
+      "fileExists": true,
+      "teamCountRaw": 31,
+      "accepted": true,
+      "teamCountAccepted": 31
+    },
+    {
+      "season": 2020,
+      "fileExists": true,
+      "teamCountRaw": 31,
+      "accepted": true,
+      "teamCountAccepted": 31
+    },
+    {
+      "season": 2021,
+      "fileExists": true,
+      "teamCountRaw": 31,
+      "accepted": true,
+      "teamCountAccepted": 31
+    },
+    {
+      "season": 2022,
+      "fileExists": true,
+      "teamCountRaw": 32,
+      "accepted": true,
+      "teamCountAccepted": 32
+    },
+    {
+      "season": 2023,
+      "fileExists": true,
+      "teamCountRaw": 32,
+      "accepted": true,
+      "teamCountAccepted": 32
+    },
+    {
+      "season": 2024,
+      "fileExists": true,
+      "teamCountRaw": 32,
+      "accepted": true,
+      "teamCountAccepted": 32
+    }
+  ]
+}

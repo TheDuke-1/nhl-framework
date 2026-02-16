@@ -1,0 +1,1368 @@
+{
+  "summary": {
+    "generatedAtUtc": "2026-02-11T05:53:04Z",
+    "totalChangedPaths": 167,
+    "trackedModified": 27,
+    "untracked": 140,
+    "riskTierCounts": {
+      "P0": 12,
+      "P1": 74,
+      "P2": 81
+    },
+    "topAreas": {
+      "reports": 66,
+      "scripts": 35,
+      "data": 23,
+      "superhuman": 14,
+      "tests": 7,
+      "js": 5,
+      ".codex": 5,
+      "history": 3,
+      ".github": 1,
+      "dashboard_data.json": 1,
+      "css": 1,
+      "index.html": 1,
+      "DESIGN-DECISIONS.md": 1,
+      "LEARNINGS.md": 1,
+      "SESSION-STATE.md": 1
+    }
+  },
+  "files": [
+    {
+      "path": ".github/workflows/update-stats.yml",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P0",
+      "area": ".github",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "dashboard_data.json",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P0",
+      "area": "dashboard_data.json",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "data/model_profile.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P0",
+      "area": "data",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "scripts/run_phase7_release_cycle.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P0",
+      "area": "scripts",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "scripts/validate_data.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P0",
+      "area": "scripts",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "scripts/verify_benchmark_contract.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P0",
+      "area": "scripts",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "scripts/verify_model_performance.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P0",
+      "area": "scripts",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "superhuman/dashboard_generator.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P0",
+      "area": "superhuman",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "superhuman/feature_engineering.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P0",
+      "area": "superhuman",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "superhuman/models.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P0",
+      "area": "superhuman",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "superhuman/predictor.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P0",
+      "area": "superhuman",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "superhuman/validation.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P0",
+      "area": "superhuman",
+      "rationale": "Core model/gate/release-critical path."
+    },
+    {
+      "path": "css/style.css",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "css",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/advanced/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/advanced_staging/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/backlog/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2010.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2011.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2012.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2013.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2014.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2015.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2016.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2017.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2018.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2019.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2020.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2021.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2022.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2023.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2024.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/historical/verified/vegas_odds_2025.csv",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "data/model_profiles/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "data",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "index.html",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "index.html",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "js/app.js",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "js",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "js/betting.js",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "js",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "js/mission-control.js",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "js",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "js/performance.js",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "js",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "js/rankings.js",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "js",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/analyze_feature_backtest.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/audit_backlog_feature_coverage.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/audit_historical_feature_coverage.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/backfill_advanced_overrides.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/build_advanced_override_staging.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/fetch_free_historical_vegas.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/generate_backlog_feature_templates.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/generate_betting_edge_report.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/grade_model_dashboard.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/import_historical_vegas_odds.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/populate_backlog_feature_proxies.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/repair_historical_vegas_odds.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/rollout_advanced_overrides.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_feature_test_matrix.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase10_ab_top1_recovery.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase11_constrained_edge_batch.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase12_goal_gap_closure.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase13_eligible_feature_push.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase2_feature_hardening.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase3_weight_optimization.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase3b_profile_grid.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase5_rebuild_calibration.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase8_vegas_truth_lock.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase9_cup_edge_experiment.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phase9_cup_edge_optimization.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phases_3_to_7.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_phases_8_to_14.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/run_superhuman_team_cycle.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/update_benchmark_metrics.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/upgrade_backlog_true_sources.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "scripts/validate_historical_vegas.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "scripts",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/betting_odds_loader.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/cup_signal_loader.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/data_loader.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/data_models.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/evaluation_contract.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/model_profile.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/playoff_experience_loader.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/real_data_loader.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "superhuman/vegas_edge.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "superhuman",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "tests/test_cup_signals.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "tests",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "tests/test_dashboard.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "tests",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "tests/test_dashboard_grade_contract.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "tests",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "tests/test_dashboard_interactions.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "tests",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "tests/test_model_performance.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "tests",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "tests/test_superhuman.py",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P1",
+      "area": "tests",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": "tests/test_wave_guardrails.py",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P1",
+      "area": "tests",
+      "rationale": "Behavioral/product or test-impacting path."
+    },
+    {
+      "path": ".codex/skills/superhuman-issue-squad-orchestrator/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": ".codex",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": ".codex/skills/superhuman-prevention-loop/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": ".codex",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": ".codex/skills/superhuman-quality-gate-architect/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": ".codex",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": ".codex/skills/superhuman-root-cause-postmortem/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": ".codex",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": ".codex/skills/superhuman-skill-productizer/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": ".codex",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "DESIGN-DECISIONS.md",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P2",
+      "area": "DESIGN-DECISIONS.md",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "LEARNINGS.md",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P2",
+      "area": "LEARNINGS.md",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "SESSION-STATE.md",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P2",
+      "area": "SESSION-STATE.md",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "SUPERHUMAN_TEAM.md",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P2",
+      "area": "SUPERHUMAN_TEAM.md",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "TEAM_SKILLS.md",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P2",
+      "area": "TEAM_SKILLS.md",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "data/backtest_cache.json",
+      "gitStatus": " M",
+      "changeType": "modified",
+      "riskTier": "P2",
+      "area": "data",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "data/historical/raw/",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "data",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "history/snapshot_2026-02-07.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "history",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "history/snapshot_2026-02-08.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "history",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "history/snapshot_2026-02-09.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "history",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/ADVANCED_ROLLOUT_REPORT.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/BENCHMARK_IMPROVEMENT_PLAYBOOK.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/BENCHMARK_LATEST.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/CURRENT_MODEL_DASHBOARD_GRADE.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/FEATURE_BACKTEST_ANALYSIS.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/FEATURE_COVERAGE_LATEST.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/FEATURE_TEST_MATRIX.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE10_AB_TOP1_RECOVERY.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE11_CONSTRAINED_EDGE_BATCH.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE12_GOAL_GAP_CLOSURE.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE13_ELIGIBLE_FEATURE_PUSH.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE2_FEATURE_HARDENING.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE3B_PROFILE_GRID.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE3_WEIGHT_OPTIMIZATION.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE4_BACKLOG_COVERAGE.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE4_TRUE_SOURCE_UPGRADE.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE5_REBUILD_CALIBRATION.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE6_BETTING_EDGE.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE7_RELEASE_CYCLE.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE8_14_EXECUTION.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE8_VEGAS_TRUTH_LOCK.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE9_CUP_EDGE_EXPERIMENT.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/PHASE9_CUP_EDGE_OPTIMIZATION.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/REMAINING_PHASE_HIERARCHY_2026-02-08.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/SUPERHUMAN_ISSUE_SWARM_BOARD.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/SUPERHUMAN_REUSABLE_SKILL_CATALOG.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/SUPERHUMAN_TEAM_COLLAB_PLAN_2026-02-09.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/SUPERHUMAN_TEAM_CYCLE_LATEST.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/SUPERHUMAN_TEAM_GOAL_CLOSURE_PLAN_2026-02-11.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/SUPERHUMAN_TEAM_NEXT_STEPS_2026-02-09.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/SUPERHUMAN_TEAM_REVIEW_2026-02-10.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/SUPERHUMAN_TEAM_REVIEW_VERIFY_2026-02-11.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/TEAM_EXECUTION_PLAN_2026-02-07.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/TEAM_REVIEW_GAP_PLAN_2026-02-07.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/VEGAS_BACKFILL_AGENT_PLAN.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/VEGAS_BACKFILL_REPAIR.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/VEGAS_BACKFILL_VALIDATION.md",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/advanced_override_staging_report.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/advanced_rollout_report.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/backtest_strict_walk_forward.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/benchmark_history.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/benchmark_latest.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/current_model_dashboard_grade.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/feature_backtest_analysis.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/feature_coverage_latest.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/feature_test_matrix.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase10_ab_top1_recovery.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase11_constrained_edge_batch.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase12_goal_gap_closure.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase13_eligible_feature_push.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase2_feature_hardening.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase3_weight_optimization.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase3b_profile_grid.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase4_backlog_coverage.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase4_true_source_upgrade.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase5_rebuild_calibration.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase6_betting_edge.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase7_release_cycle.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase8_14_execution.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase8_vegas_truth_lock.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase9_cup_edge_experiment.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase9_cup_edge_optimization.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/phase_vegas_free_source_backfill.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/superhuman_team_cycle_latest.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/vegas_backfill_repair.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    },
+    {
+      "path": "reports/vegas_backfill_validation.json",
+      "gitStatus": "??",
+      "changeType": "untracked",
+      "riskTier": "P2",
+      "area": "reports",
+      "rationale": "Reporting/documentation/support artifact path."
+    }
+  ]
+}

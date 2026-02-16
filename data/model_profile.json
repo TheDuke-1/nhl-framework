@@ -1,0 +1,24 @@
+{
+  "profileVersion": "phase9-cup-edge-2026-02-13",
+  "use_neural_network": true,
+  "use_recency_weighting": true,
+  "use_cup_calibration": true,
+  "recency_decay_rate": 0.22,
+  "cup_winner_boost": 1.5,
+  "cup_market_prior_blend": 0.9,
+  "cup_ensemble_weights": {
+    "gradient_boosting": 0.2,
+    "neural_network": 0.2,
+    "monte_carlo": 0.6
+  },
+  "strict_verification": true,
+  "require_series_data_in_strict_mode": true,
+  "require_oof_cup_calibration_in_strict_mode": true,
+  "optimizationMetadata": {
+    "generatedAt": "2026-02-13T03:28:32.547504+00:00",
+    "source": "scripts/run_phase9_cup_edge_optimization.py",
+    "objective": "maximize_cup_relative_brier_edge_vs_vegas",
+    "baselineEdge": 0.014749603218255646,
+    "selectedEdge": 0.0232256011443896
+  }
+}

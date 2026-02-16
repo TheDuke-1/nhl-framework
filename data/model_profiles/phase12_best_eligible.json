@@ -1,0 +1,15 @@
+{
+  "profileVersion": "phase12-best_eligible",
+  "use_neural_network": true,
+  "use_recency_weighting": true,
+  "use_cup_calibration": false,
+  "recency_decay_rate": 0.09,
+  "cup_winner_boost": 1.85,
+  "cup_market_prior_blend": 0.9,
+  "cup_ensemble_weights": {
+    "gradient_boosting": 0.02,
+    "neural_network": 0.0,
+    "monte_carlo": 0.98
+  },
+  "generatedAt": "2026-02-11T06:55:49.438912+00:00"
+}

@@ -1,0 +1,235 @@
+{
+  "generatedAt": "2026-02-07T18:45:30.445898+00:00",
+  "evaluationMode": "strict_walk_forward_feature_analysis",
+  "univariate": [
+    {
+      "feature": "goal_differential_rate",
+      "cup_top1_accuracy_pct": 16.7,
+      "cup_top5_accuracy_pct": 58.3,
+      "cup_average_winner_rank": 5.25,
+      "cup_brier": 0.0311,
+      "cup_logloss": 0.1212,
+      "playoff_f1": 0.916,
+      "playoff_brier": 0.065,
+      "playoff_logloss": 0.2119,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "star_power",
+      "cup_top1_accuracy_pct": 16.7,
+      "cup_top5_accuracy_pct": 41.7,
+      "cup_average_winner_rank": 6.92,
+      "cup_brier": 0.0313,
+      "cup_logloss": 0.1309,
+      "playoff_f1": 0.853,
+      "playoff_brier": 0.1176,
+      "playoff_logloss": 0.3712,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "roster_depth",
+      "cup_top1_accuracy_pct": 16.7,
+      "cup_top5_accuracy_pct": 41.7,
+      "cup_average_winner_rank": 9.0,
+      "cup_brier": 0.0313,
+      "cup_logloss": 0.138,
+      "playoff_f1": 0.801,
+      "playoff_brier": 0.1749,
+      "playoff_logloss": 0.5249,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "shot_quality_premium",
+      "cup_top1_accuracy_pct": 16.7,
+      "cup_top5_accuracy_pct": 50.0,
+      "cup_average_winner_rank": 13.25,
+      "cup_brier": 0.0313,
+      "cup_logloss": 0.1463,
+      "playoff_f1": 0.559,
+      "playoff_brier": 0.2482,
+      "playoff_logloss": 0.6896,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "recent_form",
+      "cup_top1_accuracy_pct": 8.3,
+      "cup_top5_accuracy_pct": 8.3,
+      "cup_average_winner_rank": 23.0,
+      "cup_brier": 0.0314,
+      "cup_logloss": 0.1432,
+      "playoff_f1": 0.214,
+      "playoff_brier": 0.2489,
+      "playoff_logloss": 0.6909,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "clutch_performance",
+      "cup_top1_accuracy_pct": 8.3,
+      "cup_top5_accuracy_pct": 8.3,
+      "cup_average_winner_rank": 23.0,
+      "cup_brier": 0.0314,
+      "cup_logloss": 0.1432,
+      "playoff_f1": 0.214,
+      "playoff_brier": 0.2489,
+      "playoff_logloss": 0.6909,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "vegas_cup_signal",
+      "cup_top1_accuracy_pct": 8.3,
+      "cup_top5_accuracy_pct": 8.3,
+      "cup_average_winner_rank": 23.0,
+      "cup_brier": 0.0314,
+      "cup_logloss": 0.1432,
+      "playoff_f1": 0.214,
+      "playoff_brier": 0.2489,
+      "playoff_logloss": 0.6909,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "playoff_experience",
+      "cup_top1_accuracy_pct": 8.3,
+      "cup_top5_accuracy_pct": 8.3,
+      "cup_average_winner_rank": 23.0,
+      "cup_brier": 0.0314,
+      "cup_logloss": 0.1432,
+      "playoff_f1": 0.214,
+      "playoff_brier": 0.2489,
+      "playoff_logloss": 0.6909,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "dynasty_score",
+      "cup_top1_accuracy_pct": 8.3,
+      "cup_top5_accuracy_pct": 8.3,
+      "cup_average_winner_rank": 23.0,
+      "cup_brier": 0.0314,
+      "cup_logloss": 0.1432,
+      "playoff_f1": 0.214,
+      "playoff_brier": 0.2489,
+      "playoff_logloss": 0.6909,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "goaltending_quality",
+      "cup_top1_accuracy_pct": 0.0,
+      "cup_top5_accuracy_pct": 33.3,
+      "cup_average_winner_rank": 7.83,
+      "cup_brier": 0.031,
+      "cup_logloss": 0.1347,
+      "playoff_f1": 0.709,
+      "playoff_brier": 0.2116,
+      "playoff_logloss": 0.612,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "territorial_dominance",
+      "cup_top1_accuracy_pct": 0.0,
+      "cup_top5_accuracy_pct": 50.0,
+      "cup_average_winner_rank": 8.08,
+      "cup_brier": 0.0319,
+      "cup_logloss": 0.132,
+      "playoff_f1": 0.781,
+      "playoff_brier": 0.1624,
+      "playoff_logloss": 0.5029,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "special_teams_composite",
+      "cup_top1_accuracy_pct": 0.0,
+      "cup_top5_accuracy_pct": 33.3,
+      "cup_average_winner_rank": 10.25,
+      "cup_brier": 0.0314,
+      "cup_logloss": 0.1381,
+      "playoff_f1": 0.746,
+      "playoff_brier": 0.1825,
+      "playoff_logloss": 0.5386,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "sustainability",
+      "cup_top1_accuracy_pct": 0.0,
+      "cup_top5_accuracy_pct": 8.3,
+      "cup_average_winner_rank": 14.75,
+      "cup_brier": 0.0321,
+      "cup_logloss": 0.1469,
+      "playoff_f1": 0.504,
+      "playoff_brier": 0.2503,
+      "playoff_logloss": 0.6939,
+      "seasons_evaluated": 12
+    },
+    {
+      "feature": "road_performance",
+      "cup_top1_accuracy_pct": 0.0,
+      "cup_top5_accuracy_pct": 8.3,
+      "cup_average_winner_rank": 15.17,
+      "cup_brier": 0.0316,
+      "cup_logloss": 0.1445,
+      "playoff_f1": 0.578,
+      "playoff_brier": 0.2458,
+      "playoff_logloss": 0.6853,
+      "seasons_evaluated": 12
+    }
+  ],
+  "multivariate_l1_weights": {
+    "weights": [
+      {
+        "feature": "territorial_dominance",
+        "relative_weight_pct": 40.14
+      },
+      {
+        "feature": "goal_differential_rate",
+        "relative_weight_pct": 19.61
+      },
+      {
+        "feature": "shot_quality_premium",
+        "relative_weight_pct": 18.88
+      },
+      {
+        "feature": "road_performance",
+        "relative_weight_pct": 7.66
+      },
+      {
+        "feature": "goaltending_quality",
+        "relative_weight_pct": 7.52
+      },
+      {
+        "feature": "sustainability",
+        "relative_weight_pct": 4.48
+      },
+      {
+        "feature": "roster_depth",
+        "relative_weight_pct": 1.72
+      },
+      {
+        "feature": "special_teams_composite",
+        "relative_weight_pct": 0.0
+      },
+      {
+        "feature": "recent_form",
+        "relative_weight_pct": 0.0
+      },
+      {
+        "feature": "star_power",
+        "relative_weight_pct": 0.0
+      },
+      {
+        "feature": "clutch_performance",
+        "relative_weight_pct": 0.0
+      },
+      {
+        "feature": "vegas_cup_signal",
+        "relative_weight_pct": 0.0
+      },
+      {
+        "feature": "playoff_experience",
+        "relative_weight_pct": 0.0
+      },
+      {
+        "feature": "dynasty_score",
+        "relative_weight_pct": 0.0
+      }
+    ],
+    "folds": 12
+  }
+}

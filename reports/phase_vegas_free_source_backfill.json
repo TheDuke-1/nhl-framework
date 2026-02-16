@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-02-08T19:34:56.456972+00:00",
+  "reports": [
+    {
+      "season": 2010,
+      "season_label": "2009-2010",
+      "teams_written": 0,
+      "out_path": "/Users/matthewdukovich/Desktop/NHL Playoff Project/data/historical/verified/vegas_odds_2010.csv",
+      "cup_only_count": 28,
+      "playoff_only_count": 0
+    }
+  ]
+}

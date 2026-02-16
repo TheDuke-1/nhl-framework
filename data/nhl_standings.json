@@ -1,13 +1,22 @@
 {
   "_metadata": {
     "source": "NHL API",
+    "provider": "cache_snapshot",
+    "fallbackUsed": true,
+    "activityState": "scheduled_break",
+    "checkedAt": "2026-02-15T23:17:52.720459Z",
+    "fetchedAt": "2026-02-05T11:30:53.171090Z",
+    "teamCount": 32,
     "endpoints": [
       "https://api-web.nhle.com/v1/standings/now",
       "https://api.nhle.com/stats/rest/en/team/powerplay?cayenneExp=seasonId=20252026",
-      "https://api.nhle.com/stats/rest/en/team/penaltykill?cayenneExp=seasonId=20252026"
+      "https://api.nhle.com/stats/rest/en/team/penaltykill?cayenneExp=seasonId=20252026",
+      "https://api-web.nhl.com/v1/standings/now"
     ],
-    "fetchedAt": "2026-02-05T11:30:53.171090Z",
-    "teamCount": 32
+    "transportErrors": [
+      "https://api-web.nhle.com/v1/standings/now: Failed after 3 attempts: HTTPSConnectionPool(host='api-web.nhle.com', port=443): Max retries exceeded with url: /v1/standings/now (Caused by NameResolutionError(\"HTTPSConnection(host='api-web.nhle.com', port=443): Failed to resolve 'api-web.nhle.com' ([Errno 8] nodename nor servname provided, or not known)\"))",
+      "https://api-web.nhl.com/v1/standings/now: Failed after 3 attempts: HTTPSConnectionPool(host='api-web.nhl.com', port=443): Max retries exceeded with url: /v1/standings/now (Caused by NameResolutionError(\"HTTPSConnection(host='api-web.nhl.com', port=443): Failed to resolve 'api-web.nhl.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+    ]
   },
   "teams": {
     "COL": {
