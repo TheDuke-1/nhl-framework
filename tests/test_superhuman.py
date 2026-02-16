@@ -1,6 +1,7 @@
 """Tests for superhuman model output (dashboard_data.json)."""
 
 import pytest
+from collections import Counter
 
 VALID_TIERS = {"Elite", "Contender", "Bubble", "Longshot"}
 
@@ -46,3 +47,26 @@ class TestDashboardData:
         assert "season" in meta
         assert "modelVersion" in meta
         assert "generated" in meta
+        assert "sourceFreshness" in meta
+        assert "releaseStatusStrict" in meta
+        assert "releaseStatusAdvisory" in meta
+        assert "releaseTruthPolicy" in meta
+        freshness = meta["sourceFreshness"]
+        for key in ("nhl", "moneypuck", "nst", "odds"):
+            assert key in freshness
+
+    def test_probability_progression_is_coherent(self, dashboard_data):
+        for team in dashboard_data["teams"]:
+            playoff = float(team["playoffProbability"])
+            conf_final = float(team["conferenceProbability"])
+            cup_final = float(team["cupFinalProbability"])
+            cup = float(team["cupProbability"])
+            assert cup <= cup_final + 1e-6, f"{team['code']} Cup% exceeds Cup Final%"
+            assert cup_final <= conf_final + 1e-6, f"{team['code']} Cup Final% exceeds Conf Final%"
+            assert conf_final <= playoff + 1e-6, f"{team['code']} Conf Final% exceeds Playoff%"
+
+    def test_cup_probability_distribution_not_collapsed(self, dashboard_data):
+        rounded = [round(float(team["cupProbability"]), 2) for team in dashboard_data["teams"]]
+        counts = Counter(rounded)
+        assert len(counts) >= 12, "Cup distribution has too few unique values"
+        assert counts.most_common(1)[0][1] <= 12, "Cup distribution collapsed into one dominant bucket"

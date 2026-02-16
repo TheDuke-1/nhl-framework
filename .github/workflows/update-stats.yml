@@ -43,17 +43,14 @@ jobs:
       - name: Fetch NHL API data
         if: steps.season_check.outputs.skip != 'true'
         run: python scripts/fetch_nhl_api.py
-        continue-on-error: true
 
       - name: Fetch MoneyPuck data
         if: steps.season_check.outputs.skip != 'true'
         run: python scripts/fetch_moneypuck.py
-        continue-on-error: true
 
       - name: Scrape Natural Stat Trick
         if: steps.season_check.outputs.skip != 'true'
         run: python scripts/scrape_nst.py
-        continue-on-error: true
 
       - name: Fetch betting odds
         if: steps.season_check.outputs.skip != 'true'
@@ -71,13 +68,12 @@ jobs:
 
       - name: Validate data quality
         if: steps.season_check.outputs.skip != 'true'
-        run: python scripts/validate_data.py
+        run: python scripts/validate_data.py --strict
 
       - name: Generate superhuman predictions
         if: steps.season_check.outputs.skip != 'true'
         id: superhuman
         run: python -m superhuman.dashboard_generator
-        continue-on-error: true
 
       - name: Create issue on model failure
         if: always() && steps.season_check.outputs.skip != 'true' && steps.superhuman.outcome == 'failure'
@@ -115,6 +111,26 @@ jobs:
         if: steps.season_check.outputs.skip != 'true'
         run: python -m pytest tests/ -v
 
+      - name: Run model performance gate
+        if: steps.season_check.outputs.skip != 'true'
+        run: python -W error::RuntimeWarning scripts/verify_model_performance.py --require-vegas-edge --require-cup-vegas-goal
+
+      - name: Update benchmark metrics snapshot
+        if: steps.season_check.outputs.skip != 'true'
+        run: python scripts/update_benchmark_metrics.py
+
+      - name: Grade model + dashboard
+        if: steps.season_check.outputs.skip != 'true'
+        run: python scripts/grade_model_dashboard.py
+
+      - name: Run release cycle contract
+        if: steps.season_check.outputs.skip != 'true'
+        run: python scripts/run_phase7_release_cycle.py
+
+      - name: Audit historical feature coverage
+        if: steps.season_check.outputs.skip != 'true'
+        run: python scripts/audit_historical_feature_coverage.py
+
       - name: Weekly snapshot (Mondays only)
         if: steps.season_check.outputs.skip != 'true'
         run: |
@@ -137,7 +153,7 @@ jobs:
         if: steps.season_check.outputs.skip != 'true'
         id: check_changes
         run: |
-          git add data/ dashboard_data.json history/
+          git add data/ dashboard_data.json history/ reports/
           git diff --cached --quiet || echo "changes=true" >> $GITHUB_OUTPUT
           git reset HEAD
 
@@ -146,7 +162,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add data/ dashboard_data.json history/
+          git add data/ dashboard_data.json history/ reports/
           git commit -m "Update NHL stats - $(date +'%Y-%m-%d %H:%M') UTC"
           git push
 

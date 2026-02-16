@@ -9,21 +9,86 @@ Uses two API endpoints:
 """
 
 import json
+import sys
 from pathlib import Path
 from datetime import datetime
+from typing import Any, Dict, List, Optional, Tuple
 
 from config import NHL_API_TEAM_MAP as TEAM_ABBREV_MAP, NST_TEAM_MAP as TEAM_NAME_MAP, SEASON_ID, NHL_API
 from utils import fetch_json
+from utils import FetchError
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from league_calendar import get_data_activity_context
 
 # NHL API endpoints (built from config)
 STANDINGS_URL = NHL_API["standings"]
+BACKUP_STANDINGS_URLS = [
+    "https://api-web.nhl.com/v1/standings/now",
+]
 PP_STATS_URL = f"https://api.nhle.com/stats/rest/en/team/powerplay?cayenneExp=seasonId={SEASON_ID}"
 PK_STATS_URL = f"https://api.nhle.com/stats/rest/en/team/penaltykill?cayenneExp=seasonId={SEASON_ID}"
+CACHE_PATH = Path(__file__).parent.parent / "data" / "nhl_standings.json"
 
-def fetch_standings():
-    """Fetch current NHL standings."""
-    print("Fetching NHL standings...")
-    return fetch_json(STANDINGS_URL)
+def _load_cached_teams() -> Tuple[Optional[Dict[str, Any]], Optional[Dict[str, Any]]]:
+    if not CACHE_PATH.exists():
+        return None, None
+    try:
+        payload = json.loads(CACHE_PATH.read_text())
+    except Exception:
+        return None, None
+    teams = payload.get("teams")
+    if not isinstance(teams, dict) or len(teams) < 30:
+        return None, None
+    return teams, payload.get("_metadata") if isinstance(payload.get("_metadata"), dict) else None
+
+
+def fetch_standings() -> Tuple[Dict[str, Any], Dict[str, Any]]:
+    """Fetch current NHL standings with provider fallback chain."""
+    transport_errors: List[str] = []
+
+    print("Fetching NHL standings (primary)...")
+    try:
+        return fetch_json(STANDINGS_URL), {
+            "provider": "nhl_primary_api_web",
+            "url": STANDINGS_URL,
+            "transportErrors": transport_errors,
+            "usedCacheFallback": False,
+        }
+    except Exception as exc:
+        transport_errors.append(f"{STANDINGS_URL}: {exc}")
+        print(f"Primary standings endpoint failed: {exc}")
+
+    for url in BACKUP_STANDINGS_URLS:
+        print(f"Fetching NHL standings (backup): {url}")
+        try:
+            return fetch_json(url), {
+                "provider": "nhl_backup_api_web",
+                "url": url,
+                "transportErrors": transport_errors,
+                "usedCacheFallback": False,
+            }
+        except Exception as exc:
+            transport_errors.append(f"{url}: {exc}")
+            print(f"Backup standings endpoint failed: {exc}")
+
+    calendar = get_data_activity_context()
+    cached_teams, cached_meta = _load_cached_teams()
+    if calendar.get("activityState") == "scheduled_break" and cached_teams:
+        cached_at = str((cached_meta or {}).get("fetchedAt", "unknown"))
+        print(f"EXPECTED_STATIC_FALLBACK: cache_snapshot ({cached_at})")
+        return {
+            "_cachedTeams": cached_teams,
+            "_cachedMeta": cached_meta or {},
+        }, {
+            "provider": "cache_snapshot",
+            "url": str(CACHE_PATH),
+            "transportErrors": transport_errors,
+            "usedCacheFallback": True,
+            "cachedAt": cached_at,
+        }
+
+    raise FetchError("All NHL standings providers failed: " + " | ".join(transport_errors))
 
 def fetch_pp_pk_stats():
     """Fetch PP% and PK% from the NHL stats API (separate from standings)."""
@@ -65,6 +130,9 @@ def fetch_pp_pk_stats():
 
 def parse_standings(data):
     """Parse standings data into our format."""
+    if "_cachedTeams" in data and isinstance(data["_cachedTeams"], dict):
+        return data["_cachedTeams"]
+
     teams = {}
 
     for team_data in data.get("standings", []):
@@ -117,8 +185,9 @@ def main():
     data_dir.mkdir(exist_ok=True)
 
     # Fetch and parse standings
-    raw_data = fetch_standings()
+    raw_data, provider_meta = fetch_standings()
     teams = parse_standings(raw_data)
+    cached_teams, cached_meta = _load_cached_teams()
 
     # Fetch PP% and PK% from separate stats API
     pp_stats, pk_stats = fetch_pp_pk_stats()
@@ -129,14 +198,37 @@ def main():
             team["ppPct"] = pp_stats[abbrev]
         if abbrev in pk_stats:
             team["pkPct"] = pk_stats[abbrev]
+        # If PP/PK fetch failed for a team, carry forward known-good values from cache.
+        if cached_teams and abbrev in cached_teams:
+            if "ppPct" not in team and "ppPct" in cached_teams[abbrev]:
+                team["ppPct"] = cached_teams[abbrev]["ppPct"]
+            if "pkPct" not in team and "pkPct" in cached_teams[abbrev]:
+                team["pkPct"] = cached_teams[abbrev]["pkPct"]
+
+    now_iso = datetime.utcnow().isoformat() + "Z"
+    fetched_at = now_iso
+    if provider_meta.get("provider") == "cache_snapshot":
+        fetched_at = str((cached_meta or {}).get("fetchedAt", now_iso))
+
+    endpoints = [STANDINGS_URL, PP_STATS_URL, PK_STATS_URL]
+    for backup_url in BACKUP_STANDINGS_URLS:
+        if backup_url not in endpoints:
+            endpoints.append(backup_url)
+
+    calendar = get_data_activity_context()
 
     # Add metadata
     output = {
         "_metadata": {
             "source": "NHL API",
-            "endpoints": [STANDINGS_URL, PP_STATS_URL, PK_STATS_URL],
-            "fetchedAt": datetime.utcnow().isoformat() + "Z",
-            "teamCount": len(teams)
+            "provider": provider_meta.get("provider"),
+            "fallbackUsed": bool(provider_meta.get("provider") != "nhl_primary_api_web"),
+            "activityState": calendar.get("activityState"),
+            "checkedAt": now_iso,
+            "fetchedAt": fetched_at,
+            "teamCount": len(teams),
+            "endpoints": endpoints,
+            "transportErrors": provider_meta.get("transportErrors", []),
         },
         "teams": teams
     }
@@ -145,6 +237,11 @@ def main():
     output_path = data_dir / "nhl_standings.json"
     with open(output_path, "w") as f:
         json.dump(output, f, indent=2)
+
+    if provider_meta.get("provider") == "nhl_backup_api_web":
+        print(f"BACKUP_PROVIDER_USED: {provider_meta.get('url')}")
+    if provider_meta.get("provider") == "cache_snapshot":
+        print(f"BACKUP_PROVIDER_USED: cache_snapshot ({provider_meta.get('cachedAt')})")
 
     print(f"Saved {len(teams)} teams to {output_path}")
     return teams

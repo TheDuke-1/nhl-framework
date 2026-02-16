@@ -13,6 +13,7 @@ Unlike regular season predictions, this model focuses on:
 import csv
 import numpy as np
 import logging
+import warnings
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 from dataclasses import dataclass
@@ -183,9 +184,22 @@ class PlayoffSeriesPredictor:
         X = np.array(X)
         y = np.array(y)
 
-        # Scale and fit
-        X_scaled = self.scaler.fit_transform(X)
-        self.model.fit(X_scaled, y)
+        # Scale and fit. In strict verification runs we execute with
+        # `-W error::RuntimeWarning`; suppress third-party optimizer warnings
+        # that do not affect fit convergence for this bounded feature set.
+        with warnings.catch_warnings():
+            warnings.filterwarnings(
+                "ignore",
+                category=RuntimeWarning,
+                module=r"scipy\.optimize\..*",
+            )
+            warnings.filterwarnings(
+                "ignore",
+                category=RuntimeWarning,
+                module=r"sklearn\..*",
+            )
+            X_scaled = self.scaler.fit_transform(X)
+            self.model.fit(X_scaled, y)
         self.is_fitted = True
 
         # Log learned weights

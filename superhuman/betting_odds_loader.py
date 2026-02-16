@@ -45,6 +45,39 @@ def american_to_probability(odds: int) -> float:
         return abs(odds) / (abs(odds) + 100)
 
 
+def get_available_vegas_seasons(
+    start_season: int = 2010,
+    end_season: int = 2100,
+) -> List[int]:
+    """Return sorted seasons with normalized vegas odds files present."""
+    seasons: List[int] = []
+    for path in sorted(HISTORICAL_DIR.glob("vegas_odds_*.csv")):
+        try:
+            season = int(path.stem.split("_")[-1])
+        except ValueError:
+            continue
+        if start_season <= season <= end_season:
+            seasons.append(season)
+    return seasons
+
+
+def _first_non_empty(row: dict, keys: List[str], default: str = "") -> str:
+    for key in keys:
+        value = row.get(key)
+        if value is None:
+            continue
+        text = str(value).strip()
+        if text:
+            return text
+    return default
+
+
+def _parse_american_odds(raw: str) -> int:
+    normalized = raw.strip().replace("−", "-").replace("—", "-").replace("+", "")
+    odds = int(normalized)
+    return odds if odds < 0 else int(f"+{odds}")
+
+
 def load_vegas_odds(season: int) -> Dict[str, TeamOdds]:
     """
     Load Vegas odds for a single season.
@@ -66,22 +99,26 @@ def load_vegas_odds(season: int) -> Dict[str, TeamOdds]:
         reader = csv.DictReader(f)
         for row in reader:
             try:
-                # Parse American odds (handle minus sign encoding)
-                cup_odds_str = row['cup_odds_american'].replace('−', '-').replace('+', '')
-                playoff_odds_str = row['playoff_odds_american'].replace('−', '-').replace('+', '')
-
-                cup_odds = int(cup_odds_str) if cup_odds_str.startswith('-') else int(f"+{cup_odds_str}")
-                playoff_odds = int(playoff_odds_str) if playoff_odds_str.startswith('-') else int(f"+{playoff_odds_str}")
+                team_raw = _first_non_empty(row, ["team", "team_abbrev", "team_code", "abbrev"])
+                cup_odds = _parse_american_odds(_first_non_empty(row, ["cup_odds_american", "cup_odds", "cup"]))
+                playoff_odds = _parse_american_odds(
+                    _first_non_empty(row, ["playoff_odds_american", "playoff_odds", "playoffs_odds", "playoff"])
+                )
+                cup_prob_raw = _first_non_empty(row, ["cup_implied_prob", "cup_prob"])
+                playoff_prob_raw = _first_non_empty(row, ["playoff_implied_prob", "playoff_prob"])
+                made_playoffs_raw = _first_non_empty(row, ["actual_made_playoffs", "made_playoffs"])
+                won_cup_raw = _first_non_empty(row, ["actual_won_cup", "won_cup"])
+                season_raw = _first_non_empty(row, ["season"], str(season))
 
                 odds = TeamOdds(
-                    team=_normalize_team(row['team']),
-                    season=int(row.get('season', season)),
+                    team=_normalize_team(team_raw),
+                    season=int(season_raw),
                     cup_odds_american=cup_odds,
-                    cup_implied_prob=float(row['cup_implied_prob']),
+                    cup_implied_prob=float(cup_prob_raw),
                     playoff_odds_american=playoff_odds,
-                    playoff_implied_prob=float(row['playoff_implied_prob']),
-                    actual_made_playoffs=parse_bool(row['actual_made_playoffs']),
-                    actual_won_cup=parse_bool(row['actual_won_cup'])
+                    playoff_implied_prob=float(playoff_prob_raw),
+                    actual_made_playoffs=parse_bool(made_playoffs_raw),
+                    actual_won_cup=parse_bool(won_cup_raw),
                 )
                 teams[odds.team] = odds
             except (KeyError, ValueError) as e:
@@ -104,13 +141,17 @@ def load_all_vegas_odds(
     """
     all_odds = {}
 
-    for season in range(start_season, end_season + 1):
+    seasons = get_available_vegas_seasons(start_season=start_season, end_season=end_season)
+    for season in seasons:
         season_odds = load_vegas_odds(season)
         for team, odds in season_odds.items():
             key = f"{team}_{season}"
             all_odds[key] = odds
 
-    logger.info(f"Loaded Vegas odds for {len(all_odds)} team-seasons")
+    if seasons:
+        logger.info(f"Loaded Vegas odds for {len(all_odds)} team-seasons across {len(seasons)} seasons")
+    else:
+        logger.info("Loaded Vegas odds for 0 team-seasons (no vegas_odds_YYYY.csv files found)")
     return all_odds
 
 

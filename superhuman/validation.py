@@ -7,20 +7,58 @@ Cross-validation, calibration, and backtesting tools.
 import json
 import numpy as np
 import logging
+import hashlib
 from pathlib import Path
 from typing import List, Dict, Tuple, Optional
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from collections import defaultdict
 
 from sklearn.model_selection import TimeSeriesSplit
-from sklearn.metrics import brier_score_loss, log_loss
+from sklearn.metrics import brier_score_loss, log_loss, precision_score, recall_score, f1_score
 from sklearn.calibration import calibration_curve
 
 from .data_models import TeamSeason, PredictionResult
 from .models import EnsemblePredictor
-from .config import TRAINING_SEASONS, TEST_SEASONS
+from .config import (
+    TRAINING_SEASONS,
+    TEST_SEASONS,
+    RANDOM_SEED,
+    HISTORICAL_DIR,
+    select_conference_playoff_teams,
+)
 
 logger = logging.getLogger(__name__)
+
+
+def _compute_file_signature(paths: List[Path]) -> str:
+    """Compute a short fingerprint from file bytes for cache invalidation."""
+    h = hashlib.sha256()
+    for path in paths:
+        try:
+            h.update(path.read_bytes())
+        except Exception:
+            continue
+    return h.hexdigest()[:10]
+
+
+def _compute_historical_data_signature() -> str:
+    """Fingerprint historical input dataset shape/timestamps for cache invalidation."""
+    h = hashlib.sha256()
+    candidates = sorted(HISTORICAL_DIR.glob("season_*.json"))
+    advanced_dir = HISTORICAL_DIR / "advanced"
+    if advanced_dir.exists():
+        candidates.extend(sorted(advanced_dir.glob("season_*.json")))
+        candidates.extend(sorted(advanced_dir.glob("season_*.csv")))
+
+    for p in candidates:
+        try:
+            stat = p.stat()
+            h.update(str(p.relative_to(HISTORICAL_DIR.parent)).encode("utf-8"))
+            h.update(str(stat.st_size).encode("utf-8"))
+            h.update(str(stat.st_mtime_ns).encode("utf-8"))
+        except Exception:
+            continue
+    return h.hexdigest()[:10]
 
 
 @dataclass
@@ -73,7 +111,8 @@ class ValidationFramework:
 
     def cross_validate(
         self,
-        all_data: List[TeamSeason]
+        all_data: List[TeamSeason],
+        model_factory=None
     ) -> ValidationResult:
         """
         Perform time-series cross-validation.
@@ -81,6 +120,7 @@ class ValidationFramework:
         Uses seasons chronologically - always train on earlier
         seasons and test on later seasons.
         """
+        np.random.seed(RANDOM_SEED)
         # Group by season
         by_season: Dict[int, List[TeamSeason]] = defaultdict(list)
         for team in all_data:
@@ -111,7 +151,10 @@ class ValidationFramework:
                 continue
 
             # Train model
-            model = EnsemblePredictor()
+            if model_factory is None:
+                model = EnsemblePredictor()
+            else:
+                model = model_factory()
             model.fit(train_data)
 
             # Predict
@@ -350,17 +393,37 @@ class BacktestSeasonResult:
     winner_in_top_5: bool
     model_prob_for_winner: float
     top_pick_correct: bool
+    winner_rank: int
+    playoff_teams_hit: int
+    playoff_precision: float
+    playoff_recall: float
+    playoff_f1: float
+
+
+def _predict_playoff_field_nhl(predictions: List[PredictionResult]) -> set[str]:
+    """
+    Predict playoff field using NHL qualification rules:
+    top 3 per division + 2 wildcards per conference.
+    """
+    team_scores = {p.team: float(p.playoff_probability) for p in predictions}
+    predicted: set[str] = set()
+    for conf in ("East", "West"):
+        qualifiers = select_conference_playoff_teams(conf, team_scores)
+        predicted.update(team for team, _ in qualifiers[:8])
+    return predicted
 
 
 def generate_backtest_report(
     historical_data: List[TeamSeason],
-    cache_path: Optional[str] = None
+    cache_path: Optional[str] = None,
+    force_refresh: bool = False,
+    model_overrides: Optional[Dict] = None,
 ) -> Dict:
     """
-    Leave-one-season-out backtest across all training seasons.
+    Strict walk-forward backtest across all seasons.
 
-    For each held-out season: train on all other seasons, predict,
-    then record how well the model identified the actual Cup winner.
+    For each held-out season: train only on prior seasons, predict,
+    then record Cup-winner ranking and playoff-team classification quality.
 
     Args:
         historical_data: All historical team-season data
@@ -369,18 +432,37 @@ def generate_backtest_report(
     Returns:
         Dict with season-by-season results and summary stats
     """
+    np.random.seed(RANDOM_SEED)
     from .config import CURRENT_SEASON
 
-    MODEL_VERSION = f"backtest-v2.1-{CURRENT_SEASON}"
+    module_paths = [
+        Path(__file__),
+        Path(__file__).with_name("models.py"),
+        Path(__file__).with_name("real_data_loader.py"),
+        Path(__file__).with_name("feature_engineering.py"),
+        Path(__file__).with_name("config.py"),
+    ]
+    code_hash = _compute_file_signature(module_paths)
+    data_hash = _compute_historical_data_signature()
+    model_overrides = model_overrides or {}
+    override_hash = hashlib.sha256(
+        json.dumps(model_overrides, sort_keys=True).encode("utf-8")
+    ).hexdigest()[:10]
+    MODEL_VERSION = f"backtest-v2.4-{CURRENT_SEASON}-{code_hash}-{data_hash}-{override_hash}"
 
     # Check cache
-    if cache_path:
+    if cache_path and not force_refresh:
         cache_file = Path(cache_path)
         if cache_file.exists():
             try:
                 with open(cache_file) as f:
                     cached = json.load(f)
-                if cached.get("modelVersion") == MODEL_VERSION:
+                cache_is_current = (
+                    cached.get("modelVersion") == MODEL_VERSION
+                    and cached.get("evaluationMode") == "strict_walk_forward"
+                    and "averageWinnerRank" in cached.get("summary", {})
+                )
+                if cache_is_current:
                     logger.info(f"Loading valid backtest cache from {cache_file}")
                     return cached
                 else:
@@ -395,13 +477,42 @@ def generate_backtest_report(
 
     seasons = sorted(by_season.keys())
     results = []
+    walk_forward_splits = []
+    skipped_splits = []
+    strict_oof_required = bool(
+        model_overrides.get("strict_verification")
+        and model_overrides.get("require_oof_cup_calibration_in_strict_mode")
+    )
 
     for held_out in seasons:
-        # Need at least 2 other seasons to train
-        train_data = [t for t in historical_data if t.season != held_out]
+        # Strict walk-forward: no future leakage allowed.
+        train_data = [t for t in historical_data if t.season < held_out]
         test_data = by_season[held_out]
+        train_seasons = sorted({t.season for t in train_data})
+        min_train = train_seasons[0] if train_seasons else None
+        max_train = train_seasons[-1] if train_seasons else None
 
         if len(train_data) < 64 or len(test_data) < 16:
+            skipped_splits.append(
+                {
+                    "heldOutSeason": held_out,
+                    "reason": "insufficient_train_or_test_samples",
+                    "trainSamples": len(train_data),
+                    "testSamples": len(test_data),
+                }
+            )
+            continue
+
+        # Strict OOF Cup calibration is mathematically underpowered in very
+        # early windows. Skip these windows explicitly to avoid noisy retries.
+        if strict_oof_required and len(train_seasons) < 5:
+            skipped_splits.append(
+                {
+                    "heldOutSeason": held_out,
+                    "reason": "insufficient_oof_cup_history",
+                    "trainSeasonCount": len(train_seasons),
+                }
+            )
             continue
 
         # Find actual winner
@@ -415,11 +526,20 @@ def generate_backtest_report(
             continue
 
         # Train and predict
-        model = EnsemblePredictor(use_neural_network=False)  # Faster without NN
+        model_kwargs = {"use_neural_network": False}
+        model_kwargs.update(model_overrides)
+        model = EnsemblePredictor(**model_kwargs)
         try:
             model.fit(train_data)
             predictions = model.predict(test_data)
         except Exception as e:
+            skipped_splits.append(
+                {
+                    "heldOutSeason": held_out,
+                    "reason": "model_fit_or_predict_failed",
+                    "error": str(e),
+                }
+            )
             logger.warning(f"Backtest failed for season {held_out}: {e}")
             continue
 
@@ -430,6 +550,23 @@ def generate_backtest_report(
         top_5 = [p.team for p in predictions[:5]]
         winner_pred = next((p for p in predictions if p.team == actual_winner), None)
         winner_prob = winner_pred.cup_win_probability if winner_pred else 0.0
+        winner_rank = next(
+            (idx + 1 for idx, p in enumerate(predictions) if p.team == actual_winner),
+            len(predictions)
+        )
+
+        # Predict playoff field using NHL conference/division wildcard rules.
+        predicted_playoff = _predict_playoff_field_nhl(predictions)
+        actual_playoff = {t.team for t in test_data if t.made_playoffs}
+        playoff_hit = len(predicted_playoff.intersection(actual_playoff))
+
+        # Binary classification quality for playoff teams (per season).
+        # Use team order from test_data for stable y_true/y_pred alignment.
+        y_true = np.array([1 if t.team in actual_playoff else 0 for t in test_data])
+        y_pred = np.array([1 if t.team in predicted_playoff else 0 for t in test_data])
+        playoff_precision = precision_score(y_true, y_pred, zero_division=0)
+        playoff_recall = recall_score(y_true, y_pred, zero_division=0)
+        playoff_f1 = f1_score(y_true, y_pred, zero_division=0)
 
         result = BacktestSeasonResult(
             season=held_out,
@@ -439,8 +576,21 @@ def generate_backtest_report(
             winner_in_top_5=actual_winner in top_5,
             model_prob_for_winner=winner_prob,
             top_pick_correct=(top_pick == actual_winner),
+            winner_rank=winner_rank,
+            playoff_teams_hit=playoff_hit,
+            playoff_precision=float(playoff_precision),
+            playoff_recall=float(playoff_recall),
+            playoff_f1=float(playoff_f1),
         )
         results.append(result)
+        walk_forward_splits.append(
+            {
+                "heldOutSeason": held_out,
+                "minTrainSeason": min_train,
+                "maxTrainSeason": max_train,
+                "trainSeasonCount": len(train_seasons),
+            }
+        )
 
         logger.info(
             f"Season {held_out}: top pick={top_pick}, "
@@ -451,9 +601,26 @@ def generate_backtest_report(
     n_seasons = len(results)
     n_top_pick_correct = sum(1 for r in results if r.top_pick_correct)
     n_winner_in_top_5 = sum(1 for r in results if r.winner_in_top_5)
+    avg_winner_rank = float(np.mean([r.winner_rank for r in results])) if n_seasons > 0 else 0.0
+    avg_playoff_hit = float(np.mean([r.playoff_teams_hit for r in results])) if n_seasons > 0 else 0.0
+    avg_playoff_precision = float(np.mean([r.playoff_precision for r in results])) if n_seasons > 0 else 0.0
+    avg_playoff_recall = float(np.mean([r.playoff_recall for r in results])) if n_seasons > 0 else 0.0
+    avg_playoff_f1 = float(np.mean([r.playoff_f1 for r in results])) if n_seasons > 0 else 0.0
+
+    leakage_free = all(
+        split["maxTrainSeason"] is not None and split["maxTrainSeason"] < split["heldOutSeason"]
+        for split in walk_forward_splits
+    )
 
     report = {
         "modelVersion": MODEL_VERSION,
+        "evaluationMode": "strict_walk_forward",
+        "walkForwardAudit": {
+            "leakageFree": leakage_free,
+            "evaluatedSplits": len(walk_forward_splits),
+            "skippedSplits": skipped_splits,
+            "splits": walk_forward_splits,
+        },
         "seasons": [
             {
                 "season": r.season,
@@ -463,6 +630,11 @@ def generate_backtest_report(
                 "winnerInTop5": r.winner_in_top_5,
                 "modelProbForWinner": round(r.model_prob_for_winner * 100, 2),
                 "topPickCorrect": r.top_pick_correct,
+                "winnerRank": r.winner_rank,
+                "playoffTeamsHit": r.playoff_teams_hit,
+                "playoffPrecision": round(r.playoff_precision, 3),
+                "playoffRecall": round(r.playoff_recall, 3),
+                "playoffF1": round(r.playoff_f1, 3),
             }
             for r in results
         ],
@@ -472,6 +644,11 @@ def generate_backtest_report(
             "topPickAccuracy": round(n_top_pick_correct / n_seasons * 100, 1) if n_seasons > 0 else 0,
             "winnerInTop5": n_winner_in_top_5,
             "top5Accuracy": round(n_winner_in_top_5 / n_seasons * 100, 1) if n_seasons > 0 else 0,
+            "averageWinnerRank": round(avg_winner_rank, 2),
+            "averagePlayoffTeamsHit": round(avg_playoff_hit, 2),
+            "averagePlayoffPrecision": round(avg_playoff_precision, 3),
+            "averagePlayoffRecall": round(avg_playoff_recall, 3),
+            "averagePlayoffF1": round(avg_playoff_f1, 3),
         }
     }
 
@@ -514,4 +691,157 @@ def benchmark_against_baseline(
         'model_brier': model_brier,
         'random_brier': random_brier,
         'improvement_pct': improvement
+    }
+
+
+def _blend_toward_mean(value: float, mean: float, alpha: float) -> float:
+    """Blend a value toward a league mean based on checkpoint progress."""
+    return mean + alpha * (value - mean)
+
+
+def _to_checkpoint_view(season_teams: List[TeamSeason], checkpoint_games: int) -> List[TeamSeason]:
+    """
+    Approximate partial-season team profiles at a given games-played checkpoint.
+
+    Since historical snapshots are season-end aggregates, this creates a
+    conservative partial-information view by:
+    - Scaling counting stats by progress
+    - Shrinking rate-based stats toward season league means
+    """
+    if not season_teams:
+        return []
+
+    league_means = {
+        "cf_pct": float(np.mean([t.cf_pct for t in season_teams])),
+        "hdcf_pct": float(np.mean([t.hdcf_pct for t in season_teams])),
+        "pp_pct": float(np.mean([t.pp_pct for t in season_teams])),
+        "pk_pct": float(np.mean([t.pk_pct for t in season_teams])),
+        "pdo": float(np.mean([t.pdo for t in season_teams])),
+        "save_pct": float(np.mean([t.save_pct for t in season_teams])),
+        "gsax": float(np.mean([t.gsax for t in season_teams])),
+        "xgf_pct": float(np.mean([t.xgf_pct for t in season_teams])),
+    }
+
+    checkpoint_teams: List[TeamSeason] = []
+    for ts in season_teams:
+        if checkpoint_games <= 0:
+            alpha = 0.0
+        else:
+            denom = ts.games_played if ts.games_played > 0 else 82
+            alpha = min(1.0, checkpoint_games / denom)
+
+        cp = replace(ts)
+        cp.games_played = int(round((ts.games_played if ts.games_played > 0 else 82) * alpha))
+        cp.wins = int(round(ts.wins * alpha))
+        cp.losses = int(round(ts.losses * alpha))
+        cp.ot_losses = int(round(ts.ot_losses * alpha))
+        cp.points = int(round(ts.points * alpha))
+        cp.goals_for = int(round(ts.goals_for * alpha))
+        cp.goals_against = int(round(ts.goals_against * alpha))
+
+        cp.home_wins = int(round(ts.home_wins * alpha))
+        cp.home_losses = int(round(ts.home_losses * alpha))
+        cp.home_ot_losses = int(round(ts.home_ot_losses * alpha))
+        cp.away_wins = int(round(ts.away_wins * alpha))
+        cp.away_losses = int(round(ts.away_losses * alpha))
+        cp.away_ot_losses = int(round(ts.away_ot_losses * alpha))
+
+        cp.cf_pct = _blend_toward_mean(ts.cf_pct, league_means["cf_pct"], alpha)
+        cp.ff_pct = cp.cf_pct
+        cp.sf_pct = cp.cf_pct
+        cp.hdcf_pct = _blend_toward_mean(ts.hdcf_pct, league_means["hdcf_pct"], alpha)
+        cp.pp_pct = _blend_toward_mean(ts.pp_pct, league_means["pp_pct"], alpha)
+        cp.pk_pct = _blend_toward_mean(ts.pk_pct, league_means["pk_pct"], alpha)
+        cp.pdo = _blend_toward_mean(ts.pdo, league_means["pdo"], alpha)
+        cp.save_pct = _blend_toward_mean(ts.save_pct, league_means["save_pct"], alpha)
+        cp.gsax = _blend_toward_mean(ts.gsax, league_means["gsax"], alpha)
+        cp.xgf_pct = _blend_toward_mean(ts.xgf_pct, league_means["xgf_pct"], alpha)
+        cp.xgf = ts.xgf * alpha
+        cp.xga = ts.xga * alpha
+        cp.expected_goals_diff = cp.xgf - cp.xga
+
+        checkpoint_teams.append(cp)
+
+    return checkpoint_teams
+
+
+def generate_checkpoint_backtest_report(
+    historical_data: List[TeamSeason],
+    checkpoints: Optional[List[int]] = None,
+    model_overrides: Optional[Dict] = None,
+) -> Dict:
+    """
+    Evaluate playoff-field quality at multiple season checkpoints.
+
+    Checkpoints are interpreted as games played (e.g., 0/20/40/60).
+    """
+    np.random.seed(RANDOM_SEED)
+    model_overrides = model_overrides or {}
+    if checkpoints is None:
+        checkpoints = [0, 20, 40, 60]
+
+    by_season: Dict[int, List[TeamSeason]] = defaultdict(list)
+    for team in historical_data:
+        by_season[team.season].append(team)
+    seasons = sorted(by_season.keys())
+
+    checkpoint_summaries = []
+
+    for checkpoint in checkpoints:
+        f1_scores = []
+        precision_scores = []
+        recall_scores = []
+        hits = []
+        evaluated = 0
+
+        for held_out in seasons:
+            train_seasons = [s for s in seasons if s < held_out]
+            if len(train_seasons) < 2:
+                continue
+
+            train_data = []
+            for season in train_seasons:
+                train_data.extend(_to_checkpoint_view(by_season[season], checkpoint))
+            test_data = _to_checkpoint_view(by_season[held_out], checkpoint)
+
+            if len(train_data) < 64 or len(test_data) < 16:
+                continue
+
+            model_kwargs = {
+                "use_neural_network": False,
+                "use_recency_weighting": False,
+                "use_cup_calibration": False,
+            }
+            model_kwargs.update(model_overrides)
+            model = EnsemblePredictor(**model_kwargs)
+            try:
+                model.fit(train_data)
+                predictions = model.predict(test_data)
+            except Exception:
+                continue
+
+            predicted_playoff = _predict_playoff_field_nhl(predictions)
+            actual_playoff = {t.team for t in by_season[held_out] if t.made_playoffs}
+
+            y_true = np.array([1 if t.team in actual_playoff else 0 for t in by_season[held_out]])
+            y_pred = np.array([1 if t.team in predicted_playoff else 0 for t in by_season[held_out]])
+
+            f1_scores.append(float(f1_score(y_true, y_pred, zero_division=0)))
+            precision_scores.append(float(precision_score(y_true, y_pred, zero_division=0)))
+            recall_scores.append(float(recall_score(y_true, y_pred, zero_division=0)))
+            hits.append(len(predicted_playoff.intersection(actual_playoff)))
+            evaluated += 1
+
+        checkpoint_summaries.append({
+            "checkpointGames": checkpoint,
+            "evaluatedSeasons": evaluated,
+            "averagePlayoffTeamsHit": round(float(np.mean(hits)), 2) if hits else 0.0,
+            "averagePlayoffPrecision": round(float(np.mean(precision_scores)), 3) if precision_scores else 0.0,
+            "averagePlayoffRecall": round(float(np.mean(recall_scores)), 3) if recall_scores else 0.0,
+            "averagePlayoffF1": round(float(np.mean(f1_scores)), 3) if f1_scores else 0.0,
+        })
+
+    return {
+        "mode": "checkpoint_backtest",
+        "checkpoints": checkpoint_summaries,
     }

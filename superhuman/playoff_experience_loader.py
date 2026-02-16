@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 
 # Cache for loaded data
 _playoff_cache: Dict[int, Dict[str, 'TeamPlayoffHistory']] = {}
+_missing_playoff_history_seasons: set[int] = set()
 
 
 @dataclass
@@ -93,11 +94,14 @@ def load_playoff_history(season: int) -> Dict[str, TeamPlayoffHistory]:
     """
     if season in _playoff_cache:
         return _playoff_cache[season]
+    if season in _missing_playoff_history_seasons:
+        return {}
 
     filepath = HISTORICAL_DIR / f"playoff_history_{season}.csv"
 
     if not filepath.exists():
-        logger.warning(f"Playoff history file not found: {filepath}")
+        _missing_playoff_history_seasons.add(season)
+        logger.debug(f"Playoff history file not found: {filepath}")
         return {}
 
     teams = {}

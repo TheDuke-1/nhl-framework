@@ -37,6 +37,14 @@ logger = logging.getLogger(__name__)
 PROJECT_DIR = Path(__file__).parent.parent
 DATA_OUTPUT = PROJECT_DIR / "dashboard_data.json"
 HISTORY_DIR = PROJECT_DIR / "history"
+BENCHMARK_PATH = PROJECT_DIR / "reports" / "benchmark_latest.json"
+RELEASE_CYCLE_LATEST_PATH = PROJECT_DIR / "reports" / "phase7_release_cycle_latest.json"
+RELEASE_CYCLE_PATH = PROJECT_DIR / "reports" / "phase7_release_cycle.json"
+PHASE11_PATH = PROJECT_DIR / "reports" / "phase11_constrained_edge_batch.json"
+PHASE12_PATH = PROJECT_DIR / "reports" / "phase12_goal_gap_closure.json"
+PHASE13_PATH = PROJECT_DIR / "reports" / "phase13_eligible_feature_push.json"
+GRADE_PATH = PROJECT_DIR / "reports" / "current_model_dashboard_grade.json"
+EMBEDDED_FALLBACK_PATH = PROJECT_DIR / "js" / "data.js"
 
 
 # Metric definitions for glossary
@@ -44,7 +52,7 @@ METRIC_DEFINITIONS = {
     "composite_strength": {
         "name": "Composite Strength",
         "short": "Overall team power rating combining all factors",
-        "formula": "Weighted average of 14 performance metrics"
+        "formula": "Weighted average of 17 performance metrics"
     },
     "goal_differential_rate": {
         "name": "Goal Differential Rate",
@@ -115,6 +123,21 @@ METRIC_DEFINITIONS = {
         "name": "Star Power",
         "short": "Elite player impact",
         "formula": "Top scorer PPG vs league leaders"
+    },
+    "series_history_signal": {
+        "name": "Series History Signal",
+        "short": "Recent playoff series success trend",
+        "formula": "Recency-weighted playoff rounds won (lookback seasons)"
+    },
+    "market_close_movement_signal": {
+        "name": "Market Movement Signal",
+        "short": "How market conviction has moved for Cup outlook",
+        "formula": "Open-close Cup probability delta (or conditional market proxy)"
+    },
+    "goalie_injury_playoff_impact": {
+        "name": "Goalie/Injury Impact",
+        "short": "Goaltending stability adjusted for injury pressure",
+        "formula": "Goalie performance support minus injury/goalie availability penalty"
     }
 }
 
@@ -366,6 +389,29 @@ def build_projected_bracket(mc_result) -> Dict:
     return bracket
 
 
+def load_source_freshness() -> Dict[str, Optional[str]]:
+    """
+    Load per-source freshness timestamps from the merged teams metadata.
+    """
+    freshness = {"nhl": None, "moneypuck": None, "nst": None, "odds": None}
+    teams_file = DATA_DIR / "teams.json"
+    if not teams_file.exists():
+        return freshness
+
+    try:
+        with open(teams_file) as f:
+            teams_data = json.load(f)
+        sources = teams_data.get("_metadata", {}).get("sources", {})
+        freshness["nhl"] = sources.get("nhl_api")
+        freshness["moneypuck"] = sources.get("moneypuck")
+        freshness["nst"] = sources.get("nst")
+        freshness["odds"] = sources.get("odds")
+    except Exception as e:
+        logger.warning(f"Could not load source freshness metadata: {e}")
+
+    return freshness
+
+
 def generate_dashboard_data() -> Dict:
     """Generate complete dashboard data from model predictions."""
     logger.info("Generating dashboard data...")
@@ -469,19 +515,116 @@ def generate_dashboard_data() -> Dict:
         if __package__ in (None, ""):
             from superhuman.validation import generate_backtest_report
             from superhuman.data_loader import load_training_data
+            from superhuman.model_profile import load_active_model_profile
         else:
             from .validation import generate_backtest_report
             from .data_loader import load_training_data
-        historical_data = load_training_data()
+            from .model_profile import load_active_model_profile
+        historical_data = load_training_data(allow_synthetic_fallback=False)
         if historical_data:
             cache_path = str(DATA_DIR / "backtest_cache.json")
-            backtest_data = generate_backtest_report(historical_data, cache_path=cache_path)
+            profile = load_active_model_profile()
+            model_overrides = {
+                "use_neural_network": bool(profile.get("use_neural_network", True)),
+                "use_recency_weighting": bool(profile.get("use_recency_weighting", True)),
+                "use_cup_calibration": bool(profile.get("use_cup_calibration", True)),
+                "recency_decay_rate": float(profile.get("recency_decay_rate", 0.15)),
+                "cup_winner_boost": float(profile.get("cup_winner_boost", 2.0)),
+                "cup_market_prior_blend": float(profile.get("cup_market_prior_blend", 0.0)),
+                "cup_ensemble_weights": profile.get("cup_ensemble_weights"),
+            }
+            backtest_data = generate_backtest_report(
+                historical_data,
+                cache_path=cache_path,
+                model_overrides=model_overrides,
+            )
             logger.info("Backtest report ready")
     except Exception as e:
         logger.warning(f"Backtest generation failed (non-fatal): {e}")
 
     # Generate timestamp
     timestamp = datetime.now().isoformat()
+    source_freshness = load_source_freshness()
+
+    benchmark_data = None
+    release_cycle = None
+    phase11 = None
+    phase12 = None
+    phase13 = None
+    dashboard_grade = None
+    try:
+        if BENCHMARK_PATH.exists():
+            with open(BENCHMARK_PATH) as f:
+                benchmark_data = json.load(f)
+    except Exception as e:
+        logger.warning(f"Failed to load benchmark data (non-fatal): {e}")
+    try:
+        if RELEASE_CYCLE_LATEST_PATH.exists():
+            with open(RELEASE_CYCLE_LATEST_PATH) as f:
+                release_cycle = json.load(f)
+        elif RELEASE_CYCLE_PATH.exists():
+            with open(RELEASE_CYCLE_PATH) as f:
+                legacy_cycle = json.load(f)
+            release_cycle = {
+                "generatedAt": legacy_cycle.get("generatedAt"),
+                "shipGateStatus": legacy_cycle.get("status"),
+                "localAdvisoryStatus": "UNKNOWN",
+                "strict": legacy_cycle,
+                "advisory": {},
+            }
+    except Exception as e:
+        logger.warning(f"Failed to load release cycle data (non-fatal): {e}")
+
+    release_status_strict = (release_cycle or {}).get("shipGateStatus")
+    if not release_status_strict and isinstance((release_cycle or {}).get("strict"), dict):
+        release_status_strict = (release_cycle or {}).get("strict", {}).get("status")
+    release_status_advisory = (release_cycle or {}).get("localAdvisoryStatus")
+    if not release_status_advisory and isinstance((release_cycle or {}).get("advisory"), dict):
+        release_status_advisory = (release_cycle or {}).get("advisory", {}).get("status")
+    release_truth_policy = (
+        "dual-track"
+        if isinstance((release_cycle or {}).get("strict"), dict) and isinstance((release_cycle or {}).get("advisory"), dict)
+        else "single-track"
+    )
+    try:
+        if PHASE11_PATH.exists():
+            with open(PHASE11_PATH) as f:
+                phase11_raw = json.load(f)
+                phase11 = {
+                    "generatedAt": phase11_raw.get("generatedAt"),
+                    "phase": phase11_raw.get("phase"),
+                    "summary": phase11_raw.get("summary", {}),
+                }
+    except Exception as e:
+        logger.warning(f"Failed to load phase11 data (non-fatal): {e}")
+    try:
+        if PHASE12_PATH.exists():
+            with open(PHASE12_PATH) as f:
+                phase12_raw = json.load(f)
+                phase12 = {
+                    "generatedAt": phase12_raw.get("generatedAt"),
+                    "phase": phase12_raw.get("phase"),
+                    "summary": phase12_raw.get("summary", {}),
+                }
+    except Exception as e:
+        logger.warning(f"Failed to load phase12 data (non-fatal): {e}")
+    try:
+        if PHASE13_PATH.exists():
+            with open(PHASE13_PATH) as f:
+                phase13_raw = json.load(f)
+                phase13 = {
+                    "generatedAt": phase13_raw.get("generatedAt"),
+                    "phase": phase13_raw.get("phase"),
+                    "summary": phase13_raw.get("summary", {}),
+                }
+    except Exception as e:
+        logger.warning(f"Failed to load phase13 data (non-fatal): {e}")
+    try:
+        if GRADE_PATH.exists():
+            with open(GRADE_PATH) as f:
+                dashboard_grade = json.load(f)
+    except Exception as e:
+        logger.warning(f"Failed to load dashboard grade data (non-fatal): {e}")
 
     dashboard_data = {
         "meta": {
@@ -490,6 +633,14 @@ def generate_dashboard_data() -> Dict:
             "seasonDisplay": f"{CURRENT_SEASON-1}-{str(CURRENT_SEASON)[2:]}",
             "modelVersion": "2.1 - Full Bracket Model",
             "lastUpdate": datetime.now().strftime("%B %d, %Y at %I:%M %p"),
+            "sourceFreshness": source_freshness,
+            "benchmarkTimestamp": (benchmark_data or {}).get("current", {}).get("timestamp"),
+            "releaseStatus": release_status_strict,
+            "releaseStatusStrict": release_status_strict,
+            "releaseStatusAdvisory": release_status_advisory,
+            "releaseTruthPolicy": release_truth_policy,
+            "edgeResearchTimestamp": (phase13 or phase12 or phase11 or {}).get("generatedAt"),
+            "dashboardGradeTimestamp": (dashboard_grade or {}).get("generatedAt"),
         },
         "teams": teams,
         "featureWeights": weights,
@@ -501,6 +652,14 @@ def generate_dashboard_data() -> Dict:
         "bracket": bracket,
         "backtest": backtest_data,
         "glossary": METRIC_DEFINITIONS,
+        "benchmark": benchmark_data,
+        "releaseCycle": release_cycle,
+        "dashboardGrade": dashboard_grade,
+        "edgeResearch": {
+            "phase11": phase11,
+            "phase12": phase12,
+            "phase13": phase13,
+        },
     }
 
     return dashboard_data
@@ -511,6 +670,20 @@ def save_dashboard_data(data: Dict, output_path: Path = DATA_OUTPUT) -> None:
     with open(output_path, 'w') as f:
         json.dump(data, f, indent=2)
     logger.info(f"Saved dashboard data to {output_path}")
+
+
+def save_embedded_fallback_data(data: Dict, output_path: Path = EMBEDDED_FALLBACK_PATH) -> None:
+    """
+    Save an embedded JS fallback snapshot that mirrors dashboard_data.json.
+    """
+    serialized = json.dumps(data, separators=(",", ":"))
+    content = (
+        "// Auto-generated fallback from dashboard_data.json — do not edit manually\n"
+        f"window.DASHBOARD_DATA = {serialized};\n"
+    )
+    with open(output_path, "w") as f:
+        f.write(content)
+    logger.info(f"Saved embedded fallback data to {output_path}")
 
 
 def save_historical_snapshot(data: Dict) -> None:
@@ -634,6 +807,7 @@ def main():
 
     # Save current data
     save_dashboard_data(data)
+    save_embedded_fallback_data(data)
 
     # Save historical snapshot
     save_historical_snapshot(data)

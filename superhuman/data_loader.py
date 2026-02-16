@@ -101,7 +101,7 @@ def load_current_season_data() -> List[TeamSeason]:
     return team_seasons
 
 
-def load_training_data() -> List[TeamSeason]:
+def load_training_data(allow_synthetic_fallback: bool = True) -> List[TeamSeason]:
     """
     Load training data - tries real data first, falls back to synthetic.
 
@@ -115,6 +115,12 @@ def load_training_data() -> List[TeamSeason]:
             return real_data
     except Exception as e:
         logger.warning(f"Could not load real data: {e}")
+
+    if not allow_synthetic_fallback:
+        raise RuntimeError(
+            "Real historical data unavailable and synthetic fallback disabled. "
+            "Populate verified historical inputs before training."
+        )
 
     logger.info("Falling back to synthetic training data")
     return synthesize_training_data()
@@ -352,5 +358,4 @@ def validate_data(team_seasons: List[TeamSeason]) -> Dict:
         "warnings": warnings[:10],
         "is_valid": len(issues) == 0
     }
-
 

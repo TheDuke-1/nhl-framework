@@ -7,14 +7,14 @@ class TestDashboardHTML:
     def test_nav_tabs_present(self, dashboard_soup):
         """New dashboard uses JS-rendered tabs. Check the tab buttons in HTML."""
         nav_text = dashboard_soup.get_text()
-        for tab in ["Rankings", "Playoff Race", "Betting Value", "Bracket", "Model Performance", "Insights"]:
+        for tab in ["Mission Control", "Rankings", "Playoff Race", "Betting Value", "Bracket", "Model Performance", "Insights"]:
             assert tab in nav_text, f"Nav tab '{tab}' not found in dashboard"
 
     def test_tab_buttons_have_data_attributes(self, dashboard_soup):
         """Each tab button should have a data-tab attribute for JS routing."""
         tabs = dashboard_soup.find_all("button", class_="tab")
-        assert len(tabs) == 6, f"Expected 6 tab buttons, found {len(tabs)}"
-        expected = {"rankings", "playoff-race", "betting", "bracket", "performance", "insights"}
+        assert len(tabs) == 7, f"Expected 7 tab buttons, found {len(tabs)}"
+        expected = {"mission-control", "rankings", "playoff-race", "betting", "bracket", "performance", "insights"}
         actual = {btn.get("data-tab") for btn in tabs}
         assert actual == expected, f"Tab data attributes mismatch: {actual}"
 

@@ -184,6 +184,9 @@ class FeatureVector:
     vegas_cup_signal: float = 0.0  # Vegas market Cup probability
     playoff_experience: float = 0.0  # Recent playoff history
     dynasty_score: float = 0.0  # Recent championship success
+    series_history_signal: float = 0.0  # Prior playoff series success
+    market_close_movement_signal: float = 0.0  # Market movement/conviction
+    goalie_injury_playoff_impact: float = 0.0  # Goalie durability + injury pressure
 
     # Target variables
     made_playoffs: bool = False
@@ -206,7 +209,10 @@ class FeatureVector:
             self.sustainability,
             self.vegas_cup_signal,
             self.playoff_experience,
-            self.dynasty_score
+            self.dynasty_score,
+            self.series_history_signal,
+            self.market_close_movement_signal,
+            self.goalie_injury_playoff_impact
         ])
 
     @staticmethod
@@ -226,7 +232,10 @@ class FeatureVector:
             "sustainability",
             "vegas_cup_signal",
             "playoff_experience",
-            "dynasty_score"
+            "dynasty_score",
+            "series_history_signal",
+            "market_close_movement_signal",
+            "goalie_injury_playoff_impact",
         ]
 
 
@@ -247,6 +256,9 @@ class MonteCarloResult:
 
     # Existing: Cup win probabilities per team
     cup_probabilities: Dict[str, float] = field(default_factory=dict)
+
+    # Probability of qualifying for playoffs (selected into conference top-8)
+    playoff_probs: Dict[str, float] = field(default_factory=dict)
 
     # Round advancement: team -> {1: prob, 2: prob, 3: prob (conf final), 4: prob (cup final), "cup": prob}
     round_advancement: Dict[str, Dict] = field(default_factory=dict)

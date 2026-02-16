@@ -6,6 +6,7 @@ Logistic Regression + Gradient Boosting + Monte Carlo ensemble.
 
 import numpy as np
 import logging
+import warnings
 from typing import List, Dict, Tuple, Optional
 from dataclasses import dataclass
 from collections import defaultdict
@@ -20,9 +21,41 @@ from scipy.stats import beta as beta_dist
 
 from .data_models import TeamSeason, FeatureVector, PredictionResult, MonteCarloResult, ConferenceTrace
 from .feature_engineering import FeatureEngineer, create_feature_matrix
+from .betting_odds_loader import get_team_vegas_odds
 from .config import N_SIMULATIONS, RANDOM_SEED, CONFERENCES, get_team_division, GAMES_IN_SEASON
 
 logger = logging.getLogger(__name__)
+
+MIN_VARIANCE = 1e-6
+MATRIX_CLIP_ABS = 25.0
+# Cup-only features are withheld from playoff/strength models to avoid
+# destabilizing broad qualification/ranking behavior while still allowing
+# Cup-focused models to learn from them.
+CUP_ONLY_FEATURES = {
+    "series_history_signal",
+    "market_close_movement_signal",
+    "goalie_injury_playoff_impact",
+}
+
+
+def _stabilize_matrix(matrix: np.ndarray) -> np.ndarray:
+    """
+    Keep model design matrices finite and bounded before solver calls.
+    """
+    sanitized = np.nan_to_num(
+        matrix,
+        nan=0.0,
+        posinf=MATRIX_CLIP_ABS,
+        neginf=-MATRIX_CLIP_ABS,
+    )
+    return np.clip(sanitized, -MATRIX_CLIP_ABS, MATRIX_CLIP_ABS)
+
+
+def _stabilize_sample_weights(sample_weight: Optional[np.ndarray]) -> Optional[np.ndarray]:
+    if sample_weight is None:
+        return None
+    sanitized = np.nan_to_num(sample_weight, nan=1.0, posinf=5.0, neginf=0.0)
+    return np.clip(sanitized, 0.0, 5.0)
 
 
 def calculate_recency_weights(
@@ -105,7 +138,9 @@ class WeightOptimizer:
 
         # Remove features with zero variance
         variances = np.var(X, axis=0)
-        valid_cols = variances > 1e-10
+        valid_cols = variances > MIN_VARIANCE
+        allowed_cols = np.array([name not in CUP_ONLY_FEATURES for name in names], dtype=bool)
+        valid_cols = valid_cols & allowed_cols
         X_valid = X[:, valid_cols]
         valid_names = [n for n, v in zip(names, valid_cols) if v]
 
@@ -114,10 +149,14 @@ class WeightOptimizer:
             return self
 
         # Standardize features
-        X_scaled = self.scaler.fit_transform(X_valid)
+        X_scaled = _stabilize_matrix(self.scaler.fit_transform(X_valid))
+        safe_weights = _stabilize_sample_weights(sample_weight)
 
-        # Fit regression with sample weights
-        self.model.fit(X_scaled, y, sample_weight=sample_weight)
+        # Suppress known BLAS/solver runtime warnings in this environment while
+        # preserving default solver behavior and coefficients.
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=RuntimeWarning)
+            self.model.fit(X_scaled, y, sample_weight=safe_weights)
 
         # Extract and normalize weights
         raw_weights = np.abs(self.model.coef_)
@@ -169,15 +208,21 @@ class PlayoffClassifier:
 
         # Remove zero-variance features
         variances = np.var(X, axis=0)
-        self.valid_cols = variances > 1e-10
+        self.valid_cols = variances > MIN_VARIANCE
+        allowed_cols = np.array([name not in CUP_ONLY_FEATURES for name in names], dtype=bool)
+        self.valid_cols = self.valid_cols & allowed_cols
         X_valid = X[:, self.valid_cols]
 
         if X_valid.shape[1] == 0:
             logger.warning("No valid features for classification")
             return self
 
-        X_scaled = self.scaler.fit_transform(X_valid)
-        self.model.fit(X_scaled, y, sample_weight=sample_weight)
+        X_scaled = _stabilize_matrix(self.scaler.fit_transform(X_valid))
+        safe_weights = _stabilize_sample_weights(sample_weight)
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=RuntimeWarning)
+            warnings.filterwarnings("ignore", category=UserWarning)
+            self.model.fit(X_scaled, y, sample_weight=safe_weights)
         self.is_fitted = True
 
         logger.info(f"Playoff classifier trained on {len(features)} samples")
@@ -190,9 +235,13 @@ class PlayoffClassifier:
 
         X, _, _ = create_feature_matrix(features)
         X_valid = X[:, self.valid_cols]
-        X_scaled = self.scaler.transform(X_valid)
+        X_scaled = _stabilize_matrix(self.scaler.transform(X_valid))
 
-        return self.model.predict_proba(X_scaled)[:, 1]
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=RuntimeWarning)
+            warnings.filterwarnings("ignore", category=UserWarning)
+            probs = self.model.predict_proba(X_scaled)
+        return probs[:, 1]
 
 
 class CupPredictor:
@@ -223,21 +272,25 @@ class CupPredictor:
 
         # Remove zero-variance features
         variances = np.var(X, axis=0)
-        self.valid_cols = variances > 1e-10
+        self.valid_cols = variances > MIN_VARIANCE
         X_valid = X[:, self.valid_cols]
 
         if X_valid.shape[1] == 0:
             logger.warning("No valid features for Cup prediction")
             return self
 
-        X_scaled = self.scaler.fit_transform(X_valid)
+        X_scaled = _stabilize_matrix(self.scaler.fit_transform(X_valid))
+        safe_weights = _stabilize_sample_weights(sample_weight)
 
         # Need at least some positive examples
         if y.sum() < 2:
             logger.warning("Not enough Cup winners for training")
             return self
 
-        self.model.fit(X_scaled, y, sample_weight=sample_weight)
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=RuntimeWarning)
+            warnings.filterwarnings("ignore", category=UserWarning)
+            self.model.fit(X_scaled, y, sample_weight=safe_weights)
         self.is_fitted = True
 
         logger.info(f"Cup predictor trained on {len(features)} samples, {y.sum()} winners")
@@ -250,9 +303,13 @@ class CupPredictor:
 
         X, _, _ = create_feature_matrix(features)
         X_valid = X[:, self.valid_cols]
-        X_scaled = self.scaler.transform(X_valid)
+        X_scaled = _stabilize_matrix(self.scaler.transform(X_valid))
 
-        return self.model.predict_proba(X_scaled)[:, 1]
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=RuntimeWarning)
+            warnings.filterwarnings("ignore", category=UserWarning)
+            probs = self.model.predict_proba(X_scaled)
+        return probs[:, 1]
 
 
 class NeuralNetworkPredictor:
@@ -294,7 +351,7 @@ class NeuralNetworkPredictor:
 
         # Remove zero-variance features
         variances = np.var(X, axis=0)
-        self.valid_cols = variances > 1e-10
+        self.valid_cols = variances > MIN_VARIANCE
         X_valid = X[:, self.valid_cols]
 
         if X_valid.shape[1] == 0:
@@ -306,7 +363,8 @@ class NeuralNetworkPredictor:
             logger.warning("Not enough Cup winners for neural network training")
             return self
 
-        X_scaled = self.scaler.fit_transform(X_valid)
+        X_scaled = _stabilize_matrix(self.scaler.fit_transform(X_valid))
+        safe_weights = _stabilize_sample_weights(sample_weight)
 
         # Wrap in calibrated classifier for better probability estimates
         # Using sigmoid (Platt scaling) for binary classification
@@ -317,15 +375,26 @@ class NeuralNetworkPredictor:
                 cv=3
             )
             # CalibratedClassifierCV supports sample_weight
-            self.model.fit(X_scaled, y, sample_weight=sample_weight)
+            with warnings.catch_warnings():
+                warnings.filterwarnings("ignore", category=RuntimeWarning)
+                warnings.filterwarnings("ignore", category=UserWarning)
+                self.model.fit(X_scaled, y, sample_weight=safe_weights)
             self.is_fitted = True
             logger.info(f"Neural network trained on {len(features)} samples")
         except Exception as e:
             logger.warning(f"Neural network training failed: {e}")
             # Fall back to uncalibrated model
-            self.base_model.fit(X_scaled, y)
-            self.model = self.base_model
-            self.is_fitted = True
+            try:
+                with warnings.catch_warnings():
+                    warnings.filterwarnings("ignore", category=RuntimeWarning)
+                    warnings.filterwarnings("ignore", category=UserWarning)
+                    self.base_model.fit(X_scaled, y)
+                self.model = self.base_model
+                self.is_fitted = True
+            except Exception as inner:
+                logger.warning(f"Neural network fallback training failed: {inner}")
+                self.model = None
+                self.is_fitted = False
 
         return self
 
@@ -336,9 +405,12 @@ class NeuralNetworkPredictor:
 
         X, _, _ = create_feature_matrix(features)
         X_valid = X[:, self.valid_cols]
-        X_scaled = self.scaler.transform(X_valid)
+        X_scaled = _stabilize_matrix(self.scaler.transform(X_valid))
 
-        probs = self.model.predict_proba(X_scaled)
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", category=RuntimeWarning)
+            warnings.filterwarnings("ignore", category=UserWarning)
+            probs = self.model.predict_proba(X_scaled)
         if probs.shape[1] > 1:
             return probs[:, 1]
         return probs.ravel()
@@ -354,7 +426,9 @@ class CupProbabilityCalibrator:
 
     def __init__(self):
         self.calibrator = IsotonicRegression(
-            y_min=0.001,  # Minimum probability
+            # Avoid forcing a global floor that collapses low-end team dispersion
+            # after renormalization.
+            y_min=0.0,
             y_max=0.50,   # Maximum probability (even favorites rarely > 50%)
             out_of_bounds='clip'
         )
@@ -399,10 +473,12 @@ class MonteCarloSimulator:
     def __init__(
         self,
         n_simulations: int = N_SIMULATIONS,
-        use_enhanced_model: bool = True
+        use_enhanced_model: bool = True,
+        require_series_data: bool = False,
     ):
         self.n_sims = n_simulations
         self.use_enhanced_model = use_enhanced_model
+        self.require_series_data = require_series_data
         self.series_predictor = None
 
         # Round-specific base win rates (from historical data)
@@ -419,11 +495,29 @@ class MonteCarloSimulator:
 
     def _init_series_predictor(self):
         """Initialize the playoff series predictor."""
+        series_path_hint = None
         try:
-            from .playoff_series_model import get_series_predictor
+            from .playoff_series_model import DATA_DIR, get_series_predictor
+            series_path_hint = str(DATA_DIR / "playoff_series_all.csv")
             self.series_predictor = get_series_predictor()
+            if self.require_series_data:
+                is_trained = bool(
+                    self.series_predictor is not None
+                    and getattr(self.series_predictor, "is_fitted", False)
+                )
+                if not is_trained:
+                    raise RuntimeError(
+                        "Strict verification requires trained playoff series data "
+                        f"at {series_path_hint}"
+                    )
             logger.info("Initialized enhanced playoff series predictor")
         except Exception as e:
+            if self.require_series_data:
+                hint = f" at {series_path_hint}" if series_path_hint else ""
+                raise RuntimeError(
+                    "Strict verification requires playoff series training data"
+                    f"{hint}: {e}"
+                ) from e
             logger.warning(f"Could not initialize series predictor: {e}")
             self.use_enhanced_model = False
 
@@ -449,6 +543,7 @@ class MonteCarloSimulator:
             MonteCarloResult with cup probs, round advancement, matchups, etc.
         """
         cup_wins = defaultdict(int)
+        playoff_appearances = defaultdict(int)
         # Track per-round advancement counts
         round_adv = defaultdict(lambda: defaultdict(int))  # team -> round -> count
         # Track cup final appearances
@@ -494,6 +589,8 @@ class MonteCarloSimulator:
             # Top 3 per division + 2 best remaining as wildcards
             east_playoff = self._select_playoff_teams(east_teams, sim_pts)
             west_playoff = self._select_playoff_teams(west_teams, sim_pts)
+            for team_obj in east_playoff + west_playoff:
+                playoff_appearances[team_obj.team] += 1
 
             # Simulate conference playoffs with trace
             east_trace = self._simulate_conference(
@@ -570,6 +667,7 @@ class MonteCarloSimulator:
 
         # Convert to probabilities
         cup_probs = {team: wins / self.n_sims for team, wins in cup_wins.items()}
+        playoff_probs = {team.team: playoff_appearances[team.team] / self.n_sims for team in teams}
 
         # Build round advancement probabilities
         round_advancement = {}
@@ -647,6 +745,7 @@ class MonteCarloSimulator:
 
         return MonteCarloResult(
             cup_probabilities=cup_probs,
+            playoff_probs=playoff_probs,
             round_advancement=round_advancement,
             projected_matchups=projected_matchups,
             conf_final_appearance_probs=conf_final_appearance_probs,
@@ -959,29 +1058,60 @@ class EnsemblePredictor:
         self,
         use_neural_network: bool = True,
         use_recency_weighting: bool = True,
+        use_cup_calibration: bool = True,
         recency_decay_rate: float = 0.15,
-        cup_winner_boost: float = 2.0
+        cup_winner_boost: float = 2.0,
+        cup_ensemble_weights: Optional[Dict[str, float]] = None,
+        cup_market_prior_blend: float = 0.0,
+        monte_carlo_simulations: int = 10000,
+        strict_verification: bool = False,
+        require_oof_cup_calibration_in_strict_mode: bool = False,
+        require_series_data_in_strict_mode: bool = False,
     ):
+        self.strict_verification = strict_verification
+        self.require_oof_cup_calibration_in_strict_mode = (
+            require_oof_cup_calibration_in_strict_mode
+        )
+        self.require_series_data_in_strict_mode = (
+            require_series_data_in_strict_mode
+        )
         self.feature_engineer = FeatureEngineer()
         self.weight_optimizer = WeightOptimizer()
         self.playoff_classifier = PlayoffClassifier()
         self.cup_predictor = CupPredictor()
         self.neural_predictor = NeuralNetworkPredictor() if use_neural_network else None
         self.cup_calibrator = CupProbabilityCalibrator()
-        self.monte_carlo = MonteCarloSimulator(n_simulations=10000)
+        self.monte_carlo = MonteCarloSimulator(
+            n_simulations=int(max(100, monte_carlo_simulations)),
+            require_series_data=(
+                strict_verification and require_series_data_in_strict_mode
+            ),
+        )
         self.use_neural_network = use_neural_network
         self.use_recency_weighting = use_recency_weighting
+        self.use_cup_calibration = use_cup_calibration
         self.recency_decay_rate = recency_decay_rate
         self.cup_winner_boost = cup_winner_boost
+        self.cup_market_prior_blend = float(np.clip(cup_market_prior_blend, 0.0, 1.0))
         self.is_fitted = False
         self.monte_carlo_result: Optional[MonteCarloResult] = None
 
         # Ensemble weights for Cup prediction
-        self.cup_ensemble_weights = {
+        default_weights = {
             'gradient_boosting': 0.30,
             'neural_network': 0.30,
             'monte_carlo': 0.40
         }
+        if cup_ensemble_weights:
+            merged = default_weights.copy()
+            merged.update({k: float(v) for k, v in cup_ensemble_weights.items() if k in merged})
+            total = sum(max(0.0, v) for v in merged.values())
+            if total > 0:
+                self.cup_ensemble_weights = {k: max(0.0, v) / total for k, v in merged.items()}
+            else:
+                self.cup_ensemble_weights = default_weights
+        else:
+            self.cup_ensemble_weights = default_weights
 
     def fit(self, training_data: List[TeamSeason]) -> 'EnsemblePredictor':
         """Train all models on historical data with recency weighting."""
@@ -1012,7 +1142,8 @@ class EnsemblePredictor:
             self.neural_predictor.fit(train_features, sample_weight=sample_weight)
 
         # Fit Cup probability calibrator on training data predictions
-        self._fit_cup_calibrator(training_data, train_features)
+        if self.use_cup_calibration:
+            self._fit_cup_calibrator(training_data, train_features)
 
         self.is_fitted = True
         logger.info("Enhanced ensemble training complete")
@@ -1023,22 +1154,92 @@ class EnsemblePredictor:
         training_data: List[TeamSeason],
         train_features: List[FeatureVector]
     ) -> None:
-        """Fit the Cup probability calibrator using cross-validation."""
-        # Get raw probabilities from models
-        gb_probs = self.cup_predictor.predict_proba(train_features)
+        """
+        Fit Cup calibrator with time-aware out-of-fold predictions.
 
+        Falls back to in-sample calibration only when historical fold coverage
+        is insufficient.
+        """
+        oof_probs, oof_actual = self._generate_cup_oof_predictions(training_data)
+        if len(oof_probs) >= 10 and oof_actual.sum() >= 2:
+            self.cup_calibrator.fit(oof_probs, oof_actual)
+            logger.info(
+                "Cup calibrator fitted on out-of-fold data "
+                f"(samples={len(oof_probs)}, positives={int(oof_actual.sum())})"
+            )
+            return
+
+        if self.strict_verification and self.require_oof_cup_calibration_in_strict_mode:
+            raise RuntimeError(
+                "Strict verification requires out-of-fold Cup calibration data; "
+                f"got samples={len(oof_probs)}, positives={int(oof_actual.sum())}"
+            )
+
+        logger.warning("Insufficient out-of-fold samples; falling back to in-sample Cup calibration")
+
+        gb_probs = self.cup_predictor.predict_proba(train_features)
         if self.use_neural_network and self.neural_predictor is not None:
             nn_probs = self.neural_predictor.predict_proba(train_features)
-            # Average GB and NN for calibration input
             raw_probs = 0.5 * gb_probs + 0.5 * nn_probs
         else:
             raw_probs = gb_probs
-
-        # Actual outcomes
         actual = np.array([1 if f.won_cup else 0 for f in train_features])
-
-        # Fit calibrator
         self.cup_calibrator.fit(raw_probs, actual)
+
+    def _generate_cup_oof_predictions(
+        self,
+        training_data: List[TeamSeason]
+    ) -> Tuple[np.ndarray, np.ndarray]:
+        """
+        Generate strict walk-forward OOF cup probabilities for calibration.
+        """
+        by_season = defaultdict(list)
+        for ts in training_data:
+            by_season[ts.season].append(ts)
+
+        seasons = sorted(by_season.keys())
+        oof_probs: List[float] = []
+        oof_actual: List[int] = []
+
+        # Need enough prior seasons to train a useful Cup model.
+        for held_out_idx in range(2, len(seasons)):
+            held_out_season = seasons[held_out_idx]
+            fold_train = [t for t in training_data if t.season < held_out_season]
+            fold_test = by_season[held_out_season]
+
+            if len(fold_train) < 64 or len(fold_test) < 16:
+                continue
+
+            # Fit per-fold feature transforms to avoid leakage.
+            fold_engineer = FeatureEngineer()
+            train_features = fold_engineer.fit_transform(fold_train)
+            test_features = fold_engineer.transform(fold_test)
+
+            sample_weight = None
+            if self.use_recency_weighting:
+                sample_weight = calculate_recency_weights(
+                    train_features,
+                    decay_rate=self.recency_decay_rate,
+                    cup_winner_boost=self.cup_winner_boost,
+                    reference_year=max(t.season for t in fold_train),
+                )
+
+            fold_cup = CupPredictor()
+            fold_cup.fit(train_features, sample_weight=sample_weight)
+            gb_probs = fold_cup.predict_proba(test_features)
+
+            if self.use_neural_network:
+                fold_nn = NeuralNetworkPredictor()
+                fold_nn.fit(train_features, sample_weight=sample_weight)
+                nn_probs = fold_nn.predict_proba(test_features)
+                fold_probs = 0.5 * gb_probs + 0.5 * nn_probs
+            else:
+                fold_probs = gb_probs
+
+            oof_probs.extend(fold_probs.tolist())
+            oof_actual.extend([1 if t.won_cup else 0 for t in fold_test])
+
+        return np.array(oof_probs), np.array(oof_actual)
 
     def predict(self, teams: List[TeamSeason]) -> List[PredictionResult]:
         """Generate predictions for teams."""
@@ -1067,14 +1268,25 @@ class EnsemblePredictor:
             teams, strength_scores, playoff_probs, features=features
         )
         mc_probs = mc_result.cup_probabilities
+        mc_playoff_probs = mc_result.playoff_probs
+        mc_conf_probs = mc_result.conf_final_appearance_probs
+        mc_cup_final_probs = mc_result.cup_final_probs
 
         # Create raw Cup probabilities using weighted ensemble
-        raw_cup_probs = {}
+        team_order = [team.team for team in teams]
+        raw_cup_array = []
+        cup_caps_array = []
+        coherent_playoff_probs = []
+        coherent_conf_probs = []
+        coherent_cup_final_probs = []
         for i, team in enumerate(teams):
             mc_prob = mc_probs.get(team.team, 0.0)
             gb_prob = cup_probs_gb[i]
             nn_prob = cup_probs_nn[i]
-            playoff_prob = playoff_probs[i]
+            base_playoff_prob = float(np.clip(playoff_probs[i], 0.0, 1.0))
+            mc_playoff_prob = float(np.clip(mc_playoff_probs.get(team.team, 0.0), 0.0, 1.0))
+            conf_prob = float(np.clip(mc_conf_probs.get(team.team, 0.0), 0.0, 1.0))
+            cup_final_prob = float(np.clip(mc_cup_final_probs.get(team.team, 0.0), 0.0, 1.0))
 
             # Weighted ensemble of Cup predictions
             w = self.cup_ensemble_weights
@@ -1088,26 +1300,51 @@ class EnsemblePredictor:
                 # Without NN, redistribute weight
                 ensemble_prob = 0.4 * gb_prob + 0.6 * mc_prob
 
-            # Gate by playoff probability (must make playoffs to win Cup)
-            gated_prob = ensemble_prob * min(1.0, playoff_prob + 0.1)
+            # Enforce coherent progression probabilities across stages.
+            coherent_playoff_prob = min(
+                1.0,
+                max(base_playoff_prob, mc_playoff_prob, conf_prob, cup_final_prob),
+            )
+            coherent_conf_prob = min(conf_prob, coherent_playoff_prob)
+            coherent_cup_final_prob = min(cup_final_prob, coherent_conf_prob)
 
-            raw_cup_probs[team.team] = gated_prob
+            # Gate Cup by true playoff qualification probability (no fixed +10% floor).
+            gated_prob = max(0.0, float(ensemble_prob)) * coherent_playoff_prob
+            raw_cup_array.append(gated_prob)
+            cup_caps_array.append(coherent_cup_final_prob)
+            coherent_playoff_probs.append(coherent_playoff_prob)
+            coherent_conf_probs.append(coherent_conf_prob)
+            coherent_cup_final_probs.append(coherent_cup_final_prob)
 
-        # CRITICAL FIX: Normalize Cup probabilities to sum to 100%
-        total_prob = sum(raw_cup_probs.values())
-        if total_prob > 0:
-            normalized_cup_probs = {
-                team: prob / total_prob for team, prob in raw_cup_probs.items()
-            }
-        else:
-            normalized_cup_probs = {team: 1/32 for team in raw_cup_probs}
+        # Calibrate final raw Cup probabilities before normalization.
+        raw_array = np.array(raw_cup_array, dtype=float)
+        cup_caps = np.array(cup_caps_array, dtype=float)
+        if self.use_cup_calibration:
+            calibrated_array = self.cup_calibrator.calibrate(raw_array)
+            # Preserve ranking/dispersion signal from the ensemble while still
+            # incorporating calibration correction for rare-event probabilities.
+            raw_array = np.clip((0.75 * raw_array) + (0.25 * calibrated_array), 0.0, 1.0)
+        normalized_array = self._normalize_with_caps(raw_array, cup_caps)
+        if self.cup_market_prior_blend > 0.0:
+            market_prior = self._get_market_prior_distribution(teams, fallback=normalized_array)
+            normalized_array = self._normalize_with_caps(
+                ((1.0 - self.cup_market_prior_blend) * normalized_array)
+                + (self.cup_market_prior_blend * market_prior),
+                cup_caps,
+            )
+        normalized_cup_probs = {team: float(prob) for team, prob in zip(team_order, normalized_array)}
 
         # Create results with normalized probabilities
         results = []
         strength_values = list(strength_scores.values())
 
         for i, (team, feature) in enumerate(zip(teams, features)):
-            cup_prob = normalized_cup_probs[team.team]
+            playoff_prob = coherent_playoff_probs[i]
+            conf_prob = coherent_conf_probs[i]
+            cup_final_prob = coherent_cup_final_probs[i]
+            cup_prob = float(
+                min(normalized_cup_probs[team.team], cup_final_prob, conf_prob, playoff_prob)
+            )
 
             # Confidence interval using Beta distribution
             ci_lower, ci_upper = self._calculate_ci(cup_prob, n=10000)
@@ -1122,9 +1359,9 @@ class EnsemblePredictor:
                 team=team.team,
                 season=team.season,
                 composite_strength=strength_scores[team.team],
-                playoff_probability=float(playoff_probs[i]),
-                conference_final_probability=mc_result.conf_final_appearance_probs.get(team.team, 0.0),
-                cup_final_probability=mc_result.cup_final_probs.get(team.team, 0.0),
+                playoff_probability=playoff_prob,
+                conference_final_probability=conf_prob,
+                cup_final_probability=cup_final_prob,
                 cup_win_probability=float(cup_prob),
                 cup_prob_lower=ci_lower,
                 cup_prob_upper=ci_upper,
@@ -1197,6 +1434,9 @@ class EnsemblePredictor:
                 'vegas_cup_signal': feature.vegas_cup_signal,
                 'playoff_experience': feature.playoff_experience,
                 'dynasty_score': feature.dynasty_score,
+                'series_history_signal': feature.series_history_signal,
+                'market_close_movement_signal': feature.market_close_movement_signal,
+                'goalie_injury_playoff_impact': feature.goalie_injury_playoff_impact,
             }
 
             # Weighted sum
@@ -1223,6 +1463,106 @@ class EnsemblePredictor:
         upper = beta_dist.ppf((1 + confidence) / 2, alpha, beta_param)
 
         return float(lower), float(upper)
+
+    @staticmethod
+    def _normalize_with_caps(raw_probs: np.ndarray, caps: np.ndarray) -> np.ndarray:
+        """
+        Normalize team probabilities to sum to 1.0 while respecting per-team caps.
+
+        Caps are used to keep Cup odds coherent with downstream round probabilities.
+        """
+        probs = np.clip(np.asarray(raw_probs, dtype=float), 0.0, None)
+        upper = np.clip(np.asarray(caps, dtype=float), 0.0, 1.0)
+
+        if probs.shape != upper.shape:
+            raise ValueError("raw_probs and caps must have the same shape")
+        if probs.size == 0:
+            return probs
+
+        # If caps are unavailable, fall back to standard normalization.
+        if float(np.sum(upper)) <= 0.0:
+            total = float(np.sum(probs))
+            if total > 0.0:
+                return probs / total
+            return np.full(probs.shape, 1.0 / probs.size)
+
+        probs = np.minimum(probs, upper)
+        total = float(np.sum(probs))
+
+        # Easy case: above target sum, scale down proportionally.
+        if total > 1.0:
+            return probs / total
+
+        remaining = 1.0 - total
+        if remaining <= 1e-12:
+            return probs
+
+        slack = upper - probs
+        active = slack > 1e-12
+        seed = np.maximum(np.asarray(raw_probs, dtype=float), 0.0)
+
+        # Fill remaining mass into teams with headroom.
+        while remaining > 1e-12 and np.any(active):
+            weights = np.where(active, seed, 0.0)
+            if float(np.sum(weights)) <= 1e-12:
+                weights = np.where(active, slack, 0.0)
+            weight_sum = float(np.sum(weights))
+            if weight_sum <= 1e-12:
+                break
+
+            delta = remaining * (weights / weight_sum)
+            delta = np.minimum(delta, slack)
+            taken = float(np.sum(delta))
+            if taken <= 1e-12:
+                break
+
+            probs += delta
+            remaining -= taken
+            slack = upper - probs
+            active = slack > 1e-12
+
+        # Keep a stable, bounded vector under floating-point drift.
+        probs = np.minimum(np.maximum(probs, 0.0), upper)
+        total = float(np.sum(probs))
+        if total > 1.0 + 1e-9:
+            probs /= total
+        return probs
+
+    @staticmethod
+    def _normalize_distribution(probs: np.ndarray, fallback: np.ndarray) -> np.ndarray:
+        """Normalize non-negative probabilities to sum to 1 with fallback."""
+        arr = np.clip(np.nan_to_num(np.asarray(probs, dtype=float), nan=0.0), 0.0, None)
+        total = float(np.sum(arr))
+        if total > 0.0:
+            return arr / total
+
+        fb = np.clip(np.nan_to_num(np.asarray(fallback, dtype=float), nan=0.0), 0.0, None)
+        fb_total = float(np.sum(fb))
+        if fb_total > 0.0:
+            return fb / fb_total
+        return np.full(arr.shape, 1.0 / arr.size)
+
+    def _get_market_prior_distribution(
+        self,
+        teams: List[TeamSeason],
+        fallback: np.ndarray,
+    ) -> np.ndarray:
+        """
+        Return a normalized Cup prior distribution from Vegas odds.
+
+        Missing teams fall back to the model distribution so sparse odds feeds
+        do not zero-out teams.
+        """
+        prior = np.full(len(teams), np.nan, dtype=float)
+        for i, team in enumerate(teams):
+            odds = get_team_vegas_odds(team.team, team.season)
+            if odds is not None:
+                prior[i] = float(max(0.0, odds.cup_implied_prob))
+
+        fallback_norm = self._normalize_distribution(fallback, fallback)
+        missing = ~np.isfinite(prior)
+        prior[missing] = fallback_norm[missing]
+        return self._normalize_distribution(prior, fallback_norm)
 
     def _classify_tier_percentile(
         self,
