@@ -21,6 +21,7 @@ import numpy as np
 
 from .data_loader import load_current_season_data, load_training_data
 from .models import EnsemblePredictor
+from .model_profile import load_active_model_profile
 from .data_models import PredictionResult
 from .config import CURRENT_SEASON, RANDOM_SEED
 
@@ -39,7 +40,16 @@ class SuperhumanPredictor:
     """
 
     def __init__(self):
-        self.ensemble = EnsemblePredictor()
+        self.model_profile = load_active_model_profile()
+        self.ensemble = EnsemblePredictor(
+            use_neural_network=bool(self.model_profile.get("use_neural_network", True)),
+            use_recency_weighting=bool(self.model_profile.get("use_recency_weighting", True)),
+            use_cup_calibration=bool(self.model_profile.get("use_cup_calibration", True)),
+            recency_decay_rate=float(self.model_profile.get("recency_decay_rate", 0.15)),
+            cup_winner_boost=float(self.model_profile.get("cup_winner_boost", 2.0)),
+            cup_market_prior_blend=float(self.model_profile.get("cup_market_prior_blend", 0.0)),
+            cup_ensemble_weights=self.model_profile.get("cup_ensemble_weights"),
+        )
         self.is_trained = False
         self.results: List[PredictionResult] = []
         self.feature_weights: Dict[str, float] = {}
@@ -47,7 +57,7 @@ class SuperhumanPredictor:
     def train(self) -> 'SuperhumanPredictor':
         """Train model on historical data."""
         logger.info("Loading training data...")
-        training_data = load_training_data()
+        training_data = load_training_data(allow_synthetic_fallback=False)
 
         logger.info(f"Training ensemble on {len(training_data)} samples...")
         self.ensemble.fit(training_data)

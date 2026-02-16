@@ -1,0 +1,5831 @@
+{
+  "generatedAt": "2026-02-07T21:04:41.022607+00:00",
+  "mode": "strict_walk_forward_test_matrix",
+  "leakageCheck": "train seasons strictly less than held-out season",
+  "baseline": {
+    "summary": {
+      "n_seasons": 12,
+      "cup_top1_accuracy_pct": 16.7,
+      "cup_top5_accuracy_pct": 58.3,
+      "cup_average_winner_rank": 7.67,
+      "playoff_f1": 0.905
+    },
+    "ci95": {
+      "cup_top1_accuracy_pct": [
+        0.0,
+        33.3
+      ],
+      "cup_top5_accuracy_pct": [
+        33.3,
+        83.3
+      ],
+      "cup_average_winner_rank": [
+        4.0,
+        12.17
+      ],
+      "playoff_f1": [
+        0.875,
+        0.938
+      ]
+    },
+    "era_stability": {
+      "era_2013_2017": {
+        "n_seasons": 5,
+        "cup_top1_accuracy_pct": 20.0,
+        "cup_top5_accuracy_pct": 80.0,
+        "cup_average_winner_rank": 5.4,
+        "playoff_f1": 0.9
+      },
+      "era_2018_2020": {
+        "n_seasons": 3,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 12.67,
+        "playoff_f1": 0.912
+      },
+      "era_2021_2024": {
+        "n_seasons": 4,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 6.75,
+        "playoff_f1": 0.906
+      }
+    },
+    "seasons": [
+      {
+        "season": 2013,
+        "cup_top1": 1.0,
+        "cup_top5": 1.0,
+        "cup_winner_rank": 1.0,
+        "playoff_f1": 0.875
+      },
+      {
+        "season": 2014,
+        "cup_top1": 0.0,
+        "cup_top5": 1.0,
+        "cup_winner_rank": 2.0,
+        "playoff_f1": 0.875
+      },
+      {
+        "season": 2015,
+        "cup_top1": 0.0,
+        "cup_top5": 1.0,
+        "cup_winner_rank": 2.0,
+        "playoff_f1": 0.9375
+      },
+      {
+        "season": 2016,
+        "cup_top1": 0.0,
+        "cup_top5": 1.0,
+        "cup_winner_rank": 3.0,
+        "playoff_f1": 0.9375
+      },
+      {
+        "season": 2017,
+        "cup_top1": 0.0,
+        "cup_top5": 0.0,
+        "cup_winner_rank": 19.0,
+        "playoff_f1": 0.875
+      },
+      {
+        "season": 2018,
+        "cup_top1": 0.0,
+        "cup_top5": 0.0,
+        "cup_winner_rank": 23.0,
+        "playoff_f1": 0.9375
+      },
+      {
+        "season": 2019,
+        "cup_top1": 0.0,
+        "cup_top5": 0.0,
+        "cup_winner_rank": 12.0,
+        "playoff_f1": 1.0
+      },
+      {
+        "season": 2020,
+        "cup_top1": 0.0,
+        "cup_top5": 1.0,
+        "cup_winner_rank": 3.0,
+        "playoff_f1": 0.8
+      },
+      {
+        "season": 2021,
+        "cup_top1": 0.0,
+        "cup_top5": 0.0,
+        "cup_winner_rank": 7.0,
+        "playoff_f1": 0.875
+      },
+      {
+        "season": 2022,
+        "cup_top1": 0.0,
+        "cup_top5": 1.0,
+        "cup_winner_rank": 4.0,
+        "playoff_f1": 0.875
+      },
+      {
+        "season": 2023,
+        "cup_top1": 0.0,
+        "cup_top5": 0.0,
+        "cup_winner_rank": 15.0,
+        "playoff_f1": 1.0
+      },
+      {
+        "season": 2024,
+        "cup_top1": 1.0,
+        "cup_top5": 1.0,
+        "cup_winner_rank": 1.0,
+        "playoff_f1": 0.875
+      }
+    ]
+  },
+  "addOne": {
+    "goal_differential_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.25,
+        "playoff_f1": 0.916
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          25.0,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          3.41,
+          7.5
+        ],
+        "playoff_f1": [
+          0.887,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 3.6,
+          "playoff_f1": 0.938
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 8.33,
+          "playoff_f1": 0.892
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 5.0,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "cf_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 8.67,
+        "playoff_f1": 0.683
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_top5_accuracy_pct": [
+          25.0,
+          75.0
+        ],
+        "cup_average_winner_rank": [
+          4.92,
+          13.42
+        ],
+        "playoff_f1": [
+          0.642,
+          0.72
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.0,
+          "playoff_f1": 0.675
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 13.0,
+          "playoff_f1": 0.671
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 25.0,
+          "cup_average_winner_rank": 10.0,
+          "playoff_f1": 0.703
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2014,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.5625
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 24.0,
+          "playoff_f1": 0.5625
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 10.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.7000000000000001
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 22.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.625
+        }
+      ]
+    },
+    "hdcf_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 9.92,
+        "playoff_f1": 0.746
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          0.0
+        ],
+        "cup_top5_accuracy_pct": [
+          16.7,
+          66.7
+        ],
+        "cup_average_winner_rank": [
+          5.83,
+          14.67
+        ],
+        "playoff_f1": [
+          0.708,
+          0.783
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 60.0,
+          "cup_average_winner_rank": 7.8,
+          "playoff_f1": 0.738
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 66.7,
+          "cup_average_winner_rank": 12.33,
+          "playoff_f1": 0.713
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 10.75,
+          "playoff_f1": 0.781
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 18.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 31.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.7000000000000001
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 10.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.6875
+        }
+      ]
+    },
+    "xgf_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 9.17,
+        "playoff_f1": 0.741
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_top5_accuracy_pct": [
+          8.3,
+          58.3
+        ],
+        "cup_average_winner_rank": [
+          5.33,
+          14.0
+        ],
+        "playoff_f1": [
+          0.693,
+          0.788
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 40.0,
+          "cup_average_winner_rank": 5.2,
+          "playoff_f1": 0.725
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 13.67,
+          "playoff_f1": 0.713
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 25.0,
+          "cup_average_winner_rank": 10.75,
+          "playoff_f1": 0.781
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2014,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 31.0,
+          "playoff_f1": 0.5625
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.7000000000000001
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 10.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 18.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.6875
+        }
+      ]
+    },
+    "goaltending_quality": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.709
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          0.0
+        ],
+        "cup_top5_accuracy_pct": [
+          8.3,
+          58.3
+        ],
+        "cup_average_winner_rank": [
+          6.08,
+          9.59
+        ],
+        "playoff_f1": [
+          0.677,
+          0.741
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 40.0,
+          "cup_average_winner_rank": 7.0,
+          "playoff_f1": 0.688
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 11.33,
+          "playoff_f1": 0.713
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.25,
+          "playoff_f1": 0.734
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 13.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 10.0,
+          "playoff_f1": 0.7000000000000001
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.625
+        }
+      ]
+    },
+    "pp_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 15.42,
+        "playoff_f1": 0.702
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          0.0
+        ],
+        "cup_top5_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_average_winner_rank": [
+          11.25,
+          19.75
+        ],
+        "playoff_f1": [
+          0.65,
+          0.749
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 20.0,
+          "cup_average_winner_rank": 13.8,
+          "playoff_f1": 0.675
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 24.67,
+          "playoff_f1": 0.725
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 10.5,
+          "playoff_f1": 0.719
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 25.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 22.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 18.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.75
+        }
+      ]
+    },
+    "pk_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 25.0,
+        "cup_average_winner_rank": 10.92,
+        "playoff_f1": 0.662
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          0.0
+        ],
+        "cup_top5_accuracy_pct": [
+          0.0,
+          50.0
+        ],
+        "cup_average_winner_rank": [
+          7.83,
+          13.83
+        ],
+        "playoff_f1": [
+          0.635,
+          0.693
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 40.0,
+          "cup_average_winner_rank": 10.0,
+          "playoff_f1": 0.675
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 12.33,
+          "playoff_f1": 0.671
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 25.0,
+          "cup_average_winner_rank": 11.0,
+          "playoff_f1": 0.641
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 10.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.5625
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 13.0,
+          "playoff_f1": 0.7000000000000001
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.625
+        }
+      ]
+    },
+    "road_performance": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 15.17,
+        "playoff_f1": 0.578
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          0.0
+        ],
+        "cup_top5_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_average_winner_rank": [
+          10.33,
+          19.59
+        ],
+        "playoff_f1": [
+          0.516,
+          0.641
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 20.0,
+          "cup_average_winner_rank": 12.4,
+          "playoff_f1": 0.6
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 17.33,
+          "playoff_f1": 0.604
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 17.0,
+          "playoff_f1": 0.531
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.5625
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 0.4375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 29.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 26.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 28.0,
+          "playoff_f1": 0.5625
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.5625
+        }
+      ]
+    },
+    "sustainability": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 14.75,
+        "playoff_f1": 0.504
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          0.0
+        ],
+        "cup_top5_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_average_winner_rank": [
+          10.0,
+          19.67
+        ],
+        "playoff_f1": [
+          0.468,
+          0.541
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 16.8,
+          "playoff_f1": 0.5
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.496
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 13.75,
+          "playoff_f1": 0.516
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 28.0,
+          "playoff_f1": 0.375
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 21.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 17.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.4375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.5499999999999999
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 25.0,
+          "playoff_f1": 0.5625
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.4375
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 0.5625
+        }
+      ]
+    },
+    "true_xgf_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 8.17,
+        "playoff_f1": 0.822
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          50.0
+        ],
+        "cup_top5_accuracy_pct": [
+          16.7,
+          66.7
+        ],
+        "cup_average_winner_rank": [
+          5.16,
+          11.83
+        ],
+        "playoff_f1": [
+          0.802,
+          0.843
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 40.0,
+          "cup_top5_accuracy_pct": 60.0,
+          "cup_average_winner_rank": 6.4,
+          "playoff_f1": 0.825
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 33.3,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 10.33,
+          "playoff_f1": 0.808
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 25.0,
+          "cup_average_winner_rank": 8.75,
+          "playoff_f1": 0.828
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 14.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 14.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2017,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 17.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 13.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2020,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "true_xga_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 7.08,
+        "playoff_f1": 0.844
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          50.0
+        ],
+        "cup_top5_accuracy_pct": [
+          25.0,
+          75.0
+        ],
+        "cup_average_winner_rank": [
+          3.75,
+          11.0
+        ],
+        "playoff_f1": [
+          0.807,
+          0.88
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 60.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 4.6,
+          "playoff_f1": 0.875
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 10.67,
+          "playoff_f1": 0.771
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 25.0,
+          "cup_average_winner_rank": 7.5,
+          "playoff_f1": 0.859
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 17.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 22.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.75
+        }
+      ]
+    },
+    "xg_diff_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 6.17,
+        "playoff_f1": 0.879
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          41.7
+        ],
+        "cup_top5_accuracy_pct": [
+          41.7,
+          91.7
+        ],
+        "cup_average_winner_rank": [
+          3.5,
+          9.75
+        ],
+        "playoff_f1": [
+          0.847,
+          0.906
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 100.0,
+          "cup_average_winner_rank": 3.0,
+          "playoff_f1": 0.9
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 33.3,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 10.0,
+          "playoff_f1": 0.829
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 7.25,
+          "playoff_f1": 0.891
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2020,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 14.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "offense_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 9.0,
+        "playoff_f1": 0.801
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          41.7
+        ],
+        "cup_top5_accuracy_pct": [
+          16.7,
+          66.7
+        ],
+        "cup_average_winner_rank": [
+          5.33,
+          13.25
+        ],
+        "playoff_f1": [
+          0.765,
+          0.833
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 60.0,
+          "cup_average_winner_rank": 9.4,
+          "playoff_f1": 0.762
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 33.3,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 8.33,
+          "playoff_f1": 0.829
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 25.0,
+          "cup_average_winner_rank": 9.0,
+          "playoff_f1": 0.828
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 25.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2017,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2020,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 14.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.8125
+        }
+      ]
+    },
+    "defense_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 6.83,
+        "playoff_f1": 0.833
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          41.7
+        ],
+        "cup_top5_accuracy_pct": [
+          8.3,
+          58.3
+        ],
+        "cup_average_winner_rank": [
+          4.25,
+          9.67
+        ],
+        "playoff_f1": [
+          0.807,
+          0.859
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 40.0,
+          "cup_top5_accuracy_pct": 60.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.863
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 9.67,
+          "playoff_f1": 0.812
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 25.0,
+          "cup_average_winner_rank": 6.5,
+          "playoff_f1": 0.812
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 17.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.75
+        }
+      ]
+    },
+    "save_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 6.75,
+        "playoff_f1": 0.725
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          0.0
+        ],
+        "cup_top5_accuracy_pct": [
+          16.7,
+          66.7
+        ],
+        "cup_average_winner_rank": [
+          4.75,
+          8.83
+        ],
+        "playoff_f1": [
+          0.69,
+          0.761
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 60.0,
+          "cup_average_winner_rank": 4.8,
+          "playoff_f1": 0.688
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 10.33,
+          "playoff_f1": 0.733
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.5,
+          "playoff_f1": 0.766
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.625
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.7000000000000001
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 10.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 9.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.6875
+        }
+      ]
+    },
+    "discipline_proxy_special_teams": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 10.25,
+        "playoff_f1": 0.746
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          0.0
+        ],
+        "cup_top5_accuracy_pct": [
+          8.3,
+          58.3
+        ],
+        "cup_average_winner_rank": [
+          7.42,
+          13.58
+        ],
+        "playoff_f1": [
+          0.717,
+          0.776
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 20.0,
+          "cup_average_winner_rank": 10.4,
+          "playoff_f1": 0.738
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 9.0,
+          "playoff_f1": 0.733
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 11.0,
+          "playoff_f1": 0.766
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 18.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 10.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 6.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 13.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 10.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.7000000000000001
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.75
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 0.8125
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 22.0,
+          "playoff_f1": 0.6875
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.8125
+        }
+      ]
+    },
+    "playoff_experience": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 23.0,
+        "playoff_f1": 0.214
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_top5_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_average_winner_rank": [
+          18.67,
+          26.42
+        ],
+        "playoff_f1": [
+          0.161,
+          0.281
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 20.0,
+          "cup_average_winner_rank": 19.6,
+          "playoff_f1": 0.25
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 23.67,
+          "playoff_f1": 0.271
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 26.75,
+          "playoff_f1": 0.125
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 26.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 28.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 25.0,
+          "playoff_f1": 0.125
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.1875
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.125
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 30.0,
+          "playoff_f1": 0.125
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.125
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.125
+        }
+      ]
+    },
+    "dynasty_score": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 23.0,
+        "playoff_f1": 0.214
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_top5_accuracy_pct": [
+          0.0,
+          25.0
+        ],
+        "cup_average_winner_rank": [
+          18.67,
+          26.42
+        ],
+        "playoff_f1": [
+          0.161,
+          0.281
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 20.0,
+          "cup_average_winner_rank": 19.6,
+          "playoff_f1": 0.25
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 23.67,
+          "playoff_f1": 0.271
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 0.0,
+          "cup_average_winner_rank": 26.75,
+          "playoff_f1": 0.125
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 26.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 28.0,
+          "playoff_f1": 0.25
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 25.0,
+          "playoff_f1": 0.125
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.1875
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.5
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.125
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 30.0,
+          "playoff_f1": 0.125
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.125
+        },
+        {
+          "season": 2024,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 27.0,
+          "playoff_f1": 0.125
+        }
+      ]
+    }
+  },
+  "leaveOneOut": {
+    "goal_differential_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.34
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 7.0,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "cf_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.42,
+        "playoff_f1": 0.905
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.16,
+          11.58
+        ],
+        "playoff_f1": [
+          0.875,
+          0.938
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.6,
+          "playoff_f1": 0.9
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.0,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.25,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 18.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 22.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 8.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "hdcf_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.08,
+          12.17
+        ],
+        "playoff_f1": [
+          0.875,
+          0.938
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.6,
+          "playoff_f1": 0.9
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.5,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 14.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "xgf_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.58,
+        "playoff_f1": 0.905
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.17
+        ],
+        "playoff_f1": [
+          0.875,
+          0.938
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.6,
+          "playoff_f1": 0.9
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.25,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 13.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "goaltending_quality": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.5
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.6,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 7.0,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "pp_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          50.0
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.08,
+          12.25
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 40.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.8,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.33,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 7.0,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2015,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 5.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 22.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "pk_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.58,
+        "playoff_f1": 0.905
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          3.92,
+          12.17
+        ],
+        "playoff_f1": [
+          0.875,
+          0.938
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.9
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.33,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.75,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "road_performance": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 6.75,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          50.0
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          3.5,
+          10.75
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 40.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 3.6,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.0,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.75,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 22.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "sustainability": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 33.3,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.33,
+        "playoff_f1": 0.916
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          8.3,
+          58.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          3.67,
+          11.92
+        ],
+        "playoff_f1": [
+          0.883,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 60.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 4.8,
+          "playoff_f1": 0.925
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.33,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.75,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 18.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 11.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "true_xgf_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.34
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.6,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.75,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "true_xga_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.34
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 7.0,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "xg_diff_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.5
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.6,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 7.0,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "offense_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.17
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.75,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "defense_rate": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.34
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 7.0,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 16.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "save_pct": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.58,
+        "playoff_f1": 0.91
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.17
+        ],
+        "playoff_f1": [
+          0.878,
+          0.943
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.6,
+          "playoff_f1": 0.912
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.25,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 20.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 13.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "discipline_proxy_special_teams": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.17
+        ],
+        "playoff_f1": [
+          0.875,
+          0.938
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.9
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.75,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "playoff_experience": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.17
+        ],
+        "playoff_f1": [
+          0.875,
+          0.938
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.9
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.75,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    },
+    "dynasty_score": {
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "ci95": {
+        "cup_top1_accuracy_pct": [
+          0.0,
+          33.3
+        ],
+        "cup_top5_accuracy_pct": [
+          33.3,
+          83.3
+        ],
+        "cup_average_winner_rank": [
+          4.0,
+          12.17
+        ],
+        "playoff_f1": [
+          0.875,
+          0.938
+        ]
+      },
+      "era_stability": {
+        "era_2013_2017": {
+          "n_seasons": 5,
+          "cup_top1_accuracy_pct": 20.0,
+          "cup_top5_accuracy_pct": 80.0,
+          "cup_average_winner_rank": 5.4,
+          "playoff_f1": 0.9
+        },
+        "era_2018_2020": {
+          "n_seasons": 3,
+          "cup_top1_accuracy_pct": 0.0,
+          "cup_top5_accuracy_pct": 33.3,
+          "cup_average_winner_rank": 12.67,
+          "playoff_f1": 0.912
+        },
+        "era_2021_2024": {
+          "n_seasons": 4,
+          "cup_top1_accuracy_pct": 25.0,
+          "cup_top5_accuracy_pct": 50.0,
+          "cup_average_winner_rank": 6.75,
+          "playoff_f1": 0.906
+        }
+      },
+      "seasons": [
+        {
+          "season": 2013,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2014,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2015,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 2.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2016,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2017,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 19.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2018,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 23.0,
+          "playoff_f1": 0.9375
+        },
+        {
+          "season": 2019,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 12.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2020,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 3.0,
+          "playoff_f1": 0.8
+        },
+        {
+          "season": 2021,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 7.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2022,
+          "cup_top1": 0.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 4.0,
+          "playoff_f1": 0.875
+        },
+        {
+          "season": 2023,
+          "cup_top1": 0.0,
+          "cup_top5": 0.0,
+          "cup_winner_rank": 15.0,
+          "playoff_f1": 1.0
+        },
+        {
+          "season": 2024,
+          "cup_top1": 1.0,
+          "cup_top5": 1.0,
+          "cup_winner_rank": 1.0,
+          "playoff_f1": 0.875
+        }
+      ]
+    }
+  },
+  "interactionsTop": [
+    {
+      "pair": [
+        "goaltending_quality",
+        "true_xgf_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 33.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 5.92,
+        "playoff_f1": 0.869
+      }
+    },
+    {
+      "pair": [
+        "true_xga_rate",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 33.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 6.33,
+        "playoff_f1": 0.849
+      }
+    },
+    {
+      "pair": [
+        "goaltending_quality",
+        "true_xga_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 33.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 6.75,
+        "playoff_f1": 0.839
+      }
+    },
+    {
+      "pair": [
+        "xg_diff_rate",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 5.42,
+        "playoff_f1": 0.884
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "true_xga_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.58,
+        "playoff_f1": 0.905
+      }
+    },
+    {
+      "pair": [
+        "true_xgf_rate",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.58,
+        "playoff_f1": 0.879
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "hdcf_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 5.67,
+        "playoff_f1": 0.921
+      }
+    },
+    {
+      "pair": [
+        "hdcf_pct",
+        "true_xga_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 7.42,
+        "playoff_f1": 0.839
+      }
+    },
+    {
+      "pair": [
+        "goaltending_quality",
+        "xg_diff_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 5.42,
+        "playoff_f1": 0.89
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "xgf_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 6.08,
+        "playoff_f1": 0.921
+      }
+    },
+    {
+      "pair": [
+        "hdcf_pct",
+        "xg_diff_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 6.33,
+        "playoff_f1": 0.89
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "goaltending_quality"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.08,
+        "playoff_f1": 0.916
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "true_xgf_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.33,
+        "playoff_f1": 0.916
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "xg_diff_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.5,
+        "playoff_f1": 0.921
+      }
+    },
+    {
+      "pair": [
+        "true_xgf_rate",
+        "xg_diff_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 6.42,
+        "playoff_f1": 0.869
+      }
+    },
+    {
+      "pair": [
+        "cf_pct",
+        "goaltending_quality"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.25,
+        "playoff_f1": 0.792
+      }
+    },
+    {
+      "pair": [
+        "true_xga_rate",
+        "xg_diff_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 6.0,
+        "playoff_f1": 0.879
+      }
+    },
+    {
+      "pair": [
+        "true_xgf_rate",
+        "true_xga_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 6.08,
+        "playoff_f1": 0.879
+      }
+    },
+    {
+      "pair": [
+        "xgf_pct",
+        "xg_diff_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 6.92,
+        "playoff_f1": 0.905
+      }
+    },
+    {
+      "pair": [
+        "xgf_pct",
+        "goaltending_quality"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 7.33,
+        "playoff_f1": 0.818
+      }
+    },
+    {
+      "pair": [
+        "cf_pct",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.782
+      }
+    },
+    {
+      "pair": [
+        "xgf_pct",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 7.42,
+        "playoff_f1": 0.828
+      }
+    },
+    {
+      "pair": [
+        "hdcf_pct",
+        "goaltending_quality"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.803
+      }
+    },
+    {
+      "pair": [
+        "hdcf_pct",
+        "true_xgf_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 8.25,
+        "playoff_f1": 0.811
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.17,
+        "playoff_f1": 0.916
+      }
+    }
+  ],
+  "decisionTable": [
+    {
+      "feature": "goal_differential_rate",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.25,
+        "playoff_f1": 0.916
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "keep_or_increase"
+    },
+    {
+      "feature": "cf_pct",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 8.67,
+        "playoff_f1": 0.683
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.42,
+        "playoff_f1": 0.905
+      },
+      "recommendation": "reduce_but_keep"
+    },
+    {
+      "feature": "hdcf_pct",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 9.92,
+        "playoff_f1": 0.746
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "recommendation": "reduce_or_remove"
+    },
+    {
+      "feature": "xgf_pct",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 9.17,
+        "playoff_f1": 0.741
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.58,
+        "playoff_f1": 0.905
+      },
+      "recommendation": "reduce_or_remove"
+    },
+    {
+      "feature": "goaltending_quality",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.709
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "keep_or_increase"
+    },
+    {
+      "feature": "pp_pct",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 15.42,
+        "playoff_f1": 0.702
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "keep_or_increase"
+    },
+    {
+      "feature": "pk_pct",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 25.0,
+        "cup_average_winner_rank": 10.92,
+        "playoff_f1": 0.662
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.58,
+        "playoff_f1": 0.905
+      },
+      "recommendation": "reduce_or_remove"
+    },
+    {
+      "feature": "road_performance",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 15.17,
+        "playoff_f1": 0.578
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 6.75,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "reduce_or_remove"
+    },
+    {
+      "feature": "sustainability",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 14.75,
+        "playoff_f1": 0.504
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 33.3,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.33,
+        "playoff_f1": 0.916
+      },
+      "recommendation": "reduce_or_remove"
+    },
+    {
+      "feature": "true_xgf_rate",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 8.17,
+        "playoff_f1": 0.822
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "keep_or_increase"
+    },
+    {
+      "feature": "true_xga_rate",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 7.08,
+        "playoff_f1": 0.844
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "keep_or_increase"
+    },
+    {
+      "feature": "xg_diff_rate",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 6.17,
+        "playoff_f1": 0.879
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "keep_or_increase"
+    },
+    {
+      "feature": "offense_rate",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 9.0,
+        "playoff_f1": 0.801
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "reduce_but_keep"
+    },
+    {
+      "feature": "defense_rate",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 6.83,
+        "playoff_f1": 0.833
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.75,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "keep_or_increase"
+    },
+    {
+      "feature": "save_pct",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 6.75,
+        "playoff_f1": 0.725
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.58,
+        "playoff_f1": 0.91
+      },
+      "recommendation": "reduce_or_remove"
+    },
+    {
+      "feature": "discipline_proxy_special_teams",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 10.25,
+        "playoff_f1": 0.746
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "recommendation": "reduce_or_remove"
+    },
+    {
+      "feature": "playoff_experience",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 23.0,
+        "playoff_f1": 0.214
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "recommendation": "reduce_or_remove"
+    },
+    {
+      "feature": "dynasty_score",
+      "baseline_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "add_one_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 23.0,
+        "playoff_f1": 0.214
+      },
+      "leave_one_out_summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 7.67,
+        "playoff_f1": 0.905
+      },
+      "recommendation": "reduce_or_remove"
+    }
+  ],
+  "unavailableBacklogDatapoints": [
+    "goalie_usage_quality_starter_load",
+    "goalie_backup_dropoff",
+    "injury_adjusted_strength",
+    "score_state_adjusted_5v5_close_game",
+    "schedule_travel_rest_load",
+    "discipline_taken_drawn_split",
+    "trade_deadline_roster_delta",
+    "playoff_style_netfront_rush_forecheck",
+    "coach_system_continuity"
+  ]
+}

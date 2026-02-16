@@ -26,3 +26,6 @@ js/data.js
 # Temp files
 *.tmp
 *.log
+
+# Local archived artifacts (kept for history, excluded from worktree noise)
+archive/reports/

@@ -1,0 +1,815 @@
+{
+  "generatedAt": "2026-02-08T20:23:28.530776+00:00",
+  "phase": "phase9_cup_edge_experiment",
+  "baseline": {
+    "name": "baseline",
+    "overrides": {
+      "use_neural_network": true,
+      "use_recency_weighting": true,
+      "use_cup_calibration": true,
+      "recency_decay_rate": 0.1,
+      "cup_winner_boost": 2.0,
+      "cup_ensemble_weights": {
+        "gradient_boosting": 0.3,
+        "neural_network": 0.3,
+        "monte_carlo": 0.4
+      }
+    },
+    "vegas": {
+      "cup_relative_brier_edge": -0.13299982046267741,
+      "cup_relative_brier_edge_ci_low": -0.28458777565279186,
+      "cup_relative_brier_edge_ci_high": -0.020306094126429735,
+      "cup_model_brier": 0.0329862864532804,
+      "cup_vegas_brier": 0.029114114457502702,
+      "cup_positive_season_ratio": 0.3333333333333333
+    },
+    "core": {
+      "top1_accuracy_pct": 33.3,
+      "top5_accuracy_pct": 50.0,
+      "average_winner_rank": 6.0,
+      "playoff_f1": 0.905
+    },
+    "hardGate": true,
+    "strictNonRegression": true,
+    "relaxedNonRegression": true
+  },
+  "summary": {
+    "totalCandidates": 95,
+    "coreEvaluatedCandidates": 19,
+    "strictEligibleCount": 1,
+    "relaxedEligibleCount": 1,
+    "bestStrict": "baseline",
+    "bestRelaxed": "baseline",
+    "bestStrictEdge": -0.13299982046267741,
+    "bestRelaxedEdge": -0.13299982046267741,
+    "baselineEdge": -0.13299982046267741,
+    "deployment": "DISABLED_EXPERIMENT_ONLY"
+  },
+  "topByEdge": [
+    {
+      "name": "w-0.0-0.0-1.0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.1,
+        "cup_winner_boost": 2.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.0,
+          "neural_network": 0.0,
+          "monte_carlo": 1.0
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.02122205046163019,
+        "cup_relative_brier_edge_ci_low": -0.07329755661699068,
+        "cup_relative_brier_edge_ci_high": 0.02219647980913912,
+        "cup_model_brier": 0.029731975663665502,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.4166666666666667
+      },
+      "core": {
+        "top1_accuracy_pct": 25.0,
+        "top5_accuracy_pct": 50.0,
+        "average_winner_rank": 5.58,
+        "playoff_f1": 0.905
+      },
+      "hardGate": true,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "w-0.2-0.0-0.8",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.1,
+        "cup_winner_boost": 2.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.2,
+          "neural_network": 0.0,
+          "monte_carlo": 0.8
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.038881690765119645,
+        "cup_relative_brier_edge_ci_low": -0.09073747274598183,
+        "cup_relative_brier_edge_ci_high": -0.0006405086670262627,
+        "cup_model_brier": 0.03024612045273962,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.3333333333333333
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.08,
+        "playoff_f1": 0.905
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.28-b2.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.28,
+        "cup_winner_boost": 2.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.04120747215293823,
+        "cup_relative_brier_edge_ci_low": -0.0884292047807572,
+        "cup_relative_brier_edge_ci_high": 0.002110900627344736,
+        "cup_model_brier": 0.0303138335182677,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.3333333333333333
+      },
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.92,
+        "playoff_f1": 0.91
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "w-0.2-0.2-0.6",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.1,
+        "cup_winner_boost": 2.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.2,
+          "neural_network": 0.2,
+          "monte_carlo": 0.6
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.044585180352091164,
+        "cup_relative_brier_edge_ci_low": -0.09375029994130496,
+        "cup_relative_brier_edge_ci_high": -0.009152993665091397,
+        "cup_model_brier": 0.030412172501381885,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.3333333333333333
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.0,
+        "playoff_f1": 0.905
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.25-b3.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.25,
+        "cup_winner_boost": 3.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.044635155328580374,
+        "cup_relative_brier_edge_ci_low": -0.08742049043239067,
+        "cup_relative_brier_edge_ci_high": -0.0024710425284700807,
+        "cup_model_brier": 0.030413627478567403,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 7.0,
+        "playoff_f1": 0.905
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.28-b3.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.28,
+        "cup_winner_boost": 3.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.046023256406820735,
+        "cup_relative_brier_edge_ci_low": -0.08942678360134855,
+        "cup_relative_brier_edge_ci_high": -0.004578080297913474,
+        "cup_model_brier": 0.030454040812237876,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.16666666666666666
+      },
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.92,
+        "playoff_f1": 0.905
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.25-b2.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.25,
+        "cup_winner_boost": 2.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.049085632823536327,
+        "cup_relative_brier_edge_ci_low": -0.09941426226483076,
+        "cup_relative_brier_edge_ci_high": -0.004716085887722856,
+        "cup_model_brier": 0.03054319918974609,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.83,
+        "playoff_f1": 0.91
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.25-b2.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.25,
+        "cup_winner_boost": 2.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.05053717338649054,
+        "cup_relative_brier_edge_ci_low": -0.0984959492002747,
+        "cup_relative_brier_edge_ci_high": -0.001352634045099659,
+        "cup_model_brier": 0.030585459507835647,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 7.0,
+        "playoff_f1": 0.91
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.25-b1.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.25,
+        "cup_winner_boost": 1.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.051648614848514254,
+        "cup_relative_brier_edge_ci_low": -0.09826550023355614,
+        "cup_relative_brier_edge_ci_high": -0.009357204563091647,
+        "cup_model_brier": 0.03061781814177382,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.3333333333333333
+      },
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.5,
+        "playoff_f1": 0.91
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.28-b1.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.28,
+        "cup_winner_boost": 1.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.052566214237494684,
+        "cup_relative_brier_edge_ci_low": -0.09914593012201452,
+        "cup_relative_brier_edge_ci_high": -0.012780294921722422,
+        "cup_model_brier": 0.03064453323541073,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.16666666666666666
+      },
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.75,
+        "playoff_f1": 0.91
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.22-b2.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.22,
+        "cup_winner_boost": 2.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.052792706642542375,
+        "cup_relative_brier_edge_ci_low": -0.100867607047807,
+        "cup_relative_brier_edge_ci_high": -0.007659935833959273,
+        "cup_model_brier": 0.030651127361215044,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.16666666666666666
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.92,
+        "playoff_f1": 0.91
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.22-b3.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.22,
+        "cup_winner_boost": 3.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.05295939212899417,
+        "cup_relative_brier_edge_ci_low": -0.10200963033855551,
+        "cup_relative_brier_edge_ci_high": -0.007907793173043751,
+        "cup_model_brier": 0.030655980261546006,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.16666666666666666
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.92,
+        "playoff_f1": 0.905
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.05-b3.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.05,
+        "cup_winner_boost": 3.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.05311432993005427,
+        "cup_relative_brier_edge_ci_low": -0.10824911474469799,
+        "cup_relative_brier_edge_ci_high": -0.003653055121895206,
+        "cup_model_brier": 0.030660491138419864,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.3333333333333333
+      },
+      "core": {
+        "top1_accuracy_pct": 16.7,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.83,
+        "playoff_f1": 0.9
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.08-b3.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.08,
+        "cup_winner_boost": 3.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.053865694337157884,
+        "cup_relative_brier_edge_ci_low": -0.11540053713690925,
+        "cup_relative_brier_edge_ci_high": -0.005835450600030574,
+        "cup_model_brier": 0.030682366447767572,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.3333333333333333
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.92,
+        "playoff_f1": 0.9
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.12-b3.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.12,
+        "cup_winner_boost": 3.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.053942515389976395,
+        "cup_relative_brier_edge_ci_low": -0.10769754624657876,
+        "cup_relative_brier_edge_ci_high": -0.01047077230784199,
+        "cup_model_brier": 0.030684603024692076,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.75,
+        "playoff_f1": 0.905
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.18-b3.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.18,
+        "cup_winner_boost": 3.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.05436721983676532,
+        "cup_relative_brier_edge_ci_low": -0.11096382998367554,
+        "cup_relative_brier_edge_ci_high": -0.007077554702178933,
+        "cup_model_brier": 0.0306969679185665,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.92,
+        "playoff_f1": 0.905
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.22-b2.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.22,
+        "cup_winner_boost": 2.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.05528379352943182,
+        "cup_relative_brier_edge_ci_low": -0.1007162057029457,
+        "cup_relative_brier_edge_ci_high": -0.012997660496869654,
+        "cup_model_brier": 0.030723653149963528,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.75,
+        "playoff_f1": 0.91
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.10-b2.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.1,
+        "cup_winner_boost": 2.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.055342398801996553,
+        "cup_relative_brier_edge_ci_low": -0.11336225917767974,
+        "cup_relative_brier_edge_ci_high": -0.010007322559669254,
+        "cup_model_brier": 0.03072535939057679,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": {
+        "top1_accuracy_pct": 8.3,
+        "top5_accuracy_pct": 41.7,
+        "average_winner_rank": 6.75,
+        "playoff_f1": 0.91
+      },
+      "hardGate": false,
+      "strictNonRegression": false,
+      "relaxedNonRegression": false
+    },
+    {
+      "name": "d0.28-b2.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.28,
+        "cup_winner_boost": 2.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.0554234504701365,
+        "cup_relative_brier_edge_ci_low": -0.10120518708466134,
+        "cup_relative_brier_edge_ci_high": -0.013388603772759003,
+        "cup_model_brier": 0.030727719138119988,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": null,
+      "hardGate": null,
+      "strictNonRegression": null,
+      "relaxedNonRegression": null
+    },
+    {
+      "name": "d0.08-b1.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.08,
+        "cup_winner_boost": 1.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.055799798075189366,
+        "cup_relative_brier_edge_ci_low": -0.10796673966979373,
+        "cup_relative_brier_edge_ci_high": -0.010992634924865876,
+        "cup_model_brier": 0.030738676165369305,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": null,
+      "hardGate": null,
+      "strictNonRegression": null,
+      "relaxedNonRegression": null
+    },
+    {
+      "name": "d0.12-b2.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.12,
+        "cup_winner_boost": 2.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.0567183480968201,
+        "cup_relative_brier_edge_ci_low": -0.11416726592689465,
+        "cup_relative_brier_edge_ci_high": -0.007423783430060131,
+        "cup_model_brier": 0.030765418935834003,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": null,
+      "hardGate": null,
+      "strictNonRegression": null,
+      "relaxedNonRegression": null
+    },
+    {
+      "name": "d0.18-b2.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.18,
+        "cup_winner_boost": 2.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.05674228287162412,
+        "cup_relative_brier_edge_ci_low": -0.10848327802523756,
+        "cup_relative_brier_edge_ci_high": -0.012262014869148824,
+        "cup_model_brier": 0.030766115775607162,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": null,
+      "hardGate": null,
+      "strictNonRegression": null,
+      "relaxedNonRegression": null
+    },
+    {
+      "name": "d0.10-b1.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.1,
+        "cup_winner_boost": 1.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.056867113150577825,
+        "cup_relative_brier_edge_ci_low": -0.11199233583903453,
+        "cup_relative_brier_edge_ci_high": -0.008907813349502537,
+        "cup_model_brier": 0.030769750098636382,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": null,
+      "hardGate": null,
+      "strictNonRegression": null,
+      "relaxedNonRegression": null
+    },
+    {
+      "name": "d0.15-b2.5-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.15,
+        "cup_winner_boost": 2.5,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.05702157603296663,
+        "cup_relative_brier_edge_ci_low": -0.10588180112921072,
+        "cup_relative_brier_edge_ci_high": -0.01111522978172956,
+        "cup_model_brier": 0.030774247148673686,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": null,
+      "hardGate": null,
+      "strictNonRegression": null,
+      "relaxedNonRegression": null
+    },
+    {
+      "name": "d0.12-b2.0-cal0",
+      "overrides": {
+        "use_neural_network": true,
+        "use_recency_weighting": true,
+        "use_cup_calibration": false,
+        "recency_decay_rate": 0.12,
+        "cup_winner_boost": 2.0,
+        "cup_ensemble_weights": {
+          "gradient_boosting": 0.3,
+          "neural_network": 0.3,
+          "monte_carlo": 0.4
+        }
+      },
+      "vegas": {
+        "cup_relative_brier_edge": -0.05725137453259366,
+        "cup_relative_brier_edge_ci_low": -0.1119650378204566,
+        "cup_relative_brier_edge_ci_high": -0.00985277555709337,
+        "cup_model_brier": 0.03078093752849399,
+        "cup_vegas_brier": 0.029114114457502702,
+        "cup_positive_season_ratio": 0.25
+      },
+      "core": null,
+      "hardGate": null,
+      "strictNonRegression": null,
+      "relaxedNonRegression": null
+    }
+  ]
+}

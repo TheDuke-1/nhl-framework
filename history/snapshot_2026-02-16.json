@@ -2,260 +2,260 @@
   "date": "2026-02-16",
   "teams": [
     {
-      "code": "CAR",
+      "code": "DAL",
       "rank": 1,
       "tier": "Elite",
-      "strength": 58.0,
-      "playoffProb": 96.4,
-      "cupProb": 16.52
-    },
-    {
-      "code": "DAL",
-      "rank": 2,
-      "tier": "Contender",
-      "strength": 54.6,
-      "playoffProb": 99.3,
-      "cupProb": 9.47
+      "strength": 54.5,
+      "playoffProb": 100.0,
+      "cupProb": 9.43
     },
     {
       "code": "COL",
+      "rank": 2,
+      "tier": "Elite",
+      "strength": 59.1,
+      "playoffProb": 100.0,
+      "cupProb": 8.61
+    },
+    {
+      "code": "CAR",
       "rank": 3,
       "tier": "Elite",
-      "strength": 62.6,
+      "strength": 54.9,
       "playoffProb": 100.0,
-      "cupProb": 8.22
+      "cupProb": 8.33
     },
     {
       "code": "TB",
       "rank": 4,
       "tier": "Elite",
-      "strength": 60.3,
+      "strength": 57.6,
       "playoffProb": 100.0,
-      "cupProb": 8.13
+      "cupProb": 7.97
     },
     {
       "code": "PIT",
       "rank": 5,
-      "tier": "Elite",
-      "strength": 55.1,
-      "playoffProb": 96.5,
-      "cupProb": 6.41
+      "tier": "Contender",
+      "strength": 54.1,
+      "playoffProb": 99.4,
+      "cupProb": 6.54
     },
     {
-      "code": "MTL",
+      "code": "VGK",
       "rank": 6,
-      "tier": "Bubble",
-      "strength": 52.1,
-      "playoffProb": 73.3,
-      "cupProb": 6.13
+      "tier": "Contender",
+      "strength": 52.5,
+      "playoffProb": 100.0,
+      "cupProb": 6.25
     },
     {
       "code": "UTA",
       "rank": 7,
       "tier": "Contender",
-      "strength": 54.8,
-      "playoffProb": 96.1,
-      "cupProb": 5.99
+      "strength": 53.4,
+      "playoffProb": 92.1,
+      "cupProb": 6.21
     },
     {
-      "code": "VGK",
+      "code": "MTL",
       "rank": 8,
       "tier": "Contender",
-      "strength": 53.7,
-      "playoffProb": 90.3,
-      "cupProb": 5.59
-    },
-    {
-      "code": "BUF",
-      "rank": 9,
-      "tier": "Contender",
-      "strength": 53.1,
-      "playoffProb": 92.9,
-      "cupProb": 4.54
+      "strength": 51.8,
+      "playoffProb": 99.8,
+      "cupProb": 5.85
     },
     {
       "code": "MIN",
+      "rank": 9,
+      "tier": "Contender",
+      "strength": 53.6,
+      "playoffProb": 100.0,
+      "cupProb": 5.78
+    },
+    {
+      "code": "BUF",
       "rank": 10,
       "tier": "Contender",
-      "strength": 53.7,
-      "playoffProb": 97.4,
-      "cupProb": 4.31
-    },
-    {
-      "code": "BOS",
-      "rank": 11,
-      "tier": "Bubble",
-      "strength": 52.0,
-      "playoffProb": 75.5,
-      "cupProb": 3.74
-    },
-    {
-      "code": "EDM",
-      "rank": 12,
-      "tier": "Contender",
-      "strength": 52.3,
-      "playoffProb": 65.4,
-      "cupProb": 3.16
-    },
-    {
-      "code": "NYI",
-      "rank": 13,
-      "tier": "Bubble",
-      "strength": 49.7,
-      "playoffProb": 55.5,
-      "cupProb": 2.22
-    },
-    {
-      "code": "OTT",
-      "rank": 14,
-      "tier": "Contender",
-      "strength": 53.3,
-      "playoffProb": 74.5,
-      "cupProb": 1.97
+      "strength": 52.7,
+      "playoffProb": 97.0,
+      "cupProb": 5.68
     },
     {
       "code": "DET",
-      "rank": 15,
+      "rank": 11,
       "tier": "Bubble",
-      "strength": 50.1,
-      "playoffProb": 47.8,
-      "cupProb": 1.95
+      "strength": 50.7,
+      "playoffProb": 99.1,
+      "cupProb": 5.35
     },
     {
-      "code": "WSH",
-      "rank": 16,
+      "code": "BOS",
+      "rank": 12,
       "tier": "Contender",
-      "strength": 52.6,
-      "playoffProb": 84.6,
-      "cupProb": 1.76
+      "strength": 52.1,
+      "playoffProb": 91.5,
+      "cupProb": 5.29
+    },
+    {
+      "code": "ANA",
+      "rank": 13,
+      "tier": "Bubble",
+      "strength": 50.0,
+      "playoffProb": 91.2,
+      "cupProb": 5.1
+    },
+    {
+      "code": "SEA",
+      "rank": 14,
+      "tier": "Longshot",
+      "strength": 49.4,
+      "playoffProb": 91.6,
+      "cupProb": 4.82
+    },
+    {
+      "code": "EDM",
+      "rank": 15,
+      "tier": "Bubble",
+      "strength": 51.8,
+      "playoffProb": 76.3,
+      "cupProb": 4.35
+    },
+    {
+      "code": "NYI",
+      "rank": 16,
+      "tier": "Bubble",
+      "strength": 50.8,
+      "playoffProb": 77.5,
+      "cupProb": 2.23
     },
     {
       "code": "CBJ",
       "rank": 17,
       "tier": "Bubble",
-      "strength": 51.5,
-      "playoffProb": 61.2,
-      "cupProb": 1.58
-    },
-    {
-      "code": "SEA",
-      "rank": 18,
-      "tier": "Longshot",
-      "strength": 47.3,
-      "playoffProb": 28.5,
-      "cupProb": 1.48
-    },
-    {
-      "code": "TOR",
-      "rank": 19,
-      "tier": "Bubble",
-      "strength": 49.8,
-      "playoffProb": 47.3,
-      "cupProb": 1.27
-    },
-    {
-      "code": "ANA",
-      "rank": 20,
-      "tier": "Bubble",
-      "strength": 50.5,
-      "playoffProb": 17.7,
-      "cupProb": 1.19
-    },
-    {
-      "code": "PHI",
-      "rank": 21,
-      "tier": "Longshot",
-      "strength": 49.1,
-      "playoffProb": 33.7,
-      "cupProb": 0.72
-    },
-    {
-      "code": "SJ",
-      "rank": 22,
-      "tier": "Longshot",
-      "strength": 46.8,
-      "playoffProb": 8.8,
-      "cupProb": 0.48
-    },
-    {
-      "code": "NYR",
-      "rank": 23,
-      "tier": "Longshot",
-      "strength": 46.7,
-      "playoffProb": 5.7,
-      "cupProb": 0.47
+      "strength": 51.4,
+      "playoffProb": 56.6,
+      "cupProb": 1.15
     },
     {
       "code": "LA",
+      "rank": 18,
+      "tier": "Longshot",
+      "strength": 49.5,
+      "playoffProb": 30.3,
+      "cupProb": 0.52
+    },
+    {
+      "code": "SJ",
+      "rank": 19,
+      "tier": "Longshot",
+      "strength": 48.2,
+      "playoffProb": 14.9,
+      "cupProb": 0.16
+    },
+    {
+      "code": "WSH",
+      "rank": 20,
+      "tier": "Contender",
+      "strength": 52.7,
+      "playoffProb": 90.6,
+      "cupProb": 0.16
+    },
+    {
+      "code": "OTT",
+      "rank": 21,
+      "tier": "Bubble",
+      "strength": 51.8,
+      "playoffProb": 48.6,
+      "cupProb": 0.06
+    },
+    {
+      "code": "TOR",
+      "rank": 22,
+      "tier": "Bubble",
+      "strength": 50.0,
+      "playoffProb": 22.9,
+      "cupProb": 0.05
+    },
+    {
+      "code": "PHI",
+      "rank": 23,
+      "tier": "Bubble",
+      "strength": 49.8,
+      "playoffProb": 18.6,
+      "cupProb": 0.05
+    },
+    {
+      "code": "NSH",
       "rank": 24,
       "tier": "Longshot",
-      "strength": 48.7,
-      "playoffProb": 12.2,
-      "cupProb": 0.45
+      "strength": 48.9,
+      "playoffProb": 4.8,
+      "cupProb": 0.04
     },
     {
       "code": "FLA",
       "rank": 25,
-      "tier": "Bubble",
-      "strength": 49.7,
-      "playoffProb": 10.9,
-      "cupProb": 0.43
+      "tier": "Longshot",
+      "strength": 49.4,
+      "playoffProb": 6.8,
+      "cupProb": 0.0
     },
     {
       "code": "WPG",
       "rank": 26,
       "tier": "Longshot",
-      "strength": 47.8,
-      "playoffProb": 13.6,
-      "cupProb": 0.33
+      "strength": 49.0,
+      "playoffProb": 10.0,
+      "cupProb": 0.0
     },
     {
-      "code": "CHI",
+      "code": "NYR",
       "rank": 27,
       "tier": "Longshot",
-      "strength": 44.7,
-      "playoffProb": 1.2,
-      "cupProb": 0.31
-    },
-    {
-      "code": "NSH",
-      "rank": 28,
-      "tier": "Longshot",
-      "strength": 48.7,
-      "playoffProb": 5.1,
-      "cupProb": 0.3
-    },
-    {
-      "code": "VAN",
-      "rank": 29,
-      "tier": "Longshot",
-      "strength": 41.7,
-      "playoffProb": 0.0,
-      "cupProb": 0.25
-    },
-    {
-      "code": "STL",
-      "rank": 30,
-      "tier": "Longshot",
-      "strength": 42.6,
-      "playoffProb": 0.1,
-      "cupProb": 0.24
+      "strength": 48.4,
+      "playoffProb": 4.5,
+      "cupProb": 0.0
     },
     {
       "code": "CGY",
-      "rank": 31,
+      "rank": 28,
       "tier": "Longshot",
-      "strength": 46.5,
-      "playoffProb": 2.6,
-      "cupProb": 0.19
+      "strength": 47.6,
+      "playoffProb": 1.4,
+      "cupProb": 0.0
     },
     {
       "code": "NJ",
+      "rank": 29,
+      "tier": "Longshot",
+      "strength": 47.3,
+      "playoffProb": 1.1,
+      "cupProb": 0.0
+    },
+    {
+      "code": "CHI",
+      "rank": 30,
+      "tier": "Longshot",
+      "strength": 46.5,
+      "playoffProb": 0.5,
+      "cupProb": 0.0
+    },
+    {
+      "code": "STL",
+      "rank": 31,
+      "tier": "Longshot",
+      "strength": 44.8,
+      "playoffProb": 0.1,
+      "cupProb": 0.0
+    },
+    {
+      "code": "VAN",
       "rank": 32,
       "tier": "Longshot",
-      "strength": 46.2,
-      "playoffProb": 2.0,
-      "cupProb": 0.17
+      "strength": 44.4,
+      "playoffProb": 0.0,
+      "cupProb": 0.0
     }
   ]
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Dashboard Trust Polisher"
+  short_description: "Polish trust UX and decision clarity"
+  default_prompt: "Use $superhuman-dashboard-trust-polisher to upgrade dashboard trust UX and align it with release truth."

@@ -1,0 +1,343 @@
+{
+  "_metadata": {
+    "generatedAt": "2026-02-07T21:34:07.003445+00:00",
+    "season": 2017,
+    "type": "backlog_feature_template",
+    "notes": "Populate values as data sources become available. Null means not integrated yet.",
+    "lastUpdated": "2026-02-07T21:42:38.558967+00:00",
+    "proxyVersion": "phase4-proxy-v1",
+    "proxyNotes": "Deterministic proxy values from season aggregates; replace with true source data when available."
+  },
+  "teams": {
+    "ANA": {
+      "goalie_usage_starter_load": 0.304,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.7709,
+      "score_state_adjusted_5v5_close_game": 0.3623,
+      "schedule_travel_rest_load": 1.0,
+      "discipline_taken_drawn_split": 0.3778,
+      "trade_deadline_roster_delta": 0.8203,
+      "playoff_style_netfront_rush_forecheck": 0.4112,
+      "coach_system_continuity": 0.1667
+    },
+    "ARI": {
+      "goalie_usage_starter_load": 0.1936,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.4833,
+      "score_state_adjusted_5v5_close_game": 0.0,
+      "schedule_travel_rest_load": 0.6545,
+      "discipline_taken_drawn_split": 0.0992,
+      "trade_deadline_roster_delta": 0.0,
+      "playoff_style_netfront_rush_forecheck": 0.0,
+      "coach_system_continuity": 0.1667
+    },
+    "BOS": {
+      "goalie_usage_starter_load": 0.1952,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.571,
+      "score_state_adjusted_5v5_close_game": 0.6242,
+      "schedule_travel_rest_load": 0.3293,
+      "discipline_taken_drawn_split": 0.4953,
+      "trade_deadline_roster_delta": 0.6347,
+      "playoff_style_netfront_rush_forecheck": 0.5752,
+      "coach_system_continuity": 0.8333
+    },
+    "BUF": {
+      "goalie_usage_starter_load": 0.2852,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.49,
+      "score_state_adjusted_5v5_close_game": 0.2049,
+      "schedule_travel_rest_load": 0.7358,
+      "discipline_taken_drawn_split": 0.3565,
+      "trade_deadline_roster_delta": 0.1794,
+      "playoff_style_netfront_rush_forecheck": 0.2453,
+      "coach_system_continuity": 1.0
+    },
+    "CAR": {
+      "goalie_usage_starter_load": 0.1432,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.5286,
+      "score_state_adjusted_5v5_close_game": 0.4374,
+      "schedule_travel_rest_load": 0.9797,
+      "discipline_taken_drawn_split": 0.334,
+      "trade_deadline_roster_delta": 0.3053,
+      "playoff_style_netfront_rush_forecheck": 0.4219,
+      "coach_system_continuity": 1.0
+    },
+    "CBJ": {
+      "goalie_usage_starter_load": 0.3844,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.8064,
+      "score_state_adjusted_5v5_close_game": 0.3715,
+      "schedule_travel_rest_load": 0.6545,
+      "discipline_taken_drawn_split": 0.3532,
+      "trade_deadline_roster_delta": 0.8928,
+      "playoff_style_netfront_rush_forecheck": 0.4131,
+      "coach_system_continuity": 0.6667
+    },
+    "CGY": {
+      "goalie_usage_starter_load": 0.1532,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.648,
+      "score_state_adjusted_5v5_close_game": 0.3279,
+      "schedule_travel_rest_load": 0.4106,
+      "discipline_taken_drawn_split": 0.3375,
+      "trade_deadline_roster_delta": 0.5085,
+      "playoff_style_netfront_rush_forecheck": 0.3004,
+      "coach_system_continuity": 0.1667
+    },
+    "CHI": {
+      "goalie_usage_starter_load": 0.3832,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.8441,
+      "score_state_adjusted_5v5_close_game": 0.2886,
+      "schedule_travel_rest_load": 0.3293,
+      "discipline_taken_drawn_split": 0.1643,
+      "trade_deadline_roster_delta": 0.7263,
+      "playoff_style_netfront_rush_forecheck": 0.2589,
+      "coach_system_continuity": 0.0
+    },
+    "COL": {
+      "goalie_usage_starter_load": 0.24,
+      "goalie_backup_dropoff": 0.204,
+      "injury_adjusted_strength": 0.1383,
+      "score_state_adjusted_5v5_close_game": 0.1612,
+      "schedule_travel_rest_load": 0.4919,
+      "discipline_taken_drawn_split": 0.0,
+      "trade_deadline_roster_delta": 0.0,
+      "playoff_style_netfront_rush_forecheck": 0.0608,
+      "coach_system_continuity": 1.0
+    },
+    "DAL": {
+      "goalie_usage_starter_load": 0.1516,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.4605,
+      "score_state_adjusted_5v5_close_game": 0.3448,
+      "schedule_travel_rest_load": 0.9797,
+      "discipline_taken_drawn_split": 0.0568,
+      "trade_deadline_roster_delta": 0.1592,
+      "playoff_style_netfront_rush_forecheck": 0.324,
+      "coach_system_continuity": 1.0
+    },
+    "DET": {
+      "goalie_usage_starter_load": 0.1172,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.5158,
+      "score_state_adjusted_5v5_close_game": 0.1621,
+      "schedule_travel_rest_load": 0.248,
+      "discipline_taken_drawn_split": 0.1653,
+      "trade_deadline_roster_delta": 0.1739,
+      "playoff_style_netfront_rush_forecheck": 0.1254,
+      "coach_system_continuity": 0.3333
+    },
+    "EDM": {
+      "goalie_usage_starter_load": 0.2864,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.7503,
+      "score_state_adjusted_5v5_close_game": 0.3517,
+      "schedule_travel_rest_load": 0.4106,
+      "discipline_taken_drawn_split": 0.3938,
+      "trade_deadline_roster_delta": 0.8245,
+      "playoff_style_netfront_rush_forecheck": 0.3849,
+      "coach_system_continuity": 0.1667
+    },
+    "FLA": {
+      "goalie_usage_starter_load": 0.2432,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.5139,
+      "score_state_adjusted_5v5_close_game": 0.2504,
+      "schedule_travel_rest_load": 0.4106,
+      "discipline_taken_drawn_split": 0.3432,
+      "trade_deadline_roster_delta": 0.2506,
+      "playoff_style_netfront_rush_forecheck": 0.1571,
+      "coach_system_continuity": 1.0
+    },
+    "LA": {
+      "goalie_usage_starter_load": 0.2632,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.4453,
+      "score_state_adjusted_5v5_close_game": 0.6755,
+      "schedule_travel_rest_load": 0.7358,
+      "discipline_taken_drawn_split": 0.387,
+      "trade_deadline_roster_delta": 0.4279,
+      "playoff_style_netfront_rush_forecheck": 0.6291,
+      "coach_system_continuity": 0.1667
+    },
+    "MIN": {
+      "goalie_usage_starter_load": 0.3324,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.7577,
+      "score_state_adjusted_5v5_close_game": 0.4433,
+      "schedule_travel_rest_load": 0.5732,
+      "discipline_taken_drawn_split": 0.3973,
+      "trade_deadline_roster_delta": 0.9182,
+      "playoff_style_netfront_rush_forecheck": 0.5803,
+      "coach_system_continuity": 1.0
+    },
+    "MTL": {
+      "goalie_usage_starter_load": 0.334,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.6954,
+      "score_state_adjusted_5v5_close_game": 0.5344,
+      "schedule_travel_rest_load": 0.248,
+      "discipline_taken_drawn_split": 0.3087,
+      "trade_deadline_roster_delta": 0.6786,
+      "playoff_style_netfront_rush_forecheck": 0.5445,
+      "coach_system_continuity": 0.5
+    },
+    "NJ": {
+      "goalie_usage_starter_load": 0.2712,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.3878,
+      "score_state_adjusted_5v5_close_game": 0.2198,
+      "schedule_travel_rest_load": 0.4919,
+      "discipline_taken_drawn_split": 0.2015,
+      "trade_deadline_roster_delta": 0.0,
+      "playoff_style_netfront_rush_forecheck": 0.225,
+      "coach_system_continuity": 0.8333
+    },
+    "NSH": {
+      "goalie_usage_starter_load": 0.238,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.6189,
+      "score_state_adjusted_5v5_close_game": 0.4235,
+      "schedule_travel_rest_load": 0.7358,
+      "discipline_taken_drawn_split": 0.2793,
+      "trade_deadline_roster_delta": 0.829,
+      "playoff_style_netfront_rush_forecheck": 0.4194,
+      "coach_system_continuity": 0.3333
+    },
+    "NYI": {
+      "goalie_usage_starter_load": 0.152,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.6916,
+      "score_state_adjusted_5v5_close_game": 0.1815,
+      "schedule_travel_rest_load": 0.4106,
+      "discipline_taken_drawn_split": 0.1898,
+      "trade_deadline_roster_delta": 0.4646,
+      "playoff_style_netfront_rush_forecheck": 0.2002,
+      "coach_system_continuity": 0.3333
+    },
+    "NYR": {
+      "goalie_usage_starter_load": 0.244,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.7718,
+      "score_state_adjusted_5v5_close_game": 0.2395,
+      "schedule_travel_rest_load": 0.0,
+      "discipline_taken_drawn_split": 0.288,
+      "trade_deadline_roster_delta": 0.83,
+      "playoff_style_netfront_rush_forecheck": 0.3084,
+      "coach_system_continuity": 1.0
+    },
+    "OTT": {
+      "goalie_usage_starter_load": 0.2208,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.7226,
+      "score_state_adjusted_5v5_close_game": 0.2443,
+      "schedule_travel_rest_load": 0.1667,
+      "discipline_taken_drawn_split": 0.1893,
+      "trade_deadline_roster_delta": 0.6248,
+      "playoff_style_netfront_rush_forecheck": 0.2613,
+      "coach_system_continuity": 0.8333
+    },
+    "PHI": {
+      "goalie_usage_starter_load": 0.2104,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.5597,
+      "score_state_adjusted_5v5_close_game": 0.3817,
+      "schedule_travel_rest_load": 1.0,
+      "discipline_taken_drawn_split": 0.267,
+      "trade_deadline_roster_delta": 0.3367,
+      "playoff_style_netfront_rush_forecheck": 0.345,
+      "coach_system_continuity": 1.0
+    },
+    "PIT": {
+      "goalie_usage_starter_load": 0.2964,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.8265,
+      "score_state_adjusted_5v5_close_game": 0.4227,
+      "schedule_travel_rest_load": 1.0,
+      "discipline_taken_drawn_split": 0.375,
+      "trade_deadline_roster_delta": 1.0,
+      "playoff_style_netfront_rush_forecheck": 0.5,
+      "coach_system_continuity": 1.0
+    },
+    "SJ": {
+      "goalie_usage_starter_load": 0.2016,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.6741,
+      "score_state_adjusted_5v5_close_game": 0.4452,
+      "schedule_travel_rest_load": 0.6545,
+      "discipline_taken_drawn_split": 0.2078,
+      "trade_deadline_roster_delta": 0.6275,
+      "playoff_style_netfront_rush_forecheck": 0.4686,
+      "coach_system_continuity": 0.1667
+    },
+    "STL": {
+      "goalie_usage_starter_load": 0.2156,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.695,
+      "score_state_adjusted_5v5_close_game": 0.3757,
+      "schedule_travel_rest_load": 0.3293,
+      "discipline_taken_drawn_split": 0.4585,
+      "trade_deadline_roster_delta": 0.6856,
+      "playoff_style_netfront_rush_forecheck": 0.403,
+      "coach_system_continuity": 0.0
+    },
+    "TB": {
+      "goalie_usage_starter_load": 0.184,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.6321,
+      "score_state_adjusted_5v5_close_game": 0.3809,
+      "schedule_travel_rest_load": 0.4919,
+      "discipline_taken_drawn_split": 0.41,
+      "trade_deadline_roster_delta": 0.5231,
+      "playoff_style_netfront_rush_forecheck": 0.35,
+      "coach_system_continuity": 1.0
+    },
+    "TOR": {
+      "goalie_usage_starter_load": 0.2028,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.6435,
+      "score_state_adjusted_5v5_close_game": 0.3809,
+      "schedule_travel_rest_load": 0.3293,
+      "discipline_taken_drawn_split": 0.4703,
+      "trade_deadline_roster_delta": 0.5396,
+      "playoff_style_netfront_rush_forecheck": 0.3958,
+      "coach_system_continuity": 0.8333
+    },
+    "VAN": {
+      "goalie_usage_starter_load": 0.2184,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.4071,
+      "score_state_adjusted_5v5_close_game": 0.1185,
+      "schedule_travel_rest_load": 0.6545,
+      "discipline_taken_drawn_split": 0.0198,
+      "trade_deadline_roster_delta": 0.0,
+      "playoff_style_netfront_rush_forecheck": 0.0551,
+      "coach_system_continuity": 0.6667
+    },
+    "WPG": {
+      "goalie_usage_starter_load": 0.0644,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.5575,
+      "score_state_adjusted_5v5_close_game": 0.3399,
+      "schedule_travel_rest_load": 0.4919,
+      "discipline_taken_drawn_split": 0.1648,
+      "trade_deadline_roster_delta": 0.4078,
+      "playoff_style_netfront_rush_forecheck": 0.3766,
+      "coach_system_continuity": 0.5
+    },
+    "WSH": {
+      "goalie_usage_starter_load": 0.5596,
+      "goalie_backup_dropoff": 0.0,
+      "injury_adjusted_strength": 0.9232,
+      "score_state_adjusted_5v5_close_game": 0.3912,
+      "schedule_travel_rest_load": 0.8984,
+      "discipline_taken_drawn_split": 0.485,
+      "trade_deadline_roster_delta": 1.0,
+      "playoff_style_netfront_rush_forecheck": 0.3837,
+      "coach_system_continuity": 0.1667
+    }
+  }
+}

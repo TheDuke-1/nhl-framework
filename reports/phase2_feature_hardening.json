@@ -1,0 +1,773 @@
+{
+  "generatedAt": "2026-02-07T21:06:14.739520+00:00",
+  "mode": "phase2_feature_hardening",
+  "baselineSummary": {
+    "n_seasons": 12,
+    "cup_top1_accuracy_pct": 16.7,
+    "cup_top5_accuracy_pct": 58.3,
+    "cup_average_winner_rank": 7.67,
+    "playoff_f1": 0.905
+  },
+  "finalFeatureTable": [
+    {
+      "feature": "true_xgf_rate",
+      "final_decision": "keep_reduce_weight",
+      "confidence": "medium",
+      "evidence_score": 8,
+      "matrix_recommendation": "keep_or_increase",
+      "importance": {
+        "cup_top1_importance": 4.15,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.08,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 8.17,
+        "playoff_f1": 0.822
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 40.0,
+        "top5_range": 35.0,
+        "winner_rank_range": 3.93,
+        "playoff_f1_range": 0.02,
+        "stable": false,
+        "stability_label": "semi_stable",
+        "notes": "acceptable era variance"
+      }
+    },
+    {
+      "feature": "true_xga_rate",
+      "final_decision": "keep_reduce_weight",
+      "confidence": "medium",
+      "evidence_score": 11,
+      "matrix_recommendation": "keep_or_increase",
+      "importance": {
+        "cup_top1_importance": 4.15,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.08,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 7.08,
+        "playoff_f1": 0.844
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 60.0,
+        "top5_range": 55.0,
+        "winner_rank_range": 6.07,
+        "playoff_f1_range": 0.104,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "xg_diff_rate",
+      "final_decision": "keep_reduce_weight",
+      "confidence": "medium",
+      "evidence_score": 9,
+      "matrix_recommendation": "keep_or_increase",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 4.2,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.16,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 6.17,
+        "playoff_f1": 0.879
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 33.3,
+        "top5_range": 66.7,
+        "winner_rank_range": 7.0,
+        "playoff_f1_range": 0.071,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "goal_differential_rate",
+      "final_decision": "keep_reduce_weight",
+      "confidence": "medium",
+      "evidence_score": 10,
+      "matrix_recommendation": "keep_or_increase",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.55
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.08,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.25,
+        "playoff_f1": 0.916
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 25.0,
+        "top5_range": 46.7,
+        "winner_rank_range": 4.73,
+        "playoff_f1_range": 0.046,
+        "stable": false,
+        "stability_label": "semi_stable",
+        "notes": "acceptable era variance"
+      }
+    },
+    {
+      "feature": "offense_rate",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": 2,
+      "matrix_recommendation": "reduce_but_keep",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.0,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 9.0,
+        "playoff_f1": 0.801
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 33.3,
+        "top5_range": 35.0,
+        "winner_rank_range": 1.07,
+        "playoff_f1_range": 0.067,
+        "stable": false,
+        "stability_label": "semi_stable",
+        "notes": "acceptable era variance"
+      }
+    },
+    {
+      "feature": "discipline_proxy_special_teams",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": -1,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.0,
+        "playoff_f1_drop": 0.0
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 10.25,
+        "playoff_f1": 0.746
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 0.0,
+        "top5_range": 30.0,
+        "winner_rank_range": 2.0,
+        "playoff_f1_range": 0.033,
+        "stable": true,
+        "stability_label": "stable",
+        "notes": "stable across eras"
+      }
+    },
+    {
+      "feature": "pk_pct",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": -1,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": -0.09,
+        "playoff_f1_drop": 0.0
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 25.0,
+        "cup_average_winner_rank": 10.92,
+        "playoff_f1": 0.662
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 0.0,
+        "top5_range": 40.0,
+        "winner_rank_range": 2.33,
+        "playoff_f1_range": 0.034,
+        "stable": false,
+        "stability_label": "semi_stable",
+        "notes": "acceptable era variance"
+      }
+    },
+    {
+      "feature": "sustainability",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": -1,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": -16.6,
+        "top5_drop": 0.0,
+        "winner_rank_increase": -0.34,
+        "playoff_f1_drop": -0.011
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 14.75,
+        "playoff_f1": 0.504
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 0.0,
+        "top5_range": 33.3,
+        "winner_rank_range": 4.13,
+        "playoff_f1_range": 0.02,
+        "stable": false,
+        "stability_label": "semi_stable",
+        "notes": "acceptable era variance"
+      }
+    },
+    {
+      "feature": "defense_rate",
+      "final_decision": "keep_reduce_weight",
+      "confidence": "medium",
+      "evidence_score": 3,
+      "matrix_recommendation": "keep_or_increase",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.08,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 6.83,
+        "playoff_f1": 0.833
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 40.0,
+        "top5_range": 60.0,
+        "winner_rank_range": 4.27,
+        "playoff_f1_range": 0.051,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "hdcf_pct",
+      "final_decision": "keep_reduce_weight",
+      "confidence": "medium",
+      "evidence_score": 3,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.0,
+        "playoff_f1_drop": 0.0
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 9.92,
+        "playoff_f1": 0.746
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 0.0,
+        "top5_range": 66.7,
+        "winner_rank_range": 4.53,
+        "playoff_f1_range": 0.068,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "road_performance",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": -1,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": -8.3,
+        "top5_drop": 0.0,
+        "winner_rank_increase": -0.92,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 15.17,
+        "playoff_f1": 0.578
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 0.0,
+        "top5_range": 20.0,
+        "winner_rank_range": 4.93,
+        "playoff_f1_range": 0.073,
+        "stable": false,
+        "stability_label": "semi_stable",
+        "notes": "acceptable era variance"
+      }
+    },
+    {
+      "feature": "goaltending_quality",
+      "final_decision": "keep_reduce_weight",
+      "confidence": "medium",
+      "evidence_score": 7,
+      "matrix_recommendation": "keep_or_increase",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.16,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 7.83,
+        "playoff_f1": 0.709
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 0.0,
+        "top5_range": 50.0,
+        "winner_rank_range": 5.08,
+        "playoff_f1_range": 0.046,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "save_pct",
+      "final_decision": "keep_reduce_weight",
+      "confidence": "medium",
+      "evidence_score": 5,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": -0.09,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 41.7,
+        "cup_average_winner_rank": 6.75,
+        "playoff_f1": 0.725
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 0.0,
+        "top5_range": 60.0,
+        "winner_rank_range": 5.53,
+        "playoff_f1_range": 0.078,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "playoff_experience",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": -2,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.0,
+        "playoff_f1_drop": 0.0
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 23.0,
+        "playoff_f1": 0.214
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 20.0,
+        "top5_range": 20.0,
+        "winner_rank_range": 7.15,
+        "playoff_f1_range": 0.146,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "dynasty_score",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": -2,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.0,
+        "playoff_f1_drop": 0.0
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 23.0,
+        "playoff_f1": 0.214
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 20.0,
+        "top5_range": 20.0,
+        "winner_rank_range": 7.15,
+        "playoff_f1_range": 0.146,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "cf_pct",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": 0,
+      "matrix_recommendation": "reduce_but_keep",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": -0.25,
+        "playoff_f1_drop": 0.0
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 8.67,
+        "playoff_f1": 0.683
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 20.0,
+        "top5_range": 55.0,
+        "winner_rank_range": 8.0,
+        "playoff_f1_range": 0.032,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "xgf_pct",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": -1,
+      "matrix_recommendation": "reduce_or_remove",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": 0.0,
+        "top5_drop": 0.0,
+        "winner_rank_increase": -0.09,
+        "playoff_f1_drop": 0.0
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 8.3,
+        "cup_top5_accuracy_pct": 33.3,
+        "cup_average_winner_rank": 9.17,
+        "playoff_f1": 0.741
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 20.0,
+        "top5_range": 15.0,
+        "winner_rank_range": 8.47,
+        "playoff_f1_range": 0.068,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    },
+    {
+      "feature": "pp_pct",
+      "final_decision": "reduce_or_remove",
+      "confidence": "low",
+      "evidence_score": 2,
+      "matrix_recommendation": "keep_or_increase",
+      "importance": {
+        "cup_top1_importance": 0.0,
+        "cup_top5_importance": 0.0,
+        "playoff_field_importance": 0.0
+      },
+      "removal_harm": {
+        "top1_drop": -8.3,
+        "top5_drop": 0.0,
+        "winner_rank_increase": 0.16,
+        "playoff_f1_drop": -0.005
+      },
+      "add_one_signal": {
+        "cup_top1_accuracy_pct": 0.0,
+        "cup_top5_accuracy_pct": 8.3,
+        "cup_average_winner_rank": 15.42,
+        "playoff_f1": 0.702
+      },
+      "stability": {
+        "eras_evaluated": 3,
+        "top1_range": 0.0,
+        "top5_range": 20.0,
+        "winner_rank_range": 14.17,
+        "playoff_f1_range": 0.05,
+        "stable": false,
+        "stability_label": "unstable",
+        "notes": "material era variance detected"
+      }
+    }
+  ],
+  "topInteractions": [
+    {
+      "pair": [
+        "goaltending_quality",
+        "true_xgf_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 33.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 5.92,
+        "playoff_f1": 0.869
+      }
+    },
+    {
+      "pair": [
+        "true_xga_rate",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 33.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 6.33,
+        "playoff_f1": 0.849
+      }
+    },
+    {
+      "pair": [
+        "goaltending_quality",
+        "true_xga_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 33.3,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 6.75,
+        "playoff_f1": 0.839
+      }
+    },
+    {
+      "pair": [
+        "xg_diff_rate",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 5.42,
+        "playoff_f1": 0.884
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "true_xga_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.58,
+        "playoff_f1": 0.905
+      }
+    },
+    {
+      "pair": [
+        "true_xgf_rate",
+        "save_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 58.3,
+        "cup_average_winner_rank": 5.58,
+        "playoff_f1": 0.879
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "hdcf_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 5.67,
+        "playoff_f1": 0.921
+      }
+    },
+    {
+      "pair": [
+        "hdcf_pct",
+        "true_xga_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 25.0,
+        "cup_top5_accuracy_pct": 50.0,
+        "cup_average_winner_rank": 7.42,
+        "playoff_f1": 0.839
+      }
+    },
+    {
+      "pair": [
+        "goaltending_quality",
+        "xg_diff_rate"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 5.42,
+        "playoff_f1": 0.89
+      }
+    },
+    {
+      "pair": [
+        "goal_differential_rate",
+        "xgf_pct"
+      ],
+      "summary": {
+        "n_seasons": 12,
+        "cup_top1_accuracy_pct": 16.7,
+        "cup_top5_accuracy_pct": 66.7,
+        "cup_average_winner_rank": 6.08,
+        "playoff_f1": 0.921
+      }
+    }
+  ],
+  "unavailableBacklogDatapoints": [
+    "goalie_usage_quality_starter_load",
+    "goalie_backup_dropoff",
+    "injury_adjusted_strength",
+    "score_state_adjusted_5v5_close_game",
+    "schedule_travel_rest_load",
+    "discipline_taken_drawn_split",
+    "trade_deadline_roster_delta",
+    "playoff_style_netfront_rush_forecheck",
+    "coach_system_continuity"
+  ],
+  "selectionRules": {
+    "era_stability": "top1_range<=25, top5_range<=35, winner_rank_range<=3.0, playoff_f1_range<=0.08",
+    "decision": "keep_or_increase / keep_reduce_weight / reduce_or_remove",
+    "confidence": "high/medium/low based on evidence + stability"
+  }
+}

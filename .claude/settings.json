@@ -35,7 +35,16 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo 'File modified — verification recommended'"
+            "command": "echo 'File modified — run pytest and release-truth checks before signoff'"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash\\(python3 scripts/(run_phase7_release_cycle|run_phases_8_to_14|verify_model_performance|verify_benchmark_contract|grade_model_dashboard)\\.py.*\\)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Release command ran — capture blocker reasons and update prevention notes if any gate failed'"
           }
         ]
       }

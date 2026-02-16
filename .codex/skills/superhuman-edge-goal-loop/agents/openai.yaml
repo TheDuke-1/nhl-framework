@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Edge Goal Loop"
+  short_description: "Drive Cup-edge improvement under strict guards"
+  default_prompt: "Use $superhuman-edge-goal-loop to run bounded Cup-edge optimization with strict non-regression and promotion controls."

@@ -1,0 +1,80 @@
+{
+  "generatedAt": "2026-02-12T05:03:38.770507+00:00",
+  "phase": "phase8_vegas_truth_lock",
+  "status": "PASS",
+  "reasons": [],
+  "range": {
+    "startSeason": 2010,
+    "endSeason": 2025
+  },
+  "validation": {
+    "okCount": 16,
+    "missingCount": 0,
+    "invalidCount": 0
+  },
+  "benchmarkVegas": {
+    "available": true,
+    "seasonsAvailable": [
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "seasonsMissing": []
+  },
+  "truthLock": {
+    "filesFingerprinted": 16,
+    "expectedFiles": 16,
+    "fingerprints": {
+      "2010": "a5520710e366d0e8f5bfb356149e8ec3f0d21c4def745f991b9521f42fd09e80",
+      "2011": "f0433325215d6af0bc0b9a31a5ca8f04212be59dc66d4df868bf27052cbbb0c8",
+      "2012": "1f37a992b1e1214323635f60edbcef3b322181a12eaa5af438c2d6e7d2091402",
+      "2013": "7b94f8da47e5e08a139bb0e39f52dfb5424eecc3063772e000ba3cf5b8cd391d",
+      "2014": "46b8e5d40cc38da1008d7d190587a9e61857962e5b9ad52222df0d3a06d488b6",
+      "2015": "3c05dfbd0eff95d548524f9a96ed2a55743911ddad91cff2cf2f4c7a23ce4af8",
+      "2016": "7f311e16bbdf67552b458a72ce26c428d550c707aa25fbdf7a8aea5411091333",
+      "2017": "57bfc738034bda67145809ca9f79999f95cb9d83eccea9f8417b757d563fa6d0",
+      "2018": "11d28762acab57cb8a6cc3161c4d58308e55f03d2c03442b2b0566f2e9fd7fa4",
+      "2019": "19520bce83c5d911815e07b8d41bca8dbd594e62bb5797e0b586e70c97beb325",
+      "2020": "a25efe601c3cf80225eb3d85611859b22ac3b05a3974dbba92aa9c6a6c73114b",
+      "2021": "d2b6423237c16f77409b31c7a3702fb8e454c3e44c92e796316abead92871d8e",
+      "2022": "0954f817c45cdbfacb38d6bd3733942ef680f38aecb3c4f1ea08e6f7111ff641",
+      "2023": "018e5c1f6a8853aee44d20bdd46861d953a48eb966f637f48f373fdb4b0d322c",
+      "2024": "709e5df66c3ee8a00152f1069441b19370dd941e4c4b4d959ca59a6d88b4a173",
+      "2025": "30b9c4438b09c98cad11bb2047d3970c7f7c661fa7ecacd58df99cd1bb90d5a3"
+    },
+    "lockHash": "ea3603ff0c9efda881766b8c00103631265dd1f719abb0a72a577fd2df5cf53d"
+  },
+  "commands": [
+    {
+      "cmd": "python3 scripts/repair_historical_vegas_odds.py --start-season 2010 --end-season 2025",
+      "returncode": 0,
+      "stdout": "season=2010 teams=30 existing=30 created=0\nseason=2011 teams=30 existing=30 created=0\nseason=2012 teams=30 existing=30 created=0\nseason=2013 teams=30 existing=30 created=0\nseason=2014 teams=30 existing=30 created=0\nseason=2015 teams=30 existing=30 created=0\nseason=2016 teams=30 existing=30 created=0\nseason=2017 teams=30 existing=30 created=0\nseason=2018 teams=31 existing=31 created=0\nseason=2019 teams=31 existing=31 created=0\nseason=2020 teams=31 existing=31 created=0\nseason=2021 teams=31 existing=31 created=0\nseason=2022 teams=32 existing=32 created=0\nseason=2023 teams=32 existing=32 created=0\nseason=2024 teams=32 existing=32 created=0\nseason=2025 teams=32 existing=32 created=0\nWrote /Users/matthewdukovich/Desktop/NHL Playoff Project/reports/vegas_backfill_repair.json\nWrote /Users/matthewdukovich/Desktop/NHL Playoff Project/reports/VEGAS_BACKFILL_REPAIR.md",
+      "stderr": ""
+    },
+    {
+      "cmd": "python3 scripts/validate_historical_vegas.py --start-season 2010 --end-season 2025",
+      "returncode": 0,
+      "stdout": "Wrote /Users/matthewdukovich/Desktop/NHL Playoff Project/reports/vegas_backfill_validation.json\nWrote /Users/matthewdukovich/Desktop/NHL Playoff Project/reports/VEGAS_BACKFILL_VALIDATION.md",
+      "stderr": ""
+    },
+    {
+      "cmd": "python3 scripts/update_benchmark_metrics.py",
+      "returncode": 0,
+      "stdout": "Skipped benchmark refresh (PHASE8_SKIP_BENCHMARK_REFRESH=1)",
+      "stderr": ""
+    }
+  ]
+}

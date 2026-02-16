@@ -15,19 +15,23 @@ proxy restrictions. This script will report which sources need manual refresh.
 import argparse
 import sys
 import subprocess
+import json
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 
 # Add scripts directory to path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from config import DATA_DIR, SCRIPTS_DIR, CURRENT_SEASON, get_current_timestamp
+from league_calendar import get_data_activity_context
 from utils import (
     setup_logging, check_data_freshness, get_data_freshness_report,
     print_header, print_status, load_json_file, validate_teams_data
 )
 
 logger = setup_logging("refresh_data")
+
+REFRESH_HEARTBEAT_PATH = Path(__file__).parent.parent / "reports" / "data_refresh_heartbeat.json"
 
 # =============================================================================
 # DATA SOURCE RUNNERS
@@ -57,6 +61,14 @@ def _run_script(data_key, script_name, force=False):
         )
 
         if result.returncode == 0:
+            stdout = result.stdout or ""
+            if data_key == "nhl_standings":
+                if "EXPECTED_STATIC_FALLBACK:" in stdout:
+                    logger.info(f"{data_key} fallback check-in during scheduled break")
+                    return True, "expected-static fallback check-in"
+                if "BACKUP_PROVIDER_USED:" in stdout:
+                    logger.info(f"{data_key} used backup provider")
+                    return True, "success (backup provider)"
             logger.info(f"{data_key} fetch completed successfully")
             return True, "success"
         else:
@@ -251,6 +263,61 @@ def refresh_all(force=False):
 
     return all_success, results
 
+
+def _classify_source_health(source: str, success: bool, message: str, scheduled_break: bool) -> str:
+    msg = (message or "").lower()
+    if success:
+        if "expected-static" in msg:
+            return "expected_static"
+        if "backup provider" in msg:
+            return "healthy"
+        return "healthy"
+
+    if "stale" in msg or "missing" in msg:
+        return "expected_static" if scheduled_break else "stale"
+    if "browser" in msg:
+        return "degraded"
+    if "failed" in msg or "timeout" in msg or "error" in msg:
+        return "down"
+    return "degraded"
+
+
+def _write_refresh_heartbeat(results, run_success: bool) -> None:
+    calendar = get_data_activity_context()
+    scheduled_break = calendar.get("activityState") == "scheduled_break"
+    now_iso = datetime.now(timezone.utc).isoformat()
+
+    source_rows = {}
+    critical_sources = {"nhl_api", "nst", "odds"}
+    critical_healthy = True
+    for source, row in results.items():
+        success, message = row
+        health = _classify_source_health(source, bool(success), str(message), scheduled_break)
+        if source in critical_sources and health not in {"healthy", "expected_static"}:
+            critical_healthy = False
+        source_rows[source] = {
+            "success": bool(success),
+            "message": str(message),
+            "health": health,
+            "critical": source in critical_sources,
+            "checkedAt": now_iso,
+        }
+
+    heartbeat = {
+        "generatedAt": now_iso,
+        "season": CURRENT_SEASON,
+        "calendarContext": calendar,
+        "overall": {
+            "refreshSuccess": bool(run_success),
+            "criticalHealthy": critical_healthy,
+            "activityState": calendar.get("activityState"),
+        },
+        "sources": source_rows,
+    }
+    REFRESH_HEARTBEAT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    REFRESH_HEARTBEAT_PATH.write_text(json.dumps(heartbeat, indent=2) + "\n")
+    logger.info(f"Saved refresh heartbeat to {REFRESH_HEARTBEAT_PATH}")
+
 # =============================================================================
 # CLI
 # =============================================================================
@@ -292,7 +359,8 @@ def main():
             print(f"\n  {result}")
         return 0 if success else 1
 
-    success, _ = refresh_all(force=args.force)
+    success, results = refresh_all(force=args.force)
+    _write_refresh_heartbeat(results, run_success=success)
     return 0 if success else 1
 
 if __name__ == "__main__":

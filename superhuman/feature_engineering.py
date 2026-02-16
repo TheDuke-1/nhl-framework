@@ -24,6 +24,26 @@ from .playoff_experience_loader import (
     calculate_playoff_experience_feature,
     calculate_dynasty_feature
 )
+from .cup_signal_loader import (
+    calculate_series_history_signal,
+    calculate_market_close_movement_signal,
+    calculate_goalie_injury_playoff_impact,
+)
+
+FEATURE_CLIP_ABS = 100.0
+
+
+def _sanitize_matrix(matrix: np.ndarray) -> np.ndarray:
+    """
+    Ensure model input matrices are finite and numerically stable.
+    """
+    sanitized = np.nan_to_num(
+        matrix,
+        nan=0.0,
+        posinf=FEATURE_CLIP_ABS,
+        neginf=-FEATURE_CLIP_ABS,
+    )
+    return np.clip(sanitized, -FEATURE_CLIP_ABS, FEATURE_CLIP_ABS)
 
 
 class FeatureEngineer:
@@ -106,7 +126,7 @@ class FeatureEngineer:
                 ts.xgd_per_game * 10,  # Scale to similar range
             ]
             matrix.append(row)
-        return np.array(matrix)
+        return _sanitize_matrix(np.array(matrix, dtype=float))
 
     def _create_raw_features(self, team_seasons: List[TeamSeason]) -> List[FeatureVector]:
         """Create feature vectors without PCA (for fitting scaler)."""
@@ -143,6 +163,13 @@ class FeatureEngineer:
             vegas_cup_signal=self._calculate_vegas_signal(ts),
             playoff_experience=calculate_playoff_experience_feature(ts.team, ts.season),
             dynasty_score=calculate_dynasty_feature(ts.team, ts.season),
+            series_history_signal=calculate_series_history_signal(ts.team, ts.season),
+            market_close_movement_signal=calculate_market_close_movement_signal(ts.team, ts.season),
+            goalie_injury_playoff_impact=calculate_goalie_injury_playoff_impact(
+                ts.team,
+                ts.season,
+                current_gsax=ts.gsax,
+            ),
 
             # Targets
             made_playoffs=ts.made_playoffs,
@@ -292,7 +319,7 @@ def create_feature_matrix(
         y: Target array (playoff_success)
         feature_names: List of feature names
     """
-    X = np.array([f.to_array() for f in features])
+    X = _sanitize_matrix(np.array([f.to_array() for f in features], dtype=float))
     y = np.array([f.playoff_success for f in features])
     names = FeatureVector.feature_names()
 

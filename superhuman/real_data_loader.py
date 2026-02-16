@@ -8,12 +8,158 @@ stats (NST), special teams (PP%/PK%), and playoff results.
 
 import json
 import logging
-from typing import List, Optional
+import csv
+from typing import List, Optional, Dict, Any
+import numpy as np
+from pathlib import Path
 
 from .data_models import TeamSeason
 from .config import HISTORICAL_DIR, normalize_team_abbrev as _normalize_team
 
 logger = logging.getLogger(__name__)
+_advanced_override_cache: Dict[int, Dict[str, Dict[str, float]]] = {}
+MIN_OVERRIDE_TEAM_COVERAGE = 24
+
+
+def _advanced_override_paths_for_season(season: int) -> tuple[Path, Path]:
+    advanced_dir = HISTORICAL_DIR / "advanced"
+    return (
+        advanced_dir / f"season_{season}.json",
+        advanced_dir / f"season_{season}.csv",
+    )
+
+
+def _estimate_expected_goal_profile(
+    goals_for: int,
+    goals_against: int,
+    cf_pct: float,
+    hdcf_pct: float
+) -> tuple[float, float, float]:
+    """
+    Estimate xGF/xGA/xGF% when historical expected-goals feeds are unavailable.
+
+    This proxy preserves signal and avoids all-zero xG features in historical
+    training data. It is intentionally conservative and only used as fallback.
+    """
+    # Blend broad possession and high-danger share into an xG share proxy.
+    xgf_pct_proxy = np.clip((0.65 * cf_pct) + (0.35 * hdcf_pct), 35.0, 65.0)
+
+    # Convert the share into rough expected goals totals.
+    # Values are scale-compatible and preserve team ordering.
+    xgf_proxy = float(max(0.0, goals_for * (xgf_pct_proxy / 50.0)))
+    xga_proxy = float(max(0.0, goals_against * ((100.0 - xgf_pct_proxy) / 50.0)))
+
+    return xgf_proxy, xga_proxy, float(xgf_pct_proxy)
+
+
+def _estimate_gsax_proxy(
+    save_pct: float,
+    games_played: int,
+    ca: int
+) -> float:
+    """
+    Estimate team-level GSAx proxy from save percentage and shot-volume proxy.
+    """
+    # League-average team save percentage baseline.
+    league_sv = 0.910
+
+    # Estimate shots against from Corsi Against where available.
+    # If unavailable, use a conservative per-game shot estimate.
+    shots_against_est = (ca * 0.55) if ca > 0 else (games_played * 30.0)
+    shots_against_est = max(1000.0, shots_against_est)
+
+    gsax_proxy = (save_pct - league_sv) * shots_against_est
+    return float(np.clip(gsax_proxy, -40.0, 40.0))
+
+
+def _safe_float(value: Any, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _load_advanced_overrides_for_season(season: int) -> Dict[str, Dict[str, float]]:
+    """
+    Load optional season-level advanced metrics overrides.
+
+    Supported files (under data/historical/verified/advanced):
+    - season_YYYY.json: {"TEAM": {"xgf": ..., "xga": ..., "xgfPct": ..., "gsax": ...}, ...}
+    - season_YYYY.csv: columns team,xgf,xga,xgfPct,gsax (case-insensitive aliases accepted)
+    """
+    if season in _advanced_override_cache:
+        return _advanced_override_cache[season]
+
+    json_path, csv_path = _advanced_override_paths_for_season(season)
+
+    overrides: Dict[str, Dict[str, float]] = {}
+
+    if json_path.exists():
+        try:
+            raw = json.loads(json_path.read_text())
+            for team, vals in raw.items():
+                if not isinstance(vals, dict):
+                    continue
+                team_code = _normalize_team(str(team).strip().upper())
+                team_override: Dict[str, float] = {}
+                if "xgf" in vals:
+                    team_override["xgf"] = _safe_float(vals.get("xgf"), 0.0)
+                if "xga" in vals:
+                    team_override["xga"] = _safe_float(vals.get("xga"), 0.0)
+                if "xgfPct" in vals or "xgf_pct" in vals:
+                    team_override["xgfPct"] = _safe_float(vals.get("xgfPct", vals.get("xgf_pct")), 50.0)
+                if "gsax" in vals:
+                    team_override["gsax"] = _safe_float(vals.get("gsax"), 0.0)
+                if team_override:
+                    overrides[team_code] = team_override
+        except Exception as e:
+            logger.warning(f"Failed reading advanced override JSON for {season}: {e}")
+
+    elif csv_path.exists():
+        try:
+            with open(csv_path, newline="") as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    team_raw = (
+                        row.get("team")
+                        or row.get("TEAM")
+                        or row.get("teamAbbrev")
+                        or row.get("team_abbrev")
+                    )
+                    if not team_raw:
+                        continue
+                    team_code = _normalize_team(str(team_raw).strip().upper())
+                    team_override: Dict[str, float] = {}
+                    if any(k in row and row.get(k) not in (None, "") for k in ("xgf", "XGF")):
+                        team_override["xgf"] = _safe_float(row.get("xgf", row.get("XGF")), 0.0)
+                    if any(k in row and row.get(k) not in (None, "") for k in ("xga", "XGA")):
+                        team_override["xga"] = _safe_float(row.get("xga", row.get("XGA")), 0.0)
+                    if any(k in row and row.get(k) not in (None, "") for k in ("xgfPct", "xgf_pct", "XGFPct")):
+                        team_override["xgfPct"] = _safe_float(
+                            row.get("xgfPct", row.get("xgf_pct", row.get("XGFPct", 50.0))),
+                            50.0,
+                        )
+                    if any(k in row and row.get(k) not in (None, "") for k in ("gsax", "GSAx")):
+                        team_override["gsax"] = _safe_float(row.get("gsax", row.get("GSAx")), 0.0)
+                    if team_override:
+                        overrides[team_code] = team_override
+        except Exception as e:
+            logger.warning(f"Failed reading advanced override CSV for {season}: {e}")
+
+    _advanced_override_cache[season] = overrides
+    if not overrides:
+        return overrides
+
+    if len(overrides) < MIN_OVERRIDE_TEAM_COVERAGE:
+        logger.warning(
+            f"Ignoring advanced overrides for {season}: "
+            f"only {len(overrides)} teams (minimum {MIN_OVERRIDE_TEAM_COVERAGE})"
+        )
+        _advanced_override_cache[season] = {}
+        return {}
+
+    logger.info(f"Loaded advanced metric overrides for {season}: {len(overrides)} teams")
+    return overrides
 
 
 def load_real_historical_data(
@@ -135,17 +281,32 @@ def _json_to_team_season(abbrev: str, t: dict, season: int) -> Optional[TeamSeas
             save_pct = 0.910
 
         # Raw Corsi/HD counts (for feature engineering)
+        ca = t.get("ca") or 0
         hdcf = t.get("hdcf") or 0
         hdca = t.get("hdca") or 0
 
-        # xG/GSAx not available from NST team table or standings API.
-        # Model's feature_engineering handles 0 defaults for these.
-        # TODO: integrate MoneyPuck xG data for historical seasons
-        if t.get("hasAdvanced") and not t.get("xgf"):
-            logger.warning(f"{abbrev} {season}: xG/GSAx unavailable, defaulting to 0.0")
-        xgf = 0.0
-        xga = 0.0
-        gsax = 0.0
+        # xG/GSAx are not present in current verified historical files.
+        # Use conservative proxies to retain informative variance.
+        xgf, xga, xgf_pct_proxy = _estimate_expected_goal_profile(
+            goals_for=goals_for,
+            goals_against=goals_against,
+            cf_pct=cf_pct,
+            hdcf_pct=hdcf_pct
+        )
+        gsax = _estimate_gsax_proxy(save_pct=save_pct, games_played=gp, ca=ca)
+
+        # If true advanced overrides exist for this season/team, use them.
+        advanced_overrides = _load_advanced_overrides_for_season(season)
+        override = advanced_overrides.get(team_abbr)
+        if override:
+            if "xgf" in override:
+                xgf = override["xgf"]
+            if "xga" in override:
+                xga = override["xga"]
+            if "xgfPct" in override:
+                xgf_pct_proxy = override["xgfPct"]
+            if "gsax" in override:
+                gsax = override["gsax"]
 
         # Playoff outcomes
         made_playoffs = t.get("madePlayoffs", False)
@@ -173,8 +334,8 @@ def _json_to_team_season(abbrev: str, t: dict, season: int) -> Optional[TeamSeas
 
             xgf=xgf,
             xga=xga,
-            xgf_pct=50.0,
-            expected_goals_diff=0.0,
+            xgf_pct=xgf_pct_proxy,
+            expected_goals_diff=xgf - xga,
 
             hdcf=hdcf,
             hdca=hdca,
@@ -235,3 +396,85 @@ def get_available_seasons() -> List[int]:
         except (ValueError, IndexError):
             continue
     return available
+
+
+def get_advanced_override_coverage(
+    start_season: int = 2010,
+    end_season: int = 2024,
+) -> Dict[str, Any]:
+    """
+    Report historical advanced override coverage by season.
+
+    Returns counts for:
+    - fileExists: raw override file exists (JSON/CSV)
+    - teamCountRaw: number of teams found in override file before minimum gate
+    - accepted: whether override passed minimum-team threshold
+    - teamCountAccepted: number of teams accepted for modeling (0 if rejected)
+    """
+    season_rows: List[Dict[str, Any]] = []
+    accepted_seasons = 0
+    total_raw_teams = 0
+    total_accepted_teams = 0
+    total_possible = max(0, (end_season - start_season + 1) * 32)
+
+    for season in range(start_season, end_season + 1):
+        json_path, csv_path = _advanced_override_paths_for_season(season)
+        raw_exists = json_path.exists() or csv_path.exists()
+
+        raw_overrides: Dict[str, Dict[str, float]] = {}
+        if raw_exists:
+            # Read raw directly without mutating the cached accepted view.
+            try:
+                if json_path.exists():
+                    raw = json.loads(json_path.read_text())
+                    if isinstance(raw, dict):
+                        for team, vals in raw.items():
+                            if isinstance(vals, dict):
+                                raw_overrides[_normalize_team(str(team).strip().upper())] = vals
+                elif csv_path.exists():
+                    with open(csv_path, newline="") as f:
+                        reader = csv.DictReader(f)
+                        for row in reader:
+                            team_raw = (
+                                row.get("team")
+                                or row.get("TEAM")
+                                or row.get("teamAbbrev")
+                                or row.get("team_abbrev")
+                            )
+                            if team_raw:
+                                raw_overrides[_normalize_team(str(team_raw).strip().upper())] = row
+            except Exception:
+                raw_overrides = {}
+
+        raw_count = len(raw_overrides)
+        accepted = raw_count >= MIN_OVERRIDE_TEAM_COVERAGE
+        accepted_count = raw_count if accepted else 0
+
+        total_raw_teams += raw_count
+        total_accepted_teams += accepted_count
+        if accepted:
+            accepted_seasons += 1
+
+        season_rows.append(
+            {
+                "season": season,
+                "fileExists": raw_exists,
+                "teamCountRaw": raw_count,
+                "accepted": accepted,
+                "teamCountAccepted": accepted_count,
+            }
+        )
+
+    return {
+        "startSeason": start_season,
+        "endSeason": end_season,
+        "minTeamCoverage": MIN_OVERRIDE_TEAM_COVERAGE,
+        "acceptedSeasons": accepted_seasons,
+        "totalSeasons": max(0, end_season - start_season + 1),
+        "acceptedSeasonRatio": (
+            accepted_seasons / max(1, (end_season - start_season + 1))
+        ),
+        "rawTeamCoverageRatio": total_raw_teams / max(1, total_possible),
+        "acceptedTeamCoverageRatio": total_accepted_teams / max(1, total_possible),
+        "seasons": season_rows,
+    }

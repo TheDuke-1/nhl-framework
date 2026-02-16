@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Prevention Loop"
+  short_description: "Turn every failure into permanent controls"
+  default_prompt: "Use $superhuman-prevention-loop to drive root-cause-to-prevention execution with tests, gates, ownership, and reusable learnings."

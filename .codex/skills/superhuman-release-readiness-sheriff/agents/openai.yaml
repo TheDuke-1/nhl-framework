@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Release Readiness Sheriff"
+  short_description: "Harden release truth and blocker clarity"
+  default_prompt: "Use $superhuman-release-readiness-sheriff to enforce deterministic release gating, timeout policy, and blocker reporting."

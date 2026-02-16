@@ -1,13 +1,19 @@
 {
   "_metadata": {
     "source": "NHL API",
+    "provider": "nhl_primary_api_web",
+    "fallbackUsed": false,
+    "activityState": "scheduled_break",
+    "checkedAt": "2026-02-16T02:40:09.885878Z",
+    "fetchedAt": "2026-02-16T02:40:09.885878Z",
+    "teamCount": 32,
     "endpoints": [
       "https://api-web.nhle.com/v1/standings/now",
       "https://api.nhle.com/stats/rest/en/team/powerplay?cayenneExp=seasonId=20252026",
-      "https://api.nhle.com/stats/rest/en/team/penaltykill?cayenneExp=seasonId=20252026"
+      "https://api.nhle.com/stats/rest/en/team/penaltykill?cayenneExp=seasonId=20252026",
+      "https://api-web.nhl.com/v1/standings/now"
     ],
-    "fetchedAt": "2026-02-16T11:35:53.026593Z",
-    "teamCount": 32
+    "transportErrors": []
   },
   "teams": {
     "COL": {

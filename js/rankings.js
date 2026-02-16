@@ -28,15 +28,15 @@ const Rankings = (() => {
         <table id="rankings-table" class="data-table">
           <thead>
             <tr>
-              <th class="sortable" onclick="Utils.sortTable('rankings-table', 0, 'number')">#</th>
-              <th class="sortable" onclick="Utils.sortTable('rankings-table', 1, 'string')">Team</th>
+              <th class="sortable" data-sort-col="0" data-sort-type="number" role="button" tabindex="0" aria-sort="none">#</th>
+              <th class="sortable" data-sort-col="1" data-sort-type="string" role="button" tabindex="0" aria-sort="none">Team</th>
               <th>Tier</th>
               <th>Conf</th>
-              <th class="sortable" onclick="Utils.sortTable('rankings-table', 4, 'number')">Strength</th>
-              <th class="sortable" onclick="Utils.sortTable('rankings-table', 5, 'number')">Playoff%</th>
-              <th class="sortable" onclick="Utils.sortTable('rankings-table', 6, 'number')">Conf%</th>
-              <th class="sortable" onclick="Utils.sortTable('rankings-table', 7, 'number')">Cup%</th>
-              <th class="sortable" onclick="Utils.sortTable('rankings-table', 8, 'number')">Injuries</th>
+              <th class="sortable" data-sort-col="4" data-sort-type="number" role="button" tabindex="0" aria-sort="none">Strength</th>
+              <th class="sortable" data-sort-col="5" data-sort-type="number" role="button" tabindex="0" aria-sort="none">Playoff%</th>
+              <th class="sortable" data-sort-col="6" data-sort-type="number" role="button" tabindex="0" aria-sort="none">Conf%</th>
+              <th class="sortable" data-sort-col="7" data-sort-type="number" role="button" tabindex="0" aria-sort="none">Cup%</th>
+              <th class="sortable" data-sort-col="8" data-sort-type="number" role="button" tabindex="0" aria-sort="none">Injuries</th>
             </tr>
           </thead>
           <tbody>
@@ -70,6 +70,8 @@ const Rankings = (() => {
         filterTable(container);
       });
     });
+
+    setupSorting(container);
   }
 
   function renderTopCards(teams) {
@@ -118,6 +120,25 @@ const Rankings = (() => {
       } else {
         row.style.display = row.dataset.tier === currentFilter ? '' : 'none';
       }
+    });
+  }
+
+  function setupSorting(container) {
+    const headers = container.querySelectorAll('#rankings-table th.sortable');
+    headers.forEach(header => {
+      const sort = () => {
+        const colIdx = Number(header.dataset.sortCol);
+        const type = header.dataset.sortType || 'number';
+        Utils.sortTable('rankings-table', colIdx, type);
+      };
+
+      header.addEventListener('click', sort);
+      header.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          sort();
+        }
+      });
     });
   }
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Superhuman Skill Productizer"
+  short_description: "Productize workflows into reusable skills"
+  default_prompt: "Use $superhuman-skill-productizer to convert successful workflows into reusable, cross-project skill packs."

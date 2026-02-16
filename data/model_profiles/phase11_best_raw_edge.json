@@ -1,0 +1,19 @@
+{
+  "profileVersion": "phase11-best_raw_edge",
+  "use_neural_network": true,
+  "use_recency_weighting": true,
+  "use_cup_calibration": false,
+  "recency_decay_rate": 0.08,
+  "cup_winner_boost": 1.5,
+  "cup_market_prior_blend": 0.9,
+  "cup_ensemble_weights": {
+    "gradient_boosting": 0.05,
+    "neural_network": 0.0,
+    "monte_carlo": 0.95
+  },
+  "monte_carlo_simulations": 2000,
+  "strict_verification": true,
+  "require_series_data_in_strict_mode": true,
+  "require_oof_cup_calibration_in_strict_mode": true,
+  "generatedAt": "2026-02-12T04:01:42.318895+00:00"
+}

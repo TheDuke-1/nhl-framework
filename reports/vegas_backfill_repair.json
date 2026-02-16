@@ -1,0 +1,122 @@
+{
+  "generatedAt": "2026-02-12T05:03:38.735901+00:00",
+  "range": {
+    "startSeason": 2010,
+    "endSeason": 2025
+  },
+  "dryRun": false,
+  "results": [
+    {
+      "season": 2010,
+      "teamCount": 30,
+      "existingCount": 30,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2011,
+      "teamCount": 30,
+      "existingCount": 30,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2012,
+      "teamCount": 30,
+      "existingCount": 30,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2013,
+      "teamCount": 30,
+      "existingCount": 30,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2014,
+      "teamCount": 30,
+      "existingCount": 30,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2015,
+      "teamCount": 30,
+      "existingCount": 30,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2016,
+      "teamCount": 30,
+      "existingCount": 30,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2017,
+      "teamCount": 30,
+      "existingCount": 30,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2018,
+      "teamCount": 31,
+      "existingCount": 31,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2019,
+      "teamCount": 31,
+      "existingCount": 31,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2020,
+      "teamCount": 31,
+      "existingCount": 31,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2021,
+      "teamCount": 31,
+      "existingCount": 31,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2022,
+      "teamCount": 32,
+      "existingCount": 32,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2023,
+      "teamCount": 32,
+      "existingCount": 32,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2024,
+      "teamCount": 32,
+      "existingCount": 32,
+      "createdRows": 0,
+      "repairedRows": 0
+    },
+    {
+      "season": 2025,
+      "teamCount": 32,
+      "existingCount": 32,
+      "createdRows": 0,
+      "repairedRows": 0
+    }
+  ]
+}
