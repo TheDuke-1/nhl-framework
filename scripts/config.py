@@ -47,7 +47,8 @@ NST_API = {
 }
 
 MONEYPUCK_API = {
-    "teams_url": f"https://moneypuck.com/moneypuck/playerData/seasonSummary/{SEASON_END_YEAR}/regular/teams.csv",
+    # seasonSummary is keyed by season start year (e.g., 2025 for 2025-26)
+    "teams_url": f"https://moneypuck.com/moneypuck/playerData/seasonSummary/{SEASON_START_YEAR}/regular/teams.csv",
     "teams_page": "https://moneypuck.com/teams.htm"
 }
 

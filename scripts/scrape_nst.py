@@ -164,8 +164,8 @@ def main():
         teams = fetch_and_parse_nst()
 
         if not teams:
-            print("Warning: No teams parsed from NST")
-            teams = {}
+            print("Error: No teams parsed from NST")
+            return 1
 
         # Add metadata
         output = {
@@ -186,13 +186,13 @@ def main():
             json.dump(output, f, indent=2)
 
         print(f"Saved {len(teams)} teams to {output_path}")
-        return teams
+        return 0
 
     except Exception as e:
         print(f"Error fetching NST data: {e}")
         import traceback
         traceback.print_exc()
-        return {}
+        return 1
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

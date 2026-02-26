@@ -10,10 +10,12 @@ import pandas as pd
 from io import StringIO
 from pathlib import Path
 from datetime import datetime
+from typing import List, Tuple
 
-# MoneyPuck CSV URLs (update season year as needed)
-SEASON = "2026"  # 2025-26 season
-TEAMS_CSV_URL = f"https://moneypuck.com/moneypuck/playerData/seasonSummary/{SEASON}/regular/teams.csv"
+from config import SEASON_START_YEAR, SEASON_END_YEAR, USER_AGENT
+
+MONEYPUCK_BASE = "https://moneypuck.com/moneypuck/playerData/seasonSummary"
+REQUEST_TIMEOUT_SECONDS = 30
 
 # Team name to abbreviation mapping (supports both full names and abbreviations)
 TEAM_NAME_MAP = {
@@ -66,12 +68,41 @@ TEAM_NAME_MAP = {
     "N.J": "NJ", "T.B": "TB", "L.A": "LA", "S.J": "SJ",
 }
 
-def fetch_moneypuck_csv():
-    """Fetch the MoneyPuck teams CSV."""
-    print(f"Fetching MoneyPuck data from {TEAMS_CSV_URL}...")
-    response = requests.get(TEAMS_CSV_URL, timeout=30)
-    response.raise_for_status()
-    return response.text
+def _candidate_seasons() -> List[int]:
+    # MoneyPuck seasonSummary is keyed by the season start year.
+    return [int(SEASON_START_YEAR), int(SEASON_END_YEAR), int(SEASON_START_YEAR) - 1]
+
+
+def _build_url(season: int) -> str:
+    return f"{MONEYPUCK_BASE}/{season}/regular/teams.csv"
+
+
+def fetch_moneypuck_csv() -> Tuple[str, int, str]:
+    """Fetch MoneyPuck teams CSV using season fallback and browser-like headers."""
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Referer": "https://moneypuck.com/teams.htm",
+        "Accept": "text/csv,*/*;q=0.9",
+    }
+    errors = []
+    for season in _candidate_seasons():
+        url = _build_url(season)
+        print(f"Fetching MoneyPuck data from {url}...")
+        try:
+            response = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT_SECONDS)
+            response.raise_for_status()
+            return response.text, season, url
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else "unknown"
+            errors.append(f"{url}: HTTP {status}")
+            # Continue trying alternate season keys when endpoint isn't available.
+            if status in {403, 404}:
+                continue
+            raise
+        except requests.RequestException as exc:
+            errors.append(f"{url}: {exc}")
+            continue
+    raise RuntimeError("MoneyPuck fetch failed for all season keys: " + " | ".join(errors))
 
 def parse_moneypuck_data(csv_text):
     """Parse MoneyPuck CSV into our format."""
@@ -143,15 +174,18 @@ def main():
 
     try:
         # Fetch and parse MoneyPuck data
-        csv_text = fetch_moneypuck_csv()
+        csv_text, season_key, source_url = fetch_moneypuck_csv()
         teams = parse_moneypuck_data(csv_text)
+        if not teams:
+            print("Error fetching MoneyPuck data: parsed zero teams from CSV")
+            return 1
 
         # Add metadata
         output = {
             "_metadata": {
                 "source": "MoneyPuck",
-                "url": TEAMS_CSV_URL,
-                "season": SEASON,
+                "url": source_url,
+                "season": str(season_key),
                 "fetchedAt": datetime.utcnow().isoformat() + "Z",
                 "teamCount": len(teams),
                 "notes": "xG metrics at 5v5 situation"
@@ -165,12 +199,11 @@ def main():
             json.dump(output, f, indent=2)
 
         print(f"Saved {len(teams)} teams to {output_path}")
-        return teams
+        return 0
 
     except Exception as e:
         print(f"Error fetching MoneyPuck data: {e}")
-        # Return empty dict on error - merge script will handle missing data
-        return {}
+        return 1
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

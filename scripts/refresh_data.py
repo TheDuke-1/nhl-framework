@@ -89,8 +89,10 @@ def check_moneypuck_freshness(force=False):
     """
     is_fresh, age, threshold = check_data_freshness("moneypuck_stats")
 
-    if is_fresh and not force:
+    if is_fresh:
         logger.info(f"MoneyPuck stats are fresh ({age:.1f}h old, threshold {threshold}h)")
+        if force:
+            return True, "fresh (force mode)"
         return True, "fresh"
 
     if age is None:
