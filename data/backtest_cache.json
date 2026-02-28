@@ -1,9 +1,9 @@
 {
-  "modelVersion": "backtest-v2.4-2026-43d92c3204-331ad29690-14b5b16284",
+  "modelVersion": "backtest-v2.4-2026-43d92c3204-7ccd10e730-f5e5a9279b",
   "evaluationMode": "strict_walk_forward",
   "walkForwardAudit": {
     "leakageFree": true,
-    "evaluatedSplits": 10,
+    "evaluatedSplits": 12,
     "skippedSplits": [
       {
         "heldOutSeason": 2010,
@@ -22,19 +22,21 @@
         "reason": "insufficient_train_or_test_samples",
         "trainSamples": 60,
         "testSamples": 30
-      },
+      }
+    ],
+    "splits": [
       {
         "heldOutSeason": 2013,
-        "reason": "insufficient_oof_cup_history",
+        "minTrainSeason": 2010,
+        "maxTrainSeason": 2012,
         "trainSeasonCount": 3
       },
       {
         "heldOutSeason": 2014,
-        "reason": "insufficient_oof_cup_history",
+        "minTrainSeason": 2010,
+        "maxTrainSeason": 2013,
         "trainSeasonCount": 4
-      }
-    ],
-    "splits": [
+      },
       {
         "heldOutSeason": 2015,
         "minTrainSeason": 2010,
@@ -99,6 +101,46 @@
   },
   "seasons": [
     {
+      "season": 2013,
+      "modelTopPick": "CHI",
+      "modelTop5": [
+        "CHI",
+        "PIT",
+        "ANA",
+        "MTL",
+        "BOS"
+      ],
+      "actualWinner": "CHI",
+      "winnerInTop5": true,
+      "modelProbForWinner": 11.39,
+      "topPickCorrect": true,
+      "winnerRank": 1,
+      "playoffTeamsHit": 15,
+      "playoffPrecision": 0.938,
+      "playoffRecall": 0.938,
+      "playoffF1": 0.938
+    },
+    {
+      "season": 2014,
+      "modelTopPick": "BOS",
+      "modelTop5": [
+        "BOS",
+        "ANA",
+        "COL",
+        "SJ",
+        "STL"
+      ],
+      "actualWinner": "LA",
+      "winnerInTop5": false,
+      "modelProbForWinner": 5.2,
+      "topPickCorrect": false,
+      "winnerRank": 9,
+      "playoffTeamsHit": 16,
+      "playoffPrecision": 1.0,
+      "playoffRecall": 1.0,
+      "playoffF1": 1.0
+    },
+    {
       "season": 2015,
       "modelTopPick": "CHI",
       "modelTop5": [
@@ -110,7 +152,7 @@
       ],
       "actualWinner": "CHI",
       "winnerInTop5": true,
-      "modelProbForWinner": 14.4,
+      "modelProbForWinner": 14.11,
       "topPickCorrect": true,
       "winnerRank": 1,
       "playoffTeamsHit": 16,
@@ -130,7 +172,7 @@
       ],
       "actualWinner": "PIT",
       "winnerInTop5": false,
-      "modelProbForWinner": 6.76,
+      "modelProbForWinner": 6.77,
       "topPickCorrect": false,
       "winnerRank": 8,
       "playoffTeamsHit": 16,
@@ -150,7 +192,7 @@
       ],
       "actualWinner": "PIT",
       "winnerInTop5": true,
-      "modelProbForWinner": 13.05,
+      "modelProbForWinner": 13.11,
       "topPickCorrect": true,
       "winnerRank": 1,
       "playoffTeamsHit": 16,
@@ -170,7 +212,7 @@
       ],
       "actualWinner": "WSH",
       "winnerInTop5": true,
-      "modelProbForWinner": 10.05,
+      "modelProbForWinner": 9.14,
       "topPickCorrect": false,
       "winnerRank": 3,
       "playoffTeamsHit": 16,
@@ -190,7 +232,7 @@
       ],
       "actualWinner": "STL",
       "winnerInTop5": false,
-      "modelProbForWinner": 3.09,
+      "modelProbForWinner": 3.19,
       "topPickCorrect": false,
       "winnerRank": 13,
       "playoffTeamsHit": 16,
@@ -210,7 +252,7 @@
       ],
       "actualWinner": "TB",
       "winnerInTop5": true,
-      "modelProbForWinner": 11.96,
+      "modelProbForWinner": 12.25,
       "topPickCorrect": true,
       "winnerRank": 1,
       "playoffTeamsHit": 16,
@@ -230,7 +272,7 @@
       ],
       "actualWinner": "TB",
       "winnerInTop5": true,
-      "modelProbForWinner": 10.55,
+      "modelProbForWinner": 10.64,
       "topPickCorrect": false,
       "winnerRank": 2,
       "playoffTeamsHit": 15,
@@ -244,13 +286,13 @@
       "modelTop5": [
         "COL",
         "TB",
-        "BOS",
         "CAR",
+        "BOS",
         "TOR"
       ],
       "actualWinner": "COL",
       "winnerInTop5": true,
-      "modelProbForWinner": 17.7,
+      "modelProbForWinner": 16.51,
       "topPickCorrect": true,
       "winnerRank": 1,
       "playoffTeamsHit": 16,
@@ -270,7 +312,7 @@
       ],
       "actualWinner": "VGK",
       "winnerInTop5": false,
-      "modelProbForWinner": 7.12,
+      "modelProbForWinner": 7.21,
       "topPickCorrect": false,
       "winnerRank": 6,
       "playoffTeamsHit": 16,
@@ -290,7 +332,7 @@
       ],
       "actualWinner": "FLA",
       "winnerInTop5": false,
-      "modelProbForWinner": 5.36,
+      "modelProbForWinner": 5.24,
       "topPickCorrect": false,
       "winnerRank": 10,
       "playoffTeamsHit": 16,
@@ -300,15 +342,15 @@
     }
   ],
   "summary": {
-    "totalSeasons": 10,
-    "topPickCorrect": 4,
-    "topPickAccuracy": 40.0,
-    "winnerInTop5": 6,
-    "top5Accuracy": 60.0,
-    "averageWinnerRank": 4.6,
-    "averagePlayoffTeamsHit": 15.9,
-    "averagePlayoffPrecision": 0.994,
-    "averagePlayoffRecall": 0.96,
-    "averagePlayoffF1": 0.974
+    "totalSeasons": 12,
+    "topPickCorrect": 5,
+    "topPickAccuracy": 41.7,
+    "winnerInTop5": 7,
+    "top5Accuracy": 58.3,
+    "averageWinnerRank": 4.67,
+    "averagePlayoffTeamsHit": 15.83,
+    "averagePlayoffPrecision": 0.99,
+    "averagePlayoffRecall": 0.962,
+    "averagePlayoffF1": 0.973
   }
 }

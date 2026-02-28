@@ -1,62 +1,62 @@
 {
-  "generatedAt": "2026-02-15T23:33:43.041147+00:00",
+  "generatedAt": "2026-02-26T02:38:23.860359+00:00",
   "season": "2025-26",
   "calendarContext": {
-    "activityState": "scheduled_break",
-    "windowName": "2026 Winter Olympics Break",
-    "reason": "nhl_olympic_break",
-    "heartbeatMaxAgeHours": 30,
-    "windowStart": "2026-02-06T00:00:00+00:00",
-    "windowEnd": "2026-02-24T23:59:59+00:00",
-    "evaluatedAt": "2026-02-15T23:33:43.041084+00:00"
+    "activityState": "regular_season",
+    "windowName": null,
+    "reason": null,
+    "heartbeatMaxAgeHours": null,
+    "windowStart": null,
+    "windowEnd": null,
+    "evaluatedAt": "2026-02-26T02:38:23.860173+00:00"
   },
   "overall": {
-    "refreshSuccess": false,
+    "refreshSuccess": true,
     "criticalHealthy": true,
-    "activityState": "scheduled_break"
+    "activityState": "regular_season"
   },
   "sources": {
     "nhl_api": {
       "success": true,
-      "message": "skipped (fresh)",
+      "message": "success",
       "health": "healthy",
       "critical": true,
-      "checkedAt": "2026-02-15T23:33:43.041147+00:00"
+      "checkedAt": "2026-02-26T02:38:23.860359+00:00"
     },
     "nst": {
       "success": true,
       "message": "success",
       "health": "healthy",
       "critical": true,
-      "checkedAt": "2026-02-15T23:33:43.041147+00:00"
+      "checkedAt": "2026-02-26T02:38:23.860359+00:00"
     },
     "odds": {
       "success": true,
       "message": "success",
       "health": "healthy",
       "critical": true,
-      "checkedAt": "2026-02-15T23:33:43.041147+00:00"
+      "checkedAt": "2026-02-26T02:38:23.860359+00:00"
     },
     "moneypuck": {
-      "success": false,
-      "message": "stale (113.2h) - may require browser fetch",
-      "health": "expected_static",
+      "success": true,
+      "message": "fresh (force mode)",
+      "health": "healthy",
       "critical": false,
-      "checkedAt": "2026-02-15T23:33:43.041147+00:00"
+      "checkedAt": "2026-02-26T02:38:23.860359+00:00"
     },
     "merge": {
       "success": true,
       "message": "success",
       "health": "healthy",
       "critical": false,
-      "checkedAt": "2026-02-15T23:33:43.041147+00:00"
+      "checkedAt": "2026-02-26T02:38:23.860359+00:00"
     },
     "validation": {
       "success": true,
-      "message": "{'team_count': 32, 'generated_at': '2026-02-15T23:33:43.030583Z', 'top_team': 'COL (83 pts)'}",
+      "message": "{'team_count': 32, 'generated_at': '2026-02-26T02:38:23.852444Z', 'top_team': 'COL (83 pts)'}",
       "health": "healthy",
       "critical": false,
-      "checkedAt": "2026-02-15T23:33:43.041147+00:00"
+      "checkedAt": "2026-02-26T02:38:23.860359+00:00"
     }
   }
 }

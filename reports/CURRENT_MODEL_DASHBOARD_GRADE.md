@@ -1,12 +1,12 @@
 # Current Model + Dashboard Grade
 
-Generated: `2026-02-16T04:22:39.565123+00:00`
+Generated: `2026-02-26T03:37:02.320913+00:00`
 
 ## Grades
 
 - Model Grade: **B+** (88.5/100)
-- Dashboard Grade: **A+** (99.7/100)
-- Overall Grade: **A-** (91.9/100)
+- Dashboard Grade: **B+** (88.0/100)
+- Overall Grade: **B+** (88.3/100)
 
 ## Model Component Scores
 
@@ -19,7 +19,7 @@ Generated: `2026-02-16T04:22:39.565123+00:00`
 ## Why This Grade
 
 - Strong core performance and stability (`Top-1 40.0%`, `Top-5 60.0%`, `Winner Rank 4.6`, `Playoff F1 0.974`).
-- Strong probability behavior (`Brier playoff 0.05773304410406011`, `Brier cup 0.029076439009871776`, `ECE 0.1652576867183268`).
+- Strong probability behavior (`Brier playoff 0.05773304410405995`, `Brier cup 0.02906193872149189`, `ECE 0.16525768671832727`).
 - Process rigor is high: strict walk-forward leakage-free contract and release gates are passing.
 - Market-readiness credit earned: historical Vegas benchmark is present and scored.
 
@@ -27,8 +27,8 @@ Generated: `2026-02-16T04:22:39.565123+00:00`
 
 - Team rows: 32/32
 - Required sections present ratio: 1.0
-- Freshness score: 0.978
+- Freshness score: 0.927
 - Release status alignment: PASS
 - Cup-goal alignment: True
-- Grade cap active: False
-- Grade cap reasons: none
+- Grade cap active: True
+- Grade cap reasons: strong_tier_not_met, active_edge_research_blockers

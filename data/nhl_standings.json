@@ -3,9 +3,9 @@
     "source": "NHL API",
     "provider": "nhl_primary_api_web",
     "fallbackUsed": false,
-    "activityState": "scheduled_break",
-    "checkedAt": "2026-02-16T02:40:09.885878Z",
-    "fetchedAt": "2026-02-16T02:40:09.885878Z",
+    "activityState": "regular_season",
+    "checkedAt": "2026-02-26T02:38:22.518846Z",
+    "fetchedAt": "2026-02-26T02:38:22.518846Z",
     "teamCount": 32,
     "endpoints": [
       "https://api-web.nhle.com/v1/standings/now",
@@ -244,7 +244,7 @@
       "leagueRank": 10,
       "recentPts": 75.0,
       "ppPct": 26.3,
-      "pkPct": 76.3
+      "pkPct": 76.4
     },
     "NYI": {
       "team": "NYI",
@@ -519,7 +519,7 @@
       "confRank": 14,
       "leagueRank": 22,
       "recentPts": 40.0,
-      "ppPct": 19.1,
+      "ppPct": 19.0,
       "pkPct": 82.6
     },
     "LA": {

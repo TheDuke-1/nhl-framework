@@ -1,8 +1,9 @@
 # Latest Benchmark Metrics
 
-Generated: `2026-02-16T04:33:27.426863+00:00`
-Model Version: `backtest-v2.4-2026-43d92c3204-331ad29690-14b5b16284`
+Generated: `2026-02-26T03:41:59.844919+00:00`
+Model Version: `backtest-v2.4-2026-43d92c3204-7ccd10e730-14b5b16284`
 Profile Version: `phase9-cup-edge-2026-02-13`
+Comparison baseline: last distinct snapshot (skipped `5` identical run(s)).
 
 ## Evaluation Contract
 
@@ -25,9 +26,9 @@ Profile Version: `phase9-cup-edge-2026-02-13`
 
 | Metric | Current | Previous | Delta |
 |---|---:|---:|---:|
-| Brier Playoff (lower better) | 0.058 | 0.058 | 0.000 |
-| Brier Cup (lower better) | 0.029 | 0.029 | 0.000 |
-| Log Loss Playoff (lower better) | 0.242 | 0.242 | 0.000 |
+| Brier Playoff (lower better) | 0.058 | 0.058 | -0.000 |
+| Brier Cup (lower better) | 0.029 | 0.029 | -0.000 |
+| Log Loss Playoff (lower better) | 0.242 | 0.242 | -0.000 |
 | Calibration Error (lower better) | 0.165 | 0.165 | 0.000 |
 
 ## Checkpoint Playoff F1
@@ -51,12 +52,12 @@ Profile Version: `phase9-cup-edge-2026-02-13`
 
 | Metric | Current | Previous | Delta |
 |---|---:|---:|---:|
-| Model - Vegas Brier (Playoff) | -0.130 | -0.130 | 0.000 |
-| Model - Vegas Brier (Cup) | -0.001 | -0.001 | 0.000 |
-| Model - Vegas Log Loss (Playoff) | -0.358 | -0.358 | 0.000 |
-| Model - Vegas Log Loss (Cup) | -0.011 | -0.011 | 0.000 |
-| Cup Relative Brier Edge | 0.018 | 0.018 | 0.000 |
-| Cup Relative Brier Edge CI Low | 0.006 | 0.006 | 0.000 |
+| Model - Vegas Brier (Playoff) | -0.130 | -0.130 | -0.000 |
+| Model - Vegas Brier (Cup) | -0.001 | -0.001 | -0.000 |
+| Model - Vegas Log Loss (Playoff) | -0.358 | -0.358 | -0.000 |
+| Model - Vegas Log Loss (Cup) | -0.011 | -0.011 | -0.000 |
+| Cup Relative Brier Edge | 0.018 | 0.018 | 0.001 |
+| Cup Relative Brier Edge CI Low | 0.007 | 0.006 | 0.001 |
 | Cup Relative Brier Edge CI High | 0.032 | 0.032 | 0.000 |
 
 ### Cup-Vegas Tiered Target
@@ -64,6 +65,6 @@ Profile Version: `phase9-cup-edge-2026-02-13`
 - Thresholds: release floor `>= 0.015`, strong `>= 0.030`, stretch `>= 0.050`, moonshot `>= 0.080`
 - Confidence gate: CI low `> 0.00` at `0.95` confidence
 - Sustainability gate: `>= 10` seasons and `>= 0.60` positive-season ratio
-- Current: edge `0.018`, CI [`0.006`, `0.032`], positive seasons `9`/`10`
+- Current: edge `0.018`, CI [`0.007`, `0.032`], positive seasons `9`/`10`
 - Release gate status: `PASS`
 - Tier reached: `release_floor`

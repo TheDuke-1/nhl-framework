@@ -3,7 +3,7 @@
     "source": "Hockey-Reference Playoff Probabilities",
     "url": "https://www.hockey-reference.com/friv/playoff_prob.fcgi",
     "type": "model-based (1000+ season simulations)",
-    "fetchedAt": "2026-02-26T02:38:23.777379Z",
+    "fetchedAt": "2026-02-25T13:10:47.880810Z",
     "teamCount": 32,
     "notes": "Probabilities are simulation-based, not sportsbook odds. impliedCupOdds converts cup probability to American odds format."
   },

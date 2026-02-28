@@ -3,18 +3,18 @@
   "use_neural_network": true,
   "use_recency_weighting": true,
   "use_cup_calibration": true,
-  "recency_decay_rate": 0.1,
-  "cup_winner_boost": 2.0,
+  "recency_decay_rate": 0.22,
+  "cup_winner_boost": 1.5,
   "cup_market_prior_blend": 0.9,
   "cup_ensemble_weights": {
-    "gradient_boosting": 0.3,
-    "neural_network": 0.3,
-    "monte_carlo": 0.4
+    "gradient_boosting": 0.2,
+    "neural_network": 0.2,
+    "monte_carlo": 0.6
   },
   "monte_carlo_simulations": 2000,
   "strict_verification": true,
   "require_series_data_in_strict_mode": true,
   "require_oof_cup_calibration_in_strict_mode": true,
   "abTrack": true,
-  "generatedAt": "2026-02-12T03:41:36.543707+00:00"
+  "generatedAt": "2026-02-19T02:34:00.108474+00:00"
 }

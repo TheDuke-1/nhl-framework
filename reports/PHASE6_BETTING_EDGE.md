@@ -1,34 +1,34 @@
 # Phase 6 Betting Edge Report
 
-Generated: `2026-02-16T04:22:39.595981+00:00`
+Generated: `2026-02-26T03:37:02.345764+00:00`
 
 ## Source
 
 - Market Source: `Hockey-Reference Playoff Probabilities`
 - Notes: `Probabilities are simulation-based, not sportsbook odds. impliedCupOdds converts cup probability to American odds format.`
-- Teams Compared: `24`
+- Teams Compared: `23`
 - Positive Edge Teams: `11`
 
 ## Historical Vegas Validation (strict walk-forward)
 
-- Cup relative Brier edge: `1.79%` (CI: `0.64%` to `3.15%`)
+- Cup relative Brier edge: `1.84%` (CI: `0.72%` to `3.19%`)
 - Cup release-floor status: `PASS` (floor >= `1.5%`, strong >= `3.0%`, stretch >= `5.0%`, moonshot >= `8.0%`)
 - Tier reached: `release_floor`
-- Model - Vegas Brier (Cup): `-0.0005173718927627448`
-- Model - Vegas Log Loss (Cup): `-0.011159931548644572`
+- Model - Vegas Brier (Cup): `-0.0005333521254115674`
+- Model - Vegas Log Loss (Cup): `-0.01122582290967973`
 
 ## Top Positive Edges
 
 | Team | Model Cup % | Market Cup % | Edge % | Implied Odds | EV (1u) | Kelly f |
 |---|---:|---:|---:|---:|---:|---:|
-| VGK | 6.25 | 2.70 | 3.55 | 3603 | 1.3144 | 0.0365 |
-| SEA | 4.82 | 1.40 | 3.42 | 7042 | 2.4424 | 0.0347 |
-| DET | 5.35 | 2.20 | 3.15 | 4445 | 1.4316 | 0.0322 |
-| BOS | 5.29 | 2.90 | 2.39 | 3348 | 0.8240 | 0.0246 |
-| EDM | 4.35 | 2.20 | 2.15 | 4445 | 0.9771 | 0.0220 |
-| UTA | 6.21 | 4.10 | 2.11 | 2339 | 0.5146 | 0.0220 |
-| PIT | 6.54 | 4.50 | 2.04 | 2122 | 0.4532 | 0.0214 |
-| MTL | 5.85 | 4.50 | 1.35 | 2122 | 0.2999 | 0.0141 |
-| DAL | 9.43 | 8.10 | 1.33 | 1134 | 0.1637 | 0.0144 |
-| BUF | 5.68 | 4.50 | 1.18 | 2122 | 0.2621 | 0.0124 |
-| NYI | 2.23 | 2.10 | 0.13 | 4661 | 0.0617 | 0.0013 |
+| SEA | 5.15 | 1.50 | 3.65 | 6566 | 2.4330 | 0.0371 |
+| VGK | 6.61 | 3.10 | 3.51 | 3125 | 1.1317 | 0.0362 |
+| DET | 5.47 | 2.20 | 3.27 | 4445 | 1.4861 | 0.0334 |
+| EDM | 4.43 | 1.50 | 2.93 | 6566 | 1.9530 | 0.0297 |
+| PIT | 6.68 | 3.90 | 2.78 | 2464 | 0.7128 | 0.0289 |
+| BUF | 5.61 | 3.40 | 2.21 | 2841 | 0.6499 | 0.0229 |
+| BOS | 5.57 | 3.50 | 2.07 | 2757 | 0.5913 | 0.0214 |
+| MTL | 5.96 | 4.10 | 1.86 | 2339 | 0.4536 | 0.0194 |
+| CBJ | 1.22 | 0.90 | 0.32 | 11011 | 0.3555 | 0.0032 |
+| UTA | 6.26 | 6.10 | 0.16 | 1539 | 0.0260 | 0.0017 |
+| DAL | 9.01 | 9.00 | 0.01 | 1011 | 0.0010 | 0.0001 |
