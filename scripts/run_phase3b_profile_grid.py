@@ -27,20 +27,30 @@ from superhuman.model_profile import DEFAULT_PROFILE_PATH, load_active_model_pro
 OUT_JSON = PROJECT_ROOT / "reports" / "phase3b_profile_grid.json"
 OUT_MD = PROJECT_ROOT / "reports" / "PHASE3B_PROFILE_GRID.md"
 BENCHMARK_LATEST = PROJECT_ROOT / "reports" / "benchmark_latest.json"
+DEFAULT_BENCHMARK_TIMEOUT_SECONDS = 900
+MIN_BENCHMARK_TIMEOUT_SECONDS = 60
+_raw_benchmark_timeout = int(os.getenv("PHASE3B_BENCHMARK_TIMEOUT_SECONDS", str(DEFAULT_BENCHMARK_TIMEOUT_SECONDS)))
+BENCHMARK_TIMEOUT_SECONDS = max(MIN_BENCHMARK_TIMEOUT_SECONDS, _raw_benchmark_timeout)
 
 
 def _run_benchmark() -> None:
     cmd = [sys.executable, str(PROJECT_ROOT / "scripts" / "update_benchmark_metrics.py")]
     env = os.environ.copy()
     env["PYTHONWARNINGS"] = "ignore"
-    subprocess.run(
-        cmd,
-        cwd=PROJECT_ROOT,
-        check=True,
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-        env=env,
-    )
+    try:
+        subprocess.run(
+            cmd,
+            cwd=PROJECT_ROOT,
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            env=env,
+            timeout=BENCHMARK_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError(
+            f"Benchmark refresh timed out after {BENCHMARK_TIMEOUT_SECONDS}s: {' '.join(cmd)}"
+        ) from exc
 
 
 def _load_current_metrics() -> Dict[str, Any]:

@@ -4,6 +4,7 @@ Phase 5: rebuild + calibration diagnostics + verification gates.
 """
 
 import json
+import os
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
@@ -23,20 +24,41 @@ from superhuman.model_profile import load_active_model_profile
 
 OUT_JSON = PROJECT_ROOT / "reports" / "phase5_rebuild_calibration.json"
 OUT_MD = PROJECT_ROOT / "reports" / "PHASE5_REBUILD_CALIBRATION.md"
+DEFAULT_GATE_TIMEOUT_SECONDS = 1200
+MIN_GATE_TIMEOUT_SECONDS = 60
+_raw_gate_timeout = int(os.getenv("PHASE5_GATE_TIMEOUT_SECONDS", str(DEFAULT_GATE_TIMEOUT_SECONDS)))
+GATE_TIMEOUT_SECONDS = max(MIN_GATE_TIMEOUT_SECONDS, _raw_gate_timeout)
 
 
 def _run(cmd: list[str]) -> Dict:
-    proc = subprocess.run(
-        cmd,
-        cwd=str(PROJECT_ROOT),
-        capture_output=True,
-        text=True,
-    )
+    started = datetime.now(timezone.utc)
+    try:
+        proc = subprocess.run(
+            cmd,
+            cwd=str(PROJECT_ROOT),
+            capture_output=True,
+            text=True,
+            timeout=GATE_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        stdout = exc.stdout.decode("utf-8", errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
+        return {
+            "cmd": " ".join(cmd),
+            "returncode": 124,
+            "stdout": stdout.strip(),
+            "stderr": f"Timed out after {GATE_TIMEOUT_SECONDS}s",
+            "timedOut": True,
+            "timeoutSeconds": GATE_TIMEOUT_SECONDS,
+            "durationSeconds": round((datetime.now(timezone.utc) - started).total_seconds(), 2),
+        }
     return {
         "cmd": " ".join(cmd),
         "returncode": proc.returncode,
         "stdout": proc.stdout.strip(),
         "stderr": proc.stderr.strip(),
+        "timedOut": False,
+        "timeoutSeconds": GATE_TIMEOUT_SECONDS,
+        "durationSeconds": round((datetime.now(timezone.utc) - started).total_seconds(), 2),
     }
 
 

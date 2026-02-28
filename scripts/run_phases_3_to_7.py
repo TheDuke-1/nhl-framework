@@ -3,11 +3,16 @@
 Execute phases 3-7 in sequence with fail-fast behavior.
 """
 
+import os
 import subprocess
 from pathlib import Path
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DEFAULT_PHASE_TIMEOUT_SECONDS = 1200
+MIN_PHASE_TIMEOUT_SECONDS = 60
+_raw_phase_timeout = int(os.getenv("PHASE3_7_STEP_TIMEOUT_SECONDS", str(DEFAULT_PHASE_TIMEOUT_SECONDS)))
+PHASE_TIMEOUT_SECONDS = max(MIN_PHASE_TIMEOUT_SECONDS, _raw_phase_timeout)
 
 
 def main() -> int:
@@ -23,7 +28,15 @@ def main() -> int:
     ]
 
     for cmd in commands:
-        proc = subprocess.run(cmd, cwd=str(PROJECT_ROOT))
+        try:
+            proc = subprocess.run(
+                cmd,
+                cwd=str(PROJECT_ROOT),
+                timeout=PHASE_TIMEOUT_SECONDS,
+            )
+        except subprocess.TimeoutExpired:
+            print(f"Command timed out after {PHASE_TIMEOUT_SECONDS}s: {' '.join(cmd)}", flush=True)
+            return 124
         if proc.returncode != 0:
             return proc.returncode
     return 0

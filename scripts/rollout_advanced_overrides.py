@@ -8,6 +8,7 @@ regress beyond tolerance.
 """
 
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -23,6 +24,10 @@ REPORT_MD = PROJECT_ROOT / "reports" / "ADVANCED_ROLLOUT_REPORT.md"
 ADVANCED_DIR = PROJECT_ROOT / "data" / "historical" / "verified" / "advanced"
 STAGING_DIR = PROJECT_ROOT / "data" / "historical" / "verified" / "advanced_staging"
 BENCHMARK_LATEST = PROJECT_ROOT / "reports" / "benchmark_latest.json"
+DEFAULT_UPDATE_TIMEOUT_SECONDS = 900
+MIN_UPDATE_TIMEOUT_SECONDS = 60
+_raw_update_timeout = int(os.getenv("ADVANCED_ROLLOUT_UPDATE_TIMEOUT_SECONDS", str(DEFAULT_UPDATE_TIMEOUT_SECONDS)))
+UPDATE_TIMEOUT_SECONDS = max(MIN_UPDATE_TIMEOUT_SECONDS, _raw_update_timeout)
 
 
 TOL = {
@@ -45,7 +50,19 @@ class Snapshot:
 
 def _run_update() -> None:
     cmd = [sys.executable, str(PROJECT_ROOT / "scripts" / "update_benchmark_metrics.py")]
-    subprocess.run(cmd, cwd=PROJECT_ROOT, check=True, capture_output=True, text=True)
+    try:
+        subprocess.run(
+            cmd,
+            cwd=PROJECT_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=UPDATE_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError(
+            f"Benchmark refresh timed out after {UPDATE_TIMEOUT_SECONDS}s: {' '.join(cmd)}"
+        ) from exc
 
 
 def _load_snapshot() -> Snapshot:
