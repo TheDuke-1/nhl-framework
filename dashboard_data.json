@@ -1,15 +1,15 @@
 {
   "meta": {
-    "generated": "2026-02-27T22:33:43.394340",
+    "generated": "2026-02-28T11:21:10.777443",
     "season": 2026,
     "seasonDisplay": "2025-26",
     "modelVersion": "2.1 - Full Bracket Model",
-    "lastUpdate": "February 27, 2026 at 10:33 PM",
+    "lastUpdate": "February 28, 2026 at 11:21 AM",
     "sourceFreshness": {
-      "nhl": "2026-02-26T02:38:22.518846Z",
-      "moneypuck": "2026-02-25T13:10:39.787202Z",
-      "nst": "2026-02-26T02:38:23.478701Z",
-      "odds": "2026-02-26T02:38:23.777379Z"
+      "nhl": "2026-02-28T11:14:14.793244Z",
+      "moneypuck": "2026-02-28T11:14:15.534487Z",
+      "nst": "2026-02-28T11:14:16.463456Z",
+      "odds": "2026-02-28T11:14:16.782405Z"
     },
     "benchmarkTimestamp": "2026-02-26T03:41:59.844919+00:00",
     "releaseStatus": "PASS",
@@ -22,84 +22,6 @@
   "teams": [
     {
       "rank": 1,
-      "code": "DAL",
-      "name": "Dallas Stars",
-      "city": "Dallas",
-      "conference": "West",
-      "division": "Central",
-      "tier": "Elite",
-      "tierColor": "#10b981",
-      "tierBg": "rgba(16, 185, 129, 0.15)",
-      "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 54.5,
-      "strengthRank": 4,
-      "playoffProbability": 100.0,
-      "conferenceProbability": 29.11,
-      "cupFinalProbability": 15.04,
-      "cupProbability": 9.0,
-      "cupProbLower": 8.55,
-      "cupProbUpper": 9.49,
-      "injuries": [
-        {
-          "player": "Lian Bichsel",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-Body",
-          "note": "The Stars reported on Wednesday (Feb. 4) that Bichsel is close to returning but will be held out until after the Olympic break, per Brien Rea of Victory+.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Tyler Seguin",
-          "position": "",
-          "status": "Out",
-          "injury": "ACL",
-          "note": "The Stars said on Friday (Dec. 19) that Seguin will have his return timetable evaluated after the Olympic break after undergoing successful ACL surgery.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 1.8
-    },
-    {
-      "rank": 2,
-      "code": "CAR",
-      "name": "Carolina Hurricanes",
-      "city": "Raleigh",
-      "conference": "East",
-      "division": "Metropolitan",
-      "tier": "Elite",
-      "tierColor": "#10b981",
-      "tierBg": "rgba(16, 185, 129, 0.15)",
-      "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 54.9,
-      "strengthRank": 3,
-      "playoffProbability": 100.0,
-      "conferenceProbability": 31.36,
-      "cupFinalProbability": 15.89,
-      "cupProbability": 8.15,
-      "cupProbLower": 7.71,
-      "cupProbUpper": 8.61,
-      "injuries": [
-        {
-          "player": "Pyotr Kochetkov",
-          "position": "",
-          "status": "IR",
-          "injury": "Undisclosed",
-          "note": "The Carolina Hurricanes placed G Pyotr Kochetkov on injured reserve on Monday (Dec. 29) and is expected to miss the rest of the campaign, Walt Ruff of the Hurricanes' official site.",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Eric Robinson",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper-Body",
-          "note": "The Hurricanes said on Wednesday (Jan. 21) that Robinson will be out for an extended period of time.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 2.1
-    },
-    {
-      "rank": 3,
       "code": "COL",
       "name": "Colorado Avalanche",
       "city": "Denver",
@@ -109,14 +31,14 @@
       "tierColor": "#10b981",
       "tierBg": "rgba(16, 185, 129, 0.15)",
       "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 59.1,
+      "compositeStrength": 58.8,
       "strengthRank": 1,
       "playoffProbability": 100.0,
-      "conferenceProbability": 31.52,
-      "cupFinalProbability": 16.17,
-      "cupProbability": 7.96,
-      "cupProbLower": 7.53,
-      "cupProbUpper": 8.42,
+      "conferenceProbability": 31.75,
+      "cupFinalProbability": 16.86,
+      "cupProbability": 8.33,
+      "cupProbLower": 7.89,
+      "cupProbUpper": 8.8,
       "injuries": [
         {
           "player": "Logan O'Connor",
@@ -130,7 +52,38 @@
       "totalWarLost": 0.9
     },
     {
-      "rank": 4,
+      "rank": 2,
+      "code": "CAR",
+      "name": "Carolina Hurricanes",
+      "city": "Raleigh",
+      "conference": "East",
+      "division": "Metropolitan",
+      "tier": "Elite",
+      "tierColor": "#10b981",
+      "tierBg": "rgba(16, 185, 129, 0.15)",
+      "tierIcon": "\ud83c\udfc6",
+      "compositeStrength": 55.0,
+      "strengthRank": 3,
+      "playoffProbability": 100.0,
+      "conferenceProbability": 31.82,
+      "cupFinalProbability": 16.07,
+      "cupProbability": 8.07,
+      "cupProbLower": 7.64,
+      "cupProbUpper": 8.53,
+      "injuries": [
+        {
+          "player": "Pyotr Kochetkov",
+          "position": "",
+          "status": "IR",
+          "injury": "Undisclosed",
+          "note": "The Carolina Hurricanes placed G Pyotr Kochetkov on injured reserve on Monday (Dec. 29) and is expected to miss the rest of the campaign, Walt Ruff of the Hurricanes' official site.",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 1.2
+    },
+    {
+      "rank": 3,
       "code": "TB",
       "name": "Tampa Bay Lightning",
       "city": "Tampa",
@@ -140,57 +93,96 @@
       "tierColor": "#10b981",
       "tierBg": "rgba(16, 185, 129, 0.15)",
       "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 57.6,
+      "compositeStrength": 57.5,
       "strengthRank": 2,
       "playoffProbability": 100.0,
-      "conferenceProbability": 32.6,
-      "cupFinalProbability": 16.21,
-      "cupProbability": 7.7,
-      "cupProbLower": 7.27,
-      "cupProbUpper": 8.15,
+      "conferenceProbability": 31.35,
+      "cupFinalProbability": 16.12,
+      "cupProbability": 7.64,
+      "cupProbLower": 7.22,
+      "cupProbUpper": 8.09,
       "injuries": [
         {
           "player": "Anthony Cirelli",
           "position": "",
           "status": "Out",
-          "injury": "Upper Body",
-          "note": "The Lightning said on Wednesday (Feb. 4) that Cirelli will be re-evaluated after the Olympic break.",
+          "injury": "Undisclosed",
+          "note": "The Lightning said that Cirelli is OUT for Thursday's (Feb. 26) game versus the Hurricanes.",
           "estimatedWar": 0.9
         },
         {
-          "player": "Charle-Edouard D'Astous",
+          "player": "Max Crozier",
           "position": "",
           "status": "IR",
-          "injury": "Lower-body",
-          "note": "The Tampa Bay Lightning placed D Charle-Edouard D'Astous on injured reserve on Sunday (Jan. 25).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Emil Lilleberg",
-          "position": "",
-          "status": "IR",
-          "injury": "Undisclosed",
-          "note": "The Tampa Bay Lightning placed D Emil Lilleberg on injured reserve on Monday (Dec. 15) and is week-to-week.",
+          "injury": "Abdomen",
+          "note": "The Tampa Bay Lightning placed D Max Crozier on injured reserve on Saturday (Feb. 21).",
           "estimatedWar": 1.2
         },
         {
           "player": "Nick Paul",
           "position": "",
-          "status": "Out",
+          "status": "IR",
           "injury": "Undisclosed",
-          "note": "The Lightning said on Wednesday (Feb. 4) that Paul will be re-evaluated after the Olympic break.",
+          "note": "The Tampa Bay Lightning placed F Nick Paul on injured reserve on Wednesday (Feb. 25).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 3.3
+    },
+    {
+      "rank": 4,
+      "code": "DAL",
+      "name": "Dallas Stars",
+      "city": "Dallas",
+      "conference": "West",
+      "division": "Central",
+      "tier": "Elite",
+      "tierColor": "#10b981",
+      "tierBg": "rgba(16, 185, 129, 0.15)",
+      "tierIcon": "\ud83c\udfc6",
+      "compositeStrength": 54.8,
+      "strengthRank": 4,
+      "playoffProbability": 100.0,
+      "conferenceProbability": 28.41,
+      "cupFinalProbability": 14.59,
+      "cupProbability": 7.53,
+      "cupProbLower": 7.11,
+      "cupProbUpper": 7.98,
+      "injuries": [
+        {
+          "player": "Radek Faksa",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper-body",
+          "note": "The Stars placed F Radek Faksa on injured reserve on Tuesday (Feb. 24).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Roope Hintz",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Hintz did not play in Wednesday's (Feb. 25) game against the Kraken.",
           "estimatedWar": 0.9
         },
         {
-          "player": "Brayden Point",
+          "player": "Mikko Rantanen",
           "position": "",
-          "status": "LTIR",
-          "injury": "Lower Body",
-          "note": "The Tampa Bay Lightning transferred F Brayden Point to long-term injured reserve on Tuesday (Feb. 3).",
-          "estimatedWar": 1.5
+          "status": "Out",
+          "injury": "Lower-body",
+          "note": "The Dallas Stars said on Tuesday (Feb. 24) that Rantanen will be out for a minimum of two weeks, according to Stars radio analyst Bruce LeVine.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Tyler Seguin",
+          "position": "",
+          "status": "Out",
+          "injury": "ACL",
+          "note": "The Stars said on Friday (Dec. 19) that Seguin will have his return timetable evaluated after the Olympic break after undergoing successful ACL surgery.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 5.7
+      "totalWarLost": 3.9
     },
     {
       "rank": 5,
@@ -203,45 +195,29 @@
       "tierColor": "#3b82f6",
       "tierBg": "rgba(59, 130, 246, 0.15)",
       "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 54.1,
+      "compositeStrength": 54.5,
       "strengthRank": 5,
-      "playoffProbability": 99.4,
-      "conferenceProbability": 28.09,
-      "cupFinalProbability": 14.06,
-      "cupProbability": 6.8,
-      "cupProbLower": 6.4,
-      "cupProbUpper": 7.23,
+      "playoffProbability": 99.8,
+      "conferenceProbability": 29.32,
+      "cupFinalProbability": 14.94,
+      "cupProbability": 7.32,
+      "cupProbLower": 6.9,
+      "cupProbUpper": 7.76,
       "injuries": [
         {
-          "player": "Noel Acciari",
+          "player": "Sidney Crosby",
           "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Acciari did not play in Thursday's (Feb. 5) matchup against the Sabres.",
-          "estimatedWar": 0.9
+          "status": "IR",
+          "injury": "Leg",
+          "note": "The Pittsburgh Penguins placed F Sidney Crosby on injured reserve and will be out of action for at least four weeks.",
+          "estimatedWar": 1.2
         },
         {
           "player": "Filip Hallander",
           "position": "",
-          "status": "IR",
-          "injury": "Leg",
-          "note": "The Pittsburgh Penguins placed F Filip Hallander on Injured Reserve on Saturday (Nov. 8).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Kris Letang",
-          "position": "",
-          "status": "IR",
-          "injury": "Foot",
-          "note": "The Pittsburgh Penguins placed D Kris Letang on injured reserve on Saturday (Jan. 31).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Blake Lizotte",
-          "position": "",
           "status": "Out",
-          "injury": "Personal",
-          "note": "Lizotte did not play in Thursday's (Feb. 5) game versus the Sabres.",
+          "injury": "Leg",
+          "note": "The Pittsburgh Penguins sent F Filip Hallander to the minors on a conditioning loan on Wednesday (Feb. 18).",
           "estimatedWar": 0.9
         },
         {
@@ -253,32 +229,10 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 5.4
+      "totalWarLost": 3.3
     },
     {
       "rank": 6,
-      "code": "VGK",
-      "name": "Vegas Golden Knights",
-      "city": "Las Vegas",
-      "conference": "West",
-      "division": "Pacific",
-      "tier": "Contender",
-      "tierColor": "#3b82f6",
-      "tierBg": "rgba(59, 130, 246, 0.15)",
-      "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 52.5,
-      "strengthRank": 10,
-      "playoffProbability": 100.0,
-      "conferenceProbability": 24.76,
-      "cupFinalProbability": 12.11,
-      "cupProbability": 6.55,
-      "cupProbLower": 6.16,
-      "cupProbUpper": 6.97,
-      "injuries": [],
-      "totalWarLost": 0.0
-    },
-    {
-      "rank": 7,
       "code": "UTA",
       "name": "Utah Hockey Club",
       "city": "Salt Lake City",
@@ -290,70 +244,108 @@
       "tierIcon": "\ud83c\udfaf",
       "compositeStrength": 53.4,
       "strengthRank": 7,
-      "playoffProbability": 92.1,
-      "conferenceProbability": 26.83,
-      "cupFinalProbability": 13.18,
-      "cupProbability": 6.48,
-      "cupProbLower": 6.08,
-      "cupProbUpper": 6.89,
+      "playoffProbability": 95.5,
+      "conferenceProbability": 29.02,
+      "cupFinalProbability": 14.35,
+      "cupProbability": 7.22,
+      "cupProbLower": 6.8,
+      "cupProbUpper": 7.65,
       "injuries": [
         {
-          "player": "Logan Cooley",
-          "position": "",
-          "status": "IR",
-          "injury": "Lower Body",
-          "note": "The Utah Mammoth said on Monday (Feb. 2) that Cooley remains on injured reserve and likely won't be back in the lineup until after the 2026 Winter Olympics.",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Alexander Kerfoot",
+          "player": "Michael Carcone",
           "position": "",
           "status": "Out",
-          "injury": "Upper Body",
-          "note": "The Utah Mammoth said on Monday (Feb. 2) that Kerfoot was seen participating in drills and even joined the team's defensemen during line skates but has no official timeline to return.",
+          "injury": "Illness",
+          "note": "Carcone did not play in Wednesday's (Feb. 25) versus the Avalanche.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.1
+      "totalWarLost": 0.9
     },
     {
-      "rank": 8,
-      "code": "MTL",
-      "name": "Montreal Canadiens",
-      "city": "Montreal",
+      "rank": 7,
+      "code": "BUF",
+      "name": "Buffalo Sabres",
+      "city": "Buffalo",
       "conference": "East",
       "division": "Atlantic",
       "tier": "Contender",
       "tierColor": "#3b82f6",
       "tierBg": "rgba(59, 130, 246, 0.15)",
       "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 51.8,
-      "strengthRank": 12,
-      "playoffProbability": 99.9,
-      "conferenceProbability": 22.9,
-      "cupFinalProbability": 11.61,
-      "cupProbability": 6.23,
-      "cupProbLower": 5.84,
-      "cupProbUpper": 6.64,
+      "compositeStrength": 53.0,
+      "strengthRank": 8,
+      "playoffProbability": 99.7,
+      "conferenceProbability": 25.45,
+      "cupFinalProbability": 12.63,
+      "cupProbability": 6.36,
+      "cupProbLower": 5.97,
+      "cupProbUpper": 6.78,
       "injuries": [
         {
-          "player": "Patrik Laine",
+          "player": "Zach Benson",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper Body",
+          "note": "The Buffalo Sabres placed F Zach Benson on injured reserve on Wednesday (Feb. 25).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Justin Danforth",
+          "position": "",
+          "status": "DTD",
+          "injury": "Lower Body",
+          "note": "The Buffalo Sabres said on Wednesday (Feb. 18) that Danforth is now skating but not in day-to-day status.",
+          "estimatedWar": 0.4
+        },
+        {
+          "player": "Jordan Greenway",
+          "position": "",
+          "status": "IR",
+          "injury": "Abdomen",
+          "note": "The Buffalo Sabres placed F Jordan Greenway on injured reserve on Wednesday (Feb. 25).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Jiri Kulich",
           "position": "",
           "status": "Out",
-          "injury": "Abdomen",
-          "note": "The Montreal Canadiens said on Saturday (Jan 10) that Laine could return to the lineup as early as late January.",
+          "injury": "Ear",
+          "note": "The Sabres said on Monday (Nov. 10) that Kulich is slated to miss significant time due to a blood clot issue.",
           "estimatedWar": 0.9
         },
         {
-          "player": "Alex Newhook",
+          "player": "Conor Timmins",
           "position": "",
-          "status": "IR",
-          "injury": "Ankle",
-          "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
-          "estimatedWar": 1.2
+          "status": "DTD",
+          "injury": "Leg",
+          "note": "The Buffalo Sabres said on Wednesday (Feb. 18) that Timmins is now skating but not in day-to-day status.",
+          "estimatedWar": 0.4
         }
       ],
-      "totalWarLost": 2.1
+      "totalWarLost": 4.2
+    },
+    {
+      "rank": 8,
+      "code": "VGK",
+      "name": "Vegas Golden Knights",
+      "city": "Las Vegas",
+      "conference": "West",
+      "division": "Pacific",
+      "tier": "Contender",
+      "tierColor": "#3b82f6",
+      "tierBg": "rgba(59, 130, 246, 0.15)",
+      "tierIcon": "\ud83c\udfaf",
+      "compositeStrength": 52.6,
+      "strengthRank": 10,
+      "playoffProbability": 100.0,
+      "conferenceProbability": 25.77,
+      "cupFinalProbability": 12.45,
+      "cupProbability": 6.22,
+      "cupProbLower": 5.84,
+      "cupProbUpper": 6.64,
+      "injuries": [],
+      "totalWarLost": 0.0
     },
     {
       "rank": 9,
@@ -369,11 +361,11 @@
       "compositeStrength": 53.6,
       "strengthRank": 6,
       "playoffProbability": 100.0,
-      "conferenceProbability": 20.56,
-      "cupFinalProbability": 10.75,
-      "cupProbability": 6.22,
-      "cupProbLower": 5.84,
-      "cupProbUpper": 6.63,
+      "conferenceProbability": 20.85,
+      "cupFinalProbability": 10.82,
+      "cupProbability": 5.86,
+      "cupProbLower": 5.49,
+      "cupProbUpper": 6.26,
       "injuries": [
         {
           "player": "Jonas Brodin",
@@ -382,115 +374,65 @@
           "injury": "Lower Body",
           "note": "HC John Hynes said on Monday (Jan. 26) that Brodin is expected to miss approximately 6-8 weeks, as per Joe Smith of The Athletic.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "Marcus Foligno",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Foligno did not play in Wednesday's (Feb. 4) game versus the Predators.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Jesper Wallstedt",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Wallstedt isn't available for Team Sweden's game against Italy on Wednesday (Feb. 11) at the 2026 Winter Olympics, per Elliotte Friedman of Sportsnet.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7
+      "totalWarLost": 0.9
     },
     {
       "rank": 10,
-      "code": "BUF",
-      "name": "Buffalo Sabres",
-      "city": "Buffalo",
+      "code": "DET",
+      "name": "Detroit Red Wings",
+      "city": "Detroit",
       "conference": "East",
       "division": "Atlantic",
-      "tier": "Contender",
-      "tierColor": "#3b82f6",
-      "tierBg": "rgba(59, 130, 246, 0.15)",
-      "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 52.7,
-      "strengthRank": 9,
-      "playoffProbability": 97.0,
-      "conferenceProbability": 24.28,
-      "cupFinalProbability": 12.61,
-      "cupProbability": 6.09,
-      "cupProbLower": 5.71,
-      "cupProbUpper": 6.49,
-      "injuries": [
-        {
-          "player": "Zach Benson",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Benson did not play in Thursday's (Feb. 5) road matchup against the Penguins.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Justin Danforth",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "The Buffalo Sabres said on Monday (Jan. 26) that Danforth is trending toward a post-Olympic return to action, per Bill Hoppe of the Olean Times Herald.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Josh Dunne",
-          "position": "",
-          "status": "IR",
-          "injury": "Middle-body",
-          "note": "The Buffalo Sabres placed F Josh Dunne on injured reserve on Thursday (Jan. 15)",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Jordan Greenway",
-          "position": "",
-          "status": "Out",
-          "injury": "Abdomen",
-          "note": "Greenway did not play in Thursday's (Feb. 5) game versus the Penguins.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Jiri Kulich",
-          "position": "",
-          "status": "Out",
-          "injury": "Ear",
-          "note": "The Sabres said on Monday (Nov. 10) that Kulich is slated to miss significant time due to a blood clot issue.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Ukko-Pekka Luukkonen",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "The Buffalo Sabres said on Tuesday (Feb. 3) that Luukkonen will not be joining Finland for the 2026 Winter Olympics.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Josh Norris",
-          "position": "",
-          "status": "DTD",
-          "injury": "Ribs",
-          "note": "The Sabres said on Monday (Feb. 2) that Norris was upgraded to day-to-day last week, but he hasn't yet received the green light to return to game action.",
-          "estimatedWar": 0.4
-        },
-        {
-          "player": "Conor Timmins",
-          "position": "",
-          "status": "IR",
-          "injury": "Leg",
-          "note": "The Buffalo Sabres placed D Conor Timmins on Injured Reserve on Saturday (Dec. 20).",
-          "estimatedWar": 1.2
-        }
-      ],
-      "totalWarLost": 7.3
+      "tier": "Bubble",
+      "tierColor": "#f59e0b",
+      "tierBg": "rgba(245, 158, 11, 0.15)",
+      "tierIcon": "\u26a1",
+      "compositeStrength": 50.8,
+      "strengthRank": 17,
+      "playoffProbability": 99.8,
+      "conferenceProbability": 19.92,
+      "cupFinalProbability": 9.79,
+      "cupProbability": 5.83,
+      "cupProbLower": 5.46,
+      "cupProbUpper": 6.23,
+      "injuries": [],
+      "totalWarLost": 0.0
     },
     {
       "rank": 11,
+      "code": "MTL",
+      "name": "Montreal Canadiens",
+      "city": "Montreal",
+      "conference": "East",
+      "division": "Atlantic",
+      "tier": "Bubble",
+      "tierColor": "#f59e0b",
+      "tierBg": "rgba(245, 158, 11, 0.15)",
+      "tierIcon": "\u26a1",
+      "compositeStrength": 51.8,
+      "strengthRank": 13,
+      "playoffProbability": 99.8,
+      "conferenceProbability": 21.26,
+      "cupFinalProbability": 10.6,
+      "cupProbability": 5.61,
+      "cupProbLower": 5.24,
+      "cupProbUpper": 6.0,
+      "injuries": [
+        {
+          "player": "Patrik Laine",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "The Canadiens said that Laine will not participate Tuesday's (Feb. 17) practice and is being evaluated on a daily basis.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 0.9
+    },
+    {
+      "rank": 12,
       "code": "BOS",
       "name": "Boston Bruins",
       "city": "Boston",
@@ -500,28 +442,36 @@
       "tierColor": "#3b82f6",
       "tierBg": "rgba(59, 130, 246, 0.15)",
       "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 52.1,
-      "strengthRank": 11,
-      "playoffProbability": 92.0,
-      "conferenceProbability": 20.22,
-      "cupFinalProbability": 10.3,
-      "cupProbability": 5.5,
-      "cupProbLower": 5.14,
-      "cupProbUpper": 5.89,
+      "compositeStrength": 52.3,
+      "strengthRank": 12,
+      "playoffProbability": 97.2,
+      "conferenceProbability": 20.88,
+      "cupFinalProbability": 10.17,
+      "cupProbability": 5.28,
+      "cupProbLower": 4.93,
+      "cupProbUpper": 5.67,
       "injuries": [
         {
-          "player": "Pavel Zacha",
+          "player": "Charlie McAvoy",
           "position": "",
           "status": "Out",
-          "injury": "Upper Body",
-          "note": "The Bruins said on Saturday (Feb. 7) that Zacha has been ruled out of the Olympic Games for Czechia, per Chris Johnston of The Athletic.",
+          "injury": "Not Injury Related",
+          "note": "McAvoy will be a game-time decision versus Columbus on Thursday (Feb. 26), according to Scott McLaughlin of WEEI.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Jeremy Swayman",
+          "position": "",
+          "status": "Out",
+          "injury": "Not Injury Related",
+          "note": "Swayman is OUT for Thursday's (Feb. 26) game against the Blue Jackets, according to Scott McLaughlin of WEEI.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.9
+      "totalWarLost": 1.8
     },
     {
-      "rank": 12,
+      "rank": 13,
       "code": "ANA",
       "name": "Anaheim Ducks",
       "city": "Anaheim",
@@ -531,30 +481,30 @@
       "tierColor": "#f59e0b",
       "tierBg": "rgba(245, 158, 11, 0.15)",
       "tierIcon": "\u26a1",
-      "compositeStrength": 50.0,
-      "strengthRank": 19,
-      "playoffProbability": 91.1,
-      "conferenceProbability": 21.48,
-      "cupFinalProbability": 10.64,
-      "cupProbability": 5.38,
-      "cupProbLower": 5.02,
-      "cupProbUpper": 5.77,
+      "compositeStrength": 50.2,
+      "strengthRank": 18,
+      "playoffProbability": 99.7,
+      "conferenceProbability": 20.82,
+      "cupFinalProbability": 9.84,
+      "cupProbability": 5.28,
+      "cupProbLower": 4.92,
+      "cupProbUpper": 5.66,
       "injuries": [
         {
-          "player": "Leo Carlsson",
+          "player": "Mikael Granlund",
           "position": "",
-          "status": "IR",
-          "injury": "Thigh",
-          "note": "The Anaheim Ducks placed F Leo Carlsson on injured reserve on Sunday (Feb. 1).",
-          "estimatedWar": 1.2
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "Granlund did not play in Wednesday's (Feb. 25) game versus the Oilers.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Petr Mrazek",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Lower-Body",
-          "note": "The Anaheim Ducks placed G Petr Mrazek on injured reserve on Wednesday (Jan. 7).",
-          "estimatedWar": 1.2
+          "note": "The Anaheim Ducks announced G Petr Mrazek underwent hip surgery on Tuesday (Feb. 17) and will be out for the remainder of the season.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Frank Vatrano",
@@ -565,127 +515,41 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.6
-    },
-    {
-      "rank": 13,
-      "code": "DET",
-      "name": "Detroit Red Wings",
-      "city": "Detroit",
-      "conference": "East",
-      "division": "Atlantic",
-      "tier": "Bubble",
-      "tierColor": "#f59e0b",
-      "tierBg": "rgba(245, 158, 11, 0.15)",
-      "tierIcon": "\u26a1",
-      "compositeStrength": 50.7,
-      "strengthRank": 17,
-      "playoffProbability": 98.9,
-      "conferenceProbability": 18.1,
-      "cupFinalProbability": 8.47,
-      "cupProbability": 5.31,
-      "cupProbLower": 4.96,
-      "cupProbUpper": 5.7,
-      "injuries": [
-        {
-          "player": "Simon Edvinsson",
-          "position": "",
-          "status": "IR",
-          "injury": "Lower-body",
-          "note": "The Detroit Red Wings placed D Simon Edvinsson on injured reserve on Thursday (Jan. 29).",
-          "estimatedWar": 1.2
-        }
-      ],
-      "totalWarLost": 1.2
+      "totalWarLost": 3.0
     },
     {
       "rank": 14,
-      "code": "SEA",
-      "name": "Seattle Kraken",
-      "city": "Seattle",
-      "conference": "West",
-      "division": "Pacific",
-      "tier": "Longshot",
-      "tierColor": "#ef4444",
-      "tierBg": "rgba(239, 68, 68, 0.15)",
-      "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 49.4,
-      "strengthRank": 22,
-      "playoffProbability": 91.4,
-      "conferenceProbability": 17.5,
-      "cupFinalProbability": 8.6,
-      "cupProbability": 5.19,
-      "cupProbLower": 4.84,
-      "cupProbUpper": 5.57,
-      "injuries": [
-        {
-          "player": "Berkly Catton",
-          "position": "",
-          "status": "IR",
-          "injury": "Upper Body",
-          "note": "The Seattle Kraken placed F Berkly Catton on injured reserve on Wednesday (Feb. 4).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Ben Meyers",
-          "position": "",
-          "status": "IR",
-          "injury": "Lower-body",
-          "note": "The Seattle Kraken placed F Ben Meyers on injured reserve on Thursday (Jan. 22).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Matt Murray",
-          "position": "",
-          "status": "IR",
-          "injury": "Lower Body",
-          "note": "The Kraken said on Tuesday (Nov. 18) that Murray is expected to be out of action for about six weeks, the team announced Tuesday (Nov. 18). He has been placed on injured reserve, per the NHL media site.",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Jaden Schwartz",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-body",
-          "note": "Schwartz did not play Wednesday's (Feb. 4) game against the Kings due to a lower-body injury.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 4.5
-    },
-    {
-      "rank": 15,
       "code": "EDM",
       "name": "Edmonton Oilers",
       "city": "Edmonton",
       "conference": "West",
       "division": "Pacific",
-      "tier": "Bubble",
-      "tierColor": "#f59e0b",
-      "tierBg": "rgba(245, 158, 11, 0.15)",
-      "tierIcon": "\u26a1",
-      "compositeStrength": 51.8,
-      "strengthRank": 14,
-      "playoffProbability": 75.9,
-      "conferenceProbability": 17.98,
-      "cupFinalProbability": 8.44,
-      "cupProbability": 2.7,
-      "cupProbLower": 2.45,
-      "cupProbUpper": 2.99,
+      "tier": "Contender",
+      "tierColor": "#3b82f6",
+      "tierBg": "rgba(59, 130, 246, 0.15)",
+      "tierIcon": "\ud83c\udfaf",
+      "compositeStrength": 52.4,
+      "strengthRank": 11,
+      "playoffProbability": 87.2,
+      "conferenceProbability": 21.29,
+      "cupFinalProbability": 10.61,
+      "cupProbability": 5.09,
+      "cupProbLower": 4.74,
+      "cupProbUpper": 5.46,
       "injuries": [
         {
-          "player": "Adam Henrique",
+          "player": "Kasperi Kapanen",
           "position": "",
-          "status": "LTIR",
+          "status": "Out",
           "injury": "Undisclosed",
-          "note": "The Edmonton Oilers placed F Adam Henrique on long-term injured reserve on Tuesday (Jan. 13).",
-          "estimatedWar": 1.5
+          "note": "The Oilers said on Sunday (Feb. 22) that Kapanen is expected to miss the first two games out of the Olympic break, as per Oilers TV reporter Paige Martin.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.5
+      "totalWarLost": 0.9
     },
     {
-      "rank": 16,
+      "rank": 15,
       "code": "NYI",
       "name": "New York Islanders",
       "city": "Elmont",
@@ -695,14 +559,14 @@
       "tierColor": "#f59e0b",
       "tierBg": "rgba(245, 158, 11, 0.15)",
       "tierIcon": "\u26a1",
-      "compositeStrength": 50.8,
+      "compositeStrength": 50.9,
       "strengthRank": 16,
-      "playoffProbability": 78.3,
-      "conferenceProbability": 15.66,
-      "cupFinalProbability": 7.68,
-      "cupProbability": 2.5,
-      "cupProbLower": 2.26,
-      "cupProbUpper": 2.78,
+      "playoffProbability": 91.2,
+      "conferenceProbability": 17.63,
+      "cupFinalProbability": 8.55,
+      "cupProbability": 4.63,
+      "cupProbLower": 4.3,
+      "cupProbUpper": 4.99,
       "injuries": [
         {
           "player": "Pierre Engvall",
@@ -740,6 +604,45 @@
       "totalWarLost": 4.8
     },
     {
+      "rank": 16,
+      "code": "SEA",
+      "name": "Seattle Kraken",
+      "city": "Seattle",
+      "conference": "West",
+      "division": "Pacific",
+      "tier": "Longshot",
+      "tierColor": "#ef4444",
+      "tierBg": "rgba(239, 68, 68, 0.15)",
+      "tierIcon": "\ud83c\udfb2",
+      "compositeStrength": 48.8,
+      "strengthRank": 24,
+      "playoffProbability": 74.0,
+      "conferenceProbability": 13.97,
+      "cupFinalProbability": 6.73,
+      "cupProbability": 2.14,
+      "cupProbLower": 1.92,
+      "cupProbUpper": 2.4,
+      "injuries": [
+        {
+          "player": "Ryan Lindgren",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Lindgren did not return to Wednesday's (Feb. 25) game versus the Stars.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Matt Murray",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The Kraken said on Tuesday (Nov. 18) that Murray is expected to be out of action for about six weeks, the team announced Tuesday (Nov. 18). He has been placed on injured reserve, per the NHL media site.",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 2.1
+    },
+    {
       "rank": 17,
       "code": "CBJ",
       "name": "Columbus Blue Jackets",
@@ -750,23 +653,15 @@
       "tierColor": "#f59e0b",
       "tierBg": "rgba(245, 158, 11, 0.15)",
       "tierIcon": "\u26a1",
-      "compositeStrength": 51.4,
+      "compositeStrength": 51.3,
       "strengthRank": 15,
-      "playoffProbability": 56.6,
-      "conferenceProbability": 6.27,
-      "cupFinalProbability": 2.99,
-      "cupProbability": 1.22,
-      "cupProbLower": 1.06,
-      "cupProbUpper": 1.42,
+      "playoffProbability": 51.8,
+      "conferenceProbability": 1.64,
+      "cupFinalProbability": 0.76,
+      "cupProbability": 0.71,
+      "cupProbLower": 0.58,
+      "cupProbUpper": 0.86,
       "injuries": [
-        {
-          "player": "Kirill Marchenko",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Marchenko did not play in Wednesday (Feb. 4) versus the Blackhawks.",
-          "estimatedWar": 0.9
-        },
         {
           "player": "Brendan Smith",
           "position": "",
@@ -776,73 +671,80 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8
+      "totalWarLost": 0.9
     },
     {
       "rank": 18,
-      "code": "LA",
-      "name": "Los Angeles Kings",
-      "city": "Los Angeles",
+      "code": "WSH",
+      "name": "Washington Capitals",
+      "city": "Washington",
+      "conference": "East",
+      "division": "Metropolitan",
+      "tier": "Contender",
+      "tierColor": "#3b82f6",
+      "tierBg": "rgba(59, 130, 246, 0.15)",
+      "tierIcon": "\ud83c\udfaf",
+      "compositeStrength": 52.9,
+      "strengthRank": 9,
+      "playoffProbability": 92.9,
+      "conferenceProbability": 0.69,
+      "cupFinalProbability": 0.34,
+      "cupProbability": 0.34,
+      "cupProbLower": 0.26,
+      "cupProbUpper": 0.45,
+      "injuries": [
+        {
+          "player": "John Carlson",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "Carlson did not play in Wednesday's (Feb. 25) game versus the Flyers.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 0.9
+    },
+    {
+      "rank": 19,
+      "code": "NSH",
+      "name": "Nashville Predators",
+      "city": "Nashville",
       "conference": "West",
-      "division": "Pacific",
+      "division": "Central",
       "tier": "Longshot",
       "tierColor": "#ef4444",
       "tierBg": "rgba(239, 68, 68, 0.15)",
       "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 49.5,
-      "strengthRank": 21,
-      "playoffProbability": 31.2,
-      "conferenceProbability": 6.19,
-      "cupFinalProbability": 3.02,
-      "cupProbability": 0.57,
-      "cupProbLower": 0.46,
-      "cupProbUpper": 0.71,
+      "compositeStrength": 49.1,
+      "strengthRank": 22,
+      "playoffProbability": 23.2,
+      "conferenceProbability": 4.59,
+      "cupFinalProbability": 2.25,
+      "cupProbability": 0.3,
+      "cupProbLower": 0.22,
+      "cupProbUpper": 0.4,
       "injuries": [
         {
-          "player": "Mikey Anderson",
-          "position": "",
-          "status": "IR",
-          "injury": "Upper-Body",
-          "note": "The Los Angeles Kings placed D Mikey Anderson on injured reserve on Thursday (Feb. 5).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Kevin Fiala",
-          "position": "",
-          "status": "Out",
-          "injury": "Leg",
-          "note": "Fiala had surgery on Saturday (Feb. 14) and will be out for the remainder of the season, per Elliotte Friedman of Sportsnet.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Andrei Kuzmenko",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Kuzmenko did not return to Thursday's (Feb. 5) game versus the Golden Knights.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Artemi Panarin",
+          "player": "Erik Haula",
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "Panarin will link up with the Kings on Wednesday (Feb. 18) to prepare for the post-Olympics part of the schedule, per John Hoven of SiriusXM NHL Network Radio.",
+          "note": "The Predators said that Haula is a game-time call ahead of Thursday's (Feb. 26) home clash versus the Blackhawks, per Brooks Bratten of the team's official site.",
           "estimatedWar": 0.9
         },
         {
-          "player": "Alex Turcotte",
+          "player": "Juuse Saros",
           "position": "",
           "status": "Out",
-          "injury": "Upper-body",
-          "note": "Turcotte did not play in Thursday's (Feb. 5) game against the Golden Knights.",
+          "injury": "Not Injury Related",
+          "note": "The Predators said that Saros is a game-time call ahead of Thursday's (Feb. 26) home clash versus the Blackhawks, per Brooks Bratten of the team's official site.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.8
+      "totalWarLost": 1.8
     },
     {
-      "rank": 19,
+      "rank": 20,
       "code": "SJ",
       "name": "San Jose Sharks",
       "city": "San Jose",
@@ -852,14 +754,14 @@
       "tierColor": "#ef4444",
       "tierBg": "rgba(239, 68, 68, 0.15)",
       "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 48.2,
+      "compositeStrength": 48.0,
       "strengthRank": 27,
-      "playoffProbability": 14.4,
-      "conferenceProbability": 2.94,
-      "cupFinalProbability": 1.49,
-      "cupProbability": 0.19,
-      "cupProbLower": 0.13,
-      "cupProbUpper": 0.28,
+      "playoffProbability": 11.0,
+      "conferenceProbability": 1.91,
+      "cupFinalProbability": 0.83,
+      "cupProbability": 0.1,
+      "cupProbLower": 0.06,
+      "cupProbUpper": 0.17,
       "injuries": [
         {
           "player": "Ty Dellandrea",
@@ -870,142 +772,49 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Ryan Reaves",
+          "player": "Tyler Toffoli",
           "position": "",
-          "status": "IR",
-          "injury": "Upper Body",
-          "note": "The San Jose Sharks placed F Ryan Reaves on injured reserve on Tuesday (Feb. 3).",
-          "estimatedWar": 1.2
-        }
-      ],
-      "totalWarLost": 2.4
-    },
-    {
-      "rank": 20,
-      "code": "WSH",
-      "name": "Washington Capitals",
-      "city": "Washington",
-      "conference": "East",
-      "division": "Metropolitan",
-      "tier": "Contender",
-      "tierColor": "#3b82f6",
-      "tierBg": "rgba(59, 130, 246, 0.15)",
-      "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 52.8,
-      "strengthRank": 8,
-      "playoffProbability": 91.1,
-      "conferenceProbability": 0.19,
-      "cupFinalProbability": 0.07,
-      "cupProbability": 0.07,
-      "cupProbLower": 0.04,
-      "cupProbUpper": 0.13,
-      "injuries": [
-        {
-          "player": "John Carlson",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-body",
-          "note": "Carlson did not play in Thursday's (Jan. 5) game versus the Predators.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Charlie Lindgren",
-          "position": "",
-          "status": "IR",
+          "status": "DTD",
           "injury": "Lower Body",
-          "note": "The Washington Capitals placed G Charlie Lindgren on injured reserve on Saturday (Jan. 31).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Connor McMichael",
-          "position": "",
-          "status": "IR",
-          "injury": "Undisclosed",
-          "note": "The Washington Capitals placed F Connor McMichael on injured reserve on Saturday (Jan. 31) and is week-to-week.",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Sonny Milano",
-          "position": "",
-          "status": "Out",
-          "injury": "Personal",
-          "note": "Milano did not play in Thursday's (Feb. 5) game against Nashville due to personal reasons.",
-          "estimatedWar": 0.9
+          "note": "Toffoli sustained a lower-body injury and is day-to-day, per Sheng Peng of San Jose Hockey Now.",
+          "estimatedWar": 0.4
         }
       ],
-      "totalWarLost": 4.2
+      "totalWarLost": 1.7
     },
     {
       "rank": 21,
-      "code": "NSH",
-      "name": "Nashville Predators",
-      "city": "Nashville",
+      "code": "LA",
+      "name": "Los Angeles Kings",
+      "city": "Los Angeles",
       "conference": "West",
-      "division": "Central",
+      "division": "Pacific",
       "tier": "Longshot",
       "tierColor": "#ef4444",
       "tierBg": "rgba(239, 68, 68, 0.15)",
       "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 48.9,
+      "compositeStrength": 48.6,
       "strengthRank": 25,
-      "playoffProbability": 5.2,
-      "conferenceProbability": 1.13,
-      "cupFinalProbability": 0.56,
-      "cupProbability": 0.05,
-      "cupProbLower": 0.03,
-      "cupProbUpper": 0.11,
-      "injuries": [],
-      "totalWarLost": 0.0
+      "playoffProbability": 9.5,
+      "conferenceProbability": 1.62,
+      "cupFinalProbability": 0.67,
+      "cupProbability": 0.1,
+      "cupProbLower": 0.06,
+      "cupProbUpper": 0.17,
+      "injuries": [
+        {
+          "player": "Kevin Fiala",
+          "position": "",
+          "status": "IR",
+          "injury": "Leg",
+          "note": "The Los Angeles Kings placed F Kevin Fiala on injured reserve on Wednesday (Feb. 18).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 1.2
     },
     {
       "rank": 22,
-      "code": "TOR",
-      "name": "Toronto Maple Leafs",
-      "city": "Toronto",
-      "conference": "East",
-      "division": "Atlantic",
-      "tier": "Bubble",
-      "tierColor": "#f59e0b",
-      "tierBg": "rgba(245, 158, 11, 0.15)",
-      "tierIcon": "\u26a1",
-      "compositeStrength": 50.0,
-      "strengthRank": 18,
-      "playoffProbability": 22.9,
-      "conferenceProbability": 0.15,
-      "cupFinalProbability": 0.04,
-      "cupProbability": 0.04,
-      "cupProbLower": 0.02,
-      "cupProbUpper": 0.09,
-      "injuries": [
-        {
-          "player": "Dakota Joshua",
-          "position": "",
-          "status": "LTIR",
-          "injury": "Kidney",
-          "note": "The Toronto Maple Leafs said on Wednesday (Jan. 28) that Joshua was placed on long-term injured reserve.",
-          "estimatedWar": 1.5
-        },
-        {
-          "player": "Morgan Rielly",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper-body",
-          "note": "HC Craig Berube said on Monday (Feb. 2) that Rielly won't return until after the Olympic break, as per Luke Fox of Sportsnet.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Chris Tanev",
-          "position": "",
-          "status": "LTIR",
-          "injury": "Groin",
-          "note": "The Toronto Maple Leafs placed D Chris Tanev on Long-term Injured Reserve on Wednesday (Jan. 28) and is out indefinitely.",
-          "estimatedWar": 1.5
-        }
-      ],
-      "totalWarLost": 3.9
-    },
-    {
-      "rank": 23,
       "code": "PHI",
       "name": "Philadelphia Flyers",
       "city": "Philadelphia",
@@ -1015,14 +824,14 @@
       "tierColor": "#f59e0b",
       "tierBg": "rgba(245, 158, 11, 0.15)",
       "tierIcon": "\u26a1",
-      "compositeStrength": 49.8,
+      "compositeStrength": 49.7,
       "strengthRank": 20,
-      "playoffProbability": 19.3,
-      "conferenceProbability": 0.11,
-      "cupFinalProbability": 0.04,
-      "cupProbability": 0.04,
-      "cupProbLower": 0.02,
-      "cupProbUpper": 0.09,
+      "playoffProbability": 17.9,
+      "conferenceProbability": 0.03,
+      "cupFinalProbability": 0.02,
+      "cupProbability": 0.02,
+      "cupProbLower": 0.01,
+      "cupProbUpper": 0.06,
       "injuries": [
         {
           "player": "Rodrigo Abols",
@@ -1030,14 +839,6 @@
           "status": "Out",
           "injury": "Ankle",
           "note": "The Flyers said on Wednesday (Jan. 21) that Abols' injury is a fractured right ankle, per Kevin Kurz of The Athletic. He is likely to be out for at least two months.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Samuel Ersson",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "The Flyers said that Ersson will not be available for Thursday's (Feb. 5) game against the Senators and should return after the Olympic break, according to Charlie O'Connor of PHLY Sports.",
           "estimatedWar": 0.9
         },
         {
@@ -1049,10 +850,10 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7
+      "totalWarLost": 1.8
     },
     {
-      "rank": 24,
+      "rank": 23,
       "code": "OTT",
       "name": "Ottawa Senators",
       "city": "Ottawa",
@@ -1062,15 +863,23 @@
       "tierColor": "#f59e0b",
       "tierBg": "rgba(245, 158, 11, 0.15)",
       "tierIcon": "\u26a1",
-      "compositeStrength": 51.8,
-      "strengthRank": 13,
-      "playoffProbability": 48.6,
-      "conferenceProbability": 0.06,
-      "cupFinalProbability": 0.03,
-      "cupProbability": 0.03,
-      "cupProbLower": 0.01,
-      "cupProbUpper": 0.08,
+      "compositeStrength": 51.7,
+      "strengthRank": 14,
+      "playoffProbability": 46.7,
+      "conferenceProbability": 0.01,
+      "cupFinalProbability": 0.01,
+      "cupProbability": 0.01,
+      "cupProbLower": 0.0,
+      "cupProbUpper": 0.05,
       "injuries": [
+        {
+          "player": "Nikolas Matinpalo",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "The Senators said that Matinpalo is OUT for Thursday's (Feb. 26) game versus the Red Wings, per Bruce Garrioch of Postmedia.",
+          "estimatedWar": 0.9
+        },
         {
           "player": "David Perron",
           "position": "",
@@ -1080,31 +889,31 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Linus Ullmark",
+          "player": "Tim Stutzle",
           "position": "",
           "status": "Out",
-          "injury": "Flu",
-          "note": "Ullmark did not play in Thursday's (Feb. 5) road game against Philadelphia due to flu-like symptoms.",
+          "injury": "Illness",
+          "note": "Stutzle is considered a game-time decision for Thursday's (Feb. 26) matchup against the Red Wings due to the flu, per Graeme Nichols of The Hockey News.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.1
+      "totalWarLost": 3.0
     },
     {
-      "rank": 25,
+      "rank": 24,
       "code": "FLA",
       "name": "Florida Panthers",
       "city": "Sunrise",
       "conference": "East",
       "division": "Atlantic",
-      "tier": "Longshot",
-      "tierColor": "#ef4444",
-      "tierBg": "rgba(239, 68, 68, 0.15)",
-      "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 49.4,
-      "strengthRank": 23,
-      "playoffProbability": 6.7,
-      "conferenceProbability": 0.01,
+      "tier": "Bubble",
+      "tierColor": "#f59e0b",
+      "tierBg": "rgba(245, 158, 11, 0.15)",
+      "tierIcon": "\u26a1",
+      "compositeStrength": 49.8,
+      "strengthRank": 19,
+      "playoffProbability": 10.7,
+      "conferenceProbability": 0.0,
       "cupFinalProbability": 0.0,
       "cupProbability": 0.0,
       "cupProbLower": 0.0,
@@ -1127,14 +936,6 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Aaron Ekblad",
-          "position": "",
-          "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Ekblad did not play in Thursday's (Feb. 5) game against the Lightning for an undisclosed reason.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Jonah Gadjovich",
           "position": "",
           "status": "Out",
@@ -1155,35 +956,50 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "The Panthers reported on Wednesday (Oct. 15) that Kulikov underwent surgery for his upper-body injury and is expected to be shelved for at least five months, per Sean Shapiro of DLLS Sports.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Anton Lundell",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Lundell won't play against Italy on Saturday (Feb. 14) at the 2026 Winter Olympics, per Elliotte Friedman of Sportsnet.",
+          "note": "The Florida Panthers said on Wednesday (Feb. 25) that Kulikov shed the non-contact jersey in practice.",
           "estimatedWar": 0.9
         },
         {
           "player": "Tomas Nosek",
           "position": "",
-          "status": "IR",
-          "injury": "Knee",
-          "note": "The Florida Panthers placed F Tomas Nosek on injured reserve non-roster list on Tuesday (Oct. 7).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Evan Rodrigues",
-          "position": "",
           "status": "Out",
-          "injury": "Illness",
-          "note": "Rodrigues did not play in Thursday's (Feb. 5) game in Tampa Bay due to an illness.",
+          "injury": "Knee",
+          "note": "The Florida Panthers said on Wednesday (Feb. 25) that Nosek shed the non-contact jersey in practice.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 9.6
+      "totalWarLost": 6.6
+    },
+    {
+      "rank": 25,
+      "code": "TOR",
+      "name": "Toronto Maple Leafs",
+      "city": "Toronto",
+      "conference": "East",
+      "division": "Atlantic",
+      "tier": "Longshot",
+      "tierColor": "#ef4444",
+      "tierBg": "rgba(239, 68, 68, 0.15)",
+      "tierIcon": "\ud83c\udfb2",
+      "compositeStrength": 49.5,
+      "strengthRank": 21,
+      "playoffProbability": 13.6,
+      "conferenceProbability": 0.0,
+      "cupFinalProbability": 0.0,
+      "cupProbability": 0.0,
+      "cupProbLower": 0.0,
+      "cupProbUpper": 0.03,
+      "injuries": [
+        {
+          "player": "Chris Tanev",
+          "position": "",
+          "status": "LTIR",
+          "injury": "Groin",
+          "note": "The Toronto Maple Leafs placed D Chris Tanev on Long-term Injured Reserve on Wednesday (Jan. 28) and is out indefinitely.",
+          "estimatedWar": 1.5
+        }
+      ],
+      "totalWarLost": 1.5
     },
     {
       "rank": 26,
@@ -1196,9 +1012,9 @@
       "tierColor": "#ef4444",
       "tierBg": "rgba(239, 68, 68, 0.15)",
       "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 49.0,
-      "strengthRank": 24,
-      "playoffProbability": 10.0,
+      "compositeStrength": 49.1,
+      "strengthRank": 23,
+      "playoffProbability": 11.5,
       "conferenceProbability": 0.0,
       "cupFinalProbability": 0.0,
       "cupProbability": 0.0,
@@ -1214,6 +1030,14 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Connor Hellebuyck",
+          "position": "",
+          "status": "Out",
+          "injury": "Not Injury Related",
+          "note": "Hellebuyck did not play in Wednesday's (Feb. 25) game versus the Canucks.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Colin Miller",
           "position": "",
           "status": "Out",
@@ -1224,21 +1048,29 @@
         {
           "player": "Josh Morrissey",
           "position": "",
-          "status": "Out",
+          "status": "IR",
+          "injury": "Upper body",
+          "note": "The Winnipeg Jets placed D Josh Morrissey on Injured Reserve on Monday (Feb. 23).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Nino Niederreiter",
+          "position": "",
+          "status": "IR",
           "injury": "Undisclosed",
-          "note": "Morrissey is expected to miss Canada's game against Switzerland on Friday (Feb. 13) at the 2026 Winter Olympics.",
-          "estimatedWar": 0.9
+          "note": "The Winnipeg Jets placed F Nino Niederreiter on injured reserve.",
+          "estimatedWar": 1.2
         },
         {
           "player": "Neal Pionk",
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "The Winnipeg Jets said on Friday (Jan. 30) that Pionk will practice in a non-contact jersey and could get into a game prior to the Olympic break.",
+          "note": "The Jets said on Tuesday (Feb. 24) that Pionk is week-to-week, according to Mitchell Clinton of the team's official site.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.6
+      "totalWarLost": 6.0
     },
     {
       "rank": 27,
@@ -1253,7 +1085,7 @@
       "tierIcon": "\ud83c\udfb2",
       "compositeStrength": 48.4,
       "strengthRank": 26,
-      "playoffProbability": 4.5,
+      "playoffProbability": 4.2,
       "conferenceProbability": 0.0,
       "cupFinalProbability": 0.0,
       "cupProbability": 0.0,
@@ -1264,36 +1096,28 @@
           "player": "Adam Edstrom",
           "position": "",
           "status": "Out",
-          "injury": "Lower-Body",
-          "note": "The New York Rangers said on Wednesday (Feb. 4) that Edstrom has been skating on his own and might be ready by the end of the Olympic break, per Peter Baugh of The Athletic.",
+          "injury": "Lower-body",
+          "note": "The Rangers said that Edstrom was sporting a regular jersey at Tuesday's (Feb. 24) practice session, as per Colin Stephenson of Newsday.",
           "estimatedWar": 0.9
         },
         {
-          "player": "Adam Fox",
+          "player": "Matt Rempe",
           "position": "",
           "status": "IR",
-          "injury": "Lower Body",
-          "note": "The New York Rangers placed D Adam Fox on injured reserve on Tuesday (Jan. 6).",
+          "injury": "Thumb",
+          "note": "The Rangers said on Friday (Feb. 20) that Rempe will undergo a procedure on his thumb and will be placed on injured reserve, per Peter Baugh of The Athletic.",
           "estimatedWar": 1.2
         },
         {
-          "player": "Conor Sheary",
+          "player": "Mika Zibanejad",
           "position": "",
-          "status": "LTIR",
-          "injury": "Lower-Body",
-          "note": "The New York Rangers placed F Conor Sheary on long-term injured reserve on Thursday (Jan. 1).",
-          "estimatedWar": 1.5
-        },
-        {
-          "player": "Igor Shesterkin",
-          "position": "",
-          "status": "IR",
-          "injury": "Lower Body",
-          "note": "The New York Rangers placed G Igor Shesterkin on injured reserve on Tuesday (Jan. 6).",
-          "estimatedWar": 1.2
+          "status": "Out",
+          "injury": "Illness",
+          "note": "The Rangers said that Zibanejad is OUT for Wednesday's (Feb. 25) practice due to an illness, per Vince Z. Mercogliano of The Athletic.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.8
+      "totalWarLost": 3.0
     },
     {
       "rank": 28,
@@ -1306,9 +1130,9 @@
       "tierColor": "#ef4444",
       "tierBg": "rgba(239, 68, 68, 0.15)",
       "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 47.6,
+      "compositeStrength": 47.9,
       "strengthRank": 28,
-      "playoffProbability": 1.4,
+      "playoffProbability": 2.1,
       "conferenceProbability": 0.0,
       "cupFinalProbability": 0.0,
       "cupProbability": 0.0,
@@ -1324,22 +1148,6 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "John Beecher",
-          "position": "",
-          "status": "IR",
-          "injury": "Upper Body",
-          "note": "The Flames said on Friday's (Jan. 23) practice that Beecher remains on Injured Reserve and is week-to-week.",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Blake Coleman",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "The Calgary Flames said on Wednesday (Jan. 28) that Coleman will not be available until after the Olympic break, per Pat Steinberg of Sportsnet 960 The Fan.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Samuel Honzek",
           "position": "",
           "status": "Out",
@@ -1350,13 +1158,13 @@
         {
           "player": "Jonathan Huberdeau",
           "position": "",
-          "status": "Out",
+          "status": "IR",
           "injury": "Hip",
-          "note": "The Flames said on Thursday (Feb. 5) that Huberdeau will undergo hip surgery, ending his 2025-26 campaign, per Elliotte Friedman of Sportsnet.",
-          "estimatedWar": 0.9
+          "note": "The Calgary Flames placed F Jonathan Huberdeau on injured reserve on Saturday (Feb. 21).",
+          "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 4.8
+      "totalWarLost": 3.0
     },
     {
       "rank": 29,
@@ -1369,9 +1177,9 @@
       "tierColor": "#ef4444",
       "tierBg": "rgba(239, 68, 68, 0.15)",
       "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 47.3,
+      "compositeStrength": 46.9,
       "strengthRank": 29,
-      "playoffProbability": 1.1,
+      "playoffProbability": 0.8,
       "conferenceProbability": 0.0,
       "cupFinalProbability": 0.0,
       "cupProbability": 0.0,
@@ -1383,7 +1191,7 @@
           "position": "",
           "status": "LTIR",
           "injury": "Shoulder",
-          "note": "The New Jersey Devils placed D Luke Hughes on Long-Term Injured Reserve on Wednesday (Jan. 21).",
+          "note": "The New Jersey Devils said that Hughes is still on Long-Term Injured Reserve and is not eligible to return to the lineup until Saturday's (Feb. 28) game versus the Blues.",
           "estimatedWar": 1.5
         },
         {
@@ -1416,9 +1224,9 @@
       "tierColor": "#ef4444",
       "tierBg": "rgba(239, 68, 68, 0.15)",
       "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 46.5,
+      "compositeStrength": 46.3,
       "strengthRank": 30,
-      "playoffProbability": 0.5,
+      "playoffProbability": 0.4,
       "conferenceProbability": 0.0,
       "cupFinalProbability": 0.0,
       "cupProbability": 0.0,
@@ -1434,12 +1242,20 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Wyatt Kaiser",
+          "player": "Jason Dickinson",
           "position": "",
           "status": "Out",
-          "injury": "Lower Body",
-          "note": "Kaiser sustained a lower-body injury and did not return to Wednesday's (Feb. 4) game versus the Blue Jackets.",
+          "injury": "Illness",
+          "note": "The Blackhawks said that Dickinson left Thursday's (Feb. 19) practice session early due to an illness, per Ben Pope of the Chicago Sun-Times.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Wyatt Kaiser",
+          "position": "",
+          "status": "IR",
+          "injury": "Lower Body",
+          "note": "The Chicago Blackhawks placed D Wyatt Kaiser on injured reserve on Wednesday (Feb. 18).",
+          "estimatedWar": 1.2
         },
         {
           "player": "Shea Weber",
@@ -1450,7 +1266,7 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.0
+      "totalWarLost": 4.2
     },
     {
       "rank": 31,
@@ -1463,7 +1279,7 @@
       "tierColor": "#ef4444",
       "tierBg": "rgba(239, 68, 68, 0.15)",
       "tierIcon": "\ud83c\udfb2",
-      "compositeStrength": 44.8,
+      "compositeStrength": 45.3,
       "strengthRank": 31,
       "playoffProbability": 0.1,
       "conferenceProbability": 0.0,
@@ -1473,23 +1289,23 @@
       "cupProbUpper": 0.03,
       "injuries": [
         {
-          "player": "Dylan Holloway",
+          "player": "Oskar Sundqvist",
           "position": "",
-          "status": "IR",
-          "injury": "Ankle",
-          "note": "The St. Louis Blues placed F Dylan Holloway on injured reserve on Thursday (Jan. 29).",
-          "estimatedWar": 1.2
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "The Blues said that Sundqvist is OUT for Thursday's (Feb. 26) game versus the Kraken.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Robert Thomas",
           "position": "",
           "status": "Out",
           "injury": "Leg",
-          "note": "The St. Louis Blues said on Saturday (Jan. 31) that Thomas underwent a minor leg procedure Friday and is expected to play in the Blues' first game after the Olympic break, per Alex Ferrario of 101 ESPN St. Louis.",
+          "note": "The St. Louis Blues said that Thomas is taking a leave of absence from the team due to a personal matter and is expected to return on Friday (Feb. 27).",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.1
+      "totalWarLost": 1.8
     },
     {
       "rank": 32,
@@ -1512,14 +1328,6 @@
       "cupProbUpper": 0.03,
       "injuries": [
         {
-          "player": "Brock Boeser",
-          "position": "",
-          "status": "Out",
-          "injury": "Concussion",
-          "note": "The Vancouver Canucks said on Friday (Jan. 30) that Boeser is a long shot to play again before the Olympic break.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Guillaume Brisebois",
           "position": "",
           "status": "IR",
@@ -1528,20 +1336,12 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Zeev Buium",
-          "position": "",
-          "status": "Out",
-          "injury": "Cheekbone",
-          "note": "The Vancouver Canucks said on Tuesday (Jan. 27) that Buium is OUT until after the 2026 Winter Olympics, according to Iain MacIntyre of Sportsnet.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Filip Chytil",
           "position": "",
-          "status": "Out",
-          "injury": "Migraines",
-          "note": "The Canucks said on Tuesday (Feb. 3) that Chytil is unlikely to return to the team's final game before the Olympic break.",
-          "estimatedWar": 0.9
+          "status": "IR",
+          "injury": "Face",
+          "note": "The Vancouver Canucks placed F Filip Chytil on injured reserve on Wednesday (Feb. 25).",
+          "estimatedWar": 1.2
         },
         {
           "player": "Thatcher Demko",
@@ -1560,23 +1360,15 @@
           "estimatedWar": 1.5
         },
         {
-          "player": "Nils Hoglander",
+          "player": "Tyler Myers",
           "position": "",
           "status": "Out",
-          "injury": "Lower-body",
-          "note": "Hoglander did not play in Wednesday's (Feb. 5) game against the Golden Knights.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Marco Rossi",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "The Vancouver Canucks said on Tuesday (Jan. 27) that Rossi suffered a setback and won't be back until after the Olympic break, per Farhan Lalji of TSN.",
+          "injury": "Not Injury Related",
+          "note": "Myers did not play in Wednesday's (Feb. 25) game versus the Jets.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 8.1
+      "totalWarLost": 5.7
     }
   ],
   "featureWeights": [
@@ -1643,37 +1435,37 @@
   ],
   "tierSummary": {
     "Elite": [
-      "DAL",
-      "CAR",
       "COL",
-      "TB"
+      "CAR",
+      "TB",
+      "DAL"
     ],
     "Contender": [
       "PIT",
-      "VGK",
       "UTA",
-      "MTL",
-      "MIN",
       "BUF",
+      "VGK",
+      "MIN",
       "BOS",
+      "EDM",
       "WSH"
     ],
     "Bubble": [
-      "ANA",
       "DET",
-      "EDM",
+      "MTL",
+      "ANA",
       "NYI",
       "CBJ",
-      "TOR",
       "PHI",
-      "OTT"
+      "OTT",
+      "FLA"
     ],
     "Longshot": [
       "SEA",
-      "LA",
-      "SJ",
       "NSH",
-      "FLA",
+      "SJ",
+      "LA",
+      "TOR",
       "WPG",
       "NYR",
       "CGY",
@@ -1718,14 +1510,14 @@
         "tierColor": "#10b981",
         "tierBg": "rgba(16, 185, 129, 0.15)",
         "tierIcon": "\ud83c\udfc6",
-        "compositeStrength": 54.9,
+        "compositeStrength": 55.0,
         "strengthRank": 3,
         "playoffProbability": 100.0,
-        "conferenceProbability": 31.36,
-        "cupFinalProbability": 15.89,
-        "cupProbability": 8.15,
-        "cupProbLower": 7.71,
-        "cupProbUpper": 8.61,
+        "conferenceProbability": 31.82,
+        "cupFinalProbability": 16.07,
+        "cupProbability": 8.07,
+        "cupProbLower": 7.64,
+        "cupProbUpper": 8.53,
         "injuries": [
           {
             "player": "Pyotr Kochetkov",
@@ -1734,20 +1526,12 @@
             "injury": "Undisclosed",
             "note": "The Carolina Hurricanes placed G Pyotr Kochetkov on injured reserve on Monday (Dec. 29) and is expected to miss the rest of the campaign, Walt Ruff of the Hurricanes' official site.",
             "estimatedWar": 1.2
-          },
-          {
-            "player": "Eric Robinson",
-            "position": "",
-            "status": "Out",
-            "injury": "Upper-Body",
-            "note": "The Hurricanes said on Wednesday (Jan. 21) that Robinson will be out for an extended period of time.",
-            "estimatedWar": 0.9
           }
         ],
-        "totalWarLost": 2.1
+        "totalWarLost": 1.2
       },
       {
-        "rank": 4,
+        "rank": 3,
         "code": "TB",
         "name": "Tampa Bay Lightning",
         "city": "Tampa",
@@ -1757,96 +1541,41 @@
         "tierColor": "#10b981",
         "tierBg": "rgba(16, 185, 129, 0.15)",
         "tierIcon": "\ud83c\udfc6",
-        "compositeStrength": 57.6,
+        "compositeStrength": 57.5,
         "strengthRank": 2,
         "playoffProbability": 100.0,
-        "conferenceProbability": 32.6,
-        "cupFinalProbability": 16.21,
-        "cupProbability": 7.7,
-        "cupProbLower": 7.27,
-        "cupProbUpper": 8.15,
+        "conferenceProbability": 31.35,
+        "cupFinalProbability": 16.12,
+        "cupProbability": 7.64,
+        "cupProbLower": 7.22,
+        "cupProbUpper": 8.09,
         "injuries": [
           {
             "player": "Anthony Cirelli",
             "position": "",
             "status": "Out",
-            "injury": "Upper Body",
-            "note": "The Lightning said on Wednesday (Feb. 4) that Cirelli will be re-evaluated after the Olympic break.",
+            "injury": "Undisclosed",
+            "note": "The Lightning said that Cirelli is OUT for Thursday's (Feb. 26) game versus the Hurricanes.",
             "estimatedWar": 0.9
           },
           {
-            "player": "Charle-Edouard D'Astous",
+            "player": "Max Crozier",
             "position": "",
             "status": "IR",
-            "injury": "Lower-body",
-            "note": "The Tampa Bay Lightning placed D Charle-Edouard D'Astous on injured reserve on Sunday (Jan. 25).",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Emil Lilleberg",
-            "position": "",
-            "status": "IR",
-            "injury": "Undisclosed",
-            "note": "The Tampa Bay Lightning placed D Emil Lilleberg on injured reserve on Monday (Dec. 15) and is week-to-week.",
+            "injury": "Abdomen",
+            "note": "The Tampa Bay Lightning placed D Max Crozier on injured reserve on Saturday (Feb. 21).",
             "estimatedWar": 1.2
           },
           {
             "player": "Nick Paul",
             "position": "",
-            "status": "Out",
-            "injury": "Undisclosed",
-            "note": "The Lightning said on Wednesday (Feb. 4) that Paul will be re-evaluated after the Olympic break.",
-            "estimatedWar": 0.9
-          },
-          {
-            "player": "Brayden Point",
-            "position": "",
-            "status": "LTIR",
-            "injury": "Lower Body",
-            "note": "The Tampa Bay Lightning transferred F Brayden Point to long-term injured reserve on Tuesday (Feb. 3).",
-            "estimatedWar": 1.5
-          }
-        ],
-        "totalWarLost": 5.7
-      },
-      {
-        "rank": 8,
-        "code": "MTL",
-        "name": "Montreal Canadiens",
-        "city": "Montreal",
-        "conference": "East",
-        "division": "Atlantic",
-        "tier": "Contender",
-        "tierColor": "#3b82f6",
-        "tierBg": "rgba(59, 130, 246, 0.15)",
-        "tierIcon": "\ud83c\udfaf",
-        "compositeStrength": 51.8,
-        "strengthRank": 12,
-        "playoffProbability": 99.9,
-        "conferenceProbability": 22.9,
-        "cupFinalProbability": 11.61,
-        "cupProbability": 6.23,
-        "cupProbLower": 5.84,
-        "cupProbUpper": 6.64,
-        "injuries": [
-          {
-            "player": "Patrik Laine",
-            "position": "",
-            "status": "Out",
-            "injury": "Abdomen",
-            "note": "The Montreal Canadiens said on Saturday (Jan 10) that Laine could return to the lineup as early as late January.",
-            "estimatedWar": 0.9
-          },
-          {
-            "player": "Alex Newhook",
-            "position": "",
             "status": "IR",
-            "injury": "Ankle",
-            "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
+            "injury": "Undisclosed",
+            "note": "The Tampa Bay Lightning placed F Nick Paul on injured reserve on Wednesday (Feb. 25).",
             "estimatedWar": 1.2
           }
         ],
-        "totalWarLost": 2.1
+        "totalWarLost": 3.3
       },
       {
         "rank": 5,
@@ -1859,45 +1588,29 @@
         "tierColor": "#3b82f6",
         "tierBg": "rgba(59, 130, 246, 0.15)",
         "tierIcon": "\ud83c\udfaf",
-        "compositeStrength": 54.1,
+        "compositeStrength": 54.5,
         "strengthRank": 5,
-        "playoffProbability": 99.4,
-        "conferenceProbability": 28.09,
-        "cupFinalProbability": 14.06,
-        "cupProbability": 6.8,
-        "cupProbLower": 6.4,
-        "cupProbUpper": 7.23,
+        "playoffProbability": 99.8,
+        "conferenceProbability": 29.32,
+        "cupFinalProbability": 14.94,
+        "cupProbability": 7.32,
+        "cupProbLower": 6.9,
+        "cupProbUpper": 7.76,
         "injuries": [
           {
-            "player": "Noel Acciari",
+            "player": "Sidney Crosby",
             "position": "",
-            "status": "Out",
-            "injury": "Illness",
-            "note": "Acciari did not play in Thursday's (Feb. 5) matchup against the Sabres.",
-            "estimatedWar": 0.9
+            "status": "IR",
+            "injury": "Leg",
+            "note": "The Pittsburgh Penguins placed F Sidney Crosby on injured reserve and will be out of action for at least four weeks.",
+            "estimatedWar": 1.2
           },
           {
             "player": "Filip Hallander",
             "position": "",
-            "status": "IR",
-            "injury": "Leg",
-            "note": "The Pittsburgh Penguins placed F Filip Hallander on Injured Reserve on Saturday (Nov. 8).",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Kris Letang",
-            "position": "",
-            "status": "IR",
-            "injury": "Foot",
-            "note": "The Pittsburgh Penguins placed D Kris Letang on injured reserve on Saturday (Jan. 31).",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Blake Lizotte",
-            "position": "",
             "status": "Out",
-            "injury": "Personal",
-            "note": "Lizotte did not play in Thursday's (Feb. 5) game versus the Sabres.",
+            "injury": "Leg",
+            "note": "The Pittsburgh Penguins sent F Filip Hallander to the minors on a conditioning loan on Wednesday (Feb. 18).",
             "estimatedWar": 0.9
           },
           {
@@ -1909,10 +1622,10 @@
             "estimatedWar": 1.2
           }
         ],
-        "totalWarLost": 5.4
+        "totalWarLost": 3.3
       },
       {
-        "rank": 13,
+        "rank": 10,
         "code": "DET",
         "name": "Detroit Red Wings",
         "city": "Detroit",
@@ -1922,28 +1635,50 @@
         "tierColor": "#f59e0b",
         "tierBg": "rgba(245, 158, 11, 0.15)",
         "tierIcon": "\u26a1",
-        "compositeStrength": 50.7,
+        "compositeStrength": 50.8,
         "strengthRank": 17,
-        "playoffProbability": 98.9,
-        "conferenceProbability": 18.1,
-        "cupFinalProbability": 8.47,
-        "cupProbability": 5.31,
-        "cupProbLower": 4.96,
-        "cupProbUpper": 5.7,
-        "injuries": [
-          {
-            "player": "Simon Edvinsson",
-            "position": "",
-            "status": "IR",
-            "injury": "Lower-body",
-            "note": "The Detroit Red Wings placed D Simon Edvinsson on injured reserve on Thursday (Jan. 29).",
-            "estimatedWar": 1.2
-          }
-        ],
-        "totalWarLost": 1.2
+        "playoffProbability": 99.8,
+        "conferenceProbability": 19.92,
+        "cupFinalProbability": 9.79,
+        "cupProbability": 5.83,
+        "cupProbLower": 5.46,
+        "cupProbUpper": 6.23,
+        "injuries": [],
+        "totalWarLost": 0.0
       },
       {
-        "rank": 10,
+        "rank": 11,
+        "code": "MTL",
+        "name": "Montreal Canadiens",
+        "city": "Montreal",
+        "conference": "East",
+        "division": "Atlantic",
+        "tier": "Bubble",
+        "tierColor": "#f59e0b",
+        "tierBg": "rgba(245, 158, 11, 0.15)",
+        "tierIcon": "\u26a1",
+        "compositeStrength": 51.8,
+        "strengthRank": 13,
+        "playoffProbability": 99.8,
+        "conferenceProbability": 21.26,
+        "cupFinalProbability": 10.6,
+        "cupProbability": 5.61,
+        "cupProbLower": 5.24,
+        "cupProbUpper": 6.0,
+        "injuries": [
+          {
+            "player": "Patrik Laine",
+            "position": "",
+            "status": "Out",
+            "injury": "Lower-Body",
+            "note": "The Canadiens said that Laine will not participate Tuesday's (Feb. 17) practice and is being evaluated on a daily basis.",
+            "estimatedWar": 0.9
+          }
+        ],
+        "totalWarLost": 0.9
+      },
+      {
+        "rank": 7,
         "code": "BUF",
         "name": "Buffalo Sabres",
         "city": "Buffalo",
@@ -1953,46 +1688,38 @@
         "tierColor": "#3b82f6",
         "tierBg": "rgba(59, 130, 246, 0.15)",
         "tierIcon": "\ud83c\udfaf",
-        "compositeStrength": 52.7,
-        "strengthRank": 9,
-        "playoffProbability": 97.0,
-        "conferenceProbability": 24.28,
-        "cupFinalProbability": 12.61,
-        "cupProbability": 6.09,
-        "cupProbLower": 5.71,
-        "cupProbUpper": 6.49,
+        "compositeStrength": 53.0,
+        "strengthRank": 8,
+        "playoffProbability": 99.7,
+        "conferenceProbability": 25.45,
+        "cupFinalProbability": 12.63,
+        "cupProbability": 6.36,
+        "cupProbLower": 5.97,
+        "cupProbUpper": 6.78,
         "injuries": [
           {
             "player": "Zach Benson",
             "position": "",
-            "status": "Out",
+            "status": "IR",
             "injury": "Upper Body",
-            "note": "Benson did not play in Thursday's (Feb. 5) road matchup against the Penguins.",
-            "estimatedWar": 0.9
+            "note": "The Buffalo Sabres placed F Zach Benson on injured reserve on Wednesday (Feb. 25).",
+            "estimatedWar": 1.2
           },
           {
             "player": "Justin Danforth",
             "position": "",
-            "status": "Out",
+            "status": "DTD",
             "injury": "Lower Body",
-            "note": "The Buffalo Sabres said on Monday (Jan. 26) that Danforth is trending toward a post-Olympic return to action, per Bill Hoppe of the Olean Times Herald.",
-            "estimatedWar": 0.9
-          },
-          {
-            "player": "Josh Dunne",
-            "position": "",
-            "status": "IR",
-            "injury": "Middle-body",
-            "note": "The Buffalo Sabres placed F Josh Dunne on injured reserve on Thursday (Jan. 15)",
-            "estimatedWar": 1.2
+            "note": "The Buffalo Sabres said on Wednesday (Feb. 18) that Danforth is now skating but not in day-to-day status.",
+            "estimatedWar": 0.4
           },
           {
             "player": "Jordan Greenway",
             "position": "",
-            "status": "Out",
+            "status": "IR",
             "injury": "Abdomen",
-            "note": "Greenway did not play in Thursday's (Feb. 5) game versus the Penguins.",
-            "estimatedWar": 0.9
+            "note": "The Buffalo Sabres placed F Jordan Greenway on injured reserve on Wednesday (Feb. 25).",
+            "estimatedWar": 1.2
           },
           {
             "player": "Jiri Kulich",
@@ -2003,34 +1730,18 @@
             "estimatedWar": 0.9
           },
           {
-            "player": "Ukko-Pekka Luukkonen",
-            "position": "",
-            "status": "Out",
-            "injury": "Lower Body",
-            "note": "The Buffalo Sabres said on Tuesday (Feb. 3) that Luukkonen will not be joining Finland for the 2026 Winter Olympics.",
-            "estimatedWar": 0.9
-          },
-          {
-            "player": "Josh Norris",
-            "position": "",
-            "status": "DTD",
-            "injury": "Ribs",
-            "note": "The Sabres said on Monday (Feb. 2) that Norris was upgraded to day-to-day last week, but he hasn't yet received the green light to return to game action.",
-            "estimatedWar": 0.4
-          },
-          {
             "player": "Conor Timmins",
             "position": "",
-            "status": "IR",
+            "status": "DTD",
             "injury": "Leg",
-            "note": "The Buffalo Sabres placed D Conor Timmins on Injured Reserve on Saturday (Dec. 20).",
-            "estimatedWar": 1.2
+            "note": "The Buffalo Sabres said on Wednesday (Feb. 18) that Timmins is now skating but not in day-to-day status.",
+            "estimatedWar": 0.4
           }
         ],
-        "totalWarLost": 7.3
+        "totalWarLost": 4.2
       },
       {
-        "rank": 11,
+        "rank": 12,
         "code": "BOS",
         "name": "Boston Bruins",
         "city": "Boston",
@@ -2040,28 +1751,36 @@
         "tierColor": "#3b82f6",
         "tierBg": "rgba(59, 130, 246, 0.15)",
         "tierIcon": "\ud83c\udfaf",
-        "compositeStrength": 52.1,
-        "strengthRank": 11,
-        "playoffProbability": 92.0,
-        "conferenceProbability": 20.22,
-        "cupFinalProbability": 10.3,
-        "cupProbability": 5.5,
-        "cupProbLower": 5.14,
-        "cupProbUpper": 5.89,
+        "compositeStrength": 52.3,
+        "strengthRank": 12,
+        "playoffProbability": 97.2,
+        "conferenceProbability": 20.88,
+        "cupFinalProbability": 10.17,
+        "cupProbability": 5.28,
+        "cupProbLower": 4.93,
+        "cupProbUpper": 5.67,
         "injuries": [
           {
-            "player": "Pavel Zacha",
+            "player": "Charlie McAvoy",
             "position": "",
             "status": "Out",
-            "injury": "Upper Body",
-            "note": "The Bruins said on Saturday (Feb. 7) that Zacha has been ruled out of the Olympic Games for Czechia, per Chris Johnston of The Athletic.",
+            "injury": "Not Injury Related",
+            "note": "McAvoy will be a game-time decision versus Columbus on Thursday (Feb. 26), according to Scott McLaughlin of WEEI.",
+            "estimatedWar": 0.9
+          },
+          {
+            "player": "Jeremy Swayman",
+            "position": "",
+            "status": "Out",
+            "injury": "Not Injury Related",
+            "note": "Swayman is OUT for Thursday's (Feb. 26) game against the Blue Jackets, according to Scott McLaughlin of WEEI.",
             "estimatedWar": 0.9
           }
         ],
-        "totalWarLost": 0.9
+        "totalWarLost": 1.8
       },
       {
-        "rank": 20,
+        "rank": 18,
         "code": "WSH",
         "name": "Washington Capitals",
         "city": "Washington",
@@ -2071,93 +1790,30 @@
         "tierColor": "#3b82f6",
         "tierBg": "rgba(59, 130, 246, 0.15)",
         "tierIcon": "\ud83c\udfaf",
-        "compositeStrength": 52.8,
-        "strengthRank": 8,
-        "playoffProbability": 91.1,
-        "conferenceProbability": 0.19,
-        "cupFinalProbability": 0.07,
-        "cupProbability": 0.07,
-        "cupProbLower": 0.04,
-        "cupProbUpper": 0.13,
+        "compositeStrength": 52.9,
+        "strengthRank": 9,
+        "playoffProbability": 92.9,
+        "conferenceProbability": 0.69,
+        "cupFinalProbability": 0.34,
+        "cupProbability": 0.34,
+        "cupProbLower": 0.26,
+        "cupProbUpper": 0.45,
         "injuries": [
           {
             "player": "John Carlson",
             "position": "",
             "status": "Out",
-            "injury": "Lower-body",
-            "note": "Carlson did not play in Thursday's (Jan. 5) game versus the Predators.",
-            "estimatedWar": 0.9
-          },
-          {
-            "player": "Charlie Lindgren",
-            "position": "",
-            "status": "IR",
-            "injury": "Lower Body",
-            "note": "The Washington Capitals placed G Charlie Lindgren on injured reserve on Saturday (Jan. 31).",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Connor McMichael",
-            "position": "",
-            "status": "IR",
-            "injury": "Undisclosed",
-            "note": "The Washington Capitals placed F Connor McMichael on injured reserve on Saturday (Jan. 31) and is week-to-week.",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Sonny Milano",
-            "position": "",
-            "status": "Out",
-            "injury": "Personal",
-            "note": "Milano did not play in Thursday's (Feb. 5) game against Nashville due to personal reasons.",
+            "injury": "Lower-Body",
+            "note": "Carlson did not play in Wednesday's (Feb. 25) game versus the Flyers.",
             "estimatedWar": 0.9
           }
         ],
-        "totalWarLost": 4.2
+        "totalWarLost": 0.9
       }
     ],
     "West": [
       {
         "rank": 1,
-        "code": "DAL",
-        "name": "Dallas Stars",
-        "city": "Dallas",
-        "conference": "West",
-        "division": "Central",
-        "tier": "Elite",
-        "tierColor": "#10b981",
-        "tierBg": "rgba(16, 185, 129, 0.15)",
-        "tierIcon": "\ud83c\udfc6",
-        "compositeStrength": 54.5,
-        "strengthRank": 4,
-        "playoffProbability": 100.0,
-        "conferenceProbability": 29.11,
-        "cupFinalProbability": 15.04,
-        "cupProbability": 9.0,
-        "cupProbLower": 8.55,
-        "cupProbUpper": 9.49,
-        "injuries": [
-          {
-            "player": "Lian Bichsel",
-            "position": "",
-            "status": "Out",
-            "injury": "Lower-Body",
-            "note": "The Stars reported on Wednesday (Feb. 4) that Bichsel is close to returning but will be held out until after the Olympic break, per Brien Rea of Victory+.",
-            "estimatedWar": 0.9
-          },
-          {
-            "player": "Tyler Seguin",
-            "position": "",
-            "status": "Out",
-            "injury": "ACL",
-            "note": "The Stars said on Friday (Dec. 19) that Seguin will have his return timetable evaluated after the Olympic break after undergoing successful ACL surgery.",
-            "estimatedWar": 0.9
-          }
-        ],
-        "totalWarLost": 1.8
-      },
-      {
-        "rank": 3,
         "code": "COL",
         "name": "Colorado Avalanche",
         "city": "Denver",
@@ -2167,14 +1823,14 @@
         "tierColor": "#10b981",
         "tierBg": "rgba(16, 185, 129, 0.15)",
         "tierIcon": "\ud83c\udfc6",
-        "compositeStrength": 59.1,
+        "compositeStrength": 58.8,
         "strengthRank": 1,
         "playoffProbability": 100.0,
-        "conferenceProbability": 31.52,
-        "cupFinalProbability": 16.17,
-        "cupProbability": 7.96,
-        "cupProbLower": 7.53,
-        "cupProbUpper": 8.42,
+        "conferenceProbability": 31.75,
+        "cupFinalProbability": 16.86,
+        "cupProbability": 8.33,
+        "cupProbLower": 7.89,
+        "cupProbUpper": 8.8,
         "injuries": [
           {
             "player": "Logan O'Connor",
@@ -2188,7 +1844,62 @@
         "totalWarLost": 0.9
       },
       {
-        "rank": 6,
+        "rank": 4,
+        "code": "DAL",
+        "name": "Dallas Stars",
+        "city": "Dallas",
+        "conference": "West",
+        "division": "Central",
+        "tier": "Elite",
+        "tierColor": "#10b981",
+        "tierBg": "rgba(16, 185, 129, 0.15)",
+        "tierIcon": "\ud83c\udfc6",
+        "compositeStrength": 54.8,
+        "strengthRank": 4,
+        "playoffProbability": 100.0,
+        "conferenceProbability": 28.41,
+        "cupFinalProbability": 14.59,
+        "cupProbability": 7.53,
+        "cupProbLower": 7.11,
+        "cupProbUpper": 7.98,
+        "injuries": [
+          {
+            "player": "Radek Faksa",
+            "position": "",
+            "status": "IR",
+            "injury": "Upper-body",
+            "note": "The Stars placed F Radek Faksa on injured reserve on Tuesday (Feb. 24).",
+            "estimatedWar": 1.2
+          },
+          {
+            "player": "Roope Hintz",
+            "position": "",
+            "status": "Out",
+            "injury": "Illness",
+            "note": "Hintz did not play in Wednesday's (Feb. 25) game against the Kraken.",
+            "estimatedWar": 0.9
+          },
+          {
+            "player": "Mikko Rantanen",
+            "position": "",
+            "status": "Out",
+            "injury": "Lower-body",
+            "note": "The Dallas Stars said on Tuesday (Feb. 24) that Rantanen will be out for a minimum of two weeks, according to Stars radio analyst Bruce LeVine.",
+            "estimatedWar": 0.9
+          },
+          {
+            "player": "Tyler Seguin",
+            "position": "",
+            "status": "Out",
+            "injury": "ACL",
+            "note": "The Stars said on Friday (Dec. 19) that Seguin will have his return timetable evaluated after the Olympic break after undergoing successful ACL surgery.",
+            "estimatedWar": 0.9
+          }
+        ],
+        "totalWarLost": 3.9
+      },
+      {
+        "rank": 8,
         "code": "VGK",
         "name": "Vegas Golden Knights",
         "city": "Las Vegas",
@@ -2198,14 +1909,14 @@
         "tierColor": "#3b82f6",
         "tierBg": "rgba(59, 130, 246, 0.15)",
         "tierIcon": "\ud83c\udfaf",
-        "compositeStrength": 52.5,
+        "compositeStrength": 52.6,
         "strengthRank": 10,
         "playoffProbability": 100.0,
-        "conferenceProbability": 24.76,
-        "cupFinalProbability": 12.11,
-        "cupProbability": 6.55,
-        "cupProbLower": 6.16,
-        "cupProbUpper": 6.97,
+        "conferenceProbability": 25.77,
+        "cupFinalProbability": 12.45,
+        "cupProbability": 6.22,
+        "cupProbLower": 5.84,
+        "cupProbUpper": 6.64,
         "injuries": [],
         "totalWarLost": 0.0
       },
@@ -2223,11 +1934,11 @@
         "compositeStrength": 53.6,
         "strengthRank": 6,
         "playoffProbability": 100.0,
-        "conferenceProbability": 20.56,
-        "cupFinalProbability": 10.75,
-        "cupProbability": 6.22,
-        "cupProbLower": 5.84,
-        "cupProbUpper": 6.63,
+        "conferenceProbability": 20.85,
+        "cupFinalProbability": 10.82,
+        "cupProbability": 5.86,
+        "cupProbLower": 5.49,
+        "cupProbUpper": 6.26,
         "injuries": [
           {
             "player": "Jonas Brodin",
@@ -2236,28 +1947,59 @@
             "injury": "Lower Body",
             "note": "HC John Hynes said on Monday (Jan. 26) that Brodin is expected to miss approximately 6-8 weeks, as per Joe Smith of The Athletic.",
             "estimatedWar": 0.9
-          },
-          {
-            "player": "Marcus Foligno",
-            "position": "",
-            "status": "Out",
-            "injury": "Illness",
-            "note": "Foligno did not play in Wednesday's (Feb. 4) game versus the Predators.",
-            "estimatedWar": 0.9
-          },
-          {
-            "player": "Jesper Wallstedt",
-            "position": "",
-            "status": "Out",
-            "injury": "Illness",
-            "note": "Wallstedt isn't available for Team Sweden's game against Italy on Wednesday (Feb. 11) at the 2026 Winter Olympics, per Elliotte Friedman of Sportsnet.",
-            "estimatedWar": 0.9
           }
         ],
-        "totalWarLost": 2.7
+        "totalWarLost": 0.9
       },
       {
-        "rank": 7,
+        "rank": 13,
+        "code": "ANA",
+        "name": "Anaheim Ducks",
+        "city": "Anaheim",
+        "conference": "West",
+        "division": "Pacific",
+        "tier": "Bubble",
+        "tierColor": "#f59e0b",
+        "tierBg": "rgba(245, 158, 11, 0.15)",
+        "tierIcon": "\u26a1",
+        "compositeStrength": 50.2,
+        "strengthRank": 18,
+        "playoffProbability": 99.7,
+        "conferenceProbability": 20.82,
+        "cupFinalProbability": 9.84,
+        "cupProbability": 5.28,
+        "cupProbLower": 4.92,
+        "cupProbUpper": 5.66,
+        "injuries": [
+          {
+            "player": "Mikael Granlund",
+            "position": "",
+            "status": "Out",
+            "injury": "Upper-Body",
+            "note": "Granlund did not play in Wednesday's (Feb. 25) game versus the Oilers.",
+            "estimatedWar": 0.9
+          },
+          {
+            "player": "Petr Mrazek",
+            "position": "",
+            "status": "Out",
+            "injury": "Lower-Body",
+            "note": "The Anaheim Ducks announced G Petr Mrazek underwent hip surgery on Tuesday (Feb. 17) and will be out for the remainder of the season.",
+            "estimatedWar": 0.9
+          },
+          {
+            "player": "Frank Vatrano",
+            "position": "",
+            "status": "IR",
+            "injury": "Shoulder",
+            "note": "The Anaheim Ducks placed F Frank Vatrano on injured reserve on Wednesday (Dec. 31) and is expected to miss the next six weeks.",
+            "estimatedWar": 1.2
+          }
+        ],
+        "totalWarLost": 3.0
+      },
+      {
+        "rank": 6,
         "code": "UTA",
         "name": "Utah Hockey Club",
         "city": "Salt Lake City",
@@ -2269,34 +2011,57 @@
         "tierIcon": "\ud83c\udfaf",
         "compositeStrength": 53.4,
         "strengthRank": 7,
-        "playoffProbability": 92.1,
-        "conferenceProbability": 26.83,
-        "cupFinalProbability": 13.18,
-        "cupProbability": 6.48,
-        "cupProbLower": 6.08,
-        "cupProbUpper": 6.89,
+        "playoffProbability": 95.5,
+        "conferenceProbability": 29.02,
+        "cupFinalProbability": 14.35,
+        "cupProbability": 7.22,
+        "cupProbLower": 6.8,
+        "cupProbUpper": 7.65,
         "injuries": [
           {
-            "player": "Logan Cooley",
-            "position": "",
-            "status": "IR",
-            "injury": "Lower Body",
-            "note": "The Utah Mammoth said on Monday (Feb. 2) that Cooley remains on injured reserve and likely won't be back in the lineup until after the 2026 Winter Olympics.",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Alexander Kerfoot",
+            "player": "Michael Carcone",
             "position": "",
             "status": "Out",
-            "injury": "Upper Body",
-            "note": "The Utah Mammoth said on Monday (Feb. 2) that Kerfoot was seen participating in drills and even joined the team's defensemen during line skates but has no official timeline to return.",
+            "injury": "Illness",
+            "note": "Carcone did not play in Wednesday's (Feb. 25) versus the Avalanche.",
             "estimatedWar": 0.9
           }
         ],
-        "totalWarLost": 2.1
+        "totalWarLost": 0.9
       },
       {
         "rank": 14,
+        "code": "EDM",
+        "name": "Edmonton Oilers",
+        "city": "Edmonton",
+        "conference": "West",
+        "division": "Pacific",
+        "tier": "Contender",
+        "tierColor": "#3b82f6",
+        "tierBg": "rgba(59, 130, 246, 0.15)",
+        "tierIcon": "\ud83c\udfaf",
+        "compositeStrength": 52.4,
+        "strengthRank": 11,
+        "playoffProbability": 87.2,
+        "conferenceProbability": 21.29,
+        "cupFinalProbability": 10.61,
+        "cupProbability": 5.09,
+        "cupProbLower": 4.74,
+        "cupProbUpper": 5.46,
+        "injuries": [
+          {
+            "player": "Kasperi Kapanen",
+            "position": "",
+            "status": "Out",
+            "injury": "Undisclosed",
+            "note": "The Oilers said on Sunday (Feb. 22) that Kapanen is expected to miss the first two games out of the Olympic break, as per Oilers TV reporter Paige Martin.",
+            "estimatedWar": 0.9
+          }
+        ],
+        "totalWarLost": 0.9
+      },
+      {
+        "rank": 16,
         "code": "SEA",
         "name": "Seattle Kraken",
         "city": "Seattle",
@@ -2306,30 +2071,22 @@
         "tierColor": "#ef4444",
         "tierBg": "rgba(239, 68, 68, 0.15)",
         "tierIcon": "\ud83c\udfb2",
-        "compositeStrength": 49.4,
-        "strengthRank": 22,
-        "playoffProbability": 91.4,
-        "conferenceProbability": 17.5,
-        "cupFinalProbability": 8.6,
-        "cupProbability": 5.19,
-        "cupProbLower": 4.84,
-        "cupProbUpper": 5.57,
+        "compositeStrength": 48.8,
+        "strengthRank": 24,
+        "playoffProbability": 74.0,
+        "conferenceProbability": 13.97,
+        "cupFinalProbability": 6.73,
+        "cupProbability": 2.14,
+        "cupProbLower": 1.92,
+        "cupProbUpper": 2.4,
         "injuries": [
           {
-            "player": "Berkly Catton",
+            "player": "Ryan Lindgren",
             "position": "",
-            "status": "IR",
-            "injury": "Upper Body",
-            "note": "The Seattle Kraken placed F Berkly Catton on injured reserve on Wednesday (Feb. 4).",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Ben Meyers",
-            "position": "",
-            "status": "IR",
-            "injury": "Lower-body",
-            "note": "The Seattle Kraken placed F Ben Meyers on injured reserve on Thursday (Jan. 22).",
-            "estimatedWar": 1.2
+            "status": "Out",
+            "injury": "Undisclosed",
+            "note": "Lindgren did not return to Wednesday's (Feb. 25) game versus the Stars.",
+            "estimatedWar": 0.9
           },
           {
             "player": "Matt Murray",
@@ -2338,179 +2095,15 @@
             "injury": "Lower Body",
             "note": "The Kraken said on Tuesday (Nov. 18) that Murray is expected to be out of action for about six weeks, the team announced Tuesday (Nov. 18). He has been placed on injured reserve, per the NHL media site.",
             "estimatedWar": 1.2
-          },
-          {
-            "player": "Jaden Schwartz",
-            "position": "",
-            "status": "Out",
-            "injury": "Lower-body",
-            "note": "Schwartz did not play Wednesday's (Feb. 4) game against the Kings due to a lower-body injury.",
-            "estimatedWar": 0.9
           }
         ],
-        "totalWarLost": 4.5
-      },
-      {
-        "rank": 12,
-        "code": "ANA",
-        "name": "Anaheim Ducks",
-        "city": "Anaheim",
-        "conference": "West",
-        "division": "Pacific",
-        "tier": "Bubble",
-        "tierColor": "#f59e0b",
-        "tierBg": "rgba(245, 158, 11, 0.15)",
-        "tierIcon": "\u26a1",
-        "compositeStrength": 50.0,
-        "strengthRank": 19,
-        "playoffProbability": 91.1,
-        "conferenceProbability": 21.48,
-        "cupFinalProbability": 10.64,
-        "cupProbability": 5.38,
-        "cupProbLower": 5.02,
-        "cupProbUpper": 5.77,
-        "injuries": [
-          {
-            "player": "Leo Carlsson",
-            "position": "",
-            "status": "IR",
-            "injury": "Thigh",
-            "note": "The Anaheim Ducks placed F Leo Carlsson on injured reserve on Sunday (Feb. 1).",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Petr Mrazek",
-            "position": "",
-            "status": "IR",
-            "injury": "Lower-Body",
-            "note": "The Anaheim Ducks placed G Petr Mrazek on injured reserve on Wednesday (Jan. 7).",
-            "estimatedWar": 1.2
-          },
-          {
-            "player": "Frank Vatrano",
-            "position": "",
-            "status": "IR",
-            "injury": "Shoulder",
-            "note": "The Anaheim Ducks placed F Frank Vatrano on injured reserve on Wednesday (Dec. 31) and is expected to miss the next six weeks.",
-            "estimatedWar": 1.2
-          }
-        ],
-        "totalWarLost": 3.6
-      },
-      {
-        "rank": 15,
-        "code": "EDM",
-        "name": "Edmonton Oilers",
-        "city": "Edmonton",
-        "conference": "West",
-        "division": "Pacific",
-        "tier": "Bubble",
-        "tierColor": "#f59e0b",
-        "tierBg": "rgba(245, 158, 11, 0.15)",
-        "tierIcon": "\u26a1",
-        "compositeStrength": 51.8,
-        "strengthRank": 14,
-        "playoffProbability": 75.9,
-        "conferenceProbability": 17.98,
-        "cupFinalProbability": 8.44,
-        "cupProbability": 2.7,
-        "cupProbLower": 2.45,
-        "cupProbUpper": 2.99,
-        "injuries": [
-          {
-            "player": "Adam Henrique",
-            "position": "",
-            "status": "LTIR",
-            "injury": "Undisclosed",
-            "note": "The Edmonton Oilers placed F Adam Henrique on long-term injured reserve on Tuesday (Jan. 13).",
-            "estimatedWar": 1.5
-          }
-        ],
-        "totalWarLost": 1.5
+        "totalWarLost": 2.1
       }
     ]
   },
   "cupFavorites": [
     {
       "rank": 1,
-      "code": "DAL",
-      "name": "Dallas Stars",
-      "city": "Dallas",
-      "conference": "West",
-      "division": "Central",
-      "tier": "Elite",
-      "tierColor": "#10b981",
-      "tierBg": "rgba(16, 185, 129, 0.15)",
-      "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 54.5,
-      "strengthRank": 4,
-      "playoffProbability": 100.0,
-      "conferenceProbability": 29.11,
-      "cupFinalProbability": 15.04,
-      "cupProbability": 9.0,
-      "cupProbLower": 8.55,
-      "cupProbUpper": 9.49,
-      "injuries": [
-        {
-          "player": "Lian Bichsel",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-Body",
-          "note": "The Stars reported on Wednesday (Feb. 4) that Bichsel is close to returning but will be held out until after the Olympic break, per Brien Rea of Victory+.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Tyler Seguin",
-          "position": "",
-          "status": "Out",
-          "injury": "ACL",
-          "note": "The Stars said on Friday (Dec. 19) that Seguin will have his return timetable evaluated after the Olympic break after undergoing successful ACL surgery.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 1.8
-    },
-    {
-      "rank": 2,
-      "code": "CAR",
-      "name": "Carolina Hurricanes",
-      "city": "Raleigh",
-      "conference": "East",
-      "division": "Metropolitan",
-      "tier": "Elite",
-      "tierColor": "#10b981",
-      "tierBg": "rgba(16, 185, 129, 0.15)",
-      "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 54.9,
-      "strengthRank": 3,
-      "playoffProbability": 100.0,
-      "conferenceProbability": 31.36,
-      "cupFinalProbability": 15.89,
-      "cupProbability": 8.15,
-      "cupProbLower": 7.71,
-      "cupProbUpper": 8.61,
-      "injuries": [
-        {
-          "player": "Pyotr Kochetkov",
-          "position": "",
-          "status": "IR",
-          "injury": "Undisclosed",
-          "note": "The Carolina Hurricanes placed G Pyotr Kochetkov on injured reserve on Monday (Dec. 29) and is expected to miss the rest of the campaign, Walt Ruff of the Hurricanes' official site.",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Eric Robinson",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper-Body",
-          "note": "The Hurricanes said on Wednesday (Jan. 21) that Robinson will be out for an extended period of time.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 2.1
-    },
-    {
-      "rank": 3,
       "code": "COL",
       "name": "Colorado Avalanche",
       "city": "Denver",
@@ -2520,14 +2113,14 @@
       "tierColor": "#10b981",
       "tierBg": "rgba(16, 185, 129, 0.15)",
       "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 59.1,
+      "compositeStrength": 58.8,
       "strengthRank": 1,
       "playoffProbability": 100.0,
-      "conferenceProbability": 31.52,
-      "cupFinalProbability": 16.17,
-      "cupProbability": 7.96,
-      "cupProbLower": 7.53,
-      "cupProbUpper": 8.42,
+      "conferenceProbability": 31.75,
+      "cupFinalProbability": 16.86,
+      "cupProbability": 8.33,
+      "cupProbLower": 7.89,
+      "cupProbUpper": 8.8,
       "injuries": [
         {
           "player": "Logan O'Connor",
@@ -2541,7 +2134,38 @@
       "totalWarLost": 0.9
     },
     {
-      "rank": 4,
+      "rank": 2,
+      "code": "CAR",
+      "name": "Carolina Hurricanes",
+      "city": "Raleigh",
+      "conference": "East",
+      "division": "Metropolitan",
+      "tier": "Elite",
+      "tierColor": "#10b981",
+      "tierBg": "rgba(16, 185, 129, 0.15)",
+      "tierIcon": "\ud83c\udfc6",
+      "compositeStrength": 55.0,
+      "strengthRank": 3,
+      "playoffProbability": 100.0,
+      "conferenceProbability": 31.82,
+      "cupFinalProbability": 16.07,
+      "cupProbability": 8.07,
+      "cupProbLower": 7.64,
+      "cupProbUpper": 8.53,
+      "injuries": [
+        {
+          "player": "Pyotr Kochetkov",
+          "position": "",
+          "status": "IR",
+          "injury": "Undisclosed",
+          "note": "The Carolina Hurricanes placed G Pyotr Kochetkov on injured reserve on Monday (Dec. 29) and is expected to miss the rest of the campaign, Walt Ruff of the Hurricanes' official site.",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 1.2
+    },
+    {
+      "rank": 3,
       "code": "TB",
       "name": "Tampa Bay Lightning",
       "city": "Tampa",
@@ -2551,57 +2175,96 @@
       "tierColor": "#10b981",
       "tierBg": "rgba(16, 185, 129, 0.15)",
       "tierIcon": "\ud83c\udfc6",
-      "compositeStrength": 57.6,
+      "compositeStrength": 57.5,
       "strengthRank": 2,
       "playoffProbability": 100.0,
-      "conferenceProbability": 32.6,
-      "cupFinalProbability": 16.21,
-      "cupProbability": 7.7,
-      "cupProbLower": 7.27,
-      "cupProbUpper": 8.15,
+      "conferenceProbability": 31.35,
+      "cupFinalProbability": 16.12,
+      "cupProbability": 7.64,
+      "cupProbLower": 7.22,
+      "cupProbUpper": 8.09,
       "injuries": [
         {
           "player": "Anthony Cirelli",
           "position": "",
           "status": "Out",
-          "injury": "Upper Body",
-          "note": "The Lightning said on Wednesday (Feb. 4) that Cirelli will be re-evaluated after the Olympic break.",
+          "injury": "Undisclosed",
+          "note": "The Lightning said that Cirelli is OUT for Thursday's (Feb. 26) game versus the Hurricanes.",
           "estimatedWar": 0.9
         },
         {
-          "player": "Charle-Edouard D'Astous",
+          "player": "Max Crozier",
           "position": "",
           "status": "IR",
-          "injury": "Lower-body",
-          "note": "The Tampa Bay Lightning placed D Charle-Edouard D'Astous on injured reserve on Sunday (Jan. 25).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Emil Lilleberg",
-          "position": "",
-          "status": "IR",
-          "injury": "Undisclosed",
-          "note": "The Tampa Bay Lightning placed D Emil Lilleberg on injured reserve on Monday (Dec. 15) and is week-to-week.",
+          "injury": "Abdomen",
+          "note": "The Tampa Bay Lightning placed D Max Crozier on injured reserve on Saturday (Feb. 21).",
           "estimatedWar": 1.2
         },
         {
           "player": "Nick Paul",
           "position": "",
-          "status": "Out",
+          "status": "IR",
           "injury": "Undisclosed",
-          "note": "The Lightning said on Wednesday (Feb. 4) that Paul will be re-evaluated after the Olympic break.",
+          "note": "The Tampa Bay Lightning placed F Nick Paul on injured reserve on Wednesday (Feb. 25).",
+          "estimatedWar": 1.2
+        }
+      ],
+      "totalWarLost": 3.3
+    },
+    {
+      "rank": 4,
+      "code": "DAL",
+      "name": "Dallas Stars",
+      "city": "Dallas",
+      "conference": "West",
+      "division": "Central",
+      "tier": "Elite",
+      "tierColor": "#10b981",
+      "tierBg": "rgba(16, 185, 129, 0.15)",
+      "tierIcon": "\ud83c\udfc6",
+      "compositeStrength": 54.8,
+      "strengthRank": 4,
+      "playoffProbability": 100.0,
+      "conferenceProbability": 28.41,
+      "cupFinalProbability": 14.59,
+      "cupProbability": 7.53,
+      "cupProbLower": 7.11,
+      "cupProbUpper": 7.98,
+      "injuries": [
+        {
+          "player": "Radek Faksa",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper-body",
+          "note": "The Stars placed F Radek Faksa on injured reserve on Tuesday (Feb. 24).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Roope Hintz",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Hintz did not play in Wednesday's (Feb. 25) game against the Kraken.",
           "estimatedWar": 0.9
         },
         {
-          "player": "Brayden Point",
+          "player": "Mikko Rantanen",
           "position": "",
-          "status": "LTIR",
-          "injury": "Lower Body",
-          "note": "The Tampa Bay Lightning transferred F Brayden Point to long-term injured reserve on Tuesday (Feb. 3).",
-          "estimatedWar": 1.5
+          "status": "Out",
+          "injury": "Lower-body",
+          "note": "The Dallas Stars said on Tuesday (Feb. 24) that Rantanen will be out for a minimum of two weeks, according to Stars radio analyst Bruce LeVine.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Tyler Seguin",
+          "position": "",
+          "status": "Out",
+          "injury": "ACL",
+          "note": "The Stars said on Friday (Dec. 19) that Seguin will have his return timetable evaluated after the Olympic break after undergoing successful ACL surgery.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 5.7
+      "totalWarLost": 3.9
     },
     {
       "rank": 5,
@@ -2614,45 +2277,29 @@
       "tierColor": "#3b82f6",
       "tierBg": "rgba(59, 130, 246, 0.15)",
       "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 54.1,
+      "compositeStrength": 54.5,
       "strengthRank": 5,
-      "playoffProbability": 99.4,
-      "conferenceProbability": 28.09,
-      "cupFinalProbability": 14.06,
-      "cupProbability": 6.8,
-      "cupProbLower": 6.4,
-      "cupProbUpper": 7.23,
+      "playoffProbability": 99.8,
+      "conferenceProbability": 29.32,
+      "cupFinalProbability": 14.94,
+      "cupProbability": 7.32,
+      "cupProbLower": 6.9,
+      "cupProbUpper": 7.76,
       "injuries": [
         {
-          "player": "Noel Acciari",
+          "player": "Sidney Crosby",
           "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Acciari did not play in Thursday's (Feb. 5) matchup against the Sabres.",
-          "estimatedWar": 0.9
+          "status": "IR",
+          "injury": "Leg",
+          "note": "The Pittsburgh Penguins placed F Sidney Crosby on injured reserve and will be out of action for at least four weeks.",
+          "estimatedWar": 1.2
         },
         {
           "player": "Filip Hallander",
           "position": "",
-          "status": "IR",
-          "injury": "Leg",
-          "note": "The Pittsburgh Penguins placed F Filip Hallander on Injured Reserve on Saturday (Nov. 8).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Kris Letang",
-          "position": "",
-          "status": "IR",
-          "injury": "Foot",
-          "note": "The Pittsburgh Penguins placed D Kris Letang on injured reserve on Saturday (Jan. 31).",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Blake Lizotte",
-          "position": "",
           "status": "Out",
-          "injury": "Personal",
-          "note": "Lizotte did not play in Thursday's (Feb. 5) game versus the Sabres.",
+          "injury": "Leg",
+          "note": "The Pittsburgh Penguins sent F Filip Hallander to the minors on a conditioning loan on Wednesday (Feb. 18).",
           "estimatedWar": 0.9
         },
         {
@@ -2664,32 +2311,10 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 5.4
+      "totalWarLost": 3.3
     },
     {
       "rank": 6,
-      "code": "VGK",
-      "name": "Vegas Golden Knights",
-      "city": "Las Vegas",
-      "conference": "West",
-      "division": "Pacific",
-      "tier": "Contender",
-      "tierColor": "#3b82f6",
-      "tierBg": "rgba(59, 130, 246, 0.15)",
-      "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 52.5,
-      "strengthRank": 10,
-      "playoffProbability": 100.0,
-      "conferenceProbability": 24.76,
-      "cupFinalProbability": 12.11,
-      "cupProbability": 6.55,
-      "cupProbLower": 6.16,
-      "cupProbUpper": 6.97,
-      "injuries": [],
-      "totalWarLost": 0.0
-    },
-    {
-      "rank": 7,
       "code": "UTA",
       "name": "Utah Hockey Club",
       "city": "Salt Lake City",
@@ -2701,70 +2326,108 @@
       "tierIcon": "\ud83c\udfaf",
       "compositeStrength": 53.4,
       "strengthRank": 7,
-      "playoffProbability": 92.1,
-      "conferenceProbability": 26.83,
-      "cupFinalProbability": 13.18,
-      "cupProbability": 6.48,
-      "cupProbLower": 6.08,
-      "cupProbUpper": 6.89,
+      "playoffProbability": 95.5,
+      "conferenceProbability": 29.02,
+      "cupFinalProbability": 14.35,
+      "cupProbability": 7.22,
+      "cupProbLower": 6.8,
+      "cupProbUpper": 7.65,
       "injuries": [
         {
-          "player": "Logan Cooley",
-          "position": "",
-          "status": "IR",
-          "injury": "Lower Body",
-          "note": "The Utah Mammoth said on Monday (Feb. 2) that Cooley remains on injured reserve and likely won't be back in the lineup until after the 2026 Winter Olympics.",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Alexander Kerfoot",
+          "player": "Michael Carcone",
           "position": "",
           "status": "Out",
-          "injury": "Upper Body",
-          "note": "The Utah Mammoth said on Monday (Feb. 2) that Kerfoot was seen participating in drills and even joined the team's defensemen during line skates but has no official timeline to return.",
+          "injury": "Illness",
+          "note": "Carcone did not play in Wednesday's (Feb. 25) versus the Avalanche.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.1
+      "totalWarLost": 0.9
     },
     {
-      "rank": 8,
-      "code": "MTL",
-      "name": "Montreal Canadiens",
-      "city": "Montreal",
+      "rank": 7,
+      "code": "BUF",
+      "name": "Buffalo Sabres",
+      "city": "Buffalo",
       "conference": "East",
       "division": "Atlantic",
       "tier": "Contender",
       "tierColor": "#3b82f6",
       "tierBg": "rgba(59, 130, 246, 0.15)",
       "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 51.8,
-      "strengthRank": 12,
-      "playoffProbability": 99.9,
-      "conferenceProbability": 22.9,
-      "cupFinalProbability": 11.61,
-      "cupProbability": 6.23,
-      "cupProbLower": 5.84,
-      "cupProbUpper": 6.64,
+      "compositeStrength": 53.0,
+      "strengthRank": 8,
+      "playoffProbability": 99.7,
+      "conferenceProbability": 25.45,
+      "cupFinalProbability": 12.63,
+      "cupProbability": 6.36,
+      "cupProbLower": 5.97,
+      "cupProbUpper": 6.78,
       "injuries": [
         {
-          "player": "Patrik Laine",
+          "player": "Zach Benson",
+          "position": "",
+          "status": "IR",
+          "injury": "Upper Body",
+          "note": "The Buffalo Sabres placed F Zach Benson on injured reserve on Wednesday (Feb. 25).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Justin Danforth",
+          "position": "",
+          "status": "DTD",
+          "injury": "Lower Body",
+          "note": "The Buffalo Sabres said on Wednesday (Feb. 18) that Danforth is now skating but not in day-to-day status.",
+          "estimatedWar": 0.4
+        },
+        {
+          "player": "Jordan Greenway",
+          "position": "",
+          "status": "IR",
+          "injury": "Abdomen",
+          "note": "The Buffalo Sabres placed F Jordan Greenway on injured reserve on Wednesday (Feb. 25).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Jiri Kulich",
           "position": "",
           "status": "Out",
-          "injury": "Abdomen",
-          "note": "The Montreal Canadiens said on Saturday (Jan 10) that Laine could return to the lineup as early as late January.",
+          "injury": "Ear",
+          "note": "The Sabres said on Monday (Nov. 10) that Kulich is slated to miss significant time due to a blood clot issue.",
           "estimatedWar": 0.9
         },
         {
-          "player": "Alex Newhook",
+          "player": "Conor Timmins",
           "position": "",
-          "status": "IR",
-          "injury": "Ankle",
-          "note": "The Montreal Canadiens placed F Alex Newhook on Injured Reserve on Monday (Nov. 17).",
-          "estimatedWar": 1.2
+          "status": "DTD",
+          "injury": "Leg",
+          "note": "The Buffalo Sabres said on Wednesday (Feb. 18) that Timmins is now skating but not in day-to-day status.",
+          "estimatedWar": 0.4
         }
       ],
-      "totalWarLost": 2.1
+      "totalWarLost": 4.2
+    },
+    {
+      "rank": 8,
+      "code": "VGK",
+      "name": "Vegas Golden Knights",
+      "city": "Las Vegas",
+      "conference": "West",
+      "division": "Pacific",
+      "tier": "Contender",
+      "tierColor": "#3b82f6",
+      "tierBg": "rgba(59, 130, 246, 0.15)",
+      "tierIcon": "\ud83c\udfaf",
+      "compositeStrength": 52.6,
+      "strengthRank": 10,
+      "playoffProbability": 100.0,
+      "conferenceProbability": 25.77,
+      "cupFinalProbability": 12.45,
+      "cupProbability": 6.22,
+      "cupProbLower": 5.84,
+      "cupProbUpper": 6.64,
+      "injuries": [],
+      "totalWarLost": 0.0
     },
     {
       "rank": 9,
@@ -2780,11 +2443,11 @@
       "compositeStrength": 53.6,
       "strengthRank": 6,
       "playoffProbability": 100.0,
-      "conferenceProbability": 20.56,
-      "cupFinalProbability": 10.75,
-      "cupProbability": 6.22,
-      "cupProbLower": 5.84,
-      "cupProbUpper": 6.63,
+      "conferenceProbability": 20.85,
+      "cupFinalProbability": 10.82,
+      "cupProbability": 5.86,
+      "cupProbLower": 5.49,
+      "cupProbUpper": 6.26,
       "injuries": [
         {
           "player": "Jonas Brodin",
@@ -2793,282 +2456,201 @@
           "injury": "Lower Body",
           "note": "HC John Hynes said on Monday (Jan. 26) that Brodin is expected to miss approximately 6-8 weeks, as per Joe Smith of The Athletic.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "Marcus Foligno",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Foligno did not play in Wednesday's (Feb. 4) game versus the Predators.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Jesper Wallstedt",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Wallstedt isn't available for Team Sweden's game against Italy on Wednesday (Feb. 11) at the 2026 Winter Olympics, per Elliotte Friedman of Sportsnet.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7
+      "totalWarLost": 0.9
     },
     {
       "rank": 10,
-      "code": "BUF",
-      "name": "Buffalo Sabres",
-      "city": "Buffalo",
+      "code": "DET",
+      "name": "Detroit Red Wings",
+      "city": "Detroit",
       "conference": "East",
       "division": "Atlantic",
-      "tier": "Contender",
-      "tierColor": "#3b82f6",
-      "tierBg": "rgba(59, 130, 246, 0.15)",
-      "tierIcon": "\ud83c\udfaf",
-      "compositeStrength": 52.7,
-      "strengthRank": 9,
-      "playoffProbability": 97.0,
-      "conferenceProbability": 24.28,
-      "cupFinalProbability": 12.61,
-      "cupProbability": 6.09,
-      "cupProbLower": 5.71,
-      "cupProbUpper": 6.49,
-      "injuries": [
-        {
-          "player": "Zach Benson",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Benson did not play in Thursday's (Feb. 5) road matchup against the Penguins.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Justin Danforth",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "The Buffalo Sabres said on Monday (Jan. 26) that Danforth is trending toward a post-Olympic return to action, per Bill Hoppe of the Olean Times Herald.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Josh Dunne",
-          "position": "",
-          "status": "IR",
-          "injury": "Middle-body",
-          "note": "The Buffalo Sabres placed F Josh Dunne on injured reserve on Thursday (Jan. 15)",
-          "estimatedWar": 1.2
-        },
-        {
-          "player": "Jordan Greenway",
-          "position": "",
-          "status": "Out",
-          "injury": "Abdomen",
-          "note": "Greenway did not play in Thursday's (Feb. 5) game versus the Penguins.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Jiri Kulich",
-          "position": "",
-          "status": "Out",
-          "injury": "Ear",
-          "note": "The Sabres said on Monday (Nov. 10) that Kulich is slated to miss significant time due to a blood clot issue.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Ukko-Pekka Luukkonen",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "The Buffalo Sabres said on Tuesday (Feb. 3) that Luukkonen will not be joining Finland for the 2026 Winter Olympics.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Josh Norris",
-          "position": "",
-          "status": "DTD",
-          "injury": "Ribs",
-          "note": "The Sabres said on Monday (Feb. 2) that Norris was upgraded to day-to-day last week, but he hasn't yet received the green light to return to game action.",
-          "estimatedWar": 0.4
-        },
-        {
-          "player": "Conor Timmins",
-          "position": "",
-          "status": "IR",
-          "injury": "Leg",
-          "note": "The Buffalo Sabres placed D Conor Timmins on Injured Reserve on Saturday (Dec. 20).",
-          "estimatedWar": 1.2
-        }
-      ],
-      "totalWarLost": 7.3
+      "tier": "Bubble",
+      "tierColor": "#f59e0b",
+      "tierBg": "rgba(245, 158, 11, 0.15)",
+      "tierIcon": "\u26a1",
+      "compositeStrength": 50.8,
+      "strengthRank": 17,
+      "playoffProbability": 99.8,
+      "conferenceProbability": 19.92,
+      "cupFinalProbability": 9.79,
+      "cupProbability": 5.83,
+      "cupProbLower": 5.46,
+      "cupProbUpper": 6.23,
+      "injuries": [],
+      "totalWarLost": 0.0
     }
   ],
   "roundAdvancement": {
     "COL": {
-      "round1": 58.08,
-      "round2": 31.52,
-      "confFinal": 16.17,
-      "cupFinal": 16.17,
-      "cupWin": 7.89
+      "round1": 57.55,
+      "round2": 31.75,
+      "confFinal": 16.86,
+      "cupFinal": 16.86,
+      "cupWin": 8.4
     },
     "MIN": {
-      "round1": 41.4,
-      "round2": 20.56,
-      "confFinal": 10.75,
-      "cupFinal": 10.75,
-      "cupWin": 5.37
+      "round1": 42.02,
+      "round2": 20.85,
+      "confFinal": 10.82,
+      "cupFinal": 10.82,
+      "cupWin": 5.42
     },
     "CAR": {
-      "round1": 57.72,
-      "round2": 31.36,
-      "confFinal": 15.89,
-      "cupFinal": 15.89,
-      "cupWin": 8.21
+      "round1": 57.38,
+      "round2": 31.82,
+      "confFinal": 16.07,
+      "cupFinal": 16.07,
+      "cupWin": 7.79
     },
     "TB": {
-      "round1": 59.41,
-      "round2": 32.6,
-      "confFinal": 16.21,
-      "cupFinal": 16.21,
-      "cupWin": 7.88
+      "round1": 58.19,
+      "round2": 31.35,
+      "confFinal": 16.12,
+      "cupFinal": 16.12,
+      "cupWin": 7.61
     },
     "DAL": {
-      "round1": 58.6,
-      "round2": 29.11,
-      "confFinal": 15.04,
-      "cupFinal": 15.04,
-      "cupWin": 7.15
-    },
-    "DET": {
-      "round1": 40.72,
-      "round2": 18.1,
-      "confFinal": 8.47,
-      "cupFinal": 8.47,
-      "cupWin": 4.13
-    },
-    "MTL": {
-      "round1": 49.32,
-      "round2": 22.9,
-      "confFinal": 11.61,
-      "cupFinal": 11.61,
-      "cupWin": 6.0
+      "round1": 57.98,
+      "round2": 28.41,
+      "confFinal": 14.59,
+      "cupFinal": 14.59,
+      "cupWin": 7.05
     },
     "BUF": {
-      "round1": 47.48,
-      "round2": 24.28,
-      "confFinal": 12.61,
-      "cupFinal": 12.61,
-      "cupWin": 6.17
+      "round1": 50.8,
+      "round2": 25.45,
+      "confFinal": 12.63,
+      "cupFinal": 12.63,
+      "cupWin": 6.72
+    },
+    "DET": {
+      "round1": 42.77,
+      "round2": 19.92,
+      "confFinal": 9.79,
+      "cupFinal": 9.79,
+      "cupWin": 4.95
+    },
+    "MTL": {
+      "round1": 46.0,
+      "round2": 21.26,
+      "confFinal": 10.6,
+      "cupFinal": 10.6,
+      "cupWin": 5.61
     },
     "PIT": {
-      "round1": 57.82,
-      "round2": 28.09,
-      "confFinal": 14.06,
-      "cupFinal": 14.06,
-      "cupWin": 7.01
+      "round1": 58.56,
+      "round2": 29.32,
+      "confFinal": 14.94,
+      "cupFinal": 14.94,
+      "cupWin": 7.41
     },
     "NYI": {
-      "round1": 32.91,
-      "round2": 15.66,
-      "confFinal": 7.68,
-      "cupFinal": 7.68,
-      "cupWin": 3.75
+      "round1": 38.01,
+      "round2": 17.63,
+      "confFinal": 8.55,
+      "cupFinal": 8.55,
+      "cupWin": 4.44
     },
     "BOS": {
-      "round1": 40.26,
-      "round2": 20.22,
-      "confFinal": 10.3,
-      "cupFinal": 10.3,
-      "cupWin": 5.14
+      "round1": 43.18,
+      "round2": 20.88,
+      "confFinal": 10.17,
+      "cupFinal": 10.17,
+      "cupWin": 5.1
     },
     "VGK": {
-      "round1": 46.61,
-      "round2": 24.76,
-      "confFinal": 12.11,
-      "cupFinal": 12.11,
-      "cupWin": 6.33
+      "round1": 47.97,
+      "round2": 25.77,
+      "confFinal": 12.45,
+      "cupFinal": 12.45,
+      "cupWin": 6.48
     },
     "WSH": {
-      "round1": 0.41,
-      "round2": 0.19,
-      "confFinal": 0.07,
-      "cupFinal": 0.07,
-      "cupWin": 0.03
-    },
-    "CBJ": {
-      "round1": 13.21,
-      "round2": 6.27,
-      "confFinal": 2.99,
-      "cupFinal": 2.99,
-      "cupWin": 1.6
-    },
-    "EDM": {
-      "round1": 38.29,
-      "round2": 17.98,
-      "confFinal": 8.44,
-      "cupFinal": 8.44,
-      "cupWin": 4.16
-    },
-    "UTA": {
-      "round1": 50.4,
-      "round2": 26.83,
-      "confFinal": 13.18,
-      "cupFinal": 13.18,
-      "cupWin": 6.53
-    },
-    "OTT": {
-      "round1": 0.2,
-      "round2": 0.06,
-      "confFinal": 0.03,
-      "cupFinal": 0.03,
-      "cupWin": 0.01
-    },
-    "TOR": {
-      "round1": 0.35,
-      "round2": 0.15,
-      "confFinal": 0.04,
-      "cupFinal": 0.04,
-      "cupWin": 0.0
+      "round1": 1.35,
+      "round2": 0.69,
+      "confFinal": 0.34,
+      "cupFinal": 0.34,
+      "cupWin": 0.2
     },
     "ANA": {
-      "round1": 45.98,
-      "round2": 21.48,
-      "confFinal": 10.64,
-      "cupFinal": 10.64,
-      "cupWin": 5.45
+      "round1": 46.07,
+      "round2": 20.82,
+      "confFinal": 9.84,
+      "cupFinal": 9.84,
+      "cupWin": 5.11
     },
-    "SEA": {
-      "round1": 38.4,
-      "round2": 17.5,
-      "confFinal": 8.6,
-      "cupFinal": 8.6,
-      "cupWin": 4.54
+    "EDM": {
+      "round1": 45.37,
+      "round2": 21.29,
+      "confFinal": 10.61,
+      "cupFinal": 10.61,
+      "cupWin": 5.34
+    },
+    "UTA": {
+      "round1": 54.0,
+      "round2": 29.02,
+      "confFinal": 14.35,
+      "cupFinal": 14.35,
+      "cupWin": 6.92
+    },
+    "CBJ": {
+      "round1": 3.6,
+      "round2": 1.64,
+      "confFinal": 0.76,
+      "cupFinal": 0.76,
+      "cupWin": 0.33
+    },
+    "OTT": {
+      "round1": 0.06,
+      "round2": 0.01,
+      "confFinal": 0.01,
+      "cupFinal": 0.01,
+      "cupWin": 0.0
     },
     "FLA": {
-      "round1": 0.01,
-      "round2": 0.01,
+      "round1": 0.0,
+      "round2": 0.0,
+      "confFinal": 0.0,
+      "cupFinal": 0.0,
+      "cupWin": 0.0
+    },
+    "TOR": {
+      "round1": 0.0,
+      "round2": 0.0,
       "confFinal": 0.0,
       "cupFinal": 0.0,
       "cupWin": 0.0
     },
     "PHI": {
-      "round1": 0.18,
-      "round2": 0.11,
-      "confFinal": 0.04,
-      "cupFinal": 0.04,
-      "cupWin": 0.02
+      "round1": 0.1,
+      "round2": 0.03,
+      "confFinal": 0.02,
+      "cupFinal": 0.02,
+      "cupWin": 0.01
     },
-    "LA": {
-      "round1": 13.59,
-      "round2": 6.19,
-      "confFinal": 3.02,
-      "cupFinal": 3.02,
-      "cupWin": 1.49
+    "SEA": {
+      "round1": 31.05,
+      "round2": 13.97,
+      "confFinal": 6.73,
+      "cupFinal": 6.73,
+      "cupWin": 3.3
     },
     "NSH": {
-      "round1": 2.36,
-      "round2": 1.13,
-      "confFinal": 0.56,
-      "cupFinal": 0.56,
-      "cupWin": 0.28
+      "round1": 9.76,
+      "round2": 4.59,
+      "confFinal": 2.25,
+      "cupFinal": 2.25,
+      "cupWin": 1.05
+    },
+    "LA": {
+      "round1": 3.93,
+      "round2": 1.62,
+      "confFinal": 0.67,
+      "cupFinal": 0.67,
+      "cupWin": 0.3
     },
     "NJ": {
       "round1": 0.0,
@@ -3078,13 +2660,13 @@
       "cupWin": 0.0
     },
     "SJ": {
-      "round1": 6.29,
-      "round2": 2.94,
-      "confFinal": 1.49,
-      "cupFinal": 1.49,
-      "cupWin": 0.86
+      "round1": 4.3,
+      "round2": 1.91,
+      "confFinal": 0.83,
+      "cupFinal": 0.83,
+      "cupWin": 0.46
     },
-    "CHI": {
+    "WPG": {
       "round1": 0.0,
       "round2": 0.0,
       "confFinal": 0.0,
@@ -3098,7 +2680,7 @@
       "cupFinal": 0.0,
       "cupWin": 0.0
     },
-    "WPG": {
+    "CHI": {
       "round1": 0.0,
       "round2": 0.0,
       "confFinal": 0.0,
@@ -3134,22 +2716,22 @@
           {
             "higher": "PIT",
             "lower": "NYI",
-            "higherWinProb": 57.8
-          },
-          {
-            "higher": "MTL",
-            "lower": "DET",
-            "higherWinProb": 58.9
+            "higherWinProb": 58.4
           },
           {
             "higher": "TB",
             "lower": "BOS",
-            "higherWinProb": 61.2
+            "higherWinProb": 57.5
+          },
+          {
+            "higher": "MTL",
+            "lower": "DET",
+            "higherWinProb": 57.7
           },
           {
             "higher": "CAR",
             "lower": "BUF",
-            "higherWinProb": 58.9
+            "higherWinProb": 58.6
           }
         ],
         "round2": [
@@ -3157,40 +2739,52 @@
             "slot": 0,
             "matchups": [
               {
+                "teamA": "BUF",
+                "teamB": "TB",
+                "teamAWinProb": 45.4,
+                "matchupProb": 13.7
+              },
+              {
                 "teamA": "MTL",
                 "teamB": "TB",
-                "teamAWinProb": 45.5,
-                "matchupProb": 21.8
+                "teamAWinProb": 44.3,
+                "matchupProb": 13.4
               },
               {
                 "teamA": "DET",
                 "teamB": "TB",
-                "teamAWinProb": 46.4,
-                "matchupProb": 13.0
+                "teamAWinProb": 47.1,
+                "matchupProb": 10.6
               },
               {
-                "teamA": "BUF",
-                "teamB": "TB",
-                "teamAWinProb": 44.8,
-                "matchupProb": 12.1
-              },
-              {
-                "teamA": "BOS",
-                "teamB": "MTL",
-                "teamAWinProb": 56.1,
-                "matchupProb": 7.8
+                "teamA": "CAR",
+                "teamB": "PIT",
+                "teamAWinProb": 56.9,
+                "matchupProb": 9.0
               },
               {
                 "teamA": "BOS",
                 "teamB": "BUF",
-                "teamAWinProb": 44.1,
-                "matchupProb": 6.3
+                "teamAWinProb": 45.4,
+                "matchupProb": 7.5
+              },
+              {
+                "teamA": "BOS",
+                "teamB": "MTL",
+                "teamAWinProb": 55.0,
+                "matchupProb": 6.7
+              },
+              {
+                "teamA": "CAR",
+                "teamB": "NYI",
+                "teamAWinProb": 58.7,
+                "matchupProb": 6.0
               },
               {
                 "teamA": "BOS",
                 "teamB": "DET",
-                "teamAWinProb": 58.0,
-                "matchupProb": 5.3
+                "teamAWinProb": 51.6,
+                "matchupProb": 5.5
               }
             ]
           },
@@ -3200,38 +2794,26 @@
               {
                 "teamA": "CAR",
                 "teamB": "PIT",
-                "teamAWinProb": 55.7,
-                "matchupProb": 28.7
+                "teamAWinProb": 54.3,
+                "matchupProb": 24.5
               },
               {
                 "teamA": "CAR",
                 "teamB": "NYI",
-                "teamAWinProb": 52.1,
+                "teamAWinProb": 54.7,
                 "matchupProb": 15.7
               },
               {
                 "teamA": "BUF",
-                "teamB": "PIT",
-                "teamAWinProb": 45.3,
-                "matchupProb": 7.4
-              },
-              {
-                "teamA": "BOS",
-                "teamB": "PIT",
-                "teamAWinProb": 45.6,
-                "matchupProb": 5.6
-              },
-              {
-                "teamA": "DET",
-                "teamB": "PIT",
-                "teamAWinProb": 43.3,
+                "teamB": "TB",
+                "teamAWinProb": 49.4,
                 "matchupProb": 5.4
               },
               {
-                "teamA": "CAR",
-                "teamB": "CBJ",
-                "teamAWinProb": 53.6,
-                "matchupProb": 5.2
+                "teamA": "MTL",
+                "teamB": "TB",
+                "teamAWinProb": 47.9,
+                "matchupProb": 5.1
               }
             ]
           }
@@ -3240,20 +2822,20 @@
           {
             "teamA": "CAR",
             "teamB": "TB",
-            "teamAWinProb": 51.1,
-            "matchupProb": 10.4
+            "teamAWinProb": 47.0,
+            "matchupProb": 10.1
           },
           {
             "teamA": "PIT",
             "teamB": "TB",
-            "teamAWinProb": 47.9,
-            "matchupProb": 9.0
+            "teamAWinProb": 48.3,
+            "matchupProb": 9.3
           },
           {
-            "teamA": "CAR",
-            "teamB": "MTL",
-            "teamAWinProb": 49.6,
-            "matchupProb": 6.3
+            "teamA": "BUF",
+            "teamB": "CAR",
+            "teamAWinProb": 46.5,
+            "matchupProb": 6.5
           }
         ]
       },
@@ -3262,22 +2844,22 @@
           {
             "higher": "DAL",
             "lower": "MIN",
-            "higherWinProb": 58.6
+            "higherWinProb": 58.0
           },
           {
             "higher": "UTA",
             "lower": "VGK",
-            "higherWinProb": 58.3
+            "higherWinProb": 58.5
           },
           {
-            "higher": "ANA",
-            "lower": "SEA",
-            "higherWinProb": 57.2
+            "higher": "EDM",
+            "lower": "ANA",
+            "higherWinProb": 59.6
           },
           {
             "higher": "COL",
-            "lower": "EDM",
-            "higherWinProb": 57.4
+            "lower": "SEA",
+            "higherWinProb": 58.2
           }
         ],
         "round2": [
@@ -3287,20 +2869,32 @@
               {
                 "teamA": "COL",
                 "teamB": "DAL",
-                "teamAWinProb": 54.6,
-                "matchupProb": 34.0
+                "teamAWinProb": 55.2,
+                "matchupProb": 33.6
               },
               {
                 "teamA": "COL",
                 "teamB": "MIN",
+                "teamAWinProb": 55.1,
+                "matchupProb": 23.9
+              },
+              {
+                "teamA": "DAL",
+                "teamB": "SEA",
                 "teamAWinProb": 53.8,
-                "matchupProb": 24.0
+                "matchupProb": 7.6
+              },
+              {
+                "teamA": "MIN",
+                "teamB": "SEA",
+                "teamAWinProb": 57.5,
+                "matchupProb": 5.6
               },
               {
                 "teamA": "DAL",
                 "teamB": "EDM",
-                "teamAWinProb": 56.7,
-                "matchupProb": 6.5
+                "teamAWinProb": 52.3,
+                "matchupProb": 5.5
               }
             ]
           },
@@ -3310,60 +2904,66 @@
               {
                 "teamA": "ANA",
                 "teamB": "VGK",
-                "teamAWinProb": 44.7,
+                "teamAWinProb": 44.8,
+                "matchupProb": 22.0
+              },
+              {
+                "teamA": "EDM",
+                "teamB": "UTA",
+                "teamAWinProb": 44.3,
                 "matchupProb": 17.2
               },
               {
                 "teamA": "ANA",
                 "teamB": "UTA",
-                "teamAWinProb": 45.8,
-                "matchupProb": 15.6
-              },
-              {
-                "teamA": "SEA",
-                "teamB": "VGK",
-                "teamAWinProb": 48.5,
-                "matchupProb": 13.3
-              },
-              {
-                "teamA": "SEA",
-                "teamB": "UTA",
-                "teamAWinProb": 44.4,
-                "matchupProb": 13.0
+                "teamAWinProb": 45.0,
+                "matchupProb": 16.7
               },
               {
                 "teamA": "EDM",
                 "teamB": "VGK",
-                "teamAWinProb": 47.0,
-                "matchupProb": 10.4
+                "teamAWinProb": 45.7,
+                "matchupProb": 12.4
               },
               {
-                "teamA": "EDM",
+                "teamA": "SEA",
                 "teamB": "UTA",
-                "teamAWinProb": 46.5,
-                "matchupProb": 9.7
+                "teamAWinProb": 46.3,
+                "matchupProb": 7.2
+              },
+              {
+                "teamA": "UTA",
+                "teamB": "VGK",
+                "teamAWinProb": 55.6,
+                "matchupProb": 6.8
+              },
+              {
+                "teamA": "SEA",
+                "teamB": "VGK",
+                "teamAWinProb": 43.6,
+                "matchupProb": 5.9
               }
             ]
           }
         ],
         "confFinal": [
           {
-            "teamA": "DAL",
+            "teamA": "COL",
             "teamB": "VGK",
-            "teamAWinProb": 51.5,
-            "matchupProb": 7.8
+            "teamAWinProb": 52.1,
+            "matchupProb": 8.1
           },
           {
             "teamA": "COL",
             "teamB": "UTA",
-            "teamAWinProb": 51.9,
-            "matchupProb": 7.7
+            "teamAWinProb": 52.8,
+            "matchupProb": 8.0
           },
           {
-            "teamA": "COL",
-            "teamB": "VGK",
-            "teamAWinProb": 52.2,
-            "matchupProb": 7.6
+            "teamA": "DAL",
+            "teamB": "UTA",
+            "teamAWinProb": 50.1,
+            "matchupProb": 7.9
           }
         ]
       },
@@ -3371,105 +2971,105 @@
         {
           "teamA": "CAR",
           "teamB": "COL",
-          "teamAWinProb": 54.5,
-          "matchupProb": 2.5
+          "teamAWinProb": 46.3,
+          "matchupProb": 3.0
         },
         {
           "teamA": "COL",
           "teamB": "TB",
-          "teamAWinProb": 51.4,
-          "matchupProb": 2.5
+          "teamAWinProb": 52.5,
+          "matchupProb": 2.8
         },
         {
-          "teamA": "DAL",
-          "teamB": "TB",
-          "teamAWinProb": 42.5,
-          "matchupProb": 2.5
+          "teamA": "CAR",
+          "teamB": "UTA",
+          "teamAWinProb": 48.1,
+          "matchupProb": 2.6
+        },
+        {
+          "teamA": "COL",
+          "teamB": "PIT",
+          "teamAWinProb": 45.9,
+          "matchupProb": 2.4
         },
         {
           "teamA": "CAR",
           "teamB": "DAL",
-          "teamAWinProb": 53.2,
+          "teamAWinProb": 49.2,
           "matchupProb": 2.4
-        },
-        {
-          "teamA": "DAL",
-          "teamB": "PIT",
-          "teamAWinProb": 45.0,
-          "matchupProb": 2.3
         }
       ],
       "champion": {
-        "team": "CAR",
-        "probability": 8.2
+        "team": "COL",
+        "probability": 8.4
       },
       "projectedSeeds": {
         "East": [
           {
             "team": "TB",
-            "projectedPts": 116.3
+            "projectedPts": 115.1
           },
           {
             "team": "CAR",
-            "projectedPts": 112.2
-          },
-          {
-            "team": "MTL",
-            "projectedPts": 103.6
+            "projectedPts": 113.1
           },
           {
             "team": "PIT",
-            "projectedPts": 102.5
+            "projectedPts": 103.6
           },
           {
-            "team": "DET",
-            "projectedPts": 101.8
+            "team": "MTL",
+            "projectedPts": 103.2
           },
           {
             "team": "BUF",
-            "projectedPts": 100.7
+            "projectedPts": 102.8
+          },
+          {
+            "team": "DET",
+            "projectedPts": 102.8
           },
           {
             "team": "BOS",
-            "projectedPts": 99.3
+            "projectedPts": 100.4
           },
           {
             "team": "NYI",
-            "projectedPts": 97.6
+            "projectedPts": 98.7
           }
         ],
         "West": [
           {
             "team": "COL",
-            "projectedPts": 123.7
+            "projectedPts": 122.3
           },
           {
             "team": "DAL",
-            "projectedPts": 110.8
+            "projectedPts": 111.7
           },
           {
             "team": "MIN",
-            "projectedPts": 110.3
+            "projectedPts": 109.3
           },
           {
             "team": "VGK",
-            "projectedPts": 97.8
+            "projectedPts": 97.3
           },
           {
             "team": "ANA",
-            "projectedPts": 92.2
-          },
-          {
-            "team": "SEA",
-            "projectedPts": 92.2
+            "projectedPts": 94.7
           },
           {
             "team": "UTA",
-            "projectedPts": 92.1
+            "projectedPts": 91.7
           },
           {
             "team": "EDM",
-            "projectedPts": 90.5
+            "projectedPts": 90.2
+          },
+          {
+            "team": "SEA",
+            "projectedPts": 89.1
           }
         ]
       },
@@ -3477,22 +3077,22 @@
         "East": {
           "round1Winners": [
             "PIT",
-            "MTL",
             "TB",
+            "MTL",
             "CAR"
           ],
           "round2Selected": [
             {
-              "teamA": "MTL",
+              "teamA": "BUF",
               "teamB": "TB",
-              "teamAWinProb": 45.5,
-              "matchupProb": 21.8
+              "teamAWinProb": 45.4,
+              "matchupProb": 13.7
             },
             {
               "teamA": "CAR",
               "teamB": "PIT",
-              "teamAWinProb": 55.7,
-              "matchupProb": 28.7
+              "teamAWinProb": 54.3,
+              "matchupProb": 24.5
             }
           ],
           "round2Winners": [
@@ -3502,30 +3102,30 @@
           "confFinalSelected": {
             "teamA": "CAR",
             "teamB": "TB",
-            "teamAWinProb": 51.1,
-            "matchupProb": 10.4
+            "teamAWinProb": 47.0,
+            "matchupProb": 10.1
           },
-          "confChampion": "CAR"
+          "confChampion": "TB"
         },
         "West": {
           "round1Winners": [
             "DAL",
             "UTA",
-            "ANA",
+            "EDM",
             "COL"
           ],
           "round2Selected": [
             {
               "teamA": "COL",
               "teamB": "DAL",
-              "teamAWinProb": 54.6,
-              "matchupProb": 34.0
+              "teamAWinProb": 55.2,
+              "matchupProb": 33.6
             },
             {
               "teamA": "ANA",
               "teamB": "VGK",
-              "teamAWinProb": 44.7,
-              "matchupProb": 17.2
+              "teamAWinProb": 44.8,
+              "matchupProb": 22.0
             }
           ],
           "round2Winners": [
@@ -3535,20 +3135,20 @@
           "confFinalSelected": {
             "teamA": "COL",
             "teamB": "VGK",
-            "teamAWinProb": 52.2,
-            "matchupProb": 7.6
+            "teamAWinProb": 52.1,
+            "matchupProb": 8.1
           },
           "confChampion": "COL"
         },
         "cupFinalSelected": {
-          "teamA": "CAR",
-          "teamB": "COL",
-          "teamAWinProb": 54.5,
-          "matchupProb": 2.5
+          "teamA": "COL",
+          "teamB": "TB",
+          "teamAWinProb": 52.5,
+          "matchupProb": 2.8
         },
         "champion": {
-          "team": "CAR",
-          "probability": 54.5,
+          "team": "COL",
+          "probability": 52.5,
           "source": "coherent_path"
         }
       }
@@ -3559,49 +3159,49 @@
           {
             "team": "TB",
             "seed": "A1",
-            "pts": 78,
+            "pts": 80,
+            "div": "Atlantic"
+          },
+          {
+            "team": "BUF",
+            "seed": "A2",
+            "pts": 74,
             "div": "Atlantic"
           },
           {
             "team": "DET",
-            "seed": "A2",
-            "pts": 72,
-            "div": "Atlantic"
-          },
-          {
-            "team": "MTL",
             "seed": "A3",
-            "pts": 72,
+            "pts": 74,
             "div": "Atlantic"
           },
           {
             "team": "CAR",
             "seed": "M1",
-            "pts": 78,
+            "pts": 80,
             "div": "Metropolitan"
           },
           {
             "team": "PIT",
             "seed": "M2",
-            "pts": 70,
+            "pts": 72,
             "div": "Metropolitan"
           },
           {
             "team": "NYI",
             "seed": "M3",
-            "pts": 69,
+            "pts": 71,
             "div": "Metropolitan"
           },
           {
-            "team": "BUF",
+            "team": "MTL",
             "seed": "WC1",
-            "pts": 70,
+            "pts": 73,
             "div": "Atlantic"
           },
           {
             "team": "BOS",
             "seed": "WC2",
-            "pts": 69,
+            "pts": 71,
             "div": "Atlantic"
           }
         ],
@@ -3613,14 +3213,14 @@
             "lowerSeed": "WC2"
           },
           {
-            "higher": "DET",
-            "lower": "MTL",
+            "higher": "BUF",
+            "lower": "DET",
             "higherSeed": "A2",
             "lowerSeed": "A3"
           },
           {
             "higher": "CAR",
-            "lower": "BUF",
+            "lower": "MTL",
             "higherSeed": "M1",
             "lowerSeed": "WC1"
           },
@@ -3639,43 +3239,43 @@
           {
             "team": "COL",
             "seed": "C1",
-            "pts": 83,
+            "pts": 85,
             "div": "Central"
           },
           {
             "team": "MIN",
             "seed": "C2",
-            "pts": 78,
+            "pts": 80,
             "div": "Central"
           },
           {
             "team": "DAL",
             "seed": "C3",
-            "pts": 77,
+            "pts": 79,
             "div": "Central"
           },
           {
             "team": "VGK",
             "seed": "P1",
-            "pts": 68,
-            "div": "Pacific"
-          },
-          {
-            "team": "EDM",
-            "seed": "P2",
-            "pts": 64,
+            "pts": 70,
             "div": "Pacific"
           },
           {
             "team": "ANA",
+            "seed": "P2",
+            "pts": 67,
+            "div": "Pacific"
+          },
+          {
+            "team": "EDM",
             "seed": "P3",
-            "pts": 63,
+            "pts": 66,
             "div": "Pacific"
           },
           {
             "team": "UTA",
             "seed": "WC1",
-            "pts": 64,
+            "pts": 66,
             "div": "Central"
           },
           {
@@ -3705,8 +3305,8 @@
             "lowerSeed": "WC1"
           },
           {
-            "higher": "EDM",
-            "lower": "ANA",
+            "higher": "ANA",
+            "lower": "EDM",
             "higherSeed": "P2",
             "lowerSeed": "P3"
           }
@@ -3719,7 +3319,7 @@
     }
   },
   "backtest": {
-    "modelVersion": "backtest-v2.4-2026-43d92c3204-7ccd10e730-f5e5a9279b",
+    "modelVersion": "backtest-v2.4-2026-43d92c3204-ad71327e8d-f5e5a9279b",
     "evaluationMode": "strict_walk_forward",
     "walkForwardAudit": {
       "leakageFree": true,
@@ -3832,7 +3432,7 @@
         ],
         "actualWinner": "CHI",
         "winnerInTop5": true,
-        "modelProbForWinner": 11.39,
+        "modelProbForWinner": 11.41,
         "topPickCorrect": true,
         "winnerRank": 1,
         "playoffTeamsHit": 15,
@@ -3852,7 +3452,7 @@
         ],
         "actualWinner": "LA",
         "winnerInTop5": false,
-        "modelProbForWinner": 5.2,
+        "modelProbForWinner": 5.19,
         "topPickCorrect": false,
         "winnerRank": 9,
         "playoffTeamsHit": 16,
@@ -3972,7 +3572,7 @@
         ],
         "actualWinner": "TB",
         "winnerInTop5": true,
-        "modelProbForWinner": 12.25,
+        "modelProbForWinner": 11.92,
         "topPickCorrect": true,
         "winnerRank": 1,
         "playoffTeamsHit": 16,
@@ -3992,7 +3592,7 @@
         ],
         "actualWinner": "TB",
         "winnerInTop5": true,
-        "modelProbForWinner": 10.64,
+        "modelProbForWinner": 10.56,
         "topPickCorrect": false,
         "winnerRank": 2,
         "playoffTeamsHit": 15,
@@ -4006,8 +3606,8 @@
         "modelTop5": [
           "COL",
           "TB",
-          "CAR",
           "BOS",
+          "CAR",
           "TOR"
         ],
         "actualWinner": "COL",
@@ -4032,7 +3632,7 @@
         ],
         "actualWinner": "VGK",
         "winnerInTop5": false,
-        "modelProbForWinner": 7.21,
+        "modelProbForWinner": 7.28,
         "topPickCorrect": false,
         "winnerRank": 6,
         "playoffTeamsHit": 16,
@@ -4052,7 +3652,7 @@
         ],
         "actualWinner": "FLA",
         "winnerInTop5": false,
-        "modelProbForWinner": 5.24,
+        "modelProbForWinner": 5.22,
         "topPickCorrect": false,
         "winnerRank": 10,
         "playoffTeamsHit": 16,
@@ -5499,7 +5099,44 @@
       ]
     }
   },
-  "recentChanges": [],
+  "recentChanges": [
+    {
+      "type": "tier_change",
+      "team": "MTL",
+      "from": "Contender",
+      "to": "Bubble",
+      "message": "MTL moved from Contender to Bubble"
+    },
+    {
+      "type": "tier_change",
+      "team": "EDM",
+      "from": "Bubble",
+      "to": "Contender",
+      "message": "EDM moved from Bubble to Contender"
+    },
+    {
+      "type": "odds_swing",
+      "team": "SEA",
+      "from": 5.19,
+      "to": 2.14,
+      "change": -3.0500000000000003,
+      "message": "SEA Cup odds decreased by 3.1%"
+    },
+    {
+      "type": "tier_change",
+      "team": "FLA",
+      "from": "Longshot",
+      "to": "Bubble",
+      "message": "FLA moved from Longshot to Bubble"
+    },
+    {
+      "type": "tier_change",
+      "team": "TOR",
+      "from": "Bubble",
+      "to": "Longshot",
+      "message": "TOR moved from Bubble to Longshot"
+    }
+  ],
   "history": [
     {
       "date": "2026-02-01",
@@ -10140,6 +9777,267 @@
           "strength": 49.4,
           "playoffProb": 6.7,
           "cupProb": 0.01
+        },
+        {
+          "code": "WPG",
+          "rank": 26,
+          "tier": "Longshot",
+          "strength": 49.0,
+          "playoffProb": 10.0,
+          "cupProb": 0.0
+        },
+        {
+          "code": "NYR",
+          "rank": 27,
+          "tier": "Longshot",
+          "strength": 48.4,
+          "playoffProb": 4.5,
+          "cupProb": 0.0
+        },
+        {
+          "code": "CGY",
+          "rank": 28,
+          "tier": "Longshot",
+          "strength": 47.6,
+          "playoffProb": 1.4,
+          "cupProb": 0.0
+        },
+        {
+          "code": "NJ",
+          "rank": 29,
+          "tier": "Longshot",
+          "strength": 47.3,
+          "playoffProb": 1.1,
+          "cupProb": 0.0
+        },
+        {
+          "code": "CHI",
+          "rank": 30,
+          "tier": "Longshot",
+          "strength": 46.5,
+          "playoffProb": 0.5,
+          "cupProb": 0.0
+        },
+        {
+          "code": "STL",
+          "rank": 31,
+          "tier": "Longshot",
+          "strength": 44.8,
+          "playoffProb": 0.1,
+          "cupProb": 0.0
+        },
+        {
+          "code": "VAN",
+          "rank": 32,
+          "tier": "Longshot",
+          "strength": 44.4,
+          "playoffProb": 0.0,
+          "cupProb": 0.0
+        }
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "teams": [
+        {
+          "code": "DAL",
+          "rank": 1,
+          "tier": "Elite",
+          "strength": 54.5,
+          "playoffProb": 100.0,
+          "cupProb": 9.0
+        },
+        {
+          "code": "CAR",
+          "rank": 2,
+          "tier": "Elite",
+          "strength": 54.9,
+          "playoffProb": 100.0,
+          "cupProb": 8.15
+        },
+        {
+          "code": "COL",
+          "rank": 3,
+          "tier": "Elite",
+          "strength": 59.1,
+          "playoffProb": 100.0,
+          "cupProb": 7.96
+        },
+        {
+          "code": "TB",
+          "rank": 4,
+          "tier": "Elite",
+          "strength": 57.6,
+          "playoffProb": 100.0,
+          "cupProb": 7.7
+        },
+        {
+          "code": "PIT",
+          "rank": 5,
+          "tier": "Contender",
+          "strength": 54.1,
+          "playoffProb": 99.4,
+          "cupProb": 6.8
+        },
+        {
+          "code": "VGK",
+          "rank": 6,
+          "tier": "Contender",
+          "strength": 52.5,
+          "playoffProb": 100.0,
+          "cupProb": 6.55
+        },
+        {
+          "code": "UTA",
+          "rank": 7,
+          "tier": "Contender",
+          "strength": 53.4,
+          "playoffProb": 92.1,
+          "cupProb": 6.48
+        },
+        {
+          "code": "MTL",
+          "rank": 8,
+          "tier": "Contender",
+          "strength": 51.8,
+          "playoffProb": 99.9,
+          "cupProb": 6.23
+        },
+        {
+          "code": "MIN",
+          "rank": 9,
+          "tier": "Contender",
+          "strength": 53.6,
+          "playoffProb": 100.0,
+          "cupProb": 6.22
+        },
+        {
+          "code": "BUF",
+          "rank": 10,
+          "tier": "Contender",
+          "strength": 52.7,
+          "playoffProb": 97.0,
+          "cupProb": 6.09
+        },
+        {
+          "code": "BOS",
+          "rank": 11,
+          "tier": "Contender",
+          "strength": 52.1,
+          "playoffProb": 92.0,
+          "cupProb": 5.5
+        },
+        {
+          "code": "ANA",
+          "rank": 12,
+          "tier": "Bubble",
+          "strength": 50.0,
+          "playoffProb": 91.1,
+          "cupProb": 5.38
+        },
+        {
+          "code": "DET",
+          "rank": 13,
+          "tier": "Bubble",
+          "strength": 50.7,
+          "playoffProb": 98.9,
+          "cupProb": 5.31
+        },
+        {
+          "code": "SEA",
+          "rank": 14,
+          "tier": "Longshot",
+          "strength": 49.4,
+          "playoffProb": 91.4,
+          "cupProb": 5.19
+        },
+        {
+          "code": "EDM",
+          "rank": 15,
+          "tier": "Bubble",
+          "strength": 51.8,
+          "playoffProb": 75.9,
+          "cupProb": 2.7
+        },
+        {
+          "code": "NYI",
+          "rank": 16,
+          "tier": "Bubble",
+          "strength": 50.8,
+          "playoffProb": 78.3,
+          "cupProb": 2.5
+        },
+        {
+          "code": "CBJ",
+          "rank": 17,
+          "tier": "Bubble",
+          "strength": 51.4,
+          "playoffProb": 56.6,
+          "cupProb": 1.22
+        },
+        {
+          "code": "LA",
+          "rank": 18,
+          "tier": "Longshot",
+          "strength": 49.5,
+          "playoffProb": 31.2,
+          "cupProb": 0.57
+        },
+        {
+          "code": "SJ",
+          "rank": 19,
+          "tier": "Longshot",
+          "strength": 48.2,
+          "playoffProb": 14.4,
+          "cupProb": 0.19
+        },
+        {
+          "code": "WSH",
+          "rank": 20,
+          "tier": "Contender",
+          "strength": 52.8,
+          "playoffProb": 91.1,
+          "cupProb": 0.07
+        },
+        {
+          "code": "NSH",
+          "rank": 21,
+          "tier": "Longshot",
+          "strength": 48.9,
+          "playoffProb": 5.2,
+          "cupProb": 0.05
+        },
+        {
+          "code": "TOR",
+          "rank": 22,
+          "tier": "Bubble",
+          "strength": 50.0,
+          "playoffProb": 22.9,
+          "cupProb": 0.04
+        },
+        {
+          "code": "PHI",
+          "rank": 23,
+          "tier": "Bubble",
+          "strength": 49.8,
+          "playoffProb": 19.3,
+          "cupProb": 0.04
+        },
+        {
+          "code": "OTT",
+          "rank": 24,
+          "tier": "Bubble",
+          "strength": 51.8,
+          "playoffProb": 48.6,
+          "cupProb": 0.03
+        },
+        {
+          "code": "FLA",
+          "rank": 25,
+          "tier": "Longshot",
+          "strength": 49.4,
+          "playoffProb": 6.7,
+          "cupProb": 0.0
         },
         {
           "code": "WPG",
