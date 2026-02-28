@@ -1,0 +1,10 @@
+{
+  "iteration": 4,
+  "stagnationStreak": 2,
+  "downsideRegressionStreak": 0,
+  "strongGapStreak": 4,
+  "lastBestEdge": 0.020691027810476024,
+  "lastStrongGap": 0.009308972189523975,
+  "lastDownsideMinSeasonEdgeDelta": 0.0,
+  "updatedAt": "2026-02-28T03:00:55.159442+00:00"
+}

@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-02-28T03:00:55.159541+00:00",
+  "phase": "phase18_feedback_control_loop",
+  "summary": {
+    "controlMode": "ESCALATE_EXPLORATION",
+    "targetEdge": 0.03,
+    "phase16BestEdge": 0.020691027810476024,
+    "phase16StrongGap": 0.009308972189523975,
+    "phase17DownsideMinSeasonEdgeDelta": 0.0,
+    "stagnationStreak": 2,
+    "downsideRegressionStreak": 0,
+    "strongGapStreak": 4,
+    "releaseFloorMet": true,
+    "promotionGateStatus": "SKIPPED",
+    "executeRecommended": false,
+    "executionFailureCount": 0,
+    "blockerCount": 2
+  },
+  "inputs": {
+    "benchmarkTimestamp": "2026-02-26T03:41:59.844919+00:00",
+    "phase16GeneratedAt": "2026-02-18T13:58:21.894715+00:00",
+    "phase17GeneratedAt": "2026-02-18T14:15:34.016701+00:00",
+    "metrics": {
+      "targetEdge": 0.03,
+      "benchmarkEdge": 0.018432187395821954,
+      "phase16BestEdge": 0.020691027810476024,
+      "phase16StrongGap": 0.009308972189523975,
+      "phase16TargetMet": false,
+      "phase16StrictPromotionGateStatus": "SKIPPED",
+      "phase17BaselineMinSeasonEdge": -0.014588461505946412,
+      "phase17DownsideMinSeasonEdgeDelta": 0.0,
+      "phase17Recommendation": "USE_PHASE17_CANDIDATE",
+      "releaseFloorMet": true
+    }
+  },
+  "stateBefore": {
+    "iteration": 3,
+    "stagnationStreak": 1,
+    "downsideRegressionStreak": 0,
+    "strongGapStreak": 3,
+    "lastBestEdge": 0.020691027810476024,
+    "lastStrongGap": 0.009308972189523975,
+    "lastDownsideMinSeasonEdgeDelta": 0.0,
+    "updatedAt": "2026-02-18T14:15:41.299282+00:00"
+  },
+  "stateAfter": {
+    "iteration": 4,
+    "stagnationStreak": 2,
+    "downsideRegressionStreak": 0,
+    "strongGapStreak": 4,
+    "lastBestEdge": 0.020691027810476024,
+    "lastStrongGap": 0.009308972189523975,
+    "lastDownsideMinSeasonEdgeDelta": 0.0,
+    "updatedAt": "2026-02-28T03:00:55.159442+00:00"
+  },
+  "recommendedParams": {
+    "phase16": {
+      "PHASE16_CANDIDATE_BUDGET": 32,
+      "PHASE16_STAGE1_TOP_N": 16,
+      "PHASE16_MAX_STAGE2_EVALS": 8,
+      "PHASE16_SHORTLIST_N": 5,
+      "PHASE16_VEGAS_BOOTSTRAP": 420,
+      "PHASE16_HIGH_CONF_BOOTSTRAP": 1600
+    },
+    "phase17": {
+      "PHASE17_CANDIDATE_BUDGET": 24,
+      "PHASE17_STAGE2_EVALS": 5,
+      "PHASE17_SHORTLIST_N": 4,
+      "PHASE17_VEGAS_BOOTSTRAP": 320,
+      "PHASE17_HIGH_CONF_BOOTSTRAP": 1200,
+      "PHASE17_MIN_POSITIVE_RATIO": 0.85,
+      "PHASE17_MIN_SEASON_EDGE_FLOOR": -0.03,
+      "PHASE17_MAX_NEGATIVE_SEASON_RATIO": 0.3,
+      "PHASE17_MAX_EDGE_DROP_VS_BASELINE": 0.0008
+    }
+  },
+  "recommendedCommands": {
+    "phase16": "PHASE16_CANDIDATE_BUDGET=32 PHASE16_HIGH_CONF_BOOTSTRAP=1600 PHASE16_MAX_STAGE2_EVALS=8 PHASE16_SHORTLIST_N=5 PHASE16_STAGE1_TOP_N=16 PHASE16_VEGAS_BOOTSTRAP=420 python3 scripts/run_phase16_adaptive_learning_loop.py",
+    "phase17": "PHASE17_CANDIDATE_BUDGET=24 PHASE17_HIGH_CONF_BOOTSTRAP=1200 PHASE17_MAX_EDGE_DROP_VS_BASELINE=0.0008 PHASE17_MAX_NEGATIVE_SEASON_RATIO=0.3 PHASE17_MIN_POSITIVE_RATIO=0.85 PHASE17_MIN_SEASON_EDGE_FLOOR=-0.03 PHASE17_SHORTLIST_N=4 PHASE17_STAGE2_EVALS=5 PHASE17_VEGAS_BOOTSTRAP=320 python3 scripts/run_phase17_downside_stability_lane.py",
+    "pipeline": "PHASE16_CANDIDATE_BUDGET=32 PHASE16_HIGH_CONF_BOOTSTRAP=1600 PHASE16_MAX_STAGE2_EVALS=8 PHASE16_SHORTLIST_N=5 PHASE16_STAGE1_TOP_N=16 PHASE16_VEGAS_BOOTSTRAP=420 python3 scripts/run_phase16_adaptive_learning_loop.py && PHASE17_CANDIDATE_BUDGET=24 PHASE17_HIGH_CONF_BOOTSTRAP=1200 PHASE17_MAX_EDGE_DROP_VS_BASELINE=0.0008 PHASE17_MAX_NEGATIVE_SEASON_RATIO=0.3 PHASE17_MIN_POSITIVE_RATIO=0.85 PHASE17_MIN_SEASON_EDGE_FLOOR=-0.03 PHASE17_SHORTLIST_N=4 PHASE17_STAGE2_EVALS=5 PHASE17_VEGAS_BOOTSTRAP=320 python3 scripts/run_phase17_downside_stability_lane.py"
+  },
+  "execution": [],
+  "blockers": [
+    "Strong-tier gap remains 0.0093 (target 0.0300).",
+    "Edge stagnation streak is 2 loops."
+  ],
+  "nextActions": [
+    {
+      "owner": "Model Lead",
+      "priority": "P0",
+      "action": "Execute feedback-tuned phase16 lane: `PHASE16_CANDIDATE_BUDGET=32 PHASE16_HIGH_CONF_BOOTSTRAP=1600 PHASE16_MAX_STAGE2_EVALS=8 PHASE16_SHORTLIST_N=5 PHASE16_STAGE1_TOP_N=16 PHASE16_VEGAS_BOOTSTRAP=420 python3 scripts/run_phase16_adaptive_learning_loop.py`"
+    },
+    {
+      "owner": "Quant Engineer",
+      "priority": "P0",
+      "action": "Execute feedback-tuned phase17 lane: `PHASE17_CANDIDATE_BUDGET=24 PHASE17_HIGH_CONF_BOOTSTRAP=1200 PHASE17_MAX_EDGE_DROP_VS_BASELINE=0.0008 PHASE17_MAX_NEGATIVE_SEASON_RATIO=0.3 PHASE17_MIN_POSITIVE_RATIO=0.85 PHASE17_MIN_SEASON_EDGE_FLOOR=-0.03 PHASE17_SHORTLIST_N=4 PHASE17_STAGE2_EVALS=5 PHASE17_VEGAS_BOOTSTRAP=320 python3 scripts/run_phase17_downside_stability_lane.py`"
+    },
+    {
+      "owner": "Program Lead",
+      "priority": "P1",
+      "action": "Control mode is `ESCALATE_EXPLORATION`; keep strict non-regression and promotion safety unchanged."
+    },
+    {
+      "owner": "Prevention Loop",
+      "priority": "P1",
+      "action": "Convert top blocker into hard control: Strong-tier gap remains 0.0093 (target 0.0300)."
+    }
+  ]
+}

@@ -26,6 +26,14 @@ BENCHMARK_PATH = PROJECT_ROOT / "reports" / "benchmark_latest.json"
 PHASE10_PATH = PROJECT_ROOT / "reports" / "phase10_ab_top1_recovery.json"
 PHASE12_PATH = PROJECT_ROOT / "reports" / "phase12_goal_gap_closure.json"
 PHASE13_PATH = PROJECT_ROOT / "reports" / "phase13_eligible_feature_push.json"
+PHASE16_PATH = PROJECT_ROOT / "reports" / "phase16_adaptive_learning_loop.json"
+PHASE17_PATH = PROJECT_ROOT / "reports" / "phase17_downside_stability_lane.json"
+PHASE18_PATH = PROJECT_ROOT / "reports" / "phase18_feedback_control_loop.json"
+DASHBOARD_FEEDBACK_PATH = PROJECT_ROOT / "reports" / "dashboard_feedback_loop_latest.json"
+DEFAULT_STEP_TIMEOUT_SECONDS = 1800
+MIN_STEP_TIMEOUT_SECONDS = 60
+_raw_step_timeout = int(os.getenv("TEAM_CYCLE_STEP_TIMEOUT_SECONDS", str(DEFAULT_STEP_TIMEOUT_SECONDS)))
+STEP_TIMEOUT_SECONDS = max(MIN_STEP_TIMEOUT_SECONDS, _raw_step_timeout)
 
 
 @dataclass
@@ -40,18 +48,37 @@ class Step:
 def _run(cmd: List[str]) -> Dict[str, object]:
     env = os.environ.copy()
     env["PYTHONDONTWRITEBYTECODE"] = "1"
-    proc = subprocess.run(
-        cmd,
-        cwd=str(PROJECT_ROOT),
-        capture_output=True,
-        text=True,
-        env=env,
-    )
+    started = datetime.now(timezone.utc)
+    try:
+        proc = subprocess.run(
+            cmd,
+            cwd=str(PROJECT_ROOT),
+            capture_output=True,
+            text=True,
+            env=env,
+            timeout=STEP_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        stdout = exc.stdout.decode("utf-8", errors="replace") if isinstance(exc.stdout, bytes) else (exc.stdout or "")
+        duration = (datetime.now(timezone.utc) - started).total_seconds()
+        return {
+            "cmd": " ".join(cmd),
+            "returncode": 124,
+            "stdout": stdout.strip(),
+            "stderr": f"Timed out after {STEP_TIMEOUT_SECONDS}s",
+            "timedOut": True,
+            "timeoutSeconds": STEP_TIMEOUT_SECONDS,
+            "durationSeconds": round(duration, 2),
+        }
+    duration = (datetime.now(timezone.utc) - started).total_seconds()
     return {
         "cmd": " ".join(cmd),
         "returncode": proc.returncode,
         "stdout": proc.stdout.strip(),
         "stderr": proc.stderr.strip(),
+        "timedOut": False,
+        "timeoutSeconds": STEP_TIMEOUT_SECONDS,
+        "durationSeconds": round(duration, 2),
     }
 
 
@@ -80,6 +107,30 @@ def _load_phase13_snapshot() -> Dict[str, object]:
     return json.loads(PHASE13_PATH.read_text())
 
 
+def _load_phase16_snapshot() -> Dict[str, object]:
+    if not PHASE16_PATH.exists():
+        return {}
+    return json.loads(PHASE16_PATH.read_text())
+
+
+def _load_phase17_snapshot() -> Dict[str, object]:
+    if not PHASE17_PATH.exists():
+        return {}
+    return json.loads(PHASE17_PATH.read_text())
+
+
+def _load_phase18_snapshot() -> Dict[str, object]:
+    if not PHASE18_PATH.exists():
+        return {}
+    return json.loads(PHASE18_PATH.read_text())
+
+
+def _load_dashboard_feedback_snapshot() -> Dict[str, object]:
+    if not DASHBOARD_FEEDBACK_PATH.exists():
+        return {}
+    return json.loads(DASHBOARD_FEEDBACK_PATH.read_text())
+
+
 def _build_steps() -> List[Step]:
     py = sys.executable
     return [
@@ -106,6 +157,24 @@ def _build_steps() -> List[Step]:
             owner="superhuman-builder-verifier",
             purpose="Run Phase 13 focused on strict-eligible anchors with hard positive-ratio prefilter.",
             cmd=[py, "scripts/run_phase13_eligible_feature_push.py"],
+        ),
+        Step(
+            phase="Phase 2 (Adaptive Strong-Tier Loop)",
+            owner="superhuman-edge-goal-loop",
+            purpose="Run adaptive learning loop targeting strong-tier Cup-vs-Vegas edge under strict gates.",
+            cmd=[py, "scripts/run_phase16_adaptive_learning_loop.py"],
+        ),
+        Step(
+            phase="Phase 2 (Downside Stability Lane)",
+            owner="superhuman-edge-goal-loop",
+            purpose="Run positive-season-ratio and downside-tail suppression lane with strict core protections.",
+            cmd=[py, "scripts/run_phase17_downside_stability_lane.py"],
+        ),
+        Step(
+            phase="Phase 2 (Feedback Control Loop)",
+            owner="superhuman-edge-goal-loop",
+            purpose="Convert latest edge/downside outcomes into adaptive next-cycle control decisions.",
+            cmd=[py, "scripts/run_phase18_feedback_control_loop.py"],
         ),
         Step(
             phase="Phase 3 (Data Truth)",
@@ -150,6 +219,18 @@ def _build_steps() -> List[Step]:
             purpose="Regenerate dashboard artifact.",
             cmd=[py, "-m", "superhuman.dashboard_generator"],
         ),
+        Step(
+            phase="Phase 1 (Dashboard Feedback Loop)",
+            owner="superhuman-dashboard-trust-polisher",
+            purpose="Block finalization when dashboard trust, coherence, or overflow checks fail.",
+            cmd=[py, "scripts/run_dashboard_feedback_loop.py"],
+        ),
+        Step(
+            phase="Phase 5 (Adversarial Team Grill)",
+            owner="superhuman-issue-squad-orchestrator",
+            purpose="Publish limiting-factor grill artifact with owner/accountability commitments.",
+            cmd=[py, "scripts/run_superhuman_grill_session.py"],
+        ),
     ]
 
 
@@ -159,6 +240,10 @@ def _next_actions(
     phase10: Dict[str, object],
     phase12: Dict[str, object],
     phase13: Dict[str, object],
+    phase16: Dict[str, object],
+    phase17: Dict[str, object],
+    phase18: Dict[str, object],
+    dashboard_feedback: Dict[str, object],
 ) -> List[Dict[str, str]]:
     actions: List[Dict[str, str]] = []
 
@@ -290,6 +375,102 @@ def _next_actions(
                 }
             )
 
+    if phase16:
+        summary = phase16.get("summary", {})
+        target = phase16.get("target", {})
+        blockers = phase16.get("blockers", []) or []
+        target_tier = target.get("tier", "strong")
+        target_edge = target.get("edge")
+        best_eligible = summary.get("bestEligibleName")
+        target_met = bool(summary.get("targetMet"))
+
+        if target_met and best_eligible:
+            actions.append(
+                {
+                    "owner": "superhuman-review-improver",
+                    "action": f"Adaptive loop hit `{target_tier}` target; run promotion audit for `{best_eligible}`.",
+                }
+            )
+        else:
+            actions.append(
+                {
+                    "owner": "superhuman-discovery-planner",
+                    "action": f"Re-run adaptive strong-tier loop and close remaining gap to `{target_tier}` target ({target_edge}).",
+                }
+            )
+            if blockers:
+                actions.append(
+                    {
+                        "owner": "superhuman-prevention-loop",
+                        "action": f"Convert top blocker into durable control: {blockers[0]}",
+                    }
+                )
+
+    if phase17:
+        summary = phase17.get("summary", {})
+        rec = summary.get("recommendation")
+        best = summary.get("bestDownsideName")
+        min_delta = summary.get("downsideMinSeasonEdgeDelta")
+        if rec == "USE_PHASE17_CANDIDATE" and best:
+            actions.append(
+                {
+                    "owner": "superhuman-review-improver",
+                    "action": f"Review downside-stability winner `{best}` and assess merge strategy with phase16 champion.",
+                }
+            )
+        else:
+            actions.append(
+                {
+                    "owner": "superhuman-discovery-planner",
+                    "action": f"Phase17 produced no strict winner; re-scope downside controls (current min-season-edge delta: {min_delta}).",
+                }
+            )
+
+    if phase18:
+        summary = phase18.get("summary", {})
+        commands = phase18.get("recommendedCommands", {})
+        control_mode = summary.get("controlMode")
+        strong_gap = summary.get("phase16StrongGap")
+        if control_mode:
+            actions.append(
+                {
+                    "owner": "superhuman-edge-goal-loop",
+                    "action": f"Run next loop in `{control_mode}` mode; strong-tier gap currently {strong_gap}.",
+                }
+            )
+        if commands.get("phase16"):
+            actions.append(
+                {
+                    "owner": "superhuman-builder-verifier",
+                    "action": f"Execute feedback-tuned phase16 command: {commands.get('phase16')}",
+                }
+            )
+        if commands.get("phase17"):
+            actions.append(
+                {
+                    "owner": "superhuman-builder-verifier",
+                    "action": f"Execute feedback-tuned phase17 command: {commands.get('phase17')}",
+                }
+            )
+
+    if dashboard_feedback:
+        status = str(dashboard_feedback.get("status", "FAIL")).upper()
+        errors = dashboard_feedback.get("errors", []) or []
+        if status != "PASS":
+            actions.append(
+                {
+                    "owner": "superhuman-dashboard-trust-polisher",
+                    "action": "Fix dashboard blocker checks before final status; resolve bracket coherence, scorecard sanity, and mission overflow regressions.",
+                }
+            )
+            if errors:
+                actions.append(
+                    {
+                        "owner": "superhuman-prevention-loop",
+                        "action": f"Convert top dashboard failure into durable regression control: {errors[0]}",
+                    }
+                )
+
     cup_edge = bench.get("vegas", {}).get("cup_relative_brier_edge") if bench else None
     if cup_edge is not None and float(cup_edge) < 0:
         actions.append(
@@ -325,12 +506,26 @@ def main() -> int:
     phase10 = _load_phase10_snapshot()
     phase12 = _load_phase12_snapshot()
     phase13 = _load_phase13_snapshot()
+    phase16 = _load_phase16_snapshot()
+    phase17 = _load_phase17_snapshot()
+    phase18 = _load_phase18_snapshot()
+    dashboard_feedback = _load_dashboard_feedback_snapshot()
 
     strict_gate_failed = any(
         ("verify_model_performance.py" in r["cmd"] and r["returncode"] != 0)
         for r in results
     )
-    actions = _next_actions(strict_gate_failed, benchmark, phase10, phase12, phase13)
+    actions = _next_actions(
+        strict_gate_failed,
+        benchmark,
+        phase10,
+        phase12,
+        phase13,
+        phase16,
+        phase17,
+        phase18,
+        dashboard_feedback,
+    )
 
     report = {
         "generatedAt": datetime.now(timezone.utc).isoformat(),
@@ -343,6 +538,14 @@ def main() -> int:
             "phase10Decision": phase10.get("decision", {}),
             "phase12Summary": phase12.get("summary", {}),
             "phase13Summary": phase13.get("summary", {}),
+            "phase16Summary": phase16.get("summary", {}),
+            "phase17Summary": phase17.get("summary", {}),
+            "phase18Summary": phase18.get("summary", {}),
+            "dashboardFeedback": {
+                "status": dashboard_feedback.get("status"),
+                "errors": dashboard_feedback.get("errors", []),
+                "warnings": dashboard_feedback.get("warnings", []),
+            },
         },
         "nextActions": actions,
     }
@@ -377,6 +580,10 @@ def main() -> int:
             f"- Phase10 decision: `{report['snapshot']['phase10Decision']}`",
             f"- Phase12 summary: `{report['snapshot']['phase12Summary']}`",
             f"- Phase13 summary: `{report['snapshot']['phase13Summary']}`",
+            f"- Phase16 summary: `{report['snapshot']['phase16Summary']}`",
+            f"- Phase17 summary: `{report['snapshot']['phase17Summary']}`",
+            f"- Phase18 summary: `{report['snapshot']['phase18Summary']}`",
+            f"- Dashboard feedback: `{report['snapshot']['dashboardFeedback']}`",
             "",
             "## Next Owner Actions",
             "",

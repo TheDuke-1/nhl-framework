@@ -1,0 +1,127 @@
+{
+  "generatedAt": "2026-02-28T03:00:55.190008+00:00",
+  "status": "ACTIVE_CHALLENGE",
+  "objective": "Be undeniably best NHL model + dashboard, not minimum release-floor pass",
+  "snapshot": {
+    "benchmark": {
+      "edge": 0.018432187395821954,
+      "ciLow": 0.007196038375400486,
+      "goalTier": "release_floor",
+      "strongTarget": 0.03
+    },
+    "phase16": {
+      "bestEligibleName": "anchor-01",
+      "bestEligibleEdge": 0.020691027810476024,
+      "strongGap": 0.009308972189523975,
+      "blockers": [
+        "Best raw edge is 0.0207; strong-tier target requires 0.0300."
+      ]
+    },
+    "phase17": {
+      "bestDownsideName": "baseline",
+      "downsideMinSeasonEdgeDelta": 0.0,
+      "minSeasonEdgeDelta": 0.0,
+      "recommendation": "USE_PHASE17_CANDIDATE",
+      "blockers": [
+        "Best downside-stability candidate edge is 0.0184; strong-tier target is 0.0300."
+      ]
+    },
+    "phase18": {
+      "controlMode": "ESCALATE_EXPLORATION",
+      "stagnationStreak": 2,
+      "downsideRegressionStreak": 0,
+      "strongGap": 0.009308972189523975,
+      "blockers": [
+        "Strong-tier gap remains 0.0093 (target 0.0300).",
+        "Edge stagnation streak is 2 loops."
+      ]
+    },
+    "phase7": {
+      "strictStatus": "PASS"
+    },
+    "dashboardFeedback": {
+      "status": "PASS",
+      "errors": [],
+      "warnings": []
+    },
+    "benchmarkComparison": {
+      "mode": "last_distinct_snapshot",
+      "skippedIdenticalRuns": 5
+    }
+  },
+  "grillRounds": [
+    {
+      "challenger": "Vegas Skeptic",
+      "challenge": "Edge is 1.84% and still below strong-tier target; why should anyone trust this as an enduring market edge?",
+      "counterOwner": "Model Lead",
+      "counter": "Run expanded adaptive candidate budget with strict non-regression and require high-confidence CI checks on finalists.",
+      "commitment": "Execute phase16 with larger budget and shortlist high-confidence evaluations.",
+      "command": "PHASE16_CANDIDATE_BUDGET=28 PHASE16_STAGE1_TOP_N=14 PHASE16_MAX_STAGE2_EVALS=6 PHASE16_SHORTLIST_N=4 python3 scripts/run_phase16_adaptive_learning_loop.py"
+    },
+    {
+      "challenger": "Downside Risk Sheriff",
+      "challenge": "Even if edge rises, downside seasons can erase trust. What is the hard plan for min-season-edge and positive-season-ratio stability?",
+      "counterOwner": "Quant Engineer",
+      "counter": "Run dedicated downside-stability lane with floor constraints and reject any candidate that worsens tail behavior.",
+      "commitment": "Improve downside floor (current delta 0.000%) while keeping edge non-regression.",
+      "command": "python3 scripts/run_phase17_downside_stability_lane.py"
+    },
+    {
+      "challenger": "Feedback Controller",
+      "challenge": "Do we have a real closed-loop response to stagnation/downside regression, or are we just re-running static scripts?",
+      "counterOwner": "ML Systems Engineer",
+      "counter": "Phase18 now tracks loop-state streaks and emits control-mode specific commands for phase16/phase17.",
+      "commitment": "Run next cycle in feedback mode `ESCALATE_EXPLORATION` and enforce parameter updates from the control loop.",
+      "command": "python3 scripts/run_phase18_feedback_control_loop.py"
+    },
+    {
+      "challenger": "Release Sheriff",
+      "challenge": "Could a candidate be promoted on metric excitement without full release truth?",
+      "counterOwner": "Platform Engineer",
+      "counter": "No. Promotion path now requires target-tier pass and strict phase7 release gate pass in the same execution context.",
+      "commitment": "Keep auto-deploy blocked unless both conditions pass in one run.",
+      "command": "PHASE16_AUTO_DEPLOY=1 python3 scripts/run_phase16_adaptive_learning_loop.py"
+    },
+    {
+      "challenger": "Design Critic (Ives bar)",
+      "challenge": "Is the dashboard narrating uncomfortable truth clearly, or still hiding behind scorecards?",
+      "counterOwner": "Dashboard Lead",
+      "counter": "Mission Control now shows adaptive-loop status, target gap, and explicit blockers/actions from both phase16 and phase17.",
+      "commitment": "Keep trust surfaces explicit and fail-language first.",
+      "command": "python3 -m pytest tests/test_dashboard.py tests/test_dashboard_interactions.py -q"
+    },
+    {
+      "challenger": "Program Operator",
+      "challenge": "Are we optimizing for minimum gates instead of category leadership?",
+      "counterOwner": "Superhuman Team",
+      "counter": "Raise default objective to strong-tier and track moonshot runway continuously; block self-congratulation on release-floor only.",
+      "commitment": "Current strong-tier gap is 0.931%; treat this as primary weekly burn-down KPI.",
+      "command": "python3 scripts/run_superhuman_team_cycle.py"
+    }
+  ],
+  "limitingFactors": [
+    {
+      "id": "LF-01",
+      "factor": "Strong-tier edge gap remains open",
+      "evidence": "Current Cup edge 1.84% vs strong target 3.00%; remaining gap 0.931%.",
+      "owner": "Model Lead + superhuman-edge-goal-loop",
+      "overcomePlan": "Run phase16 with feedback-tuned exploration budget and reject candidates that break strict non-regression.",
+      "successMetric": "phase16.summary.targetMet == true and benchmark.current.vegas.cup_target.strong_met == true",
+      "verificationCommand": "python3 scripts/run_phase16_adaptive_learning_loop.py && python3 scripts/update_benchmark_metrics.py"
+    },
+    {
+      "id": "LF-05",
+      "factor": "Benchmark progress interpretation can be noisy across identical reruns",
+      "evidence": "Scorecard needed to skip 5 identical run(s) to find a meaningful baseline.",
+      "owner": "Framework Operator",
+      "overcomePlan": "Keep last-distinct comparison mode and require explanation artifacts when repeated reruns produce no metric movement.",
+      "successMetric": "benchmark_latest.comparison.mode == last_distinct_snapshot with non-identical deltas when changes are claimed",
+      "verificationCommand": "python3 scripts/update_benchmark_metrics.py"
+    }
+  ],
+  "nonNegotiables": [
+    "No promotion without strong-tier target + strict release pass in same run context.",
+    "No optimistic dashboard language when blockers exist.",
+    "No broad random churn without bounded hypotheses and rejection reasons."
+  ]
+}
