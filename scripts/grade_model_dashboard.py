@@ -148,8 +148,21 @@ def _score_dashboard(dashboard: Dict, phase7: Dict, benchmark_current: Dict) -> 
 
     release_status = str(phase7.get("status", "FAIL")).upper()
     release_alignment = 1.0 if release_status == "PASS" else 0.0
-    cup_goal_met = bool(benchmark_current.get("vegas", {}).get("cup_target", {}).get("goal_met", False))
+    cup_target = benchmark_current.get("vegas", {}).get("cup_target", {}) if isinstance(benchmark_current, dict) else {}
+    cup_goal_met = bool(cup_target.get("goal_met", False))
+    strong_goal_present = "strong_met" in cup_target
+    strong_goal_met = bool(cup_target.get("strong_met", False))
     goal_alignment = 1.0 if cup_goal_met else 0.0
+
+    edge_research = dashboard.get("edgeResearch", {}) if isinstance(dashboard, dict) else {}
+    phase16_blockers = (edge_research.get("phase16") or {}).get("blockers", [])
+    phase17_blockers = (edge_research.get("phase17") or {}).get("blockers", [])
+    phase18_blockers = (edge_research.get("phase18") or {}).get("blockers", [])
+    edge_blocker_count = len(phase16_blockers) + len(phase17_blockers) + len(phase18_blockers)
+
+    projected = (dashboard.get("bracket") or {}).get("projected", {})
+    coherent_path = projected.get("coherentPath") if isinstance(projected, dict) else None
+    coherent_path_available = bool(isinstance(coherent_path, dict) and coherent_path.get("cupFinalSelected"))
 
     score = 100.0 * (
         0.20 * section_ratio
@@ -167,6 +180,15 @@ def _score_dashboard(dashboard: Dict, phase7: Dict, benchmark_current: Dict) -> 
     if not cup_goal_met:
         score = min(score, 86.0)
         cap_reasons.append("cup_goal_not_met")
+    if strong_goal_present and not strong_goal_met:
+        score = min(score, 89.0)
+        cap_reasons.append("strong_tier_not_met")
+    if edge_blocker_count > 0:
+        score = min(score, 88.0)
+        cap_reasons.append("active_edge_research_blockers")
+    if not coherent_path_available:
+        score = min(score, 90.0)
+        cap_reasons.append("coherent_bracket_path_missing")
 
     return round(score, 1), {
         "team_count": len(teams),
@@ -174,6 +196,9 @@ def _score_dashboard(dashboard: Dict, phase7: Dict, benchmark_current: Dict) -> 
         "freshness_score": round(freshness, 3),
         "release_status": release_status,
         "cup_goal_met": cup_goal_met,
+        "strong_goal_met": strong_goal_met if strong_goal_present else None,
+        "edge_blocker_count": edge_blocker_count,
+        "coherent_bracket_path_available": coherent_path_available,
         "capped": bool(cap_reasons),
         "cap_reasons": cap_reasons,
     }

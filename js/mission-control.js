@@ -11,6 +11,22 @@ const MissionControl = (() => {
     const releaseCycleStrict = releaseCycleBundle.strict || releaseCycleBundle || {};
     const releaseCycleAdvisory = releaseCycleBundle.advisory || {};
     const dashboardGrade = data.dashboardGrade?.dashboard || {};
+    const dashboardFeedback = data.dashboardFeedback || {};
+    const finalizationStatus = String(dashboardFeedback.status || 'UNKNOWN').toUpperCase();
+    const finalizationChecks = Array.isArray(dashboardFeedback.checks) ? dashboardFeedback.checks : [];
+    const finalizationErrors = Array.isArray(dashboardFeedback.errors) ? dashboardFeedback.errors : [];
+    const finalizationWarnings = Array.isArray(dashboardFeedback.warnings) ? dashboardFeedback.warnings : [];
+    const finalizationSummary = finalizationChecks.length
+      ? finalizationChecks.map((row) => `${row.name}: ${row.status}`).join(' | ')
+      : 'No dashboard feedback report loaded.';
+    const edgeResearch = data.edgeResearch || {};
+    const phase16 = edgeResearch.phase16 || {};
+    const phase16Summary = phase16.summary || {};
+    const phase16Target = phase16.target || {};
+    const phase17 = edgeResearch.phase17 || {};
+    const phase17Summary = phase17.summary || {};
+    const phase18 = edgeResearch.phase18 || {};
+    const phase18Summary = phase18.summary || {};
 
     const releaseStatusStrict = String(
       data.meta?.releaseStatusStrict
@@ -42,6 +58,25 @@ const MissionControl = (() => {
     const gap = isFiniteNumber(edge) && isFiniteNumber(targetMin) ? (targetMin - edge) : null;
     const strongGap = isFiniteNumber(edge) && isFiniteNumber(targetStrong) ? (targetStrong - edge) : null;
     const runwayGap = isFiniteNumber(strongGap) ? strongGap : gap;
+    const learningTargetTier = String(phase16Target.tier || 'strong').toLowerCase();
+    const learningTargetEdge = isFiniteNumber(phase16Target.edge)
+      ? phase16Target.edge
+      : (isFiniteNumber(targetStrong) ? targetStrong : targetMin);
+    const learningClosestGap = Number(phase16Summary.closestGoalDistance?.edgeGapToTarget);
+    const learningGap = Number.isFinite(learningClosestGap)
+      ? learningClosestGap
+      : (isFiniteNumber(edge) && isFiniteNumber(learningTargetEdge) ? Math.max(learningTargetEdge - edge, 0) : null);
+    const learningTargetMet = phase16Summary.targetMet === true;
+    const learningStatus = learningTargetMet ? 'ON TARGET' : 'ITERATING';
+    const learningStatusClass = learningTargetMet ? 'text-positive' : 'text-negative';
+    const learningBlockers = [
+      ...(Array.isArray(phase16.blockers) ? phase16.blockers : []),
+      ...(Array.isArray(phase17.blockers) ? phase17.blockers : []),
+      ...(Array.isArray(phase18.blockers) ? phase18.blockers : []),
+    ];
+    const learningActions = Array.isArray(phase16.nextActions) ? phase16.nextActions : [];
+    const phase17Actions = Array.isArray(phase17.nextActions) ? phase17.nextActions : [];
+    const phase18Actions = Array.isArray(phase18.nextActions) ? phase18.nextActions : [];
 
     const releaseCommands = Array.isArray(releaseCycleStrict.commands) ? releaseCycleStrict.commands : [];
     const releaseBlockingReasons = Array.isArray(releaseCycleStrict.blockingReasons) ? releaseCycleStrict.blockingReasons : [];
@@ -59,6 +94,9 @@ const MissionControl = (() => {
       releaseStatusStrict,
       capReasons: dashboardGrade.detail?.cap_reasons || [],
       advisoryWarnings,
+      finalizationStatus,
+      finalizationErrors,
+      finalizationWarnings,
     });
 
     const freshnessRows = buildFreshnessRows(data.meta || {});
@@ -75,10 +113,20 @@ const MissionControl = (() => {
       freshnessRows,
       advisoryPolicy: releaseCycleAdvisory.dataValidationPolicy || {},
       advisoryWarnings,
+      finalizationStatus,
+      finalizationErrors,
+      phase16Summary,
+      phase16Actions: learningActions,
+      phase17Summary,
+      phase17Actions,
+      phase18Summary,
+      phase18Actions,
     });
 
     const releaseTrace = releaseCommands.slice(-6).reverse();
-    const sourceTrustLabel = blockers.length === 0 && freshnessRows.every((r) => r.state !== 'stale')
+    const sourceTrustLabel = blockers.length === 0
+      && finalizationStatus === 'PASS'
+      && freshnessRows.every((r) => r.state !== 'stale')
       ? 'Trust: Healthy'
       : 'Trust: Watch';
 
@@ -94,6 +142,7 @@ const MissionControl = (() => {
           <span class="mission-badge ${releaseStatusAdvisory === 'PASS' ? 'badge-pass' : 'badge-fail'}">Local Advisory Status: ${releaseStatusAdvisory}</span>
           <span class="mission-badge ${releaseFloorMet ? 'badge-pass' : 'badge-fail'}">Cup Release Floor: ${releaseFloorMet ? 'PASS' : 'FAIL'}</span>
           <span class="mission-badge ${(strongMet || stretchMet || moonshotMet) ? 'badge-pass' : 'badge-fail'}">Goal Tier: ${goalTierLabel}</span>
+          <span class="mission-badge ${finalizationStatus === 'PASS' ? 'badge-pass' : 'badge-fail'}">Finalization Gate: ${finalizationStatus}</span>
           <span class="mission-badge">${sourceTrustLabel}</span>
           <span class="mission-badge">${formatSeasonCount(vegas.cup_total_seasons)} seasons compared</span>
         </div>
@@ -137,6 +186,27 @@ const MissionControl = (() => {
           <p class="mission-meta">Playoff Brier delta: <strong>${signed(benchmark.vegas?.model_minus_vegas_brier_playoff, 3)}</strong></p>
           <p class="mission-meta">Dashboard grade: <strong>${dashboardGrade.grade || '--'} (${dashboardGrade.numeric ?? '--'})</strong></p>
         </article>
+
+        <article class="mission-card">
+          <h3>Adaptive Learning Loop</h3>
+          <p class="mission-value ${learningStatusClass}">${learningStatus}</p>
+          <p class="mission-meta">Objective tier: <strong>${escapeHtml(learningTargetTier.toUpperCase())}</strong> (${formatPct(learningTargetEdge)})</p>
+          <p class="mission-meta">Gap to target: <strong>${isFiniteNumber(learningGap) ? formatPct(learningGap) : '--'}</strong></p>
+          <p class="mission-meta">Candidates evaluated (stage1/stage2): <strong>${phase16Summary.stage1EvaluatedCandidates ?? '--'} / ${phase16Summary.stage2CoreEvaluatedCandidates ?? '--'}</strong></p>
+          <p class="mission-meta">Strict-eligible candidates: <strong>${phase16Summary.eligibleCount ?? '--'}</strong></p>
+          <p class="mission-meta">Downside lane winner: <strong>${phase17Summary.bestDownsideName || '--'}</strong></p>
+          <p class="mission-meta">Downside min-season-edge delta: <strong>${isFiniteNumber(phase17Summary.downsideMinSeasonEdgeDelta) ? formatPct(phase17Summary.downsideMinSeasonEdgeDelta) : '--'}</strong></p>
+          <p class="mission-meta">Feedback mode: <strong>${phase18Summary.controlMode || '--'}</strong></p>
+          <p class="mission-meta">Stagnation/downside streak: <strong>${phase18Summary.stagnationStreak ?? '--'} / ${phase18Summary.downsideRegressionStreak ?? '--'}</strong></p>
+        </article>
+
+        <article class="mission-card">
+          <h3>Finalization Gate (Dashboard Feedback)</h3>
+          <p class="mission-value ${gateStatusClass(finalizationStatus)}">${finalizationStatus}</p>
+          <p class="mission-meta">Checks: <strong>${finalizationChecks.length}</strong> | Errors: <strong>${finalizationErrors.length}</strong> | Warnings: <strong>${finalizationWarnings.length}</strong></p>
+          <p class="mission-meta">Updated: <strong>${formatDateTime(dashboardFeedback.generatedAt)}</strong></p>
+          <p class="mission-meta">${escapeHtml(finalizationSummary)}</p>
+        </article>
       </section>
 
       <section class="mission-deck">
@@ -178,6 +248,18 @@ const MissionControl = (() => {
                 <span class="mission-trust-age ${row.state === 'fail' ? 'text-negative' : row.state === 'pass' ? 'text-positive' : ''}">${escapeHtml(row.detail)}</span>
               </div>
             `).join('') : '<p class="mission-meta text-positive">No active blockers detected.</p>'}
+          </div>
+        </article>
+
+        <article class="mission-panel">
+          <h3>Learning Blockers (Phase 16-18)</h3>
+          <div class="mission-trust-list">
+            ${learningBlockers.length ? learningBlockers.slice(0, 4).map((row) => `
+              <div class="mission-trust-row">
+                <span class="mission-trust-label">Adaptive loop</span>
+                <span class="mission-trust-age text-negative">${escapeHtml(String(row))}</span>
+              </div>
+            `).join('') : '<p class="mission-meta text-positive">Adaptive loop reports no active blockers.</p>'}
           </div>
         </article>
       </section>
@@ -225,7 +307,19 @@ const MissionControl = (() => {
     return passesCore && passesQuality ? 'PASS' : 'WATCH';
   }
 
-  function buildBlockerReasons({ blockers, releaseBlockingReasons, edge, targetMin, releaseFloorMet, releaseStatusStrict, capReasons, advisoryWarnings }) {
+  function buildBlockerReasons({
+    blockers,
+    releaseBlockingReasons,
+    edge,
+    targetMin,
+    releaseFloorMet,
+    releaseStatusStrict,
+    capReasons,
+    advisoryWarnings,
+    finalizationStatus,
+    finalizationErrors,
+    finalizationWarnings,
+  }) {
     const reasons = [];
 
     if (releaseStatusStrict !== 'PASS') {
@@ -237,6 +331,20 @@ const MissionControl = (() => {
         label: 'Cup-vs-Vegas release floor',
         detail: `Edge shortfall ${formatPct(targetMin - edge)} (current ${formatPct(edge)} vs floor ${formatPct(targetMin)})`,
         state: 'fail',
+      });
+    }
+
+    if (finalizationStatus === 'FAIL') {
+      reasons.push({
+        label: 'Dashboard finalization gate',
+        detail: 'Dashboard feedback loop is FAIL.',
+        state: 'fail',
+      });
+    } else if (finalizationStatus === 'WARN' || finalizationStatus === 'UNKNOWN') {
+      reasons.push({
+        label: 'Dashboard finalization gate',
+        detail: `Dashboard feedback loop is ${finalizationStatus}.`,
+        state: 'warn',
       });
     }
 
@@ -252,6 +360,26 @@ const MissionControl = (() => {
       };
     });
     reasons.push(...commandReasons);
+
+    if (Array.isArray(finalizationErrors) && finalizationErrors.length > 0) {
+      finalizationErrors.slice(0, 2).forEach((item) => {
+        reasons.push({
+          label: 'Dashboard feedback error',
+          detail: String(item),
+          state: 'fail',
+        });
+      });
+    }
+
+    if (Array.isArray(finalizationWarnings) && finalizationWarnings.length > 0) {
+      finalizationWarnings.slice(0, 1).forEach((item) => {
+        reasons.push({
+          label: 'Dashboard feedback warning',
+          detail: String(item),
+          state: 'warn',
+        });
+      });
+    }
 
     if (Array.isArray(capReasons) && capReasons.length > 0) {
       reasons.push({
@@ -287,6 +415,14 @@ const MissionControl = (() => {
     freshnessRows,
     advisoryPolicy,
     advisoryWarnings,
+    finalizationStatus,
+    finalizationErrors,
+    phase16Summary,
+    phase16Actions,
+    phase17Summary,
+    phase17Actions,
+    phase18Summary,
+    phase18Actions,
   }) {
     const actions = [];
     const staleSources = freshnessRows.filter((row) => row.state === 'stale');
@@ -340,7 +476,84 @@ const MissionControl = (() => {
       });
     }
 
-    if (releaseReady && blockers.length === 0) {
+    if (finalizationStatus !== 'PASS') {
+      actions.push({
+        owner: 'Dashboard Lead',
+        priority: 'P0',
+        action: 'Run `python3 scripts/run_dashboard_feedback_loop.py` and clear dashboard finalization blockers before marking work complete.',
+      });
+      if (Array.isArray(finalizationErrors) && finalizationErrors.length > 0) {
+        actions.push({
+          owner: 'Dashboard Lead',
+          priority: 'P0',
+          action: `Resolve top dashboard feedback error: ${String(finalizationErrors[0])}`,
+        });
+      }
+    }
+
+    if (phase16Summary?.targetMet !== true && isFiniteNumber(phase16Summary?.closestGoalDistance?.edgeGapToTarget)) {
+      actions.push({
+        owner: 'Model Lead',
+        priority: 'P0',
+        action: `Adaptive loop still short of target by ${formatPct(phase16Summary.closestGoalDistance.edgeGapToTarget)}. Run next bounded phase16 cycle.`,
+      });
+    }
+
+    if (Array.isArray(phase16Actions) && phase16Actions.length > 0) {
+      phase16Actions.slice(0, 2).forEach((row) => {
+        actions.push({
+          owner: row.owner || 'Adaptive Loop',
+          priority: row.priority || 'P1',
+          action: row.action || 'Execute adaptive loop next action.',
+        });
+      });
+    }
+
+    if (phase17Summary?.recommendation === 'NO_STRICT_STABILITY_WINNER') {
+      actions.push({
+        owner: 'Model Lead',
+        priority: 'P1',
+        action: 'Phase17 stability lane has no strict winner yet. Re-run with tighter downside constraints and keep edge non-regression.',
+      });
+    }
+
+    if (Array.isArray(phase17Actions) && phase17Actions.length > 0) {
+      phase17Actions.slice(0, 1).forEach((row) => {
+        actions.push({
+          owner: row.owner || 'Stability Lane',
+          priority: row.priority || 'P1',
+          action: row.action || 'Execute phase17 next action.',
+        });
+      });
+    }
+
+    if (phase18Summary?.controlMode === 'ESCALATE_EXPLORATION') {
+      actions.push({
+        owner: 'Feedback Loop',
+        priority: 'P0',
+        action: 'Phase18 indicates exploration escalation. Run feedback-tuned phase16 command before promotion attempts.',
+      });
+    }
+
+    if (phase18Summary?.controlMode === 'DOWNSIDE_RECOVERY') {
+      actions.push({
+        owner: 'Feedback Loop',
+        priority: 'P0',
+        action: 'Phase18 indicates downside recovery mode. Run tighter phase17 constraints and block optimistic messaging.',
+      });
+    }
+
+    if (Array.isArray(phase18Actions) && phase18Actions.length > 0) {
+      phase18Actions.slice(0, 1).forEach((row) => {
+        actions.push({
+          owner: row.owner || 'Feedback Loop',
+          priority: row.priority || 'P1',
+          action: row.action || 'Execute phase18 next action.',
+        });
+      });
+    }
+
+    if (releaseReady && blockers.length === 0 && finalizationStatus === 'PASS') {
       actions.push({
         owner: 'Program Lead',
         priority: 'P2',
@@ -381,6 +594,24 @@ const MissionControl = (() => {
     const date = new Date(raw);
     if (Number.isNaN(date.getTime())) return null;
     return date;
+  }
+
+  function formatDateTime(raw) {
+    const date = parseDate(raw);
+    if (!date) return '--';
+    return date.toLocaleString(undefined, {
+      month: 'short',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  }
+
+  function gateStatusClass(status) {
+    if (status === 'PASS') return 'text-positive';
+    if (status === 'FAIL') return 'text-negative';
+    if (status === 'WARN') return 'text-warning';
+    return '';
   }
 
   function isFiniteNumber(value) {

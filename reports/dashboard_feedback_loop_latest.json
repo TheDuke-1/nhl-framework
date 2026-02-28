@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-02-28T03:33:43.476857+00:00",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "Bracket Coherence",
+      "errorCount": 0,
+      "warningCount": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Scorecard Sanity",
+      "errorCount": 0,
+      "warningCount": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "Mission Overflow Guards",
+      "errorCount": 0,
+      "warningCount": 0,
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}

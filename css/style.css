@@ -1413,6 +1413,66 @@ td[data-sort],
   align-items: start;
 }
 
+.projected-data-strip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background: rgba(30, 41, 59, 0.35);
+}
+
+.projected-data-main {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.projected-data-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.projected-data-value {
+  font-size: 0.78rem;
+  color: var(--text-primary);
+}
+
+.projected-data-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projected-source-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(100, 116, 139, 0.45);
+  background: rgba(15, 23, 42, 0.45);
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+}
+
+.projected-source-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.projected-data-note {
+  font-size: 0.68rem;
+  color: var(--tier-bubble);
+}
+
 /* Conference blocks */
 .bracket-conf {
   display: flex;
@@ -1427,6 +1487,38 @@ td[data-sort],
   margin-bottom: var(--space-md);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.conf-seed-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: var(--space-sm);
+}
+
+.conf-seed-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(100, 116, 139, 0.35);
+  background: rgba(15, 23, 42, 0.45);
+  color: var(--text-secondary);
+  font-size: 0.65rem;
+}
+
+.conf-seed-pill.is-wildcard {
+  border-color: rgba(245, 158, 11, 0.45);
+  color: var(--tier-bubble);
+}
+
+.conf-seed-warning {
+  margin-bottom: var(--space-sm);
+  text-align: center;
+  font-size: 0.67rem;
+  color: var(--tier-bubble);
 }
 
 .bracket-rounds {
@@ -1463,6 +1555,10 @@ td[data-sort],
   transition: border-color var(--transition-fast);
 }
 
+.bracket-matchup-card.bm-seed-mismatch {
+  border-color: rgba(245, 158, 11, 0.65);
+}
+
 .bracket-matchup-card:hover {
   border-color: rgba(99, 102, 241, 0.3);
 }
@@ -1477,6 +1573,7 @@ td[data-sort],
   align-items: center;
   gap: var(--space-sm);
   padding: 6px var(--space-sm);
+  min-width: 0;
 }
 
 .bm-team:first-child {
@@ -1487,14 +1584,24 @@ td[data-sort],
   font-weight: 600;
   font-size: 0.82rem;
   color: var(--text-primary);
-  min-width: 28px;
+  min-width: 30px;
 }
 
 .bm-seed {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
   color: var(--text-muted);
-  min-width: 22px;
+  min-width: 24px;
+}
+
+.bm-pts {
+  margin-left: auto;
+  font-size: 0.62rem;
+  color: var(--text-muted);
+}
+
+.bm-team .bm-pts + .bm-prob {
+  margin-left: var(--space-xs);
 }
 
 .bm-prob {
@@ -1509,6 +1616,17 @@ td[data-sort],
 
 .bm-team.bm-favored .bm-prob {
   color: var(--tier-elite);
+}
+
+.bm-seed-note {
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tier-bubble);
+  text-align: center;
+  padding: 2px var(--space-sm) 4px;
+  border-top: 1px solid rgba(245, 158, 11, 0.35);
+  background: rgba(245, 158, 11, 0.08);
 }
 
 .bm-freq {
@@ -1632,9 +1750,18 @@ td[data-sort],
     padding: var(--space-md);
   }
 
+  .projected-data-strip {
+    padding: var(--space-sm);
+  }
+
+  .projected-source-chip {
+    font-size: 0.62rem;
+  }
+
   .bm-code { font-size: 0.75rem; }
   .bm-prob { font-size: 0.7rem; }
   .bm-seed { font-size: 0.55rem; }
+  .bm-pts { font-size: 0.58rem; }
 }
 
 /* Advancement table */
@@ -2209,8 +2336,9 @@ td[data-sort],
 .mission-trust-row,
 .mission-trace-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 10px;
   border-radius: 10px;
   padding: 8px 10px;
@@ -2221,20 +2349,34 @@ td[data-sort],
   color: #2f4f71;
   font-size: 0.79rem;
   font-weight: 600;
+  flex: 1 1 150px;
+  min-width: 120px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .mission-trust-age {
   font-family: 'IBM Plex Mono', 'SF Mono', monospace;
   color: #486585;
   font-size: 0.75rem;
+  flex: 2 1 220px;
+  min-width: 0;
+  text-align: right;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .mission-trace-row code {
   color: #284362;
   font-size: 0.74rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  flex: 1 1 220px;
+  min-width: 0;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .mission-trace-status {
@@ -2305,5 +2447,9 @@ td[data-sort],
 
   .mission-trace-row code {
     max-width: 190px;
+  }
+
+  .mission-trust-age {
+    text-align: left;
   }
 }

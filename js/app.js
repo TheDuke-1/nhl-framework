@@ -63,6 +63,14 @@ const App = (() => {
     if (dashboardGrade) {
       payload.dashboardGrade = dashboardGrade;
     }
+    const edgeResearch = await loadEdgeResearchData(payload);
+    if (edgeResearch) {
+      payload.edgeResearch = edgeResearch;
+    }
+    const dashboardFeedback = await loadDashboardFeedbackData(payload);
+    if (dashboardFeedback) {
+      payload.dashboardFeedback = dashboardFeedback;
+    }
     return payload;
   }
 
@@ -105,6 +113,95 @@ const App = (() => {
     }
     try {
       const resp = await fetch('reports/current_model_dashboard_grade.json', { cache: 'no-store' });
+      if (resp.ok) return resp.json();
+    } catch (e) {
+      // Optional file; ignore if unavailable.
+    }
+    return null;
+  }
+
+  async function loadEdgeResearchData(payload) {
+    const existing = payload.edgeResearch || {};
+    if (
+      existing.phase16 && existing.phase16.summary
+      && existing.phase17 && existing.phase17.summary
+      && existing.phase18 && existing.phase18.summary
+    ) {
+      return existing;
+    }
+
+    let phase16 = null;
+    let phase17 = null;
+    let phase18 = null;
+    try {
+      const resp = await fetch('reports/phase16_adaptive_learning_loop.json', { cache: 'no-store' });
+      if (resp.ok) {
+        const raw = await resp.json();
+        phase16 = {
+          generatedAt: raw.generatedAt,
+          phase: raw.phase,
+          target: raw.target || {},
+          summary: raw.summary || {},
+          blockers: Array.isArray(raw.blockers) ? raw.blockers : [],
+          nextActions: Array.isArray(raw.nextActions) ? raw.nextActions : [],
+        };
+      }
+    } catch (e) {
+      // Optional file; ignore if unavailable.
+    }
+
+    try {
+      const resp = await fetch('reports/phase17_downside_stability_lane.json', { cache: 'no-store' });
+      if (resp.ok) {
+        const raw = await resp.json();
+        phase17 = {
+          generatedAt: raw.generatedAt,
+          phase: raw.phase,
+          target: raw.target || {},
+          summary: raw.summary || {},
+          blockers: Array.isArray(raw.blockers) ? raw.blockers : [],
+          nextActions: Array.isArray(raw.nextActions) ? raw.nextActions : [],
+        };
+      }
+    } catch (e) {
+      // Optional file; ignore if unavailable.
+    }
+
+    try {
+      const resp = await fetch('reports/phase18_feedback_control_loop.json', { cache: 'no-store' });
+      if (resp.ok) {
+        const raw = await resp.json();
+        phase18 = {
+          generatedAt: raw.generatedAt,
+          phase: raw.phase,
+          summary: raw.summary || {},
+          recommendedCommands: raw.recommendedCommands || {},
+          blockers: Array.isArray(raw.blockers) ? raw.blockers : [],
+          nextActions: Array.isArray(raw.nextActions) ? raw.nextActions : [],
+        };
+      }
+    } catch (e) {
+      // Optional file; ignore if unavailable.
+    }
+
+    if (!phase16 && !phase17 && !phase18) {
+      return Object.keys(existing).length ? existing : null;
+    }
+
+    return {
+      ...existing,
+      ...(phase16 ? { phase16 } : {}),
+      ...(phase17 ? { phase17 } : {}),
+      ...(phase18 ? { phase18 } : {}),
+    };
+  }
+
+  async function loadDashboardFeedbackData(payload) {
+    if (payload.dashboardFeedback && payload.dashboardFeedback.status) {
+      return payload.dashboardFeedback;
+    }
+    try {
+      const resp = await fetch('reports/dashboard_feedback_loop_latest.json', { cache: 'no-store' });
       if (resp.ok) return resp.json();
     } catch (e) {
       // Optional file; ignore if unavailable.

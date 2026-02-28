@@ -201,6 +201,13 @@ const Performance = (() => {
     const phase11 = edgeResearch?.phase11?.summary || null;
     const phase12 = edgeResearch?.phase12?.summary || null;
     const phase13 = edgeResearch?.phase13?.summary || null;
+    const phase16 = edgeResearch?.phase16 || null;
+    const phase16Summary = phase16?.summary || null;
+    const phase16Target = phase16?.target || null;
+    const phase17 = edgeResearch?.phase17 || null;
+    const phase17Summary = phase17?.summary || null;
+    const phase18 = edgeResearch?.phase18 || null;
+    const phase18Summary = phase18?.summary || null;
 
     return `
       <div class="section">
@@ -251,6 +258,14 @@ const Performance = (() => {
           <p>Phase 13 closest feasible candidate: ${phase13?.closestFeasibleName || '--'}</p>
           <p>Phase 13 prefilter pass count: ${phase13?.positiveRatioPrefilterPassCount ?? '--'}</p>
           <p>Phase 13 undeniable candidates: ${phase13?.undeniableCount ?? '--'}</p>
+          <p>Phase 16 target tier: ${(phase16Target?.tier || 'strong').toUpperCase()} (${formatPct(phase16Target?.edge)})</p>
+          <p>Phase 16 closest candidate: ${phase16Summary?.closestGoalName || '--'} (gap ${isFiniteNumber(phase16Summary?.closestGoalDistance?.edgeGapToTarget) ? formatPct(phase16Summary.closestGoalDistance.edgeGapToTarget) : '--'})</p>
+          <p>Phase 16 strict-eligible candidates: ${phase16Summary?.eligibleCount ?? '--'} | target met: ${phase16Summary?.targetMet === true ? 'YES' : 'NO'}</p>
+          <p>Phase 16 model mode: ${phase16Summary?.metaModelMode || '--'} | learning edge delta: ${isFiniteNumber(phase16Summary?.learningVelocityEdgeDelta) ? formatPct(phase16Summary.learningVelocityEdgeDelta) : '--'}</p>
+          <p>Phase 17 downside lane: ${phase17Summary?.bestDownsideName || '--'} | min-season-edge delta: ${isFiniteNumber(phase17Summary?.downsideMinSeasonEdgeDelta) ? formatPct(phase17Summary.downsideMinSeasonEdgeDelta) : '--'}</p>
+          <p>Phase 17 edge delta vs baseline: ${isFiniteNumber(phase17Summary?.edgeDeltaVsBaseline) ? formatPct(phase17Summary.edgeDeltaVsBaseline) : '--'} | strong-tier gap: ${isFiniteNumber(phase17Summary?.strongTierGap) ? formatPct(phase17Summary.strongTierGap) : '--'}</p>
+          <p>Phase 18 feedback loop: ${phase18Summary?.controlMode || '--'} | stagnation/downside streak: ${phase18Summary?.stagnationStreak ?? '--'} / ${phase18Summary?.downsideRegressionStreak ?? '--'}</p>
+          <p>Phase 18 strong-gap tracker: ${isFiniteNumber(phase18Summary?.phase16StrongGap) ? formatPct(phase18Summary.phase16StrongGap) : '--'} | execute recommended: ${phase18Summary?.executeRecommended === true ? 'YES' : 'NO'}</p>
         </div>
       </div>
     `;
@@ -270,14 +285,20 @@ const Performance = (() => {
     }
 
     const previous = benchmark.previous || null;
+    const comparison = benchmark.comparison || {};
+    const skippedIdentical = Number(comparison.skippedIdenticalRuns || 0);
     const core = current.core || {};
     const checkpoint = current.checkpoint || {};
     const quality = current.quality || {};
     const vegas = current.vegas || {};
+    const comparisonNote = skippedIdentical > 0
+      ? `<p class="muted">Comparison baseline uses last distinct snapshot (skipped ${skippedIdentical} identical run(s)).</p>`
+      : '';
 
     return `
       <div class="section">
         <h3>Proof Scorecard (Current vs Previous)</h3>
+        ${comparisonNote}
         <table class="data-table compact">
           <thead>
             <tr>

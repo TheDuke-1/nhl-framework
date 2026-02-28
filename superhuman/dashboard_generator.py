@@ -43,6 +43,9 @@ RELEASE_CYCLE_PATH = PROJECT_DIR / "reports" / "phase7_release_cycle.json"
 PHASE11_PATH = PROJECT_DIR / "reports" / "phase11_constrained_edge_batch.json"
 PHASE12_PATH = PROJECT_DIR / "reports" / "phase12_goal_gap_closure.json"
 PHASE13_PATH = PROJECT_DIR / "reports" / "phase13_eligible_feature_push.json"
+PHASE16_PATH = PROJECT_DIR / "reports" / "phase16_adaptive_learning_loop.json"
+PHASE17_PATH = PROJECT_DIR / "reports" / "phase17_downside_stability_lane.json"
+PHASE18_PATH = PROJECT_DIR / "reports" / "phase18_feedback_control_loop.json"
 GRADE_PATH = PROJECT_DIR / "reports" / "current_model_dashboard_grade.json"
 EMBEDDED_FALLBACK_PATH = PROJECT_DIR / "js" / "data.js"
 
@@ -309,7 +312,14 @@ def build_actual_bracket() -> Optional[Dict]:
 
 def build_projected_bracket(mc_result) -> Dict:
     """Transform Monte Carlo results into full projected bracket with R2+ matchups."""
-    bracket = {"East": {}, "West": {}, "cupFinal": [], "champion": None, "projectedSeeds": {}}
+    bracket = {
+        "East": {},
+        "West": {},
+        "cupFinal": [],
+        "champion": None,
+        "projectedSeeds": {},
+        "coherentPath": {},
+    }
 
     if not mc_result:
         return bracket
@@ -385,6 +395,89 @@ def build_projected_bracket(mc_result) -> Dict:
             "team": best_team,
             "probability": round(mc_result.cup_probabilities[best_team] * 100, 1),
         }
+
+    def _r1_pick(matchup: Dict) -> str:
+        return matchup["higher"] if float(matchup.get("higherWinProb", 0.0)) >= 50.0 else matchup["lower"]
+
+    def _select_matchup(matchups: List[Dict], team_a: Optional[str], team_b: Optional[str]) -> Optional[Dict]:
+        if not matchups:
+            return None
+        if team_a and team_b:
+            target = {team_a, team_b}
+            for row in matchups:
+                if {row.get("teamA"), row.get("teamB")} == target:
+                    return row
+        return matchups[0]
+
+    coherent_path: Dict[str, Dict] = {}
+    conf_champions: Dict[str, Optional[str]] = {"East": None, "West": None}
+    for conf in ("East", "West"):
+        conf_data = bracket.get(conf, {})
+        r1 = conf_data.get("round1", [])
+        r2_slots = conf_data.get("round2", [])
+        cf = conf_data.get("confFinal", [])
+
+        r1_winners = [_r1_pick(row) for row in r1]
+
+        slot_by_idx = {int(slot.get("slot", idx)): slot for idx, slot in enumerate(r2_slots)}
+        slot0_matchups = (slot_by_idx.get(0) or {}).get("matchups", [])
+        slot1_matchups = (slot_by_idx.get(1) or {}).get("matchups", [])
+        slot0_sel = _select_matchup(
+            slot0_matchups,
+            r1_winners[0] if len(r1_winners) > 0 else None,
+            r1_winners[1] if len(r1_winners) > 1 else None,
+        )
+        slot1_sel = _select_matchup(
+            slot1_matchups,
+            r1_winners[2] if len(r1_winners) > 2 else None,
+            r1_winners[3] if len(r1_winners) > 3 else None,
+        )
+
+        def _pick_series_winner(matchup: Optional[Dict]) -> Optional[str]:
+            if not matchup:
+                return None
+            return matchup.get("teamA") if float(matchup.get("teamAWinProb", 0.0)) >= 50.0 else matchup.get("teamB")
+
+        r2_winner_a = _pick_series_winner(slot0_sel)
+        r2_winner_b = _pick_series_winner(slot1_sel)
+        cf_sel = _select_matchup(cf, r2_winner_a, r2_winner_b)
+        conf_winner = _pick_series_winner(cf_sel)
+
+        coherent_path[conf] = {
+            "round1Winners": r1_winners,
+            "round2Selected": [slot0_sel, slot1_sel],
+            "round2Winners": [r2_winner_a, r2_winner_b],
+            "confFinalSelected": cf_sel,
+            "confChampion": conf_winner,
+        }
+        conf_champions[conf] = conf_winner
+
+    cup_top = _select_matchup(
+        bracket.get("cupFinal", []),
+        conf_champions.get("East"),
+        conf_champions.get("West"),
+    )
+    if not cup_top and conf_champions.get("East") and conf_champions.get("West"):
+        cup_top = {
+            "teamA": conf_champions["East"],
+            "teamB": conf_champions["West"],
+            "teamAWinProb": 50.0,
+            "matchupProb": 0.0,
+        }
+
+    path_champion = None
+    if cup_top:
+        path_winner = cup_top.get("teamA") if float(cup_top.get("teamAWinProb", 0.0)) >= 50.0 else cup_top.get("teamB")
+        path_prob = max(float(cup_top.get("teamAWinProb", 0.0)), 100.0 - float(cup_top.get("teamAWinProb", 0.0)))
+        path_champion = {
+            "team": path_winner,
+            "probability": round(path_prob, 1),
+            "source": "coherent_path",
+        }
+
+    coherent_path["cupFinalSelected"] = cup_top
+    coherent_path["champion"] = path_champion
+    bracket["coherentPath"] = coherent_path
 
     return bracket
 
@@ -551,6 +644,9 @@ def generate_dashboard_data() -> Dict:
     phase11 = None
     phase12 = None
     phase13 = None
+    phase16 = None
+    phase17 = None
+    phase18 = None
     dashboard_grade = None
     try:
         if BENCHMARK_PATH.exists():
@@ -620,6 +716,48 @@ def generate_dashboard_data() -> Dict:
     except Exception as e:
         logger.warning(f"Failed to load phase13 data (non-fatal): {e}")
     try:
+        if PHASE16_PATH.exists():
+            with open(PHASE16_PATH) as f:
+                phase16_raw = json.load(f)
+                phase16 = {
+                    "generatedAt": phase16_raw.get("generatedAt"),
+                    "phase": phase16_raw.get("phase"),
+                    "target": phase16_raw.get("target", {}),
+                    "summary": phase16_raw.get("summary", {}),
+                    "blockers": phase16_raw.get("blockers", []),
+                    "nextActions": phase16_raw.get("nextActions", []),
+                }
+    except Exception as e:
+        logger.warning(f"Failed to load phase16 data (non-fatal): {e}")
+    try:
+        if PHASE17_PATH.exists():
+            with open(PHASE17_PATH) as f:
+                phase17_raw = json.load(f)
+                phase17 = {
+                    "generatedAt": phase17_raw.get("generatedAt"),
+                    "phase": phase17_raw.get("phase"),
+                    "target": phase17_raw.get("target", {}),
+                    "summary": phase17_raw.get("summary", {}),
+                    "blockers": phase17_raw.get("blockers", []),
+                    "nextActions": phase17_raw.get("nextActions", []),
+                }
+    except Exception as e:
+        logger.warning(f"Failed to load phase17 data (non-fatal): {e}")
+    try:
+        if PHASE18_PATH.exists():
+            with open(PHASE18_PATH) as f:
+                phase18_raw = json.load(f)
+                phase18 = {
+                    "generatedAt": phase18_raw.get("generatedAt"),
+                    "phase": phase18_raw.get("phase"),
+                    "summary": phase18_raw.get("summary", {}),
+                    "recommendedCommands": phase18_raw.get("recommendedCommands", {}),
+                    "blockers": phase18_raw.get("blockers", []),
+                    "nextActions": phase18_raw.get("nextActions", []),
+                }
+    except Exception as e:
+        logger.warning(f"Failed to load phase18 data (non-fatal): {e}")
+    try:
         if GRADE_PATH.exists():
             with open(GRADE_PATH) as f:
                 dashboard_grade = json.load(f)
@@ -639,7 +777,7 @@ def generate_dashboard_data() -> Dict:
             "releaseStatusStrict": release_status_strict,
             "releaseStatusAdvisory": release_status_advisory,
             "releaseTruthPolicy": release_truth_policy,
-            "edgeResearchTimestamp": (phase13 or phase12 or phase11 or {}).get("generatedAt"),
+            "edgeResearchTimestamp": (phase18 or phase17 or phase16 or phase13 or phase12 or phase11 or {}).get("generatedAt"),
             "dashboardGradeTimestamp": (dashboard_grade or {}).get("generatedAt"),
         },
         "teams": teams,
@@ -659,6 +797,9 @@ def generate_dashboard_data() -> Dict:
             "phase11": phase11,
             "phase12": phase12,
             "phase13": phase13,
+            "phase16": phase16,
+            "phase17": phase17,
+            "phase18": phase18,
         },
     }
 

@@ -56,6 +56,51 @@ def _safe_delta(current: Optional[float], previous: Optional[float]) -> Optional
     return current - previous
 
 
+def _snapshot_signature(snapshot: Optional[Dict[str, Any]]) -> Optional[tuple]:
+    if not isinstance(snapshot, dict):
+        return None
+    core = snapshot.get("core", {})
+    quality = snapshot.get("quality", {})
+    vegas = snapshot.get("vegas", {})
+    checkpoint = snapshot.get("checkpoint", {})
+    def _num(value: Any) -> float:
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return 0.0
+    return (
+        round(_num(core.get("top1_accuracy_pct", 0.0)), 6),
+        round(_num(core.get("top5_accuracy_pct", 0.0)), 6),
+        round(_num(core.get("average_winner_rank", 0.0)), 6),
+        round(_num(core.get("playoff_f1", 0.0)), 6),
+        round(_num(quality.get("brier_playoff", 0.0)), 6),
+        round(_num(quality.get("brier_cup", 0.0)), 6),
+        round(_num(quality.get("log_loss_playoff", 0.0)), 6),
+        round(_num(quality.get("calibration_error", 0.0)), 6),
+        round(_num(vegas.get("cup_relative_brier_edge", 0.0)), 6),
+        round(_num(vegas.get("cup_relative_brier_edge_ci_low", 0.0)), 6),
+        round(_num(vegas.get("cup_relative_brier_edge_ci_high", 0.0)), 6),
+        round(_num(vegas.get("cup_positive_season_ratio", 0.0)), 6),
+        round(_num(checkpoint.get("g0_playoff_f1", 0.0)), 6),
+        round(_num(checkpoint.get("g20_playoff_f1", 0.0)), 6),
+        round(_num(checkpoint.get("g40_playoff_f1", 0.0)), 6),
+        round(_num(checkpoint.get("g60_playoff_f1", 0.0)), 6),
+    )
+
+
+def _find_previous_distinct(history: list, current: Dict[str, Any]) -> tuple[Optional[Dict[str, Any]], int]:
+    cur_sig = _snapshot_signature(current)
+    skipped = 0
+    for candidate in reversed(history):
+        cand_sig = _snapshot_signature(candidate)
+        if cand_sig is None:
+            continue
+        if cand_sig != cur_sig:
+            return candidate, skipped
+        skipped += 1
+    return (history[-1] if history else None), skipped
+
+
 def _fmt(value: Optional[float], digits: int = 3) -> str:
     if value is None:
         return "N/A"
@@ -283,7 +328,11 @@ def _collect_metrics() -> Dict[str, Any]:
     }
 
 
-def _write_markdown(current: Dict[str, Any], previous: Optional[Dict[str, Any]]) -> None:
+def _write_markdown(
+    current: Dict[str, Any],
+    previous: Optional[Dict[str, Any]],
+    skipped_identical_runs: int = 0,
+) -> None:
     c_core = current["core"]
     c_quality = current["quality"]
     c_vegas = current["vegas"]
@@ -302,6 +351,10 @@ def _write_markdown(current: Dict[str, Any], previous: Optional[Dict[str, Any]])
     lines.append(f"Generated: `{current['timestamp']}`")
     lines.append(f"Model Version: `{current.get('modelVersion')}`")
     lines.append(f"Profile Version: `{current.get('profileVersion')}`")
+    if skipped_identical_runs > 0:
+        lines.append(
+            f"Comparison baseline: last distinct snapshot (skipped `{skipped_identical_runs}` identical run(s))."
+        )
     lines.append("")
     lines.append("## Evaluation Contract")
     lines.append("")
@@ -452,7 +505,7 @@ def main() -> int:
         with open(HISTORY_PATH) as f:
             history = json.load(f)
 
-    previous = history[-1] if history else None
+    previous, skipped_identical_runs = _find_previous_distinct(history, current)
     history.append(current)
 
     HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -460,9 +513,20 @@ def main() -> int:
         json.dump(history, f, indent=2)
 
     with open(LATEST_PATH, "w") as f:
-        json.dump({"current": current, "previous": previous}, f, indent=2)
+        json.dump(
+            {
+                "current": current,
+                "previous": previous,
+                "comparison": {
+                    "mode": "last_distinct_snapshot",
+                    "skippedIdenticalRuns": skipped_identical_runs,
+                },
+            },
+            f,
+            indent=2,
+        )
 
-    _write_markdown(current, previous)
+    _write_markdown(current, previous, skipped_identical_runs=skipped_identical_runs)
 
     print("Benchmark update complete")
     print(f"Current: {LATEST_PATH}")
