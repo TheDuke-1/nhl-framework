@@ -15921,5 +15921,524 @@
       "advanced_accepted_team_ratio": 0.9583333333333334,
       "advanced_raw_team_ratio": 0.9583333333333334
     }
+  },
+  {
+    "timestamp": "2026-03-03T12:37:00.841952+00:00",
+    "modelVersion": "backtest-v2.4-2026-43d92c3204-c0211cc247-14b5b16284",
+    "profileVersion": "phase9-cup-edge-2026-02-13",
+    "evaluationMode": "strict_walk_forward",
+    "evaluationContract": {
+      "version": "phase-3-tiered-cup-vegas-target-2026-02-15",
+      "hardGates": {
+        "top1_accuracy_pct_min": 12.0,
+        "top5_accuracy_pct_min": 45.0,
+        "playoff_f1_min": 0.9,
+        "average_winner_rank_max": 8.0
+      },
+      "deltaGuardrails": {
+        "top1_accuracy_pct_max_drop": 0.5,
+        "top5_accuracy_pct_max_drop": 0.5,
+        "playoff_f1_max_drop": 0.005,
+        "average_winner_rank_max_increase": 0.1,
+        "brier_playoff_max_increase": 0.005,
+        "brier_cup_max_increase": 0.005,
+        "log_loss_playoff_max_increase": 0.01,
+        "calibration_error_max_increase": 0.01
+      },
+      "leakageFree": true
+    },
+    "verificationSettings": {
+      "strict_verification": true,
+      "require_series_data_in_strict_mode": true,
+      "require_oof_cup_calibration_in_strict_mode": true,
+      "quality_cv_strict_mode": false,
+      "vegas_random_seed": 42
+    },
+    "core": {
+      "top1_accuracy_pct": 40.0,
+      "top5_accuracy_pct": 60.0,
+      "average_winner_rank": 4.6,
+      "playoff_f1": 0.974
+    },
+    "quality": {
+      "brier_playoff": 0.05773304410406011,
+      "brier_cup": 0.029076439009871776,
+      "log_loss_playoff": 0.24204154939295847,
+      "calibration_error": 0.1652576867183268
+    },
+    "checkpoint": {
+      "g0_playoff_f1": 0.672,
+      "g20_playoff_f1": 0.924,
+      "g40_playoff_f1": 0.93,
+      "g60_playoff_f1": 0.936
+    },
+    "vegas": {
+      "available": true,
+      "seasons_available": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "seasons_missing": [],
+      "sample_playoff": 310,
+      "sample_cup": 310,
+      "vegas_brier_playoff": 0.19203866405422904,
+      "vegas_brier_cup": 0.028935910532922583,
+      "model_minus_vegas_brier_playoff": -0.12952993794208473,
+      "model_minus_vegas_brier_cup": -0.0005173718927627448,
+      "vegas_log_loss_playoff": 0.5641741618052377,
+      "vegas_log_loss_cup": 0.11955597503321291,
+      "model_minus_vegas_log_loss_playoff": -0.3578724611327728,
+      "model_minus_vegas_log_loss_cup": -0.011159931548644572,
+      "cup_relative_brier_edge": 0.017879924399617268,
+      "cup_relative_brier_edge_ci_low": 0.0064472324396576365,
+      "cup_relative_brier_edge_ci_high": 0.03154409282570616,
+      "cup_positive_season_ratio": 0.9,
+      "cup_positive_seasons": 9,
+      "cup_total_seasons": 10,
+      "cup_target": {
+        "relative_brier_improvement_min": 0.015,
+        "relative_brier_improvement_strong": 0.03,
+        "relative_brier_improvement_stretch": 0.05,
+        "relative_brier_improvement_moonshot": 0.08,
+        "confidence_level": 0.95,
+        "ci_lower_bound_min": 0.0,
+        "min_seasons_compared": 10,
+        "min_positive_season_ratio": 0.6,
+        "goal_met": true,
+        "release_floor_met": true,
+        "strong_met": false,
+        "stretch_met": false,
+        "moonshot_met": false,
+        "gate_prereqs_met": true,
+        "goal_tier": "release_floor"
+      },
+      "season_edges": [
+        {
+          "season": 2015,
+          "model_brier_cup": 0.0261691576009473,
+          "vegas_brier_cup": 0.027815335355899997,
+          "relative_brier_edge": 0.05918238029093258
+        },
+        {
+          "season": 2016,
+          "model_brier_cup": 0.031181221986374203,
+          "vegas_brier_cup": 0.03213953755243333,
+          "relative_brier_edge": 0.029817341475299866
+        },
+        {
+          "season": 2017,
+          "model_brier_cup": 0.027297097836183917,
+          "vegas_brier_cup": 0.028401366773433336,
+          "relative_brier_edge": 0.038880837885673626
+        },
+        {
+          "season": 2018,
+          "model_brier_cup": 0.029233942532319052,
+          "vegas_brier_cup": 0.02881388930319355,
+          "relative_brier_edge": -0.014578150998829142
+        },
+        {
+          "season": 2019,
+          "model_brier_cup": 0.03266627256200474,
+          "vegas_brier_cup": 0.03301412200912904,
+          "relative_brier_edge": 0.010536383400658456
+        },
+        {
+          "season": 2020,
+          "model_brier_cup": 0.026551027088507293,
+          "vegas_brier_cup": 0.026591765299483865,
+          "relative_brier_edge": 0.001531985955718488
+        },
+        {
+          "season": 2021,
+          "model_brier_cup": 0.027829051671226398,
+          "vegas_brier_cup": 0.028027976762935482,
+          "relative_brier_edge": 0.007097376075041731
+        },
+        {
+          "season": 2022,
+          "model_brier_cup": 0.02344934585803344,
+          "vegas_brier_cup": 0.023889865584718752,
+          "relative_brier_edge": 0.01843960674969612
+        },
+        {
+          "season": 2023,
+          "model_brier_cup": 0.029483278018528125,
+          "vegas_brier_cup": 0.030065050698562495,
+          "relative_brier_edge": 0.019350463961206182
+        },
+        {
+          "season": 2024,
+          "model_brier_cup": 0.03036842444433234,
+          "vegas_brier_cup": 0.03071898122096875,
+          "relative_brier_edge": 0.011411731857732315
+        }
+      ]
+    },
+    "dataCoverage": {
+      "advanced_accepted_season_ratio": 1.0,
+      "advanced_accepted_team_ratio": 0.9583333333333334,
+      "advanced_raw_team_ratio": 0.9583333333333334
+    }
+  },
+  {
+    "timestamp": "2026-03-03T12:58:21.131784+00:00",
+    "modelVersion": "backtest-v2.4-2026-43d92c3204-c0211cc247-14b5b16284",
+    "profileVersion": "phase9-cup-edge-2026-02-13",
+    "evaluationMode": "strict_walk_forward",
+    "evaluationContract": {
+      "version": "phase-3-tiered-cup-vegas-target-2026-02-15",
+      "hardGates": {
+        "top1_accuracy_pct_min": 12.0,
+        "top5_accuracy_pct_min": 45.0,
+        "playoff_f1_min": 0.9,
+        "average_winner_rank_max": 8.0
+      },
+      "deltaGuardrails": {
+        "top1_accuracy_pct_max_drop": 0.5,
+        "top5_accuracy_pct_max_drop": 0.5,
+        "playoff_f1_max_drop": 0.005,
+        "average_winner_rank_max_increase": 0.1,
+        "brier_playoff_max_increase": 0.005,
+        "brier_cup_max_increase": 0.005,
+        "log_loss_playoff_max_increase": 0.01,
+        "calibration_error_max_increase": 0.01
+      },
+      "leakageFree": true
+    },
+    "verificationSettings": {
+      "strict_verification": true,
+      "require_series_data_in_strict_mode": true,
+      "require_oof_cup_calibration_in_strict_mode": true,
+      "quality_cv_strict_mode": false,
+      "vegas_random_seed": 42
+    },
+    "core": {
+      "top1_accuracy_pct": 40.0,
+      "top5_accuracy_pct": 60.0,
+      "average_winner_rank": 4.6,
+      "playoff_f1": 0.974
+    },
+    "quality": {
+      "brier_playoff": 0.05773304410406011,
+      "brier_cup": 0.029076439009871776,
+      "log_loss_playoff": 0.24204154939295847,
+      "calibration_error": 0.1652576867183268
+    },
+    "checkpoint": {
+      "g0_playoff_f1": 0.672,
+      "g20_playoff_f1": 0.924,
+      "g40_playoff_f1": 0.93,
+      "g60_playoff_f1": 0.936
+    },
+    "vegas": {
+      "available": true,
+      "seasons_available": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "seasons_missing": [],
+      "sample_playoff": 310,
+      "sample_cup": 310,
+      "vegas_brier_playoff": 0.19203866405422904,
+      "vegas_brier_cup": 0.028935910532922583,
+      "model_minus_vegas_brier_playoff": -0.12952993794208473,
+      "model_minus_vegas_brier_cup": -0.0005173718927627448,
+      "vegas_log_loss_playoff": 0.5641741618052377,
+      "vegas_log_loss_cup": 0.11955597503321291,
+      "model_minus_vegas_log_loss_playoff": -0.3578724611327728,
+      "model_minus_vegas_log_loss_cup": -0.011159931548644572,
+      "cup_relative_brier_edge": 0.017879924399617268,
+      "cup_relative_brier_edge_ci_low": 0.0064472324396576365,
+      "cup_relative_brier_edge_ci_high": 0.03154409282570616,
+      "cup_positive_season_ratio": 0.9,
+      "cup_positive_seasons": 9,
+      "cup_total_seasons": 10,
+      "cup_target": {
+        "relative_brier_improvement_min": 0.015,
+        "relative_brier_improvement_strong": 0.03,
+        "relative_brier_improvement_stretch": 0.05,
+        "relative_brier_improvement_moonshot": 0.08,
+        "confidence_level": 0.95,
+        "ci_lower_bound_min": 0.0,
+        "min_seasons_compared": 10,
+        "min_positive_season_ratio": 0.6,
+        "goal_met": true,
+        "release_floor_met": true,
+        "strong_met": false,
+        "stretch_met": false,
+        "moonshot_met": false,
+        "gate_prereqs_met": true,
+        "goal_tier": "release_floor"
+      },
+      "season_edges": [
+        {
+          "season": 2015,
+          "model_brier_cup": 0.0261691576009473,
+          "vegas_brier_cup": 0.027815335355899997,
+          "relative_brier_edge": 0.05918238029093258
+        },
+        {
+          "season": 2016,
+          "model_brier_cup": 0.031181221986374203,
+          "vegas_brier_cup": 0.03213953755243333,
+          "relative_brier_edge": 0.029817341475299866
+        },
+        {
+          "season": 2017,
+          "model_brier_cup": 0.027297097836183917,
+          "vegas_brier_cup": 0.028401366773433336,
+          "relative_brier_edge": 0.038880837885673626
+        },
+        {
+          "season": 2018,
+          "model_brier_cup": 0.029233942532319052,
+          "vegas_brier_cup": 0.02881388930319355,
+          "relative_brier_edge": -0.014578150998829142
+        },
+        {
+          "season": 2019,
+          "model_brier_cup": 0.03266627256200474,
+          "vegas_brier_cup": 0.03301412200912904,
+          "relative_brier_edge": 0.010536383400658456
+        },
+        {
+          "season": 2020,
+          "model_brier_cup": 0.026551027088507293,
+          "vegas_brier_cup": 0.026591765299483865,
+          "relative_brier_edge": 0.001531985955718488
+        },
+        {
+          "season": 2021,
+          "model_brier_cup": 0.027829051671226398,
+          "vegas_brier_cup": 0.028027976762935482,
+          "relative_brier_edge": 0.007097376075041731
+        },
+        {
+          "season": 2022,
+          "model_brier_cup": 0.02344934585803344,
+          "vegas_brier_cup": 0.023889865584718752,
+          "relative_brier_edge": 0.01843960674969612
+        },
+        {
+          "season": 2023,
+          "model_brier_cup": 0.029483278018528125,
+          "vegas_brier_cup": 0.030065050698562495,
+          "relative_brier_edge": 0.019350463961206182
+        },
+        {
+          "season": 2024,
+          "model_brier_cup": 0.03036842444433234,
+          "vegas_brier_cup": 0.03071898122096875,
+          "relative_brier_edge": 0.011411731857732315
+        }
+      ]
+    },
+    "dataCoverage": {
+      "advanced_accepted_season_ratio": 1.0,
+      "advanced_accepted_team_ratio": 0.9583333333333334,
+      "advanced_raw_team_ratio": 0.9583333333333334
+    }
+  },
+  {
+    "timestamp": "2026-03-03T13:19:55.969281+00:00",
+    "modelVersion": "backtest-v2.4-2026-43d92c3204-c0211cc247-14b5b16284",
+    "profileVersion": "phase9-cup-edge-2026-02-13",
+    "evaluationMode": "strict_walk_forward",
+    "evaluationContract": {
+      "version": "phase-3-tiered-cup-vegas-target-2026-02-15",
+      "hardGates": {
+        "top1_accuracy_pct_min": 12.0,
+        "top5_accuracy_pct_min": 45.0,
+        "playoff_f1_min": 0.9,
+        "average_winner_rank_max": 8.0
+      },
+      "deltaGuardrails": {
+        "top1_accuracy_pct_max_drop": 0.5,
+        "top5_accuracy_pct_max_drop": 0.5,
+        "playoff_f1_max_drop": 0.005,
+        "average_winner_rank_max_increase": 0.1,
+        "brier_playoff_max_increase": 0.005,
+        "brier_cup_max_increase": 0.005,
+        "log_loss_playoff_max_increase": 0.01,
+        "calibration_error_max_increase": 0.01
+      },
+      "leakageFree": true
+    },
+    "verificationSettings": {
+      "strict_verification": true,
+      "require_series_data_in_strict_mode": true,
+      "require_oof_cup_calibration_in_strict_mode": true,
+      "quality_cv_strict_mode": false,
+      "vegas_random_seed": 42
+    },
+    "core": {
+      "top1_accuracy_pct": 40.0,
+      "top5_accuracy_pct": 60.0,
+      "average_winner_rank": 4.6,
+      "playoff_f1": 0.974
+    },
+    "quality": {
+      "brier_playoff": 0.05773304410406011,
+      "brier_cup": 0.029076439009871776,
+      "log_loss_playoff": 0.24204154939295847,
+      "calibration_error": 0.1652576867183268
+    },
+    "checkpoint": {
+      "g0_playoff_f1": 0.672,
+      "g20_playoff_f1": 0.924,
+      "g40_playoff_f1": 0.93,
+      "g60_playoff_f1": 0.936
+    },
+    "vegas": {
+      "available": true,
+      "seasons_available": [
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "seasons_missing": [],
+      "sample_playoff": 310,
+      "sample_cup": 310,
+      "vegas_brier_playoff": 0.19203866405422904,
+      "vegas_brier_cup": 0.028935910532922583,
+      "model_minus_vegas_brier_playoff": -0.12952993794208473,
+      "model_minus_vegas_brier_cup": -0.0005173718927627448,
+      "vegas_log_loss_playoff": 0.5641741618052377,
+      "vegas_log_loss_cup": 0.11955597503321291,
+      "model_minus_vegas_log_loss_playoff": -0.3578724611327728,
+      "model_minus_vegas_log_loss_cup": -0.011159931548644572,
+      "cup_relative_brier_edge": 0.017879924399617268,
+      "cup_relative_brier_edge_ci_low": 0.0064472324396576365,
+      "cup_relative_brier_edge_ci_high": 0.03154409282570616,
+      "cup_positive_season_ratio": 0.9,
+      "cup_positive_seasons": 9,
+      "cup_total_seasons": 10,
+      "cup_target": {
+        "relative_brier_improvement_min": 0.015,
+        "relative_brier_improvement_strong": 0.03,
+        "relative_brier_improvement_stretch": 0.05,
+        "relative_brier_improvement_moonshot": 0.08,
+        "confidence_level": 0.95,
+        "ci_lower_bound_min": 0.0,
+        "min_seasons_compared": 10,
+        "min_positive_season_ratio": 0.6,
+        "goal_met": true,
+        "release_floor_met": true,
+        "strong_met": false,
+        "stretch_met": false,
+        "moonshot_met": false,
+        "gate_prereqs_met": true,
+        "goal_tier": "release_floor"
+      },
+      "season_edges": [
+        {
+          "season": 2015,
+          "model_brier_cup": 0.0261691576009473,
+          "vegas_brier_cup": 0.027815335355899997,
+          "relative_brier_edge": 0.05918238029093258
+        },
+        {
+          "season": 2016,
+          "model_brier_cup": 0.031181221986374203,
+          "vegas_brier_cup": 0.03213953755243333,
+          "relative_brier_edge": 0.029817341475299866
+        },
+        {
+          "season": 2017,
+          "model_brier_cup": 0.027297097836183917,
+          "vegas_brier_cup": 0.028401366773433336,
+          "relative_brier_edge": 0.038880837885673626
+        },
+        {
+          "season": 2018,
+          "model_brier_cup": 0.029233942532319052,
+          "vegas_brier_cup": 0.02881388930319355,
+          "relative_brier_edge": -0.014578150998829142
+        },
+        {
+          "season": 2019,
+          "model_brier_cup": 0.03266627256200474,
+          "vegas_brier_cup": 0.03301412200912904,
+          "relative_brier_edge": 0.010536383400658456
+        },
+        {
+          "season": 2020,
+          "model_brier_cup": 0.026551027088507293,
+          "vegas_brier_cup": 0.026591765299483865,
+          "relative_brier_edge": 0.001531985955718488
+        },
+        {
+          "season": 2021,
+          "model_brier_cup": 0.027829051671226398,
+          "vegas_brier_cup": 0.028027976762935482,
+          "relative_brier_edge": 0.007097376075041731
+        },
+        {
+          "season": 2022,
+          "model_brier_cup": 0.02344934585803344,
+          "vegas_brier_cup": 0.023889865584718752,
+          "relative_brier_edge": 0.01843960674969612
+        },
+        {
+          "season": 2023,
+          "model_brier_cup": 0.029483278018528125,
+          "vegas_brier_cup": 0.030065050698562495,
+          "relative_brier_edge": 0.019350463961206182
+        },
+        {
+          "season": 2024,
+          "model_brier_cup": 0.03036842444433234,
+          "vegas_brier_cup": 0.03071898122096875,
+          "relative_brier_edge": 0.011411731857732315
+        }
+      ]
+    },
+    "dataCoverage": {
+      "advanced_accepted_season_ratio": 1.0,
+      "advanced_accepted_team_ratio": 0.9583333333333334,
+      "advanced_raw_team_ratio": 0.9583333333333334
+    }
   }
 ]
