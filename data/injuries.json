@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-03T11:27:08.061029Z",
+    "fetchedAt": "2026-03-04T11:25:14.100004Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 74
+    "totalInjuries": 82
   },
   "teams": {
     "ANA": {
@@ -13,7 +13,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-Body",
-          "note": "Granlund did not play in Friday's (Feb. 27) game against the Jets.",
+          "note": "Granlund did not play in Sunday's (Mar. 1) game against the Flames.",
           "estimatedWar": 0.9
         },
         {
@@ -29,7 +29,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "The Ducks said that Strome didn't participate in Saturday's (Feb. 28) practice, per Zach Cavanagh of The Sporting Tribune.",
+          "note": "Strome did not play in Sunday's (Mar. 1) game against the Flames.",
           "estimatedWar": 0.9
         },
         {
@@ -37,19 +37,19 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Terry did not play in Friday's (Feb. 27) game against the Jets.",
+          "note": "Terry did not play in Sunday's (Mar. 1) game against the Flames.",
           "estimatedWar": 0.9
         },
         {
           "player": "Frank Vatrano",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Shoulder",
-          "note": "The Anaheim Ducks placed F Frank Vatrano on injured reserve on Wednesday (Dec. 31) and is expected to miss the next six weeks.",
-          "estimatedWar": 1.2
+          "note": "Vatrano did not play in Sunday's (Mar. 1) game against the Flames.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.8,
+      "totalWarLost": 4.5,
       "injuredCount": 5
     },
     "BOS": {
@@ -118,10 +118,18 @@
           "injury": "Leg",
           "note": "The Columbus Blue Jackets said on Thursday (Jan. 8) that Smith underwent successful surgery to repair a torn meniscus in his knee and is expected to make a full recovery in 3-4 months.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Zach Werenski",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Werenski did not play against the Rangers on Monday (Mar. 2).",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "CGY": {
       "injuries": [
@@ -158,17 +166,17 @@
         {
           "player": "Wyatt Kaiser",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Lower Body",
-          "note": "The Chicago Blackhawks placed D Wyatt Kaiser on injured reserve on Wednesday (Feb. 18).",
-          "estimatedWar": 1.2
+          "note": "Rinzel did not play in Sunday's (Mar. 1) game against the Mammoth.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Sam Rinzel",
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Rinzel won't play against Utah on Sunday (Mar. 1), per Ben Pope of the Chicago Sun-Times.",
+          "note": "Rinzel did not play in Sunday's (Mar. 1) game against the Mammoth.",
           "estimatedWar": 0.9
         },
         {
@@ -180,7 +188,7 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.3,
+      "totalWarLost": 3.0,
       "injuredCount": 3
     },
     "COL": {
@@ -194,6 +202,14 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Artturi Lehkonen",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "Lehkonen did not return to Monday's (Mar. 2) game against the Kings.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Logan O'Connor",
           "position": "",
           "status": "Out",
@@ -202,8 +218,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "DAL": {
       "injuries": [
@@ -220,7 +236,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Hintz did not play on Saturday's (Feb. 28) game against the Predators.",
+          "note": "Hintz did not play on Monday's (Mar. 2) game against the Canucks.",
           "estimatedWar": 0.9
         },
         {
@@ -244,22 +260,31 @@
       "injuredCount": 4
     },
     "DET": {
-      "injuries": [],
-      "totalWarLost": 0.0,
-      "injuredCount": 0
+      "injuries": [
+        {
+          "player": "John Gibson",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "Head coach Todd McLellan said after Monday's (Mar. 2) game against Nashville that Gibson (upper body) is believed to be fine but will be further evaluated when the team returns to Detroit, Helene St. James of the Detroit Free PressHead coach Todd McLellan",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "EDM": {
       "injuries": [
         {
           "player": "Mattias Janmark",
           "position": "",
-          "status": "LTIR",
+          "status": "IR",
           "injury": "Undisclosed",
-          "note": "Janmark is dealing with a chronic injury that will keep him out long-term, per Mark Spector of Sportsnet.",
-          "estimatedWar": 1.5
+          "note": "The Edmonton Oilers placed F Mattias Janmark on injured reserve on Monday (Mar. 2).",
+          "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 1.5,
+      "totalWarLost": 1.2,
       "injuredCount": 1
     },
     "FLA": {
@@ -267,10 +292,10 @@
         {
           "player": "Uvis Balinskis",
           "position": "",
-          "status": "DTD",
+          "status": "Out",
           "injury": "Undisclosed",
-          "note": "Balinskis is day-to-day and not expected to play Sunday (Mar. 1) against the Islanders, as per Jameson Olive of the Panthers' official site.",
-          "estimatedWar": 0.4
+          "note": "Balinskis did not play in Sunday's (Mar. 1) game against the Islanders.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Aleksander Barkov",
@@ -313,7 +338,7 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 6.1,
+      "totalWarLost": 6.6,
       "injuredCount": 6
     },
     "LA": {
@@ -321,9 +346,17 @@
         {
           "player": "Joel Armia",
           "position": "",
-          "status": "Out",
+          "status": "IR",
           "injury": "Upper Body",
-          "note": "Armia did not play on Saturday's (Feb. 28) game against the Flames.",
+          "note": "The Los Angeles Kings placed F Joel Armia on Injured Reserve Monday (Mar. 2).",
+          "estimatedWar": 1.2
+        },
+        {
+          "player": "Quinton Byfield",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "Byfield did not play on Monday's (Mar. 2) game against the Avalanche.",
           "estimatedWar": 0.9
         },
         {
@@ -331,7 +364,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Doughty did not play on Saturday's (Feb. 28) game against the Flames.",
+          "note": "Doughty did not play for Monday's (Mar. 2) game against the Avalanche.",
           "estimatedWar": 0.9
         },
         {
@@ -343,16 +376,32 @@
           "estimatedWar": 1.2
         },
         {
+          "player": "Darcy Kuemper",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Kuemper did not play for Monday's (Mar. 2) game against the Avalanche.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Andrei Kuzmenko",
           "position": "",
           "status": "IR",
           "injury": "Meniscus",
           "note": "The Los Angeles Kings placed F Andrei Kuzmenko on injured reserve on Saturday (Feb. 28). He is listed as week-to-week.",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Trevor Moore",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Moore won't play against Colorado on Monday (Mar. 1), according to Zach Dooley of the Kings' official site.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.2,
-      "injuredCount": 4
+      "totalWarLost": 7.2,
+      "injuredCount": 7
     },
     "MIN": {
       "injuries": [
@@ -367,22 +416,14 @@
         {
           "player": "Marcus Foligno",
           "position": "",
-          "status": "Out",
+          "status": "IR",
           "injury": "Lower-Body",
-          "note": "Foligno won't play Sunday (Mar. 1) against the Blues, according to Michael Russo of The Athletic.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Filip Gustavsson",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Gustavsson did not play in Friday's (Feb. 27) game against the Mammoth.",
-          "estimatedWar": 0.9
+          "note": "The Minnesota Wild placed F Marcus Foligno on injured reserve on Monday (Mar. 1).",
+          "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 2.1,
+      "injuredCount": 2
     },
     "MTL": {
       "injuries": [
@@ -393,10 +434,18 @@
           "injury": "Lower-Body",
           "note": "The Canadiens said that Laine will not participate Tuesday's (Feb. 17) practice and is being evaluated on a daily basis.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Joseph Veleno",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Veleno didn't participate in Monday's (Mar. 2) practice, as per Eric Engels of Sportsnet.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "NJ": {
       "injuries": [
@@ -427,7 +476,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-body",
-          "note": "Wilsby did not return to Saturday\u2019s (Feb. 28) game against Dallas.",
+          "note": "Wilsby didn't play against Detroit on Monday (Mar. 2) and is week-to-week.",
           "estimatedWar": 0.9
         }
       ],
@@ -441,7 +490,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Drouin won't play against Florida on Sunday (Mar. 1), according to Stefen Rosner of NHL.com.",
+          "note": "Drouin did not play in Sunday's (Mar. 1) game against the Panthers.",
           "estimatedWar": 0.9
         },
         {
@@ -541,10 +590,26 @@
           "injury": "Arm",
           "note": "The Flyers said on Wednesday (Dec. 17) that Foerster underwent successful surgery on his arm and will be out for five months.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Travis Konecny",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Konecny is OUT for Monday's (Mar. 1) matchup against Toronto for an undisclosed reason, as per Jackie Spiegel of The Philadelphia Inquirer.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Nick Seeler",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-body",
+          "note": "Seeler has been ruled out for the remainder of Monday's (Mar. 2) game in Toronto.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 3.6,
+      "injuredCount": 4
     },
     "PIT": {
       "injuries": [
@@ -583,7 +648,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Lindgren did not play in Saturday's (Feb. 28) game versus the Canucks.",
+          "note": "Lindgren remains in a non-contact jersey ahead of Monday's (Mar. 1) game versus Carolina, according to Sound of Hockey.",
           "estimatedWar": 0.9
         },
         {
@@ -641,7 +706,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Goncalves didn't finish Saturday's (Feb. 28) game versus the Sabres due to an undisclosed injury",
+          "note": "Goncalves won't be available for the start of Tampa Bay's four-game road trip, which begins against Minnesota on Tuesday (Mar. 3), according to Erik Erlendsson of LightningInsider.com.",
           "estimatedWar": 0.9
         },
         {
@@ -649,7 +714,7 @@
           "position": "",
           "status": "Out",
           "injury": "Leg",
-          "note": "James left Saturday's (Feb. 28) game versus the Sabres, and there was no update on his status following the contest, per Benjamin Pierce of the Lightning's official site.",
+          "note": "James will be unavailable for the Bolts' next two contests, though it could be longer, Erik Erlendsson of LightningInsider.com",
           "estimatedWar": 0.9
         },
         {
@@ -733,7 +798,7 @@
           "position": "",
           "status": "Out",
           "injury": "Knee",
-          "note": "The Jets said on Saturday (Jan. 17) that Miller had knee surgery and is week-to-week.",
+          "note": "Miller did not play in Sunday's (Mar. 1) game against the Sharks.",
           "estimatedWar": 0.9
         },
         {
