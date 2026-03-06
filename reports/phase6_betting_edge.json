@@ -1,267 +1,277 @@
 {
-  "generatedAt": "2026-03-05T13:10:54.773693+00:00",
+  "generatedAt": "2026-03-06T13:05:36.575308+00:00",
   "mode": "phase6_betting_edge_proxy",
   "marketSource": {
     "source": "Hockey-Reference Playoff Probabilities",
     "url": "https://www.hockey-reference.com/friv/playoff_prob.fcgi",
     "type": "model-based (1000+ season simulations)",
-    "fetchedAt": "2026-03-05T11:29:04.712336Z",
+    "fetchedAt": "2026-03-06T11:23:14.394666Z",
     "teamCount": 32,
     "notes": "Probabilities are simulation-based, not sportsbook odds. impliedCupOdds converts cup probability to American odds format."
   },
   "nTeamsCompared": 23,
-  "nPositiveEdges": 10,
+  "nPositiveEdges": 11,
   "topEdges": [
     {
       "team": "MTL",
-      "model_prob": 0.0531,
+      "model_prob": 0.055,
       "market_prob": 0.02,
-      "edge_prob": 0.0331,
+      "edge_prob": 0.035,
       "implied_odds_american": 4900,
       "implied_odds_decimal": 50.0,
-      "expected_value_unit": 1.655,
-      "kelly_fraction": 0.0338
-    },
-    {
-      "team": "NYI",
-      "model_prob": 0.0457,
-      "market_prob": 0.017,
-      "edge_prob": 0.0287,
-      "implied_odds_american": 5782,
-      "implied_odds_decimal": 58.82,
-      "expected_value_unit": 1.6881,
-      "kelly_fraction": 0.0292
+      "expected_value_unit": 1.75,
+      "kelly_fraction": 0.0357
     },
     {
       "team": "DET",
-      "model_prob": 0.0534,
+      "model_prob": 0.0555,
       "market_prob": 0.026,
-      "edge_prob": 0.0274,
+      "edge_prob": 0.0295,
       "implied_odds_american": 3746,
       "implied_odds_decimal": 38.46,
-      "expected_value_unit": 1.0538,
-      "kelly_fraction": 0.0281
+      "expected_value_unit": 1.1345,
+      "kelly_fraction": 0.0303
     },
     {
       "team": "VGK",
-      "model_prob": 0.0585,
+      "model_prob": 0.0606,
       "market_prob": 0.035,
-      "edge_prob": 0.0235,
+      "edge_prob": 0.0256,
       "implied_odds_american": 2757,
       "implied_odds_decimal": 28.57,
-      "expected_value_unit": 0.6713,
-      "kelly_fraction": 0.0244
-    },
-    {
-      "team": "BOS",
-      "model_prob": 0.0503,
-      "market_prob": 0.027,
-      "edge_prob": 0.0233,
-      "implied_odds_american": 3603,
-      "implied_odds_decimal": 37.03,
-      "expected_value_unit": 0.8626,
-      "kelly_fraction": 0.0239
-    },
-    {
-      "team": "EDM",
-      "model_prob": 0.0429,
-      "market_prob": 0.023,
-      "edge_prob": 0.0199,
-      "implied_odds_american": 4247,
-      "implied_odds_decimal": 43.47,
-      "expected_value_unit": 0.8649,
-      "kelly_fraction": 0.0204
-    },
-    {
-      "team": "PIT",
-      "model_prob": 0.0672,
-      "market_prob": 0.048,
-      "edge_prob": 0.0192,
-      "implied_odds_american": 1983,
-      "implied_odds_decimal": 20.83,
-      "expected_value_unit": 0.3998,
-      "kelly_fraction": 0.0202
-    },
-    {
-      "team": "SEA",
-      "model_prob": 0.0245,
-      "market_prob": 0.009,
-      "edge_prob": 0.0155,
-      "implied_odds_american": 11011,
-      "implied_odds_decimal": 111.11,
-      "expected_value_unit": 1.7222,
-      "kelly_fraction": 0.0156
+      "expected_value_unit": 0.7313,
+      "kelly_fraction": 0.0265
     },
     {
       "team": "BUF",
-      "model_prob": 0.0682,
+      "model_prob": 0.0778,
       "market_prob": 0.055,
-      "edge_prob": 0.0132,
+      "edge_prob": 0.0228,
       "implied_odds_american": 1718,
       "implied_odds_decimal": 18.18,
-      "expected_value_unit": 0.2399,
-      "kelly_fraction": 0.014
+      "expected_value_unit": 0.4144,
+      "kelly_fraction": 0.0241
+    },
+    {
+      "team": "PIT",
+      "model_prob": 0.0664,
+      "market_prob": 0.048,
+      "edge_prob": 0.0184,
+      "implied_odds_american": 1983,
+      "implied_odds_decimal": 20.83,
+      "expected_value_unit": 0.3831,
+      "kelly_fraction": 0.0193
     },
     {
       "team": "UTA",
-      "model_prob": 0.0649,
+      "model_prob": 0.0696,
       "market_prob": 0.052,
-      "edge_prob": 0.0129,
+      "edge_prob": 0.0176,
       "implied_odds_american": 1823,
       "implied_odds_decimal": 19.23,
-      "expected_value_unit": 0.248,
-      "kelly_fraction": 0.0136
+      "expected_value_unit": 0.3384,
+      "kelly_fraction": 0.0186
+    },
+    {
+      "team": "BOS",
+      "model_prob": 0.0443,
+      "market_prob": 0.027,
+      "edge_prob": 0.0173,
+      "implied_odds_american": 3603,
+      "implied_odds_decimal": 37.03,
+      "expected_value_unit": 0.6404,
+      "kelly_fraction": 0.0178
+    },
+    {
+      "team": "SEA",
+      "model_prob": 0.0238,
+      "market_prob": 0.009,
+      "edge_prob": 0.0148,
+      "implied_odds_american": 11011,
+      "implied_odds_decimal": 111.11,
+      "expected_value_unit": 1.6444,
+      "kelly_fraction": 0.0149
+    },
+    {
+      "team": "CBJ",
+      "model_prob": 0.0164,
+      "market_prob": 0.01,
+      "edge_prob": 0.0064,
+      "implied_odds_american": 9900,
+      "implied_odds_decimal": 100.0,
+      "expected_value_unit": 0.64,
+      "kelly_fraction": 0.0065
+    },
+    {
+      "team": "NYI",
+      "model_prob": 0.0229,
+      "market_prob": 0.017,
+      "edge_prob": 0.0059,
+      "implied_odds_american": 5782,
+      "implied_odds_decimal": 58.82,
+      "expected_value_unit": 0.347,
+      "kelly_fraction": 0.006
+    },
+    {
+      "team": "EDM",
+      "model_prob": 0.0253,
+      "market_prob": 0.023,
+      "edge_prob": 0.0023,
+      "implied_odds_american": 4247,
+      "implied_odds_decimal": 43.47,
+      "expected_value_unit": 0.0998,
+      "kelly_fraction": 0.0023
     }
   ],
   "allEdges": [
     {
       "team": "MTL",
-      "model_prob": 0.0531,
+      "model_prob": 0.055,
       "market_prob": 0.02,
-      "edge_prob": 0.0331,
+      "edge_prob": 0.035,
       "implied_odds_american": 4900,
       "implied_odds_decimal": 50.0,
-      "expected_value_unit": 1.655,
-      "kelly_fraction": 0.0338
-    },
-    {
-      "team": "NYI",
-      "model_prob": 0.0457,
-      "market_prob": 0.017,
-      "edge_prob": 0.0287,
-      "implied_odds_american": 5782,
-      "implied_odds_decimal": 58.82,
-      "expected_value_unit": 1.6881,
-      "kelly_fraction": 0.0292
+      "expected_value_unit": 1.75,
+      "kelly_fraction": 0.0357
     },
     {
       "team": "DET",
-      "model_prob": 0.0534,
+      "model_prob": 0.0555,
       "market_prob": 0.026,
-      "edge_prob": 0.0274,
+      "edge_prob": 0.0295,
       "implied_odds_american": 3746,
       "implied_odds_decimal": 38.46,
-      "expected_value_unit": 1.0538,
-      "kelly_fraction": 0.0281
+      "expected_value_unit": 1.1345,
+      "kelly_fraction": 0.0303
     },
     {
       "team": "VGK",
-      "model_prob": 0.0585,
+      "model_prob": 0.0606,
       "market_prob": 0.035,
-      "edge_prob": 0.0235,
+      "edge_prob": 0.0256,
       "implied_odds_american": 2757,
       "implied_odds_decimal": 28.57,
-      "expected_value_unit": 0.6713,
-      "kelly_fraction": 0.0244
-    },
-    {
-      "team": "BOS",
-      "model_prob": 0.0503,
-      "market_prob": 0.027,
-      "edge_prob": 0.0233,
-      "implied_odds_american": 3603,
-      "implied_odds_decimal": 37.03,
-      "expected_value_unit": 0.8626,
-      "kelly_fraction": 0.0239
-    },
-    {
-      "team": "EDM",
-      "model_prob": 0.0429,
-      "market_prob": 0.023,
-      "edge_prob": 0.0199,
-      "implied_odds_american": 4247,
-      "implied_odds_decimal": 43.47,
-      "expected_value_unit": 0.8649,
-      "kelly_fraction": 0.0204
-    },
-    {
-      "team": "PIT",
-      "model_prob": 0.0672,
-      "market_prob": 0.048,
-      "edge_prob": 0.0192,
-      "implied_odds_american": 1983,
-      "implied_odds_decimal": 20.83,
-      "expected_value_unit": 0.3998,
-      "kelly_fraction": 0.0202
-    },
-    {
-      "team": "SEA",
-      "model_prob": 0.0245,
-      "market_prob": 0.009,
-      "edge_prob": 0.0155,
-      "implied_odds_american": 11011,
-      "implied_odds_decimal": 111.11,
-      "expected_value_unit": 1.7222,
-      "kelly_fraction": 0.0156
+      "expected_value_unit": 0.7313,
+      "kelly_fraction": 0.0265
     },
     {
       "team": "BUF",
-      "model_prob": 0.0682,
+      "model_prob": 0.0778,
       "market_prob": 0.055,
-      "edge_prob": 0.0132,
+      "edge_prob": 0.0228,
       "implied_odds_american": 1718,
       "implied_odds_decimal": 18.18,
-      "expected_value_unit": 0.2399,
-      "kelly_fraction": 0.014
+      "expected_value_unit": 0.4144,
+      "kelly_fraction": 0.0241
+    },
+    {
+      "team": "PIT",
+      "model_prob": 0.0664,
+      "market_prob": 0.048,
+      "edge_prob": 0.0184,
+      "implied_odds_american": 1983,
+      "implied_odds_decimal": 20.83,
+      "expected_value_unit": 0.3831,
+      "kelly_fraction": 0.0193
     },
     {
       "team": "UTA",
-      "model_prob": 0.0649,
+      "model_prob": 0.0696,
       "market_prob": 0.052,
-      "edge_prob": 0.0129,
+      "edge_prob": 0.0176,
       "implied_odds_american": 1823,
       "implied_odds_decimal": 19.23,
-      "expected_value_unit": 0.248,
-      "kelly_fraction": 0.0136
+      "expected_value_unit": 0.3384,
+      "kelly_fraction": 0.0186
     },
     {
-      "team": "SJ",
-      "model_prob": 0.0128,
-      "market_prob": 0.013,
-      "edge_prob": -0.0002,
-      "implied_odds_american": 7592,
-      "implied_odds_decimal": 76.92,
-      "expected_value_unit": -0.0154,
-      "kelly_fraction": 0.0
+      "team": "BOS",
+      "model_prob": 0.0443,
+      "market_prob": 0.027,
+      "edge_prob": 0.0173,
+      "implied_odds_american": 3603,
+      "implied_odds_decimal": 37.03,
+      "expected_value_unit": 0.6404,
+      "kelly_fraction": 0.0178
     },
     {
-      "team": "NSH",
-      "model_prob": 0.0003,
-      "market_prob": 0.001,
-      "edge_prob": -0.0007,
-      "implied_odds_american": 99900,
-      "implied_odds_decimal": 1000.0,
-      "expected_value_unit": -0.7,
-      "kelly_fraction": 0.0
+      "team": "SEA",
+      "model_prob": 0.0238,
+      "market_prob": 0.009,
+      "edge_prob": 0.0148,
+      "implied_odds_american": 11011,
+      "implied_odds_decimal": 111.11,
+      "expected_value_unit": 1.6444,
+      "kelly_fraction": 0.0149
     },
     {
       "team": "CBJ",
-      "model_prob": 0.0092,
+      "model_prob": 0.0164,
       "market_prob": 0.01,
-      "edge_prob": -0.0008,
+      "edge_prob": 0.0064,
       "implied_odds_american": 9900,
       "implied_odds_decimal": 100.0,
-      "expected_value_unit": -0.08,
+      "expected_value_unit": 0.64,
+      "kelly_fraction": 0.0065
+    },
+    {
+      "team": "NYI",
+      "model_prob": 0.0229,
+      "market_prob": 0.017,
+      "edge_prob": 0.0059,
+      "implied_odds_american": 5782,
+      "implied_odds_decimal": 58.82,
+      "expected_value_unit": 0.347,
+      "kelly_fraction": 0.006
+    },
+    {
+      "team": "EDM",
+      "model_prob": 0.0253,
+      "market_prob": 0.023,
+      "edge_prob": 0.0023,
+      "implied_odds_american": 4247,
+      "implied_odds_decimal": 43.47,
+      "expected_value_unit": 0.0998,
+      "kelly_fraction": 0.0023
+    },
+    {
+      "team": "NSH",
+      "model_prob": 0.0004,
+      "market_prob": 0.001,
+      "edge_prob": -0.0006,
+      "implied_odds_american": 99900,
+      "implied_odds_decimal": 1000.0,
+      "expected_value_unit": -0.6,
       "kelly_fraction": 0.0
     },
     {
       "team": "PHI",
-      "model_prob": 0.001,
+      "model_prob": 0.0006,
       "market_prob": 0.002,
-      "edge_prob": -0.001,
+      "edge_prob": -0.0014,
       "implied_odds_american": 49900,
       "implied_odds_decimal": 500.0,
-      "expected_value_unit": -0.5,
+      "expected_value_unit": -0.7,
+      "kelly_fraction": 0.0
+    },
+    {
+      "team": "SJ",
+      "model_prob": 0.0114,
+      "market_prob": 0.013,
+      "edge_prob": -0.0016,
+      "implied_odds_american": 7592,
+      "implied_odds_decimal": 76.92,
+      "expected_value_unit": -0.1231,
       "kelly_fraction": 0.0
     },
     {
       "team": "WSH",
-      "model_prob": 0.0002,
+      "model_prob": 0.0003,
       "market_prob": 0.002,
-      "edge_prob": -0.0018,
+      "edge_prob": -0.0017,
       "implied_odds_american": 49900,
       "implied_odds_decimal": 500.0,
-      "expected_value_unit": -0.9,
+      "expected_value_unit": -0.85,
       "kelly_fraction": 0.0
     },
     {
@@ -275,73 +285,73 @@
       "kelly_fraction": 0.0
     },
     {
+      "team": "OTT",
+      "model_prob": 0.0021,
+      "market_prob": 0.007,
+      "edge_prob": -0.0049,
+      "implied_odds_american": 14185,
+      "implied_odds_decimal": 142.85,
+      "expected_value_unit": -0.7,
+      "kelly_fraction": 0.0
+    },
+    {
       "team": "LA",
-      "model_prob": 0.0004,
+      "model_prob": 0.001,
       "market_prob": 0.006,
-      "edge_prob": -0.0056,
+      "edge_prob": -0.005,
       "implied_odds_american": 16566,
       "implied_odds_decimal": 166.66,
-      "expected_value_unit": -0.9333,
+      "expected_value_unit": -0.8333,
       "kelly_fraction": 0.0
     },
     {
       "team": "MIN",
-      "model_prob": 0.0599,
+      "model_prob": 0.0598,
       "market_prob": 0.066,
-      "edge_prob": -0.0061,
+      "edge_prob": -0.0062,
       "implied_odds_american": 1415,
       "implied_odds_decimal": 15.15,
-      "expected_value_unit": -0.0925,
-      "kelly_fraction": 0.0
-    },
-    {
-      "team": "OTT",
-      "model_prob": 0.0005,
-      "market_prob": 0.007,
-      "edge_prob": -0.0065,
-      "implied_odds_american": 14185,
-      "implied_odds_decimal": 142.85,
-      "expected_value_unit": -0.9286,
+      "expected_value_unit": -0.094,
       "kelly_fraction": 0.0
     },
     {
       "team": "CAR",
-      "model_prob": 0.0834,
+      "model_prob": 0.088,
       "market_prob": 0.1,
-      "edge_prob": -0.0166,
+      "edge_prob": -0.012,
       "implied_odds_american": 900,
       "implied_odds_decimal": 10.0,
-      "expected_value_unit": -0.166,
+      "expected_value_unit": -0.12,
       "kelly_fraction": 0.0
     },
     {
       "team": "DAL",
-      "model_prob": 0.0791,
+      "model_prob": 0.0833,
       "market_prob": 0.105,
-      "edge_prob": -0.0259,
+      "edge_prob": -0.0217,
       "implied_odds_american": 852,
       "implied_odds_decimal": 9.52,
-      "expected_value_unit": -0.247,
+      "expected_value_unit": -0.207,
       "kelly_fraction": 0.0
     },
     {
       "team": "TB",
-      "model_prob": 0.0794,
+      "model_prob": 0.0877,
       "market_prob": 0.138,
-      "edge_prob": -0.0586,
+      "edge_prob": -0.0503,
       "implied_odds_american": 624,
       "implied_odds_decimal": 7.24,
-      "expected_value_unit": -0.4251,
+      "expected_value_unit": -0.3651,
       "kelly_fraction": 0.0
     },
     {
       "team": "COL",
-      "model_prob": 0.0882,
+      "model_prob": 0.0906,
       "market_prob": 0.222,
-      "edge_prob": -0.1338,
+      "edge_prob": -0.1314,
       "implied_odds_american": 350,
       "implied_odds_decimal": 4.5,
-      "expected_value_unit": -0.6031,
+      "expected_value_unit": -0.5923,
       "kelly_fraction": 0.0
     }
   ],

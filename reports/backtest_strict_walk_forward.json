@@ -1,5 +1,5 @@
 {
-  "modelVersion": "backtest-v2.4-2026-43d92c3204-4dbf8eb913-14b5b16284",
+  "modelVersion": "backtest-v2.4-2026-43d92c3204-f2593fe75f-14b5b16284",
   "evaluationMode": "strict_walk_forward",
   "walkForwardAudit": {
     "leakageFree": true,
