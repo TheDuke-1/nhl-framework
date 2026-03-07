@@ -1,13 +1,21 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-06T11:23:14.718298Z",
+    "fetchedAt": "2026-03-07T11:14:47.090831Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 83
+    "totalInjuries": 82
   },
   "teams": {
     "ANA": {
       "injuries": [
+        {
+          "player": "John Carlson",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "Carlson did not play in Tuesday's (Mar. 3) game against the Mammoth.",
+          "estimatedWar": 0.9
+        },
         {
           "player": "Mikael Granlund",
           "position": "",
@@ -33,13 +41,22 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.0,
-      "injuredCount": 3
+      "totalWarLost": 3.9,
+      "injuredCount": 4
     },
     "BOS": {
-      "injuries": [],
-      "totalWarLost": 0.0,
-      "injuredCount": 0
+      "injuries": [
+        {
+          "player": "Jonathan Aspirot",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Aspirot did not play in Thursday's (Mar. 5) tilt versus the Predators.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "BUF": {
       "injuries": [
@@ -60,6 +77,14 @@
           "estimatedWar": 1.2
         },
         {
+          "player": "Tyson Kozak",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Kozak did not play in Thursday's (Mar. 5) game against the Penguins for an undisclosed reason.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Jiri Kulich",
           "position": "",
           "status": "Out",
@@ -76,8 +101,8 @@
           "estimatedWar": 0.4
         }
       ],
-      "totalWarLost": 3.5,
-      "injuredCount": 4
+      "totalWarLost": 4.3,
+      "injuredCount": 5
     },
     "CAR": {
       "injuries": [
@@ -96,19 +121,11 @@
     "CBJ": {
       "injuries": [
         {
-          "player": "Jet Greaves",
+          "player": "Dante Fabbro",
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Greaves did not return in Tuesday's (Mar. 3) game versus the Predators with an apparent injury.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Boone Jenner",
-          "position": "",
-          "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Jenner did not play in Tuesday's (Mar. 3) clash with the Predators.",
+          "note": "Fabbro did not play in Thursday's (Mar. 5) game against the Panthers for an undisclosed reason.",
           "estimatedWar": 0.9
         },
         {
@@ -124,12 +141,12 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Werenski did not play in Tuesday's (Mar. 3) clash against the Predators.",
+          "note": "Werenski did not play in Thursday's (Mar. 5) game against the Panthers.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.6,
-      "injuredCount": 4
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "CGY": {
       "injuries": [
@@ -164,11 +181,19 @@
     "CHI": {
       "injuries": [
         {
-          "player": "Wyatt Kaiser",
+          "player": "Andrew Mangiapane",
           "position": "",
           "status": "Out",
-          "injury": "Lower Body",
-          "note": "Rinzel did not play in Sunday's (Mar. 1) game against the Mammoth.",
+          "injury": "Not Injury Related",
+          "note": "The Blackhawks said that Mangipane's availability against the Canucks on Friday (Mar. 6) will depend on when his visa application is processed, per Charlie Roumeliotis of WGN Radio.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Teuvo Teravainen",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "The Blackhawks said that Teravainen could have aggravated a pre-existing injury at practice on Thursday (Mar. 5), according to Ben Pope of the Chicago Sun-Times.",
           "estimatedWar": 0.9
         },
         {
@@ -180,8 +205,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 2.1,
-      "injuredCount": 2
+      "totalWarLost": 3.0,
+      "injuredCount": 3
     },
     "COL": {
       "injuries": [
@@ -228,7 +253,7 @@
           "position": "",
           "status": "IR",
           "injury": "Illness",
-          "note": "The Dallas Stars placed F Roope Hintz on injured reserve and is expected to be back for Friday's (Mar. 6) versus the Avalanche.",
+          "note": "The Dallas Stars said that Hintz who is on injured reserve is expected to be back for Friday's (Mar. 6) versus the Avalanche, per Brien Rea of Victory+.",
           "estimatedWar": 1.2
         },
         {
@@ -262,15 +287,15 @@
     "DET": {
       "injuries": [
         {
-          "player": "John Gibson",
+          "player": "David Perron",
           "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Gibson did not play in Wednesday's (Mar. 4) game versus the Golden Knights.",
-          "estimatedWar": 0.9
+          "status": "IR",
+          "injury": "Groin",
+          "note": "The Red Wings have placed Perron on Injured Reserve, retroactive to January 20.",
+          "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 0.9,
+      "totalWarLost": 1.2,
       "injuredCount": 1
     },
     "EDM": {
@@ -288,20 +313,12 @@
           "position": "",
           "status": "IR",
           "injury": "Undisclosed",
-          "note": "The Edmonton Oilers placed F Curtis Lazar on Injured Reserve Wednesday (Mar. 4).",
+          "note": "The Edmonton Oilers placed F Curtis Lazar on Injured Reserve on Wednesday (Mar. 4).",
           "estimatedWar": 1.2
-        },
-        {
-          "player": "Jake Walman",
-          "position": "",
-          "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Walman sustained an undisclosed injury in Tuesday's (Mar. 3) game versus the Senators, but it isn't expected to be serious, per Ryan Rishaug of TSN.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.6,
-      "injuredCount": 3
+      "totalWarLost": 2.7,
+      "injuredCount": 2
     },
     "FLA": {
       "injuries": [
@@ -324,10 +341,10 @@
         {
           "player": "Seth Jones",
           "position": "",
-          "status": "LTIR",
+          "status": "Out",
           "injury": "Upper Body",
-          "note": "The Florida Panthers placed D Seth Jones on long-term injured reserve on Monday (Jan. 19).",
-          "estimatedWar": 1.5
+          "note": "The Panthers said that Jones has resumed taking full contact but won't play in Thursday's (Mar. 5) game against the Blue Jackets, per Mark Scheig of The Hockey Writers.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Cole Schwindt",
@@ -338,7 +355,7 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 4.8,
+      "totalWarLost": 4.2,
       "injuredCount": 4
     },
     "LA": {
@@ -356,7 +373,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "The Kings said that Byfield is OUT for Thursday's (Mar. 5) game against the Islanders.",
+          "note": "Byfield did not play in Thursday's (Mar. 5) game against the Islanders.",
           "estimatedWar": 0.9
         },
         {
@@ -368,14 +385,6 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Darcy Kuemper",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Kuemper did not play in Monday's (Mar. 2) game against the Avalanche.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Andrei Kuzmenko",
           "position": "",
           "status": "IR",
@@ -384,8 +393,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 5.4,
-      "injuredCount": 5
+      "totalWarLost": 4.5,
+      "injuredCount": 4
     },
     "MIN": {
       "injuries": [
@@ -396,10 +405,18 @@
           "injury": "Lower-Body",
           "note": "Foligno did not play in Tuesday's (Mar. 3) game versus the Lightning and considered day-to-day.",
           "estimatedWar": 0.4
+        },
+        {
+          "player": "Marcus Johansson",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "The Wild said that Johansson will not be available for the team's two-game road trip that begins on Friday (Mar. 6) versus the Golden Knights, per Joe Smith of The Athletic.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.4,
-      "injuredCount": 1
+      "totalWarLost": 1.3,
+      "injuredCount": 2
     },
     "MTL": {
       "injuries": [
@@ -460,7 +477,7 @@
           "position": "",
           "status": "Out",
           "injury": "Face",
-          "note": "O'Reilly sustained an injury to his face of Tuesday's (Mar. 3) game versus the Blue Jackets.",
+          "note": "O'Reilly did not play in Thursday's (Mar. 5) game versus the Bruins.",
           "estimatedWar": 0.9
         },
         {
@@ -494,14 +511,6 @@
           "estimatedWar": 1.2
         },
         {
-          "player": "Ryan Pulock",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Pulock did not play in Wednesday's (Mar. 4) game against the Ducks.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Alexander Romanov",
           "position": "",
           "status": "Out",
@@ -518,19 +527,11 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 5.7,
-      "injuredCount": 5
+      "totalWarLost": 4.8,
+      "injuredCount": 4
     },
     "NYR": {
       "injuries": [
-        {
-          "player": "Adam Edstrom",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-body",
-          "note": "The Rangers said that Edstrom took part in rushes as a member of the fourth line during Wednesday's (Mar. 4) practice, per Peter Baugh of The Athletic.",
-          "estimatedWar": 0.9
-        },
         {
           "player": "J.T. Miller",
           "position": "",
@@ -548,8 +549,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.3,
-      "injuredCount": 3
+      "totalWarLost": 2.4,
+      "injuredCount": 2
     },
     "OTT": {
       "injuries": [
@@ -558,20 +559,12 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Matinpalo did not play in Tuesday's (Mar. 3) game versus the Oilers.",
+          "note": "Matinpalo did not play in Friday's (Mar. 5) game against the Flames.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "David Perron",
-          "position": "",
-          "status": "IR",
-          "injury": "Groin",
-          "note": "The Ottawa Senators placed F David Perron on Injured Reserve. He is expected to miss 5-7 weeks due to a sports hernia injury that will require surgery, per Julian McKenzie of The Athletic.",
-          "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 2.1,
-      "injuredCount": 2
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "PHI": {
       "injuries": [
@@ -596,7 +589,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Konecny is slated to be a game-time decision for Thursday's (Mar. 5) matchup against the Mammoth, per Jackie Spiegel of The Philadelphia Inquirer.",
+          "note": "Konecny did not play in Thursday's (Mar. 5) matchup against the Mammoth.",
           "estimatedWar": 0.9
         },
         {
@@ -604,7 +597,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-body",
-          "note": "Seeler is slated to be a game-time decision for Thursday's (Mar. 5) matchup against the Mammoth, per Jackie Spiegel of The Philadelphia Inquirer.",
+          "note": "Seeler did not play in Thursday's (Mar. 5) matchup against the Mammoth.",
           "estimatedWar": 0.9
         }
       ],
@@ -630,14 +623,6 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Blake Lizotte",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-Body",
-          "note": "Lizotte did not play in Tuesday's (Mar. 3) game versus the Bruins.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Jack St. Ivany",
           "position": "",
           "status": "IR",
@@ -646,8 +631,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 4.2,
-      "injuredCount": 4
+      "totalWarLost": 3.3,
+      "injuredCount": 3
     },
     "SEA": {
       "injuries": [
@@ -704,18 +689,18 @@
         {
           "player": "Gage Goncalves",
           "position": "",
-          "status": "Out",
-          "injury": "Undisclosed",
-          "note": "The Lightning said that Goncalves won't be available for the start of Tampa Bay's four-game road trip, which begins against Minnesota on Tuesday (Mar. 3), according to Erik Erlendsson of LightningInsider.com.",
-          "estimatedWar": 0.9
+          "status": "DTD",
+          "injury": "Lower-Body",
+          "note": "The Lightning said on Thursday (Mar. 5) that Goncalves is sidelined with a lower-body injury and is considered day-to-day, per Benjamin Pierce of the team's official site.",
+          "estimatedWar": 0.4
         },
         {
           "player": "Dominic James",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Leg",
-          "note": "The Tampa Bay Lightning placed F Dominic James on injured reserve on Tuesday (Mar. 3).",
-          "estimatedWar": 1.2
+          "note": "The Tampa Bay Lightning said on Thursday (Mar. 5) that James will be sidelined for 8-10 weeks after undergoing surgery, per Benjamin Pierce of the team's official site.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Nick Paul",
@@ -726,7 +711,7 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 4.5,
+      "totalWarLost": 3.8,
       "injuredCount": 4
     },
     "TOR": {
@@ -744,9 +729,26 @@
       "injuredCount": 1
     },
     "UTA": {
-      "injuries": [],
-      "totalWarLost": 0.0,
-      "injuredCount": 0
+      "injuries": [
+        {
+          "player": "Mikhail Sergachev",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Sergachev did not play in Thursday's (Mar. 5) game versus the Flyers.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "MacKenzie Weegar",
+          "position": "",
+          "status": "Out",
+          "injury": "Not Injury Related",
+          "note": "The Utah Mammoth acquired Weegar in a trade from the Calgary Flames.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "VAN": {
       "injuries": [
@@ -806,7 +808,7 @@
           "position": "",
           "status": "Out",
           "injury": "Knee",
-          "note": "Miller did not play in Tuesday's (Mar. 3) game against the Chicago.",
+          "note": "The Jets said on Thursday (Mar. 5) that Miller has had a bit of a setback in his return from injury, back to week-to-week for him.",
           "estimatedWar": 0.9
         },
         {
@@ -846,18 +848,9 @@
       "injuredCount": 5
     },
     "WSH": {
-      "injuries": [
-        {
-          "player": "John Carlson",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-Body",
-          "note": "Carlson did not play in Tuesday's (Mar. 3) game against the Mammoth.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "injuries": [],
+      "totalWarLost": 0.0,
+      "injuredCount": 0
     }
   }
 }
