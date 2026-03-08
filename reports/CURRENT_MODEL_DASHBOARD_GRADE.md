@@ -1,6 +1,6 @@
 # Current Model + Dashboard Grade
 
-Generated: `2026-03-07T12:58:58.974066+00:00`
+Generated: `2026-03-08T12:56:01.509129+00:00`
 
 ## Grades
 
@@ -27,7 +27,7 @@ Generated: `2026-03-07T12:58:58.974066+00:00`
 
 - Team rows: 32/32
 - Required sections present ratio: 1.0
-- Freshness score: 0.977
+- Freshness score: 0.978
 - Release status alignment: PASS
 - Cup-goal alignment: True
 - Grade cap active: True

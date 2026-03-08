@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-07T12:58:58.974066+00:00",
+  "generatedAt": "2026-03-08T12:56:01.509129+00:00",
   "model": {
     "numeric": 88.5,
     "grade": "B+",
@@ -52,7 +52,7 @@
     "detail": {
       "team_count": 32,
       "section_ratio": 1.0,
-      "freshness_score": 0.977,
+      "freshness_score": 0.978,
       "release_status": "PASS",
       "cup_goal_met": true,
       "strong_goal_met": false,

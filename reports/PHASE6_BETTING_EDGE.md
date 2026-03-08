@@ -1,13 +1,13 @@
 # Phase 6 Betting Edge Report
 
-Generated: `2026-03-07T12:58:59.004622+00:00`
+Generated: `2026-03-08T12:56:01.539494+00:00`
 
 ## Source
 
 - Market Source: `Hockey-Reference Playoff Probabilities`
 - Notes: `Probabilities are simulation-based, not sportsbook odds. impliedCupOdds converts cup probability to American odds format.`
-- Teams Compared: `22`
-- Positive Edge Teams: `10`
+- Teams Compared: `25`
+- Positive Edge Teams: `9`
 
 ## Historical Vegas Validation (strict walk-forward)
 
@@ -21,13 +21,12 @@ Generated: `2026-03-07T12:58:59.004622+00:00`
 
 | Team | Model Cup % | Market Cup % | Edge % | Implied Odds | EV (1u) | Kelly f |
 |---|---:|---:|---:|---:|---:|---:|
-| SEA | 3.97 | 0.70 | 3.27 | 14185 | 4.6711 | 0.0329 |
-| VGK | 5.88 | 2.90 | 2.98 | 3348 | 1.0274 | 0.0307 |
-| PIT | 6.03 | 3.60 | 2.43 | 2677 | 0.6745 | 0.0252 |
-| UTA | 7.41 | 5.50 | 1.91 | 1718 | 0.3471 | 0.0202 |
-| DET | 4.74 | 3.20 | 1.54 | 3025 | 0.4813 | 0.0159 |
-| MTL | 4.88 | 3.70 | 1.18 | 2602 | 0.3186 | 0.0122 |
-| CBJ | 1.58 | 0.90 | 0.68 | 11011 | 0.7555 | 0.0069 |
-| SJ | 1.28 | 0.70 | 0.58 | 14185 | 0.8285 | 0.0058 |
-| EDM | 1.68 | 1.40 | 0.28 | 7042 | 0.1999 | 0.0028 |
-| BOS | 2.45 | 2.20 | 0.25 | 4445 | 0.1135 | 0.0026 |
+| VGK | 5.69 | 1.80 | 3.89 | 5455 | 2.1608 | 0.0396 |
+| UTA | 7.51 | 4.90 | 2.61 | 1940 | 0.5320 | 0.0274 |
+| DET | 4.77 | 2.20 | 2.57 | 4445 | 1.1680 | 0.0263 |
+| PIT | 5.75 | 3.70 | 2.05 | 2602 | 0.5537 | 0.0213 |
+| MTL | 4.91 | 3.70 | 1.21 | 2602 | 0.3267 | 0.0126 |
+| BOS | 4.20 | 3.00 | 1.20 | 3233 | 0.3999 | 0.0124 |
+| SJ | 1.45 | 0.60 | 0.85 | 16566 | 1.4166 | 0.0086 |
+| SEA | 1.60 | 0.80 | 0.80 | 12400 | 1.0000 | 0.0081 |
+| EDM | 1.82 | 1.20 | 0.62 | 8233 | 0.5166 | 0.0063 |

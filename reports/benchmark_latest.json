@@ -1,7 +1,7 @@
 {
   "current": {
-    "timestamp": "2026-03-07T13:09:43.051994+00:00",
-    "modelVersion": "backtest-v2.4-2026-43d92c3204-a7a828d764-14b5b16284",
+    "timestamp": "2026-03-08T13:06:35.367480+00:00",
+    "modelVersion": "backtest-v2.4-2026-43d92c3204-c72d1e982e-14b5b16284",
     "profileVersion": "phase9-cup-edge-2026-02-13",
     "evaluationMode": "strict_walk_forward",
     "evaluationContract": {
@@ -347,6 +347,6 @@
   },
   "comparison": {
     "mode": "last_distinct_snapshot",
-    "skippedIdenticalRuns": 23
+    "skippedIdenticalRuns": 26
   }
 }
