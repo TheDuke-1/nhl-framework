@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-08T11:15:50.975548Z",
+    "fetchedAt": "2026-03-09T11:30:38.054860Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 84
+    "totalInjuries": 88
   },
   "teams": {
     "ANA": {
@@ -13,16 +13,8 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Carlson is OUT for Sunday's (Mar. 8) game versus the Blues.",
+          "note": "Carlson did not play on for Sunday's (Mar. 8) game versus the Blues.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "Mikael Granlund",
-          "position": "",
-          "status": "IR",
-          "injury": "Upper-Body",
-          "note": "The Anaheim Ducks said that Granlund who is on injured reserve is Probable to play in Sunday's (Mar. 8) game versus the Blues.",
-          "estimatedWar": 1.2
         },
         {
           "player": "Petr Mrazek",
@@ -37,12 +29,12 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Terry did not play in Friday's (Mar. 6) game against the Canadiens.",
+          "note": "Terry did not play on Sunday's (Mar. 8) home matchup versus St. Louis.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.9,
-      "injuredCount": 4
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "BOS": {
       "injuries": [],
@@ -72,7 +64,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Kozak did not play in Thursday's (Mar. 5) game against the Penguins for an undisclosed reason.",
+          "note": "Kozak did not play on Sunday's (Mar. 8) contest against the Lightning.",
           "estimatedWar": 0.9
         },
         {
@@ -110,7 +102,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Gostisbehere will not play on Saturday's (Mar. 6) game against the Flames.",
+          "note": "Gostisbehere will not play on Saturday's (Mar. 7) game against the Flames.",
           "estimatedWar": 0.9
         },
         {
@@ -132,7 +124,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "The Blue Jackets listed Fabbro as OUT for Saturday's (Mar. 7) game against Utah.",
+          "note": "Fabbro did not play in Saturday's (Mar. 7) game against Utah.",
           "estimatedWar": 0.9
         },
         {
@@ -162,7 +154,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Hanley is OUT for Saturday's (Mar. 7) game versus the Hurricanes.",
+          "note": "Hanley did not play in Saturday's (Mar. 7) game versus the Hurricanes.",
           "estimatedWar": 0.9
         },
         {
@@ -180,10 +172,18 @@
           "injury": "Hip",
           "note": "The Calgary Flames placed F Jonathan Huberdeau on injured reserve on Saturday (Feb. 21).",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Zach Whitecloud",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "Whitecloud did not return to Saturday's (Mar. 7) game versus the Hurricanes.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.9,
-      "injuredCount": 4
+      "totalWarLost": 4.8,
+      "injuredCount": 5
     },
     "CHI": {
       "injuries": [
@@ -192,7 +192,15 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "The Blackhawks listed Knight as OUT for Sunday's (Mar. 8) game against the Stars.",
+          "note": "Knight did not play on Sunday's (Mar. 8) game against the Stars.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Oliver Moore",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Moore did not return Sunday's (Mar. 8) game against the Stars due to an apparent injury.",
           "estimatedWar": 0.9
         },
         {
@@ -204,11 +212,19 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 2.1,
-      "injuredCount": 2
+      "totalWarLost": 3.0,
+      "injuredCount": 3
     },
     "COL": {
       "injuries": [
+        {
+          "player": "Gabriel Landeskog",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-Body",
+          "note": "Landeskog is week-to-week and won't play against Minnesota on Sunday (Mar. 8).",
+          "estimatedWar": 0.9
+        },
         {
           "player": "Artturi Lehkonen",
           "position": "",
@@ -222,12 +238,12 @@
           "position": "",
           "status": "Out",
           "injury": "Hip",
-          "note": "The Avalanche said on Friday (Dec. 12) that O'Connor is still at least a week or two from returning to the lineup, though it could be longer, according to Corey Masisak of The Denver Post.",
+          "note": "HC Jared Bednar said that O'Connor is progressing in his recovery and could return to game action soon, per Aarif Deen of Colorado Hockey Now.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "DAL": {
       "injuries": [
@@ -278,6 +294,14 @@
     "DET": {
       "injuries": [
         {
+          "player": "John Gibson",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Gibson is unlikely to return to Sunday's (Mar. 8) game against the Devils due to an undisclosed reason.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Dylan Larkin",
           "position": "",
           "status": "Out",
@@ -294,11 +318,19 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 2.1,
-      "injuredCount": 2
+      "totalWarLost": 3.0,
+      "injuredCount": 3
     },
     "EDM": {
       "injuries": [
+        {
+          "player": "Adam Henrique",
+          "position": "",
+          "status": "Out",
+          "injury": "Knee",
+          "note": "Henrique did not play on Sunday's (Mar. 8) game against the Golden Knights.",
+          "estimatedWar": 0.9
+        },
         {
           "player": "Mattias Janmark",
           "position": "",
@@ -316,8 +348,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 2.1,
-      "injuredCount": 2
+      "totalWarLost": 3.0,
+      "injuredCount": 3
     },
     "FLA": {
       "injuries": [
@@ -368,14 +400,6 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Quinton Byfield",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Byfield is Probable for Saturday's (Mar. 7) game against the Canadiens.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Kevin Fiala",
           "position": "",
           "status": "Out",
@@ -392,8 +416,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.6,
-      "injuredCount": 4
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "MIN": {
       "injuries": [
@@ -464,14 +488,6 @@
     "NSH": {
       "injuries": [
         {
-          "player": "Ryan O'Reilly",
-          "position": "",
-          "status": "Out",
-          "injury": "Face",
-          "note": "O'Reilly did not play in Thursday's (Mar. 5) game versus the Bruins.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Adam Wilsby",
           "position": "",
           "status": "Out",
@@ -480,8 +496,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "NYI": {
       "injuries": [
@@ -532,6 +548,14 @@
           "estimatedWar": 1.2
         },
         {
+          "player": "Taylor Raddysh",
+          "position": "",
+          "status": "Out",
+          "injury": "Personal",
+          "note": "Raddysh will not play in the Rangers' next two games in order to attend his father's funeral, according to Mollie Walker of the New York Post reports Sunday (Mar. 8).",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Matt Rempe",
           "position": "",
           "status": "IR",
@@ -540,8 +564,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 2.4,
-      "injuredCount": 2
+      "totalWarLost": 3.3,
+      "injuredCount": 3
     },
     "OTT": {
       "injuries": [
@@ -550,12 +574,20 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Matinpalo is OUT for Saturday's (Mar. 7) game against the Kraken.",
+          "note": "Matinpalo did not play in Saturday's (Mar. 7) game against the Kraken.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Jake Sanderson",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "Sanderson did not return to Saturday's (Mar. 7) game against the Seattle.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "PHI": {
       "injuries": [
@@ -576,11 +608,19 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Garnet Hathaway",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Hathaway didn't participate in Sunday's (Mar. 8) practice, according to Adam Kimelman of NHL.com",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Travis Konecny",
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Konecny is OUT for Saturday's (Mar. 7) game against the Penguins.",
+          "note": "Konecny will be a game-time decision against the Rangers on Monday (Mar. 9), according to Jordan Hall of NBC Sports Philadelphia.",
           "estimatedWar": 0.9
         },
         {
@@ -588,15 +628,23 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-body",
-          "note": "Seeler is OUT for Saturday's (Mar. 7) game against the Penguins.",
+          "note": "Seeler will be a game-time decision for Monday's (Mar. 9) battle with the Rangers, as per Jordan Hall of NBC Sports Philadelphia reports Sunday.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.6,
-      "injuredCount": 4
+      "totalWarLost": 4.5,
+      "injuredCount": 5
     },
     "PIT": {
       "injuries": [
+        {
+          "player": "Justin Brazeau",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "Brazeau did not play on Sunday's (Mar. 8) game against the Bruins.",
+          "estimatedWar": 0.9
+        },
         {
           "player": "Sidney Crosby",
           "position": "",
@@ -622,8 +670,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.3,
-      "injuredCount": 3
+      "totalWarLost": 4.2,
+      "injuredCount": 4
     },
     "SEA": {
       "injuries": [
@@ -632,15 +680,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Gaudreau is Out for Saturday's (Mar. 7) outing against the Senators because of an illness, per Alison Lukan of the Kraken Hockey Network.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Adam Larsson",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Larsson is a game-time decision for Saturday's (Mar. 7) outing against the Senators because of an illness, per Alison Lukan of the Kraken Hockey Network.",
+          "note": "Gaudreau did not play in Saturday's (Mar. 7) outing against the Senators because of an illness.",
           "estimatedWar": 0.9
         },
         {
@@ -648,7 +688,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Lindgren is Out for Saturday's (Mar. 7) outing against the Senators because of an illness, per Alison Lukan of the Kraken Hockey Network.",
+          "note": "Lindgren did not play in Saturday's (Mar. 7) outing against the Senators because of an illness.",
           "estimatedWar": 0.9
         },
         {
@@ -656,7 +696,7 @@
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "The Kraken said that McMann is OUT for Saturday's (Mar. 7) game versus the Senators, per Alison Lukan of the Kraken Hockey Network.",
+          "note": "McMann did not play in Saturday's (Mar. 7) game versus the Senators.",
           "estimatedWar": 0.9
         },
         {
@@ -672,12 +712,12 @@
           "position": "",
           "status": "Out",
           "injury": "Face",
-          "note": "Schwartz won't return to Saturday's (Mar. 7) game versus the Senators after taking a skate blade to the face.",
+          "note": "Schwartz did not return to Saturday's (Mar. 7) game versus the Senators after taking a skate blade to the face.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 5.7,
-      "injuredCount": 6
+      "totalWarLost": 4.8,
+      "injuredCount": 5
     },
     "SJ": {
       "injuries": [
@@ -700,7 +740,7 @@
           "position": "",
           "status": "Out",
           "injury": "Back",
-          "note": "Parayko did not play in Friday's (Mar. 6) game against the Sharks.",
+          "note": "Parayko is slated to miss Sunday's (Mar. 8) game in Anaheim.",
           "estimatedWar": 0.9
         }
       ],
@@ -722,7 +762,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "The Lightning said that Goncalves is OUT for Saturday's (Mar. 7) game versus the Maple Leafs, according to Benjamin Pierce of the team's official site.",
+          "note": "Goncalves did not play Sunday (Mar. 8) night against the Sabres, according to Eduardo A. Encina of the Tampa Bay Times.",
           "estimatedWar": 0.9
         },
         {
@@ -766,20 +806,12 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Sergachev is Out for Saturday's (Mar. 7) game versus the Blue Jackets.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "MacKenzie Weegar",
-          "position": "",
-          "status": "Out",
-          "injury": "Not Injury Related",
-          "note": "The Utah Mammoth acquired Weegar in a trade from the Calgary Flames.",
+          "note": "Sergachev did not play in Saturday's (Mar. 7) game versus the Blue Jackets.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "VAN": {
       "injuries": [
