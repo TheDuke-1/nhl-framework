@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-09T11:30:38.054860Z",
+    "fetchedAt": "2026-03-10T11:28:05.413401Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 88
+    "totalInjuries": 84
   },
   "teams": {
     "ANA": {
@@ -90,14 +90,6 @@
     "CAR": {
       "injuries": [
         {
-          "player": "Nicolas Deslauriers",
-          "position": "",
-          "status": "Out",
-          "injury": "Not Injury Related",
-          "note": "The Hurricanes said that Deslauriers won't play Friday (Mar. 6) in Edmonton or Saturday (Mar. 7) in Calgary, but he'll join the Hurricanes in Raleigh after those two road games, per Cory Lavalette of the North State Journal.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Shayne Gostisbehere",
           "position": "",
           "status": "Out",
@@ -114,17 +106,17 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "CBJ": {
       "injuries": [
         {
-          "player": "Dante Fabbro",
+          "player": "Erik Gudbranson",
           "position": "",
           "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Fabbro did not play in Saturday's (Mar. 7) game against Utah.",
+          "injury": "Upper-body",
+          "note": "Gudbranson (upper body) will not travel with the Blue Jackets for their upcoming three-game road trip, Aaron Portzline of The Athletic reports Monday.",
           "estimatedWar": 0.9
         },
         {
@@ -150,14 +142,6 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Joel Hanley",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Hanley did not play in Saturday's (Mar. 7) game versus the Hurricanes.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Samuel Honzek",
           "position": "",
           "status": "Out",
@@ -178,12 +162,12 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Whitecloud did not return to Saturday's (Mar. 7) game versus the Hurricanes.",
+          "note": "Whitecloud didn't travel with the Flames for their five-game road trip, as per Eric Francis of Sportsnet reports Monday (Mar. 9).",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.8,
-      "injuredCount": 5
+      "totalWarLost": 3.9,
+      "injuredCount": 4
     },
     "CHI": {
       "injuries": [
@@ -192,7 +176,7 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Knight did not play on Sunday's (Mar. 8) game against the Stars.",
+          "note": "Knight won't be in the lineup for Monday's (Mar. 9) home matchup against Utah, according to Mario Tirabassi of CHGO Sports.",
           "estimatedWar": 0.9
         },
         {
@@ -378,6 +362,14 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Brad Marchand",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Marchand is expected to be out for weeks due to a lingering injury, as per George Richards of NHL.com reports Monday (Mar. 9).",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Cole Schwindt",
           "position": "",
           "status": "IR",
@@ -386,8 +378,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 4.2,
-      "injuredCount": 4
+      "totalWarLost": 5.1,
+      "injuredCount": 5
     },
     "LA": {
       "injuries": [
@@ -570,24 +562,16 @@
     "OTT": {
       "injuries": [
         {
-          "player": "Nikolas Matinpalo",
-          "position": "",
-          "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Matinpalo did not play in Saturday's (Mar. 7) game against the Kraken.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Jake Sanderson",
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Sanderson did not return to Saturday's (Mar. 7) game against the Seattle.",
+          "note": "Sanderson is week-to-week, according to Jackson Starr of the Senators' official site reports Monday (Mar. 9).",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "PHI": {
       "injuries": [
@@ -606,34 +590,10 @@
           "injury": "Arm",
           "note": "The Flyers said on Wednesday (Dec. 17) that Foerster underwent successful surgery on his arm and will be out for five months.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "Garnet Hathaway",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Hathaway didn't participate in Sunday's (Mar. 8) practice, according to Adam Kimelman of NHL.com",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Travis Konecny",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "Konecny will be a game-time decision against the Rangers on Monday (Mar. 9), according to Jordan Hall of NBC Sports Philadelphia.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Nick Seeler",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-body",
-          "note": "Seeler will be a game-time decision for Monday's (Mar. 9) battle with the Rangers, as per Jordan Hall of NBC Sports Philadelphia reports Sunday.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.5,
-      "injuredCount": 5
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "PIT": {
       "injuries": [
@@ -660,18 +620,10 @@
           "injury": "Leg",
           "note": "The Pittsburgh Penguins recalled F Filip Hallander from his conditioning stint with the minors.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "Jack St. Ivany",
-          "position": "",
-          "status": "IR",
-          "injury": "Hand",
-          "note": "The Pittsburgh Penguins placed D Jack St. Ivany on Injured Reserve on Thursday (Jan. 29).",
-          "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 4.2,
-      "injuredCount": 4
+      "totalWarLost": 3.0,
+      "injuredCount": 3
     },
     "SEA": {
       "injuries": [
@@ -712,7 +664,7 @@
           "position": "",
           "status": "Out",
           "injury": "Face",
-          "note": "Schwartz did not return to Saturday's (Mar. 7) game versus the Senators after taking a skate blade to the face.",
+          "note": "Schwartz will be sidelined indefinitely, the Kraken announced Monday (Mar. 9).",
           "estimatedWar": 0.9
         }
       ],
@@ -806,7 +758,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Sergachev did not play in Saturday's (Mar. 7) game versus the Blue Jackets.",
+          "note": "The Mammoth reported Sergachev (lower body) is not available for Monday's game in Chicago.",
           "estimatedWar": 0.9
         }
       ],
@@ -846,10 +798,18 @@
           "injury": "Upper-body",
           "note": "The Vancouver Canucks placed D Pierre-Olivier Joseph on injured reserve and is OUT for 2-3 weeks as of Wednesday (Mar. 4).",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Evander Kane",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Kane will miss Monday's (Mar. 9) clash with the Senators.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 5.4,
-      "injuredCount": 4
+      "totalWarLost": 6.3,
+      "injuredCount": 5
     },
     "VGK": {
       "injuries": [],
@@ -895,9 +855,18 @@
       "injuredCount": 4
     },
     "WSH": {
-      "injuries": [],
-      "totalWarLost": 0.0,
-      "injuredCount": 0
+      "injuries": [
+        {
+          "player": "David Kampf",
+          "position": "",
+          "status": "Out",
+          "injury": "Not Injury Related",
+          "note": "Kampf will not play in Monday's (Mar. 9) home game against the Kings.",
+          "estimatedWar": 0.9
+        }
+      ],
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     }
   }
 }
