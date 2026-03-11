@@ -1,36 +1,33 @@
 # Phase 6 Betting Edge Report
 
-Generated: `2026-03-10T12:47:51.679976+00:00`
+Generated: `2026-03-11T13:10:04.734580+00:00`
 
 ## Source
 
 - Market Source: `Hockey-Reference Playoff Probabilities`
 - Notes: `Probabilities are simulation-based, not sportsbook odds. impliedCupOdds converts cup probability to American odds format.`
-- Teams Compared: `23`
-- Positive Edge Teams: `13`
+- Teams Compared: `22`
+- Positive Edge Teams: `10`
 
 ## Historical Vegas Validation (strict walk-forward)
 
-- Cup relative Brier edge: `1.84%` (CI: `0.72%` to `3.17%`)
+- Cup relative Brier edge: `1.79%` (CI: `0.64%` to `3.15%`)
 - Cup release-floor status: `PASS` (floor >= `1.5%`, strong >= `3.0%`, stretch >= `5.0%`, moonshot >= `8.0%`)
 - Tier reached: `release_floor`
-- Model - Vegas Brier (Cup): `-0.0005318217442324344`
-- Model - Vegas Log Loss (Cup): `-0.011207419430084159`
+- Model - Vegas Brier (Cup): `-0.0005173718927627448`
+- Model - Vegas Log Loss (Cup): `-0.011159931548644572`
 
 ## Top Positive Edges
 
 | Team | Model Cup % | Market Cup % | Edge % | Implied Odds | EV (1u) | Kelly f |
 |---|---:|---:|---:|---:|---:|---:|
-| VGK | 5.80 | 2.00 | 3.80 | 4900 | 1.9000 | 0.0388 |
-| PIT | 6.94 | 4.30 | 2.64 | 2225 | 0.6136 | 0.0276 |
-| DET | 5.10 | 2.50 | 2.60 | 3900 | 1.0400 | 0.0267 |
-| EDM | 4.59 | 2.10 | 2.49 | 4661 | 1.1853 | 0.0254 |
-| BOS | 4.47 | 2.50 | 1.97 | 3900 | 0.7880 | 0.0202 |
-| UTA | 7.47 | 5.60 | 1.87 | 1685 | 0.3334 | 0.0198 |
-| MTL | 5.33 | 4.00 | 1.33 | 2400 | 0.3325 | 0.0139 |
-| NYI | 4.34 | 3.50 | 0.84 | 2757 | 0.2399 | 0.0087 |
-| SJ | 1.40 | 0.60 | 0.80 | 16566 | 1.3332 | 0.0080 |
-| DAL | 9.17 | 8.60 | 0.57 | 1062 | 0.0656 | 0.0062 |
-| SEA | 1.49 | 1.00 | 0.49 | 9900 | 0.4900 | 0.0049 |
-| BUF | 6.73 | 6.60 | 0.13 | 1415 | 0.0196 | 0.0014 |
-| LA | 0.14 | 0.10 | 0.04 | 99900 | 0.4000 | 0.0004 |
+| VGK | 4.58 | 1.40 | 3.18 | 7042 | 2.2710 | 0.0322 |
+| EDM | 5.50 | 2.40 | 3.10 | 4066 | 1.2913 | 0.0318 |
+| UTA | 7.13 | 4.30 | 2.83 | 2225 | 0.6577 | 0.0296 |
+| BOS | 4.01 | 2.40 | 1.61 | 4066 | 0.6706 | 0.0165 |
+| PIT | 5.66 | 4.20 | 1.46 | 2280 | 0.3471 | 0.0152 |
+| DET | 3.94 | 2.60 | 1.34 | 3746 | 0.5153 | 0.0138 |
+| NYI | 3.87 | 2.70 | 1.17 | 3603 | 0.4331 | 0.0120 |
+| MTL | 4.97 | 4.00 | 0.97 | 2400 | 0.2425 | 0.0101 |
+| SJ | 0.80 | 0.30 | 0.50 | 33233 | 1.6666 | 0.0050 |
+| SEA | 0.78 | 0.60 | 0.18 | 16566 | 0.2999 | 0.0018 |

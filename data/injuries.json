@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-10T11:28:05.413401Z",
+    "fetchedAt": "2026-03-11T11:28:30.877913Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
     "totalInjuries": 84
@@ -13,7 +13,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Carlson did not play on for Sunday's (Mar. 8) game versus the Blues.",
+          "note": "The Ducks said that Carlson isn't expected to make his debut with the Ducks until the end of the team's road trip, which begins Tuesday, according to Zach Cavanagh of The Sporting Tribune.",
           "estimatedWar": 0.9
         },
         {
@@ -29,7 +29,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Terry did not play on Sunday's (Mar. 8) home matchup versus St. Louis.",
+          "note": "The Ducks said on Sunday (Mar. 8) that Terry will travel with the team during their upcoming four-game road trip, but head coach Joel Quenneville isn't sure whether the 28-year-old will be able to play, per Derek Lee of The Hockey News.",
           "estimatedWar": 0.9
         }
       ],
@@ -64,7 +64,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Kozak did not play on Sunday's (Mar. 8) contest against the Lightning.",
+          "note": "Kozak did not play in Tuesday's (Mar. 10) home clash with the Sharks",
           "estimatedWar": 0.9
         },
         {
@@ -94,7 +94,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Gostisbehere will not play on Saturday's (Mar. 7) game against the Flames.",
+          "note": "Gostisbehere did not play in Tuesday's (Mar. 10) game against the Penguins.",
           "estimatedWar": 0.9
         },
         {
@@ -116,7 +116,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-body",
-          "note": "Gudbranson (upper body) will not travel with the Blue Jackets for their upcoming three-game road trip, Aaron Portzline of The Athletic reports Monday.",
+          "note": "The Blue Jackets said on Monday (Mar. 9) that Gudbranson will not travel with the Blue Jackets for their upcoming three-game road trip, per Aaron Portzline of The Athletic.",
           "estimatedWar": 0.9
         },
         {
@@ -162,7 +162,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Whitecloud didn't travel with the Flames for their five-game road trip, as per Eric Francis of Sportsnet reports Monday (Mar. 9).",
+          "note": "The Flames said on Monday (Mar. 9) that Whitecloud didn't travel with the team for their five-game road trip, as per Eric Francis of Sportsnet.",
           "estimatedWar": 0.9
         }
       ],
@@ -176,15 +176,15 @@
           "position": "",
           "status": "Out",
           "injury": "Illness",
-          "note": "Knight won't be in the lineup for Monday's (Mar. 9) home matchup against Utah, according to Mario Tirabassi of CHGO Sports.",
+          "note": "Knight did not play on Monday's (Mar. 9) home matchup against Utah.",
           "estimatedWar": 0.9
         },
         {
           "player": "Oliver Moore",
           "position": "",
           "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Moore did not return Sunday's (Mar. 8) game against the Stars due to an apparent injury.",
+          "injury": "Lower Body",
+          "note": "Head coach Jeff Blashill said on Monday (Mar. 10) that Moore will miss a significant amount of time due to a lower-body injury, as per Charlie Roumeliotis of WGN Radio.",
           "estimatedWar": 0.9
         },
         {
@@ -201,6 +201,14 @@
     },
     "COL": {
       "injuries": [
+        {
+          "player": "Ross Colton",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "Colton sustained an upper-body injury and did not return to Tuesday's (Mar. 10) game versus the Oilers.",
+          "estimatedWar": 0.9
+        },
         {
           "player": "Gabriel Landeskog",
           "position": "",
@@ -226,33 +234,25 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 3.6,
+      "injuredCount": 4
     },
     "DAL": {
       "injuries": [
         {
-          "player": "Michael Bunting",
-          "position": "",
-          "status": "Out",
-          "injury": "Not Injury Related",
-          "note": "The Dallas Stars acquired F Michael Bunting in a trade from the Nashville Predators.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Radek Faksa",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Upper-body",
-          "note": "The Stars placed F Radek Faksa on injured reserve on Tuesday (Feb. 24).",
-          "estimatedWar": 1.2
+          "note": "The Stars said on Friday (Mar. 6) that Faksa sustained a lower-body injury while rehabbing his upper-body injury sustained during the Olympics, per Stars radio analyst Bruce LeVine.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Roope Hintz",
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "The Stars reported on Saturday (Mar. 7) that Hintz will be out for an extended period of time, per Brien Rea of Victory+.",
+          "note": "The Stars reported on Tuesday (Mar. 10) that Hintz is not required to go undersurgery and is hopeful to return before the playoffs.",
           "estimatedWar": 0.9
         },
         {
@@ -260,7 +260,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-body",
-          "note": "The Dallas Stars said on Friday (Feb. 27) that Rantanen will probably be out for more than two weeks, per Robert Tiffin of D Magazine.",
+          "note": "The Stars said on Tuesday (Mar. 10) that Rantanen has resumed skating, but his return to the lineup isn't imminent, per Owen Newkirk of DLLS Sports.",
           "estimatedWar": 0.9
         },
         {
@@ -272,17 +272,17 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.8,
-      "injuredCount": 5
+      "totalWarLost": 3.6,
+      "injuredCount": 4
     },
     "DET": {
       "injuries": [
         {
-          "player": "John Gibson",
+          "player": "Andrew Copp",
           "position": "",
           "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Gibson is unlikely to return to Sunday's (Mar. 8) game against the Devils due to an undisclosed reason.",
+          "injury": "Lower Body",
+          "note": "Copp did not return to Tuesday's (Mar. 10) game versus the Panthers.",
           "estimatedWar": 0.9
         },
         {
@@ -290,7 +290,7 @@
           "position": "",
           "status": "Out",
           "injury": "Leg",
-          "note": "The Red Wings listed Larkin as OUT for Sunday's (Mar. 8) game against the Devils.",
+          "note": "Larkin did not play in Tuesday's (Mar. 10) game against the Panthers.",
           "estimatedWar": 0.9
         },
         {
@@ -312,7 +312,7 @@
           "position": "",
           "status": "Out",
           "injury": "Knee",
-          "note": "Henrique did not play on Sunday's (Mar. 8) game against the Golden Knights.",
+          "note": "Henrique did not play in Tuesday's (Mar. 10) game against the Avalanche.",
           "estimatedWar": 0.9
         },
         {
@@ -340,10 +340,10 @@
         {
           "player": "Aleksander Barkov",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Knee",
-          "note": "The Florida Panthers placed F Aleksander Barkov on injured reserve on Tuesday (Oct. 7).",
-          "estimatedWar": 1.2
+          "note": "The Florida Panthers said on Tuesday (Mar. 10) that Barkov took a practice in a non-contact sweater, per George Richards of Florida Hockey Now.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Jonah Gadjovich",
@@ -365,8 +365,16 @@
           "player": "Brad Marchand",
           "position": "",
           "status": "Out",
+          "injury": "Lower Body",
+          "note": "The Panthers said on Monday (Mar. 9) that Marchand is expected to be out for weeks due to a lingering injury, as per George Richards of NHL.com.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Sam Reinhart",
+          "position": "",
+          "status": "Out",
           "injury": "Undisclosed",
-          "note": "Marchand is expected to be out for weeks due to a lingering injury, as per George Richards of NHL.com reports Monday (Mar. 9).",
+          "note": "The Panthers said that Reinhart is OUT for Tuesday's (Mar. 10) home matchup versus the Red Wings, per Jameson Olive of the team's official site.",
           "estimatedWar": 0.9
         },
         {
@@ -378,8 +386,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 5.1,
-      "injuredCount": 5
+      "totalWarLost": 5.7,
+      "injuredCount": 6
     },
     "LA": {
       "injuries": [
@@ -388,7 +396,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "The Los Angeles Kings said that Armia is expected to miss 3-4 weeks, per John Hoven of SiriusXM NHL Network Radio.",
+          "note": "The Los Angeles Kings said on Friday (Mar. 6) that Armia is expected to miss 3-4 weeks, per John Hoven of SiriusXM NHL Network Radio.",
           "estimatedWar": 0.9
         },
         {
@@ -404,7 +412,7 @@
           "position": "",
           "status": "Out",
           "injury": "Meniscus",
-          "note": "The Los Angeles Kings said that Kuzmenko isn't expected to return before the end of the 2025-26 regular season, per John Hoven of SiriusXM NHL Network Radio.",
+          "note": "The Los Angeles Kings said on Friday (Mar. 6) that Kuzmenko isn't expected to return before the end of the 2025-26 regular season, per John Hoven of SiriusXM NHL Network Radio.",
           "estimatedWar": 0.9
         }
       ],
@@ -420,18 +428,10 @@
           "injury": "Lower-Body",
           "note": "The Wild said on Tuesday (Mar. 3) that Foligno is week-to-week, according to Joe Smith of The Athletic.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "Marcus Johansson",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper-Body",
-          "note": "The Wild said that Johansson will not be available for the team's two-game road trip that begins on Friday (Mar. 6) versus the Golden Knights, per Joe Smith of The Athletic.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "MTL": {
       "injuries": [
@@ -470,7 +470,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "The Devils said that Pesce will not be available against the Rangers or Red Wings on Saturday (Mar. 7) or Sunday (Mar. 8), respectively, per Amanda Stein of the team's official site.",
+          "note": "The Devils said on Tuesday (Mar. 10) that Pesce will be week-to-week.",
           "estimatedWar": 0.9
         }
       ],
@@ -544,7 +544,7 @@
           "position": "",
           "status": "Out",
           "injury": "Personal",
-          "note": "Raddysh will not play in the Rangers' next two games in order to attend his father's funeral, according to Mollie Walker of the New York Post reports Sunday (Mar. 8).",
+          "note": "The Rangers said on Sunday (Mar. 8) that Raddysh will not play in the next two games in order to attend his father's funeral, according to Mollie Walker of the New York Post.",
           "estimatedWar": 0.9
         },
         {
@@ -602,7 +602,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-Body",
-          "note": "Brazeau did not play on Sunday's (Mar. 8) game against the Bruins.",
+          "note": "The Penguins said that Brazeau is week to week as of Tuesday (Mar. 10).",
           "estimatedWar": 0.9
         },
         {
@@ -610,8 +610,16 @@
           "position": "",
           "status": "IR",
           "injury": "Leg",
-          "note": "The Pittsburgh Penguins placed F Sidney Crosby on injured reserve and will be out of action for at least four weeks.",
+          "note": "The Pittsburgh Penguins' F Sidney Crosby who is on injured reserve and is still out for another week as of Tuesday (Mar. 10).",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Samuel Girard",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "Girard did not play in Tuesday's (Mar. 10) game against the Hurricanes.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Filip Hallander",
@@ -620,56 +628,48 @@
           "injury": "Leg",
           "note": "The Pittsburgh Penguins recalled F Filip Hallander from his conditioning stint with the minors.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Kevin Hayes",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "Hayes did not play in Tuesday's (Mar. 10) game versus the Hurricanes.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Jack St. Ivany",
+          "position": "",
+          "status": "IR",
+          "injury": "Hand",
+          "note": "The Pittsburgh Penguins was removed from injured reserve on Monday (Mar. 9) after he was designated for a conditioning loan with the minors.",
+          "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.0,
-      "injuredCount": 3
+      "totalWarLost": 6.0,
+      "injuredCount": 6
     },
     "SEA": {
       "injuries": [
-        {
-          "player": "Frederick Gaudreau",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Gaudreau did not play in Saturday's (Mar. 7) outing against the Senators because of an illness.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Ryan Lindgren",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Lindgren did not play in Saturday's (Mar. 7) outing against the Senators because of an illness.",
-          "estimatedWar": 0.9
-        },
         {
           "player": "Bobby McMann",
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "McMann did not play in Saturday's (Mar. 7) game versus the Senators.",
+          "note": "McMann did not play in Tuesday's (Mar. 10) game versus the Predators.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "Matt Murray",
-          "position": "",
-          "status": "IR",
-          "injury": "Lower Body",
-          "note": "The Kraken said on Tuesday (Nov. 18) that Murray is expected to be out of action for about six weeks, the team announced Tuesday (Nov. 18). He has been placed on injured reserve, per the NHL media site.",
-          "estimatedWar": 1.2
         },
         {
           "player": "Jaden Schwartz",
           "position": "",
           "status": "Out",
           "injury": "Face",
-          "note": "Schwartz will be sidelined indefinitely, the Kraken announced Monday (Mar. 9).",
+          "note": "The Kraken announced on Monday (Mar. 9) that Schwartz will be sidelined indefinitely.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.8,
-      "injuredCount": 5
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "SJ": {
       "injuries": [
@@ -686,21 +686,20 @@
       "injuredCount": 1
     },
     "STL": {
-      "injuries": [
-        {
-          "player": "Colton Parayko",
-          "position": "",
-          "status": "Out",
-          "injury": "Back",
-          "note": "Parayko is slated to miss Sunday's (Mar. 8) game in Anaheim.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "injuries": [],
+      "totalWarLost": 0.0,
+      "injuredCount": 0
     },
     "TB": {
       "injuries": [
+        {
+          "player": "Erik Cernak",
+          "position": "",
+          "status": "Out",
+          "injury": "Undisclosed",
+          "note": "Cernak did not play in Tuesday's (Mar. 10) game versus the Blue Jackets.",
+          "estimatedWar": 0.9
+        },
         {
           "player": "Max Crozier",
           "position": "",
@@ -708,14 +707,6 @@
           "injury": "Abdomen",
           "note": "The Tampa Bay Lightning placed D Max Crozier on injured reserve on Saturday (Feb. 21).",
           "estimatedWar": 1.2
-        },
-        {
-          "player": "Gage Goncalves",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-Body",
-          "note": "Goncalves did not play Sunday (Mar. 8) night against the Sabres, according to Eduardo A. Encina of the Tampa Bay Times.",
-          "estimatedWar": 0.9
         },
         {
           "player": "Dominic James",
@@ -726,16 +717,24 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Emil Lilleberg",
+          "position": "",
+          "status": "Out",
+          "injury": "Face",
+          "note": "The Lightning said on Saturday (Mar. 7) that Lilleberg will be out for at least two weeks due to a facial fracture, per Benjamin Pierce of the team's official site.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Nick Paul",
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "The Tampa Bay Lightning said that Paul is still out for a week or two, per Benjamin Pierce of the team's official site.",
+          "note": "The Tampa Bay Lightning said on Friday (Mar. 6) that Paul is still out for a week or two, per Benjamin Pierce of the team's official site.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.9,
-      "injuredCount": 4
+      "totalWarLost": 4.8,
+      "injuredCount": 5
     },
     "TOR": {
       "injuries": [
@@ -758,7 +757,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "The Mammoth reported Sergachev (lower body) is not available for Monday's game in Chicago.",
+          "note": "Sergachev did not play in Tuesday's (Mar. 10) road game against the Wild.",
           "estimatedWar": 0.9
         }
       ],
@@ -804,7 +803,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Kane will miss Monday's (Mar. 9) clash with the Senators.",
+          "note": "Kane did not play on Monday's (Mar. 9) clash with the Senators.",
           "estimatedWar": 0.9
         }
       ],
@@ -823,7 +822,7 @@
           "position": "",
           "status": "Out",
           "injury": "Knee",
-          "note": "The Jets said on Thursday (Mar. 5) that Miller has had a bit of a setback in his return from injury, back to week-to-week for him.",
+          "note": "The Jets said on Tuesday (Mar. 10) that Miller has resumed skating but is not close to returning to the lineup, per Mitchell Clinton of the team's official site.",
           "estimatedWar": 0.9
         },
         {
@@ -831,7 +830,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "The Winnipeg Jets said on Saturday (Feb. 28) that Namestnikov is considered week-to-week, per Mitchell Clinton.",
+          "note": "The Jets said on Tuesday (Mar. 10) that Namestnikov has resumed skating but is not close to returning to the lineup, per Mitchell Clinton of the team's official site.",
           "estimatedWar": 0.9
         },
         {
@@ -839,7 +838,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower body",
-          "note": "The Winnipeg Jets said on Saturday (Feb. 28) that Niederreiter underwent surgery and is considered week-to-week, per Mitchell Clinton.",
+          "note": "The Jets said on Tuesday (Mar. 10) that Niederreiter has resumed skating but is not close to returning to the lineup, per Mitchell Clinton of the team's official site.",
           "estimatedWar": 0.9
         },
         {
@@ -847,7 +846,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "The Jets said on Tuesday (Feb. 24) that Pionk is week-to-week, according to Mitchell Clinton of the team's official site.",
+          "note": "The Jets said on Tuesday (Mar. 10) that Pionk has resumed skating but is not close to returning to the lineup, per Mitchell Clinton of the team's official site.",
           "estimatedWar": 0.9
         }
       ],
@@ -861,7 +860,7 @@
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "Kampf will not play in Monday's (Mar. 9) home game against the Kings.",
+          "note": "Kampf did not play in Monday's (Mar. 9) home game against the Kings.",
           "estimatedWar": 0.9
         }
       ],
