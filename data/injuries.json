@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-11T11:28:30.877913Z",
+    "fetchedAt": "2026-03-12T11:27:55.147572Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 84
+    "totalInjuries": 86
   },
   "teams": {
     "ANA": {
@@ -172,14 +172,6 @@
     "CHI": {
       "injuries": [
         {
-          "player": "Spencer Knight",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Knight did not play on Monday's (Mar. 9) home matchup against Utah.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Oliver Moore",
           "position": "",
           "status": "Out",
@@ -196,8 +188,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.0,
-      "injuredCount": 3
+      "totalWarLost": 2.1,
+      "injuredCount": 2
     },
     "COL": {
       "injuries": [
@@ -316,6 +308,14 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Connor Ingram",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "Ingram did not return to Tuesday's (Mar. 10) game versus the Avalanche, per Mark Spector of Sportsnet.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Mattias Janmark",
           "position": "",
           "status": "Out",
@@ -332,8 +332,8 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 3.0,
-      "injuredCount": 3
+      "totalWarLost": 3.9,
+      "injuredCount": 4
     },
     "FLA": {
       "injuries": [
@@ -436,6 +436,14 @@
     "MTL": {
       "injuries": [
         {
+          "player": "Cole Caufield",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Caufield did not play on Wednesday's (Mar. 11) contest versus the Senators.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Patrik Laine",
           "position": "",
           "status": "Out",
@@ -444,8 +452,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "NJ": {
       "injuries": [
@@ -566,7 +574,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Sanderson is week-to-week, according to Jackson Starr of the Senators' official site reports Monday (Mar. 9).",
+          "note": "The Senators said on Monday (Mar. 9) that Sanderson is week-to-week, according to Jackson Starr of the team's official site.",
           "estimatedWar": 0.9
         }
       ],
@@ -680,10 +688,18 @@
           "injury": "Lower Body",
           "note": "The Sharks said that Dellandrea skated by himself while wearing equipment on Friday's (Feb. 28) team practice, per Curtis Pashelka of The San Jose Mercury News.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "William Eklund",
+          "position": "",
+          "status": "DTD",
+          "injury": "Lower-Body",
+          "note": "Eklund is Questionable for Thursday's (Mar. 12) game against the Bruins due to a lower-body injury, per Max Miller of NHL.com.",
+          "estimatedWar": 0.4
         }
       ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "totalWarLost": 1.3,
+      "injuredCount": 2
     },
     "STL": {
       "injuries": [],
@@ -860,7 +876,7 @@
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "Kampf did not play in Monday's (Mar. 9) home game against the Kings.",
+          "note": "Kampf did not play on Wednesday's (Mar. 11) game against the Flyers.",
           "estimatedWar": 0.9
         }
       ],
