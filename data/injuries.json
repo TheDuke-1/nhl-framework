@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-13T11:26:22.734989Z",
+    "fetchedAt": "2026-03-14T11:19:05.832979Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 88
+    "totalInjuries": 89
   },
   "teams": {
     "ANA": {
@@ -76,6 +76,14 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Mattias Samuelsson",
+          "position": "",
+          "status": "DTD",
+          "injury": "Undisclosed",
+          "note": "Samuelsson is Questionable for Saturday's (Mar. 14) game versus the Maple Leafs, per Heather Engel of NHL.com.",
+          "estimatedWar": 0.4
+        },
+        {
           "player": "Conor Timmins",
           "position": "",
           "status": "DTD",
@@ -92,8 +100,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 5.2,
-      "injuredCount": 6
+      "totalWarLost": 5.7,
+      "injuredCount": 7
     },
     "CAR": {
       "injuries": [
@@ -310,10 +318,10 @@
         {
           "player": "Colton Dach",
           "position": "",
-          "status": "Out",
+          "status": "LTIR",
           "injury": "Undisclosed",
-          "note": "Dach did not play in Thursday's (Mar. 12) game against the Stars.",
-          "estimatedWar": 0.9
+          "note": "The Edmonton Oilers placed F Colton Dach on long-term injured reserve on Friday (Mar. 13).",
+          "estimatedWar": 1.5
         },
         {
           "player": "Ty Emberson",
@@ -338,10 +346,18 @@
           "injury": "Undisclosed",
           "note": "The Edmonton Oilers placed F Curtis Lazar on Injured Reserve on Wednesday (Mar. 4).",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Ryan Nugent-Hopkins",
+          "position": "",
+          "status": "Out",
+          "injury": "Personal",
+          "note": "Nugent-Hopkins did not play in Friday's (Mar. 13) game versus the Blues.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.9,
-      "injuredCount": 4
+      "totalWarLost": 5.4,
+      "injuredCount": 5
     },
     "FLA": {
       "injuries": [
@@ -441,8 +457,8 @@
           "player": "Bobby Brink",
           "position": "",
           "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Brink did not play in Thursday's (Mar. 12) game versus the Flyers.",
+          "injury": "Upper-Body",
+          "note": "Brink is a game-time decision for Saturday's (Mar. 14) game versus the Rangers.",
           "estimatedWar": 0.9
         },
         {
@@ -568,7 +584,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-Body",
-          "note": "Miller did not play in Thursday's (Mar. 12) game versus the Jets.",
+          "note": "Miller is a game-time call for Saturday's (Mar. 14) game versus the Wild.",
           "estimatedWar": 0.9
         },
         {
@@ -586,6 +602,14 @@
     "OTT": {
       "injuries": [
         {
+          "player": "Nick Jensen",
+          "position": "",
+          "status": "DTD",
+          "injury": "Lower-Body",
+          "note": "Jensen is day-to-day with a lower-body injury and missed Friday's (Mar. 13) practice.",
+          "estimatedWar": 0.4
+        },
+        {
           "player": "Jake Sanderson",
           "position": "",
           "status": "Out",
@@ -594,8 +618,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "totalWarLost": 1.3,
+      "injuredCount": 2
     },
     "PHI": {
       "injuries": [
@@ -718,29 +742,12 @@
       "injuredCount": 2
     },
     "STL": {
-      "injuries": [
-        {
-          "player": "Jonathan Drouin",
-          "position": "",
-          "status": "Out",
-          "injury": "Not Injury Related",
-          "note": "Drouin did not play in Thursday's (Mar. 12) game versus the Hurricanes.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "injuries": [],
+      "totalWarLost": 0.0,
+      "injuredCount": 0
     },
     "TB": {
       "injuries": [
-        {
-          "player": "Erik Cernak",
-          "position": "",
-          "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Cernak did not play in Thursday's (Mar. 12) game versus the Red Wings.",
-          "estimatedWar": 0.9
-        },
         {
           "player": "Max Crozier",
           "position": "",
@@ -774,8 +781,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.8,
-      "injuredCount": 5
+      "totalWarLost": 3.9,
+      "injuredCount": 4
     },
     "TOR": {
       "injuries": [
@@ -783,8 +790,8 @@
           "player": "Auston Matthews",
           "position": "",
           "status": "Out",
-          "injury": "Lower Body",
-          "note": "Matthews did not return to Thursday's (Mar. 12) game against the Ducks.",
+          "injury": "Knee",
+          "note": "Matthews sustained a Grade 3 MCL tear and a quadriceps contusion Thursday (Mar. 12) versus the Ducks. He will be reevaluated in two weeks, but he has been ruled out for the remainder of the season.",
           "estimatedWar": 0.9
         },
         {
