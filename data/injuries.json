@@ -1,21 +1,13 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-15T11:20:38.736083Z",
+    "fetchedAt": "2026-03-16T11:42:08.024837Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 92
+    "totalInjuries": 91
   },
   "teams": {
     "ANA": {
       "injuries": [
-        {
-          "player": "John Carlson",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower-Body",
-          "note": "Carlson did not play on Saturday's (Mar. 14) game versus the Senators.",
-          "estimatedWar": 0.9
-        },
         {
           "player": "Petr Mrazek",
           "position": "",
@@ -23,18 +15,10 @@
           "injury": "Lower-Body",
           "note": "The Anaheim Ducks announced G Petr Mrazek underwent hip surgery on Tuesday (Feb. 17) and will be out for the remainder of the season.",
           "estimatedWar": 0.9
-        },
-        {
-          "player": "Troy Terry",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper Body",
-          "note": "The Ducks said on Sunday (Mar. 8) that Terry will travel with the team during their upcoming four-game road trip, but head coach Joel Quenneville isn't sure whether the 28-year-old will be able to play, per Derek Lee of The Hockey News.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 0.9,
+      "injuredCount": 1
     },
     "BOS": {
       "injuries": [],
@@ -344,7 +328,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "The Oilers said on Thursday (Mar. 12) that Emberson has returned to Edmonton for evaluation.",
+          "note": "Emberson participated in the morning skate, but he won't play against Nashville on Sunday (Mar. 15), as per Jamie Umbach of the Oilers' official site.",
           "estimatedWar": 0.9
         },
         {
@@ -362,18 +346,10 @@
           "injury": "Undisclosed",
           "note": "The Edmonton Oilers placed F Curtis Lazar on Injured Reserve on Wednesday (Mar. 4).",
           "estimatedWar": 1.2
-        },
-        {
-          "player": "Ryan Nugent-Hopkins",
-          "position": "",
-          "status": "Out",
-          "injury": "Personal",
-          "note": "Nugent-Hopkins did not play in Friday's (Mar. 13) game versus the Blues.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 5.4,
-      "injuredCount": 5
+      "totalWarLost": 4.5,
+      "injuredCount": 4
     },
     "FLA": {
       "injuries": [
@@ -482,7 +458,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-Body",
-          "note": "Brink did not play on Saturday's (Mar. 14) game versus the Rangers.",
+          "note": "Brink will remain sidelined against the Maple Leafs on Sunday (Mar. 15), as per Dylan Loucks of The Hockey News.",
           "estimatedWar": 0.9
         },
         {
@@ -742,7 +718,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Chernyshov is being evaluated for an upper-body injury and did not finish Saturday's (Mar. 14) game versus the Canadiens.",
+          "note": "Chernyshov won't play Sunday (Mar. 15) against the Senators, Max Miller of NHL.com",
           "estimatedWar": 0.9
         },
         {
@@ -752,10 +728,18 @@
           "injury": "Lower Body",
           "note": "The Sharks said that Dellandrea skated by himself while wearing equipment on Friday's (Feb. 28) team practice, per Curtis Pashelka of The San Jose Mercury News.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Alexander Wennberg",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-Body",
+          "note": "Wennberg did not take the ice for warmups and won't play Sunday (Mar. 15) against the Senators, the team announced.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 2.7,
-      "injuredCount": 3
+      "totalWarLost": 3.6,
+      "injuredCount": 4
     },
     "STL": {
       "injuries": [],
@@ -811,6 +795,14 @@
     "TOR": {
       "injuries": [
         {
+          "player": "Oliver Ekman-Larsson",
+          "position": "",
+          "status": "Out",
+          "injury": "Personal",
+          "note": "Ekman-Larsson won't play against Minnesota on Sunday (Mar. 15).",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Auston Matthews",
           "position": "",
           "status": "Out",
@@ -827,8 +819,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "UTA": {
       "injuries": [],
@@ -923,7 +915,7 @@
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "Kampf did not play on Saturday's (Mar. 14) game against the Bruins.",
+          "note": "Kampf has returned home to Vancouver to be with his wife while they await the birth of their second child, according to Tarik El-Bashir of Monumental Sports Network.",
           "estimatedWar": 0.9
         }
       ],
