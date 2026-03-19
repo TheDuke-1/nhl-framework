@@ -1,9 +1,9 @@
 # Latest Benchmark Metrics
 
-Generated: `2026-03-18T13:31:13.249645+00:00`
-Model Version: `backtest-v2.4-2026-43d92c3204-7d42053cd5-14b5b16284`
+Generated: `2026-03-19T13:22:42.266207+00:00`
+Model Version: `backtest-v2.4-2026-43d92c3204-0dc6a0c64e-14b5b16284`
 Profile Version: `phase9-cup-edge-2026-02-13`
-Comparison baseline: last distinct snapshot (skipped `2` identical run(s)).
+Comparison baseline: last distinct snapshot (skipped `5` identical run(s)).
 
 ## Evaluation Contract
 

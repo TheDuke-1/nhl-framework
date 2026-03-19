@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-18T11:40:42.802207Z",
+    "fetchedAt": "2026-03-19T11:30:53.302156Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 91
+    "totalInjuries": 92
   },
   "teams": {
     "ANA": {
@@ -13,7 +13,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-body",
-          "note": "The Ducks said that Johnston did not participate in Tuesday's (Mar. 17) practice, per Zach Cavanagh of The Sporting Tribune.",
+          "note": "The Ducks said on Wednesday (Mar. 18) that Johnston is OUT for approximately 3-4 weeks.",
           "estimatedWar": 0.9
         },
         {
@@ -94,7 +94,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Gostisbehere is OUT for Tuesday's (Mar. 17) game versus the Blue Jackets, as per Walt Ruff of the Hurricanes' official site.",
+          "note": "Gostisbehere did not play on Wednesday's (Mar. 18) game versus the Penguins.",
           "estimatedWar": 0.9
         },
         {
@@ -154,7 +154,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-Body",
-          "note": "Kuznetsov did not play in Monday's (Mar. 16) game versus the Red Wings.",
+          "note": "Kuznetsov did not play on Wednesday's (Mar. 18) game versus the Blues.",
           "estimatedWar": 0.9
         }
       ],
@@ -198,7 +198,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "Colton did not play in Monday's (Mar. 16) game against the Penguins.",
+          "note": "Colton did not play on Wednesday's (Mar. 18) game versus the Stars.",
           "estimatedWar": 0.9
         },
         {
@@ -412,7 +412,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "The Los Angeles Kings said on Friday (Mar. 6) that Armia is expected to miss 3-4 weeks, per John Hoven of SiriusXM NHL Network Radio.",
+          "note": "The Los Angeles Kings said on Wednesday (Mar. 18) that Armia has no timeline yet for a return.",
           "estimatedWar": 0.9
         },
         {
@@ -428,7 +428,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower Body",
-          "note": "Kempe did not play in Monday's (Mar. 16) game versus the Rangers.",
+          "note": "The Kings said that Kempe is Probable to play for Thursday's (Mar. 19) game versus the Flyers, per Alexander Legget of Mayors Manor.",
           "estimatedWar": 0.9
         },
         {
@@ -588,16 +588,32 @@
     "NYR": {
       "injuries": [
         {
+          "player": "Noah Laba",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower-body",
+          "note": "Laba did not return to Wednesday's (Mar. 18) game versus the Devils.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Matt Rempe",
           "position": "",
           "status": "IR",
           "injury": "Thumb",
           "note": "The Rangers said on Friday (Feb. 20) that Rempe will undergo a procedure on his thumb and will be placed on injured reserve, per Peter Baugh of The Athletic.",
           "estimatedWar": 1.2
+        },
+        {
+          "player": "Urho Vaakanainen",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper-body",
+          "note": "Vaakanainen did not return to Wednesday's (Mar. 18) game versus the Devils.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.2,
-      "injuredCount": 1
+      "totalWarLost": 3.0,
+      "injuredCount": 3
     },
     "OTT": {
       "injuries": [
@@ -646,19 +662,11 @@
     "PIT": {
       "injuries": [
         {
-          "player": "Sidney Crosby",
-          "position": "",
-          "status": "IR",
-          "injury": "Leg",
-          "note": "The Pittsburgh Penguins' F Sidney Crosby who is on injured reserve and is still out for another week as of Tuesday (Mar. 10).",
-          "estimatedWar": 1.2
-        },
-        {
           "player": "Samuel Girard",
           "position": "",
           "status": "Out",
           "injury": "Upper-Body",
-          "note": "Girard did not play in Monday's (Mar. 16) game against the Avalanche.",
+          "note": "Girard did not play on Wednesday's (Mar. 18) game versus the Hurricanes.",
           "estimatedWar": 0.9
         },
         {
@@ -682,7 +690,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-Body",
-          "note": "Hayes did not play in on Monday's (Mar. 16) game versus the Avalanche.",
+          "note": "Hayes did not play on Wednesday's (Mar. 18) game versus the Hurricanes.",
           "estimatedWar": 0.9
         },
         {
@@ -694,8 +702,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 6.0,
-      "injuredCount": 6
+      "totalWarLost": 4.8,
+      "injuredCount": 5
     },
     "SEA": {
       "injuries": [
@@ -916,7 +924,7 @@
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "Kampf has returned home to Vancouver to be with his wife while they await the birth of their second child, according to Tarik El-Bashir of Monumental Sports Network.",
+          "note": "Kampf has not rejoined the Capitals for Wednesday's (Mar. 18) game versus the Senators.",
           "estimatedWar": 0.9
         }
       ],
