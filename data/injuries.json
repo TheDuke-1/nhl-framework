@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "fetchedAt": "2026-03-19T11:30:53.302156Z",
+    "fetchedAt": "2026-03-20T11:26:24.988184Z",
     "source": "Hockey-Reference",
     "teamCount": 32,
-    "totalInjuries": 92
+    "totalInjuries": 93
   },
   "teams": {
     "ANA": {
@@ -64,7 +64,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Pearson did not play in Tuesday's (Mar. 17) versus the Golden Knights.",
+          "note": "Pearson did not play in Thursday's (Mar. 19) versus the Sharks.",
           "estimatedWar": 0.9
         },
         {
@@ -74,18 +74,10 @@
           "injury": "Leg",
           "note": "The Buffalo Sabres said on Wednesday (Feb. 18) that Timmins is now skating but not in day-to-day status.",
           "estimatedWar": 0.4
-        },
-        {
-          "player": "Alex Tuch",
-          "position": "",
-          "status": "Out",
-          "injury": "Illness",
-          "note": "Tuch did not play for Tuesday's (Mar. 17) matchup versus the Golden Knight.",
-          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 5.2,
-      "injuredCount": 6
+      "totalWarLost": 4.3,
+      "injuredCount": 5
     },
     "CAR": {
       "injuries": [
@@ -168,7 +160,7 @@
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "Boisvert did not play in Tuesday's (Mar. 17) game versus the Wild.",
+          "note": "Boisvert did not play on Thursday's (Mar. 19) game versus the Wild.",
           "estimatedWar": 0.9
         },
         {
@@ -274,15 +266,7 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Brandsegg-Nygard did not play in Monday's (Mar. 16) game against the Flames.",
-          "estimatedWar": 0.9
-        },
-        {
-          "player": "Andrew Copp",
-          "position": "",
-          "status": "Out",
-          "injury": "Leg",
-          "note": "The Red Wings said on Thursday (Mar. 12) that Copp will miss at least the next two weeks, per Jonathan Mills of DetroitRedWings.com.",
+          "note": "Brandsegg-Nygard did not play on Thursday's (Mar. 19) game against the Canadiens.",
           "estimatedWar": 0.9
         },
         {
@@ -290,7 +274,7 @@
           "position": "",
           "status": "Out",
           "injury": "Leg",
-          "note": "The Red Wings said on Thursday (Mar. 12) that Larkin is OUT for two weeks, where he will then be reassessed.",
+          "note": "The Red Wings said on Thursday (Mar. 19) that Larkin will be reevaluated this week.",
           "estimatedWar": 0.9
         },
         {
@@ -302,8 +286,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.6,
-      "injuredCount": 4
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "EDM": {
       "injuries": [
@@ -318,17 +302,17 @@
         {
           "player": "Leon Draisaitl",
           "position": "",
-          "status": "Out",
+          "status": "LTIR",
           "injury": "Lower-Body",
-          "note": "The Oilers said on Tuesday (Mar. 17) that Draisaitl will miss the remainder of the regular season.",
-          "estimatedWar": 0.9
+          "note": "The Oilers said on Thursday (Mar. 19) that Draisaitl was placed on long-term injured reserve.",
+          "estimatedWar": 1.5
         },
         {
           "player": "Ty Emberson",
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Emberson did not play in Tuesday's (Mar. 17) versus the Sharks.",
+          "note": "Emberson did not play on Thursday's (Mar. 19) versus the Panthers.",
           "estimatedWar": 0.9
         },
         {
@@ -348,7 +332,7 @@
           "estimatedWar": 1.2
         }
       ],
-      "totalWarLost": 5.4,
+      "totalWarLost": 6.0,
       "injuredCount": 5
     },
     "FLA": {
@@ -412,7 +396,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper Body",
-          "note": "The Los Angeles Kings said on Wednesday (Mar. 18) that Armia has no timeline yet for a return.",
+          "note": "The Kings said that Armia is Probable to play for Saturday's (Mar. 21) game versus the Sabres, per Alexander Legget of Mayors Manor.",
           "estimatedWar": 0.9
         },
         {
@@ -424,14 +408,6 @@
           "estimatedWar": 0.9
         },
         {
-          "player": "Adrian Kempe",
-          "position": "",
-          "status": "Out",
-          "injury": "Lower Body",
-          "note": "The Kings said that Kempe is Probable to play for Thursday's (Mar. 19) game versus the Flyers, per Alexander Legget of Mayors Manor.",
-          "estimatedWar": 0.9
-        },
-        {
           "player": "Andrei Kuzmenko",
           "position": "",
           "status": "Out",
@@ -440,25 +416,17 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 3.6,
-      "injuredCount": 4
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "MIN": {
       "injuries": [
-        {
-          "player": "Bobby Brink",
-          "position": "",
-          "status": "Out",
-          "injury": "Upper-Body",
-          "note": "Brink did not play in Tuesday's (Mar. 17) game against the Blackhawks.",
-          "estimatedWar": 0.9
-        },
         {
           "player": "Joel Eriksson Ek",
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Eriksson Ek did not play in Tuesday's (Mar. 17) game versus the Blackhawks.",
+          "note": "The Wild said on Thursday's (Mar. 19) that Eriksson Ek has no definite timeline for a return.",
           "estimatedWar": 0.9
         },
         {
@@ -468,6 +436,14 @@
           "injury": "Lower-Body",
           "note": "The Wild said on Tuesday (Mar. 3) that Foligno is week-to-week, according to Joe Smith of The Athletic.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Kirill Kaprizov",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "Kaprizov did not play on Thursday's (Mar. 19) versus the Blackhawks.",
+          "estimatedWar": 0.9
         }
       ],
       "totalWarLost": 2.7,
@@ -475,6 +451,14 @@
     },
     "MTL": {
       "injuries": [
+        {
+          "player": "Josh Anderson",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper body",
+          "note": "Anderson did not play on Thursday's (Mar. 19) game versus the Red Wings.",
+          "estimatedWar": 0.9
+        },
         {
           "player": "Kirby Dach",
           "position": "",
@@ -492,8 +476,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "NJ": {
       "injuries": [
@@ -528,6 +512,14 @@
     "NSH": {
       "injuries": [
         {
+          "player": "Juuse Saros",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "Saros did not play on Thursday's (Mar. 19) home game against Seattle.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Adam Wilsby",
           "position": "",
           "status": "Out",
@@ -536,8 +528,8 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "totalWarLost": 1.8,
+      "injuredCount": 2
     },
     "NYI": {
       "injuries": [
@@ -570,7 +562,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Shabanov did not play in Tuesday's (Mar. 17) game versus the Maple Leafs.",
+          "note": "Shabanov did not play on Thursday's (Mar. 19) game versus the Senators.",
           "estimatedWar": 0.9
         },
         {
@@ -592,7 +584,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-body",
-          "note": "Laba did not return to Wednesday's (Mar. 18) game versus the Devils.",
+          "note": "Laba did not play on Thursday's (Mar. 19) game versus the Blue Jackets.",
           "estimatedWar": 0.9
         },
         {
@@ -608,7 +600,7 @@
           "position": "",
           "status": "Out",
           "injury": "Upper-body",
-          "note": "Vaakanainen did not return to Wednesday's (Mar. 18) game versus the Devils.",
+          "note": "Vaakanainen did not play on Thursday's (Mar. 19) game versus the Blue Jackets.",
           "estimatedWar": 0.9
         }
       ],
@@ -648,16 +640,32 @@
           "estimatedWar": 0.9
         },
         {
+          "player": "Denver Barkey",
+          "position": "",
+          "status": "Out",
+          "injury": "Upper Body",
+          "note": "Barkey did not play on Thursday's (Mar. 19) game against the Kings.",
+          "estimatedWar": 0.9
+        },
+        {
           "player": "Tyson Foerster",
           "position": "",
           "status": "Out",
           "injury": "Arm",
           "note": "The Flyers said on Wednesday (Dec. 17) that Foerster underwent successful surgery on his arm and will be out for five months.",
           "estimatedWar": 0.9
+        },
+        {
+          "player": "Luke Glendening",
+          "position": "",
+          "status": "Out",
+          "injury": "Lower Body",
+          "note": "Glendening did not play on Thursday's (Mar. 19) game against the Kings.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 3.6,
+      "injuredCount": 4
     },
     "PIT": {
       "injuries": [
@@ -672,10 +680,10 @@
         {
           "player": "Ryan Graves",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Undisclosed",
-          "note": "The Pittsburgh Penguins placed D Ryan Graves on Injured Reserve on Saturday (Mar. 14).",
-          "estimatedWar": 1.2
+          "note": "The Pittsburgh Penguins recalled D Ryan Graves from his conditioning assignment in the minors.",
+          "estimatedWar": 0.9
         },
         {
           "player": "Filip Hallander",
@@ -702,7 +710,7 @@
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 4.8,
+      "totalWarLost": 4.5,
       "injuredCount": 5
     },
     "SEA": {
@@ -720,12 +728,20 @@
           "position": "",
           "status": "Out",
           "injury": "Undisclosed",
-          "note": "Tolvanen did not play in Tuesday's (Mar. 17) home contest against the Lightning.",
+          "note": "Tolvanen did not play on Thursday's (Mar. 19) home contest against the Predators.",
+          "estimatedWar": 0.9
+        },
+        {
+          "player": "Ryan Winterton",
+          "position": "",
+          "status": "Out",
+          "injury": "Illness",
+          "note": "Winterton did not play on Thursday's (Mar. 19) game against Nashville because of an illness.",
           "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 1.8,
-      "injuredCount": 2
+      "totalWarLost": 2.7,
+      "injuredCount": 3
     },
     "SJ": {
       "injuries": [
@@ -734,7 +750,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "Askarov did not play in Tuesday's (Mar. 17) game versus the Oilers.",
+          "note": "Askarov did not play on Thursday's (Mar. 19) game versus the Sabres, per Curtis Pashelka of The San Jose Mercury News.",
           "estimatedWar": 0.9
         },
         {
@@ -742,7 +758,7 @@
           "position": "",
           "status": "Out",
           "injury": "Concussion",
-          "note": "Chernyshov did not play in Tuesday's (Mar. 17) game against the against the Oilers.",
+          "note": "Chernyshov did not play on Thursday's (Mar. 19) game against the Sabres.",
           "estimatedWar": 0.9
         },
         {
@@ -807,7 +823,7 @@
           "position": "",
           "status": "Out",
           "injury": "Knee",
-          "note": "Matthews sustained a Grade 3 MCL tear and a quadriceps contusion Thursday (Mar. 12) versus the Ducks. He will be reevaluated in two weeks, but he has been ruled out for the remainder of the season.",
+          "note": "The Maple Leafs said on Thursday (Mar. 19) that Matthews underwent successful knee surgery and will recover in 12 weeks.",
           "estimatedWar": 0.9
         },
         {
@@ -823,18 +839,9 @@
       "injuredCount": 2
     },
     "UTA": {
-      "injuries": [
-        {
-          "player": "Kevin Stenlund",
-          "position": "",
-          "status": "Out",
-          "injury": "Undisclosed",
-          "note": "Stenlund did not play in Monday's (Mar. 16) game versus the Stars.",
-          "estimatedWar": 0.9
-        }
-      ],
-      "totalWarLost": 0.9,
-      "injuredCount": 1
+      "injuries": [],
+      "totalWarLost": 0.0,
+      "injuredCount": 0
     },
     "VAN": {
       "injuries": [
@@ -865,13 +872,13 @@
         {
           "player": "Pierre-Olivier Joseph",
           "position": "",
-          "status": "IR",
+          "status": "Out",
           "injury": "Upper-body",
-          "note": "The Vancouver Canucks placed D Pierre-Olivier Joseph on injured reserve and is OUT for 2-3 weeks as of Wednesday (Mar. 4).",
-          "estimatedWar": 1.2
+          "note": "Head coach Adam Foote said that Joseph is improving and is a possibility for Saturday's (Mar. 21) game against the Blues, per Farhan Lalji of TSN.",
+          "estimatedWar": 0.9
         }
       ],
-      "totalWarLost": 5.4,
+      "totalWarLost": 5.1,
       "injuredCount": 4
     },
     "VGK": {
@@ -910,7 +917,7 @@
           "position": "",
           "status": "Out",
           "injury": "Lower-Body",
-          "note": "The Jets said on Tuesday (Mar. 10) that Pionk has resumed skating but is not close to returning to the lineup, per Mitchell Clinton of the team's official site.",
+          "note": "The Jets said that Pionk was skating in a regular jersey ahead of Thursday's (Mar. 19) clash with the Bruins, per Mitchell Clinton of the team's official site.",
           "estimatedWar": 0.9
         }
       ],
@@ -924,7 +931,7 @@
           "position": "",
           "status": "Out",
           "injury": "Not Injury Related",
-          "note": "Kampf has not rejoined the Capitals for Wednesday's (Mar. 18) game versus the Senators.",
+          "note": "The Capitals said on Thursday (Mar. 19) that Kampf's visa issues have been resolved and he should be back soon.",
           "estimatedWar": 0.9
         }
       ],
